@@ -1,0 +1,20 @@
+'use strict';
+(()=>{
+const T=THREE,V=HOME_VIEWER,C=V.finishContext,group=new T.Group();group.name='可互動落地窗簾';V.scene.add(group);
+const fabric=C.materials.linen.clone();fabric.color.set('#aaa18e').convertSRGBToLinear();fabric.side=T.DoubleSide;fabric.roughness=1;if(fabric.map){fabric.map=fabric.map.clone();fabric.map.repeat.set(14,24);fabric.map.needsUpdate=true;}if(fabric.bumpMap){fabric.bumpMap=fabric.bumpMap.clone();fabric.bumpMap.repeat.set(14,24);fabric.bumpMap.needsUpdate=true;}
+const railMat=new T.MeshStandardMaterial({color:0x353633,roughness:.6});
+const definitions=[['living1','客廳左窗',1081,375,205,'V',245],['living2','客廳右窗',1081,650,230,'V',245],['studyN','書房北窗',775,3,310,'H',245],['studyE','書房東窗',1081,88,224,'V',245],['kitchen','廚房落地窗',3,733,164,'V',215]];
+const entries=definitions.map(([id,name,x,y,width,axis,height])=>{const g=new T.Group();g.position.copy(V.pos(x,y,0));if(axis==='V')g.rotation.y=-Math.PI/2;group.add(g);const rail=new T.Mesh(new T.BoxGeometry(width+12,3,5),railMat);rail.position.set(width/2,height+3,0);g.add(rail);
+const panels=[0,1].map(side=>{const geo=new T.PlaneGeometry(1,height-3,80,8);const mesh=new T.Mesh(geo,fabric);mesh.position.y=(height-3)/2+1;mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);return {mesh,side};});
+return {id,name,x,y,width,height,axis,g,panels,value:0,target:0};});
+function shape(e){const span=18+(e.width/2-17.6)*e.value;for(const {mesh,side} of e.panels){const p=mesh.geometry.attributes.position;for(let i=0;i<p.count;i++){const u=(i%81)/80,v=Math.floor(i/81)/8;const xx=side===0?u*span:e.width-span+u*span;p.setXYZ(i,xx,(.5-v)*(e.height-3),Math.sin(u*Math.PI*20)*(2.6-1.4*e.value)+.3*Math.sin(v*5+u*14));}p.needsUpdate=true;mesh.geometry.computeVertexNormals();mesh.geometry.computeBoundingSphere();}}
+entries.forEach(shape);
+const controls=document.createElement('div');controls.id='curtainControls';controls.innerHTML='<select id="curtainSelect" aria-label="選擇窗簾"><option value="all">全部窗簾</option>'+entries.map(e=>'<option value="'+e.id+'">'+e.name+'</option>').join('')+'</select><button id="curtainOpen">開窗簾</button><button id="curtainClose">關窗簾</button><span id="curtainState">窗簾已開啟</span>';
+document.getElementById('walkBottomBar').appendChild(controls);const css=document.createElement('style');css.textContent='#curtainControls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;pointer-events:auto}#curtainState{font-size:11px!important}';document.head.appendChild(css);
+const selected=()=>document.getElementById('curtainSelect').value;function set(value,id=selected()){entries.filter(e=>id==='all'||e.id===id).forEach(e=>e.target=value);document.getElementById('curtainState').textContent=value?'窗簾關閉中…':'窗簾開啟中…';}
+document.getElementById('curtainOpen').onclick=()=>set(0);document.getElementById('curtainClose').onclick=()=>set(1);
+// Reduce admitted daylight continuously while preserving electric lights and exposure.
+function applyLighting(){const mean=entries.reduce((n,e)=>n+e.value,0)/entries.length,night=document.getElementById('night').classList.contains('active');window.HOME_REALISM?.setCurtainTransmission(1-.95*mean);C.sun.intensity=(night?.04:1.05)*(1-.94*mean);C.hemi.intensity=(night?.30:.72)*(1-.78*mean);C.fill.intensity=(night?.18:.32)*(1-.78*mean);}
+let previous=0,wasMoving=false;function frame(now){requestAnimationFrame(frame);const dt=Math.min(.05,(now-previous)/1000);previous=now;let moving=false;for(const e of entries){if(Math.abs(e.value-e.target)>.001){e.value+=Math.sign(e.target-e.value)*Math.min(Math.abs(e.target-e.value),dt*.75);shape(e);moving=true;}}if(moving||wasMoving)applyLighting();if(wasMoving&&!moving){document.getElementById('curtainState').textContent='窗簾調整完成';window.HOME_REALISM?.refreshReflections();}wasMoving=moving;}requestAnimationFrame(frame);
+window.HOME_CURTAINS={set,applyLighting,getState:()=>entries.map(e=>({id:e.id,name:e.name,closed:e.value,target:e.target}))};for(const id of ['day','night'])document.getElementById(id).addEventListener('click',applyLighting);
+})();
