@@ -1,0 +1,1010 @@
+{
+  "method": "Real Three.js geometry and interaction code; CPU color views omit textures/reflections/lighting. No GPU or browser verification.",
+  "retained": {
+    "v1": {
+      "meshes": 2056,
+      "hash": "7df07c1748e43ae3a77538104a7bd72fb3e35a469ae4eb6d586ba9842b2e20b6"
+    },
+    "v2": {
+      "meshes": 2040,
+      "hash": "74f25518f516352f33385086bdc9441a003e04963fed421d870053b85ee99a74"
+    }
+  },
+  "checks": [
+    "Four actual walk routes pass with 36cm body; no removed collection-wall collider remains",
+    "Four ceiling speakers clear modeled beams and HVAC terminals/access",
+    "Actual TV radial sweep clears static furniture and speakers through180°",
+    "V1/V2 full geometry, colors and transforms unchanged",
+    "24 original equipment instances and 13 navigation spaces preserved",
+    "300×95×95 island with real sink/IH openings and full entry-facing finish",
+    "Wine/robot/IH/wet service zones face west",
+    "Q6 inside console; TV y583; Q7 south aisle104.15cm",
+    "Old collection door removed; new framed glass doors interactive",
+    "Room doors reach full opening; kitchen electric sliding door retained",
+    "RGB wave, shared scene, curtains and TV180° rotation work; optional stool toggles"
+  ],
+  "equipmentPanelOverlaps": [
+    {
+      "equipment": "oven",
+      "panel": "可拆設備側板",
+      "eb": {
+        "x": 82.14999923706057,
+        "y": 502.20000038146975,
+        "z": 103.30000000000001,
+        "w": 59.400001525878906,
+        "d": 54.79999961853028,
+        "h": 59.5
+      },
+      "pb": {
+        "x": 81.85000002384186,
+        "y": 493,
+        "z": 12.0000015258789,
+        "w": 1.7999999523162842,
+        "d": 61,
+        "h": 225.6999969482422
+      },
+      "classification": "false positive from overall appliance bounds; actual body and front trim have zero panel intersections"
+    },
+    {
+      "equipment": "oven",
+      "panel": "可拆設備側板",
+      "eb": {
+        "x": 82.14999923706057,
+        "y": 502.20000038146975,
+        "z": 103.30000000000001,
+        "w": 59.400001525878906,
+        "d": 54.79999961853028,
+        "h": 59.5
+      },
+      "pb": {
+        "x": 140.0500000238419,
+        "y": 493,
+        "z": 12.0000015258789,
+        "w": 1.7999999523162842,
+        "d": 61,
+        "h": 225.6999969482422
+      },
+      "classification": "false positive from overall appliance bounds; actual body and front trim have zero panel intersections"
+    }
+  ],
+  "curtains": [
+    {
+      "id": "living1",
+      "name": "客廳左窗",
+      "closed": 1,
+      "target": 1
+    },
+    {
+      "id": "living2",
+      "name": "客廳右窗",
+      "closed": 1,
+      "target": 1
+    },
+    {
+      "id": "studyN",
+      "name": "電腦房北窗",
+      "closed": 1,
+      "target": 1
+    },
+    {
+      "id": "studyE",
+      "name": "電腦房東窗",
+      "closed": 1,
+      "target": 1
+    },
+    {
+      "id": "bed",
+      "name": "主臥窗簾",
+      "closed": 1,
+      "target": 1
+    },
+    {
+      "id": "kitchen",
+      "name": "廚房落地窗",
+      "closed": 1,
+      "target": 1
+    }
+  ],
+  "routes": {
+    "count": 4,
+    "samples": 895,
+    "bodyRadiusCm": 18,
+    "doorsOpen": [
+      "entry",
+      "kitchen"
+    ],
+    "TVParked": "living"
+  },
+  "ceilingSpeakers": {
+    "count": 4,
+    "clearOfModeledBeamsAndHVAC": true
+  },
+  "tvSweep": {
+    "radius": 97.19476580576061,
+    "minimumGap": 10.876437270141011
+  },
+  "model": {
+    "meshes": 1882,
+    "hash": "8d1061b2255a5f7cc6c2fd06d1e52b1dfb2c48e7eb6012e0b5caba643737606d"
+  },
+  "equipment": [
+    {
+      "key": "fridge",
+      "bounds": {
+        "x": 230,
+        "y": 499,
+        "z": 0,
+        "w": 85.00000000074505,
+        "d": 91.2,
+        "h": 179
+      }
+    },
+    {
+      "key": "wine",
+      "bounds": {
+        "x": 429,
+        "y": 488,
+        "z": 0,
+        "w": 66.30000000000001,
+        "d": 65.7,
+        "h": 85
+      }
+    },
+    {
+      "key": "robot",
+      "bounds": {
+        "x": 428,
+        "y": 563.0000007629394,
+        "z": 0,
+        "w": 47.50000038146973,
+        "d": 38.099998474121094,
+        "h": 30
+      }
+    },
+    {
+      "key": "ih",
+      "bounds": {
+        "x": 442.19999980926514,
+        "y": 612.3999996185303,
+        "z": 90.30000009536742,
+        "w": 30.600000381469727,
+        "d": 52.70000076293945,
+        "h": 5.1099999046325735
+      }
+    },
+    {
+      "key": "clar",
+      "bounds": {
+        "x": 427.99999999925495,
+        "y": 724.25,
+        "z": 8,
+        "w": 38.00000000074506,
+        "d": 11.5,
+        "h": 32.5
+      }
+    },
+    {
+      "key": "avr",
+      "bounds": {
+        "x": 627.5499992370605,
+        "y": 494.29999923706055,
+        "z": 6.999999618530273,
+        "w": 38.90000076293944,
+        "d": 43.40000152587891,
+        "h": 16.700000762939453
+      }
+    },
+    {
+      "key": "ps5",
+      "bounds": {
+        "x": 644.1999998092651,
+        "y": 623.6000003814697,
+        "z": 9.000000190734863,
+        "w": 21.600000381469727,
+        "d": 38.79999923706055,
+        "h": 8.899999803304674
+      }
+    },
+    {
+      "key": "switch2",
+      "bounds": {
+        "x": 670.2650000059605,
+        "y": 619.3999996185303,
+        "z": 26.999999809265134,
+        "w": 3.069999995529656,
+        "d": 27.200000762939453,
+        "h": 11.600000381469727
+      }
+    },
+    {
+      "key": "switch2dock",
+      "bounds": {
+        "x": 669.24,
+        "y": 656.9499998092651,
+        "z": 26.999999998509885,
+        "w": 5.122000000000014,
+        "d": 20.100000381469727,
+        "h": 11.500000096857548
+      }
+    },
+    {
+      "key": "q6",
+      "bounds": {
+        "x": 644.2000003814697,
+        "y": 551.5499992370605,
+        "z": 7,
+        "w": 30.29999961853028,
+        "d": 62.900001525878906,
+        "h": 21
+      }
+    },
+    {
+      "key": "tv",
+      "bounds": {
+        "x": 647.0000000238418,
+        "y": 490.6500015258789,
+        "z": 82.1500015258789,
+        "w": 2.7999999758229137,
+        "d": 184.6999969482422,
+        "h": 105.69999694824219
+      }
+    },
+    {
+      "key": "q7",
+      "bounds": {
+        "x": 712.25,
+        "y": 669.1499996185303,
+        "z": 0,
+        "w": 31.5,
+        "d": 31.700000762939453,
+        "h": 100.09999923706054
+      }
+    },
+    {
+      "key": "q7",
+      "bounds": {
+        "x": 712.25,
+        "y": 465.1499996185303,
+        "z": 0,
+        "w": 31.5,
+        "d": 31.70000076293946,
+        "h": 100.09999923706054
+      }
+    },
+    {
+      "key": "sub",
+      "bounds": {
+        "x": 1012,
+        "y": 429.25,
+        "z": -3.8146972514141453e-7,
+        "w": 36,
+        "d": 39.5,
+        "h": 37.20000076293945
+      }
+    },
+    {
+      "key": "sub",
+      "bounds": {
+        "x": 1012,
+        "y": 697.25,
+        "z": -3.8146972514141453e-7,
+        "w": 36,
+        "d": 39.5,
+        "h": 37.20000076293945
+      }
+    },
+    {
+      "key": "projector",
+      "bounds": {
+        "x": 177.84999997615813,
+        "y": 12.600000000000023,
+        "z": 193,
+        "w": 24.30000004768374,
+        "d": 21.000000002980244,
+        "h": 23.79999961853028
+      }
+    },
+    {
+      "key": "pc",
+      "bounds": {
+        "x": 800,
+        "y": 115.9999999985099,
+        "z": 0,
+        "w": 25,
+        "d": 59.09999923855065,
+        "h": 56.5
+      }
+    },
+    {
+      "key": "pc",
+      "bounds": {
+        "x": 1047.5,
+        "y": 295.9999999985099,
+        "z": 0,
+        "w": 25,
+        "d": 59.09999923855065,
+        "h": 56.5
+      }
+    },
+    {
+      "key": "dishwasher",
+      "bounds": {
+        "x": 8.199999618530285,
+        "y": 768.2500003814697,
+        "z": 0,
+        "w": 55.00000035762787,
+        "d": 59.79999923706055,
+        "h": 81.5
+      }
+    },
+    {
+      "key": "dishdryer",
+      "bounds": {
+        "x": 0,
+        "y": 650.0999984741211,
+        "z": 146,
+        "w": 32,
+        "d": 79.80000305175781,
+        "h": 40
+      }
+    },
+    {
+      "key": "oven",
+      "bounds": {
+        "x": 82.14999923706057,
+        "y": 502.20000038146975,
+        "z": 103.30000000000001,
+        "w": 59.400001525878906,
+        "d": 54.79999961853028,
+        "h": 59.5
+      }
+    },
+    {
+      "key": "nx",
+      "bounds": {
+        "x": 65.60000000000002,
+        "y": 396,
+        "z": 0,
+        "w": 46.799999999999955,
+        "d": 80,
+        "h": 56.50000000000001
+      }
+    },
+    {
+      "key": "ls",
+      "bounds": {
+        "x": 425.15,
+        "y": 227,
+        "z": 0,
+        "w": 41.10000000000001,
+        "d": 72.5,
+        "h": 49.70000000000001
+      }
+    },
+    {
+      "key": "washer",
+      "bounds": {
+        "x": -78,
+        "y": 812,
+        "z": 0,
+        "w": 70,
+        "d": 77,
+        "h": 189
+      }
+    }
+  ],
+  "interactions": {
+    "count": 49,
+    "open": 4,
+    "entries": [
+      {
+        "id": 0,
+        "name": "入戶門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 1,
+        "name": "主浴80cm門洞",
+        "angle": -1.5707963267948966,
+        "target": -1.5707963267948966,
+        "openAngle": -1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 2,
+        "name": "室內門（示意）",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 3,
+        "name": "更衣室門",
+        "angle": 1.5707963267948966,
+        "target": 1.5707963267948966,
+        "openAngle": 1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 4,
+        "name": "主臥走道入口門",
+        "angle": 1.5707963267948966,
+        "target": 1.5707963267948966,
+        "openAngle": 1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 5,
+        "name": "書房玻璃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 6,
+        "name": "後陽台門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 7,
+        "name": "主浴淋浴玻璃門",
+        "angle": -1.5707963267948966,
+        "target": -1.5707963267948966,
+        "openAngle": -1.5707963267948966,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 8,
+        "name": "客浴雙聯滑門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1,
+        "blocked": false,
+        "sliding": true,
+        "electric": false
+      },
+      {
+        "id": 9,
+        "key": "kitchen",
+        "name": "廚房電動玻璃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1,
+        "blocked": false,
+        "sliding": true,
+        "electric": true
+      },
+      {
+        "id": 10,
+        "key": "closet-mirror",
+        "name": "更衣室滑鏡",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1,
+        "blocked": false,
+        "sliding": true,
+        "electric": false
+      },
+      {
+        "id": 11,
+        "name": "主冰箱上櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 12,
+        "name": "主冰箱上櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 13,
+        "name": "V3 行李與深收藏・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 14,
+        "name": "V3 行李與深收藏・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 15,
+        "name": "V3 收藏玻璃展示・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 16,
+        "name": "V3 收藏玻璃展示・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 17,
+        "name": "V3 收藏玻璃展示・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 18,
+        "name": "V3 玄關矮櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 19,
+        "name": "V3 玄關矮櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 20,
+        "name": "電箱上段獨立維修門・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 21,
+        "name": "掃地機上方收納・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 22,
+        "name": "IH 下方乾式收納・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 23,
+        "name": "V3 飲水濕區檢修・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 24,
+        "name": "V3 飲水濕區檢修・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 25,
+        "name": "床頭抽屜・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 26,
+        "name": "床頭抽屜・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 27,
+        "name": "床頭黑玻高櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 28,
+        "name": "床頭黑玻高櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 29,
+        "name": "床頭抽屜・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 30,
+        "name": "床頭抽屜・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 31,
+        "name": "床頭黑玻高櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 32,
+        "name": "床頭黑玻高櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 33,
+        "name": "更衣室窗前矮櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 34,
+        "name": "更衣室頂天櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 35,
+        "name": "A區120cm雙開水槽櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 36,
+        "name": "A區120cm雙開水槽櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 37,
+        "name": "20cm側拉籃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 38,
+        "name": "烘碗機上方80cm雙開櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 39,
+        "name": "C區80cm收納高櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 40,
+        "name": "ICNh5123預留櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 41,
+        "name": "ICNh5123預留櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 42,
+        "name": "ICNh5123預留櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 43,
+        "name": "懸吊浴櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 44,
+        "name": "懸吊浴櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 45,
+        "name": "懸吊浴櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 46,
+        "name": "懸吊浴櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 47,
+        "name": "後陽台水槽右側頂天收納櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 48,
+        "name": "後陽台水槽右側頂天收納櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      }
+    ],
+    "metrics": {
+      "boundsBuilds": 50,
+      "pickCandidates": 0,
+      "pickMeshes": 0
+    },
+    "target": null
+  },
+  "views": [
+    {
+      "version": "v3",
+      "id": "entry",
+      "room": "entry",
+      "name": "進門視線",
+      "p": [
+        603,
+        925,
+        165
+      ],
+      "t": [
+        475,
+        780,
+        100
+      ],
+      "file": "v3-entry.png",
+      "triangles": 122222
+    },
+    {
+      "version": "v3",
+      "id": "island-west",
+      "room": "island",
+      "name": "西側設備分艙",
+      "p": [
+        328,
+        677,
+        163
+      ],
+      "t": [
+        467,
+        644,
+        75
+      ],
+      "file": "v3-island-west.png",
+      "triangles": 140143
+    },
+    {
+      "version": "v3",
+      "id": "storage",
+      "room": "collection",
+      "name": "展示與深收納接角",
+      "p": [
+        479,
+        801,
+        165
+      ],
+      "t": [
+        283,
+        906,
+        125
+      ],
+      "file": "v3-storage.png",
+      "triangles": 37013
+    },
+    {
+      "version": "v3",
+      "id": "entry-cabinet",
+      "room": "entry",
+      "name": "玄關矮櫃與掛衣",
+      "p": [
+        570,
+        811,
+        165
+      ],
+      "t": [
+        678,
+        885,
+        123
+      ],
+      "file": "v3-entry-cabinet.png",
+      "triangles": 32519
+    },
+    {
+      "version": "v3",
+      "id": "audio",
+      "room": "living",
+      "name": "沙發主座影音",
+      "p": [
+        950,
+        583,
+        105
+      ],
+      "t": [
+        647,
+        583,
+        124
+      ],
+      "file": "v3-audio.png",
+      "triangles": 135021
+    },
+    {
+      "version": "v3",
+      "id": "island-east",
+      "room": "island",
+      "name": "中島東側與留膝",
+      "p": [
+        600,
+        795,
+        160
+      ],
+      "t": [
+        479,
+        652,
+        87
+      ],
+      "file": "v3-island-east.png",
+      "triangles": 99843
+    }
+  ]
+}

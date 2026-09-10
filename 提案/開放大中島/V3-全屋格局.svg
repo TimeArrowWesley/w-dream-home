@@ -250,5 +250,5 @@
 <text x="1260.00" y="996.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">柱、廚房牆、外牆保留，不以拆柱換空間。</text>
 <text x="1260.00" y="1025.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">給排水與插座需隨中島延長重新定位。</text>
 <text x="45.00" y="1074.96" font-size="17" fill="#687b76" text-anchor="start" font-weight="400">圖面下方為入戶；方位沿現有模型。公共空間外僅示意保留範圍，家具未逐一描繪。</text>
-<text x="45.00" y="1106.96" font-size="17" fill="#287b6d" text-anchor="start" font-weight="400">2D 提案，尚未套入 3D。淋浴組已另行同步修正於目前 V1、V2 的主浴南牆。</text>
+<text x="45.00" y="1106.96" font-size="17" fill="#287b6d" text-anchor="start" font-weight="400">V3 已同步至 3D；主浴南牆淋浴、門片、設備及材質沿用修正後共用模型。</text>
 </svg>

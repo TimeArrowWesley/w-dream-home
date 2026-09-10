@@ -29,7 +29,7 @@ AUDIO = {
         speaker('SR','Ci160QR with custom stand',1040,408,24,28,'W',centerHeight=110),
     ],
     'center': speaker('C','KEF Q6 Meta',659.35,583,30.3,62.9,'E',installation='inside fixed console, front baffle flush; below rotating TV'),
-    'overhead': {'count':4, 'model':'KEF Ci160QR', 'status':'quantity retained; ceiling positioning to be coordinated with beams, HVAC and listening seat after concept selection'},
+    'overhead': {'count':4, 'model':'KEF Ci160QR', 'centers':[[815,481],[815,685],[1010,481],[1010,685]], 'grilleHeight':272.8, 'recessDepth':9.8, 'status':'modeled positions; installation requires coordination with actual ceiling and services'},
     'frontCenterSpacing':204,
     'frontBaffleDistance':round(math.hypot(950-743.75,102),1),
     'frontBaffleAngleDegrees':round(math.degrees(math.atan2(102,950-743.75)),1),
@@ -181,7 +181,7 @@ def card(d,x,y,n,title,lines):
 
 d=Drawing(1800,1100)
 d.text(45,28,'V3 提案｜打開收藏室，延伸生活中島',35,INK,True)
-d.text(47,84,'以新 V2「旋轉電視＋玄關高矮櫃」為底案 · 2D 討論稿 · 尺寸：cm · 2026-09-10',19,MUTED)
+d.text(47,84,'以新 V2「旋轉電視＋玄關高矮櫃」為底案 · 3D 對照平面 · 尺寸：cm · 2026-09-10',19,MUTED)
 for x,title,note in [(45,'調整前｜新 V2','原 V3 改名；收藏室仍獨立'),(918,'提案後｜新 V3','拆收藏室隔間、重排玄關櫃；柱與廚房牆保留')]:
     d.text(x,140,title,27,INK,True);d.text(x,179,note,17,MUTED)
     plan(d,x+7,228,.84,195,360,new=x>500)
@@ -205,13 +205,13 @@ card(d,1260,680,4,'玄關櫃與電箱櫃連續收邊',['矮櫃 110 × 55 × H90�
 d.text(1260,883,'設計取捨',23,INK,True)
 for i,t in enumerate(['封閉收藏室的防塵、遮光與收納量會減少。','玻璃櫃仍採可關門櫃；深收藏用實門收納。','柱、廚房牆、外牆保留，不以拆柱換空間。','給排水與插座需隨中島延長重新定位。']):d.text(1260,924+29*i,t,16,MUTED)
 d.text(45,1060,'圖面下方為入戶；方位沿現有模型。公共空間外僅示意保留範圍，家具未逐一描繪。',17,MUTED)
-d.text(45,1092,'2D 提案，尚未套入 3D。淋浴組已另行同步修正於目前 V1、V2 的主浴南牆。',17,GREEN)
+d.text(45,1092,'V3 已同步至 3D；主浴南牆淋浴、門片、設備及材質沿用修正後共用模型。',17,GREEN)
 d.save('V3-全屋格局')
 
 # Detailed public-area plan: acoustics and arrival sightlines share actual footprints.
 d=Drawing(1800,1220)
 d.text(42,28,'V3｜喇叭回到影音區，入口留給空間',34,INK,True)
-d.text(44,81,'2D 修訂提案 · 沙發不搬動，以中間座位為基準 · 電視及固定底櫃往圖面下方移 23 cm',19,MUTED)
+d.text(44,81,'3D 配置對照 · 沙發不搬動，以中間座位為基準 · 電視及固定底櫃往圖面下方移 23 cm',19,MUTED)
 ox,oy,s=45,143,1.15
 plan(d,ox,oy,s,195,360,new=True)
 p=lambda x,y:(ox+(x-195)*s,oy+(y-360)*s)
@@ -265,12 +265,14 @@ for i,t in enumerate(['北側通道維持約 90.2；南側通道約 104.2。',
                        'Q7 外包絡距電視旋轉圈最近約 10.6；不是施工公差。',
                        '窗邊設備後仍留約 33；此帶用於檢修，不作主要通道。',
                        '低頻位置須量測；電視轉向中島時，聲場仍以沙發為主。',
-                       '此頁為平面與材質示意，尚未套入 3D 或驗證入口透視。']):d.text(1020,1005+i*31,t,16,MUTED)
+                       '此頁為平面與材質示意，已套入 V3 3D；入口另附模型檢查視角。']):d.text(1020,1005+i*31,t,16,MUTED)
 d.save('V3-影音與入口')
 
-plan_data={'status':'2D concept only','base':'new v2 = original v3','units':'cm','island':{'x':425,'y':480,'w':95,'d':300,'h':95},'preservedColumn':{'x':445.1,'y':880.1,'w':100.1,'d':89.9},'cabinets':[{'id':'display','x':280,'y':915,'w':165,'d':40},{'id':'collection-return','x':220,'y':915,'w':60,'d':40,'use':'closed corner infill; not counted as usable display'},{'id':'deep-storage','x':220,'y':760,'w':60,'d':155},{'id':'entry','x':660,'y':805,'w':55,'d':110,'h':90},{'id':'entry-return','x':660,'y':915,'w':30,'d':40,'h':90,'use':'closed removable corner infill; not counted as usable storage'}], 'nominalClearances':{'fridgeToIsland':110,'islandToFixedTVBase':99.5,'islandSouthToColumn':100.1,'entryColumnToCabinet':114.8},'retainedWalls':['kitchen boundary x210–220','exterior and structural columns'],'demolition':['collection north display and east door','collection short return at y875; structural pier retained'],'relocated':['entry cabinet run'],'cabinetJunctionRevision':{'leftExtensionCm':35,'rightCornerCm':[30,40],'electricalAccess':'split cabinet front; service hatch above low cabinet, separate from infill','entryDoorClearCm':107},'limits':['Measurements from model, not site survey.','TV sweep requires an empty rotation area; aisle dimension applies to parked TV.','No fixed stools in the 100cm south route.','Appliance doors are not to be opened opposite one another simultaneously.','Storage capacity decreases compared with enclosed room; large figurines require item-by-item shelf planning.']}
+plan_data={'status':'V3 interactive 3D layout','base':'new v2 = original v3','units':'cm','island':{'x':425,'y':480,'w':95,'d':300,'h':95},'preservedColumn':{'x':445.1,'y':880.1,'w':100.1,'d':89.9},'cabinets':[{'id':'display','x':280,'y':915,'w':165,'d':40},{'id':'collection-return','x':220,'y':915,'w':60,'d':40,'use':'closed corner infill; not counted as usable display'},{'id':'deep-storage','x':220,'y':760,'w':60,'d':155},{'id':'entry','x':660,'y':805,'w':55,'d':110,'h':90},{'id':'entry-return','x':660,'y':915,'w':30,'d':40,'h':90,'use':'closed removable corner infill; not counted as usable storage'}], 'nominalClearances':{'fridgeToIsland':110,'islandToFixedTVBase':99.5,'islandSouthToColumn':100.1,'entryColumnToCabinet':114.8},'retainedWalls':['kitchen boundary x210–220','exterior and structural columns'],'demolition':['collection north display and east door','collection short return at y875; structural pier retained'],'relocated':['entry cabinet run'],'cabinetJunctionRevision':{'leftExtensionCm':35,'rightCornerCm':[30,40],'electricalAccess':'split cabinet front; service hatch above low cabinet, separate from infill','entryDoorClearCm':107},'limits':['Measurements from model, not site survey.','TV sweep requires an empty rotation area; aisle dimension applies to parked TV.','No fixed stools in the 100cm south route.','Appliance doors are not to be opened opposite one another simultaneously.','Storage capacity decreases compared with enclosed room; large figurines require item-by-item shelf planning.']}
 plan_data['audio']=AUDIO
 plan_data['arrival']=ARRIVAL
 plan_data['relocated']+=['TV and console 23cm south to align middle sofa seat','Q7 pair','two subwoofers','two surround stands']
+plan_data['kneeRecess']={'x':484,'y':674,'w':34,'d':104,'side':'E','movableStoolDefaultVisible':False}
 (OUT/'格局尺寸.json').write_text(json.dumps(plan_data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-print('Saved three SVG/PNG concept boards and measured layout data.')
+(OUT/'layout-spec.js').write_text("'use strict';\nwindow.HOME_OPEN_ISLAND_SPEC="+json.dumps(plan_data,ensure_ascii=False,indent=2)+';\n',encoding='utf8')
+print('Saved three plan boards, layout data and 3D specification.')

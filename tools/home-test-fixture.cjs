@@ -19,7 +19,8 @@ module.exports=async function build(n,overrides={}){
  const OriginalImage=c.Image;c.Image=class extends OriginalImage{constructor(){super();this.width=1024;this.height=512;images.push(this);}};
  c.window=c;c.Event=c.CustomEvent;vm.createContext(c);
  function run(f){vm.runInContext(overrides[f]??read(f),c,{filename:f,timeout:60000});}
- run(n<3?'layout-version.js':'提案/旋轉電視與直線中島/layout-version.js');
+ run(n===4?'提案/開放大中島/layout-version.js':n<3?'layout-version.js':'提案/旋轉電視與直線中島/layout-version.js');
+ if(n===4){run('提案/開放大中島/layout-spec.js');run('提案/開放大中島/open-island-model.js');}
  for(const f of ['model-data.js','equipment-models.js',n<3?'design.js':'提案/旋轉電視與直線中島/design.js'])run(f);
  const V=c.HOME_VIEWER,E=c.HOME_EQUIPMENT;
  c.HOME_TOUR={getMode:()=>mode,setMode:m=>mode=m};

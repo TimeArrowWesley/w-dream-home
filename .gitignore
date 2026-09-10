@@ -63,6 +63,7 @@
 !/tools/verify-furniture-catalog.cjs
 !/tools/verify-home-model.cjs
 !/tools/verify-navigation-island.cjs
+!/tools/verify-open-island.cjs
 !/tools/verify-retained-versions.cjs
 !/tools/verify-viewer-ui.cjs
 !/tour.js
@@ -90,7 +91,12 @@
 !/提案/開放大中島/V3-格局對照.png
 !/提案/開放大中島/V3-格局對照.svg
 !/提案/開放大中島/index.html
+!/提案/開放大中島/layout-spec.js
+!/提案/開放大中島/layout-version.js
+!/提案/開放大中島/open-island-model.js
+!/提案/開放大中島/方案說明.html
 !/提案/開放大中島/格局尺寸.json
+!/提案/開放大中島/模型檢視.html
 !/方案比較.html
 !/材質調整.html
 !/版本調整.html
@@ -191,3 +197,11 @@
 !/調整紀錄/20260910設計問題修正/修正驗證.json
 !/調整紀錄/20260910設計問題修正/冰箱風道修正剖面.svg
 !/調整紀錄/20260910設計問題修正/本次修正.md
+!/調整紀錄/20260910開放大中島/
+!/調整紀錄/20260910開放大中島/v3-audio.png
+!/調整紀錄/20260910開放大中島/v3-entry-cabinet.png
+!/調整紀錄/20260910開放大中島/v3-entry.png
+!/調整紀錄/20260910開放大中島/v3-island-east.png
+!/調整紀錄/20260910開放大中島/v3-island-west.png
+!/調整紀錄/20260910開放大中島/v3-storage.png
+!/調整紀錄/20260910開放大中島/驗證.json

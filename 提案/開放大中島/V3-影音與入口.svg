@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1220" viewBox="0 0 1800 1220" font-family="Microsoft JhengHei, sans-serif"><rect width="100%" height="100%" fill="#f6f5ef"/>
 <text x="42.00" y="57.92" font-size="34" fill="#263b39" text-anchor="start" font-weight="700">V3｜喇叭回到影音區，入口留給空間</text>
-<text x="44.00" y="97.72" font-size="19" fill="#687b76" text-anchor="start" font-weight="400">2D 修訂提案 · 沙發不搬動，以中間座位為基準 · 電視及固定底櫃往圖面下方移 23 cm</text>
+<text x="44.00" y="97.72" font-size="19" fill="#687b76" text-anchor="start" font-weight="400">3D 配置對照 · 沙發不搬動，以中間座位為基準 · 電視及固定底櫃往圖面下方移 23 cm</text>
 <rect x="45.00" y="143.00" width="1040.75" height="707.25" fill="#eeeae2" stroke="none" stroke-width="1"/>
 <rect x="73.75" y="574.25" width="569.25" height="253.00" fill="#dde9de" stroke="none" stroke-width="1"/>
 <rect x="1068.39" y="741.11" width="115.11" height="103.39" fill="#686f6b" stroke="none" stroke-width="1"/>
@@ -215,5 +215,5 @@
 <text x="1020.00" y="1050.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">Q7 外包絡距電視旋轉圈最近約 10.6；不是施工公差。</text>
 <text x="1020.00" y="1081.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">窗邊設備後仍留約 33；此帶用於檢修，不作主要通道。</text>
 <text x="1020.00" y="1112.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">低頻位置須量測；電視轉向中島時，聲場仍以沙發為主。</text>
-<text x="1020.00" y="1143.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">此頁為平面與材質示意，尚未套入 3D 或驗證入口透視。</text>
+<text x="1020.00" y="1143.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">此頁為平面與材質示意，已套入 V3 3D；入口另附模型檢查視角。</text>
 </svg>

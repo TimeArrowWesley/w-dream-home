@@ -19,3 +19,6 @@
   }));
 })();
 
+
+// Only unchanged rooms are eligible as V3 material references.
+window.HOME_AI_PHOTOS.v3=window.HOME_AI_PHOTOS.v2.filter(p=>!['entry','living','island','collection'].includes(p.room)).map(p=>({...p}));

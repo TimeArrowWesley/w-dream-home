@@ -4,8 +4,9 @@ const T=THREE,V=HOME_VIEWER;
 // Interior dry areas only. The outline steps around the kitchen and main bath;
 // the guest bathroom is a hole. Outdoor / utility balconies retain stone.
 // The foyer is a notch in the wood outline, not a coplanar overlay.
-const outline=[[0,0],[1085,0],[1085,955],[715,955],[715,803],[555.2,803],[555.2,885],[545.2,885],[545.2,955],[220,955],[220,493],[315,493],[315,282],[-75,282],[-75,85],[0,85]];
-const entryOutline=[[555.2,803],[715,803],[715,955],[545.2,955],[545.2,885],[555.2,885]];
+const open=!!window.HOME_LAYOUT?.openIsland;
+const outline=open?[[0,0],[1085,0],[1085,955],[715,955],[715,805],[545.2,805],[545.2,955],[220,955],[220,493],[315,493],[315,282],[-75,282],[-75,85],[0,85]]:[[0,0],[1085,0],[1085,955],[715,955],[715,803],[555.2,803],[555.2,885],[545.2,885],[545.2,955],[220,955],[220,493],[315,493],[315,282],[-75,282],[-75,85],[0,85]];
+const entryOutline=open?[[545.2,805],[715,805],[715,955],[545.2,955]]:[[555.2,803],[715,803],[715,955],[545.2,955],[545.2,885],[555.2,885]];
 const guestBath=[[405,207],[580,207],[580,375],[405,375]];
 const shape=new T.Shape(outline.map(([x,y])=>new T.Vector2(x-482.5,480-y)));
 shape.holes.push(new T.Path(guestBath.map(([x,y])=>new T.Vector2(x-482.5,480-y))));
@@ -40,7 +41,7 @@ function clipToHex(poly,hex){
 function area(poly){return Math.abs(poly.reduce((s,p,i)=>{const q=poly[(i+1)%poly.length];return s+p[0]*q[1]-q[0]*p[1];},0))/2;}
 // Clip the single concave room boundary by each convex hex, avoiding artificial
 // seams where rectangular subregions would otherwise divide whole tiles.
-const tileBoundary=[[555.6,803],[714.6,803],[714.6,955],[545.2,955],[545.2,885],[555.2,885],[555.2,883],[555.6,883]],tiles=[],counts=[0,0,0,0];
+const tileBoundary=open?[[545.6,805.4],[714.6,805.4],[714.6,955],[545.6,955]]:[[555.6,803],[714.6,803],[714.6,955],[545.2,955],[545.2,885],[555.2,885],[555.2,883],[555.6,883]],tiles=[],counts=[0,0,0,0];
 for(let row=-5;row<=5;row++)for(let col=-5;col<=5;col++){
  const cx=610+pitch*(col+((row%2+2)%2)*.5),cy=876+pitch*Math.sqrt(3)/2*row;
  const poly=Array.from({length:6},(_,k)=>[cx+radius*Math.cos(Math.PI/6+k*Math.PI/3),cy+radius*Math.sin(Math.PI/6+k*Math.PI/3)]);
@@ -50,7 +51,7 @@ for(let row=-5;row<=5;row++)for(let col=-5;col<=5;col++){
  for(const p of pieces){const m=surface(p,materials[index],finishLevelCm,'玄關六角磚 '+tile.id);m.userData.entryTile={id:tile.id,color:tile.color,points:p};}
 }
 const trimMat=new T.MeshStandardMaterial({color:new T.Color('#69675e').convertSRGBToLinear(),roughness:.55,metalness:.5});
-for(const [x,y,w,d,name] of [[714.6,803,.4,152,'客廳交界'],[555.2,803,.4,80,'收藏室門口']]){
+for(const [x,y,w,d,name] of (open?[[714.6,805,.4,150,'客廳交界'],[545.2,805,.4,150,'開放展示交界'],[545.6,805,169,.4,'中島交界']]:[[714.6,803,.4,152,'客廳交界'],[555.2,803,.4,80,'收藏室門口']])){
  const m=surface([[x,y],[x+w,y],[x+w,y+d],[x,y+d]],trimMat,finishLevelCm,'六角磚齊平收邊・'+name);m.userData.floorTransition={widthCm:.4,finishLevelCm};
 }
 entry.userData.flooring={pattern:'mixed-hexagon',tileAcrossFlatsCm,groutCm,finishLevelCm,outline:entryOutline,palette:palette.map(([name,color],i)=>({name,color,tiles:counts[i]})),tileCount:tiles.length,tiles,transitionWidthCm:.4};

@@ -55,7 +55,7 @@
     header.replaceChildren(brand, primary, actions);
 
     // Two retained designs, with the original Chinese names.
-    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視','玄關高矮櫃']};
+    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視','玄關高矮櫃'],v3:['開放大中島','共享展示與玄關矮櫃']};
     const versionMenu = make('details', 'uiMenu uiVersionMenu'); versionMenu.id = 'uiVersionMenu';
     const versionSummary = make('summary');
     versionSummary.append(make('small', '', '設計版本'), make('strong', '', version.toUpperCase() + ' · ' + versions[version][0]), make('span', '', versions[version][1]));
@@ -71,7 +71,7 @@
       b.onclick = () => {
         versionMenu.open = false;
         if (key === version) return;
-        const url = new URL((key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
+        const url = new URL((key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
         url.searchParams.set('layout', key);
         url.searchParams.set('uiRoom', V.getCurrent());
         url.searchParams.set('uiMode', tour.getMode());
@@ -92,8 +92,8 @@
     sideTabs.append(roomTab, planTab);
     const roomList = make('section', 'uiRoomList'); roomList.id = 'uiRoomList'; roomList.setAttribute('role', 'tabpanel'); roomList.setAttribute('aria-labelledby', 'uiRoomsTab');
     const roomGroups = [
-      ['全屋', ['all']], ['公共空間', ['entry','living','island','kitchen']],
-      ['私人空間', ['bed','closet','study','collection']], ['衛浴與機能', ['bath1','bath2','storage','back']]
+      ['全屋', ['all']], ['公共空間', ['entry','living','island','kitchen',...(version==='v3'?['collection']:[])]],
+      ['私人空間', ['bed','closet','study',...(version==='v3'?[]:['collection'])]], ['衛浴與機能', ['bath1','bath2','storage','back']]
     ];
     const roomButtons = all('button[data-id]', rooms); rooms.replaceChildren();
     for (const [label, ids] of roomGroups) {
@@ -116,7 +116,7 @@
     planFooter.replaceChildren(expandPlan);
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
-    const sideFoot = make('div', 'uiSideFoot', 'V1、V2 共用家具清單 · 可隨時切換版本');
+    const sideFoot = make('div', 'uiSideFoot', 'V1～V3 共用家具清單 · 可隨時切換版本');
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -129,8 +129,8 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
-      ['新 V3・開放大中島', '拆除收藏室隔間的 2D 格局提案', '提案/開放大中島/index.html'],
-      ['版本比較', '兩個保留版本，以及新 V3 的 2D 提案', '方案比較.html'],
+      ['新 V3・開放大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
+      ['版本比較', '三個可操作的 3D 版本與共用功能', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
       ['材質與配色', '玄關六角磚、深色木皮與材質搭配', '材質調整.html'],
       ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],

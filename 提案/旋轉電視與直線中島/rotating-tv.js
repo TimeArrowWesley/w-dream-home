@@ -148,10 +148,10 @@
     const person = walker();
     if (show && person && blockedBy(upperMeshes, person.x, person.z, WALK_RADIUS)) {
       TV.upperStool.traverse(object => { object.visible = false; });
-      notify('你目前站在座椅的位置，請先走開再加入第二張椅子。');
+      notify('你目前站在座椅的位置，請先走開再加入活動椅。');
       return false;
     }
-    notify(show ? '已加入冰箱前比較用活動椅；可比較開門與通行空間。' : '已收起冰箱前活動椅；南端保留局部留膝，座椅預設收起。');
+    notify(TV.config.openIsland ? (show?'已加入東側活動椅；南端通道仍保持淨空。':'已收起東側活動椅。') : (show ? '已加入冰箱前比較用活動椅；可比較開門與通行空間。' : '已收起冰箱前活動椅；南端保留局部留膝，座椅預設收起。'));
     emitStateEvent('tvrotationend');
     return getState();
   }
@@ -165,7 +165,7 @@
     const cut = document.getElementById('cut'), ceiling = document.getElementById('ceiling');
     if (cut?.checked) { cut.checked = false; cut.dispatchEvent(new Event('change')); }
     if (ceiling && !ceiling.checked) { ceiling.checked = true; ceiling.dispatchEvent(new Event('change')); }
-    const point = seat === 'living' ? [947, 590, 116] : [396, 614, 125];
+    const point = TV.config.seatPoints?.[seat] || (seat === 'living' ? [947, 590, 116] : [396, 614, 125]);
     V.camera.position.copy(V.pos(...point));
     V.camera.fov = 55;
     V.camera.updateProjectionMatrix();
@@ -173,7 +173,7 @@
     V.syncWalkCamera();
     preview = seat;
     setTarget(seat);
-    notify(seat === 'living' ? '沙發坐姿預覽：視點約 116 cm；真人步行仍為 165 cm。' : '中島坐姿預覽：視點約 125 cm；真人步行仍為 165 cm。', 6000);
+    notify(TV.config.openIsland ? (seat==='living'?'沙發主座視點105cm；聲道以此座位配置。':'中島西側視點125cm，非固定座椅；活動椅在東側留膝區。') : (seat === 'living' ? '沙發坐姿預覽：視點約 116 cm；真人步行仍為 165 cm。' : '中島坐姿預覽：視點約 125 cm；真人步行仍為 165 cm。'), 6000);
     return getState();
   }
 
@@ -187,7 +187,7 @@
       <div class="tvProgress"><progress id="rotatingTVProgress" max="180" value="0" aria-label="電視旋轉角度"></progress><output id="rotatingTVAngle">0°</output></div>
       <div id="rotatingTVStatus" role="status" aria-live="polite"></div>
       <div class="tvSeatRow"><button type="button" data-tv-seat="living">沙發坐姿預覽</button><button type="button" data-tv-seat="island">中島坐姿預覽</button></div>
-      <label class="tvStoolCheck"><input id="rotatingTVSecondStool" type="checkbox">冰箱前比較用活動椅</label>
+      <label class="tvStoolCheck"><input id="rotatingTVSecondStool" type="checkbox">${TV.config.openIsland?'中島東側活動椅':'冰箱前比較用活動椅'}</label>
       <p>底櫃固定。轉動時請從旁繞行。</p>
     </div>`;
   canvas.parentElement.appendChild(panel);

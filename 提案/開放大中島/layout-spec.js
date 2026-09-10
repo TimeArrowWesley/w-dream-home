@@ -1,4 +1,5 @@
-{
+'use strict';
+window.HOME_OPEN_ISLAND_SPEC={
   "status": "V3 interactive 3D layout",
   "base": "new v2 = original v3",
   "units": "cm",
@@ -254,4 +255,4 @@
     "side": "E",
     "movableStoolDefaultVisible": false
   }
-}
+};

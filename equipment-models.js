@@ -4,6 +4,7 @@
 window.HOME_EQUIPMENT_BUILD = function (ctx) {
   const {T,M,pos,box,ball,cyl,info,fittings,ceiling,architecture}=ctx;
   const items=[],covers=[],allowances=[],bays=[],refinements={};let switchStation=null;
+  const open=!!window.HOME_LAYOUT?.openIsland,openSpec=window.HOME_OPEN_ISLAND_SPEC;
   function explicitFinish(hex,roughness,metalness,id){const m=new T.MeshStandardMaterial({color:hex,roughness,metalness});m.color.convertSRGBToLinear();m.userData.finishId=id;return m;}
   const collectionFinish=explicitFinish('#b8b9b0',.78,.02,'collection-inner');
   const tvFinish=explicitFinish('#343b3a',.62,.35,'tv-graphite');
@@ -195,6 +196,11 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
       allowance('直線酒櫃操作範圍',369,466,65,73,0,90,'西側開口朝冰箱，開門時勿同時操作冰箱或穿行');
       allowance('直線掃地機西向進出預留',374,541,60,49,0,35,'主機朝冰箱進出；60cm是設計預留，非原廠安裝標準');
     }
+    receivingSink(g,sinkX,sinkY);
+    const service=curved?cover(593,551.5,1,22,5,65,M.black,g,'飲水機西向檢修門'):cover(433.5,594,1,55,5,65,M.black,g,'飲水機西向檢修門');service.userData.swingFront={name:'飲水濕區檢修・朝主冰箱',face:'W',hinge:'min'};
+    return g;
+  }
+  function receivingSink(g,sinkX,sinkY){
     // Recessed receiving sink, separate cold/hot control head and service valves.
     const basinMetal=explicitFinish('#566164',.42,.68,'sink-brushed-steel');basinMetal.side=T.DoubleSide;
     const bowlProfile=[[1.4,81.4],[7.6,81.4],[8,81.8],[10.8,93.8],[11,94.95],[11.6,95.08],[11.8,95.06]].map(([r,h])=>new T.Vector2(r,h));
@@ -207,15 +213,14 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     cyl(sinkX,sinkY,58,1.4,23.1,basinMetal,g);
     cyl(sinkX+15,sinkY-9,95,1.4,27,M.black,g);box(sinkX+1,sinkY-10,15,2,120,2,M.black,g,'CLAR Smart 黑色飲水龍頭 · 造型示意');box(sinkX+14,sinkY-12,3,2,97,7,M.screen,g);
     for(const [dx,c] of [[-2,'#577bab'],[2,'#9e665d']]){box(sinkX+dx,sinkY,5,4,50,5,new T.MeshStandardMaterial({color:c}),g,'独立止水閥・待對現場水點');}
-    const service=curved?cover(593,551.5,1,22,5,65,M.black,g,'飲水機西向檢修門'):cover(433.5,594,1,55,5,65,M.black,g,'飲水機西向檢修門');service.userData.swingFront={name:'飲水濕區檢修・朝主冰箱',face:'W',hinge:'min'};
-    return g;
   }
   function consoleBase(rotating=false){
+    const ai=allowances.length,bi=bays.length,dy=open&&rotating?openSpec.audio.tvPivot.southShift:0;
     const g=group(rotating?'旋轉電視固定底櫃':'固定電視影音開放櫃');const x=rotating?619.5:820,y=rotating?460:900,w=rotating?55:195,d=rotating?200:55,h=rotating?50:45;
     g.userData.footprint={x,y,w,d,h};
     cover(x,y,w,d,h-2,2,M.grey,g,'影音櫃可拆上板');box(x,y,w,d,5,2,M.black,g,'通風影音層板');
     for(const xx of [x+3,x+w-8])for(const yy of [y+3,y+d-8])box(xx,yy,5,5,0,5,M.steel,g,'影音櫃落地支腳');
-    if(rotating){for(const yy of [460,525,590,658.2])cover(x,yy,w,1.8,7,41,M.black,g);}
+    if(rotating){for(const yy of open?[460,524.2,593,658.2]:[460,525,590,658.2])cover(x,yy,w,1.8,7,41,M.black,g);}
     else for(const xx of [820,879,954,1013.2])cover(xx,y,1.8,d,7,36,M.black,g);
     // Open front and back; no closed generic 38cm shelf across electronic equipment.
     product('avr',rotating?647:985,rotating?493:927,7,rotating?'E':'N',g,'開放前後艙；55cm外深、機身38.9cm，接線及散熱由影音商核准。');
@@ -224,31 +229,35 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     // above the PS5. Console and dock are shown stored separately, not a guessed
     // docked assembly height. Pull the tray out to insert/remove the console.
     const games=group('Switch 2 主機與二代底座',g);switchStation=games;games.userData.focusView={distance:115,polar:1.43,azimuthOffset:0,fov:40,front:{x:rotating?1:0,z:rotating?0:-1}};
-    const tray=cover(rotating?623:823,rotating?594:900.1,rotating?51.5:53,rotating?62:37,25,2,M.steel,games,'Switch 2 抽拉設備層板');
+    const tray=cover(rotating?623:823,rotating?(open?596:594):900.1,rotating?51.5:53,rotating?(open?60.5:62):37,25,2,M.steel,games,'Switch 2 抽拉設備層板');
     info(tray,'Switch 2 獨立抽拉層板','主機與底座分放示意；使用底座前抽出層板，留上方插拔與後方走線。滑軌與插入底座後總高待實品核對。');
     product('switch2',rotating?671.8:837,rotating?610:903,27,rotating?'E':'N',games,'業主確認二代；含Joy-Con 2，厚度按搖桿／扳機最大3.07cm。位於PS5上方層板前緣；與底座分放，螢幕為辨識示意。上方「查看 Switch 2」可直接特寫。');
     product('switch2dock',rotating?671.8:864,rotating?644:903,27,rotating?'E':'N',games,'二代底座20.1×5.12×11.5cm，位於PS5上方層板前緣、主機旁；需保留HDMI／電源／網路接頭與插拔空間。');
     allowance('Switch 2 層板抽出操作預留',rotating?674.5:823,rotating?594:866,rotating?48:53,rotating?62:37,25,35,'圖中主機與底座分放；這是層板操作空間，不是插入底座後實測高度');
-    if(rotating)product('q6',655,560,51,'E',g,'固定朝沙發；不隨電視轉動，故不增加旋轉負載。');
+    if(rotating)product('q6',open?659.35:655,560,open?7:51,'E',g,open?'中置置於固定底櫃中央開放艙，前障板與東側櫃面齊平；不隨電視旋轉。':'固定朝沙發；不隨電視轉動，故不增加旋轉負載。');
     else product('q6',917.5,920,9,'N',g,'獨立75cm中置艙，箱體前方不加木門。');
     bay('影音櫃外形',x,y,w,d,0,h,'外深55cm；實際線材彎曲半徑與熱負載尚待驗收');
+    if(dy){g.position.z+=dy;g.userData.footprint.y+=dy;for(const a of allowances.slice(ai))a.position.z+=dy;for(const b of bays.slice(bi))b.y+=dy;}
     return g;
   }
   function audio(rotating=false){
-    if(rotating){
+    if(open&&rotating){
+      for(const q of openSpec.audio.floorSpeakers.filter(q=>['L','R','SW1','SW2'].includes(q.id))){const m=product(q.id.startsWith('SW')?'sub':'q7',q.cx,q.cy,0,q.face);m.userData.channel=q.id;}
+    }else if(rotating){
       // Keep the complete floor-standing envelopes inside the living zone,
       // beyond the TV sweep, with neither end protruding into the cross aisles.
       for(const y of [481,639])product('q7',770,y,0,'E',fittings,'移入客廳範圍，避開旋轉包絡及南北通道；原31.7×31.5×100.1cm外徑不縮小。');
       product('sub',799,800,0,'N');product('sub',1040,814,0,'N');
     }
     else{product('q7',790.85,930.75,0,'N');product('q7',1045.85,930.75,0,'N');product('sub',788,837,0,'N');product('sub',1057,820,0,'N');}
-    const sky=rotating?[[835,490],[835,665],[972,490],[972,665]]:[[835,560],[1000,560],[835,740],[1000,740]];
+    const sky=open?[[815,481],[815,685],[1010,481],[1010,685]]:rotating?[[835,490],[835,665],[972,490],[972,665]]:[[835,560],[1000,560],[835,740],[1000,740]];
     sky.forEach(([x,y],i)=>{const g=group('KEF Ci160QR 高度聲道 '+(i+1),ceiling);info(cyl(x,y,272.8,11.73,.6,M.white,g),g.name,'外徑23.46cm，總深9.8cm。四顆高度聲道；定位待音響調校。');cyl(x,y,273.4,9.8,9.2,M.black,g);});
     // Keep the selected Ci160QR pair, with ear-height wall-baffle design reservations.
     // These housings are not asserted to be manufacturer-approved acoustic enclosures.
-    const surrounds=rotating?[[1066,432],[1066,754]]:[[773,438],[1066,438]];
+    const surrounds=open?[[1040,408],[1040,758]]:rotating?[[1066,432],[1066,754]]:[[773,438],[1066,438]];
     surrounds.forEach(([x,y],i)=>{
       const g=group('耳平環繞 Ci160QR '+(i+1));g.position.copy(pos(x,y,0));g.rotation.y=angles[rotating?'W':'S'];
+      if(open)g.userData.channel=i?'SL':'SR';
       g.userData.surround={centerHeight:110,installation:'獨立落地支架＋定製背腔提案，非Ci160QR原廠腳架'};
       const stand=group('環繞獨立落地支架',g);
       part(stand,-14,-12,28,24,0,1.5,graphite);part(stand,-1.5,-1.5,3,3,1.5,92.5,graphite);part(stand,-14,-6,28,12,94,1,graphite);
@@ -279,7 +288,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     }
     refinements.tvBack={width:194,height:116,inletNetCm2:730.8,outletNetCm2:1078.8,previousInletNetCm2:372,previousOutletNetCm2:864,finish:'tv-graphite'};
     rbox(641,542,3,36,96,74,M.steel,'VESA 400×400 掛架與走線預留');
-    const screen=product('tv',648.4,560,82.15,'E',pivot,'中心高135cm；TV重37.2kg。下方固定Q6頂72cm，背殼底77cm，靜態垂直淨距5cm。');screen.position.sub(pivot.position);
+    const screen=product('tv',648.4,560,82.15,'E',pivot,open?'中心高135cm；TV重37.2kg。Q6已移入固定底櫃，旋轉部分由独立鋼架承托。':'中心高135cm；TV重37.2kg。下方固定Q6頂72cm，背殼底77cm，靜態垂直淨距5cm。');screen.position.sub(pivot.position);
     // Keep the coaxial bearing below the screen; connect the VESA plate from behind.
     // The old tall shaft pierced the lower screen at x650.4, in front of its face.
     const shaft=cyl(647,560,76,3.4,4,M.steel,pivot);shaft.position.sub(pivot.position);info(shaft,'落地鋼構旋轉支承示意','下軸承停在螢幕下方，經後置立板接VESA。支承落至樓板；承重、偏心、錨栓、限位鎖、動態線材需五金／結構設計，不以木櫃或石膏天花承重。');
@@ -288,7 +297,8 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     box(622,547,16,26,0,2,M.steel,base,'結構固定底板・待錨固設計');box(626.5,556.5,7,7,2,73,M.steel,base,'獨立後置鋼構立柱');box(630,556.5,20.5,7,74,2,M.steel,base,'繞開固定中置的支承橋架・待結構核算');
     // A hollow, removable sleeve organizes the fixed lower post and cable route.
     for(const [x,y,w,d] of [[624.8,554.8,.15,10.4],[635.05,554.8,.15,10.4],[624.95,554.8,10.1,.15],[624.95,565.05,10.1,.15]])protectedFinish(cover(x,y,w,d,2,71,tvFinish,base,'影音立柱可拆金屬走線罩'),'tv-graphite');
-    allowance('旋轉機構與維修範圍',630,541,34,38,0,117,'機構未選型，需核總重、偏心、軸承、鎖定及走線');
+    allowance('旋轉機構與維修範圍',630,541+(open?23:0),34,38,0,117,'機構未選型，需核總重、偏心、軸承、鎖定及走線');
+    if(open)pivot.position.z+=23;
     const meshes=[];pivot.traverse(o=>{if(o.isMesh){o.userData.dynamicDoor=true;o.userData.rotatingTV=true;meshes.push(o);}});
     return {base,pivot,screen,rotatingMeshes:meshes};
   }
@@ -382,5 +392,5 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
 
   }
   function finish(){const originalMaterials=new Map();window.HOME_EQUIPMENT={items,covers,allowances,bays,units,switchStation,refinements,revision:'20260910',setInspection(value){covers.forEach(m=>{if(value){if(!originalMaterials.has(m))originalMaterials.set(m,m.material);else return;m.material=m.material.clone();m.material.transparent=true;m.material.opacity=.13;m.material.depthWrite=false;}else if(originalMaterials.has(m)){m.material.dispose();m.material=originalMaterials.get(m);originalMaterials.delete(m);}m.material.needsUpdate=true;});allowances.forEach(m=>m.visible=value);},getSchedule(){return items.map(g=>({name:g.name,...g.userData.equipment}));}};}
-  return {units,group,part,product,cover,allowance,bay,appliances,consoleBase,audio,rotatingTV,coffee,projector,closet,closetMirror,collectionBack,luggage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
+  return {units,group,part,product,cover,allowance,bay,appliances,receivingSink,consoleBase,audio,rotatingTV,coffee,projector,closet,closetMirror,collectionBack,luggage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
 };
