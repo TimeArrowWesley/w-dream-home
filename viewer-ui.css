@@ -102,6 +102,7 @@ body.uiApp #caption p { color: var(--ui-muted); font-size: 12px; line-height: 1.
 body.uiApp #uiSidebar #caption { display: block !important; }
 .uiSideFoot { padding: 12px 18px; border-top: 1px solid var(--ui-line); font-size: 10px; color: #9baaa6; line-height: 1.6; }
 body.uiApp #planPanel, body.uiApp.walkImmersive #planPanel { display: flex; flex-direction: column; padding: 6px 14px 16px; background: transparent; border: 0; height: auto; min-height: 0; }
+body.uiApp.walkImmersive #planPanel:not([hidden]) { display: flex !important; }
 body.uiApp #planPanel[hidden],body.uiApp.walkImmersive #planPanel[hidden] { display: none !important; }
 body.uiApp #planPanel .panelHeading small { display: none; }
 body.uiApp #planPanel h3 { font-size: 16px; font-weight: 600; margin: 8px 0; }

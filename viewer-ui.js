@@ -32,7 +32,7 @@
     body.classList.add('uiApp');
     sidebar.id = 'uiSidebar'; sidebar.setAttribute('aria-label', '版本與空間');
     // Append after feature styles. All selectors are scoped to this shell.
-    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20260910-ui', root).href;
+    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20260911-sink', root).href;
     document.head.append(theme);
 
     // Primary navigation: one entry per task, with export as a secondary action.

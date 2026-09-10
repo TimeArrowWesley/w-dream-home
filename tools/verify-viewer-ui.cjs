@@ -101,6 +101,12 @@ for(const v of ['v1','v2','v3']){
   $('uiRoomsTab').focus();const key={type:'keydown',key:'ArrowRight',target:$('uiRoomsTab'),preventDefault(){throw Error('Walk intercepted a tablist arrow key');},stopImmediatePropagation(){}};
   for(const fn of a.listeners.keydown||[])fn(key);
   const arrow=new a.dom.Event('keydown',{bubbles:true,cancelable:true});arrow.key='ArrowRight';$('uiRoomsTab').dispatchEvent(arrow);assert(!$('planPanel').hidden,'tablist arrows still work while walking');
+  assert.equal(cssValue(d,$('planPanel'),'display'),'flex','walking map must beat the legacy !important hide rule');
+  $('uiRoomsTab').click();assert.equal(cssValue(d,$('planPanel'),'display'),'none','room list still hides map while walking');
+  $('planToggle').click();assert.equal(cssValue(d,$('planPanel'),'display'),'flex','walking plan button really displays the map');
+  const mapRoom=d.querySelector('.planroom[data-room="island"]');assert.equal(typeof mapRoom.onclick,'function');mapRoom.onclick();await Promise.resolve(); // LinkeDOM SVG does not dispatch onclick properties.
+  assert.equal(c.HOME_UI.getState().room,'island');assert.equal(c.HOME_TOUR.getMode(),'walk','map room navigation keeps walking');
+  assert.equal(cssValue(d,$('planPanel'),'display'),'flex');
   d.body.classList.remove('walkImmersive');
   d.querySelector('[data-viewmode="model"]').click();await Promise.resolve();assert(!c.HOME_WALK.getState().active);assert.equal(c.HOME_TOUR.getMode(),'model');
   const photo=d.querySelector('[data-viewmode="photo"]');if(photo&&!photo.hidden){photo.click();await Promise.resolve();assert.equal(c.HOME_TOUR.getMode(),'photo');$('planToggle').click();$('uiExpandPlan').click();const room=d.querySelector('.planroom[data-room="study"]');room.dispatchEvent(new a.dom.Event('click',{bubbles:true}));assert.equal(c.HOME_AI_VIEWS.getState().requestedRoom,'study');assert(!$('uiMapDialog').open,'choosing a map room closes enlargement during AI browsing');$('uiOpenControls').click();assert.equal(c.HOME_TOUR.getMode(),'model');}

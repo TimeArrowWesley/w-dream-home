@@ -74,9 +74,14 @@
 <text x="367.00" y="401.96" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">掃地機 ↓</text>
 <rect x="331.35" y="435.10" width="31.05" height="56.92" fill="#324744" stroke="#263b39" stroke-width="1"/>
 <text x="381.95" y="464.06" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">IH</text>
-<circle cx="356.65" cy="542.05" r="12.65" fill="#ebeee5" stroke="#263b39" stroke-width="1"/>
-<polyline points="356.65,555.85 356.65,565.05" fill="none" stroke="#263b39" stroke-width="2"/>
-<text x="367.00" y="594.01" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">備餐／吧台</text>
+<rect x="318.12" y="542.62" width="51.75" height="63.25" fill="#c1cbcb" stroke="#263b39" stroke-width="1"/>
+<rect x="321.00" y="545.50" width="46.00" height="57.50" fill="#6e807e" stroke="#263b39" stroke-width="1"/>
+<circle cx="344.00" cy="574.25" r="5.17" fill="#334946" stroke="#263b39" stroke-width="1"/>
+<polyline points="335.95,530.55 335.95,555.85" fill="none" stroke="#263b39" stroke-width="2"/>
+<circle cx="335.95" cy="530.55" r="1.72" fill="#263b39" stroke="none" stroke-width="1"/>
+<polyline points="361.25,530.55 361.25,555.85" fill="none" stroke="#263b39" stroke-width="2"/>
+<circle cx="361.25" cy="530.55" r="1.72" fill="#263b39" stroke="none" stroke-width="1"/>
+<text x="399.20" y="592.25" font-size="10" fill="#263b39" text-anchor="middle" font-weight="400">吧台</text>
 <rect x="73.75" y="603.00" width="69.00" height="178.25" fill="#9c927e" stroke="#263b39" stroke-width="1"/>
 <text x="108.25" y="764.21" font-size="12" fill="#287b6d" text-anchor="middle" font-weight="400">收齊</text>
 <text x="108.25" y="650.70" font-size="15" fill="#263b39" text-anchor="middle" font-weight="400">深</text>

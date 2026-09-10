@@ -16,6 +16,8 @@ A1–14F 全屋互動設計：三個可操作配置版本、即時 3D、室內�
 
 [V3 開放大中島 3D](提案/開放大中島/index.html?layout=v3)沿用 V2 共用功能，另載入小型 `open-island-model.js` 與由圖面產生的 `layout-spec.js`，沒有再複製完整模型與素材。拆除收藏室隔間、保留結構柱與廚房牆；整合中島分艙、玄關掛衣、玻璃展示、影音聲道與共用81品項家具清單。[尺寸說明](提案/開放大中島/方案說明.html) · [模型檢視](提案/開放大中島/模型檢視.html)。
 
+9/11修正：三版步行平面圖解除舊樣式強制隱藏；V3單槽改外框55×45、內槽50×40、深20cm。濕區增加底板、3mm門縫及檯下支撐，展示玻璃門依櫃身高度生成，鞋子落在層板。產品型號尚未指定，清單原品項及V1/V2幾何保留。
+
 驗證：`node tools/verify-open-island.cjs` 比對原 V1/V2 全部網格雜湊，並測試 V3 實際幾何、門片、設備和通道。`node tools/verify-viewer-ui.cjs` 驗證三版 DOM 操作。附圖為 CPU 幾何檢查，不含 GPU 材質與燈光；不代表現場聲學、施工或瀏覽器效能測試。
 
 ## 使用
@@ -49,8 +51,8 @@ node tools/sync-furniture-seed.cjs
 | 檔案 | 用途 |
 | --- | --- |
 | `design.js`、`model-data.js` | 原版配置與幾何資料 |
-| `提案/旋轉電視與直線中島/` | V3／V4 配置與旋轉電視 |
-| `viewer-ui.js`、`viewer-ui.css` | 兩版共用導覽、控制面板及版面 |
+| `提案/旋轉電視與直線中島/` | 現V2配置及V3共用模型與旋轉電視 |
+| `viewer-ui.js`、`viewer-ui.css` | 三版共用導覽、控制面板及版面 |
 | `equipment-models.js`、`equipment-controls.js` | 設備尺寸、分艙及互動 |
 | `realism.js`、`flooring.js` | 材質、木地板與玄關六角磚 |
 | `walk.js`、`interaction.js` | 步行、門片、可開啟櫃門 |

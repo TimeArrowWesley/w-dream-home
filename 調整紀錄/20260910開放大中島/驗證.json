@@ -11,6 +11,9 @@
     }
   },
   "checks": [
+    "55×45 hollow sink, 50×40 interior and 20cm depth verified by actual ray intersections",
+    "CLAR supported on bottom board; plumbing outside appliance and knee space; 3mm wet-door reveals",
+    "Glass doors fit real cabinet height with 3mm top/bottom reveals; six shoes touch their shelves",
     "Four actual walk routes pass with 36cm body; no removed collection-wall collider remains",
     "Four ceiling speakers clear modeled beams and HVAC terminals/access",
     "Actual TV radial sweep clears static furniture and speakers through180°",
@@ -23,6 +26,13 @@
     "Room doors reach full opening; kitchen electric sliding door retained",
     "RGB wave, shared scene, curtains and TV180° rotation work; optional stool toggles"
   ],
+  "sink": {
+    "outerCm": "55 × 45",
+    "innerTopCm": "50 × 40",
+    "depthCm": 20,
+    "realOpening": true,
+    "clearDrainAndCLAR": true
+  },
   "equipmentPanelOverlaps": [
     {
       "equipment": "oven",
@@ -124,8 +134,8 @@
     "minimumGap": 10.876437270141011
   },
   "model": {
-    "meshes": 1882,
-    "hash": "8d1061b2255a5f7cc6c2fd06d1e52b1dfb2c48e7eb6012e0b5caba643737606d"
+    "meshes": 1889,
+    "hash": "a78dc1ece9416be42f8d77627b74e62a8864e3927231078396c47fab57272c75"
   },
   "equipment": [
     {
@@ -176,7 +186,7 @@
       "key": "clar",
       "bounds": {
         "x": 427.99999999925495,
-        "y": 724.25,
+        "y": 682.25,
         "z": 8,
         "w": 38.00000000074506,
         "d": 11.5,
@@ -914,7 +924,7 @@
         100
       ],
       "file": "v3-entry.png",
-      "triangles": 122222
+      "triangles": 127126
     },
     {
       "version": "v3",
@@ -932,7 +942,7 @@
         75
       ],
       "file": "v3-island-west.png",
-      "triangles": 140143
+      "triangles": 145047
     },
     {
       "version": "v3",
@@ -950,7 +960,7 @@
         125
       ],
       "file": "v3-storage.png",
-      "triangles": 37013
+      "triangles": 37311
     },
     {
       "version": "v3",
@@ -968,7 +978,7 @@
         123
       ],
       "file": "v3-entry-cabinet.png",
-      "triangles": 32519
+      "triangles": 31999
     },
     {
       "version": "v3",
@@ -986,7 +996,7 @@
         124
       ],
       "file": "v3-audio.png",
-      "triangles": 135021
+      "triangles": 139925
     },
     {
       "version": "v3",
@@ -1004,7 +1014,25 @@
         87
       ],
       "file": "v3-island-east.png",
-      "triangles": 99843
+      "triangles": 104759
+    },
+    {
+      "version": "v3",
+      "id": "sink",
+      "room": "island",
+      "name": "55×45單槽與20cm槽深",
+      "p": [
+        377,
+        791,
+        187
+      ],
+      "t": [
+        455,
+        729,
+        86
+      ],
+      "file": "v3-sink.png",
+      "triangles": 100037
     }
   ]
 }

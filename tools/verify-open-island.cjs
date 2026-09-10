@@ -17,7 +17,25 @@ function visible(o){for(let p=o;p;p=p.parent)if(!p.visible)return false;return t
  const island=c.HOME_OPEN_ISLAND.island;assert.deepEqual({...island.userData.footprint},{x:425,y:480,w:95,d:300,h:95});
  const top=island.children.find(o=>o.userData.islandSurface==='countertop');assert(top);const b=bounds(top);near(b.w,95,'island width');near(b.d,300,'island length');near(b.z+b.h,95,'countertop height');
  const ray=new T.Raycaster();const down=(x,y)=>{ray.set(V.pos(x,y,160),new T.Vector3(0,-1,0));return ray.intersectObject(top).length;};
- assert.equal(down(466,707),0,'sink real opening');assert.equal(down(457,639),0,'IH real opening');assert(down(500,600),'solid preparation counter');
+ assert.equal(down(455,735),0,'sink real opening');assert.equal(down(457,639),0,'IH real opening');assert(down(500,600),'solid preparation counter');
+ // Check the usable cavity, not just an absent countertop triangle.
+ const role=r=>island.children.find(o=>o.userData.islandSurface===r),rim=role('sink-rim'),floor=role('sink-floor'),bowl=role('sink-bowl');
+ assert(rim&&floor&&bowl);near(bounds(rim).w,45,'sink outer depth');near(bounds(rim).d,55,'sink outer length');near(bounds(floor).w,34,'tapered basin floor depth');near(bounds(floor).d,44,'tapered basin floor length');
+ const downward=(x,y,objects)=>{ray.set(V.pos(x,y,130),new T.Vector3(0,-1,0));return ray.intersectObjects(objects).sort((a,b)=>a.distance-b.distance);};
+ for(const [x,y] of [[443,720],[467,750],[463,735]]){assert.equal(down(x,y),0,'expanded bowl is a true hole');const hit=downward(x,y,[rim,bowl,floor,top])[0];assert(hit);near(hit.point.y,75,'unobstructed 20cm-deep basin bottom',.06);}
+ assert(!downward(455,735,[floor,rim]).length,'drain remains open');assert(down(466,700),'old drip bowl replaced with solid faucet deck');
+ const named=n=>{let a;island.traverse(o=>{if(o.userData.name===n)a=o;});assert(a,n);return a;};
+ const clar=E.items.find(o=>o.userData.equipment.key==='clar'),base=bounds(named('濕區設備承重底板')),cb=bounds(clar);near(cb.z,base.z+base.h,'CLAR rests on actual bottom board');
+ assert(!island.children.some(o=>o.name==='飲水機防潮落地台'),'no obsolete pedestal overlaps the new continuous bottom board');
+ const wet=island.children.filter(o=>o.userData.wetFixture);for(const pipe of wet){assert(!overlap(bounds(pipe),cb,.05),'pipe into CLAR appliance');assert(bounds(pipe).x+bounds(pipe).w<482.2,'wet fittings clear knee recess');}
+ const faces=[];island.traverse(o=>{if(o.userData.name==='飲水濕區西向檢修門')faces.push(bounds(o));});faces.sort((a,b)=>a.y-b.y);assert.equal(faces.length,2);
+ near(faces[0].y-672,.3,'wet door north reveal');near(faces[1].y-faces[0].y-faces[0].d,.3,'wet door seam');near(778.2-faces[1].y-faces[1].d,.3,'wet door south reveal');near(92-faces[1].z-faces[1].h,.3,'wet door top reveal');
+ near(780-bounds(named('玄關端內縮踢腳')).y-bounds(named('玄關端內縮踢腳')).d,4,'south toe kick recess');
+ const showcase=V.fittings.children.find(o=>o.name==='V3 收藏玻璃展示櫃'),glass=[];showcase.traverse(o=>{if(o.userData.name==='V3 玻璃展示門')glass.push(bounds(o));});assert.equal(glass.length,3);
+ const opening=showcase.userData.glassOpening;for(const b of glass){near(b.z-opening.z,.3,'glass bottom reveal');near(opening.z+opening.h-b.z-b.h,.3,'glass top reveal');}
+ let shoes=0;V.fittings.traverse(o=>{if(o.userData.shelfTop!==undefined){near(bounds(o).z,o.userData.shelfTop,'shoe touches shelf');shoes++;}});assert.equal(shoes,6);
+ report.sink={outerCm:'55 × 45',innerTopCm:'50 × 40',depthCm:20,realOpening:true,clearDrainAndCLAR:true};
+ report.checks.push('55×45 hollow sink, 50×40 interior and 20cm depth verified by actual ray intersections','CLAR supported on bottom board; plumbing outside appliance and knee space; 3mm wet-door reveals','Glass doors fit real cabinet height with 3mm top/bottom reveals; six shoes touch their shelves');
  const front=island.children.find(o=>o.userData.name==='玄關端完整深色木皮');assert(front?.userData.openIslandWood);const end=bounds(front);near(end.y+end.d,780,'south end');near(end.w,95,'whole end width');
  const Q=E.items.find(o=>o.userData.equipment.key==='q6'),qb=bounds(Q);near(qb.z,7,'center within console');near(qb.x+qb.w,674.5,'center flush front');
  const pivot=c.HOME_ROTATING_TV.pivot;near(pivot.position.z+480,583,'TV aligned with actual middle sofa seat');
@@ -28,6 +46,10 @@ function visible(o){for(let p=o;p;p=p.parent)if(!p.visible)return false;return t
  const overlaps=[];for(const e of E.items){const eb=bounds(e);for(const m of E.covers){if(!visible(m))continue;let own=false;for(let p=m;p;p=p.parent)if(p===e)own=true;if(!own&&overlap(eb,bounds(m),.12))overlaps.push({equipment:e.userData.equipment.key,panel:m.userData.name||m.name,eb,pb:bounds(m)});}}
  report.equipmentPanelOverlaps=overlaps;fs.writeFileSync(path.join(out,'待檢查接口.json'),JSON.stringify(overlaps,null,2));
  const before=c.HOME_INTERACTION.getState();assert(before.entries.some(e=>e.key==='kitchen'&&e.electric));assert(before.entries.some(e=>e.name.includes('V3 收藏玻璃展示')));
+ for(const door of before.entries.filter(e=>/V3 收藏玻璃展示|V3 飲水濕區/.test(e.name))){
+  assert(c.HOME_INTERACTION.setDoor(door.id,true));f.tick(140,50);const opened=c.HOME_INTERACTION.getState().entries.find(e=>e.id===door.id);near(opened.angle,opened.openAngle,'new door reaches full opening',.003);
+  assert(c.HOME_INTERACTION.setDoor(door.id,false));f.tick(140,50);
+ }
  const keptDoors=before.entries.filter(e=>!e.name.includes('櫃門'));
  for(const d of keptDoors)assert(c.HOME_INTERACTION.setDoor(d.id,true));f.tick(140,50);
  for(const d of keptDoors){const state=c.HOME_INTERACTION.getState().entries.find(e=>e.id===d.id);near(state.angle,state.openAngle,d.name+' fully opens',.003);}
@@ -64,7 +86,8 @@ function visible(o){for(let p=o;p;p=p.parent)if(!p.visible)return false;return t
   {id:'storage',room:'collection',name:'展示與深收納接角',p:[479,801,165],t:[283,906,125]},
   {id:'entry-cabinet',room:'entry',name:'玄關矮櫃與掛衣',p:[570,811,165],t:[678,885,123]},
   {id:'audio',room:'living',name:'沙發主座影音',p:[950,583,105],t:[647,583,124]},
-  {id:'island-east',room:'island',name:'中島東側與留膝',p:[600,795,160],t:[479,652,87]}
+  {id:'island-east',room:'island',name:'中島東側與留膝',p:[600,795,160],t:[479,652,87]},
+  {id:'sink',room:'island',name:'55×45單槽與20cm槽深',p:[377,791,187],t:[455,729,86]}
  ]});
  fs.writeFileSync(path.join(out,'驗證.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({checks:report.checks,model:report.model,panelOverlaps:overlaps,images:report.views?.length},null,2));
 })().catch(e=>{console.error(e);process.exit(1);});

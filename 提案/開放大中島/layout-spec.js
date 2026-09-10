@@ -254,5 +254,23 @@ window.HOME_OPEN_ISLAND_SPEC={
     "d": 104,
     "side": "E",
     "movableStoolDefaultVisible": false
+  },
+  "sink": {
+    "x": 455,
+    "y": 735,
+    "w": 45,
+    "d": 55,
+    "innerW": 40,
+    "innerD": 50,
+    "depth": 20,
+    "counterCutW": 42,
+    "counterCutD": 52,
+    "bottomZ": 75,
+    "clarCenter": [
+      447,
+      688,
+      8
+    ],
+    "status": "V3 preparation sink; product model pending; V1/V2 drinking bowls unchanged"
   }
 };

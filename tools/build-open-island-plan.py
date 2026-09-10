@@ -136,8 +136,10 @@ def plan(d,ox,oy,s,x0=-230,y0=-30,new=False,full=False):
         rect(429,489,60,68,'#748c7d',INK);label(463,512,'酒櫃',13)
         rect(429,565,47.5,38.1,'#e5e8dd',INK);label(475,576,'掃地機 ↓',12)
         rect(444,614,27,49.5,'#324744',INK);label(488,630,'IH',12)
-        circ(466,707,11,'#ebeee5',INK);line([(466,719),(466,727)],INK,2)
-        label(475,743,'備餐／吧台',12)
+        rect(432.5,707.5,45,55,'#c1cbcb',INK);rect(435,710,40,50,'#6e807e',INK)
+        circ(455,735,4.5,'#334946',INK)
+        for x in [448,470]:line([(x,697),(x,719)],INK,2);circ(x,697,1.5,INK)
+        label(503,743,'吧台',10)
         rect(220,760,60,155,'#9c927e',INK)
         label(250,891,'收齊',12,GREEN)
         label(250,790,'深',15);label(250,813,'收',15);label(250,836,'納',15)
@@ -198,7 +200,7 @@ d=Drawing(1750,1160)
 d.text(40,28,'V3 開放大中島｜全屋 2D 格局提案',34,INK,True)
 d.text(42,79,'取消封閉收藏室，把空間交還中島、展示與回家動線。其餘臥室、廚衛與客廳機能沿用新 V2。',19,MUTED)
 plan(d,45,138,.81,-230,-30,new=True,full=True)
-card(d,1260,140,1,'300 × 95 × H95 長中島',['酒櫃、掃地機及飲水設備朝冰箱。','IH 與小水槽分區，保留備餐段。','維持細長比例；南端不放固定椅。'])
+card(d,1260,140,1,'300 × 95 × H95 長中島',['酒櫃、掃地機及飲水設備朝冰箱。','單槽 55 × 45，內槽 50 × 40、深 20。','維持細長比例；南端不放固定椅。'])
 card(d,1260,320,2,'165 × 40 可開啟玻璃展示',['南牆總長 225，含左端 60 轉角封板。','封閉轉角不計入有效展示寬。','外深 40，層板淨深約 36。'])
 card(d,1260,500,3,'155 × 60 深收納高櫃',['櫃身延長 35，直接接到南牆展示櫃。','保留行李與较深收藏的空間。','L 形交角作封閉收邊，櫃門分段。'])
 card(d,1260,680,4,'玄關櫃與電箱櫃連續收邊',['矮櫃 110 × 55 × H90，柱旁 114.8。','南端 30 × 40 轉角封閉，不留地洞。','電箱前板分段，維修門避開矮櫃。'])
@@ -273,6 +275,7 @@ plan_data['audio']=AUDIO
 plan_data['arrival']=ARRIVAL
 plan_data['relocated']+=['TV and console 23cm south to align middle sofa seat','Q7 pair','two subwoofers','two surround stands']
 plan_data['kneeRecess']={'x':484,'y':674,'w':34,'d':104,'side':'E','movableStoolDefaultVisible':False}
+plan_data['sink']={'x':455,'y':735,'w':45,'d':55,'innerW':40,'innerD':50,'depth':20,'counterCutW':42,'counterCutD':52,'bottomZ':75,'clarCenter':[447,688,8],'status':'V3 preparation sink; product model pending; V1/V2 drinking bowls unchanged'}
 (OUT/'格局尺寸.json').write_text(json.dumps(plan_data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 (OUT/'layout-spec.js').write_text("'use strict';\nwindow.HOME_OPEN_ISLAND_SPEC="+json.dumps(plan_data,ensure_ascii=False,indent=2)+';\n',encoding='utf8')
 print('Saved three plan boards, layout data and 3D specification.')

@@ -153,9 +153,14 @@
 <text x="616.05" y="639.42" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">掃地機 ↓</text>
 <rect x="590.94" y="659.64" width="21.87" height="40.10" fill="#324744" stroke="#263b39" stroke-width="1"/>
 <text x="626.58" y="683.16" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">IH</text>
-<circle cx="608.76" cy="734.97" r="8.91" fill="#ebeee5" stroke="#263b39" stroke-width="1"/>
-<polyline points="608.76,744.69 608.76,751.17" fill="none" stroke="#263b39" stroke-width="2"/>
-<text x="616.05" y="774.69" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">備餐／吧台</text>
+<rect x="581.62" y="735.38" width="36.45" height="44.55" fill="#c1cbcb" stroke="#263b39" stroke-width="1"/>
+<rect x="583.65" y="737.40" width="32.40" height="40.50" fill="#6e807e" stroke="#263b39" stroke-width="1"/>
+<circle cx="599.85" cy="757.65" r="3.65" fill="#334946" stroke="#263b39" stroke-width="1"/>
+<polyline points="594.18,726.87 594.18,744.69" fill="none" stroke="#263b39" stroke-width="2"/>
+<circle cx="594.18" cy="726.87" r="1.22" fill="#263b39" stroke="none" stroke-width="1"/>
+<polyline points="612.00,726.87 612.00,744.69" fill="none" stroke="#263b39" stroke-width="2"/>
+<circle cx="612.00" cy="726.87" r="1.22" fill="#263b39" stroke="none" stroke-width="1"/>
+<text x="638.73" y="772.93" font-size="10" fill="#263b39" text-anchor="middle" font-weight="400">吧台</text>
 <rect x="409.50" y="777.90" width="48.60" height="125.55" fill="#9c927e" stroke="#263b39" stroke-width="1"/>
 <text x="433.80" y="894.57" font-size="12" fill="#287b6d" text-anchor="middle" font-weight="400">收齊</text>
 <text x="433.80" y="815.40" font-size="15" fill="#263b39" text-anchor="middle" font-weight="400">深</text>
@@ -221,7 +226,7 @@
 <text x="1281.00" y="163.96" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
 <text x="1305.00" y="165.60" font-size="20" fill="#263b39" text-anchor="start" font-weight="700">300 × 95 × H95 長中島</text>
 <text x="1276.00" y="196.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">酒櫃、掃地機及飲水設備朝冰箱。</text>
-<text x="1276.00" y="222.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">IH 與小水槽分區，保留備餐段。</text>
+<text x="1276.00" y="222.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">單槽 55 × 45，內槽 50 × 40、深 20。</text>
 <text x="1276.00" y="248.08" font-size="16" fill="#687b76" text-anchor="start" font-weight="400">維持細長比例；南端不放固定椅。</text>
 <rect x="1260.00" y="320.00" width="438.00" height="116.00" fill="#e9ede5" stroke="none" stroke-width="1"/>
 <circle cx="1281.00" cy="339.00" r="13.00" fill="#287b6d" stroke="none" stroke-width="1"/>
