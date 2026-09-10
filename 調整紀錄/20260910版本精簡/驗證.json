@@ -45,7 +45,7 @@
       "fridgeToIsland": 110,
       "islandToFixedTVBase": 99.5,
       "islandSouthToColumn": 100.1,
-      "entryColumnToCabinet": 119.8
+      "entryColumnToCabinet": 114.8
     },
     "routesChecked": 2,
     "routeBodyRadius": 18,
@@ -57,6 +57,6 @@
     "design.js": "a464bec6459e041b35ce222cb3d6acba3a76c1500b09f9918ff9122c9ecbc7e8",
     "提案/旋轉電視與直線中島/design.js": "ba47bc599c70ad4ea9b2797e0735fac9403642d0e163447510cdecc7db16a54d",
     "assets/ai-interiors/catalog.js": "799338c9f8ebe05adf6b7d99b84b54cf17fafa30966c7011a45f079e7114fb9d",
-    "提案/開放大中島/格局尺寸.json": "2f973a73367703db48bfc17bcc90c728c52e6caf8699d83d5c2630411a460436"
+    "提案/開放大中島/格局尺寸.json": "998c478afc6cb5deb24cff9b4a44c9df593d659735157a952d2f0897c102a53c"
   }
 }

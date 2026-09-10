@@ -157,17 +157,18 @@
 <circle cx="1152.64" cy="519.48" r="9.24" fill="#ebeee5" stroke="#263b39" stroke-width="1"/>
 <polyline points="1152.64,529.56 1152.64,536.28" fill="none" stroke="#263b39" stroke-width="2"/>
 <text x="1160.20" y="560.28" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">備餐／吧台</text>
-<rect x="946.00" y="564.00" width="50.40" height="100.80" fill="#9c927e" stroke="#263b39" stroke-width="1"/>
+<rect x="946.00" y="564.00" width="50.40" height="130.20" fill="#9c927e" stroke="#263b39" stroke-width="1"/>
+<text x="971.20" y="684.60" font-size="12" fill="#287b6d" text-anchor="middle" font-weight="400">收齊</text>
 <text x="971.20" y="602.40" font-size="15" fill="#263b39" text-anchor="middle" font-weight="400">深</text>
 <text x="971.20" y="621.72" font-size="15" fill="#263b39" text-anchor="middle" font-weight="400">收</text>
 <text x="971.20" y="641.04" font-size="15" fill="#263b39" text-anchor="middle" font-weight="400">納</text>
-<rect x="946.00" y="694.20" width="189.00" height="33.60" fill="#a9c6bc" stroke="#263b39" stroke-width="1"/>
-<polyline points="983.80,694.20 983.80,727.80" fill="none" stroke="#547c70" stroke-width="1"/>
-<polyline points="1021.60,694.20 1021.60,727.80" fill="none" stroke="#547c70" stroke-width="1"/>
-<polyline points="1059.40,694.20 1059.40,727.80" fill="none" stroke="#547c70" stroke-width="1"/>
-<polyline points="1097.20,694.20 1097.20,727.80" fill="none" stroke="#547c70" stroke-width="1"/>
-<text x="1040.08" y="715.72" font-size="13" fill="#263b39" text-anchor="middle" font-weight="400">玻璃展示・深 40</text>
-<rect x="1319.80" y="601.80" width="42.00" height="92.40" fill="#b1a591" stroke="#263b39" stroke-width="1"/>
+<rect x="946.00" y="694.20" width="50.40" height="33.60" fill="#9c927e" stroke="#263b39" stroke-width="1"/>
+<rect x="996.40" y="694.20" width="138.60" height="33.60" fill="#a9c6bc" stroke="#263b39" stroke-width="1"/>
+<polyline points="1042.60,694.20 1042.60,727.80" fill="none" stroke="#547c70" stroke-width="1"/>
+<polyline points="1088.80,694.20 1088.80,727.80" fill="none" stroke="#547c70" stroke-width="1"/>
+<text x="1065.70" y="715.72" font-size="13" fill="#263b39" text-anchor="middle" font-weight="400">玻璃展示・深 40</text>
+<rect x="1315.60" y="601.80" width="46.20" height="92.40" fill="#c4b8a2" stroke="#263b39" stroke-width="1"/>
+<rect x="1315.60" y="694.20" width="25.20" height="33.60" fill="#c4b8a2" stroke="#263b39" stroke-width="1"/>
 <text x="1340.80" y="630.08" font-size="14" fill="#263b39" text-anchor="middle" font-weight="400">玄</text>
 <text x="1340.80" y="649.40" font-size="14" fill="#263b39" text-anchor="middle" font-weight="400">關</text>
 <text x="1340.80" y="666.96" font-size="12" fill="#263b39" text-anchor="middle" font-weight="400">矮櫃</text>
@@ -197,19 +198,19 @@
 <polyline points="1158.72,660.88 1166.72,668.88" fill="none" stroke="#287b6d" stroke-width="1.5"/>
 <rect x="1159.72" y="621.84" width="56.00" height="21.00" fill="#f6f5ef" stroke="none" stroke-width="1"/>
 <text x="1187.72" y="636.04" font-size="15" fill="#287b6d" text-anchor="middle" font-weight="700">100.1</text>
-<polyline points="1219.17,679.08 1319.80,679.08" fill="none" stroke="#287b6d" stroke-width="1.5"/>
+<polyline points="1219.17,679.08 1315.60,679.08" fill="none" stroke="#287b6d" stroke-width="1.5"/>
 <polyline points="1215.17,675.08 1223.17,683.08" fill="none" stroke="#287b6d" stroke-width="1.5"/>
-<polyline points="1315.80,675.08 1323.80,683.08" fill="none" stroke="#287b6d" stroke-width="1.5"/>
-<rect x="1241.48" y="668.08" width="56.00" height="21.00" fill="#f6f5ef" stroke="none" stroke-width="1"/>
-<text x="1269.48" y="682.28" font-size="15" fill="#287b6d" text-anchor="middle" font-weight="700">119.8</text>
+<polyline points="1311.60,675.08 1319.60,683.08" fill="none" stroke="#287b6d" stroke-width="1.5"/>
+<rect x="1239.38" y="668.08" width="56.00" height="21.00" fill="#f6f5ef" stroke="none" stroke-width="1"/>
+<text x="1267.38" y="682.28" font-size="15" fill="#287b6d" text-anchor="middle" font-weight="700">114.8</text>
 <polyline points="1267.72,717.72 1267.72,631.20 1246.72,612.72 1233.28,562.32 1360.96,543.00" fill="none" stroke="#287b6d" stroke-width="2"/>
 <polyline points="1355.08,538.80 1360.96,543.00 1353.40,546.36" fill="none" stroke="#287b6d" stroke-width="2"/>
 <text x="1068.64" y="620.84" font-size="14" fill="#287b6d" text-anchor="middle" font-weight="400">收藏室拆開</text>
 <text x="1068.64" y="641.80" font-size="13" fill="#287b6d" text-anchor="middle" font-weight="400">變成共享走動區</text>
 <circle cx="1158.52" cy="317.04" r="10.92" fill="#287b6d" stroke="none" stroke-width="1"/>
 <text x="1158.52" y="322.72" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="400">1</text>
-<circle cx="958.60" cy="680.76" r="10.92" fill="#287b6d" stroke="none" stroke-width="1"/>
-<text x="958.60" y="686.44" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="400">2</text>
+<circle cx="1042.60" cy="680.76" r="10.92" fill="#287b6d" stroke="none" stroke-width="1"/>
+<text x="1042.60" y="686.44" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="400">2</text>
 <circle cx="971.20" cy="557.28" r="10.92" fill="#287b6d" stroke="none" stroke-width="1"/>
 <text x="971.20" y="562.96" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="400">3</text>
 <circle cx="1340.80" cy="592.56" r="10.92" fill="#287b6d" stroke="none" stroke-width="1"/>
@@ -224,9 +225,9 @@
 <text x="45.00" y="977.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">酒櫃、掃地機與飲水檢修朝西／冰箱。</text>
 <text x="625.00" y="908.24" font-size="23" fill="#263b39" text-anchor="start" font-weight="700">收納沿外圍重新配置</text>
 <text x="625.00" y="947.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">深 40 玻璃櫃＋深 60 行李／大型收藏櫃。</text>
-<text x="625.00" y="977.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">玄關改 110 × 50 矮櫃，保留包、帽、短衣位置。</text>
+<text x="625.00" y="977.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">櫃尾與轉角收齊，不再留下落地窄縫。</text>
 <text x="1203.00" y="908.24" font-size="23" fill="#263b39" text-anchor="start" font-weight="700">留下能走動的空間</text>
 <text x="1203.00" y="947.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">冰箱前 110；中島南端至柱 100.1。</text>
-<text x="1203.00" y="977.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">玄關柱旁 119.8；通道不擺固定吧椅。</text>
+<text x="1203.00" y="977.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">玄關柱旁 114.8；通道不擺固定吧椅。</text>
 <text x="45.00" y="1062.84" font-size="18" fill="#687b76" text-anchor="start" font-weight="400">99.5 為中島至固定影音櫃的間距；旋轉電視轉動時需清空兩者之間。尺寸依現有模型，非現場丈量／施工圖。</text>
 </svg>

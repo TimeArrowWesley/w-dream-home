@@ -100,12 +100,15 @@ def plan(d,ox,oy,s,x0=-230,y0=-30,new=False,full=False):
         rect(444,614,27,49.5,'#324744',INK);label(488,630,'IH',12)
         circ(466,707,11,'#ebeee5',INK);line([(466,719),(466,727)],INK,2)
         label(475,743,'備餐／吧台',12)
-        rect(220,760,60,120,'#9c927e',INK)
+        rect(220,760,60,155,'#9c927e',INK)
+        label(250,891,'收齊',12,GREEN)
         label(250,790,'深',15);label(250,813,'收',15);label(250,836,'納',15)
-        rect(220,915,225,40,'#a9c6bc',INK)
-        for x in [265,310,355,400]:line([(x,915),(x,955)],'#547c70')
-        label(332,927,'玻璃展示・深 40',13)
-        rect(665,805,50,110,'#b1a591',INK)
+        rect(220,915,60,40,'#9c927e',INK)
+        rect(280,915,165,40,'#a9c6bc',INK)
+        for x in [335,390]:line([(x,915),(x,955)],'#547c70')
+        label(362.5,927,'玻璃展示・深 40',13)
+        rect(660,805,55,110,'#c4b8a2',INK)
+        rect(660,915,30,40,'#c4b8a2',INK)
         label(690,824,'玄',14);label(690,847,'關',14);label(690,870,'矮櫃',12)
         # Former room boundary shown only as demolition information.
         line([(220,753),(545.2,753),(545.2,880)],RED,2,True)
@@ -114,11 +117,11 @@ def plan(d,ox,oy,s,x0=-230,y0=-30,new=False,full=False):
         dim(425,459,520,459,'95',dy=-20)
         dim(410,480,410,780,'300',dx=-25)
         dim(478,780,478,880.1,'100.1',dx=25)
-        dim(545.2,897,665,897,'119.8',dy=-10)
+        dim(545.2,897,660,897,'114.8',dy=-10)
         line([(603,943),(603,840),(578,818),(562,758),(714,735)],GREEN,2)
         line([(707,730),(714,735),(705,739)],GREEN,2)
         label(366,813,'收藏室拆開',14,GREEN);label(366,839,'變成共享走動區',13,GREEN)
-        for n,x,y in [(1,473,466),(2,235,899),(3,250,752),(4,690,794)]:
+        for n,x,y in [(1,473,466),(2,335,899),(3,250,752),(4,690,794)]:
             circ(x,y,13,GREEN);label(x,y-10,str(n),16,'#ffffff')
     else:
         rect(434,464,81,189,'#c9c9b8',INK,2);label(474,530,'原中島',14);label(474,559,'189 × 81',12)
@@ -147,7 +150,7 @@ for x,title,note in [(45,'調整前｜新 V2','原 V3 改名；收藏室仍獨�
 d.line([(889,140),(889,796)],'#ccd4ca',2)
 d.text(48,819,'紅虛線：擬拆展示牆／門片、移位玄關櫃',19,RED)
 d.text(918,819,'綠線：主要回家動線　圓圈：電視旋轉範圍',18,GREEN)
-for x,title,lines in [(45,'中島 189 × 81 → 300 × 95',['檯面面積約增加 86%；檯高維持 95。','酒櫃、掃地機與飲水檢修朝西／冰箱。']), (625,'收納沿外圍重新配置',['深 40 玻璃櫃＋深 60 行李／大型收藏櫃。','玄關改 110 × 50 矮櫃，保留包、帽、短衣位置。']), (1203,'留下能走動的空間',['冰箱前 110；中島南端至柱 100.1。','玄關柱旁 119.8；通道不擺固定吧椅。'])]:
+for x,title,lines in [(45,'中島 189 × 81 → 300 × 95',['檯面面積約增加 86%；檯高維持 95。','酒櫃、掃地機與飲水檢修朝西／冰箱。']), (625,'收納沿外圍重新配置',['深 40 玻璃櫃＋深 60 行李／大型收藏櫃。','櫃尾與轉角收齊，不再留下落地窄縫。']), (1203,'留下能走動的空間',['冰箱前 110；中島南端至柱 100.1。','玄關柱旁 114.8；通道不擺固定吧椅。'])]:
     d.text(x,888,title,23,INK,True)
     for i,t in enumerate(lines):d.text(x,932+i*30,t,18,MUTED)
 d.text(45,1047,'99.5 為中島至固定影音櫃的間距；旋轉電視轉動時需清空兩者之間。尺寸依現有模型，非現場丈量／施工圖。',18,MUTED)
@@ -158,15 +161,15 @@ d.text(40,28,'V3 開放大中島｜全屋 2D 格局提案',34,INK,True)
 d.text(42,79,'取消封閉收藏室，把空間交還中島、展示與回家動線。其餘臥室、廚衛與客廳機能沿用新 V2。',19,MUTED)
 plan(d,45,138,.81,-230,-30,new=True,full=True)
 card(d,1260,140,1,'300 × 95 × H95 長中島',['酒櫃、掃地機及飲水設備朝冰箱。','IH 與小水槽分區，保留備餐段。','維持細長比例；南端不放固定椅。'])
-card(d,1260,320,2,'225 × 40 玻璃展示櫃',['延伸到原收藏室南牆左段。','外深 40，層板淨深約 36。','模組縫對齊；用局部展示照明。'])
-card(d,1260,500,3,'120 × 60 深收納高櫃',['沿廚房牆收藏室側配置。','預留行李與較深的收藏品。','內部層板依公仔尺寸調整。'])
-card(d,1260,680,4,'110 × 50 × H90 玄關矮櫃',['移至入戶右前方，柱旁留 119.8。','檯面放包與鑰匙；側面帽鉤。','短衣吊桿從側板支撐，不壓通道。'])
+card(d,1260,320,2,'165 × 40 可開啟玻璃展示',['南牆總長 225，含左端 60 轉角封板。','封閉轉角不計入有效展示寬。','外深 40，層板淨深約 36。'])
+card(d,1260,500,3,'155 × 60 深收納高櫃',['櫃身延長 35，直接接到南牆展示櫃。','保留行李與较深收藏的空間。','L 形交角作封閉收邊，櫃門分段。'])
+card(d,1260,680,4,'玄關櫃與電箱櫃連續收邊',['矮櫃 110 × 55 × H90，柱旁 114.8。','南端 30 × 40 轉角封閉，不留地洞。','電箱前板分段，維修門避開矮櫃。'])
 d.text(1260,883,'設計取捨',23,INK,True)
 for i,t in enumerate(['封閉收藏室的防塵、遮光與收納量會減少。','玻璃櫃仍採可關門櫃；深收藏用實門收納。','柱、廚房牆、外牆保留，不以拆柱換空間。','給排水與插座需隨中島延長重新定位。']):d.text(1260,924+29*i,t,16,MUTED)
 d.text(45,1060,'圖面下方為入戶；方位沿現有模型。公共空間外僅示意保留範圍，家具未逐一描繪。',17,MUTED)
 d.text(45,1092,'2D 提案，尚未套入 3D。淋浴組已另行同步修正於目前 V1、V2 的主浴南牆。',17,GREEN)
 d.save('V3-全屋格局')
 
-plan_data={'status':'2D concept only','base':'new v2 = original v3','units':'cm','island':{'x':425,'y':480,'w':95,'d':300,'h':95},'preservedColumn':{'x':445.1,'y':880.1,'w':100.1,'d':89.9},'cabinets':[{'id':'display','x':220,'y':915,'w':225,'d':40},{'id':'deep-storage','x':220,'y':760,'w':60,'d':120},{'id':'entry','x':665,'y':805,'w':50,'d':110,'h':90}], 'nominalClearances':{'fridgeToIsland':110,'islandToFixedTVBase':99.5,'islandSouthToColumn':100.1,'entryColumnToCabinet':119.8},'retainedWalls':['kitchen boundary x210–220','exterior and structural columns'],'demolition':['collection north display and east door','collection short return at y875; structural pier retained'],'relocated':['entry cabinet run'],'limits':['Measurements from model, not site survey.','TV sweep requires an empty rotation area; aisle dimension applies to parked TV.','No fixed stools in the 100cm south route.','Appliance doors are not to be opened opposite one another simultaneously.','Storage capacity decreases compared with enclosed room; large figurines require item-by-item shelf planning.']}
+plan_data={'status':'2D concept only','base':'new v2 = original v3','units':'cm','island':{'x':425,'y':480,'w':95,'d':300,'h':95},'preservedColumn':{'x':445.1,'y':880.1,'w':100.1,'d':89.9},'cabinets':[{'id':'display','x':280,'y':915,'w':165,'d':40},{'id':'collection-return','x':220,'y':915,'w':60,'d':40,'use':'closed corner infill; not counted as usable display'},{'id':'deep-storage','x':220,'y':760,'w':60,'d':155},{'id':'entry','x':660,'y':805,'w':55,'d':110,'h':90},{'id':'entry-return','x':660,'y':915,'w':30,'d':40,'h':90,'use':'closed removable corner infill; not counted as usable storage'}], 'nominalClearances':{'fridgeToIsland':110,'islandToFixedTVBase':99.5,'islandSouthToColumn':100.1,'entryColumnToCabinet':114.8},'retainedWalls':['kitchen boundary x210–220','exterior and structural columns'],'demolition':['collection north display and east door','collection short return at y875; structural pier retained'],'relocated':['entry cabinet run'],'cabinetJunctionRevision':{'leftExtensionCm':35,'rightCornerCm':[30,40],'electricalAccess':'split cabinet front; service hatch above low cabinet, separate from infill','entryDoorClearCm':107},'limits':['Measurements from model, not site survey.','TV sweep requires an empty rotation area; aisle dimension applies to parked TV.','No fixed stools in the 100cm south route.','Appliance doors are not to be opened opposite one another simultaneously.','Storage capacity decreases compared with enclosed room; large figurines require item-by-item shelf planning.']}
 (OUT/'格局尺寸.json').write_text(json.dumps(plan_data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 print('Saved two paired SVG/PNG concept boards and measured layout data.')

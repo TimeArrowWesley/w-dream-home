@@ -46,8 +46,11 @@ function signatures({V,bounds},old=false){
  const {island:i,preservedColumn:p,cabinets}=snapshot;
  const overlap=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.d&&a.y+a.d>b.y;
  for(const a of [p,...cabinets])assert(!overlap(i,a),'island overlaps fixed item');
+ for(const [x,y] of [[230,900],[672,930]])assert(cabinets.some(c=>x>c.x&&x<c.x+c.w&&y>c.y&&y<c.y+c.d),'owner-marked floor recess is closed');
+ for(const c of cabinets)assert(!overlap(c,{x:553,y:915,w:107,d:40}),'entrance retains full 107cm threshold');
+ const display=cabinets.find(c=>c.id==='display'),deep=cabinets.find(c=>c.id==='deep-storage');assert.equal(deep.y+deep.d,display.y,'left run joins south run');assert.equal(display.x,deep.x+deep.w,'working glass doors clear deep cabinet');
  assert.equal(i.w*i.d,28500);assert.equal(i.x-315,110);assert.equal(619.5-(i.x+i.w),99.5);
- assert(Math.abs(p.y-(i.y+i.d)-100.1)<.001);assert(Math.abs(665-(p.x+p.w)-119.8)<.001);
+ assert(Math.abs(p.y-(i.y+i.d)-100.1)<.001);assert(Math.abs(660-(p.x+p.w)-114.8)<.001);
  // Walk the two intended centerlines with an 18cm body radius, against proposal solids.
  const obstacles=[i,p,...cabinets,{x:619.5,y:460,w:55,d:200},{x:900,y:464,w:95,d:240},{x:835,y:620,w:65,d:84}];
  for(const route of [[[603,943],[603,840],[578,818],[562,758],[714,735]],[[350,700],[350,845],[423,845],[555,845],[603,840]]]){
