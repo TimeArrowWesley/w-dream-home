@@ -1,0 +1,67 @@
+.fcApp{--fc-ink:#e8e9df;--fc-muted:#a9b8ac;--fc-line:#405348;--fc-green:#c3dcc9;color:var(--fc-ink);background:#14201c;font:14px/1.65 system-ui,'Microsoft JhengHei',sans-serif;text-align:left}.fcApp *{box-sizing:border-box}.fcDialog{border:1px solid #63786a;padding:0;width:min(1550px,96vw);max-width:96vw;height:94dvh;max-height:94dvh;border-radius:12px;overflow:hidden}.fcDialog::backdrop{background:#050e0bbd}.fcHeader{padding:18px 23px 12px;border-bottom:1px solid var(--fc-line)}.fcTitleRow,.fcActions,.fcFilters,.fcRowActions,.fcEditorActions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.fcTitleRow{justify-content:space-between}.fcTitleRow h2{margin:0;font-size:25px;font-weight:650}.fcApp button,.fcApp input,.fcApp select,.fcApp textarea,.fcApp a.fcButton{font:inherit;color:inherit;border:1px solid #526b5b;border-radius:6px;background:#24382d;padding:7px 11px;min-height:36px}.fcApp button,.fcApp a.fcButton{cursor:pointer}.fcApp button:hover,.fcApp a.fcButton:hover{background:#36563f}.fcApp button:focus-visible,.fcApp input:focus-visible,.fcApp textarea:focus-visible,.fcApp select:focus-visible{outline:2px solid #b9e8cd;outline-offset:2px}.fcApp button:disabled{opacity:.5;cursor:default}.fcApp button.fcPrimary{background:#c3dcc9;color:#13291c;font-weight:650}.fcApp a{color:#b7dccb}.fcApp a.fcButton{text-decoration:none;display:inline-flex;align-items:center}.fcActions{margin-top:12px}.fcStatus{font-size:12px;color:var(--fc-muted);margin:9px 0 0;min-height:20px}.fcStatus.fcError{color:#ffc3a9}.fcLayout{display:grid;grid-template-columns:158px minmax(0,1fr);height:calc(94dvh - 157px);min-height:200px;position:relative}.fcLayout.fcHasEditor{grid-template-columns:158px minmax(260px,1fr) 420px}.fcSidebar{padding:15px 9px;border-right:1px solid var(--fc-line);overflow:auto;display:flex;flex-direction:column;gap:6px}.fcSidebar button{border:0;background:transparent;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:4px}.fcSidebar button[aria-pressed=true]{background:#c3dcc9;color:#173424}.fcSidebar small{font-size:11px;opacity:.75}.fcMain{overflow:auto;padding:23px}.fcMain h3{margin:0;font-size:23px}.fcMain p{margin:7px 0 13px}.fcMuted{color:var(--fc-muted);font-size:13px}.fcMetrics{display:grid;grid-template-columns:minmax(180px,2fr) 1fr 1fr;gap:12px;margin:16px 0}.fcMetric{border:1px solid var(--fc-line);background:#1d3026;border-radius:8px;padding:14px 16px}.fcMetric strong{display:block;font-size:22px;font-weight:600}.fcMetric small{color:var(--fc-muted);display:block}.fcFilters{margin:16px 0}.fcFilters input{flex:1;min-width:140px}.fcTableWrap{overflow:auto}.fcTable{border-collapse:collapse;width:100%;min-width:540px;font-size:13px}.fcTable th{font-size:12px;font-weight:500;color:var(--fc-muted);text-align:left;padding:10px;border-bottom:1px solid var(--fc-line)}.fcTable td{padding:15px 10px;border-bottom:1px solid #344b3c;vertical-align:top}.fcTable .fcName{font-size:15px;display:block;color:#f0f0e6;font-weight:600}.fcTable small{display:block;color:var(--fc-muted);margin:4px 0;max-width:290px;white-space:pre-line}.fcTable .fcMoney{white-space:nowrap;font-variant-numeric:tabular-nums}.fcTag{display:inline-block;font-size:11px;border:1px solid #5a705f;border-radius:4px;padding:1px 6px;margin-right:5px;color:#c7dacb}.fcTag.fcPending{border-color:#b2965c;color:#e0c690}.fcInactive{opacity:.65}.fcRowActions{gap:5px}.fcRowActions button{font-size:12px;padding:5px 7px;min-height:30px}.fcEmpty{padding:32px;border:1px dashed #567160;border-radius:8px;color:var(--fc-muted)}.fcNotes{padding:15px 17px;border-left:3px solid #8caa93;background:#1d3026;margin:13px 0;white-space:pre-line}.fcBudgetList{margin:15px 0}.fcBudgetLine{display:grid;grid-template-columns:80px 1fr 165px;align-items:center;gap:12px;margin:7px 0;font-size:12px}.fcBudgetLine progress{width:100%;height:8px;accent-color:#adc9b2}.fcBudgetLine span:last-child{text-align:right;font-variant-numeric:tabular-nums}.fcMain details{margin:18px 0}.fcMain summary{cursor:pointer;color:#c4dccb}.fcSource{white-space:pre-wrap;font-family:inherit;font-size:12px;line-height:1.7;padding:14px;background:#1d3026;max-height:280px;overflow:auto}.fcEditor{border-left:1px solid var(--fc-line);padding:20px;overflow:auto;background:#1c3025}.fcEditor[hidden]{display:none}.fcEditor h3{margin:0 0 12px;font-size:21px}.fcEditor label{display:block;color:#c0d2c3;font-size:12px;margin:13px 0}.fcEditor input:not([type=checkbox]),.fcEditor select,.fcEditor textarea{display:block;width:100%;margin-top:5px;color:#eef1e7;background:#13231a}.fcEditor textarea{resize:vertical;line-height:1.7;min-height:85px}.fcEditor .fcSpecs{min-height:230px}.fcEditor label.fcCheck{display:flex;gap:8px;align-items:center}.fcEditorActions{position:sticky;bottom:-20px;background:#1c3025;padding:13px 0;margin-bottom:-10px}.fcEditor details{margin:15px 0}.fcEditor summary{cursor:pointer}.fcEditor .fcModelSpecs{white-space:pre-line;font-size:12px;padding:12px;background:#14221a;border-radius:5px}.fcSelectionCard{padding:20px;border:1px solid var(--fc-line);border-radius:8px;margin:12px 0}.fcSelectionCard h4{font-size:17px;margin:0 0 8px}.fcSelectionCard p{white-space:pre-wrap}.fcConflict{background:#4b3c23;border:1px solid #a78f58;padding:15px;margin-bottom:15px}.fcConflict p{margin:0 0 10px}.fcStandaloneBody{margin:0;background:#14201c}.fcStandaloneBody .fcLayout{height:calc(100dvh - 157px)}.fcStandaloneBody .fcHeader{padding-top:22px}.fcSmallNote{font-size:11px;color:#aebcb0;margin-top:5px}.fcStandaloneBody #catalogStandalone{min-height:100dvh}@media(max-width:1150px){.fcLayout.fcHasEditor{grid-template-columns:145px minmax(260px,1fr)}.fcHasEditor .fcEditor{position:absolute;inset:0 0 0 145px;z-index:2}.fcHasEditor .fcMain{visibility:hidden}}@media(max-width:680px){.fcDialog{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0}.fcHeader{padding:12px}.fcTitleRow h2{font-size:21px}.fcLayout,.fcLayout.fcHasEditor{grid-template-columns:1fr;height:calc(100dvh - 200px);grid-template-rows:52px minmax(0,1fr)}.fcSidebar{flex-direction:row;border-right:0;border-bottom:1px solid var(--fc-line);padding:5px;white-space:nowrap}.fcSidebar button{flex-shrink:0}.fcMain{padding:15px}.fcHasEditor .fcEditor{inset:52px 0 0}.fcMetrics{grid-template-columns:1fr 1fr}.fcMetric:first-child{grid-column:1/-1}.fcBudgetLine{grid-template-columns:64px 1fr 145px}.fcActions{gap:5px}.fcActions button{font-size:12px}.fcStandaloneBody .fcLayout{height:calc(100dvh - 200px)}}
+
+/* Fit the remaining height even when toolbar actions wrap. */
+.fcApp.fcDialog{display:flex;flex-direction:column}.fcApp.fcDialog:not([open]){display:none}.fcApp .fcHeader{flex:none}.fcApp .fcLayout{height:auto;min-height:0;flex:1;overflow:hidden}.fcStandaloneBody #catalogStandalone{height:100dvh;min-height:0;display:flex;flex-direction:column}
+
+/* Shared studio interface: clear primary save action, quieter file operations. */
+.fcApp.fcApp{--fc-ink:#edf0e9;--fc-muted:#adb9b5;--fc-line:#394744;--fc-green:#c7d9ce;background:#1b2423;color:var(--fc-ink);font-size:14px}
+.fcDialog.fcApp{width:min(1600px,calc(100vw - 48px));max-width:calc(100vw - 48px);height:calc(100dvh - 48px);max-height:calc(100dvh - 48px);border-radius:14px;border-color:#657b6e}
+.fcApp .fcHeader{display:grid;grid-template-columns:1fr auto;gap:9px 24px;padding:22px 28px 14px;background:#1b2424}
+.fcApp .fcTitleRow{justify-content:flex-start;gap:20px;flex-wrap:nowrap}
+.fcApp .fcTitleRow h2{font-size:21px;letter-spacing:.02em;font-weight:600;color:var(--fc-ink)}
+.fcApp .fcSubtitle{font-size:11px;color:var(--fc-muted);margin:4px 0 0}
+.fcApp .fcActions{margin:0;flex-wrap:nowrap;align-items:center}
+.fcApp .fcStatus{grid-column:1/-1;font-size:11px;margin:1px 0 0;padding-top:7px}
+.fcApp.fcApp button,.fcApp.fcApp input,.fcApp.fcApp select,.fcApp.fcApp textarea{border-color:#465c51;background:#26362e;color:var(--fc-ink);font-size:13px;min-height:36px;border-radius:7px}
+.fcApp.fcApp button.fcPrimary{background:#c7d9ce;color:#172c21;border-color:#c7d9ce;font-weight:600}
+.fcApp.fcApp .fcBack{background:transparent;border:0;border-right:1px solid var(--fc-line);border-radius:0;padding:8px 18px 8px 0;color:var(--fc-muted);white-space:nowrap;font-size:12px}
+.fcApp .fcFileMenu{position:relative}
+.fcApp .fcFileMenu summary{cursor:pointer;font-size:12px;color:var(--fc-muted);padding:9px;white-space:nowrap}
+.fcApp .fcFileOptions{position:absolute;right:0;top:calc(100% + 8px);z-index:10;display:grid;gap:5px;width:190px;padding:8px;border:1px solid #63786b;border-radius:9px;background:#28342e;box-shadow:0 12px 30px #0006}
+.fcApp .fcFileOptions button{text-align:left;border:0;background:transparent}
+.fcApp .fcLayout{grid-template-columns:180px minmax(0,1fr)}
+.fcApp .fcLayout.fcHasEditor{grid-template-columns:180px minmax(300px,1fr) 390px}
+.fcApp .fcSidebar{padding:18px 12px;background:#182221;gap:5px}
+.fcApp .fcSidebar button{min-height:38px;padding:9px 11px;background:transparent;border:0;font-size:12px}
+.fcApp .fcSidebar button[aria-pressed=true]{background:#c7d9ce;color:#182e24}
+.fcApp .fcMain{padding:26px 30px}
+.fcApp .fcMain h3{font-size:22px;font-weight:600}
+.fcApp .fcMetrics{gap:12px;margin:22px 0}
+.fcApp .fcMetric{background:#23352b;border:1px solid #3d5546;border-radius:9px;padding:17px}
+.fcApp .fcMetric strong{font-size:23px;font-weight:600;line-height:1.6;font-variant-numeric:tabular-nums}
+.fcApp .fcMetric small{font-size:11px}
+.fcApp .fcFilters{padding:15px 0 6px;border-top:1px solid var(--fc-line);gap:9px;margin-bottom:12px}
+.fcApp .fcTable td{padding:17px 12px}
+.fcApp .fcTable th{padding:11px 12px;background:#1f2c26}
+.fcApp .fcTable .fcName{font-size:14px}
+.fcApp .fcTable .fcMoney{font-size:13px}
+.fcApp .fcEditor{padding:24px;background:#20322a}
+.fcApp .fcEditor h3{font-size:19px}
+.fcApp .fcEditor :is(input:not([type=checkbox]),select,textarea){background:#17271f;font-size:13px}
+.fcApp .fcEditorActions{background:#20322a;gap:8px;padding:14px 0}
+.fcApp .fcEditorActions button{flex:1;font-size:12px;padding:8px}
+.fcApp .fcRowActions button{font-size:11px;min-height:31px;padding:5px 8px}
+.fcApp :is(button,summary,input,select,textarea):focus-visible{outline:2px solid #d8c6a1;outline-offset:3px}
+@media(max-width:1200px){
+  .fcApp .fcLayout.fcHasEditor{grid-template-columns:180px minmax(260px,1fr)}
+  .fcApp .fcHasEditor .fcEditor{position:absolute;inset:0 0 0 180px;z-index:2}
+  .fcApp .fcHasEditor .fcMain{visibility:hidden}
+  .fcApp .fcMain{padding:22px}
+}
+@media(max-width:760px){
+  .fcDialog.fcApp{max-width:100vw;width:100vw;height:100dvh;max-height:100dvh;border-radius:0}
+  .fcApp .fcHeader{padding:14px 16px 10px;grid-template-columns:1fr;gap:10px}
+  .fcApp .fcTitleRow{gap:12px}
+  .fcApp .fcTitleRow h2{font-size:18px}
+  .fcApp.fcApp .fcBack{font-size:11px;padding-right:12px}
+  .fcApp .fcActions{justify-content:flex-end;grid-row:2;gap:12px}
+  .fcApp .fcStatus{font-size:10px;padding:0}
+  .fcApp .fcLayout,.fcApp .fcLayout.fcHasEditor{grid-template-columns:minmax(0,1fr);grid-template-rows:52px minmax(0,1fr)}
+  .fcApp .fcSidebar{flex-direction:row;padding:6px 10px;white-space:nowrap;border-right:0;border-bottom:1px solid var(--fc-line)}
+  .fcApp .fcSidebar button{flex-shrink:0;gap:8px}
+  .fcApp .fcHasEditor .fcEditor{inset:52px 0 0}
+  .fcApp .fcMain{padding:18px 16px}
+  .fcApp .fcMetrics{grid-template-columns:1fr 1fr;gap:8px}
+  .fcApp .fcMetric:first-child{grid-column:1/-1}
+  .fcApp .fcMetric strong{font-size:21px}
+}

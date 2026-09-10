@@ -1,0 +1,2 @@
+# Verification reports fingerprint exact source bytes. Preserve those bytes on all OSes.
+* -text

@@ -23,7 +23,7 @@ $('walkLock').onclick=()=>{if(canvas.requestPointerLock){const promise=canvas.re
 document.addEventListener('pointerlockerror',()=>notice('無法鎖定滑鼠，仍可拖曳轉頭。'));
 document.addEventListener('pointerlockchange',()=>{keys.clear();$('walkLock').textContent=document.pointerLockElement===canvas?'Esc 解除滑鼠跟隨':'滑鼠跟隨視線';});
 window.addEventListener('roomchange',()=>{if(!active)return;if(V.getCurrent()==='all'){HOME_TOUR.setMode('model');return;}spawn();});
-function editable(e){return e.target.closest?.('input,textarea,select,[contenteditable]');}
+function editable(e){return e.target.closest?.('input,textarea,select,[contenteditable],button,a,summary,[role="tab"],dialog,#uiInspector');}
 window.addEventListener('keydown',e=>{if(!active||editable(e)||e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key.toLowerCase();if(['w','a','s','d','shift','arrowup','arrowdown','arrowleft','arrowright'].includes(k)){e.preventDefault();e.stopImmediatePropagation();keys.add(k);}},true);
 window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()),true);
 window.addEventListener('blur',()=>keys.clear());document.addEventListener('visibilitychange',()=>keys.clear());

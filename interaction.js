@@ -4,11 +4,15 @@ const T=THREE,V=HOME_VIEWER,$=id=>document.getElementById(id),canvas=$('view'),e
 let target=null,last=0,activeBefore=false;
 function register(pivot,meta,leaf){const e={id:entries.length,pivot,name:meta.name,openAngle:meta.openAngle,initial:meta.initialAngle||0,current:meta.initialAngle||0,target:meta.initialAngle||0,leaf};entries.push(e);pivot.userData.interactionId=e.id;leaf.userData.dynamicDoor=true;dynamicLeaves.push(leaf);pivot.traverse(o=>{if(o.isMesh)o.userData.dynamicDoor=true;});return e;}
 V.architecture.traverse(o=>{if(o.userData.interactiveDoor){const leaf=o.children.find(c=>c.isMesh&&c.userData.name);if(leaf)register(o,o.userData.interactiveDoor,leaf);}});
+V.architecture.traverse(o=>{if(o.userData.slidingDoor){const meta=o.userData.slidingDoor,parts=o.children.filter(c=>c.isMesh&&c.userData.slideRatio);if(parts.length){const e=register(o,{name:meta.name,openAngle:1},parts[0]);e.axis=meta.axis||'x';e.key=meta.key;e.electric=!!meta.electric;e.slides=parts.map(m=>({m,start:m.position[e.axis],ratio:m.userData.slideRatio}));e.distance=meta.distance;}}});
+V.architecture.traverse(o=>{if(o.userData.doorControl){const e=entries.find(e=>e.key===o.userData.doorControl);if(e)o.userData.interactionId=e.id;}});
+function moveEntry(e,value){if(e.slides){for(const s of e.slides)s.m.position[e.axis]=s.start-value*e.distance*s.ratio;}else e.pivot.rotation.y=value;}
+function hitsEntry(e,x,z,r){return e.slides?e.slides.some(s=>intersects(s.m,x,z,r)):intersects(e.leaf,x,z,r);}
 const leaves=[];V.fittings.traverse(o=>{if(o.isMesh&&o.userData.swingFront)leaves.push(o);});
 for(const leaf of leaves){const meta=leaf.userData.swingFront,side=meta.face==='E'||meta.face==='W';leaf.geometry.computeBoundingBox();const bb=leaf.geometry.boundingBox,pivot=new T.Group();pivot.position.copy(leaf.position);if(side)pivot.position.z+=meta.hinge==='max'?bb.max.z:bb.min.z;else pivot.position.x+=meta.hinge==='max'?bb.max.x:bb.min.x;leaf.parent.add(pivot);leaf.position.sub(pivot.position);pivot.add(leaf);let angle={S:-1,N:1,E:1,W:-1}[meta.face]*1.48;if(meta.hinge==='max')angle*=-1;register(pivot,{name:meta.name+'・櫃門',openAngle:angle},leaf);
  const pull=new T.Mesh(new T.BoxGeometry(side?2.2:1.2,14,side?1.2:2.2),V.finishContext.materials.steel);pull.position.copy(leaf.position);if(side){pull.position.x+=meta.face==='E'?1.6:-1.6;pull.position.z+=meta.hinge==='max'?bb.min.z+4:bb.max.z-4;}else{pull.position.z+=meta.face==='S'?1.6:-1.6;pull.position.x+=meta.hinge==='max'?bb.min.x+4:bb.max.x-4;}pull.position.y+=Math.min(0,110-pull.position.y);pull.userData.dynamicDoor=true;pull.castShadow=true;pivot.add(pull);
 }
-const overlay=document.createElement('div');overlay.id='walkExperience';overlay.innerHTML='<div class="walkBrand"><strong>W 夢想之家</strong><span>暖灰木質 · 室內漫遊</span></div><div id="walkTopActions"><button id="walkSettings">設定</button></div><div id="walkBottomBar"><select id="walkRoomSelect" aria-label="選擇漫遊起點"></select><button id="walkReset">回到起點</button><span>視點 165 cm · WASD 移動 · E 開關門 · Shift 慢走</span></div><button id="interactPrompt" hidden></button><div id="walkAim" aria-hidden="true"></div><div id="walkMiniMap" aria-label="目前位置平面圖"></div>';
+const overlay=document.createElement('div');overlay.id='walkExperience';overlay.innerHTML='<div class="walkBrand"><strong>W 夢想之家</strong><span>石墨灰・人字拼木地板</span></div><div id="walkTopActions"><button id="walkSettings">設定</button></div><div id="walkBottomBar"><select id="walkRoomSelect" aria-label="選擇漫遊起點"></select><button id="walkReset">回到起點</button><span>視點 165 cm · WASD 移動 · E 開關門 · Shift 慢走</span></div><button id="interactPrompt" hidden></button><div id="walkAim" aria-hidden="true"></div><div id="walkMiniMap" aria-label="目前位置平面圖"></div>';
 canvas.parentElement.appendChild(overlay);$('walkTopActions').appendChild($('walkExit'));$('walkBottomBar').prepend($('walkLock'));
 for(const r of V.rooms.filter(r=>r.id!=='all')){const o=document.createElement('option');o.value=r.id;o.textContent=r.n;$('walkRoomSelect').appendChild(o);}
 $('walkRoomSelect').onchange=()=>{V.selectRoom($('walkRoomSelect').value);canvas.focus();};$('walkReset').onclick=()=>V.selectRoom(V.getCurrent());$('walkSettings').onclick=()=>document.body.classList.toggle('walkSettingsOpen');
@@ -19,12 +23,30 @@ const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg
 function visible(o){while(o){if(!o.visible)return false;o=o.parent;}return true;}
 function pick(nx=0,ny=0){ray.setFromCamera(new T.Vector2(nx,ny),V.camera);const hit=ray.intersectObjects([V.architecture,V.fittings],true).find(h=>visible(h.object)&&h.distance<190);if(!hit)return null;let o=hit.object;while(o){if(o.userData.interactionId!==undefined)return entries[o.userData.interactionId];o=o.parent;}return null;}
 function intersects(leaf,x,z,radius){leaf.updateWorldMatrix(true,false);inverse.copy(leaf.matrixWorld).invert();const p=new T.Vector3(x,100,z).applyMatrix4(inverse);leaf.geometry.computeBoundingBox();const b=leaf.geometry.boundingBox;if(b.max.y+leaf.getWorldPosition(new T.Vector3()).y<12||b.min.y+leaf.getWorldPosition(new T.Vector3()).y>180)return false;const dx=p.x-Math.max(b.min.x,Math.min(p.x,b.max.x)),dz=p.z-Math.max(b.min.z,Math.min(p.z,b.max.z));return dx*dx+dz*dz<radius*radius;}
-function toggle(e){if(!e)return false;e.target=Math.abs(e.target)>.1?0:e.openAngle;return true;}
+function doorChanged(){window.dispatchEvent(new CustomEvent('doorstatechange'));}
+function toggle(e){if(!e)return false;e.target=Math.abs(e.target)>.1?0:e.openAngle;doorChanged();return true;}
 function activateAt(event){const rect=canvas.getBoundingClientRect(),locked=document.pointerLockElement===canvas;return toggle(pick(locked?0:(event.clientX-rect.left)/rect.width*2-1,locked?0:1-(event.clientY-rect.top)/rect.height*2));}
 $('interactPrompt').onclick=()=>toggle(target);
 window.addEventListener('keydown',e=>{if(HOME_TOUR.getMode()!=='walk'||e.key.toLowerCase()!=='e'||e.repeat||e.target.closest('input,textarea,select,[contenteditable]'))return;e.preventDefault();toggle(pick());});
-let pickAt=0;function frame(now){requestAnimationFrame(frame);const dt=Math.min((now-last)/1000,.05);last=now;const active=HOME_TOUR.getMode()==='walk';if(active!==activeBefore){activeBefore=active;document.body.classList.toggle('walkImmersive',active);if(!active)document.body.classList.remove('walkSettingsOpen');}if(!active)return;const p=V.camera.position,d=new T.Vector3();V.camera.getWorldDirection(d);pin.setAttribute('transform',`translate(${p.x+482.5},${p.z+480}) rotate(${Math.atan2(d.x,-d.z)*180/Math.PI})`);$('walkRoomSelect').value=V.getCurrent();for(const e of entries){if(Math.abs(e.target-e.current)<.001)continue;const next=e.current+(e.target-e.current)*Math.min(1,dt*8),old=e.current;e.pivot.rotation.y=next;e.pivot.updateMatrixWorld(true);if(Math.abs(e.target)<.001&&intersects(e.leaf,p.x,p.z,18)){e.pivot.rotation.y=old;e.target=old;e.pivot.updateMatrixWorld(true);}else e.current=next;}if(now-pickAt>100){pickAt=now;target=pick();$('interactPrompt').hidden=!target;if(target)$('interactPrompt').textContent=target.name+' · '+(Math.abs(target.target)>.1?'關閉':'開啟')+'（E）';}}
+let pickAt=0;function frame(now){
+ requestAnimationFrame(frame);const dt=Math.max(0,Math.min((now-last)/1000,.05));last=now;const active=HOME_TOUR.getMode()==='walk';
+ if(active!==activeBefore){activeBefore=active;document.body.classList.toggle('walkImmersive',active);if(!active)document.body.classList.remove('walkSettingsOpen');}
+ const p=V.camera.position;
+ for(const e of entries){
+  if(Math.abs(e.target-e.current)<.00001)continue;
+  const old=e.current,delta=e.target-old;let next=old+(e.electric?Math.sign(delta)*Math.min(Math.abs(delta),dt*45/e.distance):delta*Math.min(1,dt*8));
+  if(Math.abs(e.target-next)<.001)next=e.target;
+  moveEntry(e,next);e.pivot.updateMatrixWorld(true);
+  if(active&&hitsEntry(e,p.x,p.z,18)){
+   moveEntry(e,old);e.pivot.updateMatrixWorld(true);
+   e.target=e.electric&&delta<0?1:old;doorChanged();
+  }else{e.current=next;if(next===e.target)doorChanged();}
+ }
+ if(!active)return;
+ const d=new T.Vector3();V.camera.getWorldDirection(d);pin.setAttribute('transform',`translate(${p.x+482.5},${p.z+480}) rotate(${Math.atan2(d.x,-d.z)*180/Math.PI})`);$('walkRoomSelect').value=V.getCurrent();
+ if(now-pickAt>100){pickAt=now;target=pick();$('interactPrompt').hidden=!target;if(target)$('interactPrompt').textContent=target.name+' · '+(Math.abs(target.target)>.1?'關閉':'開啟')+'（E）';}
+}
 requestAnimationFrame(frame);
-window.HOME_INTERACTION={activateAt,blocksPoint:(x,z,r)=>entries.some(e=>Math.abs(e.target)<.03&&Math.abs(e.current)<.03&&visible(e.leaf)&&intersects(e.leaf,x,z,r)),getState:()=>({count:entries.length,open:entries.filter(e=>Math.abs(e.current)>.1).length,entries:entries.map(e=>({id:e.id,name:e.name,angle:e.current,target:e.target})),target:target?.id??null})};
+window.HOME_INTERACTION={activateAt,toggleDoor:key=>toggle(entries.find(e=>e.key===key)),setDoor:(key,open)=>{const e=entries.find(e=>e.key===key);if(!e)return false;e.target=open?e.openAngle:0;doorChanged();return true;},blocksPoint:(x,z,r)=>entries.some(e=>visible(e.leaf)&&hitsEntry(e,x,z,r)),getState:()=>({count:entries.length,open:entries.filter(e=>Math.abs(e.current)>.1).length,entries:entries.map(e=>({id:e.id,key:e.key,name:e.name,angle:e.current,target:e.target,electric:e.electric||false})),target:target?.id??null})};
 })();
 

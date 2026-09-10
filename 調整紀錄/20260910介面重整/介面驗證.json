@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-10T11:22:52.103Z",
+  "method": "LinkeDOM with actual tour, walk, interaction, AI, equipment and furniture UI handlers; camera-only Three.js fixture. No browser layout or GPU rendering.",
+  "checks": [
+    "V1: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
+    "V2: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
+    "V3: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
+    "V4: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
+    "Switching versions retains selected room; normal startup returns to whole-home overview",
+    "viewer-base.css: stylesheet parsed successfully",
+    "viewer-ui.css: stylesheet parsed successfully",
+    "furniture.css: stylesheet parsed successfully",
+    "Furniture canonical JSON and 3D geometry are preserved; geometry source hashes still match"
+  ],
+  "hashes": {
+    "viewer-ui.js": "0910fa68b7384d1853ae52ccea52b8dbde16670620224b3d02a41a1515e1115e",
+    "viewer-ui.css": "aa1fc2e2b4fae2165459ef88d1084877a99a06dc18756e677030d8d2b4892f42",
+    "viewer-base.css": "2455daac4025c3d2badaf30720a50bf7e4edad3823103feab684dec860cc1648",
+    "walk.js": "d7c25eb10223da1b41aa78e991ff641b68a5684548b98f930bbac1997233d113",
+    "furniture-app.js": "afe91cdf3499135205b9f20df3322f2a9e2054424ef55c739d094ed89d73c70f",
+    "furniture.css": "c662300e4e3b00fe2c3ebb2eebfa5a648aecce1863a7b02494e8f6a3b862ebd2",
+    "index.html": "40b677f9d68b206e363444ac56ade4fd4eedab57d2560cd146d028a80cd0035a",
+    "提案/旋轉電視與直線中島/index.html": "4131f0c05d976e1eb68ba768266af9067679b2f3efd15f8444e9c69b388006d9"
+  }
+}

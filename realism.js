@@ -26,7 +26,7 @@ C.rugMaterial.map=rugTexture;C.rugMaterial.userData.finishScale=100;
 V.fittings.traverse(o=>{if(o.isLine&&o.material?.color){o.material.color.copy(color('#51585a'));o.material.transparent=true;o.material.opacity=.65;}});
 // Rounded geometry preserves the exact outside dimensions of every furniture part.
 function rounded(w,h,d,r){const g=new T.BoxGeometry(w,h,d,6,6,6),p=g.attributes.position,n=g.attributes.normal;function remap(v,half){const k=Math.round((v/half+1)*3),a=[-half,-half+r*.293,-half+r,0,half-r,half-r*.293,half];return a[Math.max(0,Math.min(6,k))];}for(let i=0;i<p.count;i++){const q=new T.Vector3(remap(p.getX(i),w/2),remap(p.getY(i),h/2),remap(p.getZ(i),d/2));const inner=new T.Vector3(Math.max(-w/2+r,Math.min(w/2-r,q.x)),Math.max(-h/2+r,Math.min(h/2-r,q.y)),Math.max(-d/2+r,Math.min(d/2-r,q.z)));const norm=q.clone().sub(inner).normalize();q.copy(inner).addScaledVector(norm,r);p.setXYZ(i,q.x,q.y,q.z);n.setXYZ(i,norm.x,norm.y,norm.z);}g.computeBoundingBox();return g;}
-V.fittings.traverse(o=>{if(!o.isMesh||o.geometry.type!=='BoxGeometry'||o.material===M.glass)return;const b=o.geometry.parameters;if(!b||Math.min(b.width,b.height,b.depth)<2||Math.max(b.width,b.depth)<18)return;const r=Math.min(.65,Math.min(b.width,b.height,b.depth)*.15);const old=o.geometry;o.geometry=rounded(b.width,b.height,b.depth,r);const size=o.geometry.boundingBox.getSize(new T.Vector3());stats.maxBoundingError=Math.max(stats.maxBoundingError,Math.abs(size.x-b.width),Math.abs(size.y-b.height),Math.abs(size.z-b.depth));o.geometry.userData.realismBevel=true;old.dispose();stats.beveled++;});
+V.fittings.traverse(o=>{if(!o.isMesh||o.geometry.type!=='BoxGeometry'||o.material===M.glass)return;const b=o.geometry.parameters;if(!b||Math.min(b.width,b.height,b.depth)<2||Math.max(b.width,b.depth)<18)return;const r=o.userData.edgeRadius??Math.min(.65,Math.min(b.width,b.height,b.depth)*.15);const old=o.geometry;o.geometry=rounded(b.width,b.height,b.depth,r);const size=o.geometry.boundingBox.getSize(new T.Vector3());stats.maxBoundingError=Math.max(stats.maxBoundingError,Math.abs(size.x-b.width),Math.abs(size.y-b.height),Math.abs(size.z-b.depth));o.geometry.userData.realismBevel=true;old.dispose();stats.beveled++;});
 // Stuffed cushions have curved fabric faces, while keeping their existing bounding envelope.
 stats.softPillows=0;V.fittings.traverse(o=>{if(!o.isMesh||o.material!==M.linen)return;o.geometry.computeBoundingBox();const bb=o.geometry.boundingBox,size=bb.getSize(new T.Vector3()),mid=bb.getCenter(new T.Vector3());if(size.x>85||size.z>45||size.y>35||size.y<8)return;const geo=new T.SphereGeometry(1,48,24),p=geo.attributes.position;const soften=v=>Math.sign(v)*Math.pow(Math.abs(v),.35);for(let i=0;i<p.count;i++){const x=p.getX(i),y=p.getY(i),z=p.getZ(i);p.setXYZ(i,mid.x+soften(x)*size.x/2,mid.y+soften(y)*size.y/2,mid.z+soften(z)*size.z/2);}geo.computeVertexNormals();o.geometry.dispose();o.geometry=geo;stats.softPillows++;});
 // Surface-specific world UVs keep stone and textile grain at the same scale throughout the home.
@@ -92,22 +92,63 @@ const exportOriginal=$('export').onclick;$('export').onclick=()=>{if(['model','w
 window.HOME_REALISM={setCurtainTransmission:t=>bounce.forEach(b=>b.light.intensity=b.power*t*(document.getElementById("night").classList.contains("active")?.09:1)),render,getState:()=>({...stats,reflectionPending,reflectionZones:[...reflectionCache.keys()]}),refreshReflections:()=>updateReflection(true)};
 R.toneMappingExposure=.96;$('brightness').addEventListener('input',()=>{R.toneMappingExposure=.96*Number($('brightness').value)/100;});
 
-// Warm industrial palette: apply to selected existing surfaces without changing footprints.
+// Desk keeps its warm timber. Cabinet veneer follows the owner's dark, straight-grain reference.
 const oak=new T.MeshStandardMaterial({color:color('#eee2ca'),roughness:.72,metalness:0,envMapIntensity:.3});
-stats.woodSurfaces=0;
+const veneerCanvas=document.createElement('canvas');veneerCanvas.width=512;veneerCanvas.height=1024;
+const vc=veneerCanvas.getContext('2d'),vp=vc.createImageData(512,1024);
+// Periodic straight fibres with very slight drift; no orange tint or large cathedral knots.
+for(let y=0;y<1024;y++)for(let x=0;x<512;x++){
+ const drift=1.1*Math.sin(2*Math.PI*y/1024)+.35*Math.sin(8*Math.PI*y/1024),u=x+drift;
+ let seed=Math.imul(x+19,73856093)^Math.imul(y+71,19349663);seed=Math.imul(seed^(seed>>>16),2246822519);
+ const value=Math.max(160,Math.min(249,216+9*Math.sin(u*Math.PI/32)+8*Math.sin(u*Math.PI/8)+7*Math.sin(u*Math.PI/2)+3*Math.sin(u*Math.PI/1.28)+((seed>>>0)/4294967296-.5)*10)),i=(y*512+x)*4;
+ vp.data[i]=vp.data[i+1]=vp.data[i+2]=value;vp.data[i+3]=255;
+}vc.putImageData(vp,0,0);
+const veneerMap=texture(veneerCanvas,true),veneerBump=veneerMap.clone();veneerBump.encoding=T.LinearEncoding;veneerBump.needsUpdate=true;
+const darkVeneer=new T.MeshStandardMaterial({color:color('#625d53'),map:veneerMap,bumpMap:veneerBump,bumpScale:.007,roughness:.8,metalness:0,envMapIntensity:.22});
+darkVeneer.name='深灰棕直紋霧面木皮';darkVeneer.userData.finishId='cabinet-dark-straight-veneer';
+function cabinetUV(o){
+ const p=o.geometry.attributes.position,n=o.geometry.attributes.normal,uv=[];
+ for(let i=0;i<p.count;i++){const q=new T.Vector3().fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld),a=new T.Vector3().fromBufferAttribute(n,i).transformDirection(o.matrixWorld);
+  if(Math.abs(a.y)>=Math.max(Math.abs(a.x),Math.abs(a.z)))uv.push(q.x/60,q.z/240);
+  else uv.push((Math.abs(a.x)>=Math.abs(a.z)?q.z:q.x)/60,q.y/240);
+ }o.geometry.setAttribute('uv',new T.Float32BufferAttribute(uv,2));
+}
+stats.woodSurfaces=0;stats.cabinetVeneer={name:darkVeneer.name,baseColor:'#625d53',grain:'vertical-straight',roughness:.8,textureCm:[60,240],surfaces:0,names:[]};
+S.updateMatrixWorld(true);
 V.fittings.traverse(o=>{if(!o.isMesh)return;const name=o.userData.name||'',front=o.userData.swingFront?.name||'';
-if(/冰箱旁圓弧頂天櫃|弧形中島|180 × 80 升降桌|玄關面客廳封板|書房九抽收納/.test(name)||/床頭抽屜/.test(front)){o.material=oak;stats.woodSurfaces++;}
+if(o.userData.finishGroup)return;
+if(/冰箱旁圓弧頂天櫃|弧形中島|書房九抽收納/.test(name)||/床頭抽屜/.test(front)){o.material=darkVeneer;o.userData.finishGroup='cabinet-dark-straight-veneer';cabinetUV(o);stats.woodSurfaces++;stats.cabinetVeneer.surfaces++;stats.cabinetVeneer.names.push(name||front);}
+else if(/180 × 80 升降桌/.test(name)){o.material=oak;stats.woodSurfaces++;}
 });
 C.hemi.color.set('#fff6e8');C.hemi.groundColor.set('#827563');C.fill.color.set('#fff2df');C.sun.color.set('#fff4e1');
 M.light.color.set('#ffe2b2');C.roomLights.forEach(l=>l.color.set('#ffe7c3'));C.finishLights.forEach(l=>l.color.set('#ffdfac'));
 const warmLights=[];
 for(const [x,y,z,range] of [[920,913,156,250],[530,481,216,220],[190,40,160,230],[845,435,246,250]]){const light=new T.PointLight('#ffdab0',.32,range,1.6);light.position.copy(V.pos(x,y,z));S.add(light);warmLights.push(light);}
 // Visible light strips already exist in the approved model; these fills give the surfaces a warm response.
-stats.style='暖灰石材・煙燻橡木・米灰織物・暖光';
+stats.style='煙燻水泥灰・深灰棕直紋木櫃・暖棕人字拼木地板・玄關混色六角磚';
 const woodReady=new Promise(resolve=>{const img=new Image();img.onload=()=>{oak.map=texture(img,true);oak.map.wrapS=oak.map.wrapT=T.MirroredRepeatWrapping;oak.bumpMap=oak.map.clone();oak.bumpMap.encoding=T.LinearEncoding;oak.bumpMap.needsUpdate=true;oak.bumpScale=.015;oak.needsUpdate=true;S.updateMatrixWorld(true);V.fittings.traverse(o=>{if(o.isMesh&&o.material===oak)worldUV(o,100);});stats.woodTextureLoaded=true;resolve();};img.onerror=()=>{stats.woodTextureLoaded=false;resolve();};img.src=window.REALISM_WOOD;});
 
 stats.wallTextureLoaded=false;
-const plasterReady=new Promise(resolve=>{const surface=new Image();surface.onload=()=>{const base=texture(surface,true);base.wrapS=base.wrapT=T.MirroredRepeatWrapping;const height=base.clone();height.encoding=T.LinearEncoding;height.needsUpdate=true;for(const [m,hex] of [[M.concrete,'#e0d4c1'],[C.ceilingMaterial,'#b5aa99']]){m.map=base;m.bumpMap=height;m.bumpScale=.025;m.color.copy(color(hex));m.roughness=.97;m.envMapIntensity=.25;m.userData.finishScale=180;m.needsUpdate=true;}S.updateMatrixWorld(true);S.traverse(o=>{if(o.isMesh&&(o.material===M.concrete||o.material===C.ceilingMaterial))worldUV(o,180);});stats.wallTextureLoaded=true;resolve();};surface.onerror=resolve;surface.src=window.REALISM_PLASTER;});
+// JunPin reference: smoky cement walls, graphite beam bands, pale grey ceiling.
+// Continuous low-frequency mottling replaces the old beige fibrous wall grain.
+function cementMap(){
+ const c=document.createElement('canvas');c.width=c.height=1024;
+ const ctx=c.getContext('2d'),im=ctx.createImageData(1024,1024);let seed=290909;
+ const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
+ const grids=[5,13,31,83].map(n=>({n,v:Array.from({length:n*n},rand)}));
+ function sample(x,y,g){const a=x/1024*g.n,b=y/1024*g.n,i=Math.floor(a),j=Math.floor(b),f=t=>t*t*(3-2*t),u=f(a-i),v=f(b-j),at=(i,j)=>g.v[(j%g.n)*g.n+i%g.n];return (at(i,j)*(1-u)+at(i+1,j)*u)*(1-v)+(at(i,j+1)*(1-u)+at(i+1,j+1)*u)*v;}
+ for(let y=0;y<1024;y++)for(let x=0;x<1024;x++){const cloud=(sample(x,y,grids[0])-.5 )*68+(sample(x,y,grids[1])-.5)*30+(sample(x,y,grids[2])-.5)*9+(sample(x,y,grids[3])-.5)*4;const value=201+cloud+(rand()-.5)*2,k=(y*1024+x)*4;im.data[k]=im.data[k+1]=im.data[k+2]=value;im.data[k+3]=255;}
+ ctx.putImageData(im,0,0);return texture(c,true);
+}
+const cement=cementMap(),cementHeight=cement.clone();cementHeight.encoding=T.LinearEncoding;cementHeight.needsUpdate=true;
+M.concrete.map=cement;M.concrete.bumpMap=cementHeight;M.concrete.bumpScale=.014;M.concrete.color.copy(color('#858c8e'));M.concrete.roughness=.92;M.concrete.envMapIntensity=.2;M.concrete.userData.finishScale=240;M.concrete.needsUpdate=true;
+C.ceilingMaterial.map=null;C.ceilingMaterial.bumpMap=null;C.ceilingMaterial.color.copy(color('#d1d4d1'));C.ceilingMaterial.roughness=.97;C.ceilingMaterial.needsUpdate=true;
+const graphite=new T.MeshStandardMaterial({color:color('#505a5d'),roughness:.89,metalness:0,envMapIntensity:.18,map:cement,bumpMap:cementHeight,bumpScale:.008});
+V.beams.traverse(o=>{if(o.isMesh&&o.material===M.concrete)o.material=graphite;});
+V.ceiling.traverse(o=>{if(o.isMesh&&o.material===M.concrete)o.material=C.ceilingMaterial;});
+S.updateMatrixWorld(true);S.traverse(o=>{if(o.isMesh&&(o.material===M.concrete||o.material===graphite))worldUV(o,240);});
+stats.wallTextureLoaded=true;stats.wallPalette={wall:'#858c8e',beam:'#505a5d',ceiling:'#d1d4d1',finish:'煙燻水泥灰・石墨灰・霧黑收邊'};
+const plasterReady=Promise.resolve();
 const image=new Image();image.onload=()=>{const stone=texture(image,true);stone.wrapS=stone.wrapT=T.MirroredRepeatWrapping;const height=stone.clone();height.encoding=T.LinearEncoding;height.needsUpdate=true;M.floor.map=stone;M.floor.bumpMap=height;M.floor.bumpScale=.028;M.floor.roughnessMap=height;M.floor.needsUpdate=true;C.stoneMaterial.map=stone;C.stoneMaterial.bumpMap=height;C.stoneMaterial.bumpScale=.018;C.stoneMaterial.needsUpdate=true;stats.textureLoaded=true;finish();};image.onerror=()=>{$('realismStatus').textContent='石材載入失敗，使用基本材質';finish();};
 async function finish(){await Promise.all([plasterReady,woodReady]);stats.ready=true;S.userData.realism={version:3,generatedStone:stats.textureLoaded,generatedPlaster:stats.wallTextureLoaded,beveled:stats.beveled,contactShadows:stats.contactShadows};if(stats.textureLoaded)$('realismStatus').textContent='材質已就緒 · 視點 165 cm';lighting();if(location.hash==='#walk'){document.querySelector('.workspace').classList.add('planhidden');$('planToggle').textContent='顯示平面圖';HOME_TOUR.setMode('walk');}}
 image.src=window.REALISM_STONE;

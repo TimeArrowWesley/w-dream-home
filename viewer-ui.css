@@ -1,0 +1,277 @@
+/* Shared interface for all four designs. 3D geometry remains in the feature modules. */
+:root {
+  --ui-bg: #111719;
+  --ui-panel: #1b2224;
+  --ui-raised: #252e30;
+  --ui-line: #394346;
+  --ui-text: #edf0e9;
+  --ui-muted: #acb8b6;
+  --ui-accent: #c7d9ce;
+  --ui-warm: #d8c6a1;
+  --ui-header: 70px;
+  --ui-sidebar: 276px;
+}
+body.uiApp {
+  margin: 0; height: 100dvh; overflow: hidden;
+  display: grid; grid-template-rows: var(--ui-header) minmax(0,1fr);
+  color: var(--ui-text); background: var(--ui-bg);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+  font-size: 14px; line-height: 1.5;
+}
+body.uiApp *, body.uiApp *::before, body.uiApp *::after { box-sizing: border-box; }
+body.uiApp [hidden] { display: none !important; }
+body.uiApp button, body.uiApp select, body.uiApp input { font: inherit; }
+body.uiApp button, body.uiApp summary { -webkit-tap-highlight-color: transparent; }
+body.uiApp button, body.uiApp .uiHeaderActions summary {
+  min-height: 36px; border: 1px solid var(--ui-line); border-radius: 7px;
+  background: var(--ui-raised); color: var(--ui-text); padding: 7px 12px;
+  cursor: pointer; font-size: 13px; line-height: 1.4;
+}
+body.uiApp button:hover, body.uiApp .uiHeaderActions summary:hover { background: #344043; border-color: #687a76; }
+body.uiApp :is(button,a,summary,input,select,textarea,[tabindex]):focus-visible { outline: 2px solid var(--ui-warm); outline-offset: 3px; }
+body.uiApp :is(button,input,select):disabled { opacity: .5; cursor: default; }
+body.uiApp input[type=checkbox] { accent-color: var(--ui-accent); width: 16px; height: 16px; flex-shrink: 0; }
+body.uiApp a { color: var(--ui-accent); }
+body.uiApp ::-webkit-scrollbar { width: 7px; height: 7px; }
+body.uiApp ::-webkit-scrollbar-thumb { background: #4a5756; border-radius: 6px; }
+body.uiApp ::-webkit-scrollbar-track { background: transparent; }
+
+/* The three primary tasks stay in one header. */
+body.uiApp > header, body.uiApp.walkImmersive > header {
+  height: var(--ui-header); padding: 0 24px; display: flex !important;
+  align-items: center; justify-content: space-between; gap: 28px;
+  background: #171e20; border-bottom: 1px solid var(--ui-line); z-index: 30;
+}
+.uiBrand { flex-shrink: 0; }
+.uiBrand h1 { font-family: Georgia, 'Microsoft JhengHei', serif; font-weight: 400; font-size: 22px; letter-spacing: .09em; margin: 0; }
+.uiBrand .sub { color: var(--ui-muted); font-size: 10px; letter-spacing: .08em; margin-top: 3px; }
+.uiPrimary { display: flex; align-self: stretch; align-items: stretch; gap: 8px; margin-right: auto; }
+body.uiApp .uiPrimary button { background: transparent; border: 0; border-radius: 0; min-width: 88px; padding: 0 14px; color: var(--ui-muted); position: relative; white-space: nowrap; }
+body.uiApp .uiPrimary button:hover { color: var(--ui-text); background: #ffffff06; }
+body.uiApp .uiPrimary [aria-current=page] { color: var(--ui-text); font-weight: 600; }
+.uiPrimary [aria-current=page]::after { content: ''; height: 3px; background: var(--ui-accent); position: absolute; bottom: 0; left: 14px; right: 14px; border-radius: 2px 2px 0 0; }
+.uiHeaderActions { display: flex; gap: 8px; align-items: center; white-space: nowrap; }
+.uiMenu { position: relative; }
+.uiMenu > summary { list-style: none; cursor: pointer; }
+.uiMenu > summary::-webkit-details-marker { display: none; }
+.uiMenu > summary::after { content: '⌄'; margin-left: 14px; color: var(--ui-muted); }
+.uiMenu[open] > summary::after { content: '⌃'; }
+.uiMenuBody { position: absolute; top: calc(100% + 8px); right: 0; padding: 8px; background: #252e30; border: 1px solid #5c6c67; border-radius: 10px; box-shadow: 0 15px 45px #0007; z-index: 50; width: max-content; min-width: 180px; }
+body.uiApp .uiMenuBody button { display: block; border: 0; background: transparent; text-align: left; width: 100%; padding: 11px 12px; }
+.uiMenuBody button + button { margin-top: 3px; }
+
+/* Left navigation alternates between a room list and a plan. */
+body.uiApp .shell, body.uiApp.walkImmersive .shell {
+  display: grid !important; grid-template-columns: var(--ui-sidebar) minmax(0,1fr);
+  height: auto !important; width: 100%; min-height: 0;
+}
+body.uiApp #uiSidebar, body.uiApp.walkImmersive #uiSidebar {
+  display: flex !important; flex-direction: column; padding: 0;
+  min-width: 0; overflow: visible; border-right: 1px solid var(--ui-line); background: var(--ui-panel); z-index: 20;
+}
+.uiVersionMenu { margin: 16px 14px 14px; }
+.uiVersionMenu > summary { display: grid; position: relative; gap: 4px; background: #ffffff04; border: 1px solid var(--ui-line); border-radius: 9px; padding: 12px 29px 12px 13px; }
+.uiVersionMenu > summary:hover { border-color: #7b8d85; }
+.uiVersionMenu > summary::after { position: absolute; right: 13px; top: 25px; margin: 0; }
+.uiVersionMenu small { font-size: 10px; color: var(--ui-muted); letter-spacing: .12em; }
+.uiVersionMenu strong { font-size: 13px; font-weight: 600; }
+.uiVersionMenu span { font-size: 12px; color: #c4ccca; }
+body.uiApp #layoutSwitch { display: block; top: calc(100% + 7px); left: 0; right: auto; width: 318px; max-width: calc(100vw - 30px); padding: 7px; background: #252e30; font-size: 13px; border: 1px solid #5c6c67; }
+body.uiApp #layoutSwitch button { display: flex; align-items: center; gap: 12px; padding: 13px 12px; }
+body.uiApp #layoutSwitch button strong { color: var(--ui-warm); font-size: 13px; }
+body.uiApp #layoutSwitch button span { color: #d6dcd7; font-size: 12px; }
+body.uiApp #layoutSwitch button[aria-pressed=true] { background: #c7d9ce; color: #182922; }
+body.uiApp #layoutSwitch button[aria-pressed=true] :is(strong,span) { color: #182922; }
+.uiSideTabs, .uiInspectorTabs { display: flex; gap: 4px; margin: 0 14px 12px; padding: 4px; background: #101719; border-radius: 8px; flex-shrink: 0; }
+body.uiApp :is(.uiSideTabs,.uiInspectorTabs) button { flex: 1; border: 0; background: transparent; padding: 8px; color: var(--ui-muted); }
+body.uiApp [role=tab][aria-selected=true] { background: #34403e; color: var(--ui-text); box-shadow: 0 1px 3px #0003; }
+.uiSideContent { flex: 1; min-height: 0; overflow: auto; scrollbar-gutter: stable; }
+.uiRoomList { padding: 0 12px 16px; }
+body.uiApp #rooms { display: block; }
+.uiRoomGroup + .uiRoomGroup { margin-top: 17px; }
+body.uiApp .uiRoomGroup h2 { margin: 10px 10px 5px; font-size: 10px; color: #9baaa6; letter-spacing: .1em; font-weight: 500; }
+body.uiApp #rooms button { display: flex; width: 100%; padding: 10px 12px; min-height: 39px; text-align: left; border: 0; background: transparent; border-radius: 7px; color: #d3dcd8; font-size: 13px; gap: 5px; margin: 2px 0; }
+body.uiApp #rooms button:hover { background: #ffffff09; }
+body.uiApp #rooms button.active { background: #c7d9ce; color: #1a3026; font-weight: 600; }
+body.uiApp #rooms small { display: none; }
+.uiRoomNotes { border-top: 1px solid var(--ui-line); margin: 19px 5px 0; padding-top: 13px; }
+.uiRoomNotes summary { cursor: pointer; font-size: 12px; color: var(--ui-muted); }
+body.uiApp #caption { display: block !important; position: static; pointer-events: auto; max-width: none; }
+body.uiApp #caption strong { display: none; }
+body.uiApp #caption p { color: var(--ui-muted); font-size: 12px; line-height: 1.8; padding: 10px 0; margin: 0; border: 0; background: transparent; max-width: none; }
+body.uiApp #uiSidebar #caption { display: block !important; }
+.uiSideFoot { padding: 12px 18px; border-top: 1px solid var(--ui-line); font-size: 10px; color: #9baaa6; line-height: 1.6; }
+body.uiApp #planPanel, body.uiApp.walkImmersive #planPanel { display: flex; flex-direction: column; padding: 6px 14px 16px; background: transparent; border: 0; height: auto; min-height: 0; }
+body.uiApp #planPanel[hidden],body.uiApp.walkImmersive #planPanel[hidden] { display: none !important; }
+body.uiApp #planPanel .panelHeading small { display: none; }
+body.uiApp #planPanel h3 { font-size: 16px; font-weight: 600; margin: 8px 0; }
+body.uiApp #planPanel .panelHeading button { font-size: 12px; padding: 6px 10px; }
+body.uiApp .planIntro { color: var(--ui-muted); line-height: 1.65; font-size: 12px; margin: 5px 0 12px; }
+body.uiApp #planstage { min-height: 220px; flex: none; border-radius: 8px; background: #e3e6e4; overflow: hidden; padding: 5px; }
+body.uiApp #floorplan { width: 100%; height: auto; display: block; max-height: none; }
+body.uiApp .sourceCompare { display: flex; flex-wrap: wrap; gap: 5px; margin: 4px 0 12px; }
+body.uiApp .sourceCompare button { font-size: 11px; padding: 7px 8px; min-height: 32px; background: transparent; }
+body.uiApp .sourceCompare button.active { background: #c7d9ce; color: #172c22; }
+body.uiApp .planFooter { border: 0; padding: 12px 0 0; justify-content: flex-end; }
+
+/* Preview area. No room labels or paragraphs over the scene. */
+body.uiApp .workspace, body.uiApp.walkImmersive .workspace { display: grid !important; grid-template-columns: minmax(0,1fr); width: 100%; height: 100% !important; min-height: 0; position: relative; }
+body.uiApp .workspace.uiInspectorOpen { grid-template-columns: minmax(0,1fr) 328px; }
+body.uiApp #scenePanel, body.uiApp.walkImmersive #scenePanel { display: grid !important; grid-template-rows: auto minmax(0,1fr) auto; width: 100%; height: 100% !important; min-height: 0; max-height: none; background: var(--ui-bg); }
+body.uiApp .sceneToolbar, body.uiApp.walkImmersive .sceneToolbar { display: flex !important; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 13px 20px; min-height: 66px; border-bottom: 1px solid var(--ui-line); background: #1d2527; }
+body.uiApp .sceneToolbar .uiSceneTitle { display: flex; gap: 10px; align-items: center; min-width: 0; margin-right: auto; }
+body.uiApp #roomCounter { display: none; }
+body.uiApp #activeRoom { font-size: 16px; font-weight: 600; letter-spacing: .01em; }
+body.uiApp .viewTabs { display: flex; padding: 3px; background: #101719; border: 1px solid #36413f; border-radius: 8px; gap: 2px; }
+body.uiApp .viewTabs button { min-height: 33px; padding: 7px 11px; border: 0; background: transparent; font-size: 12px; color: var(--ui-muted); white-space: nowrap; }
+body.uiApp .viewTabs button.active { background: var(--ui-accent); color: #1b3025; font-weight: 600; }
+.uiSceneActions { display: flex; gap: 6px; }
+body.uiApp .uiSceneActions button { font-size: 12px; min-height: 36px; padding: 7px 10px; background: transparent; white-space: nowrap; }
+body.uiApp .uiSceneActions button[aria-expanded=true] { background: #384941; border-color: #87a692; }
+body.uiApp #scenePanel > main, body.uiApp.walkImmersive #scenePanel > main { width: 100%; height: 100%; min-height: 0; position: relative; overflow: hidden; }
+body.uiApp #view { display: block; width: 100%; height: 100%; touch-action: none; }
+body.uiApp #cameraControls { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 3px; padding: 5px; border: 1px solid #65776c70; border-radius: 10px; background: #1c2725e8; }
+body.uiApp #cameraControls button { min-width: 38px; min-height: 34px; padding: 5px 10px; background: transparent; border: 0; }
+body.uiApp .nearbyBar, body.uiApp #filmstrip { display: none !important; }
+.uiSceneFooter { display: flex; align-items: center; gap: 16px; min-height: 38px; padding: 7px 20px; border-top: 1px solid var(--ui-line); background: #1b2324; color: var(--ui-muted); font-size: 11px; }
+.uiModeBadge { white-space: nowrap; color: #c8d7ce; }
+.uiModeBadge::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #adcbb7; margin-right: 7px; vertical-align: middle; }
+body.uiApp #hint { position: static; margin: 0; padding: 0; background: transparent; color: var(--ui-muted); font-size: 11px; max-width: none; }
+body.uiApp #walkReset { font-size: 11px; min-height: 26px; padding: 3px 8px; margin-left: auto; }
+body.uiApp #detail { bottom: 76px; right: 16px; width: min(320px,calc(100% - 32px)); max-height: min(330px,60%); background: #1c2826f5; border: 1px solid #8b9e91; border-radius: 10px; padding: 16px; }
+body.uiApp #error { z-index: 15; }
+
+/* One place for equipment, lighting and display preferences. */
+body.uiApp #uiInspector { min-height: 0; display: flex; flex-direction: column; width: 328px; border-left: 1px solid var(--ui-line); background: #1c2425; z-index: 21; overflow: hidden; }
+.uiInspectorHeader { display: flex; align-items: center; justify-content: space-between; padding: 17px 18px 14px; }
+.uiInspectorHeader strong { font-size: 15px; }
+body.uiApp .uiInspectorHeader button { font-size: 11px; min-height: 29px; padding: 4px 8px; background: transparent; }
+.uiInspectorBody { flex: 1; min-height: 0; overflow: auto; padding: 4px 18px 22px; scrollbar-gutter: stable; }
+.uiControlContext { font-size: 13px; font-weight: 600; margin: 4px 0 9px; }
+.uiScope { display: flex; align-items: center; gap: 7px; color: var(--ui-muted); font-size: 11px; margin-bottom: 14px; }
+.uiContextActions { display: grid; gap: 8px; }
+body.uiApp .uiContextActions > button { background: #283533; color: var(--ui-text); font-size: 12px; text-align: left; padding: 10px 12px; }
+body.uiApp .uiContextActions > button[aria-pressed=true] { border-color: #9bb5a6; background: #3b5045; }
+.uiControlSection { padding: 16px 0; border-top: 1px solid var(--ui-line); margin-top: 16px; }
+.uiControlSection summary { cursor: pointer; color: #dce5de; font-weight: 500; font-size: 13px; }
+.uiControlSection > p { font-size: 12px; line-height: 1.8; color: var(--ui-muted); }
+body.uiApp #uiInspector #homeControls { position: static; width: 100%; max-width: none; max-height: none; padding: 7px 0 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; font-size: 12px; overflow: visible; }
+body.uiApp #uiInspector .hcHeading, body.uiApp #rgbViewNote { display: none; }
+body.uiApp #homeControls h3 { font-size: 12px; font-weight: 600; margin: 18px 0 8px; }
+body.uiApp #homeControls p { font-size: 11px; color: var(--ui-muted); }
+body.uiApp #homeControls label { font-size: 12px; gap: 7px; }
+body.uiApp #homeControls select { background: #141e20; border: 1px solid var(--ui-line); min-height: 34px; font-size: 12px; }
+body.uiApp #curtainControls { gap: 8px; }
+body.uiApp #curtainControls select { width: 100%; }
+body.uiApp #curtainControls button { flex: 1; }
+body.uiApp #rgbShowModel { margin-top: 7px; }
+body.uiApp #equipmentControls { display: grid; border: 0; margin: 0; padding: 13px 0 0; gap: 10px; }
+body.uiApp #equipmentControls > strong { display: none; }
+body.uiApp #equipmentControls :is(button,select) { width: 100%; min-height: 36px; padding: 9px; border-color: var(--ui-line); background: #263330; font-size: 12px; }
+body.uiApp #equipmentControls small { color: var(--ui-muted); font-size: 11px; }
+body.uiApp #uiRoomFurniture { width: 100%; color: #192e23; background: var(--ui-accent); margin-top: 14px; }
+body.uiApp #uiInspector #rotatingTVPanel { display: block; position: static; width: 100%; max-width: none; border: 1px solid var(--ui-line); border-radius: 8px; box-shadow: none; background: #152020; }
+body.uiApp #rotatingTVBody { max-height: none; padding: 3px 12px 13px; overflow: visible; }
+body.uiApp #rotatingTVPanel button { min-height: 36px; }
+body.uiApp #uiDisplayBody .section { display: block !important; border-top: 1px solid var(--ui-line); padding: 17px 0 8px; margin: 0; }
+body.uiApp #uiDisplayBody .section:first-child { border: 0; padding-top: 4px; }
+body.uiApp #uiDisplayBody h2 { font-size: 12px; font-weight: 600; color: #dae4dd; margin: 0 0 12px; letter-spacing: .02em; }
+body.uiApp #uiDisplayBody .check { font-size: 12px; color: var(--ui-muted); margin: 13px 0; gap: 8px; }
+body.uiApp #uiDisplayBody .chips button { font-size: 12px; min-width: 60px; }
+body.uiApp #uiDisplayBody .chips button.active { color: #142a1f; background: var(--ui-accent); }
+body.uiApp #realismStatus { display: block; color: var(--ui-muted); font-size: 11px; margin-top: 9px; }
+body.uiApp #status { font-size: 11px; line-height: 1.8; color: var(--ui-muted); }
+
+/* Walking keeps the application frame; only the interaction reticle overlays the room. */
+body.uiApp.walkImmersive #walkExperience { display: block; }
+body.uiApp :is(.walkBrand,#walkTopActions,#walkBottomBar,#walkHUD,#walkMiniMap) { display: none !important; }
+body.uiApp.walkImmersive #walkPad { bottom: 18px; right: 18px; }
+body.uiApp.walkImmersive #interactPrompt { bottom: 28px; }
+body.uiApp.walkImmersive #scenePanel #hint { display: block !important; }
+body.uiApp #aiPhotoHeading { padding: 14px 18px; align-items: center; background: #1c2925; }
+body.uiApp #aiPhotoHeading::before { display: none; }
+body.uiApp #aiPhotoHeading strong { font-size: 14px; }
+body.uiApp #aiPhotoHeading small { font-size: 12px; color: var(--ui-warm); margin-top: 5px; }
+body.uiApp #aiPhotoRoom { display: none; }
+body.uiApp #aiPhotoGallery { padding: 12px; gap: 10px; }
+body.uiApp #aiPhotoGallery button { border-radius: 7px; height: 88px; flex-basis: 140px; }
+body.uiApp #aiPhotoTools :is(button,a) { min-height: 34px; font-size: 12px; }
+body.uiApp #aiPhotoNotice { font-size: 11px; }
+
+/* Supporting documents and enlarged plans have clear return paths. */
+body.uiApp .uiDialog { color: var(--ui-text); background: #1c2425; padding: 0; border: 1px solid #617369; border-radius: 14px; width: min(880px,calc(100vw - 48px)); max-width: calc(100vw - 48px); max-height: calc(100dvh - 48px); overflow: auto; }
+.uiDialog::backdrop { background: #070d11bd; backdrop-filter: blur(5px); }
+.uiDialogHeader { padding: 24px; border-bottom: 1px solid var(--ui-line); display: flex; gap: 24px; align-items: flex-start; justify-content: space-between; }
+body.uiApp .uiDialogHeader h2 { font-size: 21px; color: var(--ui-text); font-weight: 500; letter-spacing: .03em; margin: 0; }
+.uiDialogHeader p { font-size: 12px; color: var(--ui-muted); margin: 7px 0 0; }
+.uiDialogHeader button { flex-shrink: 0; }
+.uiResourceGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 24px; }
+.uiResource { display: grid; gap: 7px; padding: 20px; border: 1px solid var(--ui-line); border-radius: 9px; background: #232e2d; text-decoration: none; }
+.uiResource:hover { border-color: #a6bbae; background: #2d3936; }
+.uiResource strong { font-size: 15px; font-weight: 600; color: var(--ui-text); }
+.uiResource span { color: var(--ui-muted); font-size: 12px; line-height: 1.7; }
+.uiHistory { margin: 0 24px 24px; padding: 17px 0 0; border-top: 1px solid var(--ui-line); color: var(--ui-muted); font-size: 12px; }
+.uiHistory summary { cursor: pointer; }
+.uiHistory a { margin-right: 18px; line-height: 2; }
+body.uiApp #uiMapDialog { width: min(1080px,calc(100vw - 48px)); }
+body.uiApp #uiMapDialog #planPanel { padding: 14px 24px 24px; display: flex !important; }
+body.uiApp #uiMapDialog .panelHeading, body.uiApp #uiMapDialog .planIntro, body.uiApp #uiMapDialog .planFooter { display: none; }
+body.uiApp #uiMapDialog #planstage { height: min(66dvh,740px); min-height: 250px; display: flex; align-items: center; justify-content: center; }
+body.uiApp #uiMapDialog #floorplan { width: 100%; height: 100%; max-height: 100%; }
+body.uiApp #uiMobileNav, body.uiApp #uiNavScrim { display: none; }
+@media (max-width: 1280px) {
+  :root { --ui-sidebar: 244px; }
+  body.uiApp > header,body.uiApp.walkImmersive > header { padding: 0 18px; gap: 20px; }
+  body.uiApp .sceneToolbar { padding: 12px 16px; gap: 9px; }
+  body.uiApp .workspace.uiInspectorOpen { grid-template-columns: minmax(0,1fr); }
+  body.uiApp #uiInspector { position: absolute; top: 0; bottom: 0; right: 0; box-shadow: -16px 0 35px #0005; }
+  body.uiApp #scenePanel { grid-template-rows: auto minmax(0,1fr) auto; }
+  body.uiApp .uiSceneFooter #hint { display: none; }
+}
+@media (max-width: 1000px) {
+  body.uiApp .sceneToolbar .uiSceneTitle { width: calc(100% - 190px); }
+  body.uiApp .sceneToolbar .viewTabs { order: 3; margin-top: 2px; }
+  .uiBrand .sub { display: none; }
+  body.uiApp .uiPrimary button { min-width: 72px; padding: 0 10px; }
+  body.uiApp > header { gap: 16px; }
+}
+@media (max-width: 760px) {
+  :root { --ui-header: 100px; --ui-sidebar: 280px; }
+  body.uiApp > header,body.uiApp.walkImmersive > header { height: var(--ui-header); padding: 10px 14px 0; display: grid !important; grid-template-columns: 1fr auto; grid-template-rows: 38px 42px; gap: 0 8px; }
+  .uiBrand h1 { font-size: 19px; }
+  .uiPrimary { grid-column: 1/-1; grid-row: 2; align-self: stretch; margin: 0; }
+  body.uiApp .uiPrimary button { min-width: 0; padding: 0 14px; }
+  .uiHeaderActions { grid-column: 2; grid-row: 1; gap: 5px; }
+  body.uiApp .uiHeaderActions :is(button,summary) { font-size: 11px; min-height: 30px; padding: 5px 8px; }
+  body.uiApp .shell,body.uiApp.walkImmersive .shell { grid-template-columns: minmax(0,1fr); }
+  body.uiApp #uiSidebar,body.uiApp.walkImmersive #uiSidebar { display: none !important; position: fixed; top: var(--ui-header); left: 0; bottom: 0; width: min(300px,calc(100vw - 42px)); z-index: 45; box-shadow: 10px 0 30px #0006; }
+  body.uiApp.uiNavOpen #uiSidebar,body.uiApp.walkImmersive.uiNavOpen #uiSidebar { display: flex !important; }
+  body.uiApp #uiNavScrim { display: block; position: fixed; inset: var(--ui-header) 0 0; z-index: 40; border: 0; border-radius: 0; background: #02070990; color: transparent; }
+  body.uiApp #uiNavScrim[hidden] { display: none; }
+  body.uiApp #uiMobileNav { display: inline-flex; font-size: 11px; min-height: 31px; padding: 5px 8px; }
+  body.uiApp .sceneToolbar,body.uiApp.walkImmersive .sceneToolbar { padding: 10px 12px; gap: 10px 6px; }
+  body.uiApp .sceneToolbar .uiSceneTitle { width: 100%; }
+  body.uiApp #activeRoom { font-size: 14px; }
+  body.uiApp .sceneToolbar .viewTabs { order: 0; margin: 0; }
+  body.uiApp .viewTabs button { padding: 7px 8px; min-height: 32px; font-size: 11px; }
+  body.uiApp .uiSceneActions { gap: 4px; margin-left: auto; }
+  body.uiApp .uiSceneActions button { font-size: 11px; min-height: 32px; padding: 6px 7px; }
+  body.uiApp #uiInspector { width: min(340px,100%); }
+  .uiSceneFooter { padding: 7px 12px; min-height: 34px; }
+  body.uiApp #hint,body.uiApp.walkImmersive #scenePanel #hint { display: none !important; }
+  body.uiApp #cameraControls { bottom: 15px; }
+  body.uiApp .uiDialog { width: calc(100vw - 20px); max-width: calc(100vw - 20px); max-height: calc(100dvh - 24px); border-radius: 10px; }
+  .uiDialogHeader { padding: 18px; gap: 15px; }
+  .uiResourceGrid { grid-template-columns: 1fr; padding: 16px; gap: 9px; }
+  .uiResource { padding: 16px; }
+  .uiHistory { margin: 0 18px 18px; }
+  body.uiApp #aiPhotoHeading { padding: 10px 12px; }
+  body.uiApp #aiPhotoHeading small { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.uiApp *,body.uiApp *::before,body.uiApp *::after { transition: none !important; scroll-behavior: auto !important; }
+}
+@media (pointer:coarse) {
+  body.uiApp .viewTabs button,body.uiApp .uiSceneActions button,body.uiApp #cameraControls button,
+  body.uiApp #rooms button,body.uiApp #uiMobileNav,body.uiApp #uiInspector button { min-height: 44px; }
+}

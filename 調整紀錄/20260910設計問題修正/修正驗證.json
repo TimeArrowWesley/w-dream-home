@@ -1,0 +1,110 @@
+{
+  "date": "2026-09-10",
+  "sourceHashes": {
+    "equipment-models.js": "e085e941d608aa83e62be50ec560b94342cd828673d4a1f74cd18e53d77b1537",
+    "design.js": "e83f5af831197aa2102cafd77546184290dfb5f2cd7f42ff8aa648112665b018",
+    "提案/旋轉電視與直線中島/design.js": "48f01f577793284a9a5e0022aeadb059644b9314ef1a4f03bdb8c827f1179845",
+    "walk.js": "cf153f64e132e9c109663aeb91e777dbea950afc9cc31b4a08a2229b7d5097fc",
+    "interaction.js": "7818bda261f8c3e601ac61b9cf565c6a5395ab3462283a19071158f21085bc8c",
+    "realism.js": "ac9722c6180512d1488dd31be52ee9689a4d419f6c359d0cd1509160435decd9",
+    "flooring.js": "fac8f7fd27835dd5464863433768bfefc1c4be41ac467f0c78681dea06af7b25",
+    "curtains.js": "501914c70548298c32fcfa52223da8c10a03d0d3dd58cab656ce7c170821f419",
+    "rgb-lighting.js": "874af23cc51e6fc47a78609298ca304c965744bc2668594712770acfb7e61e2e",
+    "comfort-controls.js": "8352b15349b8b2f513513885ecbdf8de238d6bb8fb16c30c03ddc3f108728b79",
+    "equipment-controls.js": "c7be43154f94ecb803c47a385cd28f1f633202098999710e8e0c6334cc0f0083"
+  },
+  "fridge": {
+    "niche": {
+      "x": 150,
+      "y": 753.05,
+      "z": 14,
+      "w": 55,
+      "d": 56.4,
+      "h": 178.8
+    },
+    "shaft": {
+      "x": 205,
+      "y": 753.05,
+      "z": 2,
+      "w": 5,
+      "d": 56.4,
+      "h": 233.9
+    },
+    "shaftAreaCm2": 282,
+    "grilleNetCm2": 292.56,
+    "counterA": 65,
+    "counterB": 148.5,
+    "nominalAisleCm": 83.5,
+    "previousNominalAisleCm": 85,
+    "frontYUnchanged": true,
+    "reference": "https://assets-cdn.liebherr.com/versions/6b5fb1c0-719b-4e95-9c30-b5aaf676997f/original/"
+  },
+  "collection": {
+    "externalDepth": 40,
+    "frontY": 753,
+    "rearY": 793,
+    "skinWithinOriginalEnvelope": true,
+    "finish": "collection-inner"
+  },
+  "mirror": {
+    "width": 58,
+    "travel": 50,
+    "closed": {
+      "x": 581,
+      "y": 199.1
+    },
+    "openX": 631,
+    "trackWidth": 110
+  },
+  "tv": {
+    "width": 194,
+    "height": 116,
+    "inletNetCm2": 730.8,
+    "outletNetCm2": 1078.8,
+    "previousInletNetCm2": 372,
+    "previousOutletNetCm2": 864,
+    "finish": "tv-graphite"
+  },
+  "checks": {
+    "v1": {
+      "airPathRays": 9,
+      "airVolumesOutsideWalls": true,
+      "grilleFreeArea": true,
+      "mirrorSweepStepCm": 1,
+      "mirrorButton": true,
+      "displayEnvelopePreserved": true
+    },
+    "v2": {
+      "airPathRays": 9,
+      "airVolumesOutsideWalls": true,
+      "grilleFreeArea": true,
+      "mirrorSweepStepCm": 1,
+      "mirrorButton": true,
+      "displayEnvelopePreserved": true
+    },
+    "v3": {
+      "airPathRays": 9,
+      "airVolumesOutsideWalls": true,
+      "grilleFreeArea": true,
+      "mirrorSweepStepCm": 1,
+      "mirrorButton": true,
+      "displayEnvelopePreserved": true
+    },
+    "v4": {
+      "airPathRays": 9,
+      "airVolumesOutsideWalls": true,
+      "grilleFreeArea": true,
+      "mirrorSweepStepCm": 1,
+      "mirrorButton": true,
+      "displayEnvelopePreserved": true
+    }
+  },
+  "resolved": [
+    {
+      "id": "K-01",
+      "status": "resolved in design geometry",
+      "description": "55cm niche at x150–205; 5cm rear air shaft x205–210 outside wall; lower inlet and forward upper outlet modeled and ray-tested."
+    }
+  ],
+  "scope": "Design geometry implemented; manufacturing / local appliance approvals and GPU browser appearance are not asserted."
+}
