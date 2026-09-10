@@ -71,7 +71,11 @@
     "collection short return at y875; structural pier retained"
   ],
   "relocated": [
-    "entry cabinet run"
+    "entry cabinet run",
+    "TV and console 23cm south to align middle sofa seat",
+    "Q7 pair",
+    "two subwoofers",
+    "two surround stands"
   ],
   "cabinetJunctionRevision": {
     "leftExtensionCm": 35,
@@ -88,5 +92,138 @@
     "No fixed stools in the 100cm south route.",
     "Appliance doors are not to be opened opposite one another simultaneously.",
     "Storage capacity decreases compared with enclosed room; large figurines require item-by-item shelf planning."
-  ]
+  ],
+  "audio": {
+    "listener": {
+      "x": 950,
+      "y": 583,
+      "earHeight": 105,
+      "reference": "middle sofa cushion, y551..615"
+    },
+    "tvBase": {
+      "x": 619.5,
+      "y": 483,
+      "w": 55,
+      "d": 200
+    },
+    "tvPivot": {
+      "x": 647,
+      "y": 583,
+      "sweepRadius": 97.5,
+      "southShift": 23
+    },
+    "floorSpeakers": [
+      {
+        "id": "L",
+        "model": "KEF Q7 Meta",
+        "cx": 728,
+        "cy": 685,
+        "x": 712.25,
+        "y": 669.15,
+        "w": 31.5,
+        "d": 31.7,
+        "face": "E",
+        "height": 100.1
+      },
+      {
+        "id": "R",
+        "model": "KEF Q7 Meta",
+        "cx": 728,
+        "cy": 481,
+        "x": 712.25,
+        "y": 465.15,
+        "w": 31.5,
+        "d": 31.7,
+        "face": "E",
+        "height": 100.1
+      },
+      {
+        "id": "SW1",
+        "model": "SVS SB-2000 Pro",
+        "cx": 1030,
+        "cy": 449,
+        "x": 1012.0,
+        "y": 429.25,
+        "w": 36,
+        "d": 39.5,
+        "face": "N",
+        "height": 37.2
+      },
+      {
+        "id": "SW2",
+        "model": "SVS SB-2000 Pro",
+        "cx": 1030,
+        "cy": 717,
+        "x": 1012.0,
+        "y": 697.25,
+        "w": 36,
+        "d": 39.5,
+        "face": "S",
+        "height": 37.2
+      },
+      {
+        "id": "SL",
+        "model": "Ci160QR with custom stand",
+        "cx": 1040,
+        "cy": 758,
+        "x": 1028.0,
+        "y": 744.0,
+        "w": 24,
+        "d": 28,
+        "face": "W",
+        "centerHeight": 110
+      },
+      {
+        "id": "SR",
+        "model": "Ci160QR with custom stand",
+        "cx": 1040,
+        "cy": 408,
+        "x": 1028.0,
+        "y": 394.0,
+        "w": 24,
+        "d": 28,
+        "face": "W",
+        "centerHeight": 110
+      }
+    ],
+    "center": {
+      "id": "C",
+      "model": "KEF Q6 Meta",
+      "cx": 659.35,
+      "cy": 583,
+      "x": 644.2,
+      "y": 551.55,
+      "w": 30.3,
+      "d": 62.9,
+      "face": "E",
+      "installation": "inside fixed console, front baffle flush; below rotating TV"
+    },
+    "overhead": {
+      "count": 4,
+      "model": "KEF Ci160QR",
+      "status": "quantity retained; ceiling positioning to be coordinated with beams, HVAC and listening seat after concept selection"
+    },
+    "frontCenterSpacing": 204,
+    "frontBaffleDistance": 230.1,
+    "frontBaffleAngleDegrees": 26.3,
+    "surroundBaffleAngleDegrees": 115.6,
+    "southPassage": 104.15,
+    "northPassage": 90.15,
+    "subwooferStatus": "two candidate positions along window side; final locations, delay and phase require in-room measurement",
+    "orientation": "listener faces plan left / west; L and SL are at plan bottom"
+  },
+  "arrival": {
+    "eye": [
+      603,
+      925
+    ],
+    "focus": [
+      475,
+      780
+    ],
+    "finish": "island south end: full dark grey-brown vertical wood veneer within existing 95cm width and 95cm height; stone top aligns, no open equipment bays",
+    "equipmentOpenings": "west / refrigerator side only; floor wiring concealed, no raised crossing tracks",
+    "tvParking": "face living room when returning home; slim side still visible from entry, no claim of full concealment",
+    "entryCabinetHeight": 90
+  }
 }

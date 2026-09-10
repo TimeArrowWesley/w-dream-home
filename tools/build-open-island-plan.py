@@ -10,6 +10,41 @@ DATA = json.loads((ROOT/'調整紀錄/20260910設備整合/幾何驗證.json').r
 FONT = 'C:/Windows/Fonts/msjh.ttc'
 BOLD = 'C:/Windows/Fonts/msjhbd.ttc'
 INK, MUTED, FLOOR, WALL, GREEN, RED = '#263b39', '#687b76', '#eeeae2', '#686f6b', '#287b6d', '#ba6250'
+BLUE, WOOD = '#436b86', '#565044'
+
+def speaker(id, model, cx, cy, w, d, face, **extra):
+    return dict(id=id, model=model, cx=cx, cy=cy, x=cx-w/2, y=cy-d/2, w=w, d=d, face=face, **extra)
+
+# World footprints include plinths/grilles; east-facing Q7 depth is the plan x axis.
+AUDIO = {
+    'listener': {'x':950, 'y':583, 'earHeight':105, 'reference':'middle sofa cushion, y551..615'},
+    'tvBase': {'x':619.5, 'y':483, 'w':55, 'd':200},
+    'tvPivot': {'x':647, 'y':583, 'sweepRadius':97.5, 'southShift':23},
+    'floorSpeakers': [
+        speaker('L','KEF Q7 Meta',728,685,31.5,31.7,'E',height=100.1),
+        speaker('R','KEF Q7 Meta',728,481,31.5,31.7,'E',height=100.1),
+        speaker('SW1','SVS SB-2000 Pro',1030,449,36,39.5,'N',height=37.2),
+        speaker('SW2','SVS SB-2000 Pro',1030,717,36,39.5,'S',height=37.2),
+        speaker('SL','Ci160QR with custom stand',1040,758,24,28,'W',centerHeight=110),
+        speaker('SR','Ci160QR with custom stand',1040,408,24,28,'W',centerHeight=110),
+    ],
+    'center': speaker('C','KEF Q6 Meta',659.35,583,30.3,62.9,'E',installation='inside fixed console, front baffle flush; below rotating TV'),
+    'overhead': {'count':4, 'model':'KEF Ci160QR', 'status':'quantity retained; ceiling positioning to be coordinated with beams, HVAC and listening seat after concept selection'},
+    'frontCenterSpacing':204,
+    'frontBaffleDistance':round(math.hypot(950-743.75,102),1),
+    'frontBaffleAngleDegrees':round(math.degrees(math.atan2(102,950-743.75)),1),
+    'surroundBaffleAngleDegrees':round(math.degrees(math.acos((950-1033.7)/math.hypot(1033.7-950,175))),1),
+    'southPassage':104.15, 'northPassage':90.15,
+    'subwooferStatus':'two candidate positions along window side; final locations, delay and phase require in-room measurement',
+    'orientation':'listener faces plan left / west; L and SL are at plan bottom',
+}
+ARRIVAL = {
+    'eye': [603,925], 'focus': [475,780],
+    'finish':'island south end: full dark grey-brown vertical wood veneer within existing 95cm width and 95cm height; stone top aligns, no open equipment bays',
+    'equipmentOpenings':'west / refrigerator side only; floor wiring concealed, no raised crossing tracks',
+    'tvParking':'face living room when returning home; slim side still visible from entry, no claim of full concealment',
+    'entryCabinetHeight':90,
+}
 
 class Drawing:
     def __init__(self,w,h):
@@ -68,13 +103,15 @@ def plan(d,ox,oy,s,x0=-230,y0=-30,new=False,full=False):
     for y in [469,547,625]:rect(906,y,82,71,'#dfd5bf',MUTED)
     rect(842,627,49,68,'#dfd5bf',MUTED)
     label(953,728,'原沙發保留',14)
-    rect(619.5,460,55,200,'#596d69',INK)
-    line([(647,463),(647,657)],'#132826',5);label(675,415,'旋轉電視',16)
+    tv_y = AUDIO['tvBase']['y'] if new else 460
+    rect(619.5,tv_y,55,200,'#596d69',INK)
+    line([(647,tv_y+3),(647,tv_y+197)],'#132826',5);label(675,415,'旋轉電視',16)
     label(675,437,'與影音底櫃',14)
-    circ(647,560,97.5,None,GREEN)
-    rect(754.15,465.25,31.7,31.5,'#293d3b');rect(754.15,623.25,31.7,31.5,'#293d3b')
+    circ(647,tv_y+100,97.5,None,GREEN)
+    for q in AUDIO['floorSpeakers'] if new else [speaker('R','Q7',770,481,31.5,31.7,'E'),speaker('L','Q7',770,639,31.5,31.7,'E'),speaker('SW1','sub',799,800,36,39.5,'N'),speaker('SW2','sub',1040,814,36,39.5,'N'),speaker('SR','Ci160QR',1066,432,24,28,'W'),speaker('SL','Ci160QR',1066,754,24,28,'W')]:
+        rect(q['x'],q['y'],q['w'],q['d'], '#293d3b' if len(q['id'])==1 else '#667c7a',INK)
+    if new: circ(950,583,7,GREEN);label(925,583,'主座',12,GREEN)
     circ(819,549,31,'#988b78',INK);label(819,580,'茶几',13)
-    rect(781,780.25,36,39.5,'#3f4b48');rect(1022,794.25,36,39.5,'#3f4b48')
     rect(760,915,315,40,'#b2c9c3',INK);label(915,928,'原客廳展示櫃保留',13)
     rect(690,915,70,40,'#c4b8a2',INK)
     line([(210,625),(210,745)],'#65a5b6',5);label(282,680,'廚房電動玻璃門',13)
@@ -94,6 +131,7 @@ def plan(d,ox,oy,s,x0=-230,y0=-30,new=False,full=False):
     label(495,906,'結構柱',15,'#ffffff');label(495,930,'100 × 90',12,'#ffffff')
     if new:
         rect(425,480,95,300,'#c2cfbb',INK,2)
+        line([(425,778),(520,778)],WOOD,5)
         # West-facing service zones. Symbols indicate allocation, not fabrication openings.
         rect(429,489,60,68,'#748c7d',INK);label(463,512,'酒櫃',13)
         rect(429,565,47.5,38.1,'#e5e8dd',INK);label(475,576,'掃地機 ↓',12)
@@ -113,7 +151,7 @@ def plan(d,ox,oy,s,x0=-230,y0=-30,new=False,full=False):
         # Former room boundary shown only as demolition information.
         line([(220,753),(545.2,753),(545.2,880)],RED,2,True)
         dim(315,540,425,540,'110',dy=-22)
-        dim(520,675,619.5,675,'99.5',dy=5)
+        dim(520,705,619.5,705,'99.5',dy=5)
         dim(425,459,520,459,'95',dy=-20)
         dim(410,480,410,780,'300',dx=-25)
         dim(478,780,478,880.1,'100.1',dx=25)
@@ -149,7 +187,7 @@ for x,title,note in [(45,'調整前｜新 V2','原 V3 改名；收藏室仍獨�
     plan(d,x+7,228,.84,195,360,new=x>500)
 d.line([(889,140),(889,796)],'#ccd4ca',2)
 d.text(48,819,'紅虛線：擬拆展示牆／門片、移位玄關櫃',19,RED)
-d.text(918,819,'綠線：主要回家動線　圓圈：電視旋轉範圍',18,GREEN)
+d.text(918,819,'影音位置已重排；綠線為動線，圓圈為電視轉動區',18,GREEN)
 for x,title,lines in [(45,'中島 189 × 81 → 300 × 95',['檯面面積約增加 86%；檯高維持 95。','酒櫃、掃地機與飲水檢修朝西／冰箱。']), (625,'收納沿外圍重新配置',['深 40 玻璃櫃＋深 60 行李／大型收藏櫃。','櫃尾與轉角收齊，不再留下落地窄縫。']), (1203,'留下能走動的空間',['冰箱前 110；中島南端至柱 100.1。','玄關柱旁 114.8；通道不擺固定吧椅。'])]:
     d.text(x,888,title,23,INK,True)
     for i,t in enumerate(lines):d.text(x,932+i*30,t,18,MUTED)
@@ -170,6 +208,69 @@ d.text(45,1060,'圖面下方為入戶；方位沿現有模型。公共空間外�
 d.text(45,1092,'2D 提案，尚未套入 3D。淋浴組已另行同步修正於目前 V1、V2 的主浴南牆。',17,GREEN)
 d.save('V3-全屋格局')
 
+# Detailed public-area plan: acoustics and arrival sightlines share actual footprints.
+d=Drawing(1800,1220)
+d.text(42,28,'V3｜喇叭回到影音區，入口留給空間',34,INK,True)
+d.text(44,81,'2D 修訂提案 · 沙發不搬動，以中間座位為基準 · 電視及固定底櫃往圖面下方移 23 cm',19,MUTED)
+ox,oy,s=45,143,1.15
+plan(d,ox,oy,s,195,360,new=True)
+p=lambda x,y:(ox+(x-195)*s,oy+(y-360)*s)
+ear=p(950,583)
+for q in AUDIO['floorSpeakers']:
+    if q['id'] in ['L','R']:
+        d.line([p(q['x']+q['w'],q['cy']),ear],BLUE,2,True)
+        d.text(*p(q['cx']+25,q['cy']-10),q['id'],18,BLUE,True)
+    else:
+        d.text(*p(q['cx']-24,q['cy']-9),q['id'],15,BLUE,True,'end')
+d.line([p(674.5,583),ear],BLUE,1,True)
+d.text(*p(685,577),'C',16,BLUE,True)
+d.text(*p(838,606),f"各 {AUDIO['frontBaffleAngleDegrees']}°／約 {AUDIO['frontBaffleDistance']} cm",16,BLUE,False,'middle')
+d.line([p(762,481),p(762,685)],BLUE,1)
+d.rect(*p(745,566),42,26,'#f6f5ef');d.text(*p(763,570),'204',16,BLUE,True,'middle')
+d.line([p(746,700.85),p(746,805)],GREEN,1.5)
+d.text(*p(757,771),'南側 104.2',16,GREEN,True)
+d.line([p(ARRIVAL['eye'][0],ARRIVAL['eye'][1]),p(*ARRIVAL['focus'])],RED,2,True)
+d.circle(*p(*ARRIVAL['eye']),8*s,RED)
+d.text(*p(600,962),'進門視點',15,RED,True,'middle')
+d.text(*p(476,791),'完整木皮端面',15,WOOD,True,'middle')
+
+card(d,1310,145,1,'主聲道排成有中心的組合',[
+    'Q7 保留含腳座原尺寸，中心間距 204。',
+    f"至主座單側約 {AUDIO['frontBaffleDistance']}；位置角各 {AUDIO['frontBaffleAngleDegrees']}°。",
+    '先平行朝沙發，微調朝向留給實際試聽。',
+    'Q6 中置留在底櫃內，正面與櫃面收齊。'])
+card(d,1310,355,2,'散落設備移出玄關動線',[
+    '兩顆重低音預排在沙發靠窗側兩端。',
+    '兩顆耳平環繞在主座後側，約 115.6°。',
+    '環繞需獨立穩固支架與專用背腔。',
+    '四顆天花保留數量，另配合樑與冷氣。'])
+card(d,1310,565,3,'進門先看到完成面',[
+    '中島朝玄關端採整片深灰棕直紋木皮。',
+    '端面不開設備洞，櫃腳與走線收乾淨。',
+    '玄關矮櫃仍高 90，讓視線越過檯面。',
+    '電視停在朝客廳方向，側邊仍可見。'])
+d.text(1310,791,'圖例',22,INK,True)
+for i,t in enumerate(['L / R：左右主喇叭　C：中置', 'SL / SR：左右環繞　SW1 / SW2：重低音', '藍虛線：主座與聲道　紅虛線：入口視線']):d.text(1310,828+i*28,t,16,MUTED)
+d.line([(45,927),(1755,927)],'#ccd4ca',2)
+d.text(45,957,'中島朝玄關端面｜材質立面示意',22,INK,True)
+d.rect(48,1003,180,6,'#b8b6ac');d.rect(48,1009,180,173,WOOD)
+for x in range(58,225,11):d.line([(x,1014),(x,1173)],'#625b4d',1)
+d.rect(56,1174,164,8,'#2a302d')
+d.text(295,1011,'95 cm 寬 × 95 cm 高',20,INK,True)
+d.text(295,1050,'石材檯面齊邊、直紋木皮連續、踢腳內縮。',17,MUTED)
+d.text(295,1080,'這一面不擺重低音、插座明線或掃地機洞。',17,MUTED)
+d.text(295,1110,'設備維持朝冰箱；玄關主通道不放固定椅。',17,MUTED)
+d.text(1020,957,'仍需現場確認',22,INK,True)
+for i,t in enumerate(['北側通道維持約 90.2；南側通道約 104.2。',
+                       'Q7 外包絡距電視旋轉圈最近約 10.6；不是施工公差。',
+                       '窗邊設備後仍留約 33；此帶用於檢修，不作主要通道。',
+                       '低頻位置須量測；電視轉向中島時，聲場仍以沙發為主。',
+                       '此頁為平面與材質示意，尚未套入 3D 或驗證入口透視。']):d.text(1020,1005+i*31,t,16,MUTED)
+d.save('V3-影音與入口')
+
 plan_data={'status':'2D concept only','base':'new v2 = original v3','units':'cm','island':{'x':425,'y':480,'w':95,'d':300,'h':95},'preservedColumn':{'x':445.1,'y':880.1,'w':100.1,'d':89.9},'cabinets':[{'id':'display','x':280,'y':915,'w':165,'d':40},{'id':'collection-return','x':220,'y':915,'w':60,'d':40,'use':'closed corner infill; not counted as usable display'},{'id':'deep-storage','x':220,'y':760,'w':60,'d':155},{'id':'entry','x':660,'y':805,'w':55,'d':110,'h':90},{'id':'entry-return','x':660,'y':915,'w':30,'d':40,'h':90,'use':'closed removable corner infill; not counted as usable storage'}], 'nominalClearances':{'fridgeToIsland':110,'islandToFixedTVBase':99.5,'islandSouthToColumn':100.1,'entryColumnToCabinet':114.8},'retainedWalls':['kitchen boundary x210–220','exterior and structural columns'],'demolition':['collection north display and east door','collection short return at y875; structural pier retained'],'relocated':['entry cabinet run'],'cabinetJunctionRevision':{'leftExtensionCm':35,'rightCornerCm':[30,40],'electricalAccess':'split cabinet front; service hatch above low cabinet, separate from infill','entryDoorClearCm':107},'limits':['Measurements from model, not site survey.','TV sweep requires an empty rotation area; aisle dimension applies to parked TV.','No fixed stools in the 100cm south route.','Appliance doors are not to be opened opposite one another simultaneously.','Storage capacity decreases compared with enclosed room; large figurines require item-by-item shelf planning.']}
+plan_data['audio']=AUDIO
+plan_data['arrival']=ARRIVAL
+plan_data['relocated']+=['TV and console 23cm south to align middle sofa seat','Q7 pair','two subwoofers','two surround stands']
 (OUT/'格局尺寸.json').write_text(json.dumps(plan_data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-print('Saved two paired SVG/PNG concept boards and measured layout data.')
+print('Saved three SVG/PNG concept boards and measured layout data.')

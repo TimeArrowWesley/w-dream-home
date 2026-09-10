@@ -95,17 +95,21 @@
 <rect x="965.16" y="668.55" width="66.42" height="57.51" fill="#dfd5bf" stroke="#687b76" stroke-width="1"/>
 <rect x="913.32" y="670.17" width="39.69" height="55.08" fill="#dfd5bf" stroke="#687b76" stroke-width="1"/>
 <text x="1003.23" y="764.30" font-size="14" fill="#263b39" text-anchor="middle" font-weight="400">原沙發保留</text>
-<rect x="733.10" y="534.90" width="44.55" height="162.00" fill="#596d69" stroke="#263b39" stroke-width="1"/>
-<polyline points="755.37,537.33 755.37,694.47" fill="none" stroke="#132826" stroke-width="5"/>
+<rect x="733.10" y="553.53" width="44.55" height="162.00" fill="#596d69" stroke="#263b39" stroke-width="1"/>
+<polyline points="755.37,555.96 755.37,713.10" fill="none" stroke="#132826" stroke-width="5"/>
 <text x="778.05" y="512.53" font-size="16" fill="#263b39" text-anchor="middle" font-weight="400">旋轉電視</text>
 <text x="778.05" y="528.59" font-size="14" fill="#263b39" text-anchor="middle" font-weight="400">與影音底櫃</text>
-<circle cx="755.37" cy="615.90" r="78.98" fill="none" stroke="#287b6d" stroke-width="1"/>
-<rect x="842.16" y="539.15" width="25.68" height="25.52" fill="#293d3b" stroke="none" stroke-width="1"/>
-<rect x="842.16" y="667.13" width="25.68" height="25.52" fill="#293d3b" stroke="none" stroke-width="1"/>
+<circle cx="755.37" cy="634.53" r="78.98" fill="none" stroke="#287b6d" stroke-width="1"/>
+<rect x="808.22" y="704.31" width="25.52" height="25.68" fill="#293d3b" stroke="#263b39" stroke-width="1"/>
+<rect x="808.22" y="539.07" width="25.52" height="25.68" fill="#293d3b" stroke="#263b39" stroke-width="1"/>
+<rect x="1051.02" y="509.99" width="29.16" height="32.00" fill="#667c7a" stroke="#263b39" stroke-width="1"/>
+<rect x="1051.02" y="727.07" width="29.16" height="32.00" fill="#667c7a" stroke="#263b39" stroke-width="1"/>
+<rect x="1063.98" y="764.94" width="19.44" height="22.68" fill="#667c7a" stroke="#263b39" stroke-width="1"/>
+<rect x="1063.98" y="481.44" width="19.44" height="22.68" fill="#667c7a" stroke="#263b39" stroke-width="1"/>
+<circle cx="1000.80" cy="634.53" r="5.67" fill="#287b6d" stroke="none" stroke-width="1"/>
+<text x="980.55" y="645.09" font-size="12" fill="#287b6d" text-anchor="middle" font-weight="400">主座</text>
 <circle cx="894.69" cy="606.99" r="25.11" fill="#988b78" stroke="#263b39" stroke-width="1"/>
 <text x="894.69" y="643.54" font-size="13" fill="#263b39" text-anchor="middle" font-weight="400">茶几</text>
-<rect x="863.91" y="794.30" width="29.16" height="32.00" fill="#3f4b48" stroke="none" stroke-width="1"/>
-<rect x="1059.12" y="805.64" width="29.16" height="32.00" fill="#3f4b48" stroke="none" stroke-width="1"/>
 <rect x="846.90" y="903.45" width="255.15" height="32.40" fill="#b2c9c3" stroke="#263b39" stroke-width="1"/>
 <text x="972.45" y="925.42" font-size="13" fill="#263b39" text-anchor="middle" font-weight="400">原客廳展示櫃保留</text>
 <rect x="790.20" y="903.45" width="56.70" height="32.40" fill="#c4b8a2" stroke="#263b39" stroke-width="1"/>
@@ -142,6 +146,7 @@
 <text x="632.25" y="909.36" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="400">結構柱</text>
 <text x="632.25" y="926.16" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="400">100 × 90</text>
 <rect x="575.55" y="551.10" width="76.95" height="243.00" fill="#c2cfbb" stroke="#263b39" stroke-width="2"/>
+<polyline points="575.55,792.48 652.50,792.48" fill="none" stroke="#565044" stroke-width="5"/>
 <rect x="578.79" y="558.39" width="48.60" height="55.08" fill="#748c7d" stroke="#263b39" stroke-width="1"/>
 <text x="606.33" y="588.46" font-size="13" fill="#263b39" text-anchor="middle" font-weight="400">酒櫃</text>
 <rect x="578.79" y="619.95" width="38.48" height="30.86" fill="#e5e8dd" stroke="#263b39" stroke-width="1"/>
@@ -172,11 +177,11 @@
 <polyline points="571.55,595.70 579.55,603.70" fill="none" stroke="#287b6d" stroke-width="1.5"/>
 <rect x="504.00" y="576.70" width="54.00" height="21.00" fill="#f6f5ef" stroke="none" stroke-width="1"/>
 <text x="531.00" y="590.90" font-size="15" fill="#287b6d" text-anchor="middle" font-weight="700">110</text>
-<polyline points="652.50,709.05 733.10,709.05" fill="none" stroke="#287b6d" stroke-width="1.5"/>
-<polyline points="648.50,705.05 656.50,713.05" fill="none" stroke="#287b6d" stroke-width="1.5"/>
-<polyline points="729.10,705.05 737.10,713.05" fill="none" stroke="#287b6d" stroke-width="1.5"/>
-<rect x="665.80" y="713.05" width="54.00" height="21.00" fill="#f6f5ef" stroke="none" stroke-width="1"/>
-<text x="692.80" y="727.25" font-size="15" fill="#287b6d" text-anchor="middle" font-weight="700">99.5</text>
+<polyline points="652.50,733.35 733.10,733.35" fill="none" stroke="#287b6d" stroke-width="1.5"/>
+<polyline points="648.50,729.35 656.50,737.35" fill="none" stroke="#287b6d" stroke-width="1.5"/>
+<polyline points="729.10,729.35 737.10,737.35" fill="none" stroke="#287b6d" stroke-width="1.5"/>
+<rect x="665.80" y="737.35" width="54.00" height="21.00" fill="#f6f5ef" stroke="none" stroke-width="1"/>
+<text x="692.80" y="751.55" font-size="15" fill="#287b6d" text-anchor="middle" font-weight="700">99.5</text>
 <polyline points="575.55,534.09 652.50,534.09" fill="none" stroke="#287b6d" stroke-width="1.5"/>
 <polyline points="571.55,530.09 579.55,538.09" fill="none" stroke="#287b6d" stroke-width="1.5"/>
 <polyline points="648.50,530.09 656.50,538.09" fill="none" stroke="#287b6d" stroke-width="1.5"/>
