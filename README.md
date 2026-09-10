@@ -1,19 +1,19 @@
 # W 夢想之家
 
-A1–14F 全屋互動設計：四個配置版本、即時 3D、室內步行、設備控制，以及可編輯的家具規格清單。
+A1–14F 全屋互動設計：兩個配置版本與一個 2D 提案、即時 3D、室內步行、設備控制，以及可編輯的家具規格清單。
 
 [開啟線上設計](https://timearrowwesley.github.io/w-dream-home/) · [版本比較](方案比較.html) · [家具清單](家具清單.html)
 
-## 四個版本
+## 目前版本
 
 | 版本 | 中央配置 | 玄關 |
 | --- | --- | --- |
-| V1 | 圓弧中島與雙面玻璃展示櫃 | 高矮櫃 |
-| V2 | 圓弧中島與雙面玻璃展示櫃 | 矮櫃 |
-| V3 | 旋轉電視與直線中島 | 高矮櫃 |
-| V4 | 旋轉電視與直線中島 | 矮櫃 |
+| V1（原 V2） | 圓弧中島酒吧 | 玄關矮櫃 |
+| V2（原 V3） | 旋轉電視 | 玄關高矮櫃 |
 
-V1／V2 由根目錄 `index.html?layout=v1`、`index.html?layout=v2` 開啟。V3／V4 由 `提案/旋轉電視與直線中島/index.html?layout=v1`、`index.html?layout=v2` 開啟。介面左上可直接切換版本，並保留目前空間。
+新 V1：`index.html?layout=v1`。新 V2：`提案/旋轉電視與直線中島/index.html?layout=v2`。每個入口只載入自己的保留配置；舊 query 不會切回被移除的玄關形式。`HOME_LAYOUT.isV2` 是舊程式的「矮櫃」幾何旗標，不是現在的公開版本編號。
+
+[新 V3 開放大中島 2D 提案](提案/開放大中島/index.html)只有圖面，尚未建立第三個 3D 版本。依新 V2 配置延長中島、拆收藏室隔間，結構柱與廚房牆保留。
 
 ## 使用
 
@@ -22,10 +22,10 @@ V1／V2 由根目錄 `index.html?layout=v1`、`index.html?layout=v2` 開啟。V3
 - **空間設計**：左側選房間或平面圖，中央切換 3D、步行與 AI 參考。
 - **設備控制**：依房間顯示電視、電動門、收納操作；燈光、RGB 與窗簾統一管理。
 - **顯示設定**：視角、剖牆、天花、標籤、日夜與亮度。
-- **家具設備**：四版共用清單，編輯規格、價格與備註，定位對應模型。
+- **家具設備**：兩版共用清單，編輯規格、價格與備註，定位對應模型。
 - **設計資料**：版本差異、材質搭配、修正對照與模型檢查。
 
-步行操作為 WASD 移動、拖曳轉頭、E 開關門、Shift 慢走。AI 圖與歷史正反向圖是設備更新前參考，最新配置以即時模型為準。模型是設計提案，尺寸、承重、機電及設備安裝仍須施工圖與供應商核定。
+步行操作為 WASD 移動、拖曳轉頭、E 開關門、Shift 慢走。AI 圖是設備更新前的材質參考；過時的正反向導覽圖已移除，最新配置以即時模型為準。模型是設計提案，尺寸、承重、機電及設備安裝仍須施工圖與供應商核定。
 
 3D 檢視亦可按住 WASD 連續移動，預設採流暢畫質；右側「顯示設定」可切精細。室內平開門可開到 90 度，遇人暫停後會繼續完成開啟。[本次喇叭動線、中島與開門修正對照](調整紀錄/20260910動線與模型修正/修正對照.html)。
 
@@ -47,7 +47,7 @@ node tools/sync-furniture-seed.cjs
 | --- | --- |
 | `design.js`、`model-data.js` | 原版配置與幾何資料 |
 | `提案/旋轉電視與直線中島/` | V3／V4 配置與旋轉電視 |
-| `viewer-ui.js`、`viewer-ui.css` | 四版共用導覽、控制面板及版面 |
+| `viewer-ui.js`、`viewer-ui.css` | 兩版共用導覽、控制面板及版面 |
 | `equipment-models.js`、`equipment-controls.js` | 設備尺寸、分艙及互動 |
 | `realism.js`、`flooring.js` | 材質、木地板與玄關六角磚 |
 | `walk.js`、`interaction.js` | 步行、門片、可開啟櫃門 |
@@ -76,4 +76,8 @@ node tools/verify-navigation-island.cjs
 node tools/verify-furniture-catalog.cjs
 ```
 
-介面 DOM 測試另需 `linkedom` 及其相依套件，透過 `HOME_UI_TEST_MODULES` 指向其 `node_modules` 後執行 `node tools/verify-viewer-ui.cjs`。目前已完成四版幾何、互動、清單與 DOM 操作檢查；尚未完成真實瀏覽器的外觀及 GPU 渲染驗收。
+介面 DOM 測試另需 `linkedom` 及其相依套件，透過 `HOME_UI_TEST_MODULES` 指向其 `node_modules` 後執行 `node tools/verify-viewer-ui.cjs`。目前已完成兩版幾何、互動、清單與 DOM 操作檢查；尚未完成真實瀏覽器的外觀及 GPU 渲染驗收。
+
+主浴淋浴組已按業主原平面圖移到浴缸左側南牆（y483、中心x180），混合龍頭、固定座、立桿與頂噴相接；安裝高度為提案。
+
+歷史檢視報告中的 V1–V4 指當時編號，請以目前版本列及本 README 對照。新增圖面以 `python tools/build-open-island-plan.py` 產生，需要 Pillow 與 Microsoft JhengHei 字型。

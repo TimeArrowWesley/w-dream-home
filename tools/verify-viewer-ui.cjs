@@ -15,7 +15,7 @@ function cssValue(d,node,prop,width=1920){
   return best?.value;
 }
 function fixture(v,params='') {
-  const proposal=Number(v.slice(1))>2,prefix=proposal?'提案/旋轉電視與直線中島/':'';
+  const proposal=v==='v2',prefix=proposal?'提案/旋轉電視與直線中島/':'';
   const {document,window:dom}=parseHTML(read(prefix+'index.html'));
   const listeners={},calls=[],storage=new Map();
   let activeElement=null,current='all';
@@ -30,7 +30,7 @@ function fixture(v,params='') {
   Object.defineProperty(document,'readyState',{value:'complete',configurable:true});
   Object.defineProperty(document,'currentScript',{value:{src:''},writable:true,configurable:true});
   Object.defineProperty(document,'baseURI',{value:'file:///project/',configurable:true});
-  const base=new URL('file:///project/'+prefix+'index.html?layout='+(['v2','v4'].includes(v)?'v2':'v1')+params);
+  const base=new URL('file:///project/'+prefix+'index.html?layout='+(v)+params);
   const location={href:base.href,search:base.search,hash:base.hash,assign:u=>calls.push(['navigate',u])};
   const c={document,location,history:{replaceState(){}},console,URL,URLSearchParams,Blob,Date,Math,Set,Map,Event:dom.Event,CustomEvent:dom.CustomEvent,MutationObserver:dom.MutationObserver,THREE:T,innerWidth:1920,innerHeight:1080,ResizeObserver:class{observe(){}},requestAnimationFrame:()=>0,setTimeout:()=>0,setInterval:()=>0,clearInterval(){},performance:{now:()=>0},XMLSerializer:class{serializeToString(n){return n.outerHTML;}},navigator:{},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},confirm:()=>true};
   c.window=c;c.addEventListener=(n,fn)=>{(listeners[n]??=[]).push(fn);};c.dispatchEvent=e=>{(listeners[e.type]||[]).forEach(fn=>fn(e));};vm.createContext(c);
@@ -38,7 +38,7 @@ function fixture(v,params='') {
   function el(tag,id,html,host=document.body){const n=document.createElement(tag);if(id)n.id=id;if(html)n.innerHTML=html;host.append(n);return n;}
   const $=id=>document.getElementById(id);
   // Actual room metadata and existing tour/walking/AI handlers, with a camera-only scene.
-  const layout={isV2:['v2','v4'].includes(v)};
+  const layout={isV2:v==='v1'};
   const rooms=vm.runInNewContext(read(prefix+'design.js').match(/const ROOMS=(\[[\s\S]*?\n\]);/)[1],{layout});
   const scene=new T.Scene(),architecture=new T.Group(),fittings=new T.Group(),camera=new T.PerspectiveCamera();scene.add(architecture,fittings);
   c.HOME_VIEWER={rooms,scene,architecture,fittings,camera,wallParts:[],finishContext:{materials:{steel:new T.MeshBasicMaterial()}},pos:(x,y,z)=>new T.Vector3(x-482.5,z,y-480),capturePlan:()=>'',doorPlan:()=>[],syncWalkCamera(){},nudge:action=>calls.push(['camera',action]),focusObject:g=>calls.push(['focus',g.name]),getCurrent:()=>current,selectRoom:id=>{
@@ -50,7 +50,7 @@ function fixture(v,params='') {
   $('export').onclick=()=>calls.push(['export']);$('full').onclick=()=>calls.push(['fullscreen']);
   run(prefix+'layout-version.js');
   c.SOURCE_PLAN={walls:{x:0,y:0,w:100,h:100,url:'data:image/svg+xml,'},furniture:{x:0,y:0,w:100,h:100,url:'data:image/svg+xml,'}};
-  run(prefix+'tour.js');run('walk.js');run('interaction.js');
+  run('assets/ai-interiors/catalog.js');run(prefix+'tour.js');run('walk.js');run('interaction.js');
   for(const fn of listeners.DOMContentLoaded||[])fn();listeners.DOMContentLoaded=[];
   const raw=read('rgb-lighting.js').split('\n').find(l=>l.startsWith('panel.innerHTML='));
   const html=vm.runInNewContext(raw.slice(raw.indexOf('=')+1).replace(/;\s*$/,''),{modes:{static:'恆亮',breathe:'呼吸',rainbow:'彩虹循環',wave:'彩虹波浪',chase:'流光追逐'}});
@@ -71,11 +71,11 @@ function fixture(v,params='') {
   return {c,document,$,calls,originals,run,dom,listeners};
 }
 (async()=>{
-for(const v of ['v1','v2','v3','v4']){
+for(const v of ['v1','v2']){
   const a=fixture(v),{c,document:d,$,calls,originals}=a;
   assert(c.HOME_UI, v+' initialized');assert.equal(c.HOME_UI.getState().room,'all');
   assert.equal(d.querySelectorAll('.uiPrimary > button').length,3);
-  assert.equal($('layoutSwitch').children.length,4);assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
+  assert.equal($('layoutSwitch').children.length,2);assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
   assert.equal(cssValue(d,d.querySelector('body > header'),'display'),'flex');assert.equal(cssValue(d,$('uiSidebar'),'display'),'flex');assert.equal(cssValue(d,$('planPanel'),'display'),'none');
   assert.equal(cssValue(d,d.querySelector('.shell'),'height'),'auto');assert.equal(cssValue(d,$('scenePanel'),'grid-template-rows'),'auto minmax(0,1fr) auto');
   const ids=Array.from(d.querySelectorAll('[id]')).map(n=>n.id);assert.equal(new Set(ids).size,ids.length,'No duplicate IDs '+v);
@@ -105,14 +105,14 @@ for(const v of ['v1','v2','v3','v4']){
   const photo=d.querySelector('[data-viewmode="photo"]');if(photo&&!photo.hidden){photo.click();await Promise.resolve();assert.equal(c.HOME_TOUR.getMode(),'photo');$('planToggle').click();$('uiExpandPlan').click();const room=d.querySelector('.planroom[data-room="study"]');room.dispatchEvent(new a.dom.Event('click',{bubbles:true}));assert.equal(c.HOME_AI_VIEWS.getState().requestedRoom,'study');assert(!$('uiMapDialog').open,'choosing a map room closes enlargement during AI browsing');$('uiOpenControls').click();assert.equal(c.HOME_TOUR.getMode(),'model');}
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,6);$('uiResourcesClose').click();
+  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,7);$('uiResourcesClose').click();
   $('export').click();assert(calls.some(q=>q[0]==='export'));
-  const alt=v==='v4'?'v1':'v4',target=d.querySelector('[data-proposal="'+alt+'"], [data-layout="'+alt+'"]');target.click();const nav=calls.find(q=>q[0]==='navigate');assert(nav);assert(new URL(nav[1]).searchParams.get('uiRoom')==='study');
-  if(['v3','v4'].includes(v)){assert($('uiInspector').contains($('rotatingTVPanel')));d.querySelector('[data-tv-facing="island"]').click();assert(calls.some(q=>q[0]==='tv'&&q[1]==='island'));}
+  const alt=v==='v2'?'v1':'v2',target=d.querySelector('[data-proposal="'+alt+'"], [data-layout="'+alt+'"]');target.click();const nav=calls.find(q=>q[0]==='navigate');assert(nav);assert(new URL(nav[1]).searchParams.get('uiRoom')==='study');
+  if(v==='v2'){assert($('uiInspector').contains($('rotatingTVPanel')));d.querySelector('[data-tv-facing="island"]').click();assert(calls.some(q=>q[0]==='tv'&&q[1]==='island'));}
   c.innerWidth=390;assert.equal(cssValue(d,$('uiSidebar'),'display',390),'none');$('uiMobileNav').click();assert(d.body.classList.contains('uiNavOpen'));assert.equal(cssValue(d,$('uiSidebar'),'display',390),'flex');$('uiNavScrim').click();assert(!d.body.classList.contains('uiNavOpen'));
   checks.push(v.toUpperCase()+': navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed');
 }
-const deep=fixture('v4','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.getState().room,'bed');checks.push('Switching versions retains selected room; normal startup returns to whole-home overview');
+const deep=fixture('v2','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.getState().room,'bed');checks.push('Switching versions retains selected room; normal startup returns to whole-home overview');
 for(const f of ['viewer-base.css','viewer-ui.css','furniture.css']){const sheet=CSSOM.parse(read(f));assert(sheet.cssRules.length>20);checks.push(f+': stylesheet parsed successfully');}
 for(const [f,hash]of Object.entries(geometry.hashes))assert.equal(crypto.createHash('sha256').update(read(f)).digest('hex'),hash);
 checks.push('Furniture canonical JSON and 3D geometry are preserved; geometry source hashes still match');

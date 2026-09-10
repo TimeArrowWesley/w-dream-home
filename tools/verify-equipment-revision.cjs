@@ -11,8 +11,8 @@ const near=(x,y,why,tol=.025)=>assert(Math.abs(x-y)<tol,`${why}: ${x} != ${y}`);
 const visible=o=>{for(let p=o;p;p=p.parent)if(!p.visible)return false;return true;};
 const result={revision:'20260910',method:'offline actual Three.js geometry including finish and viewer initialization, with DOM and renderer stubs; no browser UI validation',hashes:Object.fromEntries(['design.js','equipment-models.js','提案/旋轉電視與直線中島/design.js'].map(f=>[f,crypto.createHash('sha256').update(read(f)).digest('hex')])),variants:{},checks:[]};
 for(const f of ['equipment-models.js','equipment-controls.js','version-changes.js','design.js','interaction.js','ai-views.js','提案/旋轉電視與直線中島/design.js'])new vm.Script(read(f),{filename:f});
-for(let n=1;n<=4;n++){
- const win={THREE:T,HOME_LAYOUT:{comfort:true,isV2:n%2===0,version:n%2===0?'v2':'v1',proposal:'v'+n,entryDoorY:955},addEventListener:noop,dispatchEvent:noop};
+for(const n of [2,3]){const publicVersion=n===2?'v1':'v2';
+ const win={THREE:T,HOME_LAYOUT:{comfort:true,isV2:n%2===0,version:publicVersion,proposal:publicVersion,entryDoorY:955},addEventListener:noop,dispatchEvent:noop};
  const c={window:win,document:{getElementById:canvas,createElement:canvas,addEventListener:noop,querySelectorAll:()=>[]},performance:{now:()=>0},devicePixelRatio:1,console,requestAnimationFrame:noop,ResizeObserver:class{observe(){}},CustomEvent:class{}};vm.createContext(c);
  for(const f of ['model-data.js','equipment-models.js'])vm.runInContext(read(f),c,{filename:f});
  const file=n<3?'design.js':'提案/旋轉電視與直線中島/design.js';
@@ -70,10 +70,10 @@ for(let n=1;n<=4;n++){
  }
  get('equipmentSelect').value=String(E.items.findIndex(g=>g.userData.equipment.key==='switch2dock'));get('equipmentSelect').onchange();assert.equal(selectedMode,'model');
  win.HOME_VIEWER.selectRoom('all');a.scene.updateMatrixWorld(true);
- result.variants['v'+n]={equipment,bays:E.bays,island:{...island.userData.footprint,...island.userData.island},surrounds,sweep,switchVisibility,named,walls:a.wallParts.map(({m})=>bounds(m))};
- console.log(`V${n}: ${equipment.length} equipment envelopes, no pair overlaps, bay and rotation checks passed`);
+ result.variants[publicVersion]={equipment,bays:E.bays,island:{...island.userData.footprint,...island.userData.island},surrounds,sweep,switchVisibility,named,walls:a.wallParts.map(({m})=>bounds(m))};
+ console.log(`${publicVersion.toUpperCase()}: ${equipment.length} equipment envelopes, no pair overlaps, bay and rotation checks passed`);
 }
 // Shared equipment remains identical between tall / low entrance pairs.
-for(const [a,b] of [['v1','v2'],['v3','v4']])assert.deepEqual(result.variants[a].equipment,result.variants[b].equipment,`${a}/${b} common equipment`);
-result.checks=['JavaScript syntax','all four actual geometry builds','24 product envelopes per version including Switch 2 and dock','selected equipment counts','pairwise equipment volumes','wine fits open bay','TV sweep versus equipment at 0.25 degrees','tall/low variants share equipment','inspection toggles','two linked sliding leaves','product envelopes do not intersect equipment cabinet panels','island equipment fits actual curved/straight footprint','wine, robot and water-service openings face refrigerator with clear 60cm device/panel paths (service door opened)','robot dock sits on floor under island countertop','two surround stands connect housings to floor','actual Switch toolbar button and device selector handlers with DOM stubs','both Switch devices framed and unobstructed at 9 front-face points in each version'];
+
+result.checks=['JavaScript syntax','both retained actual geometry builds','24 product envelopes per version including Switch 2 and dock','selected equipment counts','pairwise equipment volumes','wine fits open bay','TV sweep versus equipment at 0.25 degrees','retained versions preserve equipment counts','inspection toggles','two linked sliding leaves','product envelopes do not intersect equipment cabinet panels','island equipment fits actual curved/straight footprint','wine, robot and water-service openings face refrigerator with clear 60cm device/panel paths (service door opened)','robot dock sits on floor under island countertop','two surround stands connect housings to floor','actual Switch toolbar button and device selector handlers with DOM stubs','both Switch devices framed and unobstructed at 9 front-face points in each version'];
 fs.writeFileSync(path.join(out,'幾何驗證.json'),JSON.stringify(result,null,2));console.log('Saved geometry verification. Browser visual validation remains unavailable.');

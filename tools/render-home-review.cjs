@@ -16,13 +16,13 @@ module.exports=function({T,V,version,out,views}){
  const meshes=[];V.scene.traverse(o=>{if(!o.isMesh||o.material?.isShaderMaterial||o.userData.allowance||o.name==='窗外天空')return;for(let p=o;p;p=p.parent)if(!p.visible)return;if(o.material?.transparent&&o.material?.map&&!o.material?.color)return;meshes.push(o);});
  const viewpoints=[];
  // Distinct layouts reviewed in every room; both entry heights get matching close-ups.
- if(version==='v1'||version==='v3')for(const r of V.rooms.filter(r=>r.id!=='all')){
+ if(version==='v1'||version==='v2')for(const r of V.rooms.filter(r=>r.id!=='all')){
   viewpoints.push({id:r.id+'-A',room:r.id,name:r.n+' A',p:r.p,t:r.t});
  }
  const reverse={living:[[1010,730,165],[620,660,110]],island:[[375,645,165],[605,543,112]],kitchen:[[107,605,165],[110,913,114]],bed:[[48,231,165],[321,54,126]],closet:[[651,177,160],[634,25,125]],study:[[809,315,165],[1030,95,125]],collection:[[312,849,158],[496,790,120]],bath1:[[117,354,165],[0,463,105]],bath2:[[478,324,165],[540,234,113]],storage:[[650,350,165],[715,283,114]],back:[[-102,758,165],[-80,515,114]]};
- if(version==='v1'||version==='v3')for(const [room,[p,t]] of Object.entries(reverse))viewpoints.push({id:room+'-B',room,name:V.rooms.find(r=>r.id===room).n+' B',p,t});
+ if(version==='v1'||version==='v2')for(const [room,[p,t]] of Object.entries(reverse))viewpoints.push({id:room+'-B',room,name:V.rooms.find(r=>r.id===room).n+' B',p,t});
  viewpoints.push({id:'entry-living',room:'entry',name:'玄關客廳面',p:[733,665,159],t:[554,766,80]});
- if(version==='v2'||version==='v4'){const r=V.rooms.find(r=>r.id==='entry');viewpoints.push({id:'entry-A',room:'entry',name:'玄關內側',p:r.p,t:r.t});}
+
  if(views)viewpoints.splice(0,viewpoints.length,...views);
  const width=740,height=480,camera=new T.PerspectiveCamera(72,width/height,2,4000),light=new T.Vector3(-.4,.8,.5).normalize();
  function render(view){
@@ -62,7 +62,7 @@ module.exports=function({T,V,version,out,views}){
  if(views)return images;
  const extras=[];
  extras.push(render({id:'entry-floor',room:'entry',name:'玄關六角磚與木地板交界',p:[758,883,165],t:[621,868,0]}));
- if(!process.env.HOME_MATERIAL_ONLY&&(version==='v1'||version==='v3')){
+ if(!process.env.HOME_MATERIAL_ONLY&&(version==='v1'||version==='v2')){
   const mirror=V.scene.getObjectByName('更衣室側移滑鏡')?.children[0];
   if(mirror){const start=mirror.position.x;mirror.position.x+=50;V.scene.updateMatrixWorld(true);const r=V.rooms.find(r=>r.id==='closet');extras.push(render({id:'closet-open',room:'closet',name:'滑鏡移開',p:r.p,t:r.t}));mirror.position.x=start;V.scene.updateMatrixWorld(true);}
   extras.push(render({id:'fridge-front',room:'kitchen',name:'冰箱上下格柵',p:[85,743,156],t:[163,781,132]}));

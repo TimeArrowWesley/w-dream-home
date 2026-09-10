@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-10T13:54:03.181Z",
-  "method": "Actual core and UI handlers with DOM and file-handle fixtures; existing source-hash-verified four-version geometry index. Native file picker and browser layout not tested.",
+  "date": "2026-09-10T14:25:20.530Z",
+  "method": "Actual core and UI handlers with DOM and file-handle fixtures; existing source-hash-verified two-version geometry index. Native file picker and browser layout not tested.",
   "checks": [
     "79 archived rows retained plus PS5 Pro and Switch 2",
     "Budget ranges, sums, estimates, credits and included amounts",
@@ -17,7 +17,7 @@
     "Saved local data survives reload when the page seed is older",
     "A stale tab cannot silently replace a newer browser draft; the visible conflict choice preserves its edit buffer",
     "Unavailable browser storage is reported instead of claiming autosave",
-    "All four toolbar panels and Switch 2 jumps work; every catalog model link resolves in current verified model geometry"
+    "Both retained toolbar panels and Switch 2 jumps work; every catalog model link resolves in current verified model geometry"
   ],
   "budget": {
     "min": 3776738,
@@ -37,10 +37,10 @@
     "家具清單.json": "8e11c719d5d4b957412a504cf8382fb9071061d82322e48d89bef0337aff5a34",
     "furniture-data.js": "893b0c69759756fdc68f5546ff5fddc6202798d6a8fba40adbf1cf99b8cd6ce0",
     "furniture-core.js": "02491022dd3ecddb6e9956cdf1902541d80fd6d4dd87741ff23f31ef81deb499",
-    "furniture-app.js": "afe91cdf3499135205b9f20df3322f2a9e2054424ef55c739d094ed89d73c70f",
+    "furniture-app.js": "8d9160c6ed09f17565dfffe1f7d07eacf1975429a003a094b7807f6d5c0ac2c2",
     "furniture.css": "c662300e4e3b00fe2c3ebb2eebfa5a648aecce1863a7b02494e8f6a3b862ebd2",
-    "index.html": "40b677f9d68b206e363444ac56ade4fd4eedab57d2560cd146d028a80cd0035a",
-    "提案/旋轉電視與直線中島/index.html": "4131f0c05d976e1eb68ba768266af9067679b2f3efd15f8444e9c69b388006d9",
+    "index.html": "82a38f86aa367e9099ed1af983c6e9cdd18009f6cd5c7b2023021ea5900a0d88",
+    "提案/旋轉電視與直線中島/index.html": "4dde743895a9fc02afba491cac0d2161f715d5458a56bf0ca14ec08801705845",
     "家具清單.html": "1a105b571f3a7bc1b83eff970a187b3df574ce3ff3a45de008a280620c408299"
   }
 }

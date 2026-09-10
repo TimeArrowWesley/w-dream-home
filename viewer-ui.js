@@ -54,11 +54,8 @@
     $('full').textContent = '全螢幕'; actions.append(exportMenu, $('full'));
     header.replaceChildren(brand, primary, actions);
 
-    // Four versions live in one deliberate selector; descriptions remain legible.
-    const versions = {
-      v1: ['圓弧中島', '玄關高矮櫃'], v2: ['圓弧中島', '玄關矮櫃'],
-      v3: ['旋轉電視・直線中島', '玄關高矮櫃'], v4: ['旋轉電視・直線中島', '玄關矮櫃']
-    };
+    // Two retained designs, with the original Chinese names.
+    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視','玄關高矮櫃']};
     const versionMenu = make('details', 'uiMenu uiVersionMenu'); versionMenu.id = 'uiVersionMenu';
     const versionSummary = make('summary');
     versionSummary.append(make('small', '', '設計版本'), make('strong', '', version.toUpperCase() + ' · ' + versions[version][0]), make('span', '', versions[version][1]));
@@ -74,8 +71,8 @@
       b.onclick = () => {
         versionMenu.open = false;
         if (key === version) return;
-        const url = new URL((['v3','v4'].includes(key) ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
-        url.searchParams.set('layout', ['v2','v4'].includes(key) ? 'v2' : 'v1');
+        const url = new URL((key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
+        url.searchParams.set('layout', key);
         url.searchParams.set('uiRoom', V.getCurrent());
         url.searchParams.set('uiMode', tour.getMode());
         location.assign(url.href);
@@ -119,7 +116,7 @@
     planFooter.replaceChildren(expandPlan);
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
-    const sideFoot = make('div', 'uiSideFoot', 'V1–V4 共用家具清單 · 可隨時切換版本');
+    const sideFoot = make('div', 'uiSideFoot', 'V1、V2 共用家具清單 · 可隨時切換版本');
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -132,7 +129,8 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
-      ['版本比較', '四個版本的格局與主要差異', '方案比較.html'],
+      ['新 V3・開放大中島', '拆除收藏室隔間的 2D 格局提案', '提案/開放大中島/index.html'],
+      ['版本比較', '兩個保留版本，以及新 V3 的 2D 提案', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
       ['材質與配色', '玄關六角磚、深色木皮與材質搭配', '材質調整.html'],
       ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],
@@ -145,7 +143,7 @@
     resources.append(resourceGrid);
     const history = make('details', 'uiHistory'); history.append(make('summary', '', '歷史參考圖'));
     history.append(make('p', '', '以下圖片早於目前設備與材質更新，僅供回顧。最新設計請看 3D 模型。'));
-    for (const [label, file] of [['AI 材質參考 ↗', 'AI寫實視角.html'], ['更新前正反向視角 ↗', '最新版導覽/正反視角總覽.html']]) {
+    for (const [label, file] of [['AI 材質參考 ↗', 'AI寫實視角.html']]) {
       const a = make('a', '', label); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener'; history.append(a);
     }
     resources.append(history);

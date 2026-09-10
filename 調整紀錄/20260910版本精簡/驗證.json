@@ -1,0 +1,62 @@
+{
+  "method": "Actual retained model geometry, source layout bootstraps and concept dimensions. No GPU rendering.",
+  "baseline": "整理紀錄/20260910版本精簡",
+  "versions": {
+    "v1": {
+      "sourceOriginalVersion": "v2",
+      "lowEntrance": true,
+      "showerBounds": {
+        "x": 166,
+        "y": 441,
+        "z": 69.83251190185547,
+        "w": 36.52056884765625,
+        "d": 42,
+        "h": 145.16748809814453
+      },
+      "wallMounts": 2,
+      "clearOfTubAndDoor": true,
+      "unchangedNonShowerMeshes": 2048
+    },
+    "v2": {
+      "sourceOriginalVersion": "v3",
+      "lowEntrance": false,
+      "showerBounds": {
+        "x": 166,
+        "y": 441,
+        "z": 69.83251190185547,
+        "w": 36.52056884765625,
+        "d": 42,
+        "h": 145.16748809814453
+      },
+      "wallMounts": 2,
+      "clearOfTubAndDoor": true,
+      "unchangedNonShowerMeshes": 2032
+    }
+  },
+  "concept": {
+    "footprintCm": {
+      "x": 425,
+      "y": 480,
+      "w": 95,
+      "d": 300,
+      "h": 95
+    },
+    "clearances": {
+      "fridgeToIsland": 110,
+      "islandToFixedTVBase": 99.5,
+      "islandSouthToColumn": 100.1,
+      "entryColumnToCabinet": 119.8
+    },
+    "routesChecked": 2,
+    "routeBodyRadius": 18,
+    "actual3DChanged": false
+  },
+  "hashes": {
+    "layout-version.js": "c6384904d96025400aea1903b4a77d1e118395b73b9c4aa7a526ee1a4b9ddb78",
+    "提案/旋轉電視與直線中島/layout-version.js": "7868befa16841bea7ce5eade5320d6453358ab0b888142a311e667d2ce870999",
+    "design.js": "a464bec6459e041b35ce222cb3d6acba3a76c1500b09f9918ff9122c9ecbc7e8",
+    "提案/旋轉電視與直線中島/design.js": "ba47bc599c70ad4ea9b2797e0735fac9403642d0e163447510cdecc7db16a54d",
+    "assets/ai-interiors/catalog.js": "799338c9f8ebe05adf6b7d99b84b54cf17fafa30966c7011a45f079e7114fb9d",
+    "提案/開放大中島/格局尺寸.json": "2f973a73367703db48bfc17bcc90c728c52e6caf8699d83d5c2630411a460436"
+  }
+}

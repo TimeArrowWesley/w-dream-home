@@ -1,8 +1,0 @@
-'use strict';
-(()=>{if(!window.HOME_LAYOUT?.comfort)return;const V=HOME_VIEWER,C=V.finishContext;
-const presets={daily:{label:'日常',color:'#fff0dd',brightness:18,mode:'static',light:.42},movie:{label:'觀影',color:'#ffd9a6',brightness:6,mode:'static',light:.10},game:{label:'遊戲',color:'#66bbff',brightness:30,mode:'breathe',light:.20},night:{label:'夜間',color:'#ffc58b',brightness:3,mode:'static',light:.05}};
-const row=document.createElement('div');row.id='comfortScenes';row.innerHTML='<h3>燈光情境</h3><div style="display:flex;gap:5px;flex-wrap:wrap">'+Object.entries(presets).map(([id,s])=>'<button data-comfort-scene="'+id+'">'+s.label+'</button>').join('')+'</div><p>白光色感為RGB模擬；實作建議使用可調白光燈具。情境不改動窗簾開合。</p>';document.getElementById('rgbShowModel').after(row);
-let current='daily';function apply(id){const s=presets[id];if(!s)return;current=id;for(const room of ['living','study'])HOME_RGB.update(room,{on:true,color:s.color,brightness:s.brightness,mode:s.mode,speed:.35});for(const l of C.roomLights){const x=l.position.x+482.5,y=l.position.z+480;if(x>755||y>375&&x>315||l.name==='咖啡吧工作照明')l.intensity=s.light;}document.querySelectorAll('[data-comfort-scene]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.comfortScene===id)));}
-row.querySelectorAll('button').forEach(b=>b.onclick=()=>apply(b.dataset.comfortScene));
-window.HOME_COMFORT={setScene:apply,getState:()=>({scene:current})};const timer=setInterval(()=>{if(!window.HOME_REALISM?.getState().ready)return;clearInterval(timer);apply('daily');},100);
-})();

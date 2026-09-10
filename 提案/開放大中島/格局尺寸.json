@@ -1,0 +1,66 @@
+{
+  "status": "2D concept only",
+  "base": "new v2 = original v3",
+  "units": "cm",
+  "island": {
+    "x": 425,
+    "y": 480,
+    "w": 95,
+    "d": 300,
+    "h": 95
+  },
+  "preservedColumn": {
+    "x": 445.1,
+    "y": 880.1,
+    "w": 100.1,
+    "d": 89.9
+  },
+  "cabinets": [
+    {
+      "id": "display",
+      "x": 220,
+      "y": 915,
+      "w": 225,
+      "d": 40
+    },
+    {
+      "id": "deep-storage",
+      "x": 220,
+      "y": 760,
+      "w": 60,
+      "d": 120
+    },
+    {
+      "id": "entry",
+      "x": 665,
+      "y": 805,
+      "w": 50,
+      "d": 110,
+      "h": 90
+    }
+  ],
+  "nominalClearances": {
+    "fridgeToIsland": 110,
+    "islandToFixedTVBase": 99.5,
+    "islandSouthToColumn": 100.1,
+    "entryColumnToCabinet": 119.8
+  },
+  "retainedWalls": [
+    "kitchen boundary x210–220",
+    "exterior and structural columns"
+  ],
+  "demolition": [
+    "collection north display and east door",
+    "collection short return at y875; structural pier retained"
+  ],
+  "relocated": [
+    "entry cabinet run"
+  ],
+  "limits": [
+    "Measurements from model, not site survey.",
+    "TV sweep requires an empty rotation area; aisle dimension applies to parked TV.",
+    "No fixed stools in the 100cm south route.",
+    "Appliance doors are not to be opened opposite one another simultaneously.",
+    "Storage capacity decreases compared with enclosed room; large figurines require item-by-item shelf planning."
+  ]
+}

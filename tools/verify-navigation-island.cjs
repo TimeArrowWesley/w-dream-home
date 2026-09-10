@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'..'),out=path.join(root,'調整紀錄/2026091
 const files=['design.js','提案/旋轉電視與直線中島/design.js','equipment-models.js','walk.js','interaction.js','realism.js'];
 const report={method:'Actual Three.js geometry and animation/collision handlers with stubbed renderer. GPU frame rate and visual materials are not measured.',hashes:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')])),variants:{}};
 (async()=>{
-for(let n=1;n<=4;n++){
+for(const n of [2,3]){const publicVersion=n===2?'v1':'v2';
  const {T,c,V,E,events,raf,get,bounds,tick}=await build(n),near=(a,b,m,t=.025)=>assert(Math.abs(a-b)<t,`${m}: ${a}, expected ${b}`);
  const island=V.scene.getObjectByName(n<3?'曲線設備中島':'直線設備中島'),sink=island.userData.island.sink;
  V.scene.updateMatrixWorld(true);
@@ -67,8 +67,8 @@ for(let n=1;n<=4;n++){
  for(let i=0;i<40;i++)c.HOME_WALK.canStand(250+i%20,70+i%25);
  const builds=I.getState().metrics.boundsBuilds,t=performance.now();for(let i=0;i<400;i++)c.HOME_WALK.canStand(250+i%20,70+i%25);const ms=performance.now()-t;
  assert.equal(I.getState().metrics.boundsBuilds,builds,'stationary door bounds cached');
- report.variants['v'+n]={sinkRaySamples:surface.length,ihSurfaceSamples:9,ihChassisClear:true,modelMovementSteps:steps.length,hingedDoor90Count:doors.length,openLeavesClearWalls:true,walkableInteriorDoors:crossings,slidingPassages:2,obstructedOpeningResumes:true,aisles,collision400ProbesMs:Math.round(ms*100)/100,render:{defaultQuality:after.quality,shadowRefreshesPer60Frames:after.shadowUpdates-before,postPasses:after.postPasses},metrics:I.getState().metrics};
- console.log(`V${n}: sink / IH surfaces, continuous camera, 90-degree doors, open passages, shadow budget and cached collisions passed (${ms.toFixed(1)}ms / 400 probes).`);
+ report.variants[publicVersion]={sinkRaySamples:surface.length,ihSurfaceSamples:9,ihChassisClear:true,modelMovementSteps:steps.length,hingedDoor90Count:doors.length,openLeavesClearWalls:true,walkableInteriorDoors:crossings,slidingPassages:2,obstructedOpeningResumes:true,aisles,collision400ProbesMs:Math.round(ms*100)/100,render:{defaultQuality:after.quality,shadowRefreshesPer60Frames:after.shadowUpdates-before,postPasses:after.postPasses},metrics:I.getState().metrics};
+ console.log(`${publicVersion.toUpperCase()}: sink / IH surfaces, continuous camera, 90-degree doors, open passages, shadow budget and cached collisions passed (${ms.toFixed(1)}ms / 400 probes).`);
 }
 fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'驗證.json'),JSON.stringify(report,null,2));
 })().catch(e=>{console.error(e);process.exitCode=1;});

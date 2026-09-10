@@ -47,10 +47,6 @@ def verify(site):
             for target in local_links(name):
                 if target not in site: raise ValueError(f'Missing site dependency: {name} -> {target}')
                 count += 1
-    for v in ('v1','v2'):
-        for room in ('living','island','entry','kitchen','bed','closet','study','collection','bath1','bath2','storage','back'):
-            for direction in ('A','B'):
-                if f'最新版導覽/{v}/{room}-{direction}.jpg' not in site: raise ValueError('Missing historical room reference')
     for required in ('viewer-ui.js','viewer-ui.css','furniture-data.js','furniture-core.js','furniture-app.js','furniture.css','家具清單.json'):
         if required not in site: raise ValueError('Missing shared interface dependency: '+required)
     return count
