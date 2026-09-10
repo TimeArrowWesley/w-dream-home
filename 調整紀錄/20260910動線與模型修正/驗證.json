@@ -1,0 +1,185 @@
+{
+  "method": "Actual Three.js geometry and animation/collision handlers with stubbed renderer. GPU frame rate and visual materials are not measured.",
+  "hashes": {
+    "design.js": "03342bc49725e451db469804932ae08ee61f320f769771cd80898a1346fc967e",
+    "提案/旋轉電視與直線中島/design.js": "1c016f36d8068e3951ba15a6436efa8216c720ecff8dfece5664030277a2007e",
+    "equipment-models.js": "53eadcb7c5f219bb2f1ebbc9298c140e19e4d9c0a1993a1cab058ba7d1556afd",
+    "walk.js": "2ebe663a123c98c441ae671d88ed8efb5cdb231d2024924d2a0dea08a267ac6f",
+    "interaction.js": "280dbd41ee90c15c137864e958e73a5d88fe9791fab153e7f355c7102bb8b131",
+    "realism.js": "66ff768c012fae139548f0308a30ac1640e7c57e5916e60772e6f3ec2ce95260"
+  },
+  "variants": {
+    "v1": {
+      "sinkRaySamples": 24,
+      "ihSurfaceSamples": 9,
+      "ihChassisClear": true,
+      "modelMovementSteps": 20,
+      "hingedDoor90Count": 9,
+      "openLeavesClearWalls": true,
+      "walkableInteriorDoors": [
+        "主浴80cm門洞",
+        "室內門（示意）",
+        "更衣室門",
+        "主臥走道入口門",
+        "書房玻璃門",
+        "後陽台門",
+        "收藏室東側入口",
+        "主浴淋浴玻璃門"
+      ],
+      "slidingPassages": 2,
+      "obstructedOpeningResumes": true,
+      "aisles": null,
+      "collision400ProbesMs": 15.54,
+      "render": {
+        "defaultQuality": "balanced",
+        "shadowRefreshesPer60Frames": 6,
+        "postPasses": 0
+      },
+      "metrics": {
+        "boundsBuilds": 2975,
+        "pickCandidates": 0,
+        "pickMeshes": 1587
+      }
+    },
+    "v2": {
+      "sinkRaySamples": 24,
+      "ihSurfaceSamples": 9,
+      "ihChassisClear": true,
+      "modelMovementSteps": 20,
+      "hingedDoor90Count": 9,
+      "openLeavesClearWalls": true,
+      "walkableInteriorDoors": [
+        "主浴80cm門洞",
+        "室內門（示意）",
+        "更衣室門",
+        "主臥走道入口門",
+        "書房玻璃門",
+        "後陽台門",
+        "收藏室東側入口",
+        "主浴淋浴玻璃門"
+      ],
+      "slidingPassages": 2,
+      "obstructedOpeningResumes": true,
+      "aisles": null,
+      "collision400ProbesMs": 15.52,
+      "render": {
+        "defaultQuality": "balanced",
+        "shadowRefreshesPer60Frames": 6,
+        "postPasses": 0
+      },
+      "metrics": {
+        "boundsBuilds": 2973,
+        "pickCandidates": 0,
+        "pickMeshes": 1585
+      }
+    },
+    "v3": {
+      "sinkRaySamples": 24,
+      "ihSurfaceSamples": 9,
+      "ihChassisClear": true,
+      "modelMovementSteps": 20,
+      "hingedDoor90Count": 9,
+      "openLeavesClearWalls": true,
+      "walkableInteriorDoors": [
+        "主浴80cm門洞",
+        "室內門（示意）",
+        "更衣室門",
+        "主臥走道入口門",
+        "書房玻璃門",
+        "後陽台門",
+        "收藏室東側入口",
+        "主浴淋浴玻璃門"
+      ],
+      "slidingPassages": 2,
+      "obstructedOpeningResumes": true,
+      "aisles": {
+        "northCm": 85,
+        "southCm": 93,
+        "speakers": [
+          {
+            "x": 754.25,
+            "y": 465.1499996185303,
+            "z": 0,
+            "w": 31.5,
+            "d": 31.70000076293946,
+            "h": 100.09999923706054
+          },
+          {
+            "x": 754.25,
+            "y": 623.1499996185303,
+            "z": 0,
+            "w": 31.5,
+            "d": 31.700000762939453,
+            "h": 100.09999923706054
+          }
+        ],
+        "condition": "TV parked; hinged room doors closed"
+      },
+      "collision400ProbesMs": 112.52,
+      "render": {
+        "defaultQuality": "balanced",
+        "shadowRefreshesPer60Frames": 6,
+        "postPasses": 0
+      },
+      "metrics": {
+        "boundsBuilds": 3500,
+        "pickCandidates": 4,
+        "pickMeshes": 1554
+      }
+    },
+    "v4": {
+      "sinkRaySamples": 24,
+      "ihSurfaceSamples": 9,
+      "ihChassisClear": true,
+      "modelMovementSteps": 20,
+      "hingedDoor90Count": 9,
+      "openLeavesClearWalls": true,
+      "walkableInteriorDoors": [
+        "主浴80cm門洞",
+        "室內門（示意）",
+        "更衣室門",
+        "主臥走道入口門",
+        "書房玻璃門",
+        "後陽台門",
+        "收藏室東側入口",
+        "主浴淋浴玻璃門"
+      ],
+      "slidingPassages": 2,
+      "obstructedOpeningResumes": true,
+      "aisles": {
+        "northCm": 85,
+        "southCm": 93,
+        "speakers": [
+          {
+            "x": 754.25,
+            "y": 465.1499996185303,
+            "z": 0,
+            "w": 31.5,
+            "d": 31.70000076293946,
+            "h": 100.09999923706054
+          },
+          {
+            "x": 754.25,
+            "y": 623.1499996185303,
+            "z": 0,
+            "w": 31.5,
+            "d": 31.700000762939453,
+            "h": 100.09999923706054
+          }
+        ],
+        "condition": "TV parked; hinged room doors closed"
+      },
+      "collision400ProbesMs": 103.11,
+      "render": {
+        "defaultQuality": "balanced",
+        "shadowRefreshesPer60Frames": 6,
+        "postPasses": 0
+      },
+      "metrics": {
+        "boundsBuilds": 3498,
+        "pickCandidates": 4,
+        "pickMeshes": 1552
+      }
+    }
+  }
+}

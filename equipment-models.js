@@ -78,8 +78,10 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
       for(const yy of [13,28,43,58,73]){part(g,-w/2+3,front+4,w-6,d-8,yy,1,M.steel);for(let xx=-24;xx<=24;xx+=12){const b=new T.Mesh(new T.CylinderGeometry(3,3,27,12),M.blackglass);b.rotation.x=Math.PI/2;b.position.set(xx,yy+4,front+19);g.add(b);}}
       part(g,w/2-5,front+.2,1.2,1.2,30,27,silver);
     }else if(key==='ih'){
-      part(g,-w/2+.7,front+.7,w-1.4,d-1.4,0,h-.4,graphite);part(g,-w/2,front,w,d,h-.4,.4,M.screen);
-      for(const zz of [-12,11]){const ring=new T.Mesh(new T.TorusGeometry(8.5,.12,5,48),silver);ring.rotation.x=Math.PI/2;ring.position.set(0,h-.15,zz);g.add(ring);}
+      // The 27 x 49.5 cutout receives the chassis; the larger glass overlaps it.
+      const body=part(g,-13.35,-24.6,26.7,49.2,0,h-.4,graphite);body.userData.islandSurface='ih-chassis';
+      const glass=part(g,-w/2,front,w,d,h-.4,.4,M.screen);glass.userData.islandSurface='ih-glass';
+      for(const zz of [-12,11]){const ring=new T.Mesh(new T.RingGeometry(8.42,8.5,64),silver);ring.rotation.x=-Math.PI/2;ring.position.set(0,h+.01,zz);g.add(ring);}
     }else if(key==='washer'){
       part(g,-w/2,front+2,w,d-2,0,h,silver);part(g,-w/2,front,w,2,0,h,graphite);
       for(const yy of [45,141]){round(g,0,yy,front+1,23,1.8,M.blackglass);round(g,0,yy,front+.1,18,.1,graphite);}
@@ -166,7 +168,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
       product('wine',439.75,623.05,0,'W',g,'西側開口朝主冰箱，落地開放艙；頂部約7cm。獨立式酒櫃，台灣版散熱間距與60Hz仍待供貨商核定；勿與冰箱同時開門。');
       product('robot',622.5,520,0,'W',g,'置於中島北端檯面下，從內側朝西／主冰箱方向進出；與酒櫃錯開，不經過酒櫃艙。上下水基座版別與取換方式待確認。');
       product('clar',614,561,8,'W',g,'曲線內側獨立濕區，西向檢修门朝主冰箱；電壓、濾芯與接管另確認。');
-      product('ih',494.3,624.25,89.9,'N',g,'3.7kW；下方為獨立乾式散熱層，與酒櫃及北端掃地機分艙。');
+      product('ih',494.3,624.25,90.3,'N',g,'3.7kW；玻璃面高95.4cm，下方獨立乾式散熱層，與酒櫃及北端掃地機分艙。');
       cover(480,590,50,66,76,2,M.steel,g,'IH 獨立散熱層檢修板');
       for(const yy of [499,540])cover(596.5,yy,53.5,1.6,0,92,M.black,g,'掃地機分艙側板');
       cover(650,500.6,1.6,39.4,0,92,M.black,g,'掃地機背板');
@@ -185,7 +187,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
       product('wine',469,502,0,'W',g,'西向開口朝主冰箱，北端完整深設備艙，落地與頂部7cm開放通風；勿與冰箱同時開門，安裝仍待供貨商。');
       product('robot',458.75,563,0,'W',g,'中島下方獨立艙，朝西／主冰箱平進平出；上方與IH分隔，維修先向西抽出。');
       product('clar',456,602.75,8,'W',g,'南端濕區西向檢修；局部28cm深×53cm寬留膝改在東側。');
-      product('ih',473,561.3,89.9,'W',g,'操作面朝冰箱，位於掃地機上方獨立通風層，不放在酒櫃頂。');
+      product('ih',473,561.3,90.3,'W',g,'玻璃面高95.4cm，操作面朝冰箱，位於掃地機上方獨立通風層，不放在酒櫃頂。');
       cover(439,541,73,47,76,2,M.steel,g,'IH 與掃地機分隔檢修板');
       bay('直線酒櫃開放艙',435.8,465.8,79.2,73.2,0,92,'取消北端留膝，酒櫃設備深66.3');
       bay('直線掃地機維修艙',434,541,81,49,0,76,'中島下方西向開口，維修先向西抽出');
@@ -194,7 +196,15 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
       allowance('直線掃地機西向進出預留',374,541,60,49,0,35,'主機朝冰箱進出；60cm是設計預留，非原廠安裝標準');
     }
     // Recessed receiving sink, separate cold/hot control head and service valves.
-    const bowl=new T.Mesh(new T.CylinderGeometry(11,8,13,32,1,true),M.steel);bowl.position.copy(pos(sinkX,sinkY,87));g.add(bowl);cyl(sinkX,sinkY,80,8,.7,M.steel,g);
+    const basinMetal=explicitFinish('#566164',.42,.68,'sink-brushed-steel');basinMetal.side=T.DoubleSide;
+    const bowlProfile=[[1.4,81.4],[7.6,81.4],[8,81.8],[10.8,93.8],[11,94.95],[11.6,95.08],[11.8,95.06]].map(([r,h])=>new T.Vector2(r,h));
+    const bowl=new T.Mesh(new T.LatheGeometry(bowlProfile.slice(0,5),64),basinMetal);bowl.position.copy(pos(sinkX,sinkY,0));g.add(bowl);
+    info(bowl,'飲水接水槽・中空不鏽鋼內膽','22cm開孔，槽底高81.4cm；薄唇銜接95cm石材檯面。');
+    bowl.userData.islandSurface='sink-bowl';
+    const rimMaterial=explicitFinish('#9ba5a7',.34,.72,'sink-rim');rimMaterial.side=T.DoubleSide;
+    const rim=new T.Mesh(new T.LatheGeometry(bowlProfile.slice(4),64),rimMaterial);rim.position.copy(bowl.position);rim.userData.islandSurface='sink-rim';g.add(rim);
+    const drain=cyl(sinkX,sinkY,81.1,1.4,.2,M.rubber,g);drain.userData.islandSurface='sink-drain';
+    cyl(sinkX,sinkY,58,1.4,23.1,basinMetal,g);
     cyl(sinkX+15,sinkY-9,95,1.4,27,M.black,g);box(sinkX+1,sinkY-10,15,2,120,2,M.black,g,'CLAR Smart 黑色飲水龍頭 · 造型示意');box(sinkX+14,sinkY-12,3,2,97,7,M.screen,g);
     for(const [dx,c] of [[-2,'#577bab'],[2,'#9e665d']]){box(sinkX+dx,sinkY,5,4,50,5,new T.MeshStandardMaterial({color:c}),g,'独立止水閥・待對現場水點');}
     const service=curved?cover(593,551.5,1,22,5,65,M.black,g,'飲水機西向檢修門'):cover(433.5,594,1,55,5,65,M.black,g,'飲水機西向檢修門');service.userData.swingFront={name:'飲水濕區檢修・朝主冰箱',face:'W',hinge:'min'};
@@ -225,7 +235,12 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     return g;
   }
   function audio(rotating=false){
-    if(rotating){product('q7',691,433,0,'E');product('q7',691,703,0,'E');product('sub',799,800,0,'N');product('sub',1040,814,0,'N');}
+    if(rotating){
+      // Keep the complete floor-standing envelopes inside the living zone,
+      // beyond the TV sweep, with neither end protruding into the cross aisles.
+      for(const y of [481,639])product('q7',770,y,0,'E',fittings,'移入客廳範圍，避開旋轉包絡及南北通道；原31.7×31.5×100.1cm外徑不縮小。');
+      product('sub',799,800,0,'N');product('sub',1040,814,0,'N');
+    }
     else{product('q7',790.85,930.75,0,'N');product('q7',1045.85,930.75,0,'N');product('sub',788,837,0,'N');product('sub',1057,820,0,'N');}
     const sky=rotating?[[835,490],[835,665],[972,490],[972,665]]:[[835,560],[1000,560],[835,740],[1000,740]];
     sky.forEach(([x,y],i)=>{const g=group('KEF Ci160QR 高度聲道 '+(i+1),ceiling);info(cyl(x,y,272.8,11.73,.6,M.white,g),g.name,'外徑23.46cm，總深9.8cm。四顆高度聲道；定位待音響調校。');cyl(x,y,273.4,9.8,9.2,M.black,g);});

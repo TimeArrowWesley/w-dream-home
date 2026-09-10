@@ -9,7 +9,7 @@ function png(file,w,h,pixels){
  const rows=Buffer.alloc((w*3+1)*h);for(let y=0;y<h;y++)Buffer.from(pixels.buffer,y*w*3,w*3).copy(rows,y*(w*3+1)+1);
  fs.writeFileSync(file,Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ihdr),chunk('IDAT',zlib.deflateSync(rows,{level:5})),chunk('IEND',Buffer.alloc(0))]));
 }
-module.exports=function({T,V,version,out}){
+module.exports=function({T,V,version,out,views}){
  fs.mkdirSync(out,{recursive:true});V.labels.visible=false;V.ceiling.visible=V.beams.visible=true;
  for(const p of V.wallParts){p.m.visible=true;p.m.scale.y=1;p.m.position.y=p.z+p.h/2;}
  V.scene.updateMatrixWorld(true);
@@ -23,6 +23,7 @@ module.exports=function({T,V,version,out}){
  if(version==='v1'||version==='v3')for(const [room,[p,t]] of Object.entries(reverse))viewpoints.push({id:room+'-B',room,name:V.rooms.find(r=>r.id===room).n+' B',p,t});
  viewpoints.push({id:'entry-living',room:'entry',name:'玄關客廳面',p:[733,665,159],t:[554,766,80]});
  if(version==='v2'||version==='v4'){const r=V.rooms.find(r=>r.id==='entry');viewpoints.push({id:'entry-A',room:'entry',name:'玄關內側',p:r.p,t:r.t});}
+ if(views)viewpoints.splice(0,viewpoints.length,...views);
  const width=740,height=480,camera=new T.PerspectiveCamera(72,width/height,2,4000),light=new T.Vector3(-.4,.8,.5).normalize();
  function render(view){
   camera.position.copy(V.pos(...view.p));camera.lookAt(V.pos(...view.t));camera.updateMatrixWorld(true);camera.updateProjectionMatrix();
@@ -58,6 +59,7 @@ module.exports=function({T,V,version,out}){
   return {version,...view,file:version+'-'+view.id+'.png',triangles:opaque.length+transparent.length};
  }
  const images=[];if(!process.env.HOME_MATERIAL_ONLY)for(const view of viewpoints){images.push(render(view));}
+ if(views)return images;
  const extras=[];
  extras.push(render({id:'entry-floor',room:'entry',name:'玄關六角磚與木地板交界',p:[758,883,165],t:[621,868,0]}));
  if(!process.env.HOME_MATERIAL_ONLY&&(version==='v1'||version==='v3')){

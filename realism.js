@@ -1,7 +1,7 @@
 'use strict';
 (()=>{
 const T=THREE,V=HOME_VIEWER,C=V.finishContext,R=V.renderer,S=V.scene,M=C.materials;
-const $=id=>document.getElementById(id),stats={ready:false,beveled:0,contactShadows:0,reflections:0,textureLoaded:false,quality:'high',version:3,maxBoundingError:0};
+const $=id=>document.getElementById(id),stats={ready:false,beveled:0,contactShadows:0,reflections:0,textureLoaded:false,quality:'balanced',version:4,maxBoundingError:0,shadowUpdates:0,postPasses:0};
 const details=new T.Group();details.name='寫實材質與燈光細節';S.add(details);
 const originalEnvironment=S.environment,reflectionCache=new Map();
 const color=(hex)=>new T.Color(hex).convertSRGBToLinear();
@@ -79,12 +79,23 @@ for(int i=0;i<32;i++){float a=float(i)*2.399963;float scale=(float(i)+1.)/32.;ve
 float ao=clamp(1.-occlusion*strength*.2,.65,1.);gl_FragColor=vec4(base*ao,1.);
 }`});
 const postScene=new T.Scene(),postCamera=new T.OrthographicCamera(-1,1,1,-1,0,1);postScene.add(new T.Mesh(new T.PlaneGeometry(2,2),postMaterial));
-let drawing=false;function render(){if(drawing)return;drawing=true;try{if(stats.quality==='balanced'||V.getCurrent()==='all'){R.render(S,V.camera);return;}const size=R.getDrawingBufferSize(new T.Vector2());if(target.width!==size.x||target.height!==size.y){target.setSize(size.x,size.y);postUniforms.resolution.value.copy(size);}postUniforms.inverseProjection.value.copy(V.camera.projectionMatrix).invert();postUniforms.projection.value.copy(V.camera.projectionMatrix);R.setRenderTarget(target);R.render(S,V.camera);R.setRenderTarget(null);R.render(postScene,postCamera);}finally{R.setRenderTarget(null);drawing=false;}}
+// Camera motion does not change shadow geometry. Reuse the four shadow maps
+// between bounded refreshes, including when doors or curtains are animating.
+R.shadowMap.autoUpdate=false;let shadowAt=-Infinity,drawing=false;
+const lastCamera=new T.Matrix4(),drawingSize=new T.Vector2();let movingUntil=0;
+function render(){if(drawing)return;const mode=window.HOME_TOUR?.getMode();if(mode&&mode!=='model'&&mode!=='walk')return;drawing=true;try{
+ const now=performance.now();V.camera.updateMatrixWorld();
+ if(!lastCamera.equals(V.camera.matrixWorld)){lastCamera.copy(V.camera.matrixWorld);movingUntil=now+180;}
+ if(now-shadowAt>=150){R.shadowMap.needsUpdate=true;shadowAt=now;stats.shadowUpdates++;}
+ if(stats.quality==='balanced'||V.getCurrent()==='all'||now<movingUntil){R.render(S,V.camera);return;}
+ const size=R.getDrawingBufferSize(drawingSize);if(target.width!==size.x||target.height!==size.y){target.setSize(size.x,size.y);postUniforms.resolution.value.copy(size);}postUniforms.inverseProjection.value.copy(V.camera.projectionMatrix).invert();postUniforms.projection.value.copy(V.camera.projectionMatrix);R.setRenderTarget(target);R.render(S,V.camera);R.setRenderTarget(null);R.render(postScene,postCamera);stats.postPasses++;
+ }finally{R.setRenderTarget(null);drawing=false;}}
 function lighting(){const night=$('night').classList.contains('active');skyUniforms.top.value.copy(color(night?'#101b31':'#7897b4'));skyUniforms.bottom.value.copy(color(night?'#2b3549':'#edf1f0'));bounce.forEach(b=>b.light.intensity=night?b.power*.09:b.power);C.hemi.intensity=night?.30:.72;C.fill.intensity=night?.18:.32;C.sun.intensity=night?.04:1.05;C.roomLights.forEach(l=>l.intensity=night?.62:.36);C.finishLights.forEach(l=>l.intensity=night?.88:.65);lens.emissiveIntensity=night?2:1.4;updateReflection();}
-const controls=document.createElement('div');controls.id='realismControls';controls.innerHTML='<button id="realismDay">日間</button><button id="realismNight">夜間</button><button id="realismQuality">畫質：精細</button><span id="realismStatus">準備寫實材質…</span>';$('walkHUD').appendChild(controls);
+const controls=document.createElement('div');controls.id='realismControls';controls.innerHTML='<button id="realismDay">日間</button><button id="realismNight">夜間</button><button id="realismQuality">畫質：流暢</button><span id="realismStatus">準備寫實材質…</span>';$('walkHUD').appendChild(controls);
 document.querySelector('[data-viewmode="walk"]').textContent='寫實步行';$('walkHUD').querySelector('strong').textContent='寫實步行 · 即時 3D';
 $('realismDay').onclick=()=>$('day').click();$('realismNight').onclick=()=>$('night').click();
-$('realismQuality').onclick=()=>{stats.quality=stats.quality==='high'?'balanced':'high';$('realismQuality').textContent=stats.quality==='high'?'畫質：精細':'畫質：流暢';};
+function setQuality(quality){stats.quality=quality==='high'?'high':'balanced';R.setPixelRatio(Math.min(devicePixelRatio,stats.quality==='high'?1.6:1));$('realismQuality').textContent=stats.quality==='high'?'畫質：精細':'畫質：流暢';shadowAt=-Infinity;}
+$('realismQuality').onclick=()=>setQuality(stats.quality==='high'?'balanced':'high');setQuality('balanced');
 for(const id of ['day','night'])$(id).addEventListener('click',()=>{lighting();$('realismDay').classList.toggle('active',id==='day');$('realismNight').classList.toggle('active',id==='night');});
 window.addEventListener('roomchange',()=>{if(stats.ready)updateReflection();});
 let activeZone='';setInterval(()=>{if(!stats.ready||HOME_TOUR.getMode()!=='walk'||reflectionPending)return;const next=zone();if(next!==activeZone){activeZone=next;updateReflection();}},1500);

@@ -2,6 +2,16 @@
 (()=>{
 const T=THREE,V=HOME_VIEWER,$=id=>document.getElementById(id),canvas=$('view'),entries=[],dynamicLeaves=[],ray=new T.Raycaster(),inverse=new T.Matrix4();
 let target=null,last=0,activeBefore=false;
+const collisionCache=new WeakMap(),localPoint=new T.Vector3();
+const metrics={boundsBuilds:0,pickCandidates:0,pickMeshes:0};
+function collider(mesh){
+ mesh.updateWorldMatrix(true,false);let c=collisionCache.get(mesh);const matrix=mesh.matrixWorld.elements;
+ if(!c||c.geometry!==mesh.geometry||matrix.some((v,i)=>v!==c.matrix[i])){
+  if(!mesh.geometry.boundingBox)mesh.geometry.computeBoundingBox();
+  c={geometry:mesh.geometry,matrix:matrix.slice(),local:mesh.geometry.boundingBox,world:mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrixWorld),inverse:mesh.matrixWorld.clone().invert()};collisionCache.set(mesh,c);metrics.boundsBuilds++;
+ }
+ return c;
+}
 function register(pivot,meta,leaf){const e={id:entries.length,pivot,name:meta.name,openAngle:meta.openAngle,initial:meta.initialAngle||0,current:meta.initialAngle||0,target:meta.initialAngle||0,leaf};entries.push(e);pivot.userData.interactionId=e.id;leaf.userData.dynamicDoor=true;dynamicLeaves.push(leaf);pivot.traverse(o=>{if(o.isMesh)o.userData.dynamicDoor=true;});return e;}
 V.architecture.traverse(o=>{if(o.userData.interactiveDoor){const leaf=o.children.find(c=>c.isMesh&&c.userData.name);if(leaf)register(o,o.userData.interactiveDoor,leaf);}});
 V.architecture.traverse(o=>{if(o.userData.slidingDoor){const meta=o.userData.slidingDoor,parts=o.children.filter(c=>c.isMesh&&c.userData.slideRatio);if(parts.length){const e=register(o,{name:meta.name,openAngle:1},parts[0]);e.axis=meta.axis||'x';e.key=meta.key;e.electric=!!meta.electric;e.slides=parts.map(m=>({m,start:m.position[e.axis],ratio:m.userData.slideRatio}));e.distance=meta.distance;}}});
@@ -21,8 +31,8 @@ const style=document.createElement('style');style.textContent=`
 `;document.head.appendChild(style);
 const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','-235 -30 1470 1050');const diagram=document.createElementNS(ns,'g');diagram.setAttribute('fill','#8fa49a');diagram.setAttribute('opacity','.72');svg.appendChild(diagram);V.scene.updateMatrixWorld(true);for(const part of V.wallParts){const b=new T.Box3().setFromObject(part.m),r=document.createElementNS(ns,'rect');r.setAttribute('x',b.min.x+482.5);r.setAttribute('y',b.min.z+480);r.setAttribute('width',Math.max(3,b.max.x-b.min.x));r.setAttribute('height',Math.max(3,b.max.z-b.min.z));diagram.appendChild(r);}const pin=document.createElementNS(ns,'g');pin.innerHTML='<path d="M0 0 L-38 -72 Q0 -95 38 -72 Z" fill="#e6dd9955"/><circle r="13" fill="#eee7ba" stroke="#263b30" stroke-width="5"/>';svg.appendChild(pin);$('walkMiniMap').appendChild(svg);
 function visible(o){while(o){if(!o.visible)return false;o=o.parent;}return true;}
-function pick(nx=0,ny=0){ray.setFromCamera(new T.Vector2(nx,ny),V.camera);const hit=ray.intersectObjects([V.architecture,V.fittings],true).find(h=>visible(h.object)&&h.distance<190);if(!hit)return null;let o=hit.object;while(o){if(o.userData.interactionId!==undefined)return entries[o.userData.interactionId];o=o.parent;}return null;}
-function intersects(leaf,x,z,radius){leaf.updateWorldMatrix(true,false);inverse.copy(leaf.matrixWorld).invert();const p=new T.Vector3(x,100,z).applyMatrix4(inverse);leaf.geometry.computeBoundingBox();const b=leaf.geometry.boundingBox;if(b.max.y+leaf.getWorldPosition(new T.Vector3()).y<12||b.min.y+leaf.getWorldPosition(new T.Vector3()).y>180)return false;const dx=p.x-Math.max(b.min.x,Math.min(p.x,b.max.x)),dz=p.z-Math.max(b.min.z,Math.min(p.z,b.max.z));return dx*dx+dz*dz<radius*radius;}
+function pick(nx=0,ny=0){ray.setFromCamera(new T.Vector2(nx,ny),V.camera);ray.near=0;ray.far=190;const candidates=[];let meshes=0;for(const group of [V.architecture,V.fittings])group.traverse(o=>{if(!o.isMesh||o.userData.allowance||!visible(o))return;meshes++;const b=collider(o).world;if(b.distanceToPoint(ray.ray.origin)<=190&&ray.ray.intersectsBox(b))candidates.push(o);});metrics.pickCandidates=candidates.length;metrics.pickMeshes=meshes;const hit=ray.intersectObjects(candidates,false)[0];if(!hit)return null;let o=hit.object;while(o){if(o.userData.interactionId!==undefined)return entries[o.userData.interactionId];o=o.parent;}return null;}
+function intersects(leaf,x,z,radius){const c=collider(leaf),w=c.world;if(w.max.y<12||w.min.y>180||x+radius<w.min.x||x-radius>w.max.x||z+radius<w.min.z||z-radius>w.max.z)return false;const p=localPoint.set(x,100,z).applyMatrix4(c.inverse),b=c.local;const dx=p.x-Math.max(b.min.x,Math.min(p.x,b.max.x)),dz=p.z-Math.max(b.min.z,Math.min(p.z,b.max.z));return dx*dx+dz*dz<radius*radius;}
 function doorChanged(){window.dispatchEvent(new CustomEvent('doorstatechange'));}
 function toggle(e){if(!e)return false;e.target=Math.abs(e.target)>.1?0:e.openAngle;doorChanged();return true;}
 function activateAt(event){const rect=canvas.getBoundingClientRect(),locked=document.pointerLockElement===canvas;return toggle(pick(locked?0:(event.clientX-rect.left)/rect.width*2-1,locked?0:1-(event.clientY-rect.top)/rect.height*2));}
@@ -33,20 +43,25 @@ let pickAt=0;function frame(now){
  if(active!==activeBefore){activeBefore=active;document.body.classList.toggle('walkImmersive',active);if(!active)document.body.classList.remove('walkSettingsOpen');}
  const p=V.camera.position;
  for(const e of entries){
-  if(Math.abs(e.target-e.current)<.00001)continue;
+  if(Math.abs(e.target-e.current)<.00001){e.blocked=false;continue;}
   const old=e.current,delta=e.target-old;let next=old+(e.electric?Math.sign(delta)*Math.min(Math.abs(delta),dt*45/e.distance):delta*Math.min(1,dt*8));
   if(Math.abs(e.target-next)<.001)next=e.target;
   moveEntry(e,next);e.pivot.updateMatrixWorld(true);
   if(active&&hitsEntry(e,p.x,p.z,18)){
    moveEntry(e,old);e.pivot.updateMatrixWorld(true);
-   e.target=e.electric&&delta<0?1:old;doorChanged();
-  }else{e.current=next;if(next===e.target)doorChanged();}
+   const opening=Math.abs(e.target)>Math.abs(old);e.blocked=true;
+   if(e.electric&&delta<0)e.target=1;else if(!opening)e.target=old;
+   // Retain an opening request while the person steps out of the door sweep.
+   // Cancelling it at the first obstruction left room doors half open.
+   if(!opening)doorChanged();
+  }else{e.blocked=false;e.current=next;if(next===e.target)doorChanged();}
  }
  if(!active)return;
  const d=new T.Vector3();V.camera.getWorldDirection(d);pin.setAttribute('transform',`translate(${p.x+482.5},${p.z+480}) rotate(${Math.atan2(d.x,-d.z)*180/Math.PI})`);$('walkRoomSelect').value=V.getCurrent();
- if(now-pickAt>100){pickAt=now;target=pick();$('interactPrompt').hidden=!target;if(target)$('interactPrompt').textContent=target.name+' · '+(Math.abs(target.target)>.1?'關閉':'開啟')+'（E）';}
+ if(now-pickAt>100){pickAt=now;target=pick();$('interactPrompt').hidden=!target;if(target)$('interactPrompt').textContent=target.blocked?'請稍退後，門片會繼續開啟':target.name+' · '+(Math.abs(target.target)>.1?'關閉':'開啟')+'（E）';}
 }
 requestAnimationFrame(frame);
-window.HOME_INTERACTION={activateAt,toggleDoor:key=>toggle(entries.find(e=>e.key===key)),setDoor:(key,open)=>{const e=entries.find(e=>e.key===key);if(!e)return false;e.target=open?e.openAngle:0;doorChanged();return true;},blocksPoint:(x,z,r)=>entries.some(e=>visible(e.leaf)&&hitsEntry(e,x,z,r)),getState:()=>({count:entries.length,open:entries.filter(e=>Math.abs(e.current)>.1).length,entries:entries.map(e=>({id:e.id,key:e.key,name:e.name,angle:e.current,target:e.target,electric:e.electric||false})),target:target?.id??null})};
+const findEntry=key=>entries.find(e=>e.key===key||e.name===key||e.id===key);
+window.HOME_INTERACTION={activateAt,toggleDoor:key=>toggle(findEntry(key)),setDoor:(key,open)=>{const e=findEntry(key);if(!e)return false;e.target=open?e.openAngle:0;doorChanged();return true;},blocksPoint:(x,z,r)=>entries.some(e=>visible(e.leaf)&&hitsEntry(e,x,z,r)),getState:()=>({count:entries.length,open:entries.filter(e=>Math.abs(e.current)>.1).length,entries:entries.map(e=>({id:e.id,key:e.key,name:e.name,angle:e.current,target:e.target,openAngle:e.openAngle,blocked:!!e.blocked,sliding:!!e.slides,electric:e.electric||false})),metrics:{...metrics},target:target?.id??null})};
 })();
 

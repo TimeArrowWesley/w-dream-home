@@ -2,12 +2,12 @@
   "date": "2026-09-10",
   "method": "Actual Three.js meshes and application handlers, with DOM/canvas/renderer stubs. Image decoding, GPU appearance and browser UI are not tested.",
   "hashes": {
-    "equipment-models.js": "e085e941d608aa83e62be50ec560b94342cd828673d4a1f74cd18e53d77b1537",
-    "design.js": "e83f5af831197aa2102cafd77546184290dfb5f2cd7f42ff8aa648112665b018",
-    "提案/旋轉電視與直線中島/design.js": "48f01f577793284a9a5e0022aeadb059644b9314ef1a4f03bdb8c827f1179845",
-    "walk.js": "d7c25eb10223da1b41aa78e991ff641b68a5684548b98f930bbac1997233d113",
-    "interaction.js": "7818bda261f8c3e601ac61b9cf565c6a5395ab3462283a19071158f21085bc8c",
-    "realism.js": "ac9722c6180512d1488dd31be52ee9689a4d419f6c359d0cd1509160435decd9",
+    "equipment-models.js": "53eadcb7c5f219bb2f1ebbc9298c140e19e4d9c0a1993a1cab058ba7d1556afd",
+    "design.js": "03342bc49725e451db469804932ae08ee61f320f769771cd80898a1346fc967e",
+    "提案/旋轉電視與直線中島/design.js": "1c016f36d8068e3951ba15a6436efa8216c720ecff8dfece5664030277a2007e",
+    "walk.js": "2ebe663a123c98c441ae671d88ed8efb5cdb231d2024924d2a0dea08a267ac6f",
+    "interaction.js": "280dbd41ee90c15c137864e958e73a5d88fe9791fab153e7f355c7102bb8b131",
+    "realism.js": "66ff768c012fae139548f0308a30ac1640e7c57e5916e60772e6f3ec2ce95260",
     "flooring.js": "fac8f7fd27835dd5464863433768bfefc1c4be41ac467f0c78681dea06af7b25",
     "curtains.js": "501914c70548298c32fcfa52223da8c10a03d0d3dd58cab656ce7c170821f419",
     "rgb-lighting.js": "874af23cc51e6fc47a78609298ca304c965744bc2668594712770acfb7e61e2e",
@@ -16,8 +16,8 @@
   },
   "variants": {
     "v1": {
-      "meshes": 2050,
-      "vertices": 235262,
+      "meshes": 2053,
+      "vertices": 235608,
       "rooms": [
         {
           "id": "all",
@@ -249,11 +249,11 @@
         },
         "closet": {
           "meshes": 173,
-          "sha256": "cb63415efc7ebc561503c57c981ff370807d1d0c38b7cef15ad35fbd0a61c630"
+          "sha256": "22867542002128fb0914e7b60cedcd712c43c5ab8f15712c6675b5eaf6f7ef32"
         },
         "study": {
           "meshes": 351,
-          "sha256": "328aca0b1afe5ccf8f2a0ce3336d7078e0cb4641c561517000937612d04cc04a"
+          "sha256": "05a5730e6d9571eba5988776903bae6ca98f5f48ca7f28584eddd6a734383fcb"
         },
         "kitchen": {
           "meshes": 224,
@@ -261,23 +261,23 @@
         },
         "bath1": {
           "meshes": 62,
-          "sha256": "1f7c34992a9e44302c47076b82c67521c26b21ad80ae385cefa24baaa8689207"
+          "sha256": "4be6fa0e161f3a1720427e9ab2101efcd6e8f1e295642b5c1cf42892415d6c25"
         },
         "bath2": {
-          "meshes": 29,
-          "sha256": "f3b3d61d499380aa8638b57b9cea8c3abeecbcdbee594684946d94c10d8f15fb"
+          "meshes": 27,
+          "sha256": "05d574822d2a215f07d6ebb9b9d59d000cdeeea245f08a8111532d6addb249c5"
         },
         "storage": {
           "meshes": 22,
-          "sha256": "bded42627dffe30a17e5f925bfb48c733d18547b516f8fb9e92a1ec11be17eec"
+          "sha256": "a2b07a93b54e8b669b014fe47ac428278734834c3e8acf9ad35a05c40a8410b6"
         },
         "collection": {
           "meshes": 258,
-          "sha256": "c69d1639c31f6130475001fa0e9f7105ca0fbac3a58b6b10dc90cc5a78e335b1"
+          "sha256": "8a949503b85e4630d73e126b083c1c4c0d5669e10957384dba226931e4f4f554"
         },
         "back": {
           "meshes": 64,
-          "sha256": "1aaa389c2fe7cc41b114ff329903b5e070f356e971629e622feca83e9e8f2531"
+          "sha256": "9df27c3137e1b66e0a27809c62db513b14d64ffe78324d4c262f51b03ea77e2c"
         }
       },
       "wallJunctions": [],
@@ -391,9 +391,11 @@
         "contactShadows": 29,
         "reflections": 0,
         "textureLoaded": true,
-        "quality": "high",
-        "version": 3,
+        "quality": "balanced",
+        "version": 4,
         "maxBoundingError": 0.000012207031261368684,
+        "shadowUpdates": 160,
+        "postPasses": 0,
         "softPillows": 5,
         "woodSurfaces": 14,
         "cabinetVeneer": {
@@ -2893,8 +2895,8 @@
       }
     },
     "v2": {
-      "meshes": 2048,
-      "vertices": 234944,
+      "meshes": 2051,
+      "vertices": 235290,
       "rooms": [
         {
           "id": "all",
@@ -3126,11 +3128,11 @@
         },
         "closet": {
           "meshes": 173,
-          "sha256": "cb63415efc7ebc561503c57c981ff370807d1d0c38b7cef15ad35fbd0a61c630"
+          "sha256": "22867542002128fb0914e7b60cedcd712c43c5ab8f15712c6675b5eaf6f7ef32"
         },
         "study": {
           "meshes": 351,
-          "sha256": "328aca0b1afe5ccf8f2a0ce3336d7078e0cb4641c561517000937612d04cc04a"
+          "sha256": "05a5730e6d9571eba5988776903bae6ca98f5f48ca7f28584eddd6a734383fcb"
         },
         "kitchen": {
           "meshes": 224,
@@ -3138,23 +3140,23 @@
         },
         "bath1": {
           "meshes": 62,
-          "sha256": "1f7c34992a9e44302c47076b82c67521c26b21ad80ae385cefa24baaa8689207"
+          "sha256": "4be6fa0e161f3a1720427e9ab2101efcd6e8f1e295642b5c1cf42892415d6c25"
         },
         "bath2": {
-          "meshes": 29,
-          "sha256": "f3b3d61d499380aa8638b57b9cea8c3abeecbcdbee594684946d94c10d8f15fb"
+          "meshes": 27,
+          "sha256": "05d574822d2a215f07d6ebb9b9d59d000cdeeea245f08a8111532d6addb249c5"
         },
         "storage": {
           "meshes": 22,
-          "sha256": "bded42627dffe30a17e5f925bfb48c733d18547b516f8fb9e92a1ec11be17eec"
+          "sha256": "a2b07a93b54e8b669b014fe47ac428278734834c3e8acf9ad35a05c40a8410b6"
         },
         "collection": {
           "meshes": 258,
-          "sha256": "c69d1639c31f6130475001fa0e9f7105ca0fbac3a58b6b10dc90cc5a78e335b1"
+          "sha256": "8a949503b85e4630d73e126b083c1c4c0d5669e10957384dba226931e4f4f554"
         },
         "back": {
           "meshes": 64,
-          "sha256": "1aaa389c2fe7cc41b114ff329903b5e070f356e971629e622feca83e9e8f2531"
+          "sha256": "9df27c3137e1b66e0a27809c62db513b14d64ffe78324d4c262f51b03ea77e2c"
         }
       },
       "wallJunctions": [],
@@ -3268,9 +3270,11 @@
         "contactShadows": 29,
         "reflections": 0,
         "textureLoaded": true,
-        "quality": "high",
-        "version": 3,
+        "quality": "balanced",
+        "version": 4,
         "maxBoundingError": 0.000012207031261368684,
+        "shadowUpdates": 160,
+        "postPasses": 0,
         "softPillows": 5,
         "woodSurfaces": 14,
         "cabinetVeneer": {
@@ -5770,8 +5774,8 @@
       }
     },
     "v3": {
-      "meshes": 2032,
-      "vertices": 247429,
+      "meshes": 2035,
+      "vertices": 247775,
       "rooms": [
         {
           "id": "all",
@@ -6012,11 +6016,11 @@
         },
         "closet": {
           "meshes": 173,
-          "sha256": "cb63415efc7ebc561503c57c981ff370807d1d0c38b7cef15ad35fbd0a61c630"
+          "sha256": "22867542002128fb0914e7b60cedcd712c43c5ab8f15712c6675b5eaf6f7ef32"
         },
         "study": {
           "meshes": 351,
-          "sha256": "328aca0b1afe5ccf8f2a0ce3336d7078e0cb4641c561517000937612d04cc04a"
+          "sha256": "05a5730e6d9571eba5988776903bae6ca98f5f48ca7f28584eddd6a734383fcb"
         },
         "kitchen": {
           "meshes": 224,
@@ -6024,23 +6028,23 @@
         },
         "bath1": {
           "meshes": 62,
-          "sha256": "1f7c34992a9e44302c47076b82c67521c26b21ad80ae385cefa24baaa8689207"
+          "sha256": "4be6fa0e161f3a1720427e9ab2101efcd6e8f1e295642b5c1cf42892415d6c25"
         },
         "bath2": {
-          "meshes": 29,
-          "sha256": "f3b3d61d499380aa8638b57b9cea8c3abeecbcdbee594684946d94c10d8f15fb"
+          "meshes": 27,
+          "sha256": "05d574822d2a215f07d6ebb9b9d59d000cdeeea245f08a8111532d6addb249c5"
         },
         "storage": {
           "meshes": 22,
-          "sha256": "bded42627dffe30a17e5f925bfb48c733d18547b516f8fb9e92a1ec11be17eec"
+          "sha256": "a2b07a93b54e8b669b014fe47ac428278734834c3e8acf9ad35a05c40a8410b6"
         },
         "collection": {
           "meshes": 258,
-          "sha256": "c69d1639c31f6130475001fa0e9f7105ca0fbac3a58b6b10dc90cc5a78e335b1"
+          "sha256": "8a949503b85e4630d73e126b083c1c4c0d5669e10957384dba226931e4f4f554"
         },
         "back": {
           "meshes": 64,
-          "sha256": "1aaa389c2fe7cc41b114ff329903b5e070f356e971629e622feca83e9e8f2531"
+          "sha256": "9df27c3137e1b66e0a27809c62db513b14d64ffe78324d4c262f51b03ea77e2c"
         }
       },
       "wallJunctions": [],
@@ -6154,9 +6158,11 @@
         "contactShadows": 29,
         "reflections": 0,
         "textureLoaded": true,
-        "quality": "high",
-        "version": 3,
+        "quality": "balanced",
+        "version": 4,
         "maxBoundingError": 0.000012207031261368684,
+        "shadowUpdates": 160,
+        "postPasses": 0,
         "softPillows": 5,
         "woodSurfaces": 14,
         "cabinetVeneer": {
@@ -8656,8 +8662,8 @@
       }
     },
     "v4": {
-      "meshes": 2030,
-      "vertices": 247111,
+      "meshes": 2033,
+      "vertices": 247457,
       "rooms": [
         {
           "id": "all",
@@ -8898,11 +8904,11 @@
         },
         "closet": {
           "meshes": 173,
-          "sha256": "cb63415efc7ebc561503c57c981ff370807d1d0c38b7cef15ad35fbd0a61c630"
+          "sha256": "22867542002128fb0914e7b60cedcd712c43c5ab8f15712c6675b5eaf6f7ef32"
         },
         "study": {
           "meshes": 351,
-          "sha256": "328aca0b1afe5ccf8f2a0ce3336d7078e0cb4641c561517000937612d04cc04a"
+          "sha256": "05a5730e6d9571eba5988776903bae6ca98f5f48ca7f28584eddd6a734383fcb"
         },
         "kitchen": {
           "meshes": 224,
@@ -8910,23 +8916,23 @@
         },
         "bath1": {
           "meshes": 62,
-          "sha256": "1f7c34992a9e44302c47076b82c67521c26b21ad80ae385cefa24baaa8689207"
+          "sha256": "4be6fa0e161f3a1720427e9ab2101efcd6e8f1e295642b5c1cf42892415d6c25"
         },
         "bath2": {
-          "meshes": 29,
-          "sha256": "f3b3d61d499380aa8638b57b9cea8c3abeecbcdbee594684946d94c10d8f15fb"
+          "meshes": 27,
+          "sha256": "05d574822d2a215f07d6ebb9b9d59d000cdeeea245f08a8111532d6addb249c5"
         },
         "storage": {
           "meshes": 22,
-          "sha256": "bded42627dffe30a17e5f925bfb48c733d18547b516f8fb9e92a1ec11be17eec"
+          "sha256": "a2b07a93b54e8b669b014fe47ac428278734834c3e8acf9ad35a05c40a8410b6"
         },
         "collection": {
           "meshes": 258,
-          "sha256": "c69d1639c31f6130475001fa0e9f7105ca0fbac3a58b6b10dc90cc5a78e335b1"
+          "sha256": "8a949503b85e4630d73e126b083c1c4c0d5669e10957384dba226931e4f4f554"
         },
         "back": {
           "meshes": 64,
-          "sha256": "1aaa389c2fe7cc41b114ff329903b5e070f356e971629e622feca83e9e8f2531"
+          "sha256": "9df27c3137e1b66e0a27809c62db513b14d64ffe78324d4c262f51b03ea77e2c"
         }
       },
       "wallJunctions": [],
@@ -9040,9 +9046,11 @@
         "contactShadows": 29,
         "reflections": 0,
         "textureLoaded": true,
-        "quality": "high",
-        "version": 3,
+        "quality": "balanced",
+        "version": 4,
         "maxBoundingError": 0.000012207031261368684,
+        "shadowUpdates": 160,
+        "postPasses": 0,
         "softPillows": 5,
         "woodSurfaces": 14,
         "cabinetVeneer": {

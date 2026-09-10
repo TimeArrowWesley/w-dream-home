@@ -27,6 +27,8 @@ V1／V2 由根目錄 `index.html?layout=v1`、`index.html?layout=v2` 開啟。V3
 
 步行操作為 WASD 移動、拖曳轉頭、E 開關門、Shift 慢走。AI 圖與歷史正反向圖是設備更新前參考，最新配置以即時模型為準。模型是設計提案，尺寸、承重、機電及設備安裝仍須施工圖與供應商核定。
 
+3D 檢視亦可按住 WASD 連續移動，預設採流暢畫質；右側「顯示設定」可切精細。室內平開門可開到 90 度，遇人暫停後會繼續完成開啟。[本次喇叭動線、中島與開門修正對照](調整紀錄/20260910動線與模型修正/修正對照.html)。
+
 ## 家具資料與儲存
 
 `家具清單.json` 是家具資料主檔；`furniture-data.js` 是可供離線網頁直接載入的同內容資料。在清單按「儲存到專案」，選取本機專案資料夾，會同時寫回兩個檔案並留下本機備份。瀏覽器草稿不等於 GitHub 已更新；上傳後線上頁面才會取得新版本。
@@ -70,6 +72,7 @@ python tools/build-site.py --check
 ```sh
 node tools/verify-equipment-revision.cjs
 node tools/verify-home-model.cjs
+node tools/verify-navigation-island.cjs
 node tools/verify-furniture-catalog.cjs
 ```
 

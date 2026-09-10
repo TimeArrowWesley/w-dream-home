@@ -13,7 +13,7 @@ const result={revision:'20260910',method:'offline actual Three.js geometry inclu
 for(const f of ['equipment-models.js','equipment-controls.js','version-changes.js','design.js','interaction.js','ai-views.js','提案/旋轉電視與直線中島/design.js'])new vm.Script(read(f),{filename:f});
 for(let n=1;n<=4;n++){
  const win={THREE:T,HOME_LAYOUT:{comfort:true,isV2:n%2===0,version:n%2===0?'v2':'v1',proposal:'v'+n,entryDoorY:955},addEventListener:noop,dispatchEvent:noop};
- const c={window:win,document:{getElementById:canvas,createElement:canvas,addEventListener:noop,querySelectorAll:()=>[]},devicePixelRatio:1,console,requestAnimationFrame:noop,ResizeObserver:class{observe(){}},CustomEvent:class{}};vm.createContext(c);
+ const c={window:win,document:{getElementById:canvas,createElement:canvas,addEventListener:noop,querySelectorAll:()=>[]},performance:{now:()=>0},devicePixelRatio:1,console,requestAnimationFrame:noop,ResizeObserver:class{observe(){}},CustomEvent:class{}};vm.createContext(c);
  for(const f of ['model-data.js','equipment-models.js'])vm.runInContext(read(f),c,{filename:f});
  const file=n<3?'design.js':'提案/旋轉電視與直線中島/design.js';
  const src=read(file).replace(/\}\)\(\);\s*$/,'\nwindow.TEST={scene,fittings,architecture,ceiling,wallParts};})();');vm.runInContext(src,c,{filename:file,timeout:60000});
