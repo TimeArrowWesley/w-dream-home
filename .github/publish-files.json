@@ -259,7 +259,12 @@
     "調整紀錄/20260911工業材質層次/效能驗證.json",
     "調整紀錄/20260911人字拼木地板/before-floor.png",
     "調整紀錄/20260911人字拼木地板/after-floor.png",
-    "調整紀錄/20260911人字拼木地板/驗證.json"
+    "調整紀錄/20260911人字拼木地板/驗證.json",
+    "調整紀錄/20260911客浴拉門收口/index.html",
+    "調整紀錄/20260911客浴拉門收口/before-guest-door.png",
+    "調整紀錄/20260911客浴拉門收口/after-guest-door.png",
+    "調整紀錄/20260911客浴拉門收口/open-guest-door.png",
+    "調整紀錄/20260911客浴拉門收口/驗證.json"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -292,6 +297,7 @@
     "tools/verify-industrial-design.cjs",
     "tools/build-layered-review.py",
     "tools/verify-layered-materials.cjs",
-    "tools/verify-herringbone.cjs"
+    "tools/verify-herringbone.cjs",
+    "tools/verify-guest-door.cjs"
   ]
 }

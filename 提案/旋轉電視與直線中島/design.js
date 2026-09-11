@@ -74,7 +74,12 @@ windowV(1085,650,230,0,245);
 glazing(1180,85,5,230,0,110);glazing(1085,315,100,5,0,110);
 // Master bath, guest bath, wardrobe and storage.
 wall(80,282,225,10);wall(-75,282,75,10);wall(0,282,80,10,60,215);openDoor(0,282,80,'H',false,'主浴80cm門洞',-1.2);wall(305,292,10,191);wall(-75,483,380,10);glazing(-85,312.6,10,79.8,90,140);
-wall(405,207,165,10);wall(570,217,10,148);wall(415,365,75,10);EQ.guestDoor();EQ.kitchenDoor();wall(210,625,10,120,52,223);wall(580,260,165,10);wall(745,0,10,365);
+wall(405,207,165,10);
+// Carry the bathroom return to the corridor face; the clear opening remains x490–570.
+const guestBathReturn=wall(570,217,10,158);guestBathReturn.userData.guestDoorClosure=true;
+wall(415,365,75,10);
+const guestBathHead=wall(490,365,80,10,30,215);guestBathHead.userData.name='客浴門頂封板';guestBathHead.userData.guestDoorClosure=true;
+EQ.guestDoor();EQ.kitchenDoor();wall(210,625,10,120,52,223);wall(580,260,165,10);wall(745,0,10,365);
 wall(580,365,75,10);window.HOME_SHARED_OPENINGS.storage({T,M,box,wall,architecture});wall(735,365,20,10);openDoor(405,123,84,'V',false,'更衣室門',.95);openDoor(315,365,90,'H',false,'主臥走道入口門',Math.PI/2);
 wall(755,365,33,10);door(788,365,84,'H',true,'書房玻璃門');glazing(872,365,213,10,0,275,true);
 // Kitchen/collection partitions, corrected front display and east collection door.

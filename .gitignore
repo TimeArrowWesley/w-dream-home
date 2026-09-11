@@ -69,6 +69,7 @@
 !/tools/verify-bedroom-wall.cjs
 !/tools/verify-equipment-revision.cjs
 !/tools/verify-furniture-catalog.cjs
+!/tools/verify-guest-door.cjs
 !/tools/verify-herringbone.cjs
 !/tools/verify-home-model.cjs
 !/tools/verify-industrial-design.cjs
@@ -282,6 +283,12 @@
 !/調整紀錄/20260911全屋核對與主臥細節/use-closet.png
 !/調整紀錄/20260911全屋核對與主臥細節/use-vanity.png
 !/調整紀錄/20260911全屋核對與主臥細節/驗證.json
+!/調整紀錄/20260911客浴拉門收口/
+!/調整紀錄/20260911客浴拉門收口/after-guest-door.png
+!/調整紀錄/20260911客浴拉門收口/before-guest-door.png
+!/調整紀錄/20260911客浴拉門收口/index.html
+!/調整紀錄/20260911客浴拉門收口/open-guest-door.png
+!/調整紀錄/20260911客浴拉門收口/驗證.json
 !/調整紀錄/20260911工業材質層次/
 !/調整紀錄/20260911工業材質層次/after-bedroom.png
 !/調整紀錄/20260911工業材質層次/after-entry.png

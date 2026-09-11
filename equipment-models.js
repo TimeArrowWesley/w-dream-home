@@ -372,7 +372,18 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     return backPanel;
   }
   function luggage(){const g=group('收藏室 B 行李箱專用格');for(const yy of [793,874,953.2])cover(215,yy,60,1.8,0,245,M.black,g);for(const zz of [0,92,148,202,243.2])cover(215,793,60,162,zz,1.8,M.black,g);cover(215,793,1.8,162,0,245,M.black,g);for(const yy of [794,875]){const door=protectedFinish(cover(274,yy,1,78,5,236,collectionFinish,g,'收藏室行李箱門'),'collection-inner');door.userData.swingFront={name:'收藏室深收納',face:'E',hinge:'min'};}box(223,805,45,65,2,85,M.black,g,'85cm高行李箱放入櫃內');box(224,886,42,60,2,75,M.grey,g,'75cm高行李箱放入櫃內');}
-  function guestDoor(){const g=group('客浴外掛雙聯滑門',architecture);g.position.copy(pos(0,0,0));g.userData.slidingDoor={name:'客浴雙聯滑門',distance:40};for(let i=0;i<2;i++){const leaf=box(488+i*41,376+i*3,43,2.5,0,213,M.black,g,'客浴雙聯滑門','外掛兩片，各43cm；收向75cm牆側，不需80cm袋牆。門洞與浴室內徑待複量。');leaf.position.sub(g.position);leaf.userData.slideRatio=i+1;leaf.userData.walkDoor=true;}box(445,375,130,8,214,3,M.steel,architecture,'雙聯滑門上軌');return g;}
+  function guestDoor(){
+    const g=group('客浴外掛雙聯滑門',architecture);g.position.copy(pos(0,0,0));
+    g.userData.slidingDoor={name:'客浴雙聯滑門',key:'bath2',distance:43,opening:{x:490,y:365,w:80,d:10,h:215}};
+    for(let i=0;i<2;i++){
+      const leaf=box(487+i*41,376+i*3,45,2.5,.3,217.4,M.black,g,'客浴雙聯滑門','80cm開口；兩片45cm門扇，側邊各搭接3cm、片間搭接4cm，向左連動收門43／86cm。底部留3mm，門頂搭接封板。五金與毛刷條仍需廠商放樣。');
+      leaf.position.sub(g.position);leaf.userData.slideRatio=i+1;leaf.userData.walkDoor=true;leaf.userData.guestDoorClosure=true;
+      if(i===1){const seal=box(528.3,378.55,.6,.45,.3,217.4,M.black,leaf,'客浴雙聯門片背側搭接條');seal.position.sub(g.position).sub(leaf.position);seal.userData.guestDoorClosure=true;}
+    }
+    const rail=box(440,375,136,8,218,4,M.steel,architecture,'雙聯滑門上軌');rail.userData.guestDoorClosure=true;
+    const stop=box(573.3,374.8,.8,7.5,.3,217.4,M.steel,architecture,'客浴拉門右側止口','收邊接回已補齊的牆角；門片端部預留3mm滑動間隙，遮住斜向可見的門後空隙。');stop.userData.guestDoorClosure=true;
+    return g;
+  }
   function kitchenDoor(){
     // Surface mounted on the kitchen side: one leaf parks north, clear of C cabinets.
     const g=group('廚房電動玻璃滑門',architecture);

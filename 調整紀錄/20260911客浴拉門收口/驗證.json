@@ -1,0 +1,85 @@
+{
+  "method": "Source mesh comparison, oblique sight rays and actual door/walk controls. Images are offline geometry/texture renders; no GPU visual acceptance.",
+  "versions": [
+    {
+      "version": "v1",
+      "otherGeometryUnchanged": true,
+      "oldObliqueLeaks": 15,
+      "closedSightRaysBlocked": 20,
+      "headerClosed": true,
+      "clearOpeningCm": 80,
+      "openAndClose": true,
+      "walkRouteSamples": 42,
+      "closedLeafBounds": [
+        {
+          "x": 487,
+          "width": 45
+        },
+        {
+          "x": 528,
+          "width": 45
+        }
+      ]
+    },
+    {
+      "version": "v2",
+      "otherGeometryUnchanged": true,
+      "oldObliqueLeaks": 15,
+      "closedSightRaysBlocked": 20,
+      "headerClosed": true,
+      "clearOpeningCm": 80,
+      "openAndClose": true,
+      "walkRouteSamples": 42,
+      "closedLeafBounds": [
+        {
+          "x": 487,
+          "width": 45
+        },
+        {
+          "x": 528,
+          "width": 45
+        }
+      ]
+    },
+    {
+      "version": "v3",
+      "otherGeometryUnchanged": true,
+      "oldObliqueLeaks": 15,
+      "closedSightRaysBlocked": 20,
+      "headerClosed": true,
+      "clearOpeningCm": 80,
+      "openAndClose": true,
+      "walkRouteSamples": 42,
+      "closedLeafBounds": [
+        {
+          "x": 487,
+          "width": 45
+        },
+        {
+          "x": 528,
+          "width": 45
+        }
+      ]
+    },
+    {
+      "version": "v4",
+      "otherGeometryUnchanged": true,
+      "oldObliqueLeaks": 15,
+      "closedSightRaysBlocked": 20,
+      "headerClosed": true,
+      "clearOpeningCm": 80,
+      "openAndClose": true,
+      "walkRouteSamples": 42,
+      "closedLeafBounds": [
+        {
+          "x": 487,
+          "width": 45
+        },
+        {
+          "x": 528,
+          "width": 45
+        }
+      ]
+    }
+  ]
+}
