@@ -113,7 +113,7 @@ for(const v of ['v1','v2','v3']){
   if(v==='v3'){c.HOME_VIEWER.selectRoom('island');c.HOME_AI_VIEWS.open();assert.equal(c.HOME_AI_VIEWS.getState().imageRoom,null);assert(!$('aiPhotoImage').getAttribute('src'));c.HOME_VIEWER.selectRoom('study');assert.equal(c.HOME_AI_VIEWS.getState().imageRoom,'study');c.HOME_AI_VIEWS.close();}
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,7);$('uiResourcesClose').click();
+  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,8);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
   $('export').click();assert(calls.some(q=>q[0]==='export'));
   const alt=v==='v2'?'v1':'v2',target=d.querySelector('[data-proposal="'+alt+'"], [data-layout="'+alt+'"]');target.click();const nav=calls.find(q=>q[0]==='navigate');assert(nav);assert(new URL(nav[1]).searchParams.get('uiRoom')==='study');
   if(v!=='v1'){assert($('uiInspector').contains($('rotatingTVPanel')));d.querySelector('[data-tv-facing="island"]').click();assert(calls.some(q=>q[0]==='tv'&&q[1]==='island'));}

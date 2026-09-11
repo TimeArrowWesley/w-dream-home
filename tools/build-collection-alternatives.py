@@ -1,0 +1,319 @@
+"""Two measured 2D concepts, drawn from the existing house coordinates (cm).
+
+These are discussion drawings, not changes to V1/V2/V3. No browser required.
+"""
+from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont
+import json, math, html
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / '提案/拆收藏室替代方案'
+OUT.mkdir(parents=True, exist_ok=True)
+WALLS = json.loads((ROOT/'調整紀錄/20260910設備整合/幾何驗證.json').read_text(encoding='utf8'))['variants']['v2']['walls']
+FONT, BOLD = 'C:/Windows/Fonts/msjh.ttc', 'C:/Windows/Fonts/msjhbd.ttc'
+PAPER, INK, MUTED = '#f6f4ee', '#253d3a', '#6b7a76'
+GREEN, BLUE, RED = '#267d6d', '#436a83', '#b87964'
+FLOOR, WALL, STONE, WOOD, GLASS = '#eae6dc', '#69716c', '#c2c9b6', '#a7977c', '#b0c9c1'
+
+
+class Drawing:
+    def __init__(self, w, h):
+        self.im = Image.new('RGB', (w,h), PAPER)
+        self.d = ImageDraw.Draw(self.im)
+        self.svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" font-family="Microsoft JhengHei,sans-serif"><rect width="100%" height="100%" fill="{PAPER}"/>']
+        self.text_boxes = []
+    def rect(self, x,y,w,h,fill,stroke=None,lw=1):
+        self.d.rectangle((x,y,x+w,y+h), fill=fill, outline=stroke, width=max(1,round(lw)))
+        self.svg.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" fill="{fill or "none"}" stroke="{stroke or "none"}" stroke-width="{lw}"/>')
+    def line(self, pts, color=INK, lw=1, dash=False):
+        if dash:
+            for a,b in zip(pts,pts[1:]):
+                n=max(1,math.ceil(math.dist(a,b)/7))
+                for i in range(0,n,2):
+                    self.d.line([(a[0]+(b[0]-a[0])*t/n,a[1]+(b[1]-a[1])*t/n) for t in (i,min(n,i+1))],fill=color,width=max(1,round(lw)))
+        else: self.d.line(pts, fill=color, width=max(1,round(lw)))
+        self.svg.append('<polyline points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y in pts)+f'" fill="none" stroke="{color}" stroke-width="{lw}"'+(' stroke-dasharray="7 7"' if dash else '')+'/>')
+    def poly(self, pts, fill, stroke=None, lw=1):
+        self.d.polygon(pts,fill=fill)
+        if stroke: self.line(pts+[pts[0]],stroke,lw)
+        self.svg.append('<polygon points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y in pts)+f'" fill="{fill}" stroke="{stroke or "none"}" stroke-width="{lw}"/>')
+    def circle(self,x,y,r,fill,stroke=None,lw=1):
+        self.d.ellipse((x-r,y-r,x+r,y+r),fill=fill,outline=stroke,width=max(1,round(lw)))
+        self.svg.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="{r:.2f}" fill="{fill or "none"}" stroke="{stroke or "none"}" stroke-width="{lw}"/>')
+    def text(self,x,y,t,size=18,color=INK,bold=False,anchor='start',back=False):
+        f=ImageFont.truetype(BOLD if bold else FONT,size)
+        tw=self.d.textlength(t,font=f)
+        left=x-tw/2 if anchor=='middle' else x-tw if anchor=='end' else x
+        assert left>=0 and left+tw<=self.im.width and y>=0 and y+size<=self.im.height, ('text outside image',t,left,y)
+        if back: self.rect(left-4,y-2,tw+8,size+6,PAPER)
+        self.d.text((left,y),t,font=f,fill=color,anchor='lt')
+        self.svg.append(f'<text x="{x:.2f}" y="{y+size*.88:.2f}" font-size="{size}" fill="{color}" text-anchor="{anchor}" font-weight="{700 if bold else 400}">{html.escape(t)}</text>')
+        self.text_boxes.append((left,y,left+tw,y+size,t))
+    def save(self,name):
+        self.im.save(OUT/(name+'.png'),optimize=True)
+        (OUT/(name+'.svg')).write_text('\n'.join(self.svg+['</svg>']),encoding='utf8')
+
+
+def box(id,x,y,w,d,kind,label='',**kw):
+    return dict(id=id,x=x,y=y,w=w,d=d,kind=kind,label=label,**kw)
+
+
+COMMON = [
+    box('fridge',230,499,85,91.2,'equipment','冰箱'),
+    box('west-deep',220,760,60,155,'wood','深收納'),
+    box('west-corner',220,915,60,40,'wood',''),
+    box('south-display',280,915,165,40,'glass','玻璃櫃 D40'),
+    box('electrical',690,915,70,40,'wood','電箱'),
+]
+A = dict(
+    title='南牆電視 × 開放長中島', subtitle='把中央視線讓出來，收藏退到周邊；最接近完整開放客廳。',
+    island=box('island',425,480,110,280,'island',h=95),
+    furniture=COMMON+[
+        box('sofa',797,540,240,95,'sofa','沙發朝南'),
+        box('chaise',949,635,88,65,'sofa'),
+        box('console',820,900,195,55,'av','影音櫃'),
+        box('entry',660,805,55,110,'wood','玄關矮櫃',h=90),
+        box('entry-corner',660,915,30,40,'wood'),
+    ],
+    tv=dict(x=825.15,y=948.6,w=184.7,d=2.8,face='N',label='83 吋固定電視'),
+    listener=[917.5,600], coffee=[895,765,32],
+    speakers=[['L',1045,874,31.7,31.5],['R',790,874,31.7,31.5],['SW1',788,929,36,39.5],['SW2',1055,929,36,39.5],['SL',1045,505,28,24],['SR',775,505,28,24]],
+    routes=[[[603,946],[603,825],[606,800],[738,758],[850,685]],[[603,825],[340,825],[340,677],[185,677]],[[606,800],[625,685],[690,450],[820,450],[828,370]]],
+    captions=[
+        ('01  電視固定在南牆', ['83 吋沿用，沙發轉向南側。','主座到螢幕約 349 cm。','Q7、雙重低音集中在影音區，','進門不再先看到電視背板。']),
+        ('02  中央是一張完整長檯', ['中島 280 × 110 × H95。','55 × 45 備餐槽、酒櫃、掃地機','與 IH 分區；開口維持朝冰箱。','東側可留活動吧椅，未計入淨距。']),
+        ('03  收藏與玄關連續收邊', ['西側 D60 深收納接南側 D40 玻璃櫃。','玄關 H90：包、鑰匙、少量鞋。','側面帽鉤與短衣桿保留；','柱與櫃尾之間不留落地細縫。']),
+        ('我的優先推薦', ['開放感最強，電視不用轉動。','代價：中島無法正面看電視；','原南牆展示改作影音，展示量減少。','想要安靜、整齊的客廳，先選 A。']),
+    ],
+)
+B = dict(
+    title='展示電視屏風 × 橫向社交中島', subtitle='把電視背面變成收藏櫃，與橫向中島接成 L 形生活區。',
+    island=box('island',370,695,300,95,'island',h=95),
+    furniture=COMMON+[
+        box('sofa',900,464,95,240,'sofa','沙發朝西'),
+        box('chaise',835,620,65,84,'sofa'),
+        box('tv-spine',615,475,55,220,'spine','背面展示',h=160,displayDepth=40),
+        box('entry',780,845,55,110,'wood','玄關矮櫃',h=90),
+        box('entry-corner',760,915,20,40,'wood'),
+        box('living-display',835,915,240,40,'glass','玻璃櫃 D40'),
+    ],
+    tv=dict(x=667.2,y=492.65,w=2.8,d=184.7,face='E',label='83 吋固定電視'),
+    listener=[950,583], coffee=[812,552,31],
+    speakers=[['L',720,685,31.5,31.7],['R',720,485,31.5,31.7],['SW1',1030,449,36,39.5],['SW2',1030,717,36,39.5],['SL',1040,758,24,28],['SR',1040,408,24,28]],
+    routes=[[[603,946],[603,835],[710,812],[780,782],[873,775]],[[603,835],[325,835],[325,677],[185,677]],[[325,677],[355,640],[510,640],[520,430],[830,430],[830,365]]],
+    captions=[
+        ('01  不旋轉，背面真正能用', ['固定屏風 220 × 55 × H160。','背面上半部 D40 有門展示；','其餘 15 預留補強、走線與 TV。','底層 D55 專留影音，需做散熱。']),
+        ('02  橫向 300 × 95 × H95', ['中島直接接屏風，轉角收齊。','設備口朝北／冰箱側；南面封板。','濕區放西端，與影音端分開。','吧椅用時拉出，不常駐入口走道。']),
+        ('03  回家先看到完成面', ['玄關矮櫃向右移，與南牆連接。','進門先見石材長檯與木皮正面，','不用看開放機器艙或電視裸背。','電箱保留獨立可開啟面板。']),
+        ('適合收藏優先', ['比 A 多一面中島側展示。','但西側／柱前僅約 90 cm，','視線也會被 160 cm 屏風分隔。','展示優先可選 B，寬敞感則選 A。']),
+    ],
+)
+PLANS={'A':A,'B':B}
+
+
+def render_plan(d, key, ox,oy,s,full=False):
+    cfg=PLANS[key]; x0,y0=(-230,-30) if full else (195,345)
+    p=lambda x,y:(ox+(x-x0)*s,oy+(y-y0)*s)
+    rect=lambda x,y,w,h,c,st=None,lw=1:d.rect(*p(x,y),w*s,h*s,c,st,lw)
+    line=lambda pts,c=INK,lw=1,dash=False:d.line([p(*q) for q in pts],c,lw,dash)
+    circ=lambda x,y,r,c,st=None,lw=1:d.circle(*p(x,y),r*s,c,st,lw)
+    def label(x,y,t,size=15,c=INK,bold=False,back=False): d.text(*p(x,y),t,size,c,bold,'middle',back)
+    def dim(x1,y1,x2,y2,t,dx=0,dy=0):
+        aa,bb=p(x1,y1),p(x2,y2)
+        d.line([aa,bb],GREEN,1.5)
+        for x,y in (aa,bb):d.line([(x-4,y-4),(x+4,y+4)],GREEN,1.5)
+        d.text((aa[0]+bb[0])/2+dx,(aa[1]+bb[1])/2+dy,t,16,GREEN,True,'middle',True)
+    outline=[(-110,-15),(1185,-15),(1185,315),(1085,315),(1085,580),(1185,580),(1185,650),(1085,650),(1085,880),(1185,880),(1185,970),(-210,970),(-210,415),(-90,415),(-90,85),(-110,85)]
+    if full:
+        d.poly([p(*q) for q in outline],FLOOR)
+        rect(-75,0,1160,375,'#eeede7')
+    else:rect(205,355,895,615,FLOOR)
+    rect(220,750,325.2,205,'#dce7da')
+    # Actual retained geometry: omit only the collection-room short return.
+    for w in WALLS:
+        if w['z']>100 or w['h']<1:continue
+        if abs(w['x']-435)<.01 and abs(w['y']-875)<.01:continue
+        if not full and (w['x']<195 or w['y']<355):continue
+        rect(w['x'],w['y'],w['w'],w['d'],WALL)
+    # Frame/glass layers are rendered after walls so openings remain legible.
+    line([(1085,375),(1085,580)],'#a3bbb3',3)
+    line([(1085,650),(1085,880)],'#a3bbb3',3)
+    line([(872,370),(1085,370)],'#a3bbb3',3)
+    line([(788,370),(841,415)],BLUE,1)
+    line([(210,625),(210,745)],'#74adba',5)
+    if not full:
+        label(670,344,'↑  主臥／客浴／儲藏室',16,MUTED)
+        label(979,344,'↑  雙人書房',16,MUTED)
+        label(247,640,'廚房',15,BLUE,back=True)
+        label(247,661,'電動門',13,BLUE,back=True)
+    # The former room is an extent, not an obstacle in these plans.
+    line([(220,753),(545.2,753),(545.2,880)],RED,1.5,True)
+    if key=='A':label(343,875,'原收藏室・打開',14,GREEN)
+    else:label(345,875,'原收藏室・打開',14,GREEN)
+    for b in cfg['furniture']:
+        kind=b['kind']; color={'equipment':'#afbfba','wood':WOOD,'glass':GLASS,'sofa':'#c8bba2','av':'#536860','spine':GLASS}[kind]
+        rect(b['x'],b['y'],b['w'],b['d'],color,INK,1)
+        if kind=='sofa':
+            if b['id']=='sofa':
+                if key=='A':
+                    for x in [817,883,949]:rect(x,560,64,71,'#e1d8c7',MUTED)
+                    rect(797,540,240,17,'#9a8b74')
+                else:
+                    for y in [471,549,627]:rect(906,y,69,69,'#e1d8c7',MUTED)
+                    rect(978,464,17,240,'#9a8b74')
+            else:rect(b['x']+6,b['y']+6,b['w']-12,b['d']-12,'#e1d8c7',MUTED)
+        if kind=='glass':
+            for x in range(round(b['x']+55),round(b['x']+b['w']-5),55):line([(x,b['y']),(x,b['y']+b['d'])],MUTED)
+        if b['id']=='tv-spine':
+            rect(655,475,15,220,'#69716c')
+            for y in [530,585,640]:line([(615,y),(655,y)],MUTED)
+            line([(615,475),(615,695)],BLUE,3)
+            label(640,525,'展',16);label(640,548,'示',16);label(640,604,'D40',12)
+        if b['id'] in ['west-deep','entry']:
+            cx=b['x']+b['w']/2; cy=b['y']+22
+            for i,t in enumerate(['深','收','納'] if b['id']=='west-deep' else ['玄','關','矮櫃']):label(cx,cy+i*22,t,13)
+        elif b['id']=='sofa':label(b['x']+b['w']/2,b['y']+(8 if key=='B' else -27),b['label'],15)
+        elif b['label'] and b['id']!='tv-spine':label(b['x']+b['w']/2,b['y']+b['d']/2-8,b['label'],12 if 'display' in b['id'] else 14)
+    # Finish the exact L corners rather than drawing empty slivers on the floor.
+    for cx,cy in [(243,931),(675,931)] if key=='A' else [(243,931),(770,931)]:line([(cx-6,cy-6),(cx+6,cy+6)],MUTED)
+    rect(445.1,880.1,100.1,89.9,WALL,INK)
+    label(495.15,908,'結構柱',16,'#ffffff');label(495.15,934,'保留',13,'#ffffff')
+    # Island equipment bay outlines are dashed because they sit below the top.
+    q=cfg['island'];rect(q['x'],q['y'],q['w'],q['d'],STONE,INK,2)
+    if key=='A':
+        for y in [550,602,673]:line([(425,y),(488,y)],MUTED,1,True)
+        label(456,510,'酒櫃↓',13);label(456,574,'掃地機↓',12)
+        rect(440,621,30.6,52.7,'#304542',INK)
+        rect(435,695,45,55,'#b5c3c0',INK);rect(437.5,697.5,40,50,'#6d827c',INK)
+        circ(455,722.5,3,PAPER);line([(485,704),(473,704)],INK,2)
+        label(504,648,'IH',13);label(504,716,'水槽',13)
+        label(500,534,'備餐',13);label(500,556,'／吧台',13)
+        line([(435,761),(532,761)],'#605742',4)
+    else:
+        for x in [440,512,560,626]:line([(x,695),(x,770)],MUTED,1,True)
+        rect(380,706,55,45,'#b5c3c0',INK);rect(382.5,708.5,50,40,'#6d827c',INK)
+        circ(407.5,728.5,3,PAPER);line([(407.5,699),(407.5,713)],INK,2)
+        label(475,724,'酒櫃↓',13);label(536,724,'掃地機↓',12)
+        rect(573.7,717.6,30.6,52.7,'#304542',INK)
+        label(640,750,'接齊',12)
+        line([(371,789),(669,789)],'#605742',4)
+    # Equipment opening direction refers to this proposal, not an unaltered 3D.
+    if key=='A':
+        line([(418,592),(389,592)],BLUE,2);line([(389,592),(396,586)],BLUE,2);line([(389,592),(396,598)],BLUE,2)
+    else:
+        line([(474,688),(474,655)],BLUE,2);line([(474,655),(468,664)],BLUE,2);line([(474,655),(480,664)],BLUE,2)
+        label(477,615,'設備開口朝冰箱側',14,BLUE,back=True)
+    # Audio devices retain true floor envelopes, rather than tiny symbolic dots.
+    for name,cx,cy,w,depth in cfg['speakers']:
+        rect(cx-w/2,cy-depth/2,w,depth,'#314d49' if len(name)==1 else '#6f827a',INK)
+        label(cx,cy-6,name,10,'#ffffff')
+    tv=cfg['tv'];rect(tv['x'],tv['y'],tv['w'],tv['d'],'#142d28',None)
+    cx,cy,r=cfg['coffee'];circ(cx,cy,r,'#a4957a',INK);label(cx,cy-7,'茶几',13)
+    ex,ey=cfg['listener'];circ(ex,ey,4,BLUE)
+    if key=='A':
+        line([(ex,ey+8),(ex,948.6)],BLUE,1.5,True)
+        label(952,813,'約349',16,BLUE,True,True)
+        label(917.5,980,'83 吋固定電視｜朝北',16,INK,True)
+    else:
+        line([(677,583),(942,583)],BLUE,1.5,True)
+        label(810,592,'約280',16,BLUE,True,True)
+        label(704,552,'TV',15,INK,True)
+    # Tested centre routes. The dimensions below remain measured face to face.
+    for route in cfg['routes']:
+        line(route,GREEN,2)
+        a,b=route[-2:];ang=math.atan2(b[1]-a[1],b[0]-a[0]);r=9
+        line([(b[0]-r*math.cos(ang-.45),b[1]-r*math.sin(ang-.45)),b,(b[0]-r*math.cos(ang+.45),b[1]-r*math.sin(ang+.45))],GREEN,2)
+    circ(603,944,6,GREEN);label(602,980,'入戶',16,GREEN,True)
+    if key=='A':
+        dim(315,533,425,533,'110',dy=-25)
+        dim(535,574,797,574,'262',dy=-23)
+        dim(480,760,480,880.1,'120.1',dx=-5,dy=-5)
+        dim(545.2,898,660,898,'114.8',dy=-10)
+        dim(425,459,535,459,'110',dy=-17)
+        dim(556,480,556,760,'280',dx=16)
+        dim(1045,375,1045,493,'118',dx=-8)
+    else:
+        dim(280,775,370,775,'90',dy=-7)
+        dim(490,790,490,880.1,'90.1',dy=-10)
+        dim(615,455,670,455,'55',dy=-18)
+        dim(735,375,735,469.15,'94.2',dx=6,dy=-10)
+        dim(370,813,670,813,'300',dy=-15)
+        dim(349,695,349,790,'95',dx=-8,dy=-6)
+    if full:
+        rect(100,10,180,202,'#d2c8b4',INK);rect(111,26,70,32,'#eee9dc');rect(195,26,70,32,'#eee9dc')
+        rect(755,0,80,180,'#c8c5b7',MUTED);rect(905,285,180,80,'#c8c5b7',MUTED)
+        rect(690,130,55,130,'#c8c5b7',MUTED);rect(580,205,110,55,'#c8c5b7',MUTED)
+        rect(175,310,125,160,'#e5e7e0',MUTED)
+        d.d.ellipse((*p(212,314),*p(282,466)),fill='#f9f7ef',outline=MUTED)
+        px,py=p(247,390);d.svg.append(f'<ellipse cx="{px}" cy="{py}" rx="{35*s}" ry="{76*s}" fill="#f9f7ef" stroke="{MUTED}"/>')
+        rect(166,476,28,7,GREEN)
+        rect(0,493,145,60,'#c7c3b5',MUTED);rect(0,800,145,90,'#c7c3b5',MUTED)
+        for x,y,t in [(170,235,'主臥'),(630,150,'更衣室'),(931,177,'雙人書房'),(490,282,'客浴'),(665,305,'儲藏室'),(40,360,'主浴'),(100,705,'廚房'),(-115,670,'後陽台')]:label(x,y,t,19)
+        label(665,405,'私領域格局保留',15,MUTED,back=True)
+    return p
+
+
+def validate(key):
+    cfg=PLANS[key];q=cfg['island']
+    obstacles=cfg['furniture']+[q]
+    obstacles += [box(name,cx-w/2,cy-d/2,w,d,'audio') for name,cx,cy,w,d in cfg['speakers']]
+    obstacles += [box('wall',w['x'],w['y'],w['w'],w['d'],'wall') for w in WALLS if w['z']==0 and w['h']>=3 and not(abs(w['x']-435)<.01 and abs(w['y']-875)<.01)]
+    # A 36 cm body must pass the three drawn routes, using exact distance to AABBs.
+    tightest=10000
+    for route in cfg['routes']:
+        for a,b in zip(route,route[1:]):
+            for i in range(math.ceil(math.dist(a,b))+1):
+                t=min(1,i/max(1,math.dist(a,b)));x=a[0]+(b[0]-a[0])*t;y=a[1]+(b[1]-a[1])*t
+                for o in obstacles:
+                    dist=math.hypot(max(o['x']-x,0,x-o['x']-o['w']),max(o['y']-y,0,y-o['y']-o['d']))
+                    tightest=min(tightest,dist)
+                    assert dist>=18-1e-3,(key,'route intersects fixture',o['id'],x,y,dist)
+                cx,cy,r=cfg['coffee'];coffee_distance=math.hypot(x-cx,y-cy)-r
+                tightest=min(tightest,coffee_distance)
+                assert coffee_distance>=18,(key,'route intersects coffee table',x,y,coffee_distance)
+    # All free-standing furniture envelopes are non-overlapping. Joined corners may touch.
+    fixtures=cfg['furniture']+[q]+[box(name,cx-w/2,cy-d/2,w,d,'audio') for name,cx,cy,w,d in cfg['speakers']]
+    for i,a in enumerate(fixtures):
+        for b in fixtures[i+1:]:
+            assert min(a['x']+a['w'],b['x']+b['w'])-max(a['x'],b['x'])<=.001 or min(a['y']+a['d'],b['y']+b['d'])-max(a['y'],b['y'])<=.001,(key,'overlap',a['id'],b['id'])
+    assert A['island']['x']-315==110
+    assert 797-A['island']['x']-A['island']['w']==262
+    assert B['island']['x']-280==90
+    return dict(routeBodyCm=36,minimumRouteCenterToFixtureCm=round(tightest,2),islandSouthToColumn=round(880.1-q['y']-q['d'],1),fixedFurnitureNoOverlap=True,
+                northPassageToNearestSpeaker=118 if key=='A' else 94.15,
+                limits='Closed-door planar footprints only. Not a 3D, acoustic, structural, services or fabrication certification.')
+
+
+def main():
+    report={}
+    for key,cfg in PLANS.items():
+        report[key]=validate(key)
+        d=Drawing(1800,1120)
+        d.text(42,27,key+'  /  '+cfg['title'],35,INK,True)
+        d.text(44,81,cfg['subtitle'],21,MUTED)
+        d.text(44,118,'拆除收藏室後的新方向 · 2D 討論稿，尚未套用 3D · 2026.09.11 · 單位 cm',17,MUTED)
+        render_plan(d,key,46,189,1.16)
+        d.line([(1215,177),(1215,991)],'#c9d0c4',1)
+        for i,(title,lines) in enumerate(cfg['captions']):
+            y=183+i*201
+            d.rect(1250,y,508,178,'#e9ede3' if i==3 else '#f0eee6')
+            d.text(1268,y+12,title,24,GREEN if i==3 else INK,True)
+            for j,t in enumerate(lines):d.text(1268,y+52+j*28,t,19,MUTED)
+        legend=[(45,WOOD,'木櫃／深收納'),(257,GLASS,'玻璃展示'),(441,STONE,'石材中島'),(614,'#314d49','Q7 主喇叭'),(814,'#6f827a','SW 重低音')]
+        for x,col,t in legend:d.rect(x,994,18,18,col);d.text(x+27,994,t,16)
+        d.text(45,1033,'綠線：回家與通行方向　 紅虛線：原收藏室邊界　 藍虛線：主座觀看距離',17,MUTED)
+        d.text(45,1068,'尺寸取自現有模型；通道按門片關閉、未放吧椅量測。設備分艙為預排，機電與收邊需於選案後深化。',17,MUTED)
+        d.save(key+'-公共區')
+        d=Drawing(1600,1320)
+        d.text(48,26,key+'  /  '+cfg['title'],34,INK,True)
+        d.text(50,79,'全屋位置對照｜臥室、書房、廚衛與結構柱保留；公共區尺寸請搭配放大圖。',20,MUTED)
+        render_plan(d,key,57,146,1,True)
+        d.text(50,1198,'新 2D 討論稿・未變更既有 V1／V2／V3。淺綠色為原收藏室範圍，紅虛線為擬拆邊界。',19,GREEN)
+        d.text(50,1234,'主浴與家具只畫位置示意；尺寸依現有模型，非現場丈量或施工圖。',18,MUTED)
+        d.save(key+'-全屋')
+    data=dict(status='Two 2D concepts only; existing V1/V2/V3 remain unchanged',units='cm',plans=PLANS,verification=report)
+    (OUT/'尺寸與檢查.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    print(json.dumps(report,ensure_ascii=False,indent=2))
+
+
+if __name__=='__main__':main()

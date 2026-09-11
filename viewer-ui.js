@@ -129,6 +129,7 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
+      ['拆收藏室・兩個替代格局', 'A 南牆電視／B 展示電視屏風，2D 圖與尺寸比較', '提案/拆收藏室替代方案/index.html'],
       ['V3・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
       ['版本比較', '三個可操作的 3D 版本與共用功能', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
