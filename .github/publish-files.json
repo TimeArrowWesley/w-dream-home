@@ -199,7 +199,10 @@
     "調整紀錄/20260911主臥化妝台/after-room.png",
     "調整紀錄/20260911主臥化妝台/after-vanity.png",
     "調整紀錄/20260911主臥化妝台/before-vanity.png",
-    "調整紀錄/20260911主臥化妝台/驗證.json"
+    "調整紀錄/20260911主臥化妝台/驗證.json",
+    "調整紀錄/20260911主臥隔牆/after-bed-wall.png",
+    "調整紀錄/20260911主臥隔牆/before-bed-wall.png",
+    "調整紀錄/20260911主臥隔牆/驗證.json"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -224,6 +227,7 @@
     "tools/verify-viewer-ui.cjs",
     "調整紀錄/20260910家具清單整合/整合驗證.json",
     "調整紀錄/20260910設備整合/幾何驗證.json",
-    "tools/verify-master-vanity.cjs"
+    "tools/verify-master-vanity.cjs",
+    "tools/verify-bedroom-wall.cjs"
   ]
 }

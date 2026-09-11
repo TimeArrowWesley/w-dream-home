@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-11T03:59:06.058Z",
+  "method": "Actual Three.js meshes, raycast, real door/walk handlers, cutaway and plan-capture state restoration. Images are CPU geometry/base-color checks, without GPU textures or reflections.",
+  "versions": [
+    {
+      "version": "v1",
+      "wall": {
+        "x": 405,
+        "y": 0,
+        "z": 0,
+        "w": 10,
+        "d": 123,
+        "h": 275
+      },
+      "filledGapCm": 43,
+      "changedMeshes": 1,
+      "addedMeshes": 0,
+      "allOtherMeshesUnchanged": true,
+      "baselineWithoutVanity": "bf4ad4514059d508eadf18408b23cbcc15f150d5a9964747a6641ca85647009c",
+      "doorAngleDegrees": 90,
+      "doorSweepSamples": 45,
+      "doorwayWalkSamples": 18,
+      "cutawayAndPlanRestore": true
+    },
+    {
+      "version": "v2",
+      "wall": {
+        "x": 405,
+        "y": 0,
+        "z": 0,
+        "w": 10,
+        "d": 123,
+        "h": 275
+      },
+      "filledGapCm": 43,
+      "changedMeshes": 1,
+      "addedMeshes": 0,
+      "allOtherMeshesUnchanged": true,
+      "baselineWithoutVanity": "b464fd7f408b5dac88b275275abd5759dcdab4918c9efcb335cb4c59f5089d6d",
+      "doorAngleDegrees": 90,
+      "doorSweepSamples": 45,
+      "doorwayWalkSamples": 18,
+      "cutawayAndPlanRestore": true
+    },
+    {
+      "version": "v3",
+      "wall": {
+        "x": 405,
+        "y": 0,
+        "z": 0,
+        "w": 10,
+        "d": 123,
+        "h": 275
+      },
+      "filledGapCm": 43,
+      "changedMeshes": 1,
+      "addedMeshes": 0,
+      "allOtherMeshesUnchanged": true,
+      "baselineWithoutVanity": "09bc50a5cd5a5ddc58e867444e8575118af7dd03ff0b3f1098ceb98d49962825",
+      "doorAngleDegrees": 90,
+      "doorSweepSamples": 45,
+      "doorwayWalkSamples": 18,
+      "cutawayAndPlanRestore": true
+    },
+    {
+      "version": "v4",
+      "wall": {
+        "x": 405,
+        "y": 0,
+        "z": 0,
+        "w": 10,
+        "d": 123,
+        "h": 275
+      },
+      "filledGapCm": 43,
+      "changedMeshes": 1,
+      "addedMeshes": 0,
+      "allOtherMeshesUnchanged": true,
+      "baselineWithoutVanity": "85c15e5f3590c5cb0dbe24050b0afdbb8185aab6c7d3673268b0699e5dd585a1",
+      "doorAngleDegrees": 90,
+      "doorSweepSamples": 45,
+      "doorwayWalkSamples": 18,
+      "cutawayAndPlanRestore": true
+    }
+  ]
+}

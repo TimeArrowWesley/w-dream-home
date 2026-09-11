@@ -62,7 +62,7 @@ const shape=new T.Shape();outline.forEach((p,i)=>i?shape.lineTo(p[0]-482.5,-(p[1
 const slabGeo=new T.ExtrudeGeometry(shape,{depth:12,bevelEnabled:false});const uv=slabGeo.attributes.uv;for(let i=0;i<uv.count;i++)uv.setXY(i,uv.getX(i)/1300,uv.getY(i)/1000);const slab=new T.Mesh(slabGeo,M.floor);slab.rotation.x=-Math.PI/2;slab.position.y=-12;slab.receiveShadow=true;scene.add(slab);
 // Clean architectural reconstruction: omit automatically extracted furniture and window lines.
 D.cols.forEach(c=>wall(c[0],c[1],c[2],c[3],315,0,M.concrete));
-wall(0,-15,405,15);windowH(775,-10,310,0,245);wall(580,-15,195,15);wall(405,0,10,80);windowH(415,-15,70,95,150);wall(405,207,10,158);
+wall(0,-15,405,15);windowH(775,-10,310,0,245);wall(580,-15,195,15);info(wall(405,0,10,123),'主臥與更衣室連續隔牆','補齊窗前矮櫃側方至門框的43cm牆段；全段長123、厚10、高275cm沿用模型基準，現場尺寸待複量。','業主紅框客變圖');windowH(415,-15,70,95,150);wall(405,207,10,158);
 windowV(-85,85,197,75,158);wall(-85,282,10,30.6);wall(-85,392.4,10,22.6);info(wall(-210,415,135,83,315),'主浴旁結構柱','黃圈由業主確認為柱。平面約135×83cm依圖面比例，高度暫沿用315cm，待實測。','業主圈圖確認');wall(-210,498,12,402,95);glazing(-210,498,8,402,95,15);
 wall(0,955,445,15);wall(700,955,385,15);door(553,layout.entryDoorY,107,'H',false,'入戶門');wall(545,955,8,15);wall(660,955,40,15);
 wall(1085,0,15,88);glazing(1085,88,10,224,0,245);wall(1085,312,15,63);

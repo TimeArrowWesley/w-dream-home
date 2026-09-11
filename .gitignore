@@ -60,6 +60,7 @@
 !/tools/home-test-fixture.cjs
 !/tools/render-home-review.cjs
 !/tools/sync-furniture-seed.cjs
+!/tools/verify-bedroom-wall.cjs
 !/tools/verify-equipment-revision.cjs
 !/tools/verify-furniture-catalog.cjs
 !/tools/verify-home-model.cjs
@@ -245,5 +246,9 @@
 !/調整紀錄/20260911主臥化妝台/before-vanity.png
 !/調整紀錄/20260911主臥化妝台/index.html
 !/調整紀錄/20260911主臥化妝台/驗證.json
+!/調整紀錄/20260911主臥隔牆/
+!/調整紀錄/20260911主臥隔牆/after-bed-wall.png
+!/調整紀錄/20260911主臥隔牆/before-bed-wall.png
+!/調整紀錄/20260911主臥隔牆/驗證.json
 !/調整紀錄/20260911效能優化/
 !/調整紀錄/20260911效能優化/效能驗證.json

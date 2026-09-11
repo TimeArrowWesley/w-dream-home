@@ -1,10 +1,11 @@
 'use strict';
+// Baselines include the 20260911 closet-wall repair; verify-bedroom-wall.cjs proves only that wall changed.
 // Offline source-geometry, collision and shared-version checks. No browser or GPU.
 const fs=require('fs'),path=require('path'),assert=require('assert'),crypto=require('crypto');
 const build=require('./home-test-fixture.cjs'),render=require('./render-home-review.cjs');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'調整紀錄/20260911主臥化妝台');
 const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
-const before=['7df07c1748e43ae3a77538104a7bd72fb3e35a469ae4eb6d586ba9842b2e20b6','74f25518f516352f33385086bdc9441a003e04963fed421d870053b85ee99a74','e8369544cf55dbd80e1834899d3b15ecbe25f3b370ef5ab59af7af7c9c0e5052','e8c06189cd9208879dc345e4e8a2926cc798494c33f5d6dd9860c6650ff98d8a'];
+const before=['bf4ad4514059d508eadf18408b23cbcc15f150d5a9964747a6641ca85647009c','b464fd7f408b5dac88b275275abd5759dcdab4918c9efcb335cb4c59f5089d6d','09bc50a5cd5a5ddc58e867444e8575118af7dd03ff0b3f1098ceb98d49962825','85c15e5f3590c5cb0dbe24050b0afdbb8185aab6c7d3673268b0699e5dd585a1'];
 (async()=>{
  fs.mkdirSync(out,{recursive:true});const versions=[];let sharedShape;
  for(const n of [2,3,4,5]){
