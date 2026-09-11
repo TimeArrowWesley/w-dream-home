@@ -1,0 +1,53 @@
+{
+  "method": "Source geometry and offline texture rendering; no GPU shader execution or measured FPS.",
+  "versions": [
+    {
+      "version": "v1",
+      "geometryUnchanged": true,
+      "meshCount": 2126,
+      "boardSamples": 6364,
+      "horizontal": 3181,
+      "vertical": 3183,
+      "entryBoundarySamples": 1774,
+      "textureCount": 6,
+      "idleDraws": 0,
+      "movingSubmissionsPerSimulatedSecond": 30
+    },
+    {
+      "version": "v2",
+      "geometryUnchanged": true,
+      "meshCount": 2110,
+      "boardSamples": 6364,
+      "horizontal": 3181,
+      "vertical": 3183,
+      "entryBoundarySamples": 1774,
+      "textureCount": 6,
+      "idleDraws": 0,
+      "movingSubmissionsPerSimulatedSecond": 30
+    },
+    {
+      "version": "v3",
+      "geometryUnchanged": true,
+      "meshCount": 1965,
+      "boardSamples": 6364,
+      "horizontal": 3181,
+      "vertical": 3183,
+      "entryBoundarySamples": 1840,
+      "textureCount": 6,
+      "idleDraws": 0,
+      "movingSubmissionsPerSimulatedSecond": 30
+    },
+    {
+      "version": "v4",
+      "geometryUnchanged": true,
+      "meshCount": 1825,
+      "boardSamples": 6364,
+      "horizontal": 3181,
+      "vertical": 3183,
+      "entryBoundarySamples": 1840,
+      "textureCount": 6,
+      "idleDraws": 0,
+      "movingSubmissionsPerSimulatedSecond": 30
+    }
+  ]
+}

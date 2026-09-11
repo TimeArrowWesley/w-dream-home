@@ -69,6 +69,7 @@
 !/tools/verify-bedroom-wall.cjs
 !/tools/verify-equipment-revision.cjs
 !/tools/verify-furniture-catalog.cjs
+!/tools/verify-herringbone.cjs
 !/tools/verify-home-model.cjs
 !/tools/verify-industrial-design.cjs
 !/tools/verify-layered-materials.cjs
@@ -261,6 +262,10 @@
 !/調整紀錄/20260911主臥隔牆/after-bed-wall.png
 !/調整紀錄/20260911主臥隔牆/before-bed-wall.png
 !/調整紀錄/20260911主臥隔牆/驗證.json
+!/調整紀錄/20260911人字拼木地板/
+!/調整紀錄/20260911人字拼木地板/after-floor.png
+!/調整紀錄/20260911人字拼木地板/before-floor.png
+!/調整紀錄/20260911人字拼木地板/驗證.json
 !/調整紀錄/20260911儲藏室可調層架/
 !/調整紀錄/20260911儲藏室可調層架/after-storage.png
 !/調整紀錄/20260911儲藏室可調層架/before-storage.png

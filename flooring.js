@@ -11,15 +11,52 @@ const geometry=new T.ShapeGeometry(shape);geometry.rotateX(-Math.PI/2);
 const plankWidthCm=20,plankLengthCm=120,finishLevelCm=.2,positions=geometry.attributes.position,uv=geometry.attributes.uv;
 for(let i=0;i<positions.count;i++)uv.setXY(i,(positions.getX(i)+482.5)/60,(positions.getZ(i)+480)/240);
 const material=new T.MeshStandardMaterial({color:new T.Color('#686d73').convertSRGBToLinear(),map:F.veneerMap,bumpMap:F.veneerBump,bumpScale:.009,roughness:.72,metalness:0,envMapIntensity:.24});
-material.name='煙燻灰橡木寬板';material.userData.finishId='industrial-smoked-floor';
-// One floor mesh: neutral wood grain plus staggered joints, without per-plank draw calls.
+material.name='煙燻木人字拼';material.userData.finishId='industrial-smoked-floor';
+const ratio=plankLengthCm/plankWidthCm,rotationDeg=45,jointCm=.15;
+// Rectangular boards meet at right angles; the whole field rotates 45 degrees.
+// A single existing floor mesh and wood map serve both grain directions.
+function sampleBoard(x,y){
+ const px=(x+y)*Math.SQRT1_2/plankWidthCm,py=(y-x)*Math.SQRT1_2/plankWidthCm,ix=Math.floor(px),iy=Math.floor(py),s=((ix+iy)%(2*ratio)+2*ratio)%(2*ratio),horizontal=s<ratio;
+ const a=horizontal?py-iy:px-ix,b=horizontal?s+px-ix:s-ratio+py-iy,idX=horizontal?ix-s:ix,idY=horizontal?iy:iy-s+ratio;
+ const across=a*plankWidthCm,along=b*plankWidthCm,seed=idX*7.13+idY*3.71;
+ return {horizontal,id:[idX,idY],across,along,edge:Math.min(across,plankWidthCm-across,along,plankLengthCm-along),u:across/60+((idX*.173)%1+1)%1,v:along/240+((idY*.317)%1+1)%1,tone:.94+.06*Math.sin(seed)};
+}
+material.userData.herringbone={sampleAt:sampleBoard,plankWidthCm,plankLengthCm,jointCm,rotationDeg};
 material.onBeforeCompile=shader=>{
  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 floorCm;').replace('#include <begin_vertex>','#include <begin_vertex>\nfloorCm=(modelMatrix*vec4(position,1.0)).xz+vec2(482.5,480.0);');
- shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 floorCm;').replace('#include <map_fragment>','#include <map_fragment>\nfloat board=floor(floorCm.x/20.0);vec2 joint=abs(fract(vec2(floorCm.x/20.0,(floorCm.y+mod(board,2.0)*60.0)/120.0))-.5)*vec2(20.0,120.0);float gap=max(smoothstep(9.85,9.98,joint.x),smoothstep(59.85,59.98,joint.y));float tone=.95+.05*sin(board*7.13+floor((floorCm.y+mod(board,2.0)*60.0)/120.0)*3.71);diffuseColor.rgb*=mix(tone,.48,gap);');
+ const common=`
+varying vec2 floorCm;
+vec2 hbUv;
+float hbHorizontal;
+vec4 herringboneBoard(vec2 cm){
+ vec2 p=vec2(cm.x+cm.y,cm.y-cm.x)*.7071067811865476/${plankWidthCm.toFixed(1)};
+ vec2 cell=floor(p);float band=mod(cell.x+cell.y,${(2*ratio).toFixed(1)});vec2 local=fract(p),id;
+ if(band<${ratio.toFixed(1)}){hbHorizontal=1.0;local=vec2(local.y,band+local.x);id=vec2(cell.x-band,cell.y);}
+ else{hbHorizontal=0.0;local=vec2(local.x,band-${ratio.toFixed(1)}+local.y);id=vec2(cell.x,cell.y-band+${ratio.toFixed(1)});}
+ return vec4(local*${plankWidthCm.toFixed(1)},id);
+}
+vec2 herringboneGradient(vec2 cm){
+ vec2 p=vec2(cm.x+cm.y,cm.y-cm.x)*.7071067811865476;
+ return hbHorizontal>.5?vec2(p.y/60.0,p.x/240.0):vec2(p.x/60.0,p.y/240.0);
+}`;
+ const surface=`
+vec4 hb=herringboneBoard(floorCm);
+hbUv=hb.xy/vec2(60.0,240.0)+fract(hb.zw*vec2(.173,.317));
+#ifdef USE_MAP
+ vec4 texelColor=mapTexelToLinear(texture2D(map,hbUv));
+ diffuseColor*=texelColor;
+#endif
+float edge=min(min(hb.x,${plankWidthCm.toFixed(1)}-hb.x),min(hb.y,${plankLengthCm.toFixed(1)}-hb.y));
+float aa=max(.015,length(fwidth(floorCm))*.5);
+float gap=(1.0-smoothstep(0.0,${(jointCm/2).toFixed(3)}+aa,edge))*min(1.0,${jointCm.toFixed(3)}/aa);
+float tone=.94+.06*sin(hb.z*7.13+hb.w*3.71);
+diffuseColor.rgb*=mix(tone,.48,gap);`;
+ const bump=T.ShaderChunk.bumpmap_pars_fragment.replace(/dFdx\( vUv \)/g,'herringboneGradient(dFdx(floorCm))').replace(/dFdy\( vUv \)/g,'herringboneGradient(dFdy(floorCm))').replace(/\bvUv\b/g,'hbUv');
+ shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\n'+common).replace('#include <map_fragment>',surface).replace('#include <bumpmap_pars_fragment>',bump);
 };
-material.customProgramCacheKey=()=> 'industrial-staggered-wood-v1';
-const floor=new T.Mesh(geometry,material);floor.name='室內煙燻灰直鋪木地板';floor.position.y=finishLevelCm;floor.receiveShadow=true;
-floor.userData.flooring={pattern:'straight-staggered',plankWidthCm,plankLengthCm,excluded:['玄關','廚房','主浴','客浴','陽台']};V.scene.add(floor);
+material.customProgramCacheKey=()=> 'industrial-herringbone-20260911';
+const floor=new T.Mesh(geometry,material);floor.name='室內深煙燻木人字拼地板';floor.position.y=finishLevelCm;floor.receiveShadow=true;
+floor.userData.flooring={pattern:'herringbone',plankWidthCm,plankLengthCm,rotationDeg,jointCm,excluded:['玄關','廚房','主浴','客浴','陽台']};V.scene.add(floor);
 const entry=new T.Group();entry.name='玄關石墨灰大板磚地坪';V.scene.add(entry);
 const tileCm=80,groutCm=.2,tiles=[];
 const tileMaterial=new T.MeshStandardMaterial({color:new T.Color('#4f565f').convertSRGBToLinear(),roughness:.86,metalness:0,envMapIntensity:.2});
@@ -43,6 +80,6 @@ for(const [x,y,w,d,name] of (open?[[714.6,805,.4,150,'客廳交界'],[545.2,805,
 entry.userData.flooring={pattern:'large-format-stone',tileCm,groutCm,finishLevelCm,outline:entryOutline,tileCount:tiles.length,tiles,transitionWidthCm:.4};
 V.scene.getObjectByName('寫實材質與燈光細節')?.traverse(o=>{if(o.isMesh&&o.geometry.type==='PlaneGeometry'&&o.material.transparent&&Math.abs(o.position.y-.15)<.001)o.position.y=.25;});
 function inside(x,y,points){let hit=false;for(let i=0,j=points.length-1;i<points.length;j=i++){const a=points[i],b=points[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])hit=!hit;}return hit;}
-window.HOME_FLOORING={ready:Promise.resolve(),floor,entry,tileMaterial,getState:()=>({ready:true,pattern:'straight-staggered',plankWidthCm,plankLengthCm,textureSize:512,entry:entry.userData.flooring}),finishAt:(x,y)=>inside(x,y,entryOutline)?'large-format-stone':inside(x,y,outline)&&!inside(x,y,guestBath)?'straight-staggered':'stone'};
+window.HOME_FLOORING={ready:Promise.resolve(),floor,entry,tileMaterial,sampleBoard,getState:()=>({ready:true,pattern:'herringbone',plankWidthCm,plankLengthCm,rotationDeg,jointCm,textureSize:floor.material.map?.image?.width||512,entry:entry.userData.flooring}),finishAt:(x,y)=>inside(x,y,entryOutline)?'large-format-stone':inside(x,y,outline)&&!inside(x,y,guestBath)?'herringbone':'stone'};
 window.HOME_REALISM?.invalidate();
 })();

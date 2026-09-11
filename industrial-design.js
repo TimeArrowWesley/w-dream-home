@@ -69,7 +69,7 @@ function apply(){
  M.cloth.color.copy(color('#71736d'));M.darkcloth.color.copy(color('#343934'));M.linen.color.copy(color('#d4d4cd'));
  C.rugMaterial.color.copy(color('#ffffff'));C.rugMaterial.map=rugMap;C.rugMaterial.name='銀灰織毯・炭黑窄邊';
  const flooring=window.HOME_FLOORING;
- if(flooring){flooring.floor.material.color.copy(color('#8e7a65'));flooring.floor.material.map=wood;flooring.floor.material.bumpMap=woodHeight;flooring.floor.material.roughness=.61;flooring.floor.material.name='深煙燻棕橡木寬板';flooring.floor.material.userData.reviewFloor=true;flooring.floor.material.needsUpdate=true;flooring.tileMaterial.color.copy(color('#ffffff'));flooring.tileMaterial.map=terrazzo;flooring.tileMaterial.roughness=.74;flooring.tileMaterial.name='玄關玄武岩細骨料大板';}
+ if(flooring){flooring.floor.material.color.copy(color('#8e7a65'));flooring.floor.material.map=wood;flooring.floor.material.bumpMap=woodHeight;flooring.floor.material.roughness=.61;flooring.floor.material.name='深煙燻棕橡木人字拼';flooring.floor.material.userData.reviewFloor=true;flooring.floor.material.needsUpdate=true;flooring.tileMaterial.color.copy(color('#ffffff'));flooring.tileMaterial.map=terrazzo;flooring.tileMaterial.roughness=.74;flooring.tileMaterial.name='玄關玄武岩細骨料大板';}
  V.architecture.traverse(o=>{if(o.isMesh&&(o.material===M.concrete||o.material===wallFinish))assign(o,wallFinish,'mineral-wall',240);});
  V.fittings.traverse(o=>{
   if(!o.isMesh)return;const n=o.userData.name||o.name||'',chain=ancestry(o),m=o.material;

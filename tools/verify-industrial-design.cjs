@@ -13,7 +13,7 @@ function lightSnapshot(f){return f.V.finishContext.roomLights.map(l=>({power:l.i
   const before=baseline?await build(n,baseline.files):null,f=await build(n),{c,V,T}=f,version='v'+(n-1),L=c.HOME_COMFORT,F=V.finishContext.industrialFinishes;
   if(before)assert.equal(shapeHash(f),shapeHash(before),'Room, equipment and cabinet geometry must stay unchanged: '+version);
   assert.equal(f.E.items.length,24);assert.equal(c.HOME_INDUSTRIAL.getState().version,version);
-  const floor=c.HOME_FLOORING.getState();assert.equal(floor.pattern,'straight-staggered');assert.equal(floor.entry.pattern,'large-format-stone');assert.equal(floor.entry.tileCm,80);
+  const floor=c.HOME_FLOORING.getState();assert.equal(floor.pattern,'herringbone');assert.equal(floor.entry.pattern,'large-format-stone');assert.equal(floor.entry.tileCm,80);
   assert.equal(c.HOME_CURTAINS.getState().length,6);assert.equal(c.HOME_STORAGE_MODEL.shelves.length,6);
   const ray=new T.Raycaster(),floorMeshes=[c.HOME_FLOORING.floor,...c.HOME_FLOORING.entry.children];V.scene.updateMatrixWorld(true);let floorSamples=0;
   for(let x=547;x<714;x+=3.7)for(let y=807;y<954;y+=3.7){if(c.HOME_FLOORING.finishAt(x,y)!=='large-format-stone')continue;ray.set(V.pos(x,y,2),new T.Vector3(0,-1,0));const hits=ray.intersectObjects(floorMeshes);assert(hits.length,'Uncovered entry floor');const high=hits.filter(h=>h.point.y>.19);assert(high.length<=1,'Overlapping wood/tile/trim faces');assert(hits[0].point.y>=.159&&hits[0].point.y<=.201);floorSamples++;}
@@ -31,7 +31,7 @@ function lightSnapshot(f){return f.V.finishContext.roomLights.map(l=>({power:l.i
   L.setScene('game');assert.equal(c.HOME_RGB.getState().living.mode,'breathe');L.setScene('daily');assert.equal(c.HOME_RGB.getState().living.on,false);
   for(const id of ['kitchen','storage']){c.HOME_INTERACTION.setDoor(id,true);f.tick(80,50);assert(c.HOME_INTERACTION.getState().entries.find(e=>e.key===id).angle>.99);c.HOME_INTERACTION.setDoor(id,false);f.tick(80,50);}
   c.HOME_BEDROOM.setScene('makeup');assert(c.HOME_BEDROOM_MODEL.task.intensity>.5);L.setScene('bar');assert.equal(c.HOME_BEDROOM.getState().scene,'makeup');c.HOME_BEDROOM.setScene('daily');L.setScene('daily');
-  const html=fs.readFileSync(entryPaths[n-2],'utf8');assert(html.includes('industrial-design.js?v=20260911-layered'));assert(html.includes('comfort-controls.js?v=20260911-industrial'));
+  const html=fs.readFileSync(entryPaths[n-2],'utf8');assert(html.includes('industrial-design.js?v=20260911-herringbone'));assert(html.includes('comfort-controls.js?v=20260911-industrial'));
   const state={version,structuralGeometryUnchanged:before?true:null,equipment:24,curtains:6,entryFloorSamples:floorSamples,materials:c.HOME_INDUSTRIAL.getState(),floor:floor.pattern,entry:floor.entry.pattern,independentDimmingAndColor:true,doorAndCurtainControls:true,bedroomIndependent:true};report.versions.push(state);console.log(JSON.stringify(state));
   if(process.argv.includes('--images')){
    const view= n===2?{p:[720,725,158],t:[535,515,115]}:n===5?{p:[750,735,170],t:[910,944,112]}:{p:[1010,735,165],t:[590,585,110]};

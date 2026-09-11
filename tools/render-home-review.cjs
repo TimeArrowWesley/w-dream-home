@@ -64,17 +64,21 @@ module.exports=function({T,V,version,out,views,cutaway=false,textured=false}){
     const z=1/(u*a[2]+v*b[2]+w*c[2]),j=y*width+x;if(z>depth[j]+.015)continue;if(alpha>=1)depth[j]=z;
     let pixel=col;
     if(tex){
-     const uu=(u*a[3]+v*b[3]+w*c[3])*z,vv=(u*a[4]+v*b[4]+w*c[4])*z,e=tex.matrix.elements;
+     let uu=(u*a[3]+v*b[3]+w*c[3])*z,vv=(u*a[4]+v*b[4]+w*c[4])*z;const e=tex.matrix.elements;
+     const fx=(u*a[5]+v*b[5]+w*c[5])*z,fy=(u*a[6]+v*b[6]+w*c[6])*z,hb=m.userData.herringbone?.sampleAt(fx,fy);
+     if(hb){uu=hb.u;vv=hb.v;}
      let tu=e[0]*uu+e[3]*vv+e[6],tv=e[1]*uu+e[4]*vv+e[7];
      const wrap=(q,mode)=>mode===T.ClampToEdgeWrapping?Math.max(0,Math.min(.999999,q)):mode===T.MirroredRepeatWrapping?(Math.abs(Math.floor(q))%2?1-(q-Math.floor(q)):q-Math.floor(q)):q-Math.floor(q);
      tu=wrap(tu,tex.wrapS);tv=wrap(tv,tex.wrapT);if(tex.flipY)tv=1-tv;
-     const ux=z*(dxu*(a[3]-c[3])+dxv*(b[3]-c[3])-uu*(dxu*(a[2]-c[2])+dxv*(b[2]-c[2]))),uy=z*(dyu*(a[3]-c[3])+dyv*(b[3]-c[3])-uu*(dyu*(a[2]-c[2])+dyv*(b[2]-c[2])));
-     const vx=z*(dxu*(a[4]-c[4])+dxv*(b[4]-c[4])-vv*(dxu*(a[2]-c[2])+dxv*(b[2]-c[2]))),vy=z*(dyu*(a[4]-c[4])+dyv*(b[4]-c[4])-vv*(dyu*(a[2]-c[2])+dyv*(b[2]-c[2])));
+     let ux=z*(dxu*(a[3]-c[3])+dxv*(b[3]-c[3])-uu*(dxu*(a[2]-c[2])+dxv*(b[2]-c[2]))),uy=z*(dyu*(a[3]-c[3])+dyv*(b[3]-c[3])-uu*(dyu*(a[2]-c[2])+dyv*(b[2]-c[2])));
+     let vx=z*(dxu*(a[4]-c[4])+dxv*(b[4]-c[4])-vv*(dxu*(a[2]-c[2])+dxv*(b[2]-c[2]))),vy=z*(dyu*(a[4]-c[4])+dyv*(b[4]-c[4])-vv*(dyu*(a[2]-c[2])+dyv*(b[2]-c[2]))),floorAA=0;
+     if(hb){const grad=(du,dv)=>{const dx=z*(du*(a[5]-c[5])+dv*(b[5]-c[5])-fx*(du*(a[2]-c[2])+dv*(b[2]-c[2]))),dy=z*(du*(a[6]-c[6])+dv*(b[6]-c[6])-fy*(du*(a[2]-c[2])+dv*(b[2]-c[2])));return [dx,dy,(dx+dy)*Math.SQRT1_2,(dy-dx)*Math.SQRT1_2];},gx=grad(dxu,dxv),gy=grad(dyu,dyv);ux=gx[hb.horizontal?3:2]/60;uy=gy[hb.horizontal?3:2]/60;vx=gx[hb.horizontal?2:3]/240;vy=gy[hb.horizontal?2:3]/240;floorAA=Math.max(.015,Math.hypot(Math.abs(gx[0])+Math.abs(gy[0]),Math.abs(gx[1])+Math.abs(gy[1]))*.5);}
      const rho=Math.max(Math.hypot((e[0]*ux+e[3]*vx)*tex.image.width,(e[1]*ux+e[4]*vx)*tex.image.height),Math.hypot((e[0]*uy+e[3]*vy)*tex.image.width,(e[1]*uy+e[4]*vy)*tex.image.height));
      const im=chain[Math.min(chain.length-1,Math.max(0,Math.floor(Math.log2(Math.max(1,rho)))))],xx=Math.min(im.width-1,Math.max(0,Math.floor(tu*im.width))),yy=Math.min(im.height-1,Math.max(0,Math.floor(tv*im.height))),offset=(yy*im.width+xx)*4;
      let mod=1;
      if(m.userData.reviewReeds){const r=Math.abs((uu*25-Math.floor(uu*25))-.5),q=Math.max(0,Math.min(1,(r-.35)/.14));const dxu=(b[1]-c[1])/den,dxv=(c[1]-a[1])/den,dyu=(c[0]-b[0])/den,dyv=(a[0]-c[0])/den;const footprint=25*z*(Math.abs(dxu*(a[3]-c[3])+dxv*(b[3]-c[3])-uu*(dxu*(a[2]-c[2])+dxv*(b[2]-c[2])))+Math.abs(dyu*(a[3]-c[3])+dyv*(b[3]-c[3])-uu*(dyu*(a[2]-c[2])+dyv*(b[2]-c[2]))));const fade=Math.max(0,Math.min(1,(footprint-.25)/.65)),blend=fade*fade*(3-2*fade);mod=1-.58*(q*q*(3-2*q)*(1-blend)+.16*blend);}
-     if(m.userData.reviewFloor){const fx=(u*a[5]+v*b[5]+w*c[5])*z,fy=(u*a[6]+v*b[6]+w*c[6])*z,board=Math.floor(fx/20),along=fy+((board%2+2)%2)*60,edge=Math.min((fx%20+20)%20,20-(fx%20+20)%20,(along%120+120)%120,120-(along%120+120)%120);mod=edge<.15?.48:.95+.05*Math.sin(board*7.13+Math.floor(along/120)*3.71);}
+     if(hb){const joint=m.userData.herringbone.jointCm,q=Math.max(0,Math.min(1,hb.edge/(joint/2+floorAA))),gap=(1-q*q*(3-2*q))*Math.min(1,joint/floorAA);mod=hb.tone*(1-gap)+.48*gap;}
+     else if(m.userData.reviewFloor){const board=Math.floor(fx/20),along=fy+((board%2+2)%2)*60,edge=Math.min((fx%20+20)%20,20-(fx%20+20)%20,(along%120+120)%120,120-(along%120+120)%120);mod=edge<.15?.48:.95+.05*Math.sin(board*7.13+Math.floor(along/120)*3.71);}
      pixel=['r','g','b'].map((key,k)=>{const p=im.data[offset+k],linear=tex.encoding===T.sRGBEncoding?toLinear[p]:p/255;return toSrgb[Math.min(4096,Math.max(0,Math.round(m.color[key]*shade*linear*mod*4096)))];});
     }
     for(let k=0;k<3;k++)rgb[j*3+k]=Math.round(pixel[k]*alpha+rgb[j*3+k]*(1-alpha));

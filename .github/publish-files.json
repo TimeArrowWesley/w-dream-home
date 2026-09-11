@@ -256,7 +256,10 @@
     "調整紀錄/20260911工業材質層次/before-v4.png",
     "調整紀錄/20260911工業材質層次/驗證.json",
     "調整紀錄/20260911工業材質層次/介面驗證.json",
-    "調整紀錄/20260911工業材質層次/效能驗證.json"
+    "調整紀錄/20260911工業材質層次/效能驗證.json",
+    "調整紀錄/20260911人字拼木地板/before-floor.png",
+    "調整紀錄/20260911人字拼木地板/after-floor.png",
+    "調整紀錄/20260911人字拼木地板/驗證.json"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -288,6 +291,7 @@
     "tools/verify-storage-shelves.cjs",
     "tools/verify-industrial-design.cjs",
     "tools/build-layered-review.py",
-    "tools/verify-layered-materials.cjs"
+    "tools/verify-layered-materials.cjs",
+    "tools/verify-herringbone.cjs"
   ]
 }
