@@ -218,7 +218,21 @@
     "調整紀錄/20260911儲藏室可調層架/index.html",
     "調整紀錄/20260911儲藏室可調層架/before-storage.png",
     "調整紀錄/20260911儲藏室可調層架/after-storage.png",
-    "調整紀錄/20260911儲藏室可調層架/驗證.json"
+    "調整紀錄/20260911儲藏室可調層架/驗證.json",
+    "industrial-design.js",
+    "設計方向.md",
+    "調整紀錄/20260911黑灰工業風/驗證.json",
+    "調整紀錄/20260911黑灰工業風/before-v1.png",
+    "調整紀錄/20260911黑灰工業風/after-v1.png",
+    "調整紀錄/20260911黑灰工業風/before-v2.png",
+    "調整紀錄/20260911黑灰工業風/after-v2.png",
+    "調整紀錄/20260911黑灰工業風/before-v3.png",
+    "調整紀錄/20260911黑灰工業風/after-v3.png",
+    "調整紀錄/20260911黑灰工業風/before-v4.png",
+    "調整紀錄/20260911黑灰工業風/after-v4.png",
+    "調整紀錄/20260911黑灰工業風/after-entry.png",
+    "調整紀錄/20260911黑灰工業風/after-bedroom.png",
+    "調整紀錄/20260911黑灰工業風/介面驗證.json"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -247,6 +261,7 @@
     "tools/verify-bedroom-wall.cjs",
     "tools/verify-private-upgrade.cjs",
     "tools/build-private-review.py",
-    "tools/verify-storage-shelves.cjs"
+    "tools/verify-storage-shelves.cjs",
+    "tools/verify-industrial-design.cjs"
   ]
 }

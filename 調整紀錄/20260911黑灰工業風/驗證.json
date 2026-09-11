@@ -1,0 +1,85 @@
+{
+  "method": "Actual Three.js geometry, material assignments, controls and floor raycasts offline. Review images show source geometry and base colors; GPU texture/reflection/lighting and physical lux are not verified.",
+  "versions": [
+    {
+      "version": "v1",
+      "structuralGeometryUnchanged": true,
+      "equipment": 24,
+      "curtains": 6,
+      "entryFloorSamples": 1774,
+      "materials": {
+        "revision": "20260911-industrial",
+        "version": "v1",
+        "title": "圓弧酒吧・深木與透明收藏櫃",
+        "palette": "黑灰白・黑鈦・黑玻・煙燻木",
+        "geometry": "保留格局、門洞及設備尺寸",
+        "surfaces": 137
+      },
+      "floor": "straight-staggered",
+      "entry": "large-format-stone",
+      "independentDimmingAndColor": true,
+      "doorAndCurtainControls": true,
+      "bedroomIndependent": true
+    },
+    {
+      "version": "v2",
+      "structuralGeometryUnchanged": true,
+      "equipment": 24,
+      "curtains": 6,
+      "entryFloorSamples": 1774,
+      "materials": {
+        "revision": "20260911-industrial",
+        "version": "v2",
+        "title": "精密影音・黑鈦旋轉電視",
+        "palette": "黑灰白・黑鈦・黑玻・煙燻木",
+        "geometry": "保留格局、門洞及設備尺寸",
+        "surfaces": 42
+      },
+      "floor": "straight-staggered",
+      "entry": "large-format-stone",
+      "independentDimmingAndColor": true,
+      "doorAndCurtainControls": true,
+      "bedroomIndependent": true
+    },
+    {
+      "version": "v3",
+      "structuralGeometryUnchanged": true,
+      "equipment": 24,
+      "curtains": 6,
+      "entryFloorSamples": 1840,
+      "materials": {
+        "revision": "20260911-industrial",
+        "version": "v3",
+        "title": "開放酒廊・石墨大中島",
+        "palette": "黑灰白・黑鈦・黑玻・煙燻木",
+        "geometry": "保留格局、門洞及設備尺寸",
+        "surfaces": 17
+      },
+      "floor": "straight-staggered",
+      "entry": "large-format-stone",
+      "independentDimmingAndColor": true,
+      "doorAndCurtainControls": true,
+      "bedroomIndependent": true
+    },
+    {
+      "version": "v4",
+      "structuralGeometryUnchanged": true,
+      "equipment": 24,
+      "curtains": 6,
+      "entryFloorSamples": 1840,
+      "materials": {
+        "revision": "20260911-industrial",
+        "version": "v4",
+        "title": "南牆影音・黑玻與大中島",
+        "palette": "黑灰白・黑鈦・黑玻・煙燻木",
+        "geometry": "保留格局、門洞及設備尺寸",
+        "surfaces": 3
+      },
+      "floor": "straight-staggered",
+      "entry": "large-format-stone",
+      "independentDimmingAndColor": true,
+      "doorAndCurtainControls": true,
+      "bedroomIndependent": true
+    }
+  ]
+}

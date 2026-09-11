@@ -24,7 +24,7 @@ module.exports=async function build(n,overrides={}){
  for(const f of ['model-data.js','bedroom-model.js','equipment-models.js',n<3?'design.js':'提案/旋轉電視與直線中島/design.js'])run(f);
  const V=c.HOME_VIEWER,E=c.HOME_EQUIPMENT;
  c.HOME_TOUR={getMode:()=>mode,setMode:m=>mode=m};
- for(const f of ['walk.js','interaction.js','realism.js','flooring.js','curtains.js','rgb-lighting.js','comfort-controls.js','equipment-controls.js','bedroom-controls.js',...(n===5?['提案/南牆電視與開放中島/plan-a-controls.js']:n>2?['提案/旋轉電視與直線中島/rotating-tv.js']:[])])run(f);await Promise.resolve();await Promise.resolve();
+ for(const f of ['walk.js','interaction.js','realism.js','flooring.js','industrial-design.js','curtains.js','rgb-lighting.js','comfort-controls.js','equipment-controls.js','bedroom-controls.js',...(n===5?['提案/南牆電視與開放中島/plan-a-controls.js']:n>2?['提案/旋轉電視與直線中島/rotating-tv.js']:[])])run(f);await Promise.resolve();await Promise.resolve();
 
 return {T,c,V,E,events,raf,get,run,bounds,overlap,near,tick(count=1,step=16){for(let i=0;i<count;i++){time+=step;for(const fn of [...raf])fn(time);}V.scene.updateMatrixWorld(true);},setTime(t){time=t;}};
 };

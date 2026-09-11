@@ -71,8 +71,14 @@ function fixture(v,params='') {
   const originals=Object.fromEntries(['kitchenDoorToggle','closetMirrorToggle','showSwitch2','inspectEquipment','curtainOpen','curtainClose','realismQuality','export'].map(id=>[id,$(id)]));
   c.HOME_VIEWER.finishContext.roomLights=[];
   c.HOME_BEDROOM_MODEL={groups:Object.fromEntries(['mirror','stool','drawer','closetDrawer'].map(k=>[k,new T.Group()])),diffusers:{mirror:[],reading:[],night:[],closet:[]},task:new T.PointLight(),closetTask:new T.PointLight()};
-  c.HOME_CURTAINS={set:(v,id)=>calls.push(['curtainScene',v,id])};
-  run('bedroom-controls.js');run('viewer-ui.js');
+  c.HOME_CURTAINS={set:(v,id)=>calls.push(['curtainScene',v,id]),getState:()=>[]};
+  const finish=c.HOME_VIEWER.finishContext;
+  Object.assign(finish,{hemi:new T.HemisphereLight(),fill:new T.DirectionalLight(),sun:new T.DirectionalLight(),finishLights:[],industrialFinishes:{lens:new T.MeshStandardMaterial(),warmLights:[]}});
+  finish.materials.light=new T.MeshBasicMaterial();const livingLight=new T.PointLight();livingLight.position.copy(c.HOME_VIEWER.pos(900,600,260));finish.roomLights.push(livingLight);
+  c.HOME_REALISM={invalidate(){},refreshReflections(){},ready:Promise.resolve()};
+  c.HOME_RGB={update:(room,patch)=>calls.push(['rgbScene',room,patch])};
+  for(const id of ['day','night'])$(id).onclick=()=>{for(const key of ['day','night'])$(key).classList.toggle('active',id===key);};
+  run('comfort-controls.js');run('bedroom-controls.js');run('viewer-ui.js');
   return {c,document,$,calls,originals,run,dom,listeners};
 }
 (async()=>{
@@ -124,7 +130,13 @@ for(const v of ['v1','v2','v3','v4']){
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(v==='v4'){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,8);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
+  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,9);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
+  assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
+  assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
+  d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));
+  $('comfortKelvin').value='4000';$('comfortKelvin').dispatchEvent(new a.dom.Event('input',{bubbles:true}));assert.equal(c.HOME_COMFORT.getState().kelvin,4000);assert.equal(c.HOME_COMFORT.getState().brightness,14);
+  $('comfortBrightness').value='65';$('comfortBrightness').dispatchEvent(new a.dom.Event('input',{bubbles:true}));assert.equal(c.HOME_COMFORT.getState().brightness,65);assert.equal(c.HOME_COMFORT.getState().kelvin,4000);
+  d.querySelector('[data-comfort-scene="daily"]').click();assert.equal(c.HOME_COMFORT.getState().scene,'daily');
   $('export').click();assert(calls.some(q=>q[0]==='export'));
   const alt=v==='v2'?'v1':'v2',target=d.querySelector('[data-proposal="'+alt+'"], [data-layout="'+alt+'"]');target.click();const nav=calls.find(q=>q[0]==='navigate');assert(nav);assert(new URL(nav[1]).searchParams.get('uiRoom')==='study');
   if(v!=='v1'&&v!=='v4'){assert($('uiInspector').contains($('rotatingTVPanel')));d.querySelector('[data-tv-facing="island"]').click();assert(calls.some(q=>q[0]==='tv'&&q[1]==='island'));}
