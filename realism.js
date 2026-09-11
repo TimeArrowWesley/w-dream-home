@@ -1,7 +1,7 @@
 'use strict';
 (()=>{
 const T=THREE,V=HOME_VIEWER,C=V.finishContext,R=V.renderer,S=V.scene,M=C.materials;
-const $=id=>document.getElementById(id),stats={ready:false,beveled:0,contactShadows:0,reflections:0,textureLoaded:false,quality:'balanced',version:4,maxBoundingError:0,shadowUpdates:0,postPasses:0};
+const $=id=>document.getElementById(id),stats={ready:false,beveled:0,contactShadows:0,reflections:0,textureLoaded:false,quality:'eco',version:5,maxBoundingError:0,shadowUpdates:0,postPasses:0,drawnFrames:0,idleSkips:0,budgetSkips:0};
 const details=new T.Group();details.name='寫實材質與燈光細節';S.add(details);
 const originalEnvironment=S.environment,reflectionCache=new Map();
 const color=(hex)=>new T.Color(hex).convertSRGBToLinear();
@@ -62,8 +62,28 @@ let reflectionTicket=0,reflectionPending=false;
 const mirrorMaterials=new Set();S.traverse(o=>{if(o.isMesh&&o.material&&(o.material.metalness>.25||o.material===M.glass))mirrorMaterials.add(o.material);});
 function zone(){const p=V.camera.position,x=p.x+482.5,y=p.z+480;if(y<285&&x<410)return 'bed';if(y<375&&x>745)return 'study';if(y<490&&x<310)return 'bath';if(y<375)return 'private';if(x<215)return 'kitchen';if(y>750&&x<450)return 'collection';return 'living';}
 const probePoints={living:[725,700,145],bed:[300,220,145],study:[920,190,145],bath:[70,350,145],collection:[350,850,145],private:[615,175,145],kitchen:[105,745,145]};
-function applyReflection(tex){mirrorMaterials.forEach(m=>{m.envMap=tex;m.needsUpdate=true;});}
-function updateReflection(force=false){if(!stats.ready||V.getCurrent()==='all')return;const id=zone(),key=id+'-'+($('night').classList.contains('active')?'night':'day');if(!force&&reflectionCache.has(key)){applyReflection(reflectionCache.get(key).texture);return;}const ticket=++reflectionTicket;reflectionPending=true;setTimeout(()=>{if(ticket!==reflectionTicket)return;const oldTarget=R.getRenderTarget(),oldAuto=R.autoClear,hidden=[];V.labels.visible=false;S.traverse(o=>{if(o.isMesh&&o.material===M.glass){hidden.push([o,o.visible]);o.visible=false;}});const target=new T.WebGLCubeRenderTarget(128,{generateMipmaps:true,minFilter:T.LinearMipmapLinearFilter,type:T.UnsignedByteType,encoding:T.LinearEncoding});const camera=new T.CubeCamera(3,5000,target);camera.position.copy(V.pos(...probePoints[id]));try{mirrorMaterials.forEach(m=>{m.envMap=originalEnvironment;});R.autoClear=true;camera.update(R,S);const pmrem=new T.PMREMGenerator(R),env=pmrem.fromCubemap(target.texture);pmrem.dispose();if(reflectionCache.has(key))reflectionCache.get(key).dispose();reflectionCache.set(key,env);applyReflection(env.texture);stats.reflections++;}catch(error){console.warn('室內反射使用預設環境',error.message);}finally{target.dispose();hidden.forEach(([o,v])=>o.visible=v);V.labels.visible=$('labels').checked;R.setRenderTarget(oldTarget);R.autoClear=oldAuto;reflectionPending=false;}},70);}
+function applyReflection(tex){mirrorMaterials.forEach(m=>{if(m.envMap!==tex){m.envMap=tex;m.needsUpdate=true;}});invalidate(false);}
+function updateReflection(force=false){
+ if(force){reflectionTicket++;reflectionPending=false;for(const env of reflectionCache.values())env.dispose();reflectionCache.clear();applyReflection(originalEnvironment);}
+ if(!stats.ready||stats.quality==='eco'||document.hidden||!['model','walk'].includes(window.HOME_TOUR?.getMode())||V.getCurrent()==='all')return;
+ const id=zone(),key=id+'-'+($('night').classList.contains('active')?'night':'day');
+ if(reflectionCache.has(key)){applyReflection(reflectionCache.get(key).texture);return;}
+ const ticket=++reflectionTicket;reflectionPending=true;
+ setTimeout(()=>{
+  if(ticket!==reflectionTicket)return;
+  if(document.hidden||stats.quality==='eco'||!['model','walk'].includes(window.HOME_TOUR?.getMode())){reflectionPending=false;return;}
+  const oldTarget=R.getRenderTarget(),oldAuto=R.autoClear,oldLabels=V.labels.visible,oldShadow=R.shadowMap.enabled,hidden=[];
+  V.labels.visible=false;S.traverse(o=>{if(o.isMesh&&o.material===M.glass){hidden.push([o,o.visible]);o.visible=false;}});
+  const target=new T.WebGLCubeRenderTarget(128,{generateMipmaps:true,minFilter:T.LinearMipmapLinearFilter,type:T.UnsignedByteType,encoding:T.LinearEncoding});
+  const camera=new T.CubeCamera(3,5000,target);camera.position.copy(V.pos(...probePoints[id]));
+  try{
+   mirrorMaterials.forEach(m=>{m.envMap=originalEnvironment;});R.autoClear=true;R.shadowMap.enabled=false;camera.update(R,S);
+   const pmrem=new T.PMREMGenerator(R),env=pmrem.fromCubemap(target.texture);pmrem.dispose();
+   if(reflectionCache.has(key))reflectionCache.get(key).dispose();reflectionCache.set(key,env);applyReflection(env.texture);stats.reflections++;
+  }catch(error){console.warn('室內反射使用預設環境',error.message);}
+  finally{target.dispose();hidden.forEach(([o,v])=>o.visible=v);V.labels.visible=oldLabels;R.shadowMap.enabled=oldShadow;R.setRenderTarget(oldTarget);R.autoClear=oldAuto;reflectionPending=false;invalidate(false);}
+ },100);
+}
 // Screen-space contact occlusion. One colour/depth render plus a small sampling pass.
 const target=new T.WebGLRenderTarget(1,1,{minFilter:T.LinearFilter,magFilter:T.LinearFilter,depthBuffer:true});target.depthTexture=new T.DepthTexture(1,1,T.UnsignedIntType);target.texture.encoding=T.sRGBEncoding;
 const postUniforms={tColor:{value:target.texture},tDepth:{value:target.depthTexture},resolution:{value:new T.Vector2(1,1)},inverseProjection:{value:new T.Matrix4()},projection:{value:new T.Matrix4()},strength:{value:.30}};
@@ -79,28 +99,69 @@ for(int i=0;i<32;i++){float a=float(i)*2.399963;float scale=(float(i)+1.)/32.;ve
 float ao=clamp(1.-occlusion*strength*.2,.65,1.);gl_FragColor=vec4(base*ao,1.);
 }`});
 const postScene=new T.Scene(),postCamera=new T.OrthographicCamera(-1,1,1,-1,0,1);postScene.add(new T.Mesh(new T.PlaneGeometry(2,2),postMaterial));
-// Camera motion does not change shadow geometry. Reuse the four shadow maps
-// between bounded refreshes, including when doors or curtains are animating.
-R.shadowMap.autoUpdate=false;let shadowAt=-Infinity,drawing=false;
-const lastCamera=new T.Matrix4(),drawingSize=new T.Vector2();let movingUntil=0;
-function render(){if(drawing)return;const mode=window.HOME_TOUR?.getMode();if(mode&&mode!=='model'&&mode!=='walk')return;drawing=true;try{
+// Draw only after a camera, material or scene change. Physics keeps its own clock.
+const profiles={eco:{label:'省電',fps:30,pixelRatio:1,maxPixels:1100000,sun:1024,spot:512},balanced:{label:'流暢',fps:60,pixelRatio:1,maxPixels:2000000,sun:2048,spot:1024},high:{label:'精細',fps:60,pixelRatio:1.6,maxPixels:4000000,sun:2048,spot:1024}};
+R.shadowMap.autoUpdate=false;
+let shadowAt=-Infinity,drawing=false,dirty=true,shadowDirty=true,lastDraw=-Infinity,movingUntil=0,lastPass='',lastMode='',lastExposure=NaN;
+const lastCamera=new T.Matrix4(),lastProjection=new T.Matrix4(),drawingSize=new T.Vector2();
+const shadowLights=[];S.traverse(o=>{if(o.isLight&&o.castShadow&&o.shadow)shadowLights.push(o);});
+function invalidate(shadows=true,animated=false){dirty=true;if(shadows)shadowDirty=true;if(animated)movingUntil=performance.now()+180;}
+function resizeBudget(){
+ const p=profiles[stats.quality],r=$('view').getBoundingClientRect(),area=Math.max(1,r.width*r.height);
+ const ratio=Math.min(devicePixelRatio||1,p.pixelRatio,Math.sqrt(p.maxPixels/area));
+ if(Math.abs(R.getPixelRatio()-ratio)>.001)R.setPixelRatio(ratio);
+ stats.pixelRatio=ratio;stats.maxFPS=p.fps;stats.maxPixels=p.maxPixels;invalidate(false);
+}
+function render(force=false){
+ if(drawing||document.hidden)return;
+ const mode=window.HOME_TOUR?.getMode()||'model';
+ if(mode!==lastMode){lastMode=mode;invalidate();}
+ if(mode!=='model'&&mode!=='walk')return;
  const now=performance.now();V.camera.updateMatrixWorld();
- if(!lastCamera.equals(V.camera.matrixWorld)){lastCamera.copy(V.camera.matrixWorld);movingUntil=now+180;}
- if(now-shadowAt>=150){R.shadowMap.needsUpdate=true;shadowAt=now;stats.shadowUpdates++;}
- if(stats.quality==='balanced'||V.getCurrent()==='all'||now<movingUntil){R.render(S,V.camera);return;}
- const size=R.getDrawingBufferSize(drawingSize);if(target.width!==size.x||target.height!==size.y){target.setSize(size.x,size.y);postUniforms.resolution.value.copy(size);}postUniforms.inverseProjection.value.copy(V.camera.projectionMatrix).invert();postUniforms.projection.value.copy(V.camera.projectionMatrix);R.setRenderTarget(target);R.render(S,V.camera);R.setRenderTarget(null);R.render(postScene,postCamera);stats.postPasses++;
- }finally{R.setRenderTarget(null);drawing=false;}}
-function lighting(){const night=$('night').classList.contains('active');skyUniforms.top.value.copy(color(night?'#101b31':'#7897b4'));skyUniforms.bottom.value.copy(color(night?'#2b3549':'#edf1f0'));bounce.forEach(b=>b.light.intensity=night?b.power*.09:b.power);C.hemi.intensity=night?.30:.72;C.fill.intensity=night?.18:.32;C.sun.intensity=night?.04:1.05;C.roomLights.forEach(l=>l.intensity=night?.62:.36);C.finishLights.forEach(l=>l.intensity=night?.88:.65);lens.emissiveIntensity=night?2:1.4;updateReflection();}
+ if(!lastCamera.equals(V.camera.matrixWorld)||!lastProjection.equals(V.camera.projectionMatrix)){
+  lastCamera.copy(V.camera.matrixWorld);lastProjection.copy(V.camera.projectionMatrix);movingUntil=now+180;dirty=true;
+ }
+ if(lastExposure!==R.toneMappingExposure){lastExposure=R.toneMappingExposure;dirty=true;}
+ const post=stats.quality==='high'&&V.getCurrent()!=='all'&&now>=movingUntil,pass=post?'post':'direct';
+ if(pass!==lastPass)dirty=true;
+ if(!force&&!dirty){stats.idleSkips++;return;}
+ const interval=1000/profiles[stats.quality].fps;
+ if(!force&&now-lastDraw<interval-.2){stats.budgetSkips++;return;}
+ drawing=true;
+ try{
+  if(shadowDirty&&(force||now-shadowAt>=150)){
+   R.shadowMap.needsUpdate=true;shadowDirty=false;shadowAt=now;stats.shadowUpdates++;
+  }
+  if(post){
+   const size=R.getDrawingBufferSize(drawingSize);if(target.width!==size.x||target.height!==size.y){target.setSize(size.x,size.y);postUniforms.resolution.value.copy(size);}
+   postUniforms.inverseProjection.value.copy(V.camera.projectionMatrix).invert();postUniforms.projection.value.copy(V.camera.projectionMatrix);
+   R.setRenderTarget(target);R.render(S,V.camera);R.setRenderTarget(null);R.render(postScene,postCamera);stats.postPasses++;
+  }else R.render(S,V.camera);
+  stats.drawnFrames++;lastDraw=now;lastPass=pass;dirty=shadowDirty;
+ }finally{R.setRenderTarget(null);drawing=false;}
+}
+function lighting(){invalidate();const night=$('night').classList.contains('active');skyUniforms.top.value.copy(color(night?'#101b31':'#7897b4'));skyUniforms.bottom.value.copy(color(night?'#2b3549':'#edf1f0'));bounce.forEach(b=>b.light.intensity=night?b.power*.09:b.power);C.hemi.intensity=night?.30:.72;C.fill.intensity=night?.18:.32;C.sun.intensity=night?.04:1.05;C.roomLights.forEach(l=>l.intensity=night?.62:.36);C.finishLights.forEach(l=>l.intensity=night?.88:.65);lens.emissiveIntensity=night?2:1.4;updateReflection();}
 const controls=document.createElement('div');controls.id='realismControls';controls.innerHTML='<button id="realismDay">日間</button><button id="realismNight">夜間</button><button id="realismQuality">畫質：流暢</button><span id="realismStatus">準備寫實材質…</span>';$('walkHUD').appendChild(controls);
 document.querySelector('[data-viewmode="walk"]').textContent='寫實步行';$('walkHUD').querySelector('strong').textContent='寫實步行 · 即時 3D';
 $('realismDay').onclick=()=>$('day').click();$('realismNight').onclick=()=>$('night').click();
-function setQuality(quality){stats.quality=quality==='high'?'high':'balanced';R.setPixelRatio(Math.min(devicePixelRatio,stats.quality==='high'?1.6:1));$('realismQuality').textContent=stats.quality==='high'?'畫質：精細':'畫質：流暢';shadowAt=-Infinity;}
-$('realismQuality').onclick=()=>setQuality(stats.quality==='high'?'balanced':'high');setQuality('balanced');
+function setQuality(quality){
+ stats.quality=profiles[quality]?quality:'eco';const p=profiles[stats.quality];
+ for(const light of shadowLights){const size=light===C.sun?p.sun:p.spot;if(light.shadow.mapSize.x!==size){light.shadow.mapSize.set(size,size);light.shadow.map?.dispose();light.shadow.map=null;}}
+ $('realismQuality').textContent='畫質：'+p.label;
+ $('realismQuality').title='點擊切換：省電（30幀、較低解析度）→ 流暢 → 精細；所有模式靜止時暫停繪圖';
+ shadowAt=-Infinity;resizeBudget();invalidate();
+ if(stats.quality==='eco'){reflectionTicket++;reflectionPending=false;applyReflection(originalEnvironment);}else updateReflection();
+}
+$('realismQuality').onclick=()=>setQuality(({eco:'balanced',balanced:'high',high:'eco'})[stats.quality]);setQuality('eco');
+new ResizeObserver(resizeBudget).observe($('view').parentElement);
+for(const event of ['input','change','click'])document.addEventListener(event,()=>invalidate(),true);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){lastDraw=-Infinity;invalidate();updateReflection();}});
+for(const event of ['doorstatechange','tvrotationend'])window.addEventListener(event,()=>invalidate());
 for(const id of ['day','night'])$(id).addEventListener('click',()=>{lighting();$('realismDay').classList.toggle('active',id==='day');$('realismNight').classList.toggle('active',id==='night');});
-window.addEventListener('roomchange',()=>{if(stats.ready)updateReflection();});
-let activeZone='';setInterval(()=>{if(!stats.ready||HOME_TOUR.getMode()!=='walk'||reflectionPending)return;const next=zone();if(next!==activeZone){activeZone=next;updateReflection();}},1500);
-const exportOriginal=$('export').onclick;$('export').onclick=()=>{if(['model','walk'].includes(HOME_TOUR.getMode())){render();const a=document.createElement('a');a.download='W夢想之家_寫實3D_'+V.getCurrent()+'.png';a.href=R.domElement.toDataURL('image/png');a.click();}else exportOriginal();};
-window.HOME_REALISM={setCurtainTransmission:t=>bounce.forEach(b=>b.light.intensity=b.power*t*(document.getElementById("night").classList.contains("active")?.09:1)),render,getState:()=>({...stats,reflectionPending,reflectionZones:[...reflectionCache.keys()]}),refreshReflections:()=>updateReflection(true)};
+window.addEventListener('roomchange',()=>{invalidate();if(stats.ready)updateReflection();});
+let activeZone='';setInterval(()=>{if(document.hidden||stats.quality==='eco'||!stats.ready||HOME_TOUR.getMode()!=='walk'||reflectionPending)return;const next=zone();if(next!==activeZone){activeZone=next;updateReflection();}},1500);
+const exportOriginal=$('export').onclick;$('export').onclick=()=>{if(['model','walk'].includes(HOME_TOUR.getMode())){render(true);const a=document.createElement('a');a.download='W夢想之家_寫實3D_'+V.getCurrent()+'.png';a.href=R.domElement.toDataURL('image/png');a.click();}else exportOriginal();};
+window.HOME_REALISM={setCurtainTransmission:t=>{bounce.forEach(b=>b.light.intensity=b.power*t*(document.getElementById("night").classList.contains("active")?.09:1));invalidate(true,true);},render,invalidate,setQuality,resizeBudget,getState:()=>({...stats,reflectionPending,reflectionZones:[...reflectionCache.keys()]}),refreshReflections:()=>updateReflection(true)};
 R.toneMappingExposure=.96;$('brightness').addEventListener('input',()=>{R.toneMappingExposure=.96*Number($('brightness').value)/100;});
 
 // Desk keeps its warm timber. Cabinet veneer follows the owner's dark, straight-grain reference.

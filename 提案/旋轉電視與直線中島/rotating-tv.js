@@ -239,9 +239,12 @@
     };
   }
 
+  let lastPaintKey='';
   function paint() {
     if (!panel.isConnected) return;
     const state = getState(), degrees = Math.round(state.angle);
+    const key=[state.angle,state.target,blocked,state.upperStoolVisible,extraMessage,performance.now()<messageUntil].join('|');
+    if(key===lastPaintKey)return;lastPaintKey=key;
     byId('rotatingTVAngle').textContent = degrees + '°';
     byId('rotatingTVProgress').value = state.angle;
     byId('rotatingTVSummary').textContent = (blocked ? '暫停' : state.moving ? '轉動中' : state.facing === 'living' ? '客廳' : '中島') + ' · ' + degrees + '°';
@@ -259,6 +262,8 @@
     requestAnimationFrame(frame);
     const dt = last ? Math.min(.05, Math.max(0, (now - last) / 1000)) : 0;
     last = now;
+    if(document.hidden)return;
+    const before=current;
     if (Math.abs(target - current) > .00001) {
       const distance = Math.min(Math.abs(target - current), SPEED * dt);
       const steps = Math.max(1, Math.ceil(distance / MAX_STEP));
@@ -285,6 +290,7 @@
         emitStateEvent('tvrotationend');
       }
     }
+    if(current!==before)window.HOME_REALISM?.invalidate(true,true);
     if (now - lastPaint > 80) { paint(); lastPaint = now; }
   }
 

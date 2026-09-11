@@ -38,7 +38,7 @@ function show(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',Strin
 toggle.onclick=()=>show(panel.hidden);$('homeControlsClose').onclick=()=>show(false);
 const selected=()=>$('rgbRoom').value;
 function sync(){const s=states[selected()];$('rgbOn').checked=s.on;$('rgbColor').value=s.color;$('rgbMode').value=s.mode;$('rgbBrightness').value=s.brightness;$('rgbSpeed').value=s.speed;$('rgbBrightnessValue').textContent=s.brightness+'%';$('rgbSpeedValue').textContent=s.speed.toFixed(1)+'×';$('rgbColor').disabled=['rainbow','wave'].includes(s.mode);$('rgbSpeed').disabled=s.mode==='static';$('rgbColorHint').textContent=['rainbow','wave'].includes(s.mode)?'此效果自動循環彩虹色；恆亮、呼吸和追逐可自行選色。':'設定會記在這台瀏覽器，兩個空間可分別控制。';}
-function update(id,patch){if(!states[id])return;Object.assign(states[id],patch);valid(states[id]);try{localStorage.setItem(storageKey,JSON.stringify(states));}catch{}sync();paint(performance.now());}
+function update(id,patch){if(!states[id])return;Object.assign(states[id],patch);valid(states[id]);try{localStorage.setItem(storageKey,JSON.stringify(states));}catch{}sync();paint(performance.now());window.HOME_REALISM?.invalidate(false);}
 $('rgbRoom').onchange=sync;
 for(const [element,key,type] of [['rgbOn','on','check'],['rgbColor','color','string'],['rgbMode','mode','string'],['rgbBrightness','brightness','number'],['rgbSpeed','speed','number']])$(element).addEventListener('input',e=>update(selected(),{[key]:type==='check'?e.target.checked:type==='number'?Number(e.target.value):e.target.value}));
 $('rgbShowModel').onclick=()=>{window.HOME_TOUR?.setMode('model');V.selectRoom(selected());V.camera.lookAt(V.pos(920,selected()==='living'?610:180,262));V.syncWalkCamera();};
@@ -51,7 +51,7 @@ function sample(s,phase,seconds){let power=s.on?s.brightness/100:0;const cycle=s
  if(hue===null)color.set(s.color);else color.setHSL(hue,.95,.58);
  color.convertSRGBToLinear();return power;
 }
-function paint(now){for(const id in fixtures){const s=states[id],f=fixtures[id];for(const e of f.segments){const power=sample(s,e.phase,now/1000);e.material.color.copy(color).multiplyScalar(power*1.6);e.glow.material.color.copy(color);e.glow.material.opacity=power;e.glow.visible=power>0;}for(const e of f.lights){const power=sample(s,e.phase,now/1000);e.light.color.copy(color);e.light.intensity=hardware.parent.visible?power*.85:0;}}}
-let last=0;function frame(now){requestAnimationFrame(frame);if(document.hidden||now-last<33)return;last=now;paint(now);}sync();paint(0);requestAnimationFrame(frame);
-window.HOME_RGB={update,getState:()=>JSON.parse(JSON.stringify(states)),fixtures,show};
+let paints=0;function paint(now){paints++;for(const id in fixtures){const s=states[id],f=fixtures[id];for(const e of f.segments){const power=sample(s,e.phase,now/1000);e.material.color.copy(color).multiplyScalar(power*1.6);e.glow.material.color.copy(color);e.glow.material.opacity=power;e.glow.visible=power>0;}for(const e of f.lights){const power=sample(s,e.phase,now/1000);e.light.color.copy(color);e.light.intensity=hardware.parent.visible?power*.85:0;}}}
+let last=0,lastVisible=hardware.parent.visible;function frame(now){requestAnimationFrame(frame);if(document.hidden||now-last<33)return;last=now;const visible=hardware.parent.visible,changed=visible!==lastVisible;lastVisible=visible;const mode=window.HOME_TOUR?.getMode();if(mode&&mode!=='model'&&mode!=='walk')return;if(changed||visible&&Object.values(states).some(s=>s.on&&s.brightness>0&&s.mode!=='static')){paint(now);window.HOME_REALISM?.invalidate(false,true);}}sync();paint(0);requestAnimationFrame(frame);
+window.HOME_RGB={update,getState:()=>JSON.parse(JSON.stringify(states)),fixtures,show,getMetrics:()=>({paints})};
 })();

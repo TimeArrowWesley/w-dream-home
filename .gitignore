@@ -64,6 +64,7 @@
 !/tools/verify-home-model.cjs
 !/tools/verify-navigation-island.cjs
 !/tools/verify-open-island.cjs
+!/tools/verify-render-performance.cjs
 !/tools/verify-retained-versions.cjs
 !/tools/verify-viewer-ui.cjs
 !/tour.js
@@ -206,3 +207,5 @@
 !/調整紀錄/20260910開放大中島/v3-sink.png
 !/調整紀錄/20260910開放大中島/v3-storage.png
 !/調整紀錄/20260910開放大中島/驗證.json
+!/調整紀錄/20260911效能優化/
+!/調整紀錄/20260911效能優化/效能驗證.json

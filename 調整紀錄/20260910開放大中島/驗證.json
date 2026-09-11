@@ -903,7 +903,8 @@
     "metrics": {
       "boundsBuilds": 50,
       "pickCandidates": 0,
-      "pickMeshes": 0
+      "pickMeshes": 0,
+      "pickScans": 0
     },
     "target": null
   },

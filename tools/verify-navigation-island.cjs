@@ -33,9 +33,9 @@ for(const n of [2,3]){const publicVersion=n===2?'v1':'v2';
  key('keydown','w',{closest:()=>true});tick(3);near(start.distanceTo(V.camera.position),0,'controls do not move camera');
  key('keydown','w');c.dispatchEvent(new c.Event('blur'));tick(3);near(start.distanceTo(V.camera.position),0,'blur clears held keys');
  // Default drawing has no full-screen 32-sample pass, and reuses shadow maps.
- const rs=c.HOME_REALISM.getState();assert.equal(rs.quality,'balanced');const before=rs.shadowUpdates;tick(60);
- const after=c.HOME_REALISM.getState();assert(after.shadowUpdates-before<=7,'at most 7 shadow refreshes per 60 x 16ms frames');assert.equal(after.postPasses,0,'balanced mode does not run occlusion pass');near(V.renderer.getPixelRatio(),1,'default device-pixel ratio cap');
- get('realismQuality').onclick();tick(20);assert(c.HOME_REALISM.getState().postPasses>0,'detail mode remains available at rest');get('realismQuality').onclick();
+ const rs=c.HOME_REALISM.getState();assert.equal(rs.quality,'eco');const before=rs.shadowUpdates;tick(60);
+ const after=c.HOME_REALISM.getState();assert(after.shadowUpdates-before<=7,'at most 7 shadow refreshes per 60 x 16ms frames');assert.equal(after.postPasses,0,'eco mode does not run occlusion pass');near(V.renderer.getPixelRatio(),1,'default device-pixel ratio cap');
+ c.HOME_REALISM.setQuality('high');tick(20);assert(c.HOME_REALISM.getState().postPasses>0,'detail mode remains available at rest');c.HOME_REALISM.setQuality('eco');
  const doors=[];V.architecture.traverse(g=>{if(g.userData.interactiveDoor){const m=g.children.find(o=>o.isMesh&&o.userData.name),rotation=g.rotation.y;g.rotation.y=0;V.scene.updateMatrixWorld(true);doors.push({g,m,name:g.userData.interactiveDoor.name,b:bounds(m)});g.rotation.y=rotation;}});
  V.selectRoom('living');c.HOME_WALK.enter();V.camera.position.copy(V.pos(370,700,165));
  const I=c.HOME_INTERACTION;for(const d of doors)I.setDoor(d.name,false);tick(100);

@@ -1,12 +1,12 @@
 {
   "method": "Actual Three.js geometry and animation/collision handlers with stubbed renderer. GPU frame rate and visual materials are not measured.",
   "hashes": {
-    "design.js": "a464bec6459e041b35ce222cb3d6acba3a76c1500b09f9918ff9122c9ecbc7e8",
-    "提案/旋轉電視與直線中島/design.js": "ba47bc599c70ad4ea9b2797e0735fac9403642d0e163447510cdecc7db16a54d",
-    "equipment-models.js": "53eadcb7c5f219bb2f1ebbc9298c140e19e4d9c0a1993a1cab058ba7d1556afd",
-    "walk.js": "2ebe663a123c98c441ae671d88ed8efb5cdb231d2024924d2a0dea08a267ac6f",
-    "interaction.js": "280dbd41ee90c15c137864e958e73a5d88fe9791fab153e7f355c7102bb8b131",
-    "realism.js": "66ff768c012fae139548f0308a30ac1640e7c57e5916e60772e6f3ec2ce95260"
+    "design.js": "35011ca7fb731a06aef5ab79012eb36bc64a0034c7714077bbff026eb29b01e6",
+    "提案/旋轉電視與直線中島/design.js": "c9433e83951e5f3a457178743096b9a84de8ba2ccbd317e9e887fcecf8047bd6",
+    "equipment-models.js": "cda5f5442fa05ecbe2c98b21c80afaa9f2400417a05f6e8e465b97591ba8b386",
+    "walk.js": "d6df1469bdbaa6366b925893aa186f14bf4baeb1f2306e92d36db782d637b4f9",
+    "interaction.js": "e437447dfe20702db46aee802cbce58a950289877fdb90b9434751b154c03cc1",
+    "realism.js": "e82f43966d66cde567e81c16c897bf2d76f431a4207fcdaabe937e9b84abfe20"
   },
   "variants": {
     "v1": {
@@ -29,16 +29,17 @@
       "slidingPassages": 2,
       "obstructedOpeningResumes": true,
       "aisles": null,
-      "collision400ProbesMs": 19.82,
+      "collision400ProbesMs": 22.41,
       "render": {
-        "defaultQuality": "balanced",
-        "shadowRefreshesPer60Frames": 6,
+        "defaultQuality": "eco",
+        "shadowRefreshesPer60Frames": 0,
         "postPasses": 0
       },
       "metrics": {
-        "boundsBuilds": 2978,
+        "boundsBuilds": 2952,
         "pickCandidates": 0,
-        "pickMeshes": 1590
+        "pickMeshes": 1590,
+        "pickScans": 71
       }
     },
     "v2": {
@@ -83,16 +84,17 @@
         ],
         "condition": "TV parked; hinged room doors closed"
       },
-      "collision400ProbesMs": 120.11,
+      "collision400ProbesMs": 120.05,
       "render": {
-        "defaultQuality": "balanced",
-        "shadowRefreshesPer60Frames": 6,
+        "defaultQuality": "eco",
+        "shadowRefreshesPer60Frames": 0,
         "postPasses": 0
       },
       "metrics": {
-        "boundsBuilds": 3505,
+        "boundsBuilds": 3479,
         "pickCandidates": 4,
-        "pickMeshes": 1559
+        "pickMeshes": 1559,
+        "pickScans": 79
       }
     }
   }

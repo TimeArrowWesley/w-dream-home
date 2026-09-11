@@ -38,7 +38,12 @@ document.querySelectorAll('[data-camera]').forEach(b=>b.onclick=()=>move(b.datas
 document.querySelectorAll('[data-photo]').forEach(b=>b.onclick=()=>{if(b.dataset.photo==='reset')resetPhoto();else{photoZoom=Math.max(1,Math.min(3,photoZoom+(b.dataset.photo==='in'?.2:-.2)));photoTransform();}});
 let drag=null;$('photoStage').onpointerdown=e=>{drag={x:e.clientX,y:e.clientY};$('photoStage').setPointerCapture(e.pointerId);};$('photoStage').onpointermove=e=>{if(!drag||photoZoom===1)return;photoX=Math.max(-500,Math.min(500,photoX+e.clientX-drag.x));photoY=Math.max(-300,Math.min(300,photoY+e.clientY-drag.y));drag={x:e.clientX,y:e.clientY};photoTransform();};$('photoStage').onpointerup=()=>drag=null;$('photoStage').onpointercancel=()=>drag=null;
 rooms.forEach(r=>{const b=document.createElement('button');b.className='galleryItem';b.dataset.room=r.id;b.innerHTML=`<img loading="lazy" src="${currentURL(r.id)}" alt="${r.n}裝潢效果"><span>${r.n}</span>`;b.onclick=()=>{V.selectRoom(r.id);setMode('photo');};$('filmstrip').appendChild(b);});
-function pin(){const p=V.camera.position,dir=new T.Vector3();V.camera.getWorldDirection(dir);const x=p.x+482.5,y=p.z+480;$('cameraPin').setAttribute('transform',`translate(${x},${y}) rotate(${Math.atan2(dir.x,-dir.z)*180/Math.PI})`);$('cameraPin').style.display=V.getCurrent()==='all'?'none':'';requestAnimationFrame(pin);}pin();
+let pinAt=-Infinity,pinKey='';const pinDirection=new T.Vector3();function pin(now=performance.now()){
+ requestAnimationFrame(pin);if(document.hidden||now-pinAt<100||$('planPanel').hidden)return;pinAt=now;
+ const p=V.camera.position;V.camera.getWorldDirection(pinDirection);const x=p.x+482.5,y=p.z+480;
+ const key=`${x.toFixed(2)},${y.toFixed(2)},${Math.atan2(pinDirection.x,-pinDirection.z).toFixed(5)},${V.getCurrent()}`;
+ if(key===pinKey)return;pinKey=key;$('cameraPin').setAttribute('transform',`translate(${x},${y}) rotate(${Math.atan2(pinDirection.x,-pinDirection.z)*180/Math.PI})`);$('cameraPin').style.display=V.getCurrent()==='all'?'none':'';
+}pin();
 roomChanged('all');setMode('model');window.HOME_TOUR={showSource,getSource:()=>planSource,setMode,planImage:()=>planURL,areas,getMode:()=>mode};
 // Refresh after the shared material modules finish; initial plan predates flooring.js.
 window.addEventListener('load',async()=>{await window.HOME_FLOORING?.ready;planURL=planImage();if(mode==='photo'&&V.getCurrent()==='all')$('photo').src=planURL;const thumb=document.querySelector('.galleryItem[data-room="all"] img');if(thumb)thumb.src=planURL;});

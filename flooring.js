@@ -89,7 +89,7 @@ const ready=new Promise(resolve=>{
   map.anisotropy=Math.min(8,V.renderer.capabilities.getMaxAnisotropy());
   const bump=map.clone();bump.encoding=T.LinearEncoding;bump.needsUpdate=true;
   material.map=map;material.bumpMap=bump;material.bumpScale=.012;material.needsUpdate=true;
-  state.ready=true;resolve();
+  state.ready=true;window.HOME_REALISM?.invalidate(false);resolve();
  };
  image.onerror=()=>{state.error='木地板材質未載入';resolve();};
  image.src=window.REALISM_WOOD;
