@@ -127,16 +127,17 @@
 <text x="782.15" y="1098.08" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="400">結構柱</text>
 <text x="782.15" y="1121.44" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="400">保留</text>
 <rect x="712.00" y="656.00" width="110.00" height="280.00" fill="#c2c9b6" stroke="#253d3a" stroke-width="2"/>
-<polyline points="712.00,726.00 775.00,726.00" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
-<polyline points="712.00,778.00 775.00,778.00" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
-<polyline points="712.00,849.00 775.00,849.00" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
+<polyline points="712.00,726.00 785.20,726.00" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
+<polyline points="712.00,778.00 785.20,778.00" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
+<polyline points="712.00,846.00 785.20,846.00" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
 <text x="743.00" y="697.44" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">酒櫃↓</text>
 <text x="743.00" y="760.56" font-size="12" fill="#253d3a" text-anchor="middle" font-weight="400">掃地機↓</text>
-<rect x="727.00" y="797.00" width="30.60" height="52.70" fill="#304542" stroke="#253d3a" stroke-width="1"/>
-<rect x="722.00" y="871.00" width="45.00" height="55.00" fill="#b5c3c0" stroke="#253d3a" stroke-width="1"/>
-<rect x="724.50" y="873.50" width="40.00" height="50.00" fill="#6d827c" stroke="#253d3a" stroke-width="1"/>
-<circle cx="742.00" cy="898.50" r="3.00" fill="#f6f4ee" stroke="none" stroke-width="1"/>
-<polyline points="772.00,880.00 760.00,880.00" fill="none" stroke="#253d3a" stroke-width="2"/>
+<rect x="729.20" y="786.55" width="30.60" height="52.70" fill="#304542" stroke="#253d3a" stroke-width="1"/>
+<rect x="719.50" y="873.50" width="45.00" height="55.00" fill="#b5c3c0" stroke="#253d3a" stroke-width="1"/>
+<rect x="722.00" y="876.00" width="40.00" height="50.00" fill="#6d827c" stroke="#253d3a" stroke-width="1"/>
+<circle cx="742.00" cy="901.00" r="3.00" fill="#f6f4ee" stroke="none" stroke-width="1"/>
+<polyline points="735.00,863.00 735.00,886.00" fill="none" stroke="#253d3a" stroke-width="2"/>
+<polyline points="757.00,863.00 757.00,885.00" fill="none" stroke="#253d3a" stroke-width="2"/>
 <text x="791.00" y="835.44" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">IH</text>
 <text x="791.00" y="903.44" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">水槽</text>
 <text x="787.00" y="721.44" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">備餐</text>
@@ -163,14 +164,14 @@
 <circle cx="1204.50" cy="776.00" r="4.00" fill="#436a83" stroke="none" stroke-width="1"/>
 <polyline points="1204.50,784.00 1204.50,1124.60" fill="none" stroke="#436a83" stroke-width="1.5" stroke-dasharray="7 7"/>
 <rect x="1212.00" y="987.00" width="54.00" height="22.00" fill="#f6f4ee" stroke="none" stroke-width="1"/>
-<text x="1239.00" y="1003.08" font-size="16" fill="#436a83" text-anchor="middle" font-weight="700">約349</text>
+<text x="1239.00" y="1003.08" font-size="16" fill="#436a83" text-anchor="middle" font-weight="700">約347</text>
 <text x="1204.50" y="1170.08" font-size="16" fill="#253d3a" text-anchor="middle" font-weight="700">83 吋固定電視｜朝北</text>
 <polyline points="890.00,1122.00 890.00,1001.00 893.00,976.00 1025.00,934.00 1137.00,861.00" fill="none" stroke="#267d6d" stroke-width="2"/>
 <polyline points="1132.35,868.70 1137.00,861.00 1128.07,862.15" fill="none" stroke="#267d6d" stroke-width="2"/>
 <polyline points="890.00,1001.00 627.00,1001.00 627.00,853.00 472.00,853.00" fill="none" stroke="#267d6d" stroke-width="2"/>
 <polyline points="480.10,849.09 472.00,853.00 480.10,856.91" fill="none" stroke="#267d6d" stroke-width="2"/>
-<polyline points="893.00,976.00 912.00,861.00 977.00,626.00 1107.00,626.00 1115.00,546.00" fill="none" stroke="#267d6d" stroke-width="2"/>
-<polyline points="1118.09,554.45 1115.00,546.00 1110.30,553.67" fill="none" stroke="#267d6d" stroke-width="2"/>
+<polyline points="893.00,976.00 912.00,861.00 977.00,651.00 1107.00,651.00 1115.00,546.00" fill="none" stroke="#267d6d" stroke-width="2"/>
+<polyline points="1118.29,554.38 1115.00,546.00 1110.48,553.78" fill="none" stroke="#267d6d" stroke-width="2"/>
 <circle cx="890.00" cy="1120.00" r="6.00" fill="#267d6d" stroke="none" stroke-width="1"/>
 <text x="889.00" y="1170.08" font-size="16" fill="#267d6d" text-anchor="middle" font-weight="700">入戶</text>
 <polyline points="602.00,709.00 712.00,709.00" fill="none" stroke="#267d6d" stroke-width="1.5"/>

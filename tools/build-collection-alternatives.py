@@ -78,9 +78,9 @@ A = dict(
     tv=dict(x=825.15,y=948.6,w=184.7,d=2.8,face='N',label='83 吋固定電視'),
     listener=[917.5,600], coffee=[895,765,32],
     speakers=[['L',1045,874,31.7,31.5],['R',790,874,31.7,31.5],['SW1',788,929,36,39.5],['SW2',1055,929,36,39.5],['SL',1045,505,28,24],['SR',775,505,28,24]],
-    routes=[[[603,946],[603,825],[606,800],[738,758],[850,685]],[[603,825],[340,825],[340,677],[185,677]],[[606,800],[625,685],[690,450],[820,450],[828,370]]],
+    routes=[[[603,946],[603,825],[606,800],[738,758],[850,685]],[[603,825],[340,825],[340,677],[185,677]],[[606,800],[625,685],[690,475],[820,475],[828,370]]],
     captions=[
-        ('01  電視固定在南牆', ['83 吋沿用，沙發轉向南側。','主座到螢幕約 349 cm。','Q7、雙重低音集中在影音區，','進門不再先看到電視背板。']),
+        ('01  電視固定在南牆', ['83 吋沿用，沙發轉向南側。','主座到螢幕約 347 cm。','Q7、雙重低音集中在影音區，','進門不再先看到電視背板。']),
         ('02  中央是一張完整長檯', ['中島 280 × 110 × H95。','55 × 45 備餐槽、酒櫃、掃地機','與 IH 分區；開口維持朝冰箱。','東側可留活動吧椅，未計入淨距。']),
         ('03  收藏與玄關連續收邊', ['西側 D60 深收納接南側 D40 玻璃櫃。','玄關 H90：包、鑰匙、少量鞋。','側面帽鉤與短衣桿保留；','柱與櫃尾之間不留落地細縫。']),
         ('我的優先推薦', ['開放感最強，電視不用轉動。','代價：中島無法正面看電視；','原南牆展示改作影音，展示量減少。','想要安靜、整齊的客廳，先選 A。']),
@@ -181,11 +181,11 @@ def render_plan(d, key, ox,oy,s,full=False):
     # Island equipment bay outlines are dashed because they sit below the top.
     q=cfg['island'];rect(q['x'],q['y'],q['w'],q['d'],STONE,INK,2)
     if key=='A':
-        for y in [550,602,673]:line([(425,y),(488,y)],MUTED,1,True)
+        for y in [550,602,670]:line([(425,y),(498.2,y)],MUTED,1,True)
         label(456,510,'酒櫃↓',13);label(456,574,'掃地機↓',12)
-        rect(440,621,30.6,52.7,'#304542',INK)
-        rect(435,695,45,55,'#b5c3c0',INK);rect(437.5,697.5,40,50,'#6d827c',INK)
-        circ(455,722.5,3,PAPER);line([(485,704),(473,704)],INK,2)
+        rect(442.2,610.55,30.6,52.7,'#304542',INK)
+        rect(432.5,697.5,45,55,'#b5c3c0',INK);rect(435,700,40,50,'#6d827c',INK)
+        circ(455,725,3,PAPER);line([(448,687),(448,710)],INK,2);line([(470,687),(470,709)],INK,2)
         label(504,648,'IH',13);label(504,716,'水槽',13)
         label(500,534,'備餐',13);label(500,556,'／吧台',13)
         line([(435,761),(532,761)],'#605742',4)
@@ -212,7 +212,7 @@ def render_plan(d, key, ox,oy,s,full=False):
     ex,ey=cfg['listener'];circ(ex,ey,4,BLUE)
     if key=='A':
         line([(ex,ey+8),(ex,948.6)],BLUE,1.5,True)
-        label(952,813,'約349',16,BLUE,True,True)
+        label(952,813,'約347',16,BLUE,True,True)
         label(917.5,980,'83 吋固定電視｜朝北',16,INK,True)
     else:
         line([(677,583),(942,583)],BLUE,1.5,True)
@@ -291,7 +291,7 @@ def main():
         d=Drawing(1800,1120)
         d.text(42,27,key+'  /  '+cfg['title'],35,INK,True)
         d.text(44,81,cfg['subtitle'],21,MUTED)
-        d.text(44,118,'拆除收藏室後的新方向 · 2D 討論稿，尚未套用 3D · 2026.09.11 · 單位 cm',17,MUTED)
+        d.text(44,118,('已建立 A 可操作3D · 平面路線依開門位置校正 · 2026.09.11 · 單位 cm' if key=='A' else '拆除收藏室後的新方向 · 2D 討論稿，尚未套用 3D · 2026.09.11 · 單位 cm'),17,MUTED)
         render_plan(d,key,46,189,1.16)
         d.line([(1215,177),(1215,991)],'#c9d0c4',1)
         for i,(title,lines) in enumerate(cfg['captions']):
@@ -311,7 +311,7 @@ def main():
         d.text(50,1198,'新 2D 討論稿・未變更既有 V1／V2／V3。淺綠色為原收藏室範圍，紅虛線為擬拆邊界。',19,GREEN)
         d.text(50,1234,'主浴與家具只畫位置示意；尺寸依現有模型，非現場丈量或施工圖。',18,MUTED)
         d.save(key+'-全屋')
-    data=dict(status='Two 2D concepts only; existing V1/V2/V3 remain unchanged',units='cm',plans=PLANS,verification=report)
+    data=dict(status='A implemented in 3D; B remains a 2D concept. Existing V1/V2/V3 retained.',units='cm',plans=PLANS,verification=report)
     (OUT/'尺寸與檢查.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
 

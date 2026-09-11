@@ -9,9 +9,9 @@ function png(file,w,h,pixels){
  const rows=Buffer.alloc((w*3+1)*h);for(let y=0;y<h;y++)Buffer.from(pixels.buffer,y*w*3,w*3).copy(rows,y*(w*3+1)+1);
  fs.writeFileSync(file,Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ihdr),chunk('IDAT',zlib.deflateSync(rows,{level:5})),chunk('IEND',Buffer.alloc(0))]));
 }
-module.exports=function({T,V,version,out,views}){
- fs.mkdirSync(out,{recursive:true});V.labels.visible=false;V.ceiling.visible=V.beams.visible=true;
- for(const p of V.wallParts){p.m.visible=true;p.m.scale.y=1;p.m.position.y=p.z+p.h/2;}
+module.exports=function({T,V,version,out,views,cutaway=false}){
+ fs.mkdirSync(out,{recursive:true});V.labels.visible=false;V.ceiling.visible=V.beams.visible=!cutaway;
+ for(const p of V.wallParts){p.m.visible=true;p.m.scale.y=cutaway?Math.min(p.h,85)/p.h:1;p.m.position.y=p.z+p.h*p.m.scale.y/2;}
  V.scene.updateMatrixWorld(true);
  const meshes=[];V.scene.traverse(o=>{if(!o.isMesh||o.material?.isShaderMaterial||o.userData.allowance||o.name==='窗外天空')return;for(let p=o;p;p=p.parent)if(!p.visible)return;if(o.material?.transparent&&o.material?.map&&!o.material?.color)return;meshes.push(o);});
  const viewpoints=[];

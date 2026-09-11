@@ -160,7 +160,7 @@ box(x+2,front==='N'?y:y+d,w-4,1,7,h-10,M.glass,g);
 for(const z of levels){box(x+2,y+2,w-4,d-4,z,1,M.glass,g);line(x+3,front==='N'?y+9:y+d-10,z-1.3,w-6,1,g);const lip=box(x+3,front==='N'?y+7:y+d-8,w-6,1,z-2,2,M.steel,g,'展示層板遮光收邊');lip.userData.junction='glass-shelf-light';
 for(let k=0;k<n;k++){const cx=x+(k+.5)*w/n,cy=y+d/2;if(bags||z<85){box(cx-12,cy-6,24,12,z+2,18,k%2?M.grey:M.black,g);const hnd=new T.Mesh(new T.TorusGeometry(6,.7,6,18,Math.PI),M.steel);hnd.position.copy(pos(cx,cy,z+23));g.add(hnd);}else{cyl(cx,cy,z+2,7,2,M.black,g);box(cx-4,cy-3,8,6,z+4,12,M.white,g);ball(cx,cy,z+20,5,4,5,M.grey,g);box(cx-8,cy-2,4,4,z+7,12,M.steel,g);box(cx+4,cy-2,4,4,z+7,12,M.steel,g);}}}
 return g;}
-const openContext={T,M,pos,box,ball,cyl,info,cabinet,display,finishHeight,EQ,fittings};
+const openContext={T,M,pos,box,ball,cyl,info,cabinet,display,finishHeight,EQ,fittings,wallParts};
 const openStorage=open?window.HOME_OPEN_ISLAND_BUILD.storage(openContext):null;
 if(!open){
 EQ.luggage();
@@ -184,12 +184,17 @@ if(!open){
 const serviceCab=cabinet(690,915,70,40,0,275,'電箱整合櫃','N');
 serviceCab.userData.desc='保留70cm電箱檢修櫃，門片可開啟；右側315cm改為玻璃展示櫃。';
 }
+const straightIsland=open?window.HOME_OPEN_ISLAND_BUILD.island(openContext):EQ.appliances(false);
+if(layout.fixedTV){
+ window.HOME_FIXED_LIVING=window.HOME_OPEN_ISLAND_BUILD.living(openContext);
+ window.HOME_OPEN_ISLAND={...openStorage,island:straightIsland,spec:openSpec};
+}else{
 const southDisplay=display(760,915,315,40,275,'南側315cm頂天玻璃展示櫃','N');southDisplay.name='南側315cm頂天玻璃展示櫃';
 southDisplay.userData.proposal='旋轉電視與直線中島';
 for(let i=0;i<5;i++){const x=760+(i+.5)*63;box(x+25,912.8,1.1,1.5,111,18,M.steel,southDisplay,'展示櫃霧黑把手');}
 
 // Equipment island and independently supported rotating television.
-const straightIsland=open?window.HOME_OPEN_ISLAND_BUILD.island(openContext):EQ.appliances(false);
+
 const revisedTV=EQ.rotatingTV(),tvBase=revisedTV.base,tvPivot=revisedTV.pivot,tvScreen=revisedTV.screen,rotatingMeshes=revisedTV.rotatingMeshes;
 EQ.audio(true);window.HOME_COFFEE_LIFT=EQ.coffee(true);
 
@@ -216,6 +221,8 @@ const upperStool=proposalStool(396,498,'冰箱前上方活動椅・比較用',fa
 if(open){upperStool.position.add(pos(551,739,0).sub(pos(396,498,0)));upperStool.name='V3 中島東側活動椅';upperStool.userData.footprint={x:531,y:719,w:40,d:40,h:65};}
 window.HOME_ROTATING_TV={pivot:tvPivot,rotatingMeshes,base:tvBase,upperStool,lowerStool,island:straightIsland,sofa:westSofa,southDisplay,screen:tvScreen,config:{axisX:647,axisY:560,assemblyWidth:194,assemblyDepth:9.05,assemblyBottom:76,assemblyTop:193,screenCenterHeight:135,baseHeight:50,islandHeight:95,island:{x:434,y:464,w:81,d:189},base:{x:619.5,y:460,w:55,d:200},upperStoolDefaultVisible:false,viewAngles:{living:0,island:Math.PI}}};
 if(open){const tv=window.HOME_ROTATING_TV;Object.assign(tv.config,{axisY:583,island:{...openSpec.island},base:{...openSpec.audio.tvBase},openIsland:true,seatPoints:{living:[950,583,105],island:[374,704,125]}});tv.lowerStool=null;window.HOME_OPEN_ISLAND={...openStorage,island:straightIsland,spec:openSpec};}
+
+}
 
 // Master bedroom: compact king bed and split side storage.
 for(const c of [{x:0,w:100},{x:280,w:125}]){cabinet(c.x,0,c.w,35,0,70,'床頭抽屜','S',M.black);cabinet(c.x,0,c.w,35,85,160,'床頭黑玻高櫃','S',comfort?M.concrete:M.blackglass);panel(c.x,0,c.w,2,70,15,M.steel);line(c.x+3,32,84,c.w-6);}
@@ -423,6 +430,7 @@ if(open){
  collection:{n:'展示與深收納',en:'OPEN DISPLAY',p:[355,842,165],t:[350,925,140],label:[354,845],note:'收藏室已拆開。165×40玻璃展示、155×60深收納沿外圍配置；兩個轉角收齊，保留100×90結構柱與廚房牆。'}
  }))Object.assign(ROOMS.find(r=>r.id===id),patch);
 }
+if(layout.fixedTV)for(const [id,patch] of Object.entries(openSpec.rooms))Object.assign(ROOMS.find(r=>r.id===id),patch);
 ROOMS.slice(1).forEach(r=>roomLabel(r.n,...r.label));
 function updateWalls(){const cut=$('cut').checked;wallParts.forEach(({m,z,h})=>{const hh=cut?Math.max(0,Math.min(z+h,85)-z):h;m.visible=hh>.1;m.scale.y=hh/h;m.position.y=z+hh/2;});beams.visible=$('ceiling').checked;ceiling.visible=$('ceiling').checked;labels.visible=$('labels').checked;window.HOME_REALISM?.invalidate();}
 function applyCam(){camera.position.set(center.x+radius*Math.sin(pol)*Math.cos(az),center.y+radius*Math.cos(pol),center.z+radius*Math.sin(pol)*Math.sin(az));camera.lookAt(center);}

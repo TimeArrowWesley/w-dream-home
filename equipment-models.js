@@ -4,7 +4,7 @@
 window.HOME_EQUIPMENT_BUILD = function (ctx) {
   const {T,M,pos,box,ball,cyl,info,fittings,ceiling,architecture}=ctx;
   const items=[],covers=[],allowances=[],bays=[],refinements={};let switchStation=null;
-  const open=!!window.HOME_LAYOUT?.openIsland,openSpec=window.HOME_OPEN_ISLAND_SPEC;
+  const open=!!window.HOME_LAYOUT?.openIsland,openSpec=window.HOME_OPEN_ISLAND_SPEC,fixed=!!window.HOME_LAYOUT?.fixedTV;
   function explicitFinish(hex,roughness,metalness,id){const m=new T.MeshStandardMaterial({color:hex,roughness,metalness});m.color.convertSRGBToLinear();m.userData.finishId=id;return m;}
   const collectionFinish=explicitFinish('#b8b9b0',.78,.02,'collection-inner');
   const tvFinish=explicitFinish('#343b3a',.62,.35,'tv-graphite');
@@ -241,7 +241,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     return g;
   }
   function audio(rotating=false){
-    if(open&&rotating){
+    if(open&&(rotating||fixed)){
       for(const q of openSpec.audio.floorSpeakers.filter(q=>['L','R','SW1','SW2'].includes(q.id))){const m=product(q.id.startsWith('SW')?'sub':'q7',q.cx,q.cy,0,q.face);m.userData.channel=q.id;}
     }else if(rotating){
       // Keep the complete floor-standing envelopes inside the living zone,
@@ -250,11 +250,11 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
       product('sub',799,800,0,'N');product('sub',1040,814,0,'N');
     }
     else{product('q7',790.85,930.75,0,'N');product('q7',1045.85,930.75,0,'N');product('sub',788,837,0,'N');product('sub',1057,820,0,'N');}
-    const sky=open?[[815,481],[815,685],[1010,481],[1010,685]]:rotating?[[835,490],[835,665],[972,490],[972,665]]:[[835,560],[1000,560],[835,740],[1000,740]];
+    const sky=open?openSpec.audio.overhead.centers:rotating?[[835,490],[835,665],[972,490],[972,665]]:[[835,560],[1000,560],[835,740],[1000,740]];
     sky.forEach(([x,y],i)=>{const g=group('KEF Ci160QR 高度聲道 '+(i+1),ceiling);info(cyl(x,y,272.8,11.73,.6,M.white,g),g.name,'外徑23.46cm，總深9.8cm。四顆高度聲道；定位待音響調校。');cyl(x,y,273.4,9.8,9.2,M.black,g);});
     // Keep the selected Ci160QR pair, with ear-height wall-baffle design reservations.
     // These housings are not asserted to be manufacturer-approved acoustic enclosures.
-    const surrounds=open?[[1040,408],[1040,758]]:rotating?[[1066,432],[1066,754]]:[[773,438],[1066,438]];
+    const surrounds=open?['SR','SL'].map(id=>{const s=openSpec.audio.floorSpeakers.find(s=>s.id===id);return [s.cx,s.cy];}):rotating?[[1066,432],[1066,754]]:[[773,438],[1066,438]];
     surrounds.forEach(([x,y],i)=>{
       const g=group('耳平環繞 Ci160QR '+(i+1));g.position.copy(pos(x,y,0));g.rotation.y=angles[rotating?'W':'S'];
       if(open)g.userData.channel=i?'SL':'SR';
@@ -302,7 +302,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     const meshes=[];pivot.traverse(o=>{if(o.isMesh){o.userData.dynamicDoor=true;o.userData.rotatingTV=true;meshes.push(o);}});
     return {base,pivot,screen,rotatingMeshes:meshes};
   }
-  function coffee(rotating){const g=group('升降茶几 45／65cm'),x=rotating?819:916,y=rotating?549:751;box(x-19,y-19,38,38,0,4,graphite,g);cyl(x,y,4,5,38,M.steel,g);const lift=group('茶几可升降桌面',g);cyl(x,y,42,rotating?31:43,3,M.blackglass,lift);info(lift,'用餐升降茶几','預設45cm，按控制可升至65cm。造型與機構為家具選型提案，直徑'+(rotating?62:86)+'cm。');return lift;}
+  function coffee(rotating){const g=group('升降茶几 45／65cm'),x=fixed?openSpec.audio.coffee.x:rotating?819:916,y=fixed?openSpec.audio.coffee.y:rotating?549:751;box(x-19,y-19,38,38,0,4,graphite,g);cyl(x,y,4,5,38,M.steel,g);const lift=group('茶几可升降桌面',g);cyl(x,y,42,fixed?openSpec.audio.coffee.radiusCm:rotating?31:43,3,M.blackglass,lift);info(lift,'用餐升降茶几','預設45cm，按控制可升至65cm。造型與機構為家具選型提案，直徑'+(fixed?openSpec.audio.coffee.radiusCm*2:rotating?62:86)+'cm。');return lift;}
   function projector(){box(167.5,0,45,40,190,3,M.steel,fittings,'投影機層板 · 深40cm');product('projector',190,23.1,193,'S',fittings,'24.3×21×23.8cm；暫以鏡頭平面y33.6放樣。實際鏡頭位移與校正需現場。');box(88.2,278,203.6,1,108,114.525,M.white,fittings,'投影幕先以92吋有效畫面放樣','保守92吋：1.2投射比需244.3cm。98吋需約260.4cm，鏡頭與後方散熱未核定前不宣稱可滿版。');box(80,279,220,3,225,5,M.black,fittings,'保留98吋幕盒尺度・有效畫面先92吋');}
   function closet(){
     allowance('管道保守外包絡79×51',546,69,79,51,0,275,'來源輪廓60×40與家具表79×51不一致。保留原結構，木作避開較大包絡');

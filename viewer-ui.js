@@ -26,7 +26,7 @@
     const scene = $('scenePanel'), header = document.querySelector('body > header');
     const plan = $('planPanel'), rooms = $('rooms'), bar = $('layoutSwitch');
     const planTab = $('planToggle'), equipment = $('equipmentControls');
-    const kitchen = $('kitchenDoorToggle'), mirror = $('closetMirrorToggle'), coffee = $('coffeeLift'), switch2 = $('showSwitch2'), tv = $('rotatingTVPanel');
+    const kitchen = $('kitchenDoorToggle'), mirror = $('closetMirrorToggle'), coffee = $('coffeeLift'), switch2 = $('showSwitch2'), tv = $('rotatingTVPanel'), stools = $('aStoolToggle');
     let navView = 'rooms', inspectorView = null, allControls = false, returnFocus = null;
 
     body.classList.add('uiApp');
@@ -55,7 +55,7 @@
     header.replaceChildren(brand, primary, actions);
 
     // Public version names; construction and entry configurations remain descriptive details.
-    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島','玄關高矮櫃'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃']};
+    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島','玄關高矮櫃'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃'],a:['南牆電視+開放長中島','A 方案・開放客廳與玄關矮櫃']};
     const versionMenu = make('details', 'uiMenu uiVersionMenu'); versionMenu.id = 'uiVersionMenu';
     const versionSummary = make('summary');
     versionSummary.append(make('small', '', '設計版本'), make('strong', '', version.toUpperCase() + ' · ' + versions[version][0]), make('span', '', versions[version][1]));
@@ -71,7 +71,7 @@
       b.onclick = () => {
         versionMenu.open = false;
         if (key === version) return;
-        const url = new URL((key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
+        const url = new URL((key==='a'?'提案/南牆電視與開放中島/':key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
         url.searchParams.set('layout', key);
         url.searchParams.set('uiRoom', V.getCurrent());
         url.searchParams.set('uiMode', tour.getMode());
@@ -92,8 +92,8 @@
     sideTabs.append(roomTab, planTab);
     const roomList = make('section', 'uiRoomList'); roomList.id = 'uiRoomList'; roomList.setAttribute('role', 'tabpanel'); roomList.setAttribute('aria-labelledby', 'uiRoomsTab');
     const roomGroups = [
-      ['全屋', ['all']], ['公共空間', ['entry','living','island','kitchen',...(version==='v3'?['collection']:[])]],
-      ['私人空間', ['bed','closet','study',...(version==='v3'?[]:['collection'])]], ['衛浴與機能', ['bath1','bath2','storage','back']]
+      ['全屋', ['all']], ['公共空間', ['entry','living','island','kitchen',...(HOME_LAYOUT.openIsland?['collection']:[])]],
+      ['私人空間', ['bed','closet','study',...(HOME_LAYOUT.openIsland?[]:['collection'])]], ['衛浴與機能', ['bath1','bath2','storage','back']]
     ];
     const roomButtons = all('button[data-id]', rooms); rooms.replaceChildren();
     for (const [label, ids] of roomGroups) {
@@ -129,9 +129,9 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
-      ['拆收藏室・兩個替代格局', 'A 南牆電視／B 展示電視屏風，2D 圖與尺寸比較', '提案/拆收藏室替代方案/index.html'],
+      ['拆收藏室・兩個替代格局', 'A 已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
       ['V3・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
-      ['版本比較', '三個可操作的 3D 版本與共用功能', '方案比較.html'],
+      ['版本比較', 'V1、V2、V3、A 的 3D 配置與共用功能', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
       ['材質與配色', '玄關六角磚、深色木皮與材質搭配', '材質調整.html'],
       ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],
@@ -169,7 +169,7 @@
     scopeInput.onchange = () => { allControls = scopeInput.checked; syncRoom(); };
     scope.append(scopeInput, document.createTextNode('顯示全屋設備操作')); controlsBody.append(scope);
     const contextActions = make('div', 'uiContextActions'); controlsBody.append(contextActions);
-    [kitchen, mirror, coffee, switch2, tv].filter(Boolean).forEach(n => contextActions.append(n));
+    [kitchen, mirror, coffee, switch2, tv, stools].filter(Boolean).forEach(n => contextActions.append(n));
     if (tv) { $('rotatingTVBody').hidden = false; $('rotatingTVToggle').setAttribute('aria-expanded','true'); }
     const lightSection = make('details', 'uiControlSection'); lightSection.append(make('summary', '', '燈光與窗簾'));
     const lighting = $('homeControls'); if (lighting) { lighting.hidden = false; lightSection.append(lighting); }
@@ -245,7 +245,7 @@
     function syncRoom() {
       const room = V.getCurrent(), isAll = room === 'all' || allControls;
       context.textContent = (V.rooms.find(r => r.id === room)?.n || '') + ' · 設備互動';
-      for (const [n, ids] of [[kitchen,['living','island','kitchen']],[mirror,['closet']],[coffee,['living']],[switch2,['living','island']],[tv,['living','island']]]) if (n) n.hidden = !isAll && !ids.includes(room);
+      for (const [n, ids] of [[kitchen,['living','island','kitchen']],[mirror,['closet']],[coffee,['living']],[switch2,['living','island']],[tv,['living','island']],[stools,['island']]]) if (n) n.hidden = !isAll && !ids.includes(room);
       for (const b of roomButtons) b.setAttribute('aria-current',b.dataset.id === room ? 'location' : 'false');
       if (['living','study'].includes(room) && $('rgbRoom') && $('rgbRoom').value !== room) { $('rgbRoom').value = room; $('rgbRoom').dispatchEvent(new Event('change')); }
       const curtain = {living:'living1',study:'studyN',bed:'bed',kitchen:'kitchen'}[room];

@@ -1,0 +1,452 @@
+{
+  "method": "Actual Three.js geometry, full feature handlers and CPU color rasterization. Textures, reflections, GPU performance and browser layout are not verified by this offline test.",
+  "retained": {
+    "v1": {
+      "meshes": 2056,
+      "hash": "7df07c1748e43ae3a77538104a7bd72fb3e35a469ae4eb6d586ba9842b2e20b6"
+    },
+    "v2": {
+      "meshes": 2040,
+      "hash": "74f25518f516352f33385086bdc9441a003e04963fed421d870053b85ee99a74"
+    },
+    "v3": {
+      "meshes": 1889,
+      "hash": "e8369544cf55dbd80e1834899d3b15ecbe25f3b370ef5ab59af7af7c9c0e5052"
+    }
+  },
+  "checks": [
+    "Coffee lift45→65,Switch2 focus and cabinet inspection handlers work",
+    "V1/V2/V3 geometry, transforms and colors retained",
+    "A: 13 spaces,24 equipment instances, fixed83-inch TV at centerH100",
+    "280×110×H95 island, independent west-facing bays and real55×45×D20 sink",
+    "Appliances clear cabinet panels; plumbing clears CLAR; proper door seams and closed cabinet returns",
+    "All room/cabinet doors open fully; kitchen electric door,6 curtains,RGB and shared scene controls work",
+    "Three modeled walking routes clear for36cm body; optional chairs have dynamic collisions and avatar protection",
+    "Four ceiling speakers clear modeled beams and HVAC"
+  ],
+  "initialModel": {
+    "meshes": 1749,
+    "hash": "e8c06189cd9208879dc345e4e8a2926cc798494c33f5d6dd9860c6650ff98d8a"
+  },
+  "routes": {
+    "count": 3,
+    "samples": 784,
+    "bodyRadiusCm": 18
+  },
+  "equipment": [
+    {
+      "key": "fridge",
+      "bounds": {
+        "x": 230,
+        "y": 499,
+        "z": 0,
+        "w": 85.00000000074505,
+        "d": 91.2,
+        "h": 179
+      }
+    },
+    {
+      "key": "wine",
+      "bounds": {
+        "x": 429,
+        "y": 483.04999999999995,
+        "z": 0,
+        "w": 66.30000000000001,
+        "d": 65.7,
+        "h": 85
+      }
+    },
+    {
+      "key": "robot",
+      "bounds": {
+        "x": 428,
+        "y": 557.8500007629394,
+        "z": 0,
+        "w": 47.50000038146973,
+        "d": 38.099998474121094,
+        "h": 30
+      }
+    },
+    {
+      "key": "ih",
+      "bounds": {
+        "x": 442.19999980926514,
+        "y": 610.5499996185303,
+        "z": 90.30000009536742,
+        "w": 30.600000381469727,
+        "d": 52.70000076293945,
+        "h": 5.1099999046325735
+      }
+    },
+    {
+      "key": "clar",
+      "bounds": {
+        "x": 427.99999999925495,
+        "y": 682.25,
+        "z": 8,
+        "w": 38.00000000074506,
+        "d": 11.5,
+        "h": 32.5
+      }
+    },
+    {
+      "key": "avr",
+      "bounds": {
+        "x": 963.2999992370605,
+        "y": 907.55,
+        "z": 6.999999618530273,
+        "w": 43.400001525878906,
+        "d": 38.90000076293944,
+        "h": 16.700000762939453
+      }
+    },
+    {
+      "key": "ps5",
+      "bounds": {
+        "x": 829.6000003814697,
+        "y": 907.1999998092651,
+        "z": 9.000000190734863,
+        "w": 38.79999923706055,
+        "d": 21.600000381469727,
+        "h": 8.899999803304674
+      }
+    },
+    {
+      "key": "switch2",
+      "bounds": {
+        "x": 823.3999996185303,
+        "y": 901.4649999985099,
+        "z": 26.999999809265134,
+        "w": 27.200000762939453,
+        "d": 3.069999995529656,
+        "h": 11.600000381469727
+      }
+    },
+    {
+      "key": "switch2dock",
+      "bounds": {
+        "x": 853.9499998092651,
+        "y": 900.438,
+        "z": 26.999999998509885,
+        "w": 20.100000381469727,
+        "d": 5.122000000000014,
+        "h": 11.500000096857548
+      }
+    },
+    {
+      "key": "q6",
+      "bounds": {
+        "x": 886.0499992370605,
+        "y": 904.85,
+        "z": 9,
+        "w": 62.900001525878906,
+        "d": 30.29999961853025,
+        "h": 21
+      }
+    },
+    {
+      "key": "tv",
+      "bounds": {
+        "x": 825.1500015258789,
+        "y": 947.2000000003353,
+        "z": 47.150001525878906,
+        "w": 184.6999969482422,
+        "d": 2.799999975822857,
+        "h": 105.69999694824219
+      }
+    },
+    {
+      "key": "q7",
+      "bounds": {
+        "x": 1029.1499996185303,
+        "y": 858.25,
+        "z": 0,
+        "w": 31.700000762939453,
+        "d": 31.5,
+        "h": 100.09999923706054
+      }
+    },
+    {
+      "key": "q7",
+      "bounds": {
+        "x": 774.1499996185303,
+        "y": 858.25,
+        "z": 0,
+        "w": 31.700000762939453,
+        "d": 31.5,
+        "h": 100.09999923706054
+      }
+    },
+    {
+      "key": "sub",
+      "bounds": {
+        "x": 770,
+        "y": 909.25,
+        "z": -3.8146972514141453e-7,
+        "w": 36,
+        "d": 39.5,
+        "h": 37.20000076293945
+      }
+    },
+    {
+      "key": "sub",
+      "bounds": {
+        "x": 1037,
+        "y": 909.25,
+        "z": -3.8146972514141453e-7,
+        "w": 36,
+        "d": 39.5,
+        "h": 37.20000076293945
+      }
+    },
+    {
+      "key": "projector",
+      "bounds": {
+        "x": 177.84999997615813,
+        "y": 12.600000000000023,
+        "z": 193,
+        "w": 24.30000004768374,
+        "d": 21.000000002980244,
+        "h": 23.79999961853028
+      }
+    },
+    {
+      "key": "pc",
+      "bounds": {
+        "x": 800,
+        "y": 115.9999999985099,
+        "z": 0,
+        "w": 25,
+        "d": 59.09999923855065,
+        "h": 56.5
+      }
+    },
+    {
+      "key": "pc",
+      "bounds": {
+        "x": 1047.5,
+        "y": 295.9999999985099,
+        "z": 0,
+        "w": 25,
+        "d": 59.09999923855065,
+        "h": 56.5
+      }
+    },
+    {
+      "key": "dishwasher",
+      "bounds": {
+        "x": 8.199999618530285,
+        "y": 768.2500003814697,
+        "z": 0,
+        "w": 55.00000035762787,
+        "d": 59.79999923706055,
+        "h": 81.5
+      }
+    },
+    {
+      "key": "dishdryer",
+      "bounds": {
+        "x": 0,
+        "y": 650.0999984741211,
+        "z": 146,
+        "w": 32,
+        "d": 79.80000305175781,
+        "h": 40
+      }
+    },
+    {
+      "key": "oven",
+      "bounds": {
+        "x": 82.14999923706057,
+        "y": 502.20000038146975,
+        "z": 103.30000000000001,
+        "w": 59.400001525878906,
+        "d": 54.79999961853028,
+        "h": 59.5
+      }
+    },
+    {
+      "key": "nx",
+      "bounds": {
+        "x": 65.60000000000002,
+        "y": 396,
+        "z": 0,
+        "w": 46.799999999999955,
+        "d": 80,
+        "h": 56.50000000000001
+      }
+    },
+    {
+      "key": "ls",
+      "bounds": {
+        "x": 425.15,
+        "y": 227,
+        "z": 0,
+        "w": 41.10000000000001,
+        "d": 72.5,
+        "h": 49.70000000000001
+      }
+    },
+    {
+      "key": "washer",
+      "bounds": {
+        "x": -78,
+        "y": 812,
+        "z": 0,
+        "w": 70,
+        "d": 77,
+        "h": 189
+      }
+    }
+  ],
+  "bayContacts": {
+    "actualIntersections": 0,
+    "conservativeOvenAABBFalsePositives": 2
+  },
+  "views": [
+    {
+      "version": "a",
+      "id": "overview",
+      "room": "all",
+      "name": "全屋配置鳥瞰",
+      "p": [
+        1050,
+        1230,
+        1020
+      ],
+      "t": [
+        480,
+        490,
+        45
+      ],
+      "file": "a-overview.png",
+      "triangles": 222001
+    },
+    {
+      "version": "a",
+      "id": "entry",
+      "room": "entry",
+      "name": "進門望向開放中島",
+      "p": [
+        603,
+        925,
+        165
+      ],
+      "t": [
+        478,
+        665,
+        100
+      ],
+      "file": "a-entry.png",
+      "triangles": 162757
+    },
+    {
+      "version": "a",
+      "id": "living",
+      "room": "living",
+      "name": "沙發望向南牆電視",
+      "p": [
+        901,
+        600,
+        110
+      ],
+      "t": [
+        917.5,
+        948.6,
+        100
+      ],
+      "file": "a-living.png",
+      "triangles": 23780
+    },
+    {
+      "version": "a",
+      "id": "reverse",
+      "room": "living",
+      "name": "南牆回望客廳中島",
+      "p": [
+        788,
+        865,
+        165
+      ],
+      "t": [
+        595,
+        596,
+        95
+      ],
+      "file": "a-reverse.png",
+      "triangles": 171203
+    },
+    {
+      "version": "a",
+      "id": "island-west",
+      "room": "island",
+      "name": "朝冰箱的設備面",
+      "p": [
+        328,
+        674,
+        163
+      ],
+      "t": [
+        467,
+        634,
+        75
+      ],
+      "file": "a-island-west.png",
+      "triangles": 126523
+    },
+    {
+      "version": "a",
+      "id": "island-east",
+      "room": "island",
+      "name": "中島留膝與完整端面",
+      "p": [
+        641,
+        802,
+        165
+      ],
+      "t": [
+        474,
+        646,
+        84
+      ],
+      "file": "a-island-east.png",
+      "triangles": 103634
+    },
+    {
+      "version": "a",
+      "id": "sink",
+      "room": "island",
+      "name": "真開孔水槽與爐具",
+      "p": [
+        370,
+        796,
+        187
+      ],
+      "t": [
+        455,
+        713,
+        86
+      ],
+      "file": "a-sink.png",
+      "triangles": 110428
+    },
+    {
+      "version": "a",
+      "id": "storage",
+      "room": "collection",
+      "name": "玻璃展示與深收納",
+      "p": [
+        437,
+        806,
+        165
+      ],
+      "t": [
+        283,
+        906,
+        130
+      ],
+      "file": "a-storage.png",
+      "triangles": 35158
+    }
+  ]
+}

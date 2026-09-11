@@ -1,5 +1,5 @@
 {
-  "status": "Two 2D concepts only; existing V1/V2/V3 remain unchanged",
+  "status": "A implemented in 3D; B remains a 2D concept. Existing V1/V2/V3 retained.",
   "units": "cm",
   "plans": {
     "A": {
@@ -221,11 +221,11 @@
           ],
           [
             690,
-            450
+            475
           ],
           [
             820,
-            450
+            475
           ],
           [
             828,
@@ -238,7 +238,7 @@
           "01  電視固定在南牆",
           [
             "83 吋沿用，沙發轉向南側。",
-            "主座到螢幕約 349 cm。",
+            "主座到螢幕約 347 cm。",
             "Q7、雙重低音集中在影音區，",
             "進門不再先看到電視背板。"
           ]
@@ -561,7 +561,7 @@
   "verification": {
     "A": {
       "routeBodyCm": 36,
-      "minimumRouteCenterToFixtureCm": 21.14,
+      "minimumRouteCenterToFixtureCm": 18.0,
       "islandSouthToColumn": 120.1,
       "fixedFurnitureNoOverlap": true,
       "northPassageToNearestSpeaker": 118,

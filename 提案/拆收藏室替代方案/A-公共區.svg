@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" font-family="Microsoft JhengHei,sans-serif"><rect width="100%" height="100%" fill="#f6f4ee"/>
 <text x="42.00" y="57.80" font-size="35" fill="#253d3a" text-anchor="start" font-weight="700">A  /  南牆電視 × 開放長中島</text>
 <text x="44.00" y="99.48" font-size="21" fill="#6b7a76" text-anchor="start" font-weight="400">把中央視線讓出來，收藏退到周邊；最接近完整開放客廳。</text>
-<text x="44.00" y="132.96" font-size="17" fill="#6b7a76" text-anchor="start" font-weight="400">拆除收藏室後的新方向 · 2D 討論稿，尚未套用 3D · 2026.09.11 · 單位 cm</text>
+<text x="44.00" y="132.96" font-size="17" fill="#6b7a76" text-anchor="start" font-weight="400">已建立 A 可操作3D · 平面路線依開門位置校正 · 2026.09.11 · 單位 cm</text>
 <rect x="57.60" y="200.60" width="1038.20" height="713.40" fill="#eae6dc" stroke="none" stroke-width="1"/>
 <rect x="75.00" y="658.80" width="377.23" height="237.80" fill="#dce7da" stroke="none" stroke-width="1"/>
 <rect x="1078.28" y="809.72" width="116.12" height="104.28" fill="#69716c" stroke="none" stroke-width="1"/>
@@ -76,16 +76,17 @@
 <text x="394.17" y="856.16" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="400">結構柱</text>
 <text x="394.17" y="883.68" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="400">保留</text>
 <rect x="312.80" y="345.60" width="127.60" height="324.80" fill="#c2c9b6" stroke="#253d3a" stroke-width="2"/>
-<polyline points="312.80,426.80 385.88,426.80" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
-<polyline points="312.80,487.12 385.88,487.12" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
-<polyline points="312.80,569.48 385.88,569.48" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
+<polyline points="312.80,426.80 397.71,426.80" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
+<polyline points="312.80,487.12 397.71,487.12" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
+<polyline points="312.80,566.00 397.71,566.00" fill="none" stroke="#6b7a76" stroke-width="1" stroke-dasharray="7 7"/>
 <text x="348.76" y="391.84" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">酒櫃↓</text>
 <text x="348.76" y="465.20" font-size="12" fill="#253d3a" text-anchor="middle" font-weight="400">掃地機↓</text>
-<rect x="330.20" y="509.16" width="35.50" height="61.13" fill="#304542" stroke="#253d3a" stroke-width="1"/>
-<rect x="324.40" y="595.00" width="52.20" height="63.80" fill="#b5c3c0" stroke="#253d3a" stroke-width="1"/>
-<rect x="327.30" y="597.90" width="46.40" height="58.00" fill="#6d827c" stroke="#253d3a" stroke-width="1"/>
-<circle cx="347.60" cy="626.90" r="3.48" fill="#f6f4ee" stroke="none" stroke-width="1"/>
-<polyline points="382.40,605.44 368.48,605.44" fill="none" stroke="#253d3a" stroke-width="2"/>
+<rect x="332.75" y="497.04" width="35.50" height="61.13" fill="#304542" stroke="#253d3a" stroke-width="1"/>
+<rect x="321.50" y="597.90" width="52.20" height="63.80" fill="#b5c3c0" stroke="#253d3a" stroke-width="1"/>
+<rect x="324.40" y="600.80" width="46.40" height="58.00" fill="#6d827c" stroke="#253d3a" stroke-width="1"/>
+<circle cx="347.60" cy="629.80" r="3.48" fill="#f6f4ee" stroke="none" stroke-width="1"/>
+<polyline points="339.48,585.72 339.48,612.40" fill="none" stroke="#253d3a" stroke-width="2"/>
+<polyline points="365.00,585.72 365.00,611.24" fill="none" stroke="#253d3a" stroke-width="2"/>
 <text x="404.44" y="551.92" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">IH</text>
 <text x="404.44" y="630.80" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">水槽</text>
 <text x="399.80" y="419.68" font-size="13" fill="#253d3a" text-anchor="middle" font-weight="400">備餐</text>
@@ -112,14 +113,14 @@
 <circle cx="884.10" cy="484.80" r="4.64" fill="#436a83" stroke="none" stroke-width="1"/>
 <polyline points="884.10,494.08 884.10,889.18" fill="none" stroke="#436a83" stroke-width="1.5" stroke-dasharray="7 7"/>
 <rect x="897.12" y="729.88" width="54.00" height="22.00" fill="#f6f4ee" stroke="none" stroke-width="1"/>
-<text x="924.12" y="745.96" font-size="16" fill="#436a83" text-anchor="middle" font-weight="700">約349</text>
+<text x="924.12" y="745.96" font-size="16" fill="#436a83" text-anchor="middle" font-weight="700">約347</text>
 <text x="884.10" y="939.68" font-size="16" fill="#253d3a" text-anchor="middle" font-weight="700">83 吋固定電視｜朝北</text>
 <polyline points="519.28,886.16 519.28,745.80 522.76,716.80 675.88,668.08 805.80,583.40" fill="none" stroke="#267d6d" stroke-width="2"/>
 <polyline points="800.40,592.34 805.80,583.40 795.44,584.73" fill="none" stroke="#267d6d" stroke-width="2"/>
 <polyline points="519.28,745.80 214.20,745.80 214.20,574.12 34.40,574.12" fill="none" stroke="#267d6d" stroke-width="2"/>
 <polyline points="43.80,569.58 34.40,574.12 43.80,578.66" fill="none" stroke="#267d6d" stroke-width="2"/>
-<polyline points="522.76,716.80 544.80,583.40 620.20,310.80 771.00,310.80 780.28,218.00" fill="none" stroke="#267d6d" stroke-width="2"/>
-<polyline points="783.86,227.81 780.28,218.00 774.83,226.90" fill="none" stroke="#267d6d" stroke-width="2"/>
+<polyline points="522.76,716.80 544.80,583.40 620.20,339.80 771.00,339.80 780.28,218.00" fill="none" stroke="#267d6d" stroke-width="2"/>
+<polyline points="784.09,227.72 780.28,218.00 775.04,227.03" fill="none" stroke="#267d6d" stroke-width="2"/>
 <circle cx="519.28" cy="883.84" r="6.96" fill="#267d6d" stroke="none" stroke-width="1"/>
 <text x="518.12" y="939.68" font-size="16" fill="#267d6d" text-anchor="middle" font-weight="700">入戶</text>
 <polyline points="185.20,407.08 312.80,407.08" fill="none" stroke="#267d6d" stroke-width="1.5"/>
@@ -161,7 +162,7 @@
 <rect x="1250.00" y="183.00" width="508.00" height="178.00" fill="#f0eee6" stroke="none" stroke-width="1"/>
 <text x="1268.00" y="216.12" font-size="24" fill="#253d3a" text-anchor="start" font-weight="700">01  電視固定在南牆</text>
 <text x="1268.00" y="251.72" font-size="19" fill="#6b7a76" text-anchor="start" font-weight="400">83 吋沿用，沙發轉向南側。</text>
-<text x="1268.00" y="279.72" font-size="19" fill="#6b7a76" text-anchor="start" font-weight="400">主座到螢幕約 349 cm。</text>
+<text x="1268.00" y="279.72" font-size="19" fill="#6b7a76" text-anchor="start" font-weight="400">主座到螢幕約 347 cm。</text>
 <text x="1268.00" y="307.72" font-size="19" fill="#6b7a76" text-anchor="start" font-weight="400">Q7、雙重低音集中在影音區，</text>
 <text x="1268.00" y="335.72" font-size="19" fill="#6b7a76" text-anchor="start" font-weight="400">進門不再先看到電視背板。</text>
 <rect x="1250.00" y="384.00" width="508.00" height="178.00" fill="#f0eee6" stroke="none" stroke-width="1"/>
