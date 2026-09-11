@@ -189,7 +189,7 @@ stats.woodSurfaces=0;stats.cabinetVeneer={name:darkVeneer.name,baseColor:'#625d5
 S.updateMatrixWorld(true);
 V.fittings.traverse(o=>{if(!o.isMesh)return;const name=o.userData.name||'',front=o.userData.swingFront?.name||'';
 if(o.userData.finishGroup)return;
-if(o.userData.openIslandWood||/冰箱旁圓弧頂天櫃|弧形中島|書房九抽收納/.test(name)||/床頭抽屜/.test(front)){o.material=darkVeneer;o.userData.finishGroup='cabinet-dark-straight-veneer';cabinetUV(o);stats.woodSurfaces++;stats.cabinetVeneer.surfaces++;stats.cabinetVeneer.names.push(name||front);}
+if(o.userData.vanityWood||o.userData.openIslandWood||/冰箱旁圓弧頂天櫃|弧形中島|書房九抽收納/.test(name)||/床頭抽屜/.test(front)){o.material=darkVeneer;o.userData.finishGroup='cabinet-dark-straight-veneer';cabinetUV(o);stats.woodSurfaces++;stats.cabinetVeneer.surfaces++;stats.cabinetVeneer.names.push(name||front);}
 else if(/180 × 80 升降桌/.test(name)){o.material=oak;stats.woodSurfaces++;}
 });
 C.hemi.color.set('#fff6e8');C.hemi.groundColor.set('#827563');C.fill.color.set('#fff2df');C.sun.color.set('#fff4e1');

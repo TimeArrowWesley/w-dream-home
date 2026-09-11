@@ -194,7 +194,12 @@
     "調整紀錄/20260910開放大中島/v3-sink.png",
     "調整紀錄/20260910開放大中島/v3-storage.png",
     "調整紀錄/20260910開放大中島/驗證.json",
-    "調整紀錄/20260911效能優化/效能驗證.json"
+    "調整紀錄/20260911效能優化/效能驗證.json",
+    "調整紀錄/20260911主臥化妝台/index.html",
+    "調整紀錄/20260911主臥化妝台/after-room.png",
+    "調整紀錄/20260911主臥化妝台/after-vanity.png",
+    "調整紀錄/20260911主臥化妝台/before-vanity.png",
+    "調整紀錄/20260911主臥化妝台/驗證.json"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -218,6 +223,7 @@
     "tools/verify-retained-versions.cjs",
     "tools/verify-viewer-ui.cjs",
     "調整紀錄/20260910家具清單整合/整合驗證.json",
-    "調整紀錄/20260910設備整合/幾何驗證.json"
+    "調整紀錄/20260910設備整合/幾何驗證.json",
+    "tools/verify-master-vanity.cjs"
   ]
 }

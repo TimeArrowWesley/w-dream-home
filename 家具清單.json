@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "catalog-integrated-20260910",
-  "updatedAt": "2026-09-10T09:36:37.289929+00:00",
+  "revision": "catalog-vanity-20260911",
+  "updatedAt": "2026-09-11T03:34:58.672208+00:00",
   "source": {
     "title": "W夢想之家家具設備規格表",
     "url": "https://claude.ai/code/artifact/8efebff0-f6bf-4b4d-8099-99282e849203",
@@ -2013,6 +2013,26 @@
       "archived": false,
       "original": null,
       "sourceAxId": null
+    },
+    {
+      "id": "model-master-vanity",
+      "room": "bed",
+      "name": "靠窗化妝台與椅凳",
+      "brand": "訂製木作／鏡子及椅凳待選",
+      "specs": "原客變圖書桌：長190×深75cm；現改化妝台，檯高75cm。兩端抽屜、中央留腿區寬118×高72cm；桌上立鏡36×46cm、椅凳40×40×高45cm。",
+      "priceText": "",
+      "notes": "長深依原圖，其餘高度與家具造型為模型提案，報價待確認。",
+      "status": "待報價",
+      "includeInBudget": true,
+      "modelKeys": [],
+      "modelSearch": [
+        "主臥靠窗化妝台"
+      ],
+      "currentNote": "V1～V4共用：床左靠窗，後方留10cm窗簾空間；椅凳收桌下時床側淨距90cm。深灰棕直紋木皮。",
+      "modelDirty": false,
+      "archived": false,
+      "original": null,
+      "sourceAxId": null
     }
   ],
   "pending": [
@@ -2074,7 +2094,7 @@
   ],
   "migration": {
     "sourceRows": 79,
-    "addedModelRows": 2,
+    "addedModelRows": 3,
     "selectionNotes": 11,
     "sourcePolicy": "Working notes include later owner decisions. Original fields and the complete source snapshots are retained."
   }

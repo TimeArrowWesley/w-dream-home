@@ -35,6 +35,40 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     pc:{name:'ASUS ROG Helios · 清單機殼外徑',w:25,d:59.1,h:56.5}
   };
   const angles={N:0,E:-Math.PI/2,S:Math.PI,W:Math.PI/2};
+  function vanity(){
+    // Original plan: west-window desk 190 x 75. Keep 10 cm behind it for the curtain.
+    const g=group('主臥靠窗化妝台'),spec={x:-65,y:90,w:75,d:190,h:75,curtainGap:10,bedClear:90};
+    g.userData.masterVanity=true;g.userData.dimensions=spec;g.userData.focusView={front:{x:1,z:0},distance:240,polar:1.12,azimuthOffset:.15};
+    function piece(x,y,w,d,z,h,mat,name,wood=false){
+      const m=box(x,y,w,d,z,h,mat,g,name,'主臥床左側靠窗；原圖桌面190×75cm。檯高75cm、鏡子與椅凳為補建提案。');
+      m.userData.masterVanity=true;if(wood)m.userData.vanityWood=true;return m;
+    }
+    piece(-65,90,75,190,72,3,M.black,'主臥化妝台・190×75cm檯面',true);
+    // Two supported drawer pedestals leave a 118 cm-wide central knee opening.
+    for(const y of [90,244]){
+      piece(-60,y+4,65,28,0,6,M.steel,'化妝台・內縮落地踢腳');
+      piece(-65,y,2,36,6,66,M.black,'化妝台・抽屜櫃背板',true);
+      for(const sy of [y,y+34])piece(-63,sy,71,2,6,66,M.black,'化妝台・抽屜櫃側板',true);
+      piece(-63,y+2,71,32,6,2,M.black,'化妝台・抽屜櫃底板',true);
+      for(const z of [8,29.3,50.6]){
+        piece(8,y+.3,2,35.4,z,21,M.black,'化妝台・抽屜面板',true);
+        piece(8.1,y+9,1,18,z+18.8,1,M.steel,'化妝台・內嵌抽屜拉手');
+      }
+    }
+    piece(-64,126,3,118,62,10,M.black,'化妝台・桌後連接橫檔',true);
+    // A supported tabletop mirror faces the seat, without a tall panel across the window.
+    piece(-57,171,18,28,75,1,M.steel,'化妝鏡・桌面底座');
+    piece(-52,183.5,2,3,76,12,M.steel,'化妝鏡・支架');
+    piece(-53,167,2,36,86,46,M.steel,'化妝鏡・霧黑鏡框');
+    piece(-50.95,168.2,.15,33.6,87.2,43.6,M.mirror,'化妝鏡・鏡面');
+    const stool=group('化妝椅凳・收於桌下',g);stool.userData.masterVanity=true;
+    function stoolPart(x,y,w,d,z,h,mat,name){const m=piece(x,y,w,d,z,h,mat,name);stool.add(m);return m;}
+    for(const x of [-41,-9])for(const y of [172,204])stoolPart(x,y,4,4,0,41,M.steel,'化妝椅凳・落地椅腳');
+    stoolPart(-43,170,40,40,40,2,M.steel,'化妝椅凳・座框');
+    stoolPart(-43,170,40,40,42,3,M.linen,'化妝椅凳・坐墊');
+    refinements.masterVanity={group:g,stool,...spec,kneeWidth:118,kneeHeight:72,stoolHeight:45,source:'業主客變圖：書桌190×75；改作化妝台'};
+    return g;
+  }
   function group(name,parent=fittings){const g=new T.Group();g.name=name;parent.add(g);return g;}
   function part(g,x,z,w,d,y,h,mat=M.black){const m=new T.Mesh(new T.BoxGeometry(w,h,d),mat);m.position.set(x+w/2,y+h/2,z+d/2);m.castShadow=true;m.receiveShadow=true;g.add(m);return m;}
   function round(g,x,y,z,r,depth,mat=M.rubber){const m=new T.Mesh(new T.CylinderGeometry(r,r,depth,32),mat);m.rotation.x=Math.PI/2;m.position.set(x,y,z);g.add(m);return m;}
@@ -392,5 +426,5 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
 
   }
   function finish(){const originalMaterials=new Map();window.HOME_EQUIPMENT={items,covers,allowances,bays,units,switchStation,refinements,revision:'20260910',setInspection(value){covers.forEach(m=>{if(value){if(!originalMaterials.has(m))originalMaterials.set(m,m.material);else return;m.material=m.material.clone();m.material.transparent=true;m.material.opacity=.13;m.material.depthWrite=false;}else if(originalMaterials.has(m)){m.material.dispose();m.material=originalMaterials.get(m);originalMaterials.delete(m);}m.material.needsUpdate=true;});allowances.forEach(m=>m.visible=value);window.HOME_REALISM?.invalidate();},getSchedule(){return items.map(g=>({name:g.name,...g.userData.equipment}));}};}
-  return {units,group,part,product,cover,allowance,bay,appliances,receivingSink,consoleBase,audio,rotatingTV,coffee,projector,closet,closetMirror,collectionBack,luggage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
+  return {units,group,part,product,cover,allowance,bay,appliances,receivingSink,consoleBase,audio,rotatingTV,coffee,projector,vanity,closet,closetMirror,collectionBack,luggage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
 };

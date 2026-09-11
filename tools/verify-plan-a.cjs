@@ -4,13 +4,15 @@ const fs=require('fs'),path=require('path'),assert=require('assert'),crypto=requ
 const build=require('./home-test-fixture.cjs'),render=require('./render-home-review.cjs');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'提案/南牆電視與開放中島/模型檢視');
 const digest=s=>crypto.createHash('sha256').update(s).digest('hex');
-function signature(V){V.scene.updateMatrixWorld(true);const a=[];V.scene.traverse(o=>{if(o.isMesh)a.push(JSON.stringify({p:digest(Buffer.from(o.geometry.attributes.position.array.buffer)),m:o.matrixWorld.elements,c:o.material?.color?.getHex(),opacity:o.material?.opacity,visible:o.visible}));});return {meshes:a.length,hash:digest(a.sort().join('\n'))};}
+// Exclude the explicitly tagged shared vanity only when comparing pre-vanity baselines.
+// tools/verify-master-vanity.cjs independently checks this addition in all four versions.
+function signature(V,omitSharedVanity=false){V.scene.updateMatrixWorld(true);const a=[];V.scene.traverse(o=>{if(o.isMesh&&!(omitSharedVanity&&o.userData.masterVanity))a.push(JSON.stringify({p:digest(Buffer.from(o.geometry.attributes.position.array.buffer)),m:o.matrixWorld.elements,c:o.material?.color?.getHex(),opacity:o.material?.opacity,visible:o.visible}));});return {meshes:a.length,hash:digest(a.sort().join('\n'))};}
 function visible(o){for(let p=o;p;p=p.parent)if(!p.visible)return false;return true;}
 (async()=>{
  fs.mkdirSync(out,{recursive:true});const report={method:'Actual Three.js geometry, full feature handlers and CPU color rasterization. Textures, reflections, GPU performance and browser layout are not verified by this offline test.',retained:{},checks:[]};
  // Baselines from 1a43d07, before animations (the historical V3 report hashes after animations).
  const hashes=['7df07c1748e43ae3a77538104a7bd72fb3e35a469ae4eb6d586ba9842b2e20b6','74f25518f516352f33385086bdc9441a003e04963fed421d870053b85ee99a74','e8369544cf55dbd80e1834899d3b15ecbe25f3b370ef5ab59af7af7c9c0e5052'];
- if(!process.argv.includes('--a-only'))for(const n of [2,3,4]){const f=await build(n),s=signature(f.V);assert.equal(s.hash,hashes[n-2],'V'+(n-1)+' remains unchanged');report.retained['v'+(n-1)]=s;}
+ if(!process.argv.includes('--a-only'))for(const n of [2,3,4]){const f=await build(n),s=signature(f.V,true);assert.equal(s.hash,hashes[n-2],'V'+(n-1)+' remains unchanged');report.retained['v'+(n-1)]=s;}
  const f=await build(5),{V,c,E,T,bounds,near,overlap}=f;V.scene.updateMatrixWorld(true);report.initialModel=signature(V);
  assert.equal(c.HOME_LAYOUT.version,'v4');assert.equal(V.rooms.length,13);assert.equal(E.items.length,24);assert(c.HOME_FIXED_LIVING);assert(!c.HOME_ROTATING_TV);assert(!c.HOME_ROTATING_TV_CONTROLS);
  const backing=V.wallParts.find(p=>p.m.userData.name==='V4 南牆灰礦物塗料背牆');assert(backing,'TV finish follows wall cutaway');

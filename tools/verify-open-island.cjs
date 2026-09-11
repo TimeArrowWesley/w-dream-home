@@ -5,11 +5,13 @@ const build=require('./home-test-fixture.cjs'),render=require('./render-home-rev
 const root=path.resolve(__dirname,'..'),out=path.join(root,'調整紀錄/20260910開放大中島');
 const digest=s=>crypto.createHash('sha256').update(s).digest('hex');
 const expected=['7df07c1748e43ae3a77538104a7bd72fb3e35a469ae4eb6d586ba9842b2e20b6','74f25518f516352f33385086bdc9441a003e04963fed421d870053b85ee99a74'];
-function signature(V){V.scene.updateMatrixWorld(true);const a=[];V.scene.traverse(o=>{if(o.isMesh)a.push(JSON.stringify({p:digest(Buffer.from(o.geometry.attributes.position.array.buffer)),m:o.matrixWorld.elements,c:o.material?.color?.getHex(),opacity:o.material?.opacity,visible:o.visible}));});return {meshes:a.length,hash:digest(a.sort().join('\n'))};}
+// Exclude the explicitly tagged shared vanity only when comparing pre-vanity baselines.
+// tools/verify-master-vanity.cjs independently checks this addition in all four versions.
+function signature(V,omitSharedVanity=false){V.scene.updateMatrixWorld(true);const a=[];V.scene.traverse(o=>{if(o.isMesh&&!(omitSharedVanity&&o.userData.masterVanity))a.push(JSON.stringify({p:digest(Buffer.from(o.geometry.attributes.position.array.buffer)),m:o.matrixWorld.elements,c:o.material?.color?.getHex(),opacity:o.material?.opacity,visible:o.visible}));});return {meshes:a.length,hash:digest(a.sort().join('\n'))};}
 function visible(o){for(let p=o;p;p=p.parent)if(!p.visible)return false;return true;}
 (async()=>{
  fs.mkdirSync(out,{recursive:true});const report={method:'Real Three.js geometry and interaction code; CPU color views omit textures/reflections/lighting. No GPU or browser verification.',retained:{},checks:[]};
- for(const n of [2,3]){const f=await build(n),s=signature(f.V);assert.equal(s.hash,expected[n-2],'Retained V'+(n-1)+' full mesh geometry, transforms, visibility and colors unchanged');report.retained['v'+(n-1)]=s;}
+ for(const n of [2,3]){const f=await build(n),s=signature(f.V,true);assert.equal(s.hash,expected[n-2],'Retained V'+(n-1)+' full mesh geometry, transforms, visibility and colors unchanged');report.retained['v'+(n-1)]=s;}
  const f=await build(4),{V,c,E,T,bounds,near,overlap}=f;V.scene.updateMatrixWorld(true);
  assert.equal(c.HOME_LAYOUT.version,'v3');assert.equal(V.rooms.length,13);assert.equal(E.items.length,24);
  const counts={};for(const e of E.items){const k=e.userData.equipment.key;counts[k]=(counts[k]||0)+1;}

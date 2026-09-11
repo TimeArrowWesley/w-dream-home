@@ -194,6 +194,7 @@ function ctxIsland(){ EQ.appliances(true,is,IS); }
 for(const c of [{x:0,w:100},{x:280,w:125}]){cabinet(c.x,0,c.w,35,0,70,'床頭抽屜','S',M.black);cabinet(c.x,0,c.w,35,85,160,'床頭黑玻高櫃','S',comfort?M.concrete:M.blackglass);panel(c.x,0,c.w,2,70,15,M.steel);line(c.x+3,32,84,c.w-6);}
 box(112,22,156,178,0,4,M.black,fittings,'床架內縮落地底座');panel(100,0,180,10,40,90,M.cloth,'床頭軟包');box(100,10,180,202,4,28,M.darkcloth,fittings,'180 × 202 KING 床');box(100,10,180,202,32,23,M.linen);box(101,68,178,143,55,3,M.white);box(102,166,176,43,58,2,M.cloth);for(const x of [112,198]){const p=box(x,26,70,38,56,12,M.linen);p.rotation.x=-.08;}
 EQ.projector();
+EQ.vanity();
 // Study: two separate desks and opposite-facing workstations, glass partition.
 
 // Samsung S57CG952NC: real 1000R curved geometry; dimensions are centimetres.
@@ -387,7 +388,7 @@ const ROOMS=[
 {id:'island',n:'中島・雙面櫃',en:'ISLAND DISPLAY',p:[720,725,158],t:[535,474,130],note:'260×30cm頂天雙面玻璃櫃：前後透視、黑鐵框與玻璃層板，保留後方通道。',label:[535,474]},
 {id:'entry',n:'玄關',en:'ENTRY',p:[676,935,155],t:[558,770,108],note:layout.isV2?'V2：玄關均90cm矮櫃，開放掛鉤放外套帽子、下層少量鞋、檯面放鑰匙與包；門位、展示櫃與全屋配置同V1。':'V1：玄關外套櫃到頂，雜物及鞋層120cm，掛鉤放外套帽子、檯面放鑰匙與包；門位、展示櫃與全屋配置同V2。',label:[610,865]},
 {id:'kitchen',n:'廚房',en:'KITCHEN',p:[109,930,158],t:[112,533,122],note:'依 2026-09-01 圖重排 A／B／C 區；黑色金屬、黑玻電器及灰石檯面。',label:[100,704]},
-{id:'bed',n:'主臥',en:'BEDROOM',p:[360,264,155],t:[190,20,115],note:'180×202 床、左右黑玻高櫃、灰軟包與投影層板；床尾通道依原規劃。',label:[185,140]},
+{id:'bed',n:'主臥',en:'BEDROOM',p:[360,264,155],t:[190,20,115],note:'180×202 床、床左靠窗190×75化妝台、桌上鏡與收納椅凳；檯高75、床側淨距90cm，床尾通道保留。',label:[185,140]},
 {id:'closet',n:'更衣室',en:'WARDROBE',p:[640,140,155],t:[635,235,125],note:'四版共用：58cm滑鏡可向右移50cm，取用鏡後掛衣；北窗、90cm窗前矮櫃及頂天櫃保留。',label:[625,132]},
 {id:'study',n:'雙人書房',en:'STUDY',p:[1035,220,160],t:[785,142,130],note:'兩張180×80升降桌、超寬螢幕、模型櫃及漫畫牆；可切換玻璃霧化。',label:[930,170]},
 {id:'collection',n:'收藏室',en:'COLLECTION',p:[425,853,152],t:[285,885,120],note:'公共面245cm玻璃展示，內部精品包與行李收納；入口依東側改門提案。',label:[350,845]},

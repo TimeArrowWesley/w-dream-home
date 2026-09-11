@@ -63,6 +63,7 @@
 !/tools/verify-equipment-revision.cjs
 !/tools/verify-furniture-catalog.cjs
 !/tools/verify-home-model.cjs
+!/tools/verify-master-vanity.cjs
 !/tools/verify-navigation-island.cjs
 !/tools/verify-open-island.cjs
 !/tools/verify-plan-a.cjs
@@ -238,5 +239,11 @@
 !/調整紀錄/20260910開放大中島/v3-sink.png
 !/調整紀錄/20260910開放大中島/v3-storage.png
 !/調整紀錄/20260910開放大中島/驗證.json
+!/調整紀錄/20260911主臥化妝台/
+!/調整紀錄/20260911主臥化妝台/after-room.png
+!/調整紀錄/20260911主臥化妝台/after-vanity.png
+!/調整紀錄/20260911主臥化妝台/before-vanity.png
+!/調整紀錄/20260911主臥化妝台/index.html
+!/調整紀錄/20260911主臥化妝台/驗證.json
 !/調整紀錄/20260911效能優化/
 !/調整紀錄/20260911效能優化/效能驗證.json
