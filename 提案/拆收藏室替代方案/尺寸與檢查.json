@@ -1,9 +1,9 @@
 {
-  "status": "A implemented in 3D; B remains a 2D concept. Existing V1/V2/V3 retained.",
+  "status": "V4 (formerly A) implemented in 3D; B remains a 2D concept. Existing V1/V2/V3 retained.",
   "units": "cm",
   "plans": {
     "A": {
-      "title": "南牆電視 × 開放長中島",
+      "title": "大中島",
       "subtitle": "把中央視線讓出來，收藏退到周邊；最接近完整開放客廳。",
       "island": {
         "id": "island",
@@ -267,7 +267,7 @@
             "開放感最強，電視不用轉動。",
             "代價：中島無法正面看電視；",
             "原南牆展示改作影音，展示量減少。",
-            "想要安靜、整齊的客廳，先選 A。"
+            "想要安靜、整齊的客廳，先選 V4。"
           ]
         ]
       ]

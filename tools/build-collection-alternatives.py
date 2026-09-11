@@ -66,7 +66,7 @@ COMMON = [
     box('electrical',690,915,70,40,'wood','電箱'),
 ]
 A = dict(
-    title='南牆電視 × 開放長中島', subtitle='把中央視線讓出來，收藏退到周邊；最接近完整開放客廳。',
+    title='大中島', subtitle='把中央視線讓出來，收藏退到周邊；最接近完整開放客廳。',
     island=box('island',425,480,110,280,'island',h=95),
     furniture=COMMON+[
         box('sofa',797,540,240,95,'sofa','沙發朝南'),
@@ -83,7 +83,7 @@ A = dict(
         ('01  電視固定在南牆', ['83 吋沿用，沙發轉向南側。','主座到螢幕約 347 cm。','Q7、雙重低音集中在影音區，','進門不再先看到電視背板。']),
         ('02  中央是一張完整長檯', ['中島 280 × 110 × H95。','55 × 45 備餐槽、酒櫃、掃地機','與 IH 分區；開口維持朝冰箱。','東側可留活動吧椅，未計入淨距。']),
         ('03  收藏與玄關連續收邊', ['西側 D60 深收納接南側 D40 玻璃櫃。','玄關 H90：包、鑰匙、少量鞋。','側面帽鉤與短衣桿保留；','柱與櫃尾之間不留落地細縫。']),
-        ('我的優先推薦', ['開放感最強，電視不用轉動。','代價：中島無法正面看電視；','原南牆展示改作影音，展示量減少。','想要安靜、整齊的客廳，先選 A。']),
+        ('我的優先推薦', ['開放感最強，電視不用轉動。','代價：中島無法正面看電視；','原南牆展示改作影音，展示量減少。','想要安靜、整齊的客廳，先選 V4。']),
     ],
 )
 B = dict(
@@ -289,9 +289,9 @@ def main():
     for key,cfg in PLANS.items():
         report[key]=validate(key)
         d=Drawing(1800,1120)
-        d.text(42,27,key+'  /  '+cfg['title'],35,INK,True)
+        d.text(42,27,('V4' if key=='A' else key)+'  /  '+cfg['title'],35,INK,True)
         d.text(44,81,cfg['subtitle'],21,MUTED)
-        d.text(44,118,('已建立 A 可操作3D · 平面路線依開門位置校正 · 2026.09.11 · 單位 cm' if key=='A' else '拆除收藏室後的新方向 · 2D 討論稿，尚未套用 3D · 2026.09.11 · 單位 cm'),17,MUTED)
+        d.text(44,118,('V4 大中島（原 A）可操作3D · 平面路線依開門位置校正 · 2026.09.11 · 單位 cm' if key=='A' else '拆除收藏室後的新方向 · 2D 討論稿，尚未套用 3D · 2026.09.11 · 單位 cm'),17,MUTED)
         render_plan(d,key,46,189,1.16)
         d.line([(1215,177),(1215,991)],'#c9d0c4',1)
         for i,(title,lines) in enumerate(cfg['captions']):
@@ -305,13 +305,13 @@ def main():
         d.text(45,1068,'尺寸取自現有模型；通道按門片關閉、未放吧椅量測。設備分艙為預排，機電與收邊需於選案後深化。',17,MUTED)
         d.save(key+'-公共區')
         d=Drawing(1600,1320)
-        d.text(48,26,key+'  /  '+cfg['title'],34,INK,True)
+        d.text(48,26,('V4' if key=='A' else key)+'  /  '+cfg['title'],34,INK,True)
         d.text(50,79,'全屋位置對照｜臥室、書房、廚衛與結構柱保留；公共區尺寸請搭配放大圖。',20,MUTED)
         render_plan(d,key,57,146,1,True)
-        d.text(50,1198,'新 2D 討論稿・未變更既有 V1／V2／V3。淺綠色為原收藏室範圍，紅虛線為擬拆邊界。',19,GREEN)
+        d.text(50,1198,('V4 大中島（原 A）・已有3D。淺綠色為原收藏室範圍，紅虛線為拆除邊界。' if key=='A' else '新 2D 討論稿・未變更既有 V1／V2／V3。淺綠色為原收藏室範圍，紅虛線為擬拆邊界。'),19,GREEN)
         d.text(50,1234,'主浴與家具只畫位置示意；尺寸依現有模型，非現場丈量或施工圖。',18,MUTED)
         d.save(key+'-全屋')
-    data=dict(status='A implemented in 3D; B remains a 2D concept. Existing V1/V2/V3 retained.',units='cm',plans=PLANS,verification=report)
+    data=dict(status='V4 (formerly A) implemented in 3D; B remains a 2D concept. Existing V1/V2/V3 retained.',units='cm',plans=PLANS,verification=report)
     (OUT/'尺寸與檢查.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
 

@@ -29,7 +29,7 @@ function sample(f,n,action){const before=counters(f);for(let i=0;i<n;i++){action
   get('realismQuality').onclick();assert.equal(R.getState().quality,'balanced');get('realismQuality').onclick();assert.equal(R.getState().quality,'high');f.tick(60,step);assert(R.getState().postPasses>0,'fine postprocess remains available');assert.equal(sample(f,120).draws,0,'fine mode also sleeps at rest');
   get('realismQuality').onclick();assert.equal(R.getState().quality,'eco');const rect=get('view').getBoundingClientRect;get('view').getBoundingClientRect=()=>({width:3840,height:2160});R.resizeBudget();assert(V.renderer.getPixelRatio()**2*3840*2160<=1100001,'4K displays respect pixel budget');get('view').getBoundingClientRect=rect;R.resizeBudget();
   const before=counters(f).draws;R.render(true);assert(counters(f).draws>before,'explicit export forces a fresh frame');
-  report.versions[n===5?'a':'v'+(n-1)]={idle10Seconds:idle,moving10Seconds:moving,walkIdle10Seconds:walkIdle,door,curtain,rgb3Seconds:rgb,hidden5Seconds:hidden,checks:'door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed'};
+  report.versions[n===5?'v4':'v'+(n-1)]={idle10Seconds:idle,moving10Seconds:moving,walkIdle10Seconds:walkIdle,door,curtain,rgb3Seconds:rgb,hidden5Seconds:hidden,checks:'door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed'};
  }
  const out=path.join(root,'調整紀錄/20260911效能優化');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'效能驗證.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 })().catch(e=>{console.error(e);process.exit(1);});

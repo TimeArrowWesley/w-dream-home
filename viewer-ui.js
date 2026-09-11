@@ -55,7 +55,7 @@
     header.replaceChildren(brand, primary, actions);
 
     // Public version names; construction and entry configurations remain descriptive details.
-    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島','玄關高矮櫃'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃'],a:['南牆電視+開放長中島','A 方案・開放客廳與玄關矮櫃']};
+    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島','玄關高矮櫃'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃'],v4:['大中島','南牆固定電視・玄關矮櫃']};
     const versionMenu = make('details', 'uiMenu uiVersionMenu'); versionMenu.id = 'uiVersionMenu';
     const versionSummary = make('summary');
     versionSummary.append(make('small', '', '設計版本'), make('strong', '', version.toUpperCase() + ' · ' + versions[version][0]), make('span', '', versions[version][1]));
@@ -71,7 +71,7 @@
       b.onclick = () => {
         versionMenu.open = false;
         if (key === version) return;
-        const url = new URL((key==='a'?'提案/南牆電視與開放中島/':key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
+        const url = new URL((key==='v4'?'提案/南牆電視與開放中島/':key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
         url.searchParams.set('layout', key);
         url.searchParams.set('uiRoom', V.getCurrent());
         url.searchParams.set('uiMode', tour.getMode());
@@ -129,9 +129,9 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
-      ['拆收藏室・兩個替代格局', 'A 已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
+      ['拆收藏室・兩個替代格局', 'V4 大中島已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
       ['V3・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
-      ['版本比較', 'V1、V2、V3、A 的 3D 配置與共用功能', '方案比較.html'],
+      ['版本比較', 'V1、V2、V3、V4 的 3D 配置與共用功能', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
       ['材質與配色', '玄關六角磚、深色木皮與材質搭配', '材質調整.html'],
       ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],
