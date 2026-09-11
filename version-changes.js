@@ -1,12 +1,12 @@
 'use strict';
 window.HOME_VERSION_CHANGES={
   "date": "2026-09-10",
-  "revision": "V3 開放大中島 3D 與三版功能整合",
+  "revision": "V3 旋轉電視+大中島 3D 與三版功能整合",
   "shared": [
     [
       "版本精簡",
       "原四版本與重複導覽圖",
-      "原 V2 → 新 V1；原 V3 → 新 V2，中文名稱保留。新增 V3 開放大中島可操作 3D。",
+      "原 V2 → 新 V1；原 V3 → 新 V2，中文名稱保留。新增 V3 旋轉電視+大中島可操作 3D。",
       "家具編輯資料及其他共用設備保留。"
     ],
     [
@@ -305,7 +305,7 @@ window.HOME_VERSION_CHANGES={
       ]
     },
     "v2": {
-      "title": "V2 旋轉電視+玄關高矮櫃",
+      "title": "V2 旋轉電視+小中島",
       "rows": [
         [
           "Q7落地喇叭擺位",
@@ -352,7 +352,7 @@ window.HOME_VERSION_CHANGES={
       ]
     },
     "v3": {
-      "title": "V3 開放大中島",
+      "title": "V3 旋轉電視+大中島",
       "rows": [
         [
           "公共空間",
