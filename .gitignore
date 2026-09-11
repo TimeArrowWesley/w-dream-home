@@ -35,6 +35,8 @@
 !/assets/realism/stone-asset.js
 !/assets/realism/wood-asset.js
 !/assets/three.min.js
+!/bedroom-controls.js
+!/bedroom-model.js
 !/comfort-controls.js
 !/curtains.js
 !/design.js
@@ -56,6 +58,7 @@
 !/tools/
 !/tools/build-collection-alternatives.py
 !/tools/build-open-island-plan.py
+!/tools/build-private-review.py
 !/tools/build-site.py
 !/tools/home-test-fixture.cjs
 !/tools/render-home-review.cjs
@@ -68,6 +71,7 @@
 !/tools/verify-navigation-island.cjs
 !/tools/verify-open-island.cjs
 !/tools/verify-plan-a.cjs
+!/tools/verify-private-upgrade.cjs
 !/tools/verify-render-performance.cjs
 !/tools/verify-retained-versions.cjs
 !/tools/verify-viewer-ui.cjs
@@ -250,5 +254,16 @@
 !/調整紀錄/20260911主臥隔牆/after-bed-wall.png
 !/調整紀錄/20260911主臥隔牆/before-bed-wall.png
 !/調整紀錄/20260911主臥隔牆/驗證.json
+!/調整紀錄/20260911全屋核對與主臥細節/
+!/調整紀錄/20260911全屋核對與主臥細節/after-bedroom.png
+!/調整紀錄/20260911全屋核對與主臥細節/after-closet.png
+!/調整紀錄/20260911全屋核對與主臥細節/after-vanity.png
+!/調整紀錄/20260911全屋核對與主臥細節/before-bedroom.png
+!/調整紀錄/20260911全屋核對與主臥細節/before-closet.png
+!/調整紀錄/20260911全屋核對與主臥細節/before-vanity.png
+!/調整紀錄/20260911全屋核對與主臥細節/index.html
+!/調整紀錄/20260911全屋核對與主臥細節/use-closet.png
+!/調整紀錄/20260911全屋核對與主臥細節/use-vanity.png
+!/調整紀錄/20260911全屋核對與主臥細節/驗證.json
 !/調整紀錄/20260911效能優化/
 !/調整紀錄/20260911效能優化/效能驗證.json

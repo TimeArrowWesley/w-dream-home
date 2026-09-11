@@ -140,7 +140,7 @@ function render(force=false){
   stats.drawnFrames++;lastDraw=now;lastPass=pass;dirty=shadowDirty;
  }finally{R.setRenderTarget(null);drawing=false;}
 }
-function lighting(){invalidate();const night=$('night').classList.contains('active');skyUniforms.top.value.copy(color(night?'#101b31':'#7897b4'));skyUniforms.bottom.value.copy(color(night?'#2b3549':'#edf1f0'));bounce.forEach(b=>b.light.intensity=night?b.power*.09:b.power);C.hemi.intensity=night?.30:.72;C.fill.intensity=night?.18:.32;C.sun.intensity=night?.04:1.05;C.roomLights.forEach(l=>l.intensity=night?.62:.36);C.finishLights.forEach(l=>l.intensity=night?.88:.65);lens.emissiveIntensity=night?2:1.4;updateReflection();}
+function lighting(){invalidate();const night=$('night').classList.contains('active');skyUniforms.top.value.copy(color(night?'#101b31':'#7897b4'));skyUniforms.bottom.value.copy(color(night?'#2b3549':'#edf1f0'));bounce.forEach(b=>b.light.intensity=night?b.power*.09:b.power);C.hemi.intensity=night?.30:.72;C.fill.intensity=night?.18:.32;C.sun.intensity=night?.04:1.05;C.roomLights.forEach(l=>l.intensity=night?.62:.36);C.finishLights.forEach(l=>l.intensity=night?.88:.65);lens.emissiveIntensity=night?2:1.4;window.HOME_BEDROOM?.reapplyScene();updateReflection();}
 const controls=document.createElement('div');controls.id='realismControls';controls.innerHTML='<button id="realismDay">日間</button><button id="realismNight">夜間</button><button id="realismQuality">畫質：流暢</button><span id="realismStatus">準備寫實材質…</span>';$('walkHUD').appendChild(controls);
 document.querySelector('[data-viewmode="walk"]').textContent='寫實步行';$('walkHUD').querySelector('strong').textContent='寫實步行 · 即時 3D';
 $('realismDay').onclick=()=>$('day').click();$('realismNight').onclick=()=>$('night').click();
@@ -161,7 +161,7 @@ for(const id of ['day','night'])$(id).addEventListener('click',()=>{lighting();$
 window.addEventListener('roomchange',()=>{invalidate();if(stats.ready)updateReflection();});
 let activeZone='';setInterval(()=>{if(document.hidden||stats.quality==='eco'||!stats.ready||HOME_TOUR.getMode()!=='walk'||reflectionPending)return;const next=zone();if(next!==activeZone){activeZone=next;updateReflection();}},1500);
 const exportOriginal=$('export').onclick;$('export').onclick=()=>{if(['model','walk'].includes(HOME_TOUR.getMode())){render(true);const a=document.createElement('a');a.download='W夢想之家_寫實3D_'+V.getCurrent()+'.png';a.href=R.domElement.toDataURL('image/png');a.click();}else exportOriginal();};
-window.HOME_REALISM={setCurtainTransmission:t=>{bounce.forEach(b=>b.light.intensity=b.power*t*(document.getElementById("night").classList.contains("active")?.09:1));invalidate(true,true);},render,invalidate,setQuality,resizeBudget,getState:()=>({...stats,reflectionPending,reflectionZones:[...reflectionCache.keys()]}),refreshReflections:()=>updateReflection(true)};
+window.HOME_REALISM={setBedroomAccent:factor=>{for(const l of warmLights)if(l.position.x+482.5===190)l.intensity=.32*factor;},setCurtainTransmission:(t,windows)=>{bounce.forEach((b,i)=>{const local=windows?i===3?windows.bed:i===2?(windows.studyN+windows.studyE)/2:windows[i===0?"living1":"living2"]:t;b.light.intensity=b.power*local*(document.getElementById("night").classList.contains("active")?.09:1);});invalidate(true,true);},render,invalidate,setQuality,resizeBudget,getState:()=>({...stats,reflectionPending,reflectionZones:[...reflectionCache.keys()]}),refreshReflections:()=>updateReflection(true)};
 R.toneMappingExposure=.96;$('brightness').addEventListener('input',()=>{R.toneMappingExposure=.96*Number($('brightness').value)/100;});
 
 // Desk keeps its warm timber. Cabinet veneer follows the owner's dark, straight-grain reference.
@@ -189,7 +189,7 @@ stats.woodSurfaces=0;stats.cabinetVeneer={name:darkVeneer.name,baseColor:'#625d5
 S.updateMatrixWorld(true);
 V.fittings.traverse(o=>{if(!o.isMesh)return;const name=o.userData.name||'',front=o.userData.swingFront?.name||'';
 if(o.userData.finishGroup)return;
-if(o.userData.vanityWood||o.userData.openIslandWood||/冰箱旁圓弧頂天櫃|弧形中島|書房九抽收納/.test(name)||/床頭抽屜/.test(front)){o.material=darkVeneer;o.userData.finishGroup='cabinet-dark-straight-veneer';cabinetUV(o);stats.woodSurfaces++;stats.cabinetVeneer.surfaces++;stats.cabinetVeneer.names.push(name||front);}
+if(o.userData.bedroomWood||o.userData.vanityWood||o.userData.openIslandWood||/冰箱旁圓弧頂天櫃|弧形中島|書房九抽收納/.test(name)||/床頭抽屜/.test(front)){o.material=darkVeneer;o.userData.finishGroup='cabinet-dark-straight-veneer';cabinetUV(o);stats.woodSurfaces++;stats.cabinetVeneer.surfaces++;stats.cabinetVeneer.names.push(name||front);}
 else if(/180 × 80 升降桌/.test(name)){o.material=oak;stats.woodSurfaces++;}
 });
 C.hemi.color.set('#fff6e8');C.hemi.groundColor.set('#827563');C.fill.color.set('#fff2df');C.sun.color.set('#fff4e1');

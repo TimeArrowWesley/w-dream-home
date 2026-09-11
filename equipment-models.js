@@ -343,7 +343,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     // Long-hang bay: no middle shelf through garments.
     box(580,0,110,55,0,8,M.black);for(const xx of [580,688])box(xx,0,2,55,0,243,M.steel);box(580,0,110,55,240,3,M.black);box(584,26,102,2,198,2,M.steel,fittings,'長衣獨立吊掛・淨高188cm');
     for(const xx of [600,625,650]){box(xx,12,4,30,29,162,M.cloth,fittings,'長衣示意');box(xx+1.5,26.5,1,1,191,7,M.steel,fittings,'長衣吊掛連接件');}
-    cover(730,55,15,75,0,240,M.black,fittings,'更衣入口淺櫃 · 15cm');for(const zz of [30,70,110,150,190])box(730,57,15,71,zz,1.8,M.steel);
+    const shallow=group('更衣入口淺櫃 · 15cm');box(743,55,2,75,0,240,M.black,shallow,'更衣入口淺櫃 · 15cm');for(const y of [55,128])box(730,y,13,2,0,240,M.black,shallow);for(const z of [0,238])box(730,57,13,71,z,2,M.black,shallow);for(const zz of [30,70,110,150,190])box(730,57,15,71,zz,1.8,M.steel);
     allowance('更衣室保守105cm入口',625,69,105,51,0,190,'以較大管道外包絡625至淺櫃730，木作方案淨距105cm；非現場量測');
   }
   function closetMirror(){
@@ -426,5 +426,5 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
 
   }
   function finish(){const originalMaterials=new Map();window.HOME_EQUIPMENT={items,covers,allowances,bays,units,switchStation,refinements,revision:'20260910',setInspection(value){covers.forEach(m=>{if(value){if(!originalMaterials.has(m))originalMaterials.set(m,m.material);else return;m.material=m.material.clone();m.material.transparent=true;m.material.opacity=.13;m.material.depthWrite=false;}else if(originalMaterials.has(m)){m.material.dispose();m.material=originalMaterials.get(m);originalMaterials.delete(m);}m.material.needsUpdate=true;});allowances.forEach(m=>m.visible=value);window.HOME_REALISM?.invalidate();},getSchedule(){return items.map(g=>({name:g.name,...g.userData.equipment}));}};}
-  return {units,group,part,product,cover,allowance,bay,appliances,receivingSink,consoleBase,audio,rotatingTV,coffee,projector,vanity,closet,closetMirror,collectionBack,luggage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
+  return {refinements,units,group,part,product,cover,allowance,bay,appliances,receivingSink,consoleBase,audio,rotatingTV,coffee,projector,vanity,closet,closetMirror,collectionBack,luggage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
 };

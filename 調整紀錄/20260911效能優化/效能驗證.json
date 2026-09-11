@@ -136,7 +136,7 @@
       },
       "checks": "door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed"
     },
-    "a": {
+    "v4": {
       "idle10Seconds": {
         "draws": 0,
         "shadows": 0,
@@ -180,21 +180,6 @@
         "picks": 0
       },
       "checks": "door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed"
-    }
-  },
-  "baseline": {
-    "commit": "d8b98ef",
-    "idle10Seconds": {
-      "draws": 600,
-      "shadows": 63,
-      "rgb": 0,
-      "picks": 0
-    },
-    "moving10Seconds": {
-      "draws": 600,
-      "shadows": 64,
-      "rgb": 0,
-      "picks": 0
     }
   }
 }

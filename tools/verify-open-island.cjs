@@ -1,11 +1,11 @@
 'use strict';
-// Baselines include the 20260911 closet-wall repair; verify-bedroom-wall.cjs proves only that wall changed.
+// Baselines include 20260911 private-room detailing; verify-private-upgrade.cjs separately verifies its shared scope and moving parts.
 // Real Three.js source geometry, CPU views and interaction code; no browser or GPU.
 const fs=require('fs'),path=require('path'),assert=require('assert'),crypto=require('crypto');
 const build=require('./home-test-fixture.cjs'),render=require('./render-home-review.cjs');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'調整紀錄/20260910開放大中島');
 const digest=s=>crypto.createHash('sha256').update(s).digest('hex');
-const expected=['bf4ad4514059d508eadf18408b23cbcc15f150d5a9964747a6641ca85647009c','b464fd7f408b5dac88b275275abd5759dcdab4918c9efcb335cb4c59f5089d6d'];
+const expected=['39061bacbcf1d64873586466ca1baac78bcb89a81bb53045ae28869c692736b0','1df4a2d425f6317a63230cea51afc104f02d02cc3ca1fec479e7edac9ceb475a'];
 // Exclude the explicitly tagged shared vanity only when comparing pre-vanity baselines.
 // tools/verify-master-vanity.cjs independently checks this addition in all four versions.
 function signature(V,omitSharedVanity=false){V.scene.updateMatrixWorld(true);const a=[];V.scene.traverse(o=>{if(o.isMesh&&!(omitSharedVanity&&o.userData.masterVanity))a.push(JSON.stringify({p:digest(Buffer.from(o.geometry.attributes.position.array.buffer)),m:o.matrixWorld.elements,c:o.material?.color?.getHex(),opacity:o.material?.opacity,visible:o.visible}));});return {meshes:a.length,hash:digest(a.sort().join('\n'))};}

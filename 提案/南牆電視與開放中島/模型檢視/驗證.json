@@ -1,23 +1,10 @@
 {
   "method": "Actual Three.js geometry, full feature handlers and CPU color rasterization. Textures, reflections, GPU performance and browser layout are not verified by this offline test.",
-  "retained": {
-    "v1": {
-      "meshes": 2056,
-      "hash": "7df07c1748e43ae3a77538104a7bd72fb3e35a469ae4eb6d586ba9842b2e20b6"
-    },
-    "v2": {
-      "meshes": 2040,
-      "hash": "74f25518f516352f33385086bdc9441a003e04963fed421d870053b85ee99a74"
-    },
-    "v3": {
-      "meshes": 1889,
-      "hash": "e8369544cf55dbd80e1834899d3b15ecbe25f3b370ef5ab59af7af7c9c0e5052"
-    }
-  },
+  "retained": {},
   "checks": [
     "Coffee lift45→65,Switch2 focus and cabinet inspection handlers work",
     "V1/V2/V3 geometry, transforms and colors retained",
-    "A: 13 spaces,24 equipment instances, fixed83-inch TV at centerH100",
+    "V4: 13 spaces,24 equipment instances, fixed83-inch TV at centerH100",
     "280×110×H95 island, independent west-facing bays and real55×45×D20 sink",
     "Appliances clear cabinet panels; plumbing clears CLAR; proper door seams and closed cabinet returns",
     "All room/cabinet doors open fully; kitchen electric door,6 curtains,RGB and shared scene controls work",
@@ -25,8 +12,8 @@
     "Four ceiling speakers clear modeled beams and HVAC"
   ],
   "initialModel": {
-    "meshes": 1749,
-    "hash": "e8c06189cd9208879dc345e4e8a2926cc798494c33f5d6dd9860c6650ff98d8a"
+    "meshes": 1848,
+    "hash": "e111a86625795a73364991ffc8adfcff279e6a146ab217bd6a05da901c90bf8a"
   },
   "routes": {
     "count": 3,
@@ -302,151 +289,5 @@
   "bayContacts": {
     "actualIntersections": 0,
     "conservativeOvenAABBFalsePositives": 2
-  },
-  "views": [
-    {
-      "version": "a",
-      "id": "overview",
-      "room": "all",
-      "name": "全屋配置鳥瞰",
-      "p": [
-        1050,
-        1230,
-        1020
-      ],
-      "t": [
-        480,
-        490,
-        45
-      ],
-      "file": "a-overview.png",
-      "triangles": 222001
-    },
-    {
-      "version": "a",
-      "id": "entry",
-      "room": "entry",
-      "name": "進門望向開放中島",
-      "p": [
-        603,
-        925,
-        165
-      ],
-      "t": [
-        478,
-        665,
-        100
-      ],
-      "file": "a-entry.png",
-      "triangles": 162757
-    },
-    {
-      "version": "a",
-      "id": "living",
-      "room": "living",
-      "name": "沙發望向南牆電視",
-      "p": [
-        901,
-        600,
-        110
-      ],
-      "t": [
-        917.5,
-        948.6,
-        100
-      ],
-      "file": "a-living.png",
-      "triangles": 23780
-    },
-    {
-      "version": "a",
-      "id": "reverse",
-      "room": "living",
-      "name": "南牆回望客廳中島",
-      "p": [
-        788,
-        865,
-        165
-      ],
-      "t": [
-        595,
-        596,
-        95
-      ],
-      "file": "a-reverse.png",
-      "triangles": 171203
-    },
-    {
-      "version": "a",
-      "id": "island-west",
-      "room": "island",
-      "name": "朝冰箱的設備面",
-      "p": [
-        328,
-        674,
-        163
-      ],
-      "t": [
-        467,
-        634,
-        75
-      ],
-      "file": "a-island-west.png",
-      "triangles": 126523
-    },
-    {
-      "version": "a",
-      "id": "island-east",
-      "room": "island",
-      "name": "中島留膝與完整端面",
-      "p": [
-        641,
-        802,
-        165
-      ],
-      "t": [
-        474,
-        646,
-        84
-      ],
-      "file": "a-island-east.png",
-      "triangles": 103634
-    },
-    {
-      "version": "a",
-      "id": "sink",
-      "room": "island",
-      "name": "真開孔水槽與爐具",
-      "p": [
-        370,
-        796,
-        187
-      ],
-      "t": [
-        455,
-        713,
-        86
-      ],
-      "file": "a-sink.png",
-      "triangles": 110428
-    },
-    {
-      "version": "a",
-      "id": "storage",
-      "room": "collection",
-      "name": "玻璃展示與深收納",
-      "p": [
-        437,
-        806,
-        165
-      ],
-      "t": [
-        283,
-        906,
-        130
-      ],
-      "file": "a-storage.png",
-      "triangles": 35158
-    }
-  ]
+  }
 }

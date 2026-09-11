@@ -1,5 +1,5 @@
 'use strict';
-// Baselines include the 20260911 closet-wall repair; verify-bedroom-wall.cjs proves only that wall changed.
+// Baselines include 20260911 private-room detailing; verify-private-upgrade.cjs separately verifies its shared scope and moving parts.
 // Actual source geometry and feature handlers, offline. No browser/GPU claims.
 const fs=require('fs'),path=require('path'),assert=require('assert'),crypto=require('crypto');
 const build=require('./home-test-fixture.cjs'),render=require('./render-home-review.cjs');
@@ -12,7 +12,7 @@ function visible(o){for(let p=o;p;p=p.parent)if(!p.visible)return false;return t
 (async()=>{
  fs.mkdirSync(out,{recursive:true});const report={method:'Actual Three.js geometry, full feature handlers and CPU color rasterization. Textures, reflections, GPU performance and browser layout are not verified by this offline test.',retained:{},checks:[]};
  // Baselines after the verified closet-wall repair, before animations and without the shared vanity.
- const hashes=['bf4ad4514059d508eadf18408b23cbcc15f150d5a9964747a6641ca85647009c','b464fd7f408b5dac88b275275abd5759dcdab4918c9efcb335cb4c59f5089d6d','09bc50a5cd5a5ddc58e867444e8575118af7dd03ff0b3f1098ceb98d49962825'];
+ const hashes=['39061bacbcf1d64873586466ca1baac78bcb89a81bb53045ae28869c692736b0','1df4a2d425f6317a63230cea51afc104f02d02cc3ca1fec479e7edac9ceb475a','84e7a3f2645194e6ea9cb1d072202bd92ce6c9532a67e2f5626b9b551de3cee7'];
  if(!process.argv.includes('--a-only'))for(const n of [2,3,4]){const f=await build(n),s=signature(f.V,true);assert.equal(s.hash,hashes[n-2],'V'+(n-1)+' remains unchanged');report.retained['v'+(n-1)]=s;}
  const f=await build(5),{V,c,E,T,bounds,near,overlap}=f;V.scene.updateMatrixWorld(true);report.initialModel=signature(V);
  assert.equal(c.HOME_LAYOUT.version,'v4');assert.equal(V.rooms.length,13);assert.equal(E.items.length,24);assert(c.HOME_FIXED_LIVING);assert(!c.HOME_ROTATING_TV);assert(!c.HOME_ROTATING_TV_CONTROLS);

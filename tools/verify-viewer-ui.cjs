@@ -69,7 +69,10 @@ function fixture(v,params='') {
   c.HOME_INTERACTION={blocksPoint:()=>false,toggleDoor:key=>calls.push(['door',key]),getState:()=>({entries:[]})};
   run('equipment-controls.js');if(v==='v4'){c.HOME_FIXED_LIVING={stools:[]};run('提案/南牆電視與開放中島/plan-a-controls.js');}run('furniture-core.js');run('furniture-data.js');run('furniture-app.js');
   const originals=Object.fromEntries(['kitchenDoorToggle','closetMirrorToggle','showSwitch2','inspectEquipment','curtainOpen','curtainClose','realismQuality','export'].map(id=>[id,$(id)]));
-  run('viewer-ui.js');
+  c.HOME_VIEWER.finishContext.roomLights=[];
+  c.HOME_BEDROOM_MODEL={groups:Object.fromEntries(['mirror','stool','drawer','closetDrawer'].map(k=>[k,new T.Group()])),diffusers:{mirror:[],reading:[],night:[],closet:[]},task:new T.PointLight(),closetTask:new T.PointLight()};
+  c.HOME_CURTAINS={set:(v,id)=>calls.push(['curtainScene',v,id])};
+  run('bedroom-controls.js');run('viewer-ui.js');
   return {c,document,$,calls,originals,run,dom,listeners};
 }
 (async()=>{
@@ -92,6 +95,12 @@ for(const v of ['v1','v2','v3','v4']){
   d.querySelector('[data-id="closet"]').click();assert($('kitchenDoorToggle').hidden);assert(!$('closetMirrorToggle').hidden);$('closetMirrorToggle').click();assert(calls.some(q=>q[1]==='closet-mirror'));
   $('uiAllControls').checked=true;$('uiAllControls').dispatchEvent(new a.dom.Event('change'));assert(!$('kitchenDoorToggle').hidden);
   $('inspectEquipment').click();assert(calls.some(q=>q[0]==='inspection'&&q[1]));$('curtainOpen').click();assert(calls.some(q=>q[0]==='curtainOpen'));
+  $('uiAllControls').checked=false;$('uiAllControls').dispatchEvent(new a.dom.Event('change'));
+  c.HOME_VIEWER.selectRoom('bed');assert(!$('bedroomControls').hidden);assert($('wardrobeActions').hidden);
+  d.querySelector('[data-bedroom-scene=projection]').click();assert.equal(c.HOME_BEDROOM.getState().scene,'projection');assert(calls.some(q=>q[0]==='curtainScene'&&q[2]==='bed'));
+  $('vanityMirrorToggle').click();assert(c.HOME_BEDROOM.getState().mirror);assert.equal($('vanityMirrorToggle').getAttribute('aria-pressed'),'true');
+  c.HOME_VIEWER.selectRoom('closet');assert(!$('wardrobeActions').hidden);assert($('vanityActions').hidden);$('wardrobeDrawerToggle').click();assert(c.HOME_BEDROOM.getState().closetDrawer);
+  c.HOME_VIEWER.selectRoom('kitchen');assert($('bedroomControls').hidden);assert($('uiControlsBody').contains($('bedroomControls')));
   $('uiDisplayTab').click();assert.equal(c.HOME_UI.getState().inspectorView,'display');assert(!$('uiDisplayBody').hidden);
   $('uiInspectorClose').click();assert($('uiInspector').hidden);assert.equal($('uiOpenControls').getAttribute('aria-expanded'),'false');
   d.querySelector('[data-viewmode="walk"]').click();await Promise.resolve();assert.equal(c.HOME_TOUR.getMode(),'walk');assert.equal(c.HOME_WALK.getState().active,true);

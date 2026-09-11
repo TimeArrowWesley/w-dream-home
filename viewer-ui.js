@@ -134,6 +134,7 @@
       ['版本比較', 'V1、V2、V3、V4 的 3D 配置與共用功能', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
       ['材質與配色', '玄關六角磚、深色木皮與材質搭配', '材質調整.html'],
+      ['全屋核對與主臥細節', '最新收放操作、燈光與前後比較', '調整紀錄/20260911全屋核對與主臥細節/index.html'],
       ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],
       ['全屋設計檢視', '各空間的接縫、收邊與設計檢視', '全屋設計檢視.html'],
       ['模型檢查紀錄', '模型尺寸、結構與設備核對結果', '全屋模型檢查.html']
@@ -166,11 +167,12 @@
     inspectorTabs.append(controlTab, displayTab); inspector.append(inspectorHeader, inspectorTabs, controlsBody, displayBody); workspace.append(inspector);
     const context = make('div', 'uiControlContext'); context.id = 'uiControlContext'; controlsBody.append(context);
     const scope = make('label', 'uiScope'); const scopeInput = make('input'); scopeInput.type = 'checkbox'; scopeInput.id = 'uiAllControls';
-    scopeInput.onchange = () => { allControls = scopeInput.checked; syncRoom(); };
+    scopeInput.onchange = () => { allControls = scopeInput.checked; syncRoom(); window.dispatchEvent(new CustomEvent('homecontrolscope')); };
     scope.append(scopeInput, document.createTextNode('顯示全屋設備操作')); controlsBody.append(scope);
     const contextActions = make('div', 'uiContextActions'); controlsBody.append(contextActions);
     [kitchen, mirror, coffee, switch2, tv, stools].filter(Boolean).forEach(n => contextActions.append(n));
     if (tv) { $('rotatingTVBody').hidden = false; $('rotatingTVToggle').setAttribute('aria-expanded','true'); }
+    if ($('bedroomControls')) controlsBody.append($('bedroomControls'));
     const lightSection = make('details', 'uiControlSection'); lightSection.append(make('summary', '', '燈光與窗簾'));
     const lighting = $('homeControls'); if (lighting) { lighting.hidden = false; lightSection.append(lighting); }
     controlsBody.append(lightSection);

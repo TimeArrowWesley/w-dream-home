@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "catalog-vanity-20260911",
-  "updatedAt": "2026-09-11T03:34:58.672208+00:00",
+  "revision": "catalog-private-20260911",
+  "updatedAt": "2026-09-11T06:02:37.100256+00:00",
   "source": {
     "title": "W夢想之家家具設備規格表",
     "url": "https://claude.ai/code/artifact/8efebff0-f6bf-4b4d-8099-99282e849203",
@@ -443,7 +443,7 @@
       "includeInBudget": true,
       "modelKeys": [],
       "modelSearch": [],
-      "currentNote": "客廳與書房天花已加入RGB燈條及五種效果；可分區開關、調色。",
+      "currentNote": "客廳與書房保留RGB五種效果。主臥新增日常、化妝、閱讀、投影、起夜五種情境，分別控制鏡燈、閱讀燈與床架低位導光；更衣櫃內燈可獨立開關。模型功能示意，未以照度計驗證，燈具、迴路及電源待選型。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1535,7 +1535,7 @@
       "modelSearch": [
         "床頭抽屜"
       ],
-      "currentNote": "床頭木色抽屜門片改深灰棕直紋霧面木皮；床架與高櫃位置以即時3D為準。",
+      "currentNote": "床頭與化妝台同用深灰棕直紋木皮、橫向指拉。床頭低櫃維持70cm、化妝台75cm；以一致材質收邊銜接，不硬改工作高度。床頭開放段補阅读燈，床架內縮處加低位導光。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1606,7 +1606,7 @@
       "includeInBudget": true,
       "modelKeys": [],
       "modelSearch": [],
-      "currentNote": "已補房間窗簾開關，控制面板可分區操作。",
+      "currentNote": "可單獨控制主臥窗簾；投影情境自動關閉此簾。其餘情境不自動開簾，避免改掉手動設定。主臥窗邊補光隨本扇窗簾衰減。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1651,8 +1651,10 @@
       "status": "待報價",
       "includeInBudget": true,
       "modelKeys": [],
-      "modelSearch": [],
-      "currentNote": "",
+      "modelSearch": [
+        "更衣室・內衣褲抽屜"
+      ],
+      "currentNote": "北側保留長衣吊掛；東側上層短衣，下層北段改三層抽屜（外寬63、外深55cm，約59cm正面）。上層抽出35cm；在南側L形轉角前收止，避免撞衣櫃及滑鏡止擋。包包另分層，櫃內灯可獨立控制。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1674,8 +1676,10 @@
       "status": "待報價",
       "includeInBudget": true,
       "modelKeys": [],
-      "modelSearch": [],
-      "currentNote": "",
+      "modelSearch": [
+        "更衣室・小包防塵櫃"
+      ],
+      "currentNote": "主臥化妝台上抽分成飾品格；更衣室東側抽屜另分內衣褲。入口15cm淺櫃僅放薄手拿包，補可開玻璃防塵門；较深季節包在北側長衣桿上方承重層板，示意包30×20×23cm，承重及實際包數待確認。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1700,7 +1704,7 @@
       "modelSearch": [
         "更衣室側移滑鏡"
       ],
-      "currentNote": "改為58cm寬滑鏡，上下導軌110cm、向右滑50cm；模型可用按鈕或步行E鍵開關。",
+      "currentNote": "58cm滑鏡保留110cm軌道、50cm行程。與東側抽屜互鎖：抽屜開著時不能移鏡，鏡子移開時先復位才能開抽屜。以同一套按鈕及步行E鍵操作。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1863,7 +1867,7 @@
       "includeInBudget": true,
       "modelKeys": [],
       "modelSearch": [],
-      "currentNote": "",
+      "currentNote": "兩張Omni PRO保留坐姿預排；原廠列160°後仰，但完整躺倒外徑與腳踏包絡未取得。不能以目前坐姿模型宣稱後仰通過；待實品含腳踏放樣。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -2028,7 +2032,7 @@
       "modelSearch": [
         "主臥靠窗化妝台"
       ],
-      "currentNote": "V1～V4共用：床左靠窗，後方留10cm窗簾空間；椅凳收桌下時床側淨距90cm。深灰棕直紋木皮。",
+      "currentNote": "四版共用：75×190×高75cm。鏡子有承托滑座，可前拉35cm，兩側柔光；北端上抽加入飾品分隔，抽出35cm。側板插座朝留腿區。椅凳拉出48cm後床側剩55cm，收妥恢復90cm；互動會避免移入步行者站位。鏡燈、插座與滑軌選型待確認。",
       "modelDirty": false,
       "archived": false,
       "original": null,

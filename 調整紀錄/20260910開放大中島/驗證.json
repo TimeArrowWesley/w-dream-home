@@ -2,12 +2,12 @@
   "method": "Real Three.js geometry and interaction code; CPU color views omit textures/reflections/lighting. No GPU or browser verification.",
   "retained": {
     "v1": {
-      "meshes": 2056,
-      "hash": "7df07c1748e43ae3a77538104a7bd72fb3e35a469ae4eb6d586ba9842b2e20b6"
+      "meshes": 2121,
+      "hash": "39061bacbcf1d64873586466ca1baac78bcb89a81bb53045ae28869c692736b0"
     },
     "v2": {
-      "meshes": 2040,
-      "hash": "74f25518f516352f33385086bdc9441a003e04963fed421d870053b85ee99a74"
+      "meshes": 2105,
+      "hash": "1df4a2d425f6317a63230cea51afc104f02d02cc3ca1fec479e7edac9ceb475a"
     }
   },
   "checks": [
@@ -134,8 +134,8 @@
     "minimumGap": 10.876437270141011
   },
   "model": {
-    "meshes": 1889,
-    "hash": "a78dc1ece9416be42f8d77627b74e62a8864e3927231078396c47fab57272c75"
+    "meshes": 1988,
+    "hash": "235a4a936e82f7e2350bef021a7126da2baae29011215d42591bbb481e804459"
   },
   "equipment": [
     {
@@ -404,7 +404,7 @@
     }
   ],
   "interactions": {
-    "count": 49,
+    "count": 52,
     "open": 4,
     "entries": [
       {
@@ -429,16 +429,6 @@
       },
       {
         "id": 2,
-        "name": "室內門（示意）",
-        "angle": 0,
-        "target": 0,
-        "openAngle": -1.5707963267948966,
-        "blocked": false,
-        "sliding": false,
-        "electric": false
-      },
-      {
-        "id": 3,
         "name": "更衣室門",
         "angle": 1.5707963267948966,
         "target": 1.5707963267948966,
@@ -448,7 +438,7 @@
         "electric": false
       },
       {
-        "id": 4,
+        "id": 3,
         "name": "主臥走道入口門",
         "angle": 1.5707963267948966,
         "target": 1.5707963267948966,
@@ -458,7 +448,7 @@
         "electric": false
       },
       {
-        "id": 5,
+        "id": 4,
         "name": "書房玻璃門",
         "angle": 0,
         "target": 0,
@@ -468,7 +458,7 @@
         "electric": false
       },
       {
-        "id": 6,
+        "id": 5,
         "name": "後陽台門",
         "angle": 0,
         "target": 0,
@@ -478,7 +468,7 @@
         "electric": false
       },
       {
-        "id": 7,
+        "id": 6,
         "name": "主浴淋浴玻璃門",
         "angle": -1.5707963267948966,
         "target": -1.5707963267948966,
@@ -488,7 +478,7 @@
         "electric": false
       },
       {
-        "id": 8,
+        "id": 7,
         "name": "客浴雙聯滑門",
         "angle": 0,
         "target": 0,
@@ -498,7 +488,7 @@
         "electric": false
       },
       {
-        "id": 9,
+        "id": 8,
         "key": "kitchen",
         "name": "廚房電動玻璃門",
         "angle": 0,
@@ -507,6 +497,17 @@
         "blocked": false,
         "sliding": true,
         "electric": true
+      },
+      {
+        "id": 9,
+        "key": "storage",
+        "name": "儲藏室拉門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": 1,
+        "blocked": false,
+        "sliding": true,
+        "electric": false
       },
       {
         "id": 10,
@@ -761,17 +762,17 @@
       },
       {
         "id": 35,
-        "name": "A區120cm雙開水槽櫃・櫃門",
+        "name": "小包防塵門 110・櫃門",
         "angle": 0,
         "target": 0,
-        "openAngle": 1.48,
+        "openAngle": -1.48,
         "blocked": false,
         "sliding": false,
         "electric": false
       },
       {
         "id": 36,
-        "name": "A區120cm雙開水槽櫃・櫃門",
+        "name": "小包防塵門 150・櫃門",
         "angle": 0,
         "target": 0,
         "openAngle": -1.48,
@@ -781,17 +782,17 @@
       },
       {
         "id": 37,
-        "name": "20cm側拉籃・櫃門",
+        "name": "小包防塵門 190・櫃門",
         "angle": 0,
         "target": 0,
-        "openAngle": 1.48,
+        "openAngle": -1.48,
         "blocked": false,
         "sliding": false,
         "electric": false
       },
       {
         "id": 38,
-        "name": "烘碗機上方80cm雙開櫃・櫃門",
+        "name": "A區120cm雙開水槽櫃・櫃門",
         "angle": 0,
         "target": 0,
         "openAngle": 1.48,
@@ -801,7 +802,7 @@
       },
       {
         "id": 39,
-        "name": "C區80cm收納高櫃・櫃門",
+        "name": "A區120cm雙開水槽櫃・櫃門",
         "angle": 0,
         "target": 0,
         "openAngle": -1.48,
@@ -811,27 +812,27 @@
       },
       {
         "id": 40,
-        "name": "ICNh5123預留櫃・櫃門",
+        "name": "20cm側拉籃・櫃門",
         "angle": 0,
         "target": 0,
-        "openAngle": -1.48,
+        "openAngle": 1.48,
         "blocked": false,
         "sliding": false,
         "electric": false
       },
       {
         "id": 41,
-        "name": "ICNh5123預留櫃・櫃門",
+        "name": "烘碗機上方80cm雙開櫃・櫃門",
         "angle": 0,
         "target": 0,
-        "openAngle": -1.48,
+        "openAngle": 1.48,
         "blocked": false,
         "sliding": false,
         "electric": false
       },
       {
         "id": 42,
-        "name": "ICNh5123預留櫃・櫃門",
+        "name": "C區80cm收納高櫃・櫃門",
         "angle": 0,
         "target": 0,
         "openAngle": -1.48,
@@ -841,17 +842,17 @@
       },
       {
         "id": 43,
-        "name": "懸吊浴櫃・櫃門",
+        "name": "ICNh5123預留櫃・櫃門",
         "angle": 0,
         "target": 0,
-        "openAngle": 1.48,
+        "openAngle": -1.48,
         "blocked": false,
         "sliding": false,
         "electric": false
       },
       {
         "id": 44,
-        "name": "懸吊浴櫃・櫃門",
+        "name": "ICNh5123預留櫃・櫃門",
         "angle": 0,
         "target": 0,
         "openAngle": -1.48,
@@ -861,7 +862,7 @@
       },
       {
         "id": 45,
-        "name": "懸吊浴櫃・櫃門",
+        "name": "ICNh5123預留櫃・櫃門",
         "angle": 0,
         "target": 0,
         "openAngle": -1.48,
@@ -874,14 +875,14 @@
         "name": "懸吊浴櫃・櫃門",
         "angle": 0,
         "target": 0,
-        "openAngle": -1.48,
+        "openAngle": 1.48,
         "blocked": false,
         "sliding": false,
         "electric": false
       },
       {
         "id": 47,
-        "name": "後陽台水槽右側頂天收納櫃・櫃門",
+        "name": "懸吊浴櫃・櫃門",
         "angle": 0,
         "target": 0,
         "openAngle": -1.48,
@@ -891,6 +892,36 @@
       },
       {
         "id": 48,
+        "name": "懸吊浴櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 49,
+        "name": "懸吊浴櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 50,
+        "name": "後陽台水槽右側頂天收納櫃・櫃門",
+        "angle": 0,
+        "target": 0,
+        "openAngle": -1.48,
+        "blocked": false,
+        "sliding": false,
+        "electric": false
+      },
+      {
+        "id": 51,
         "name": "後陽台水槽右側頂天收納櫃・櫃門",
         "angle": 0,
         "target": 0,
@@ -901,139 +932,11 @@
       }
     ],
     "metrics": {
-      "boundsBuilds": 50,
+      "boundsBuilds": 53,
       "pickCandidates": 0,
       "pickMeshes": 0,
       "pickScans": 0
     },
     "target": null
-  },
-  "views": [
-    {
-      "version": "v3",
-      "id": "entry",
-      "room": "entry",
-      "name": "進門視線",
-      "p": [
-        603,
-        925,
-        165
-      ],
-      "t": [
-        475,
-        780,
-        100
-      ],
-      "file": "v3-entry.png",
-      "triangles": 127126
-    },
-    {
-      "version": "v3",
-      "id": "island-west",
-      "room": "island",
-      "name": "西側設備分艙",
-      "p": [
-        328,
-        677,
-        163
-      ],
-      "t": [
-        467,
-        644,
-        75
-      ],
-      "file": "v3-island-west.png",
-      "triangles": 145047
-    },
-    {
-      "version": "v3",
-      "id": "storage",
-      "room": "collection",
-      "name": "展示與深收納接角",
-      "p": [
-        479,
-        801,
-        165
-      ],
-      "t": [
-        283,
-        906,
-        125
-      ],
-      "file": "v3-storage.png",
-      "triangles": 37311
-    },
-    {
-      "version": "v3",
-      "id": "entry-cabinet",
-      "room": "entry",
-      "name": "玄關矮櫃與掛衣",
-      "p": [
-        570,
-        811,
-        165
-      ],
-      "t": [
-        678,
-        885,
-        123
-      ],
-      "file": "v3-entry-cabinet.png",
-      "triangles": 31999
-    },
-    {
-      "version": "v3",
-      "id": "audio",
-      "room": "living",
-      "name": "沙發主座影音",
-      "p": [
-        950,
-        583,
-        105
-      ],
-      "t": [
-        647,
-        583,
-        124
-      ],
-      "file": "v3-audio.png",
-      "triangles": 139925
-    },
-    {
-      "version": "v3",
-      "id": "island-east",
-      "room": "island",
-      "name": "中島東側與留膝",
-      "p": [
-        600,
-        795,
-        160
-      ],
-      "t": [
-        479,
-        652,
-        87
-      ],
-      "file": "v3-island-east.png",
-      "triangles": 104759
-    },
-    {
-      "version": "v3",
-      "id": "sink",
-      "room": "island",
-      "name": "55×45單槽與20cm槽深",
-      "p": [
-        377,
-        791,
-        187
-      ],
-      "t": [
-        455,
-        729,
-        86
-      ],
-      "file": "v3-sink.png",
-      "triangles": 100037
-    }
-  ]
+  }
 }

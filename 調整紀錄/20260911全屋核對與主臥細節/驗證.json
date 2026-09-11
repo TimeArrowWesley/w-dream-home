@@ -1,0 +1,1189 @@
+{
+  "method": "Original-plan room inventory + actual Three.js dimensions, moving furniture and real interaction handlers. CPU images omit GPU textures, reflections and lighting. No construction or FPS certification.",
+  "versions": [
+    {
+      "version": "v1",
+      "baselineWithoutVanity": "39061bacbcf1d64873586466ca1baac78bcb89a81bb53045ae28869c692736b0",
+      "changes": {
+        "beforeCommit": "98caae4f5cd8222135cf1a21480d846eaa508b21",
+        "removed": 61,
+        "added": 126,
+        "unrelatedRoomsUnchanged": true
+      },
+      "inventory": [
+        {
+          "room": "主臥",
+          "checked": [
+            "180 × 202 KING 床",
+            "主臥靠窗化妝台",
+            "投影機層板"
+          ]
+        },
+        {
+          "room": "更衣室",
+          "checked": [
+            "更衣室窗前矮櫃",
+            "更衣室頂天櫃",
+            "更衣室側移滑鏡",
+            "開放式更衣櫃"
+          ]
+        },
+        {
+          "room": "雙人書房",
+          "checked": [
+            "FUNTE 180",
+            "Samsung 57",
+            "書房九抽收納",
+            "書房模型玻璃門"
+          ]
+        },
+        {
+          "room": "廚房",
+          "checked": [
+            "A區120cm雙開水槽櫃",
+            "ICNh5123 外覆門板分割",
+            "C區80cm收納高櫃",
+            "BELEGA"
+          ]
+        },
+        {
+          "room": "主浴",
+          "checked": [
+            "TOTO NX2",
+            "浴缸",
+            "主浴淋浴立桿",
+            "懸吊浴櫃"
+          ]
+        },
+        {
+          "room": "客浴",
+          "checked": [
+            "TOTO LS",
+            "客浴地面",
+            "浴室鏡櫃"
+          ]
+        },
+        {
+          "room": "儲藏室",
+          "checked": [
+            "儲藏室鐵件層架",
+            "儲藏室拉門"
+          ]
+        },
+        {
+          "room": "後陽台",
+          "checked": [
+            "WashTower",
+            "後陽台水槽右側頂天收納櫃",
+            "室外機"
+          ]
+        },
+        {
+          "room": "客廳",
+          "checked": [
+            "OLED83G6",
+            "Q7 Meta",
+            "SB-2000",
+            "沙發"
+          ]
+        },
+        {
+          "room": "中島",
+          "checked": [
+            "WKb1712",
+            "Saros 20",
+            "WS2-C1",
+            "PIB375FB1E"
+          ]
+        },
+        {
+          "room": "玄關",
+          "checked": [
+            "玄關",
+            "帽鉤"
+          ]
+        },
+        {
+          "room": "收藏區",
+          "checked": [
+            "收藏室精品包櫃"
+          ]
+        }
+      ],
+      "structuralColumns": 6,
+      "wallResults": [
+        {
+          "x": 405,
+          "y": 0,
+          "w": 10,
+          "d": 123,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 10,
+          "d": 158,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 745,
+          "y": 0,
+          "w": 10,
+          "d": 365,
+          "present": true
+        },
+        {
+          "x": 580,
+          "y": 260,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 210,
+          "y": 745,
+          "w": 10,
+          "d": 210,
+          "present": true
+        }
+      ],
+      "motion": [
+        {
+          "key": "mirror",
+          "closed": {
+            "x": -57,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          },
+          "open": {
+            "x": -22,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          }
+        },
+        {
+          "key": "stool",
+          "closed": {
+            "x": -43,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          },
+          "open": {
+            "x": 5,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          }
+        },
+        {
+          "key": "drawer",
+          "closed": {
+            "x": -55,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          },
+          "open": {
+            "x": -20,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          }
+        },
+        {
+          "key": "closetDrawer",
+          "closed": {
+            "x": 689.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          },
+          "open": {
+            "x": 654.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          }
+        }
+      ],
+      "bedSideClearClosed": 90,
+      "bedSideClearWithStool": 55,
+      "passages": [
+        {
+          "key": "storage",
+          "samples": 13
+        }
+      ],
+      "products": [
+        {
+          "key": "fridge",
+          "bounds": {
+            "x": 230,
+            "y": 499,
+            "z": 0,
+            "w": 85.00000000074505,
+            "d": 91.2,
+            "h": 179
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "wine",
+          "bounds": {
+            "x": 406.59999999999997,
+            "y": 590.1999999999999,
+            "z": 0,
+            "w": 66.30000000000003,
+            "d": 65.7,
+            "h": 85
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "dishwasher",
+          "bounds": {
+            "x": 8.199999618530285,
+            "y": 768.2500003814697,
+            "z": 0,
+            "w": 55.00000035762787,
+            "d": 59.79999923706055,
+            "h": 81.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "oven",
+          "bounds": {
+            "x": 82.14999923706057,
+            "y": 502.20000038146975,
+            "z": 103.30000000000001,
+            "w": 59.400001525878906,
+            "d": 54.79999961853028,
+            "h": 59.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        }
+      ],
+      "chairStatus": "Two seated placeholders retained; 160-degree reclined envelope not supplied, not passed.",
+      "intersections": [],
+      "lightingScenes": 5,
+      "rooms": 13,
+      "equipment": 24
+    },
+    {
+      "version": "v2",
+      "baselineWithoutVanity": "1df4a2d425f6317a63230cea51afc104f02d02cc3ca1fec479e7edac9ceb475a",
+      "changes": {
+        "beforeCommit": "98caae4f5cd8222135cf1a21480d846eaa508b21",
+        "removed": 61,
+        "added": 126,
+        "unrelatedRoomsUnchanged": true
+      },
+      "inventory": [
+        {
+          "room": "主臥",
+          "checked": [
+            "180 × 202 KING 床",
+            "主臥靠窗化妝台",
+            "投影機層板"
+          ]
+        },
+        {
+          "room": "更衣室",
+          "checked": [
+            "更衣室窗前矮櫃",
+            "更衣室頂天櫃",
+            "更衣室側移滑鏡",
+            "開放式更衣櫃"
+          ]
+        },
+        {
+          "room": "雙人書房",
+          "checked": [
+            "FUNTE 180",
+            "Samsung 57",
+            "書房九抽收納",
+            "書房模型玻璃門"
+          ]
+        },
+        {
+          "room": "廚房",
+          "checked": [
+            "A區120cm雙開水槽櫃",
+            "ICNh5123 外覆門板分割",
+            "C區80cm收納高櫃",
+            "BELEGA"
+          ]
+        },
+        {
+          "room": "主浴",
+          "checked": [
+            "TOTO NX2",
+            "浴缸",
+            "主浴淋浴立桿",
+            "懸吊浴櫃"
+          ]
+        },
+        {
+          "room": "客浴",
+          "checked": [
+            "TOTO LS",
+            "客浴地面",
+            "浴室鏡櫃"
+          ]
+        },
+        {
+          "room": "儲藏室",
+          "checked": [
+            "儲藏室鐵件層架",
+            "儲藏室拉門"
+          ]
+        },
+        {
+          "room": "後陽台",
+          "checked": [
+            "WashTower",
+            "後陽台水槽右側頂天收納櫃",
+            "室外機"
+          ]
+        },
+        {
+          "room": "客廳",
+          "checked": [
+            "OLED83G6",
+            "Q7 Meta",
+            "SB-2000",
+            "沙發"
+          ]
+        },
+        {
+          "room": "中島",
+          "checked": [
+            "WKb1712",
+            "Saros 20",
+            "WS2-C1",
+            "PIB375FB1E"
+          ]
+        },
+        {
+          "room": "玄關",
+          "checked": [
+            "玄關",
+            "帽鉤"
+          ]
+        },
+        {
+          "room": "收藏區",
+          "checked": [
+            "收藏室精品包櫃"
+          ]
+        }
+      ],
+      "structuralColumns": 6,
+      "wallResults": [
+        {
+          "x": 405,
+          "y": 0,
+          "w": 10,
+          "d": 123,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 10,
+          "d": 158,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 745,
+          "y": 0,
+          "w": 10,
+          "d": 365,
+          "present": true
+        },
+        {
+          "x": 580,
+          "y": 260,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 210,
+          "y": 745,
+          "w": 10,
+          "d": 210,
+          "present": true
+        }
+      ],
+      "motion": [
+        {
+          "key": "mirror",
+          "closed": {
+            "x": -57,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          },
+          "open": {
+            "x": -22,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          }
+        },
+        {
+          "key": "stool",
+          "closed": {
+            "x": -43,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          },
+          "open": {
+            "x": 5,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          }
+        },
+        {
+          "key": "drawer",
+          "closed": {
+            "x": -55,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          },
+          "open": {
+            "x": -20,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          }
+        },
+        {
+          "key": "closetDrawer",
+          "closed": {
+            "x": 689.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          },
+          "open": {
+            "x": 654.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          }
+        }
+      ],
+      "bedSideClearClosed": 90,
+      "bedSideClearWithStool": 55,
+      "passages": [
+        {
+          "key": "storage",
+          "samples": 13
+        }
+      ],
+      "products": [
+        {
+          "key": "fridge",
+          "bounds": {
+            "x": 230,
+            "y": 499,
+            "z": 0,
+            "w": 85.00000000074505,
+            "d": 91.2,
+            "h": 179
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "wine",
+          "bounds": {
+            "x": 435.85,
+            "y": 469.15,
+            "z": 0,
+            "w": 66.30000000000001,
+            "d": 65.70000000000002,
+            "h": 85
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "dishwasher",
+          "bounds": {
+            "x": 8.199999618530285,
+            "y": 768.2500003814697,
+            "z": 0,
+            "w": 55.00000035762787,
+            "d": 59.79999923706055,
+            "h": 81.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "oven",
+          "bounds": {
+            "x": 82.14999923706057,
+            "y": 502.20000038146975,
+            "z": 103.30000000000001,
+            "w": 59.400001525878906,
+            "d": 54.79999961853028,
+            "h": 59.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        }
+      ],
+      "chairStatus": "Two seated placeholders retained; 160-degree reclined envelope not supplied, not passed.",
+      "intersections": [],
+      "lightingScenes": 5,
+      "rooms": 13,
+      "equipment": 24
+    },
+    {
+      "version": "v3",
+      "baselineWithoutVanity": "84e7a3f2645194e6ea9cb1d072202bd92ce6c9532a67e2f5626b9b551de3cee7",
+      "changes": {
+        "beforeCommit": "98caae4f5cd8222135cf1a21480d846eaa508b21",
+        "removed": 61,
+        "added": 126,
+        "unrelatedRoomsUnchanged": true
+      },
+      "inventory": [
+        {
+          "room": "主臥",
+          "checked": [
+            "180 × 202 KING 床",
+            "主臥靠窗化妝台",
+            "投影機層板"
+          ]
+        },
+        {
+          "room": "更衣室",
+          "checked": [
+            "更衣室窗前矮櫃",
+            "更衣室頂天櫃",
+            "更衣室側移滑鏡",
+            "開放式更衣櫃"
+          ]
+        },
+        {
+          "room": "雙人書房",
+          "checked": [
+            "FUNTE 180",
+            "Samsung 57",
+            "書房九抽收納",
+            "書房模型玻璃門"
+          ]
+        },
+        {
+          "room": "廚房",
+          "checked": [
+            "A區120cm雙開水槽櫃",
+            "ICNh5123 外覆門板分割",
+            "C區80cm收納高櫃",
+            "BELEGA"
+          ]
+        },
+        {
+          "room": "主浴",
+          "checked": [
+            "TOTO NX2",
+            "浴缸",
+            "主浴淋浴立桿",
+            "懸吊浴櫃"
+          ]
+        },
+        {
+          "room": "客浴",
+          "checked": [
+            "TOTO LS",
+            "客浴地面",
+            "浴室鏡櫃"
+          ]
+        },
+        {
+          "room": "儲藏室",
+          "checked": [
+            "儲藏室鐵件層架",
+            "儲藏室拉門"
+          ]
+        },
+        {
+          "room": "後陽台",
+          "checked": [
+            "WashTower",
+            "後陽台水槽右側頂天收納櫃",
+            "室外機"
+          ]
+        },
+        {
+          "room": "客廳",
+          "checked": [
+            "OLED83G6",
+            "Q7 Meta",
+            "SB-2000",
+            "沙發"
+          ]
+        },
+        {
+          "room": "中島",
+          "checked": [
+            "WKb1712",
+            "Saros 20",
+            "WS2-C1",
+            "PIB375FB1E"
+          ]
+        },
+        {
+          "room": "玄關",
+          "checked": [
+            "玄關",
+            "帽鉤"
+          ]
+        },
+        {
+          "room": "收藏區",
+          "checked": [
+            "玻璃展示"
+          ]
+        }
+      ],
+      "structuralColumns": 6,
+      "wallResults": [
+        {
+          "x": 405,
+          "y": 0,
+          "w": 10,
+          "d": 123,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 10,
+          "d": 158,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 745,
+          "y": 0,
+          "w": 10,
+          "d": 365,
+          "present": true
+        },
+        {
+          "x": 580,
+          "y": 260,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 210,
+          "y": 745,
+          "w": 10,
+          "d": 210,
+          "present": true
+        }
+      ],
+      "motion": [
+        {
+          "key": "mirror",
+          "closed": {
+            "x": -57,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          },
+          "open": {
+            "x": -22,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          }
+        },
+        {
+          "key": "stool",
+          "closed": {
+            "x": -43,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          },
+          "open": {
+            "x": 5,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          }
+        },
+        {
+          "key": "drawer",
+          "closed": {
+            "x": -55,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          },
+          "open": {
+            "x": -20,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          }
+        },
+        {
+          "key": "closetDrawer",
+          "closed": {
+            "x": 689.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          },
+          "open": {
+            "x": 654.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          }
+        }
+      ],
+      "bedSideClearClosed": 90,
+      "bedSideClearWithStool": 55,
+      "passages": [
+        {
+          "key": "storage",
+          "samples": 13
+        }
+      ],
+      "products": [
+        {
+          "key": "fridge",
+          "bounds": {
+            "x": 230,
+            "y": 499,
+            "z": 0,
+            "w": 85.00000000074505,
+            "d": 91.2,
+            "h": 179
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "wine",
+          "bounds": {
+            "x": 429,
+            "y": 488,
+            "z": 0,
+            "w": 66.30000000000001,
+            "d": 65.7,
+            "h": 85
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "dishwasher",
+          "bounds": {
+            "x": 8.199999618530285,
+            "y": 768.2500003814697,
+            "z": 0,
+            "w": 55.00000035762787,
+            "d": 59.79999923706055,
+            "h": 81.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "oven",
+          "bounds": {
+            "x": 82.14999923706057,
+            "y": 502.20000038146975,
+            "z": 103.30000000000001,
+            "w": 59.400001525878906,
+            "d": 54.79999961853028,
+            "h": 59.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        }
+      ],
+      "chairStatus": "Two seated placeholders retained; 160-degree reclined envelope not supplied, not passed.",
+      "intersections": [],
+      "lightingScenes": 5,
+      "rooms": 13,
+      "equipment": 24
+    },
+    {
+      "version": "v4",
+      "baselineWithoutVanity": "6c0f4f1315e07fc0f754fe3ed9736b3e9c3a40449182ebdd8e78f8b4a175e22b",
+      "changes": {
+        "beforeCommit": "98caae4f5cd8222135cf1a21480d846eaa508b21",
+        "removed": 61,
+        "added": 126,
+        "unrelatedRoomsUnchanged": true
+      },
+      "inventory": [
+        {
+          "room": "主臥",
+          "checked": [
+            "180 × 202 KING 床",
+            "主臥靠窗化妝台",
+            "投影機層板"
+          ]
+        },
+        {
+          "room": "更衣室",
+          "checked": [
+            "更衣室窗前矮櫃",
+            "更衣室頂天櫃",
+            "更衣室側移滑鏡",
+            "開放式更衣櫃"
+          ]
+        },
+        {
+          "room": "雙人書房",
+          "checked": [
+            "FUNTE 180",
+            "Samsung 57",
+            "書房九抽收納",
+            "書房模型玻璃門"
+          ]
+        },
+        {
+          "room": "廚房",
+          "checked": [
+            "A區120cm雙開水槽櫃",
+            "ICNh5123 外覆門板分割",
+            "C區80cm收納高櫃",
+            "BELEGA"
+          ]
+        },
+        {
+          "room": "主浴",
+          "checked": [
+            "TOTO NX2",
+            "浴缸",
+            "主浴淋浴立桿",
+            "懸吊浴櫃"
+          ]
+        },
+        {
+          "room": "客浴",
+          "checked": [
+            "TOTO LS",
+            "客浴地面",
+            "浴室鏡櫃"
+          ]
+        },
+        {
+          "room": "儲藏室",
+          "checked": [
+            "儲藏室鐵件層架",
+            "儲藏室拉門"
+          ]
+        },
+        {
+          "room": "後陽台",
+          "checked": [
+            "WashTower",
+            "後陽台水槽右側頂天收納櫃",
+            "室外機"
+          ]
+        },
+        {
+          "room": "客廳",
+          "checked": [
+            "OLED83G6",
+            "Q7 Meta",
+            "SB-2000",
+            "沙發"
+          ]
+        },
+        {
+          "room": "中島",
+          "checked": [
+            "WKb1712",
+            "Saros 20",
+            "WS2-C1",
+            "PIB375FB1E"
+          ]
+        },
+        {
+          "room": "玄關",
+          "checked": [
+            "玄關",
+            "帽鉤"
+          ]
+        },
+        {
+          "room": "收藏區",
+          "checked": [
+            "玻璃展示"
+          ]
+        }
+      ],
+      "structuralColumns": 6,
+      "wallResults": [
+        {
+          "x": 405,
+          "y": 0,
+          "w": 10,
+          "d": 123,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 10,
+          "d": 158,
+          "present": true
+        },
+        {
+          "x": 405,
+          "y": 207,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 745,
+          "y": 0,
+          "w": 10,
+          "d": 365,
+          "present": true
+        },
+        {
+          "x": 580,
+          "y": 260,
+          "w": 165,
+          "d": 10,
+          "present": true
+        },
+        {
+          "x": 210,
+          "y": 745,
+          "w": 10,
+          "d": 210,
+          "present": true
+        }
+      ],
+      "motion": [
+        {
+          "key": "mirror",
+          "closed": {
+            "x": -57,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          },
+          "open": {
+            "x": -22,
+            "y": 167,
+            "z": 75.8,
+            "w": 18,
+            "d": 36,
+            "h": 57.000000000000014
+          }
+        },
+        {
+          "key": "stool",
+          "closed": {
+            "x": -43,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          },
+          "open": {
+            "x": 5,
+            "y": 170,
+            "z": 0,
+            "w": 40,
+            "d": 40,
+            "h": 45
+          }
+        },
+        {
+          "key": "drawer",
+          "closed": {
+            "x": -55,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          },
+          "open": {
+            "x": -20,
+            "y": 90.29999923706055,
+            "z": 50.6,
+            "w": 65,
+            "d": 35.400001525878906,
+            "h": 20.999999999999993
+          }
+        },
+        {
+          "key": "closetDrawer",
+          "closed": {
+            "x": 689.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          },
+          "open": {
+            "x": 654.6999999940396,
+            "y": 134,
+            "z": 59.99999961853027,
+            "w": 48.30000000596044,
+            "d": 59,
+            "h": 22.700000762939453
+          }
+        }
+      ],
+      "bedSideClearClosed": 90,
+      "bedSideClearWithStool": 55,
+      "passages": [
+        {
+          "key": "storage",
+          "samples": 13
+        }
+      ],
+      "products": [
+        {
+          "key": "fridge",
+          "bounds": {
+            "x": 230,
+            "y": 499,
+            "z": 0,
+            "w": 85.00000000074505,
+            "d": 91.2,
+            "h": 179
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "wine",
+          "bounds": {
+            "x": 429,
+            "y": 483.04999999999995,
+            "z": 0,
+            "w": 66.30000000000001,
+            "d": 65.7,
+            "h": 85
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "dishwasher",
+          "bounds": {
+            "x": 8.199999618530285,
+            "y": 768.2500003814697,
+            "z": 0,
+            "w": 55.00000035762787,
+            "d": 59.79999923706055,
+            "h": 81.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        },
+        {
+          "key": "oven",
+          "bounds": {
+            "x": 82.14999923706057,
+            "y": 502.20000038146975,
+            "z": 103.30000000000001,
+            "w": 59.400001525878906,
+            "d": 54.79999961853028,
+            "h": 59.5
+          },
+          "status": "Body checked; exact manufacturer door/drawer envelope remains pending. Existing allowance is a planning zone, not a certified clearance."
+        }
+      ],
+      "chairStatus": "Two seated placeholders retained; 160-degree reclined envelope not supplied, not passed.",
+      "intersections": [],
+      "lightingScenes": 5,
+      "rooms": 13,
+      "equipment": 24
+    }
+  ]
+}
