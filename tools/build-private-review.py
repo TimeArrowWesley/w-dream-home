@@ -47,7 +47,7 @@ body += pair('vanity','化妝台：鏡子、抽屜與側邊插座')
 body += '<figure><img loading="lazy" src="use-vanity.png" alt="鏡子拉近、椅凳與上抽拉出"><figcaption>使用狀態：椅凳與抽屜拉出。床側縮至55cm，使用完成請收回。</figcaption></figure>'
 body += pair('bedroom','主臥：材質和橫向指拉一致')+pair('closet','更衣室：轉角前的分隔抽屜')
 body += '<figure><img loading="lazy" src="use-closet.png" alt="更衣室上層分隔抽屜拉出"><figcaption>抽屜展開35cm；南側原衣櫃與滑鏡軌道保留。</figcaption></figure>'
-body += '<h2>使用時的空間</h2>'+table(['項目','核對結果','使用或確認事項'],use)
+body += '<p class="note">後續更新：依業主指示，儲藏室已改為可調式層架，原暫置矮櫃移除。<a href="../20260911儲藏室可調層架/index.html">查看可調層架配置</a>；以下為本次全屋核對當時的紀錄。</p><h2>使用時的空間</h2>'+table(['項目','核對結果','使用或確認事項'],use)
 body += '<h2>原圖與後續方案逐區核對</h2>'+table(['區域','核對與差異'],inventory)
 body += '<h2>驗證範圍</h2><p>四版保留13個導覽位置和24個設備實例。相對前一版，幾何差異限於主臥、更衣室與儲藏拉門區；家具平移每項檢查11個位置，未與固定物件相交。儲藏室關門阻擋、開門通行及步行者避讓均測試。</p><p>五種情境、窗簾聯動、按鈕狀態、四版頁面切換及靜止停止送出繪圖的程式行為已驗證。未在瀏覽器實測GPU幀率、噪音、反射或照度，也不取代現場放樣。</p><p><a href="驗證.json">檢查數據</a> · <a href="https://jp.libernovo.com/pages/libernovo-omni-pro-dynamic-ergonomic-chair">Omni PRO原廠角度資料</a> · <a href="https://www.lg.com/tw/refrigerators/side-by-side/gr-qplc82ss/">主冰箱原廠</a></p></main></html>'
 body = body.replace('两張','兩張').replace('灯','燈').replace('恢复','恢復')

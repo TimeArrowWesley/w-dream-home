@@ -5,6 +5,48 @@ window.HOME_SHARED_OPENINGS={
   const m=box(654,376,82,3,.3,214.4,M.black,g,'儲藏室拉門','原圖80cm開口；門扇向左收在走道側，外掛五金為放樣提案。');m.userData.slideRatio=1;m.userData.walkDoor=true;
   wall(655,365,80,10,30,215);box(573,375,164,5,215,4,M.steel,architecture,'儲藏拉門上吊軌');return g;}
 };
+// Shared adjustable storage racks; shelf heights describe a proposed physical setup.
+window.HOME_STORAGE_BUILD=function({T,M,pos,box,info,fittings}){
+ const root=new T.Group();root.name='儲藏室可調式層架';fittings.add(root);
+ const steel=M.steel.clone();steel.color.set('#424b4a');steel.roughness=.72;
+ const shelfMat=M.steel.clone();shelfMat.color.set('#697270');shelfMat.roughness=.8;
+ const shelves=[];
+ function piece(name,x,y,w,d,z,h,material=steel,parent=root){const m=box(x,y,w,d,z,h,material,parent,name);m.userData.adjustableStorage=true;return m;}
+ // Slotted steel standards have actual openings, rather than an opaque painted strip.
+ function standard(x,y,west){
+  const shape=new T.Shape();shape.moveTo(0,0);shape.lineTo(3,0);shape.lineTo(3,235);shape.lineTo(0,235);shape.closePath();
+  for(let z=10;z<=225;z+=5){const hole=new T.Path();hole.moveTo(1,z);hole.lineTo(1,z+2);hole.lineTo(2,z+2);hole.lineTo(2,z);hole.closePath();shape.holes.push(hole);}
+  const m=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:1.5,bevelEnabled:false,curveSegments:1}),steel);
+  m.position.copy(pos(x,west?y+3:y,0));if(west)m.rotation.y=Math.PI/2;m.castShadow=m.receiveShadow=true;root.add(m);
+  info(m,'儲藏層架・5cm調整孔柱','235cm高；層板連托架可按5cm孔距重新安裝或拆除。五金與牆體固定方式待選型。');m.userData.adjustableStorage=true;
+  for(const z of [4,119,229]){
+   if(west)piece('孔柱壁面固定座',580.2,y,1.8,3,z,3);
+   else piece('孔柱壁面固定座',x,270.2,3,1.8,z,3);
+  }
+ }
+ for(const y of [285,345])standard(582,y,true);
+ for(const x of [662,723])standard(x,272,false);
+ function shelf(side,clearHeight){
+  const g=new T.Group();g.name='儲藏室'+(side==='west'?'左側':'推車位上方')+'可拆層板';root.add(g);
+  const west=side==='west',x=west?584:647,y=274,w=west?55:90,d=west?85:45;
+  const top=piece(west?'儲藏室鐵件層架・可調層板':'推車位・可調層板',x,y,w,d,clearHeight+6,2,shelfMat,g);
+  top.userData.desc=(west?'左側85cm寬×55cm深':'門正對90cm寬×45cm深')+'；含托架下緣高度'+clearHeight+'cm，5cm一格可調或整片拆除。';
+  // The panel bears directly on two cantilever brackets connected to the standards.
+  if(west)for(const yy of [285.5,345.5]){
+   piece('層板承重托架',583.5,yy,53,2,clearHeight,6,steel,g);
+   piece('托架扣接座',582.8,yy,.7,2,clearHeight,6,steel,g);
+  }else for(const xx of [662.5,723.5]){
+   piece('層板承重托架',xx,273.5,2,43,clearHeight,6,steel,g);
+   piece('托架扣接座',xx,272.8,2,.7,clearHeight,6,steel,g);
+  }
+  g.userData.adjustableShelf={side,clearHeight,pitch:5,removable:true};shelves.push(g);return g;
+ }
+ for(const z of [45,100,155,210])shelf('west',z);
+ for(const z of [140,210])shelf('north',z);
+ // No floor plinth, front posts or fixed crossbars interrupt the roll-in parking area.
+ root.userData.storage={adjustable:true,pitch:5,height:235,left:{width:85,depth:55},north:{width:90,depth:45},parking:{x:657.5,y:274,z:0,w:75,d:90,h:140},doorClearWidth:80};
+ window.HOME_STORAGE_MODEL={root,shelves,spec:root.userData.storage};return window.HOME_STORAGE_MODEL;
+};
 // Shared private-room detailing. All dimensions are cm and proposed millwork sizes.
 window.HOME_BEDROOM_BUILD=function(C){
  const {T,M,pos,box,cyl,info,fittings,architecture,roomLights,vanity,pickables}=C;

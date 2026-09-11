@@ -1,0 +1,94 @@
+{
+  "method": "Actual Three.js meshes and walk colliders; CPU review omits GPU materials and lighting.",
+  "baseline": "09b45775041891b2e82ba8981406899414feef3c",
+  "versions": [
+    {
+      "version": "v1",
+      "shelves": 6,
+      "pitchCm": 5,
+      "parking": {
+        "x": 657.5,
+        "y": 274,
+        "z": 0,
+        "w": 75,
+        "d": 90,
+        "h": 140
+      },
+      "doorWidthCm": 80,
+      "otherRoomsUnchanged": true,
+      "walkAccess": true,
+      "sampleRollInEnvelope": {
+        "w": 75,
+        "d": 70,
+        "h": 130
+      },
+      "actualDolphinEnvelopeVerified": false
+    },
+    {
+      "version": "v2",
+      "shelves": 6,
+      "pitchCm": 5,
+      "parking": {
+        "x": 657.5,
+        "y": 274,
+        "z": 0,
+        "w": 75,
+        "d": 90,
+        "h": 140
+      },
+      "doorWidthCm": 80,
+      "otherRoomsUnchanged": true,
+      "walkAccess": true,
+      "sampleRollInEnvelope": {
+        "w": 75,
+        "d": 70,
+        "h": 130
+      },
+      "actualDolphinEnvelopeVerified": false
+    },
+    {
+      "version": "v3",
+      "shelves": 6,
+      "pitchCm": 5,
+      "parking": {
+        "x": 657.5,
+        "y": 274,
+        "z": 0,
+        "w": 75,
+        "d": 90,
+        "h": 140
+      },
+      "doorWidthCm": 80,
+      "otherRoomsUnchanged": true,
+      "walkAccess": true,
+      "sampleRollInEnvelope": {
+        "w": 75,
+        "d": 70,
+        "h": 130
+      },
+      "actualDolphinEnvelopeVerified": false
+    },
+    {
+      "version": "v4",
+      "shelves": 6,
+      "pitchCm": 5,
+      "parking": {
+        "x": 657.5,
+        "y": 274,
+        "z": 0,
+        "w": 75,
+        "d": 90,
+        "h": 140
+      },
+      "doorWidthCm": 80,
+      "otherRoomsUnchanged": true,
+      "walkAccess": true,
+      "sampleRollInEnvelope": {
+        "w": 75,
+        "d": 70,
+        "h": 130
+      },
+      "actualDolphinEnvelopeVerified": false
+    }
+  ]
+}

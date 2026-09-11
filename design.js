@@ -268,8 +268,8 @@ showerPart(179,477,2,2,107,107,'主浴淋浴立桿');showerPart(179,451,2,28,213
 cyl(180,451,211,10,2,M.steel,shower);showerPart(194,476,3,3,143,14,'手持蓮蓬頭');
 const hoseCurve=new T.CatmullRomCurve3([pos(192,477,104),pos(195,468,70),pos(201,471,76),pos(195.5,477,143)]);shower.add(new T.Mesh(new T.TubeGeometry(hoseCurve,24,.65,6,false),M.steel));
 basin(496,218,66,45);EQ.product('ls',445.7,263.25,0,'S',fittings,'客浴：本型號排水適用30.5～43.5cm；房間內徑与排水須複量。');box(421,295,141,64,.2,.8,M.grey,fittings,'客浴地面');
-// Storage utility shelves and suitcases.
-for(const z of [8,55,105,155,205])box(584,274,55,85,z,2,M.steel,fittings,z===8?'儲藏室鐵件層架':undefined);for(const x of [584,637])for(const y of [274,357])box(x,y,2,2,0,240,M.steel);for(let z=57;z<205;z+=50)box(590,282,40,55,z,32,M.grey);box(657,274,60,45,0,85,M.black,fittings,'儲藏收納（暫置）');
+// Shared adjustable shelves with an open floor-level trolley bay.
+window.HOME_STORAGE_BUILD({T,M,pos,box,info,fittings});
 // Luggage is now inside the purpose-built B cabinet, not in the aisle.
 // Rear balcony: open outer edge, laundry tower facing the access aisle.
 EQ.product('washer',-43,850.5,0,'N',fittings,'70×77×189cm，非原代理185cm高；後方接管与搬入淨空另計。');
@@ -395,7 +395,7 @@ const ROOMS=[
 {id:'collection',n:'收藏室',en:'COLLECTION',p:[425,853,152],t:[285,885,120],note:'公共面245cm玻璃展示，內部精品包與行李收納；入口依東側改門提案。',label:[350,845]},
 {id:'bath1',n:'主浴',en:'BATH 01',p:[49,314,158],t:[172,449,103],note:'灰石紋、黑鐵玻璃淋浴隔間、浴缸與鏡櫃；衛浴外型為新增提案。',label:[170,390]},
 {id:'bath2',n:'客浴',en:'BATH 02',p:[548,345,151],t:[468,245,98],note:'保留原設備區位；以黑灰浴櫃、白色陶瓷及鏡面補足明暗層次。',label:[490,286]},
-{id:'storage',n:'儲藏室',en:'STORAGE',p:[706,350,155],t:[610,294,115],note:'黑鐵開放層架與封閉收納；內容物為示意，設備檢修空間需整合。',label:[665,315]},
+{id:'storage',n:'儲藏室',en:'STORAGE',p:[706,350,155],t:[610,294,115],note:'5cm孔距可調式層架；門正對區下方開放，先留75×90×高140cm推車停放空間，層板可依需求移高或拆除。',label:[665,315]},
 {id:'back',n:'後陽台',en:'UTILITY',p:[-95,605,155],t:[-102,840,98],note:'洗衣、洗手台與設備區概念；外機及給排水依正式機電圖複核。',label:[-130,690]},
 ];
 ROOMS.slice(1).forEach(r=>roomLabel(r.n,...r.label));

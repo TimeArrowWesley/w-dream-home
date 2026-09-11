@@ -74,6 +74,7 @@
 !/tools/verify-private-upgrade.cjs
 !/tools/verify-render-performance.cjs
 !/tools/verify-retained-versions.cjs
+!/tools/verify-storage-shelves.cjs
 !/tools/verify-viewer-ui.cjs
 !/tour.js
 !/version-changes.js
@@ -254,6 +255,11 @@
 !/調整紀錄/20260911主臥隔牆/after-bed-wall.png
 !/調整紀錄/20260911主臥隔牆/before-bed-wall.png
 !/調整紀錄/20260911主臥隔牆/驗證.json
+!/調整紀錄/20260911儲藏室可調層架/
+!/調整紀錄/20260911儲藏室可調層架/after-storage.png
+!/調整紀錄/20260911儲藏室可調層架/before-storage.png
+!/調整紀錄/20260911儲藏室可調層架/index.html
+!/調整紀錄/20260911儲藏室可調層架/驗證.json
 !/調整紀錄/20260911全屋核對與主臥細節/
 !/調整紀錄/20260911全屋核對與主臥細節/after-bedroom.png
 !/調整紀錄/20260911全屋核對與主臥細節/after-closet.png
