@@ -1,0 +1,185 @@
+{
+  "method": "Real scene, camera and feature animation loops; renderer submissions counted offline. Not wall-clock FPS, GPU utilization or fan measurements.",
+  "versions": {
+    "v1": {
+      "idle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "moving10Seconds": {
+        "draws": 300,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "walkIdle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "door": {
+        "draws": 86,
+        "shadows": 18,
+        "rgb": 0,
+        "picks": 0
+      },
+      "curtain": {
+        "draws": 41,
+        "shadows": 9,
+        "rgb": 0,
+        "picks": 0
+      },
+      "rgb3Seconds": {
+        "draws": 90,
+        "shadows": 0,
+        "rgb": 90,
+        "picks": 0
+      },
+      "hidden5Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "checks": "door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed"
+    },
+    "v2": {
+      "idle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "moving10Seconds": {
+        "draws": 300,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "walkIdle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "door": {
+        "draws": 86,
+        "shadows": 18,
+        "rgb": 0,
+        "picks": 0
+      },
+      "curtain": {
+        "draws": 41,
+        "shadows": 9,
+        "rgb": 0,
+        "picks": 0
+      },
+      "rgb3Seconds": {
+        "draws": 90,
+        "shadows": 0,
+        "rgb": 90,
+        "picks": 0
+      },
+      "hidden5Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "checks": "door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed"
+    },
+    "v3": {
+      "idle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "moving10Seconds": {
+        "draws": 300,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "walkIdle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "door": {
+        "draws": 86,
+        "shadows": 18,
+        "rgb": 0,
+        "picks": 0
+      },
+      "curtain": {
+        "draws": 41,
+        "shadows": 9,
+        "rgb": 0,
+        "picks": 0
+      },
+      "rgb3Seconds": {
+        "draws": 90,
+        "shadows": 0,
+        "rgb": 90,
+        "picks": 0
+      },
+      "hidden5Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "checks": "door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed"
+    },
+    "v4": {
+      "idle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "moving10Seconds": {
+        "draws": 300,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "walkIdle10Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "door": {
+        "draws": 86,
+        "shadows": 18,
+        "rgb": 0,
+        "picks": 0
+      },
+      "curtain": {
+        "draws": 41,
+        "shadows": 9,
+        "rgb": 0,
+        "picks": 0
+      },
+      "rgb3Seconds": {
+        "draws": 90,
+        "shadows": 0,
+        "rgb": 90,
+        "picks": 0
+      },
+      "hidden5Seconds": {
+        "draws": 0,
+        "shadows": 0,
+        "rgb": 0,
+        "picks": 0
+      },
+      "checks": "door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed"
+    }
+  }
+}

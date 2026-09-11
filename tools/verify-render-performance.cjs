@@ -31,5 +31,5 @@ function sample(f,n,action){const before=counters(f);for(let i=0;i<n;i++){action
   const before=counters(f).draws;R.render(true);assert(counters(f).draws>before,'explicit export forces a fresh frame');
   report.versions[n===5?'v4':'v'+(n-1)]={idle10Seconds:idle,moving10Seconds:moving,walkIdle10Seconds:walkIdle,door,curtain,rgb3Seconds:rgb,hidden5Seconds:hidden,checks:'door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed'};
  }
- const out=path.join(root,'調整紀錄/20260911效能優化');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'效能驗證.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+ const out=path.resolve(process.env.HOME_TEST_REPORT_DIR||path.join(root,'調整紀錄/20260911效能優化'));fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'效能驗證.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 })().catch(e=>{console.error(e);process.exit(1);});

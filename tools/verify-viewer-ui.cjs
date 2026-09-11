@@ -158,6 +158,6 @@ const retained=JSON.parse(read('調整紀錄/20260910開放大中島/驗證.json
 for(const v of ['v1','v2'])assert(retained.retained[v].meshes>2000);
 checks.push('V1/V2 full mesh geometry verified separately; four-design UI and shared furniture handlers preserved');
 const files=['viewer-ui.js','viewer-ui.css','viewer-base.css','walk.js','furniture-app.js','furniture.css','index.html','提案/旋轉電視與直線中島/index.html'];
-const out=path.join(R,'調整紀錄/20260910介面重整');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'介面驗證.json'),JSON.stringify({date:new Date().toISOString(),method:'LinkeDOM with actual tour, walk, interaction, AI, equipment and furniture UI handlers; camera-only Three.js fixture. No browser layout or GPU rendering.',checks,hashes:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(read(f)).digest('hex')]))},null,2));
+const out=path.resolve(process.env.HOME_TEST_REPORT_DIR||path.join(R,'調整紀錄/20260910介面重整'));fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'介面驗證.json'),JSON.stringify({date:new Date().toISOString(),method:'LinkeDOM with actual tour, walk, interaction, AI, equipment and furniture UI handlers; camera-only Three.js fixture. No browser layout or GPU rendering.',checks,hashes:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(read(f)).digest('hex')]))},null,2));
 console.log(checks.join('\n'));
 })().catch(e=>{console.error(e);process.exitCode=1;});

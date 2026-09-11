@@ -1,0 +1,28 @@
+{
+  "reviewed": "2026-09-11",
+  "method": "查閱專案文章、設計師說明與可取得的圖說；保留原案例圖集連結。部分原圖工具無法載入，不宣稱逐張照片均完成視覺核對。以下『用在本案』是本案設計判斷，並非原作者的建議。",
+  "cases": [
+    {"name":"Dallas Apartment","designer":"Olson Kundig","type":"住宅","url":"https://www.archdaily.com/923373/dallas-apartment-olson-kundig","feature":"黑化鋼、胡桃木、黑色磨石子與可開合酒吧，材質各有角色。","apply":"V1 黑石弧吧配深木；V2、V3 電視機構改黑化鋼板質感。","omit":"不照搬紅色酒吧及大量古銅色。"},
+    {"name":"Minimalistic Industrial Loft","designer":"IDwhite","type":"住宅","url":"https://www.archdaily.com/907780/minimalistic-industrial-loft-idwhite","feature":"保留混凝土結構，以黑色細節、木材與向上反射的可調光拉出層次。","apply":"牆、梁、櫃體分明暗；日常白光及酒吧情境分開控制。","omit":"不照搬黃色衣櫃及整屋明亮色調。"},
+    {"name":"Concrete Apartment","designer":"Peninsula Arquitetura","type":"住宅","url":"https://www.archdaily.com/979115/concrete-apartment-peninsula-arquitetura","feature":"中島社交側用木，工作側用不鏽鋼；粗獷結構搭配細緻操作面。","apply":"V2 銀拉絲側面；V3、V4 深木外側與霧黑檢修面分材質。","omit":"不改動已確認的設備分艙、出入口或格局。"},
+    {"name":"MLÝN Apartment Renovation","designer":"OOOX","type":"住宅","url":"https://www.oooox.com/en/portfolio/apartment-renovation-mlyn","feature":"黑化鋼、擴張網、煙燻玻璃、黑橡木廚具相互配合。","apply":"細黑金屬骨架、清楚木紋與玻璃反射分開呈現。","omit":"不添加無功能的鐵網牆；公仔展示維持清玻璃。"},
+    {"name":"VANGUARD Loft — Art and Open Space","designer":"OOOX","type":"住宅","url":"https://www.oooox.com/en/portfolio/loft-vanguard-interior","feature":"黑色收納量體、粗混凝土、織物與收藏物形成畫廊式生活空間。","apply":"展示櫃用深木背景托住收藏；控制展示燈，讓櫃體退到背景。","omit":"不增加裝飾公仔或大型藝術品占用動線。"},
+    {"name":"Vienna Loft Renovation","designer":"OOOX","type":"住宅","url":"https://www.oooox.com/en/portfolio/loft-in-vienna-renovation","feature":"粗糙表面、深色量體與乾淨內嵌家具形成對照。","apply":"礦物塗料牆面對比緻密石材和木櫃，控制全屋主材數量。","omit":"不照搬高樓層挑空與大面積淺木。"},
+    {"name":"Bed-Stuy Loft","designer":"New Affiliates","type":"住宅","url":"https://www.archdaily.com/881723/bed-stuy-loft-new-affiliates","feature":"粗夾板、鋼與擴張網以精簡的形體區分生活區。","apply":"採用粗與細的對比，讓木紋和細緻金屬同時可辨認。","omit":"夾板大牆、粉彩與白色網狀夾層不適用本案。"},
+    {"name":"Michigan Loft","designer":"Vladimir Radutny Architects","type":"住宅","url":"https://www.archdaily.com/924129/michigan-loft-vladimir-radutny-architects","feature":"木質入口過渡、黑鋼量體及分層燈光降低大空間的空洞感。","apply":"玄關櫃恢復深木，延續至鄰接收納；公共區使用有重點的亮暗。","omit":"不新增地台、高差或夾層。"},
+    {"name":"Gentle Heart of Steel／溫柔鋼鐵心","designer":"HAO Design","type":"住宅","url":"https://www.archdaily.com/883789/gentle-heart-of-steel-hao-design","feature":"水泥、染色木皮、不鏽鋼及展示式收納融合工業與居家細節。","apply":"保留黑灰基底，但用木孔、金屬光澤與展示照明拉開質地。","omit":"不採用本案例的淺木、日系明亮感與花磚。"},
+    {"name":"Loft Apartment","designer":"2b Group","type":"住宅","url":"https://www.archdaily.com/189945/loft-apartment-2b-group","feature":"混凝土、玻璃、木、金屬和柔軟家具，以多樣表面構成同一空間。","apply":"深木地板、礦物牆、織毯、黑玻分工，避免同色同粗糙度。","omit":"不照搬貨櫃、植物牆、紅色和綠色裝飾。"},
+    {"name":"Apartment Refurbishment in Taipei","designer":"CHI-TORCH Interior Design","type":"住宅","url":"https://homeworlddesign.com/taipei-apartment-industrial-and-vintage/","feature":"舊屋材料、拼木地板、金屬與手作品並存，保留時間感。","apply":"木色保留自然深棕，與乾淨黑金屬形成新舊質感對比。","omit":"不採用紅磚、復古家具及過度做舊。"},
+    {"name":"Apartment X","designer":"KC Design Studio","type":"住宅","url":"https://www.archdaily.com/902749/apartment-x-kc-design-studio","feature":"木、鋼、混凝土與可變家具，讓機能和材質一起組織小空間。","apply":"材質安排跟隨工作、收藏、觀看等使用面，保留可動設備。","omit":"不移植夾層與旋轉餐桌。"},
+    {"name":"Industrial Tribeca","designer":"Studio Esnal","type":"住宅","url":"https://www.archdaily.com/776597/industrial-tribeca-studio-esnal","feature":"不鏽鋼反覆出現在工作檯、窗台等部位，搭配木地板。","apply":"廚房收納門與中島水槽使用銀色拉絲，從霧黑櫃中分離。","omit":"不照搬裸露空調和彩色管路。"},
+    {"name":"Industrial Loft in Athens","designer":"Konstantinos Pittas","type":"住宅","url":"https://www.archdaily.com/892301/industrial-loft-in-athens-konstantinos-pittas","feature":"既有混凝土梁、金屬、磨光水泥、木與玻璃滑門搭配。","apply":"牆面粗感與金屬細框對照，維持廚房玻璃門的通透性。","omit":"不增設移動式中島或落地隔簾。"},
+    {"name":"Loft is Loft","designer":"MARTIN’S Studio","type":"住宅","url":"https://www.martins.com.ua/ua/portfolio/loft-is-loft","feature":"深色染木地板、工廠式窗和外露構造，結合現代設備。","apply":"深煙燻棕地板提供有木色的基底，設備維持原功能。","omit":"不照搬紅磚與壁爐。"},
+    {"name":"Tribeca Loft","designer":"Office of Architecture","type":"住宅","url":"https://www.oa-ny.com/tribeca-loft","feature":"胡桃木多功能櫃、懸臂吧台及可滑動隔板統整生活與收納。","apply":"玄關、影音底櫃與主臥木作共用一種深木，讓接續面更一致。","omit":"不新增懸空櫃體或變更已確認尺寸。"},
+    {"name":"Bajo Comercial Convertido En Loft","designer":"Egue y Seta","type":"住宅","url":"https://www.archdaily.com/525842/bajo-comercial-convertido-en-loft-egue-y-seta","feature":"亮面不鏽鋼櫃門搭木工作面，深灰鋼梁與玻璃讓空間通透。","apply":"V2 小中島以銀色拉絲側面對比灰脈紋檯面及深木地板。","omit":"不移植室內庭園、下沉客廳與大吊燈。"},
+    {"name":"Ace Hotel New York","designer":"Roman and Williams","type":"旅館／酒吧","url":"https://www.archdaily.com/52016/ace-hotel-roman-and-williams","feature":"耐用黑鋼管、木與皮革，透過小尺度家具和局部照明形成酒吧氣氛。","apply":"公共區既有酒吧情境保留，降低環境光、保留展示重點光。","omit":"只借鑑材質與氛圍，不將旅館復古裝飾搬回家。"},
+    {"name":"Apartment AD 02","designer":"COZY. Design Studio","type":"住宅","url":"https://www.cozydesign.bg/en/projects/apartament-ad02/","feature":"深木、混凝土、金屬與自然磚用不同紋理組成濃厚空間。","apply":"深木恢復木色與明顯紋理，織物增加觸感層次。","omit":"不採用米色大面積、暖紅磚和橘色木材。"},
+    {"name":"N. Moore Loft","designer":"DHD Architecture & Interior Design","type":"住宅","url":"https://dhd.nyc/portfolio/n-moore-loft/","feature":"外露混凝土柱、黑化鋼玻璃框、胡桃木細節區分公共和私密空間。","apply":"主臥更安定的木與織物，公共區金屬、石材的對比更強。","omit":"不新增高差或拆除臥室隔間。"},
+    {"name":"West Village Loft","designer":"Riverside Design","type":"住宅","url":"https://www.riverside-design.com/west-village-loft","feature":"黑化鋼與半透明玻璃隔屏，搭手工水泥塗料和雕塑性曲線。","apply":"既有圓弧中島維持曲線，材質沿曲面連續；牆面保留手抹層次。","omit":"收藏展示不改霧玻璃，以免遮住公仔。"},
+    {"name":"The Factory／Old Street Loft","designer":"McLaren.Excell","type":"住宅","url":"https://www.metalocus.es/en/news/living-old-factory-mclarenexcell","feature":"粗混凝土、平滑塗料、黑化鋼與 Nordic Blue 石材，以少量主材做出豐富層次。","apply":"V3 銀白脈紋、V4 深礦石中島成為焦點，搭黑鋼與深木。","omit":"採用材質關係；不宣稱模型石紋是該品牌或天然石實板。"}
+  ]
+}

@@ -31,7 +31,7 @@ function lightSnapshot(f){return f.V.finishContext.roomLights.map(l=>({power:l.i
   L.setScene('game');assert.equal(c.HOME_RGB.getState().living.mode,'breathe');L.setScene('daily');assert.equal(c.HOME_RGB.getState().living.on,false);
   for(const id of ['kitchen','storage']){c.HOME_INTERACTION.setDoor(id,true);f.tick(80,50);assert(c.HOME_INTERACTION.getState().entries.find(e=>e.key===id).angle>.99);c.HOME_INTERACTION.setDoor(id,false);f.tick(80,50);}
   c.HOME_BEDROOM.setScene('makeup');assert(c.HOME_BEDROOM_MODEL.task.intensity>.5);L.setScene('bar');assert.equal(c.HOME_BEDROOM.getState().scene,'makeup');c.HOME_BEDROOM.setScene('daily');L.setScene('daily');
-  const html=fs.readFileSync(entryPaths[n-2],'utf8');assert(html.includes('industrial-design.js?v=20260911-industrial'));assert(html.includes('comfort-controls.js?v=20260911-industrial'));
+  const html=fs.readFileSync(entryPaths[n-2],'utf8');assert(html.includes('industrial-design.js?v=20260911-layered'));assert(html.includes('comfort-controls.js?v=20260911-industrial'));
   const state={version,structuralGeometryUnchanged:before?true:null,equipment:24,curtains:6,entryFloorSamples:floorSamples,materials:c.HOME_INDUSTRIAL.getState(),floor:floor.pattern,entry:floor.entry.pattern,independentDimmingAndColor:true,doorAndCurtainControls:true,bedroomIndependent:true};report.versions.push(state);console.log(JSON.stringify(state));
   if(process.argv.includes('--images')){
    const view= n===2?{p:[720,725,158],t:[535,515,115]}:n===5?{p:[750,735,170],t:[910,944,112]}:{p:[1010,735,165],t:[590,585,110]};

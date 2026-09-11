@@ -232,7 +232,31 @@
     "調整紀錄/20260911黑灰工業風/after-v4.png",
     "調整紀錄/20260911黑灰工業風/after-entry.png",
     "調整紀錄/20260911黑灰工業風/after-bedroom.png",
-    "調整紀錄/20260911黑灰工業風/介面驗證.json"
+    "調整紀錄/20260911黑灰工業風/介面驗證.json",
+    "industrial-references.json",
+    "調整紀錄/20260911工業材質層次/after-bedroom.png",
+    "調整紀錄/20260911工業材質層次/after-entry.png",
+    "調整紀錄/20260911工業材質層次/after-kitchen.png",
+    "調整紀錄/20260911工業材質層次/after-study.png",
+    "調整紀錄/20260911工業材質層次/after-v1-island.png",
+    "調整紀錄/20260911工業材質層次/after-v1.png",
+    "調整紀錄/20260911工業材質層次/after-v2-island.png",
+    "調整紀錄/20260911工業材質層次/after-v2.png",
+    "調整紀錄/20260911工業材質層次/after-v3-island.png",
+    "調整紀錄/20260911工業材質層次/after-v3.png",
+    "調整紀錄/20260911工業材質層次/after-v4-island.png",
+    "調整紀錄/20260911工業材質層次/after-v4.png",
+    "調整紀錄/20260911工業材質層次/before-v1-island.png",
+    "調整紀錄/20260911工業材質層次/before-v1.png",
+    "調整紀錄/20260911工業材質層次/before-v2-island.png",
+    "調整紀錄/20260911工業材質層次/before-v2.png",
+    "調整紀錄/20260911工業材質層次/before-v3-island.png",
+    "調整紀錄/20260911工業材質層次/before-v3.png",
+    "調整紀錄/20260911工業材質層次/before-v4-island.png",
+    "調整紀錄/20260911工業材質層次/before-v4.png",
+    "調整紀錄/20260911工業材質層次/驗證.json",
+    "調整紀錄/20260911工業材質層次/介面驗證.json",
+    "調整紀錄/20260911工業材質層次/效能驗證.json"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -262,6 +286,8 @@
     "tools/verify-private-upgrade.cjs",
     "tools/build-private-review.py",
     "tools/verify-storage-shelves.cjs",
-    "tools/verify-industrial-design.cjs"
+    "tools/verify-industrial-design.cjs",
+    "tools/build-layered-review.py",
+    "tools/verify-layered-materials.cjs"
   ]
 }

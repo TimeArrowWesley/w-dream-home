@@ -1,0 +1,98 @@
+{
+  "method": "Offline source geometry, actual procedural map pixels and perspective-correct UV software rendering. Reflections, GPU shaders and final lighting are not visually verified.",
+  "versions": [
+    {
+      "version": "v1",
+      "geometryUnchanged": true,
+      "equipment": 24,
+      "entryFloorSamples": 1774,
+      "roles": {
+        "entry-walnut": 20,
+        "smoked-walnut": 74,
+        "collection-wood-liner": 4,
+        "display-wood": 3,
+        "media-smoked-wood": 1,
+        "island-stone": 1,
+        "curved-smoked-wood": 111,
+        "sink-stainless": 3,
+        "kitchen-stainless": 4,
+        "bath-walnut": 19
+      },
+      "textures": 6,
+      "woodIsBrown": true,
+      "stoneVeins": true,
+      "independentLighting": true,
+      "doors": true
+    },
+    {
+      "version": "v2",
+      "geometryUnchanged": true,
+      "equipment": 24,
+      "entryFloorSamples": 1774,
+      "roles": {
+        "entry-walnut": 21,
+        "smoked-walnut": 74,
+        "collection-wood-liner": 4,
+        "display-wood": 1,
+        "island-stone": 1,
+        "small-island-stainless": 6,
+        "sink-stainless": 3,
+        "media-smoked-wood": 1,
+        "tv-metal": 15,
+        "kitchen-stainless": 4,
+        "bath-walnut": 19
+      },
+      "textures": 6,
+      "woodIsBrown": true,
+      "stoneVeins": true,
+      "independentLighting": true,
+      "doors": true
+    },
+    {
+      "version": "v3",
+      "geometryUnchanged": true,
+      "equipment": 24,
+      "entryFloorSamples": 1840,
+      "roles": {
+        "smoked-walnut": 98,
+        "display-wood": 1,
+        "island-stone": 1,
+        "island-reeded-wood": 3,
+        "island-service-matte": 5,
+        "sink-stainless": 4,
+        "media-smoked-wood": 1,
+        "tv-metal": 15,
+        "kitchen-stainless": 4,
+        "bath-walnut": 19
+      },
+      "textures": 6,
+      "woodIsBrown": true,
+      "stoneVeins": true,
+      "independentLighting": true,
+      "doors": true
+    },
+    {
+      "version": "v4",
+      "geometryUnchanged": true,
+      "equipment": 24,
+      "entryFloorSamples": 1840,
+      "roles": {
+        "smoked-walnut": 98,
+        "display-wood": 1,
+        "island-stone": 1,
+        "island-reeded-wood": 5,
+        "island-service-matte": 5,
+        "sink-stainless": 4,
+        "media-smoked-wood": 1,
+        "fixed-tv-black-glass": 1,
+        "kitchen-stainless": 4,
+        "bath-walnut": 19
+      },
+      "textures": 6,
+      "woodIsBrown": true,
+      "stoneVeins": true,
+      "independentLighting": true,
+      "doors": true
+    }
+  ]
+}
