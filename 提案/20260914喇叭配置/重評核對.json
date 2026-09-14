@@ -1,0 +1,96 @@
+{
+  "scope": "角度、候選外形與指定靜態淨距；不代表聲學、結構、全部門扇／家具操作已通過",
+  "versions": [
+    {
+      "version": "V1",
+      "angles": {
+        "L": 22.11,
+        "R": 22.11,
+        "C": 0.0,
+        "SL": 119.15,
+        "SR": 119.15
+      },
+      "heightAngles": {
+        "TFL": 42.99,
+        "TFR": 42.99,
+        "TRL": 47.27,
+        "TRR": 47.27
+      },
+      "clearances": {
+        "rearAisle": 130,
+        "curtainService": 18.1
+      }
+    },
+    {
+      "version": "V2",
+      "angles": {
+        "L": 22.95,
+        "R": 22.56,
+        "C": 0.77,
+        "SL": 117.49,
+        "SR": 119.84
+      },
+      "heightAngles": {
+        "TFL": 46.84,
+        "TFR": 45.81,
+        "TRL": 48.5,
+        "TRR": 49.96
+      },
+      "clearances": {
+        "sofaToAV": 100.5,
+        "northOfAV": 90,
+        "southOfAV": 93,
+        "curtainService": 58.1
+      }
+    },
+    {
+      "version": "V3",
+      "angles": {
+        "L": 23.34,
+        "R": 22.21,
+        "C": 0.0,
+        "SL": 118.25,
+        "SR": 118.48
+      },
+      "heightAngles": {
+        "TFL": 46.36,
+        "TFR": 46.36,
+        "TRL": 49.13,
+        "TRR": 49.13
+      },
+      "clearances": {
+        "sofaToAV": 100.5,
+        "northOfAV": 113,
+        "southOfAV": 122,
+        "curtainService": 58.1
+      }
+    },
+    {
+      "version": "V4",
+      "angles": {
+        "L": 22.69,
+        "R": 22.69,
+        "C": 0.0,
+        "SL": 119.15,
+        "SR": 119.15
+      },
+      "heightAngles": {
+        "TFL": 42.21,
+        "TFR": 42.21,
+        "TRL": 45.48,
+        "TRR": 45.48
+      },
+      "clearances": {
+        "rearAisle": 140,
+        "curtainService": 18.1
+      }
+    }
+  ],
+  "limitations": [
+    "主座以模型坐姿耳高105cm暫估；各座位仍須複核。",
+    "未做聲壓、指向頻響、混響、駐波與實測校正。",
+    "樑體是模型代理，不能當結構施工圖。",
+    "新櫃門、抽盤、電箱維修、管線及完整承重仍待細設。",
+    "圖上高度是聲軸目標，選型後以實物單體與支架基準定位。"
+  ]
+}

@@ -64,9 +64,11 @@
 !/tools/build-private-review.py
 !/tools/build-site.py
 !/tools/build-speaker-proposal.py
+!/tools/build-speaker-reassessment.py
 !/tools/export-speaker-plan.cjs
 !/tools/home-test-fixture.cjs
 !/tools/render-home-review.cjs
+!/tools/speaker-plan-drawing.py
 !/tools/sync-furniture-seed.cjs
 !/tools/verify-bedroom-wall.cjs
 !/tools/verify-equipment-revision.cjs
@@ -110,6 +112,7 @@
 !/提案/20260914喇叭配置/index.html
 !/提案/20260914喇叭配置/位置表.json
 !/提案/20260914喇叭配置/四版總覽.png
+!/提案/20260914喇叭配置/重評核對.json
 !/提案/南牆電視與開放中島/
 !/提案/南牆電視與開放中島/index.html
 !/提案/南牆電視與開放中島/layout-spec.js

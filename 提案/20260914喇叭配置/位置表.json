@@ -1,7 +1,9 @@
 {
   "date": "2026-09-14",
+  "revision": "B",
   "units": "cm",
-  "purpose": "2D speaker-location proposal only",
+  "purpose": "conditional feasibility candidates; replaces WITHDRAWN long-pendant proposal",
+  "liveModelChanged": false,
   "versions": [
     {
       "version": "V1",
@@ -9,176 +11,227 @@
       "rotating": false,
       "listener": [
         917.5,
-        550,
+        590,
         105
       ],
       "tv": [
         917.5,
         948.6
       ],
+      "rearCabinet": [
+        775,
+        505,
+        285,
+        25
+      ],
+      "avCabinet": null,
       "speakers": [
         {
           "id": "L",
-          "name": "左主聲道",
-          "x": 1062,
-          "y": 944,
+          "x": 1060,
+          "y": 940.8,
           "h": 105,
-          "mount": "南牆裝修層嵌入",
-          "where": "電視左方・圖面右",
           "category": "front",
+          "mount": "南牆原廠壁掛",
+          "reference": "Q4 Meta 尺寸參照",
           "labelOffset": [
             10,
-            43
-          ]
+            35
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.11,
+          "sideElevation": 0.0,
+          "planDistance": 378.6
         },
         {
           "id": "R",
-          "name": "右主聲道",
-          "x": 773,
-          "y": 944,
+          "x": 775,
+          "y": 940.8,
           "h": 105,
-          "mount": "南牆裝修層嵌入",
-          "where": "電視右方・圖面左",
           "category": "front",
+          "mount": "南牆原廠壁掛",
+          "reference": "Q4 Meta 尺寸參照",
           "labelOffset": [
-            -8,
-            43
-          ]
+            -10,
+            35
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.11,
+          "sideElevation": 0.0,
+          "planDistance": 378.6
         },
         {
           "id": "C",
-          "name": "中置",
           "x": 917.5,
-          "y": 920,
+          "y": 903,
           "h": 32,
-          "mount": "固定櫃開放艙",
-          "where": "電視下方；朝沙發",
           "category": "front",
+          "mount": "南側影音櫃開放艙",
+          "reference": "Q6 尺寸參照；上仰對準主座",
           "labelOffset": [
             0,
-            -46
-          ]
+            35
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 0.0,
+          "sideElevation": -13.13,
+          "planDistance": 313.0
         },
         {
           "id": "SL",
-          "name": "左環繞",
-          "x": 1020,
-          "y": 495,
-          "h": 120,
-          "mount": "沙發背緣吊桿",
-          "where": "靠窗側背角",
+          "x": 1047.5,
+          "y": 517.5,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            16,
-            -32
-          ]
+            25,
+            -30
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 119.15,
+          "sideElevation": 0.0,
+          "planDistance": 148.8
         },
         {
           "id": "SR",
-          "name": "右環繞",
-          "x": 812,
-          "y": 495,
-          "h": 120,
-          "mount": "沙發背緣吊桿",
-          "where": "靠中島側背角",
+          "x": 787.5,
+          "y": 517.5,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            -16,
-            -32
-          ]
+            -25,
+            -30
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 119.15,
+          "sideElevation": 0.0,
+          "planDistance": 148.8
         },
         {
           "id": "TFL",
-          "name": "左前天空",
-          "x": 1005,
-          "y": 700,
+          "x": 1015,
+          "y": 770,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面右",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 28.44,
+          "sideElevation": 42.99,
+          "planDistance": 204.7
         },
         {
           "id": "TFR",
-          "name": "右前天空",
-          "x": 830,
-          "y": 700,
+          "x": 820,
+          "y": 770,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面左",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 28.44,
+          "sideElevation": 42.99,
+          "planDistance": 204.7
         },
         {
           "id": "TRL",
-          "name": "左後天空",
-          "x": 1005,
-          "y": 415,
+          "x": 1015,
+          "y": 435,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面右",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 147.83,
+          "sideElevation": 47.27,
+          "planDistance": 183.1
         },
         {
           "id": "TRR",
-          "name": "右後天空",
-          "x": 830,
-          "y": 415,
+          "x": 820,
+          "y": 435,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面左",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 147.83,
+          "sideElevation": 47.27,
+          "planDistance": 183.1
         },
         {
           "id": "SW1",
-          "name": "重低音 1",
           "x": 788,
           "y": 837,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
             -40,
-            0
-          ]
+            10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 27.67,
+          "sideElevation": -23.03,
+          "planDistance": 278.9
         },
         {
           "id": "SW2",
-          "name": "重低音 2",
           "x": 1057,
           "y": 820,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
             40,
-            15
-          ]
+            10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 31.24,
+          "sideElevation": -24.54,
+          "planDistance": 269.0
         }
       ],
       "notes": [
-        "左右主聲道整合南牆裝修層；牆內背腔另設計。",
-        "中置保留開放艙，抬高至中心 H32，向主座上仰。",
-        "環繞吊桿位於沙發背緣；不以落地玻璃承重。"
+        "沙發朝電視移 40cm，前聲道約 ±22°。",
+        "Q4 壁掛為尺寸參照，電箱維修面保留。",
+        "若升級嵌壁式，另做有背腔的裝修層。",
+        "沙發背櫃約 285×25cm，兩端放環繞。",
+        "四天空另排；不是沿用舊圖的四個點。",
+        "中置前方無玻璃，俯仰後外形要複核。"
       ],
-      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
-      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+      "clearances": {
+        "rearAisle": 130,
+        "curtainService": 18.1
+      },
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f",
+      "status": "有條件的配置候選；不是聲學實測或施工定案；未套用3D",
+      "sofaMove": [
+        0,
+        40
+      ]
     },
     {
       "version": "V2",
@@ -186,176 +239,234 @@
       "rotating": true,
       "listener": [
         950,
-        560,
+        570,
         105
       ],
       "tv": [
         647,
         560
       ],
+      "rearCabinet": [
+        995,
+        464,
+        25,
+        240
+      ],
+      "avCabinet": [
+        619.5,
+        465,
+        115,
+        195
+      ],
       "speakers": [
         {
           "id": "L",
-          "name": "左主聲道",
-          "x": 750,
-          "y": 663,
-          "h": 110,
-          "mount": "頂板吊架",
-          "where": "電視客廳側・圖面下",
+          "x": 734.5,
+          "y": 653,
+          "h": 105,
           "category": "front",
+          "mount": "固定影音櫃端板",
+          "reference": "T301 尺寸參照；原廠壁掛",
           "labelOffset": [
-            -40,
-            16
-          ]
+            30,
+            10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.95,
+          "sideElevation": 0.0,
+          "planDistance": 230.9
         },
         {
           "id": "R",
-          "name": "右主聲道",
-          "x": 750,
-          "y": 457,
-          "h": 110,
-          "mount": "頂板吊架",
-          "where": "電視客廳側・圖面上",
+          "x": 734.5,
+          "y": 472,
+          "h": 105,
           "category": "front",
+          "mount": "固定影音櫃端板",
+          "reference": "T301 尺寸參照；原廠壁掛",
           "labelOffset": [
-            -40,
-            -16
-          ]
+            30,
+            -10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.56,
+          "sideElevation": 0.0,
+          "planDistance": 236.7
         },
         {
           "id": "C",
-          "name": "中置",
-          "x": 659.35,
+          "x": 734.5,
           "y": 560,
-          "h": 32,
-          "mount": "固定櫃開放艙",
-          "where": "電視下方；朝沙發",
+          "h": 60,
           "category": "front",
+          "mount": "固定櫃中央開放面",
+          "reference": "T301c 同系列；向主座上仰",
           "labelOffset": [
-            -56,
+            -55,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 0.77,
+          "sideElevation": -11.78,
+          "planDistance": 215.7
         },
         {
           "id": "SL",
-          "name": "左環繞",
-          "x": 986,
-          "y": 686,
-          "h": 120,
-          "mount": "沙發背緣吊桿",
-          "where": "沙發後方・圖面下",
+          "x": 1007.5,
+          "y": 690,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            12,
-            44
-          ]
+            -43,
+            24
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 117.49,
+          "sideElevation": 0.0,
+          "planDistance": 133.1
         },
         {
           "id": "SR",
-          "name": "右環繞",
-          "x": 986,
-          "y": 480,
-          "h": 120,
-          "mount": "沙發背緣吊桿",
-          "where": "沙發後方・圖面上",
+          "x": 1007.5,
+          "y": 477,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            12,
-            -44
-          ]
+            -43,
+            -24
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 119.84,
+          "sideElevation": 0.0,
+          "planDistance": 109.3
         },
         {
           "id": "TFL",
-          "name": "左前天空",
-          "x": 800,
-          "y": 648,
+          "x": 790,
+          "y": 647.5,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面下",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；另核對天花背腔",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 27.73,
+          "sideElevation": 46.84,
+          "planDistance": 177.8
         },
         {
           "id": "TFR",
-          "name": "右前天空",
-          "x": 800,
-          "y": 472,
+          "x": 790,
+          "y": 472.5,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面上",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；另核對天花背腔",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 29.47,
+          "sideElevation": 45.81,
+          "planDistance": 187.4
         },
         {
           "id": "TRL",
-          "name": "左後天空",
-          "x": 1050,
-          "y": 648,
-          "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面下",
+          "x": 1062.5,
+          "y": 647.5,
+          "h": 235,
           "category": "top",
+          "mount": "樑下表面安裝*",
+          "reference": "Dôme 原廠短座；指向主座",
           "labelOffset": [
-            24,
+            20,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 147.33,
+          "sideElevation": 48.5,
+          "planDistance": 136.6
         },
         {
           "id": "TRR",
-          "name": "右後天空",
-          "x": 1050,
-          "y": 472,
-          "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面上",
+          "x": 1062.5,
+          "y": 472.5,
+          "h": 235,
           "category": "top",
+          "mount": "樑下表面安裝*",
+          "reference": "Dôme 原廠短座；指向主座",
           "labelOffset": [
-            24,
+            20,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 137.2,
+          "sideElevation": 49.96,
+          "planDistance": 148.9
         },
         {
           "id": "SW1",
-          "name": "重低音 1",
           "x": 799,
           "y": 800,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
-            -50,
-            0
-          ]
+            -40,
+            10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 58.6,
+          "sideElevation": -36.23,
+          "planDistance": 275.1
         },
         {
           "id": "SW2",
-          "name": "重低音 2",
           "x": 1040,
           "y": 814,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
-            46,
-            15
-          ]
+            40,
+            10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 112.14,
+          "sideElevation": -46.98,
+          "planDistance": 260.1
         }
       ],
       "notes": [
-        "左右主聲道由頂板承重吊架固定；中心 H110。",
-        "喇叭固定朝沙發，不隨電視轉向中島。",
-        "紫色環繞降到 H120，位於沙發背緣。"
+        "影音櫃由 200×55 改為約 195×115cm。",
+        "深度增加 60cm，形成完整影音家具。",
+        "端板承接窄身主喇叭；不是獨立腳架。",
+        "沙發背櫃深 25cm；窗簾側餘約 58cm。",
+        "後天空改樑下短座；不可在樑內挖孔。",
+        "電視轉向中島，只作次要觀看。"
       ],
-      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
-      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+      "clearances": {
+        "sofaToAV": 100.5,
+        "northOfAV": 90,
+        "southOfAV": 93,
+        "curtainService": 58.1
+      },
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f",
+      "status": "有條件的配置候選；不是聲學實測或施工定案；未套用3D",
+      "sofaMove": [
+        0,
+        0
+      ]
     },
     {
       "version": "V3",
@@ -370,183 +481,227 @@
         647,
         583
       ],
+      "rearCabinet": [
+        995,
+        464,
+        25,
+        240
+      ],
+      "avCabinet": [
+        619.5,
+        488,
+        115,
+        195
+      ],
       "speakers": [
         {
           "id": "L",
-          "name": "左主聲道",
-          "x": 750,
-          "y": 686,
-          "h": 110,
-          "mount": "頂板吊架",
-          "where": "電視客廳側・圖面下",
+          "x": 734.5,
+          "y": 676,
+          "h": 105,
           "category": "front",
+          "mount": "固定影音櫃端板",
+          "reference": "T301 尺寸參照；原廠壁掛",
           "labelOffset": [
-            -40,
-            16
-          ]
+            30,
+            10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 23.34,
+          "sideElevation": 0.0,
+          "planDistance": 234.7
         },
         {
           "id": "R",
-          "name": "右主聲道",
-          "x": 750,
-          "y": 480,
-          "h": 110,
-          "mount": "頂板吊架",
-          "where": "電視客廳側・圖面上",
+          "x": 734.5,
+          "y": 495,
+          "h": 105,
           "category": "front",
+          "mount": "固定影音櫃端板",
+          "reference": "T301 尺寸參照；原廠壁掛",
           "labelOffset": [
-            -40,
-            -16
-          ]
+            30,
+            -10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.21,
+          "sideElevation": 0.0,
+          "planDistance": 232.8
         },
         {
           "id": "C",
-          "name": "中置",
-          "x": 659.35,
+          "x": 734.5,
           "y": 583,
-          "h": 32,
-          "mount": "固定櫃開放艙",
-          "where": "電視下方；朝沙發",
+          "h": 60,
           "category": "front",
+          "mount": "固定櫃中央開放面",
+          "reference": "T301c 同系列；向主座上仰",
           "labelOffset": [
-            -56,
+            -55,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 0.0,
+          "sideElevation": -11.79,
+          "planDistance": 215.5
         },
         {
           "id": "SL",
-          "name": "左環繞",
-          "x": 1030,
-          "y": 717,
-          "h": 135,
-          "mount": "重低音上方頂板吊架",
-          "where": "離開沙發投影・朝主座",
+          "x": 1007.5,
+          "y": 690,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            -70,
-            65
+            -43,
+            24
           ],
-          "envelope": {
-            "w": 20,
-            "d": 20,
-            "h": 30,
-            "bottom": 120
-          },
-          "envelopeNote": "小型環繞連支架的配置預留上限；機種及原廠固定條件待選定"
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 118.25,
+          "sideElevation": 0.0,
+          "planDistance": 121.5
         },
         {
           "id": "SR",
-          "name": "右環繞",
-          "x": 1030,
-          "y": 449,
-          "h": 135,
-          "mount": "重低音上方頂板吊架",
-          "where": "離開沙發投影・朝主座",
+          "x": 1007.5,
+          "y": 477,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            -70,
-            -65
+            -43,
+            -24
           ],
-          "envelope": {
-            "w": 20,
-            "d": 20,
-            "h": 30,
-            "bottom": 120
-          },
-          "envelopeNote": "小型環繞連支架的配置預留上限；機種及原廠固定條件待選定"
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 118.48,
+          "sideElevation": 0.0,
+          "planDistance": 120.6
         },
         {
           "id": "TFL",
-          "name": "左前天空",
-          "x": 800,
-          "y": 671,
+          "x": 790,
+          "y": 670.5,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面下",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；另核對天花背腔",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 28.67,
+          "sideElevation": 46.36,
+          "planDistance": 182.4
         },
         {
           "id": "TFR",
-          "name": "右前天空",
-          "x": 800,
-          "y": 495,
+          "x": 790,
+          "y": 495.5,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面上",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；另核對天花背腔",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 28.67,
+          "sideElevation": 46.36,
+          "planDistance": 182.4
         },
         {
           "id": "TRL",
-          "name": "左後天空",
-          "x": 1050,
-          "y": 671,
-          "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面下",
+          "x": 1062.5,
+          "y": 670.5,
+          "h": 235,
           "category": "top",
+          "mount": "樑下表面安裝*",
+          "reference": "Dôme 原廠短座；指向主座",
           "labelOffset": [
-            24,
+            20,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 142.13,
+          "sideElevation": 49.13,
+          "planDistance": 142.5
         },
         {
           "id": "TRR",
-          "name": "右後天空",
-          "x": 1050,
-          "y": 495,
-          "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面上",
+          "x": 1062.5,
+          "y": 495.5,
+          "h": 235,
           "category": "top",
+          "mount": "樑下表面安裝*",
+          "reference": "Dôme 原廠短座；指向主座",
           "labelOffset": [
-            24,
+            20,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 142.13,
+          "sideElevation": 49.13,
+          "planDistance": 142.5
         },
         {
           "id": "SW1",
-          "name": "重低音 1",
           "x": 1030,
-          "y": 449,
+          "y": 439,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
-            44,
-            0
-          ]
+            -40,
+            10
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 119.05,
+          "sideElevation": -52.7,
+          "planDistance": 164.7
         },
         {
           "id": "SW2",
-          "name": "重低音 2",
           "x": 1030,
-          "y": 717,
+          "y": 729,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
-            44,
+            40,
             10
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 118.72,
+          "sideElevation": -52.7,
+          "planDistance": 166.5
         }
       ],
       "notes": [
-        "SL／SR 移到 SW2／SW1 上方，完全離開沙發。",
-        "中心 H135；喇叭連支架預留 20×20×H30。",
-        "距沙發東緣至少 25cm；距模型窗簾約 38cm。"
+        "影音櫃由 200×55 改為約 195×115cm。",
+        "深度增加 60cm，形成完整影音家具。",
+        "端板承接窄身主喇叭；不是獨立腳架。",
+        "沙發背櫃深 25cm；窗簾側餘約 58cm。",
+        "後天空改樑下短座；不可在樑內挖孔。",
+        "電視轉向中島，只作次要觀看。"
       ],
-      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
-      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+      "clearances": {
+        "sofaToAV": 100.5,
+        "northOfAV": 113,
+        "southOfAV": 122,
+        "curtainService": 58.1
+      },
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f",
+      "status": "有條件的配置候選；不是聲學實測或施工定案；未套用3D",
+      "sofaMove": [
+        0,
+        0
+      ]
     },
     {
       "version": "V4",
@@ -561,169 +716,266 @@
         917.5,
         948.6
       ],
+      "rearCabinet": [
+        775,
+        515,
+        285,
+        25
+      ],
+      "avCabinet": null,
       "speakers": [
         {
           "id": "L",
-          "name": "左主聲道",
-          "x": 1062,
-          "y": 944,
+          "x": 1060,
+          "y": 940.8,
           "h": 105,
-          "mount": "南牆裝修層嵌入",
-          "where": "電視左方・圖面右",
           "category": "front",
+          "mount": "南牆原廠壁掛",
+          "reference": "Q4 Meta 尺寸參照",
           "labelOffset": [
-            10,
-            43
-          ]
+            28,
+            47
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.69,
+          "sideElevation": 0.0,
+          "planDistance": 369.4
         },
         {
           "id": "R",
-          "name": "右主聲道",
-          "x": 773,
-          "y": 944,
+          "x": 775,
+          "y": 940.8,
           "h": 105,
-          "mount": "南牆裝修層嵌入",
-          "where": "電視右方・圖面左",
           "category": "front",
+          "mount": "南牆原廠壁掛",
+          "reference": "Q4 Meta 尺寸參照",
           "labelOffset": [
-            -8,
-            43
-          ]
+            -28,
+            47
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.69,
+          "sideElevation": 0.0,
+          "planDistance": 369.4
         },
         {
           "id": "C",
-          "name": "中置",
           "x": 917.5,
-          "y": 920,
+          "y": 903,
           "h": 32,
-          "mount": "固定櫃開放艙",
-          "where": "電視下方；朝沙發",
           "category": "front",
+          "mount": "南側影音櫃開放艙",
+          "reference": "Q6 尺寸參照；上仰對準主座",
           "labelOffset": [
             0,
-            -46
-          ]
+            35
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 0.0,
+          "sideElevation": -13.55,
+          "planDistance": 303.0
         },
         {
           "id": "SL",
-          "name": "左環繞",
-          "x": 1020,
-          "y": 545,
-          "h": 120,
-          "mount": "沙發背緣吊桿",
-          "where": "靠窗側背角",
+          "x": 1047.5,
+          "y": 527.5,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            16,
-            -32
-          ]
+            25,
+            -30
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 119.15,
+          "sideElevation": 0.0,
+          "planDistance": 148.8
         },
         {
           "id": "SR",
-          "name": "右環繞",
-          "x": 812,
-          "y": 545,
-          "h": 120,
-          "mount": "沙發背緣吊桿",
-          "where": "靠中島側背角",
+          "x": 787.5,
+          "y": 527.5,
+          "h": 105,
           "category": "surround",
+          "mount": "沙發背櫃檯面",
+          "reference": "Dôme 原廠桌面方式；朝主座",
           "labelOffset": [
-            -16,
-            -32
-          ]
+            -25,
+            -30
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 119.15,
+          "sideElevation": 0.0,
+          "planDistance": 148.8
         },
         {
           "id": "TFL",
-          "name": "左前天空",
-          "x": 1005,
-          "y": 775,
+          "x": 1015,
+          "y": 785,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面右",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 27.79,
+          "sideElevation": 42.21,
+          "planDistance": 209.1
         },
         {
           "id": "TFR",
-          "name": "右前天空",
-          "x": 830,
-          "y": 775,
+          "x": 820,
+          "y": 785,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發前方・圖面左",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 27.79,
+          "sideElevation": 42.21,
+          "planDistance": 209.1
         },
         {
           "id": "TRL",
-          "name": "左後天空",
-          "x": 1005,
-          "y": 425,
+          "x": 1015,
+          "y": 435,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面右",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 149.42,
+          "sideElevation": 45.48,
+          "planDistance": 191.7
         },
         {
           "id": "TRR",
-          "name": "右後天空",
-          "x": 830,
-          "y": 425,
+          "x": 820,
+          "y": 435,
           "h": 272.8,
-          "mount": "天花嵌入",
-          "where": "沙發後方・圖面左",
           "category": "top",
+          "mount": "天花嵌入",
+          "reference": "Ci160QR；位置避開已建模樑／風口",
           "labelOffset": [
             0,
             0
-          ]
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 149.42,
+          "sideElevation": 45.48,
+          "planDistance": 191.7
         },
         {
           "id": "SW1",
-          "name": "重低音 1",
           "x": 788,
           "y": 929,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
             -40,
-            -20
-          ]
+            -22
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 21.49,
+          "sideElevation": -17.7,
+          "planDistance": 353.6
         },
         {
           "id": "SW2",
-          "name": "重低音 2",
           "x": 1055,
           "y": 929,
           "h": 0,
-          "mount": "保留 SVS 落地",
-          "where": "沿用現有位置",
           "category": "sub",
+          "mount": "地面候選／待量測",
+          "reference": "SVS 原箱；不密封在玻璃櫃",
           "labelOffset": [
             40,
-            -20
-          ]
+            -22
+          ],
+          "status": "conditional candidate; not in live 3D",
+          "azimuthAbs": 22.68,
+          "sideElevation": -17.7,
+          "planDistance": 356.6
         }
       ],
       "notes": [
-        "左右主聲道整合南牆裝修層；牆內背腔另設計。",
-        "中置保留開放艙，抬高至中心 H32，向主座上仰。",
-        "環繞吊桿位於沙發背緣；不以落地玻璃承重。"
+        "沙發維持；前聲道約 ±23°。",
+        "Q4 壁掛為尺寸參照，電箱維修面保留。",
+        "若升級嵌壁式，另做有背腔的裝修層。",
+        "沙發背櫃約 285×25cm，兩端放環繞。",
+        "四天空另排；不是沿用舊圖的四個點。",
+        "中置前方無玻璃，俯仰後外形要複核。"
       ],
-      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
-      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+      "clearances": {
+        "rearAisle": 140,
+        "curtainService": 18.1
+      },
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f",
+      "status": "有條件的配置候選；不是聲學實測或施工定案；未套用3D",
+      "sofaMove": [
+        0,
+        0
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Dolby 5.1.4 家庭劇院配置圖",
+      "url": "https://www.dolby.com/siteassets/about/support/guide/setup-guides/5.1.4-overhead-speaker-placement/sell-sheet-5.1.4-mounted.pdf"
+    },
+    {
+      "title": "Dolby 家庭劇院安裝指南，第 5–8 頁",
+      "url": "https://www.dolby.com/siteassets/technologies/dolby-atmos/atmos-installation-guidelines-121318_r3.1.pdf"
+    },
+    {
+      "title": "KEF：壁掛、家具安置與空間取捨",
+      "url": "https://us.kef.com/blogs/news/mount-up-on-wall-home-theater-solutions"
+    },
+    {
+      "title": "KEF Q4 Meta：原廠壁掛 LCR",
+      "url": "https://tw.kef.com/products/q4-meta"
+    },
+    {
+      "title": "KEF T301：60×14×3.5cm 封閉箱體",
+      "url": "https://ap.kef.com/products/t301-satellite-speakers"
+    },
+    {
+      "title": "KEF T301c：同系列中置",
+      "url": "https://ap.kef.com/products/t301c-centre-channel-speaker"
+    },
+    {
+      "title": "Focal Dôme Flax：桌面／壁面／天花安裝",
+      "url": "https://www.focal.com/products/dome-flax"
+    },
+    {
+      "title": "Focal Dôme Flax：原廠尺寸表",
+      "url": "https://dam.focal-naim.com/m/2f1c7ebd174a2e15/original/FP_DomeFlax_10_GB-pdf.pdf"
+    },
+    {
+      "title": "KEF 嵌入喇叭背腔容量表",
+      "url": "https://images.salsify.com/image/upload/s--bZ-2H1bL--/ef7178dd21cf9ce0933c1dadcb864a0a25b7329b.pdf"
+    },
+    {
+      "title": "KEF Ci3160RLM：開孔、安裝深度與背腔",
+      "url": "https://ca.kef.com/products/ci3160rlm"
+    },
+    {
+      "title": "SVS：重低音位置與聆聽位置",
+      "url": "https://www.svsound.com/blogs/subwoofer-setup-and-tuning/75365187-the-art-of-subwoofer-placement"
     }
   ]
 }

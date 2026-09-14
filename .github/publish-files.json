@@ -277,7 +277,8 @@
     "提案/20260914喇叭配置/V4-喇叭配置.png",
     "提案/20260914喇叭配置/V4-喇叭配置.svg",
     "提案/20260914喇叭配置/V3-環繞位置修正.png",
-    "提案/20260914喇叭配置/V3-環繞位置修正.svg"
+    "提案/20260914喇叭配置/V3-環繞位置修正.svg",
+    "提案/20260914喇叭配置/重評核對.json"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -313,6 +314,8 @@
     "tools/verify-herringbone.cjs",
     "tools/verify-guest-door.cjs",
     "tools/export-speaker-plan.cjs",
-    "tools/build-speaker-proposal.py"
+    "tools/build-speaker-proposal.py",
+    "tools/build-speaker-reassessment.py",
+    "tools/speaker-plan-drawing.py"
   ]
 }
