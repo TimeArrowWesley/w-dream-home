@@ -264,7 +264,18 @@
     "調整紀錄/20260911客浴拉門收口/before-guest-door.png",
     "調整紀錄/20260911客浴拉門收口/after-guest-door.png",
     "調整紀錄/20260911客浴拉門收口/open-guest-door.png",
-    "調整紀錄/20260911客浴拉門收口/驗證.json"
+    "調整紀錄/20260911客浴拉門收口/驗證.json",
+    "提案/20260914喇叭配置/index.html",
+    "提案/20260914喇叭配置/四版總覽.png",
+    "提案/20260914喇叭配置/位置表.json",
+    "提案/20260914喇叭配置/V1-喇叭配置.png",
+    "提案/20260914喇叭配置/V1-喇叭配置.svg",
+    "提案/20260914喇叭配置/V2-喇叭配置.png",
+    "提案/20260914喇叭配置/V2-喇叭配置.svg",
+    "提案/20260914喇叭配置/V3-喇叭配置.png",
+    "提案/20260914喇叭配置/V3-喇叭配置.svg",
+    "提案/20260914喇叭配置/V4-喇叭配置.png",
+    "提案/20260914喇叭配置/V4-喇叭配置.svg"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -298,6 +309,8 @@
     "tools/build-layered-review.py",
     "tools/verify-layered-materials.cjs",
     "tools/verify-herringbone.cjs",
-    "tools/verify-guest-door.cjs"
+    "tools/verify-guest-door.cjs",
+    "tools/export-speaker-plan.cjs",
+    "tools/build-speaker-proposal.py"
   ]
 }

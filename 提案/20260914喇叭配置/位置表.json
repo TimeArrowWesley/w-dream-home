@@ -1,0 +1,715 @@
+{
+  "date": "2026-09-14",
+  "units": "cm",
+  "purpose": "2D speaker-location proposal only",
+  "versions": [
+    {
+      "version": "V1",
+      "title": "圓弧中島酒吧＋玄關矮櫃",
+      "rotating": false,
+      "listener": [
+        917.5,
+        550,
+        105
+      ],
+      "tv": [
+        917.5,
+        948.6
+      ],
+      "speakers": [
+        {
+          "id": "L",
+          "name": "左主聲道",
+          "x": 1062,
+          "y": 944,
+          "h": 105,
+          "mount": "南牆裝修層嵌入",
+          "where": "電視左方・圖面右",
+          "category": "front",
+          "labelOffset": [
+            10,
+            43
+          ]
+        },
+        {
+          "id": "R",
+          "name": "右主聲道",
+          "x": 773,
+          "y": 944,
+          "h": 105,
+          "mount": "南牆裝修層嵌入",
+          "where": "電視右方・圖面左",
+          "category": "front",
+          "labelOffset": [
+            -8,
+            43
+          ]
+        },
+        {
+          "id": "C",
+          "name": "中置",
+          "x": 917.5,
+          "y": 920,
+          "h": 32,
+          "mount": "固定櫃開放艙",
+          "where": "電視下方；朝沙發",
+          "category": "front",
+          "labelOffset": [
+            0,
+            -46
+          ]
+        },
+        {
+          "id": "SL",
+          "name": "左環繞",
+          "x": 1020,
+          "y": 495,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "靠窗側背角",
+          "category": "surround",
+          "labelOffset": [
+            16,
+            -32
+          ]
+        },
+        {
+          "id": "SR",
+          "name": "右環繞",
+          "x": 812,
+          "y": 495,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "靠中島側背角",
+          "category": "surround",
+          "labelOffset": [
+            -16,
+            -32
+          ]
+        },
+        {
+          "id": "TFL",
+          "name": "左前天空",
+          "x": 1005,
+          "y": 700,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面右",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TFR",
+          "name": "右前天空",
+          "x": 830,
+          "y": 700,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面左",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TRL",
+          "name": "左後天空",
+          "x": 1005,
+          "y": 415,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面右",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TRR",
+          "name": "右後天空",
+          "x": 830,
+          "y": 415,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面左",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "SW1",
+          "name": "重低音 1",
+          "x": 788,
+          "y": 837,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            -40,
+            0
+          ]
+        },
+        {
+          "id": "SW2",
+          "name": "重低音 2",
+          "x": 1057,
+          "y": 820,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            40,
+            15
+          ]
+        }
+      ],
+      "notes": [
+        "左右主聲道整合南牆裝修層；牆內背腔另設計。",
+        "中置保留開放艙，抬高至中心 H32，向主座上仰。",
+        "環繞吊桿位於沙發背緣；不以落地玻璃承重。"
+      ],
+      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+    },
+    {
+      "version": "V2",
+      "title": "旋轉電視＋小中島",
+      "rotating": true,
+      "listener": [
+        950,
+        560,
+        105
+      ],
+      "tv": [
+        647,
+        560
+      ],
+      "speakers": [
+        {
+          "id": "L",
+          "name": "左主聲道",
+          "x": 750,
+          "y": 663,
+          "h": 110,
+          "mount": "頂板吊架",
+          "where": "電視客廳側・圖面下",
+          "category": "front",
+          "labelOffset": [
+            -40,
+            16
+          ]
+        },
+        {
+          "id": "R",
+          "name": "右主聲道",
+          "x": 750,
+          "y": 457,
+          "h": 110,
+          "mount": "頂板吊架",
+          "where": "電視客廳側・圖面上",
+          "category": "front",
+          "labelOffset": [
+            -40,
+            -16
+          ]
+        },
+        {
+          "id": "C",
+          "name": "中置",
+          "x": 659.35,
+          "y": 560,
+          "h": 32,
+          "mount": "固定櫃開放艙",
+          "where": "電視下方；朝沙發",
+          "category": "front",
+          "labelOffset": [
+            -56,
+            0
+          ]
+        },
+        {
+          "id": "SL",
+          "name": "左環繞",
+          "x": 986,
+          "y": 686,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "沙發後方・圖面下",
+          "category": "surround",
+          "labelOffset": [
+            12,
+            44
+          ]
+        },
+        {
+          "id": "SR",
+          "name": "右環繞",
+          "x": 986,
+          "y": 480,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "沙發後方・圖面上",
+          "category": "surround",
+          "labelOffset": [
+            12,
+            -44
+          ]
+        },
+        {
+          "id": "TFL",
+          "name": "左前天空",
+          "x": 800,
+          "y": 648,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面下",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TFR",
+          "name": "右前天空",
+          "x": 800,
+          "y": 472,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面上",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TRL",
+          "name": "左後天空",
+          "x": 1050,
+          "y": 648,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面下",
+          "category": "top",
+          "labelOffset": [
+            24,
+            0
+          ]
+        },
+        {
+          "id": "TRR",
+          "name": "右後天空",
+          "x": 1050,
+          "y": 472,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面上",
+          "category": "top",
+          "labelOffset": [
+            24,
+            0
+          ]
+        },
+        {
+          "id": "SW1",
+          "name": "重低音 1",
+          "x": 799,
+          "y": 800,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            -50,
+            0
+          ]
+        },
+        {
+          "id": "SW2",
+          "name": "重低音 2",
+          "x": 1040,
+          "y": 814,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            46,
+            15
+          ]
+        }
+      ],
+      "notes": [
+        "左右主聲道由頂板承重吊架固定；中心 H110。",
+        "喇叭固定朝沙發，不隨電視轉向中島。",
+        "紫色環繞降到 H120，位於沙發背緣。"
+      ],
+      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+    },
+    {
+      "version": "V3",
+      "title": "旋轉電視＋大中島",
+      "rotating": true,
+      "listener": [
+        950,
+        583,
+        105
+      ],
+      "tv": [
+        647,
+        583
+      ],
+      "speakers": [
+        {
+          "id": "L",
+          "name": "左主聲道",
+          "x": 750,
+          "y": 686,
+          "h": 110,
+          "mount": "頂板吊架",
+          "where": "電視客廳側・圖面下",
+          "category": "front",
+          "labelOffset": [
+            -40,
+            16
+          ]
+        },
+        {
+          "id": "R",
+          "name": "右主聲道",
+          "x": 750,
+          "y": 480,
+          "h": 110,
+          "mount": "頂板吊架",
+          "where": "電視客廳側・圖面上",
+          "category": "front",
+          "labelOffset": [
+            -40,
+            -16
+          ]
+        },
+        {
+          "id": "C",
+          "name": "中置",
+          "x": 659.35,
+          "y": 583,
+          "h": 32,
+          "mount": "固定櫃開放艙",
+          "where": "電視下方；朝沙發",
+          "category": "front",
+          "labelOffset": [
+            -56,
+            0
+          ]
+        },
+        {
+          "id": "SL",
+          "name": "左環繞",
+          "x": 986,
+          "y": 686,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "沙發後方・圖面下",
+          "category": "surround",
+          "labelOffset": [
+            -50,
+            15
+          ]
+        },
+        {
+          "id": "SR",
+          "name": "右環繞",
+          "x": 986,
+          "y": 480,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "沙發後方・圖面上",
+          "category": "surround",
+          "labelOffset": [
+            -50,
+            0
+          ]
+        },
+        {
+          "id": "TFL",
+          "name": "左前天空",
+          "x": 800,
+          "y": 671,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面下",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TFR",
+          "name": "右前天空",
+          "x": 800,
+          "y": 495,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面上",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TRL",
+          "name": "左後天空",
+          "x": 1050,
+          "y": 671,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面下",
+          "category": "top",
+          "labelOffset": [
+            24,
+            0
+          ]
+        },
+        {
+          "id": "TRR",
+          "name": "右後天空",
+          "x": 1050,
+          "y": 495,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面上",
+          "category": "top",
+          "labelOffset": [
+            24,
+            0
+          ]
+        },
+        {
+          "id": "SW1",
+          "name": "重低音 1",
+          "x": 1030,
+          "y": 449,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            -50,
+            0
+          ]
+        },
+        {
+          "id": "SW2",
+          "name": "重低音 2",
+          "x": 1030,
+          "y": 717,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            46,
+            15
+          ]
+        }
+      ],
+      "notes": [
+        "左右主聲道由頂板承重吊架固定；中心 H110。",
+        "喇叭固定朝沙發，不隨電視轉向中島。",
+        "紫色環繞降到 H120，位於沙發背緣。"
+      ],
+      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+    },
+    {
+      "version": "V4",
+      "title": "大中島",
+      "rotating": false,
+      "listener": [
+        917.5,
+        600,
+        105
+      ],
+      "tv": [
+        917.5,
+        948.6
+      ],
+      "speakers": [
+        {
+          "id": "L",
+          "name": "左主聲道",
+          "x": 1062,
+          "y": 944,
+          "h": 105,
+          "mount": "南牆裝修層嵌入",
+          "where": "電視左方・圖面右",
+          "category": "front",
+          "labelOffset": [
+            10,
+            43
+          ]
+        },
+        {
+          "id": "R",
+          "name": "右主聲道",
+          "x": 773,
+          "y": 944,
+          "h": 105,
+          "mount": "南牆裝修層嵌入",
+          "where": "電視右方・圖面左",
+          "category": "front",
+          "labelOffset": [
+            -8,
+            43
+          ]
+        },
+        {
+          "id": "C",
+          "name": "中置",
+          "x": 917.5,
+          "y": 920,
+          "h": 32,
+          "mount": "固定櫃開放艙",
+          "where": "電視下方；朝沙發",
+          "category": "front",
+          "labelOffset": [
+            0,
+            -46
+          ]
+        },
+        {
+          "id": "SL",
+          "name": "左環繞",
+          "x": 1020,
+          "y": 545,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "靠窗側背角",
+          "category": "surround",
+          "labelOffset": [
+            16,
+            -32
+          ]
+        },
+        {
+          "id": "SR",
+          "name": "右環繞",
+          "x": 812,
+          "y": 545,
+          "h": 120,
+          "mount": "沙發背緣吊桿",
+          "where": "靠中島側背角",
+          "category": "surround",
+          "labelOffset": [
+            -16,
+            -32
+          ]
+        },
+        {
+          "id": "TFL",
+          "name": "左前天空",
+          "x": 1005,
+          "y": 775,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面右",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TFR",
+          "name": "右前天空",
+          "x": 830,
+          "y": 775,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發前方・圖面左",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TRL",
+          "name": "左後天空",
+          "x": 1005,
+          "y": 425,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面右",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "TRR",
+          "name": "右後天空",
+          "x": 830,
+          "y": 425,
+          "h": 272.8,
+          "mount": "天花嵌入",
+          "where": "沙發後方・圖面左",
+          "category": "top",
+          "labelOffset": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "SW1",
+          "name": "重低音 1",
+          "x": 788,
+          "y": 929,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            -40,
+            -20
+          ]
+        },
+        {
+          "id": "SW2",
+          "name": "重低音 2",
+          "x": 1055,
+          "y": 929,
+          "h": 0,
+          "mount": "保留 SVS 落地",
+          "where": "沿用現有位置",
+          "category": "sub",
+          "labelOffset": [
+            40,
+            -20
+          ]
+        }
+      ],
+      "notes": [
+        "左右主聲道整合南牆裝修層；牆內背腔另設計。",
+        "中置保留開放艙，抬高至中心 H32，向主座上仰。",
+        "環繞吊桿位於沙發背緣；不以落地玻璃承重。"
+      ],
+      "status": "2D 討論提案；尚未套用 3D 或確認安裝結構",
+      "sourceCommit": "ecb4a20b83f9c2b63f725a9e8d37263bbf72626f"
+    }
+  ]
+}

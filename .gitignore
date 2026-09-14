@@ -63,6 +63,8 @@
 !/tools/build-open-island-plan.py
 !/tools/build-private-review.py
 !/tools/build-site.py
+!/tools/build-speaker-proposal.py
+!/tools/export-speaker-plan.cjs
 !/tools/home-test-fixture.cjs
 !/tools/render-home-review.cjs
 !/tools/sync-furniture-seed.cjs
@@ -94,6 +96,18 @@
 !/家具清單.html
 !/家具清單.json
 !/提案/
+!/提案/20260914喇叭配置/
+!/提案/20260914喇叭配置/V1-喇叭配置.png
+!/提案/20260914喇叭配置/V1-喇叭配置.svg
+!/提案/20260914喇叭配置/V2-喇叭配置.png
+!/提案/20260914喇叭配置/V2-喇叭配置.svg
+!/提案/20260914喇叭配置/V3-喇叭配置.png
+!/提案/20260914喇叭配置/V3-喇叭配置.svg
+!/提案/20260914喇叭配置/V4-喇叭配置.png
+!/提案/20260914喇叭配置/V4-喇叭配置.svg
+!/提案/20260914喇叭配置/index.html
+!/提案/20260914喇叭配置/位置表.json
+!/提案/20260914喇叭配置/四版總覽.png
 !/提案/南牆電視與開放中島/
 !/提案/南牆電視與開放中島/index.html
 !/提案/南牆電視與開放中島/layout-spec.js

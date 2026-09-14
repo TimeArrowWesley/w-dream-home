@@ -1,5 +1,11 @@
 # W 夢想之家
 
+## 2026-09-14 四版喇叭位置提案
+
+[開啟四版 2D 喇叭配置](提案/20260914喇叭配置/index.html)：每版 11 個位置、安裝方式與中心高度，含 PNG／SVG、四版總覽及 44 筆位置表。這是討論稿，未改動四版即時 3D；先取消 Q7 與環繞的四個獨立腳架位置，兩顆 SVS 仍保留落地。落地玻璃旁改以沙發背緣吊桿提案，固定版前聲道整合裝修牆，旋轉版另設固定吊架。
+
+重建圖面：先執行 `node tools/export-speaker-plan.cjs` 匯出現有模型，再執行 `python -X utf8 tools/build-speaker-proposal.py`。中間的 source-v*.json 僅留本機；發布僅包含成品與重建程式。
+
 A1–14F 全屋互動設計：四個可操作配置版本、即時 3D、室內步行、設備控制，以及可編輯的家具規格清單。
 
 [開啟線上設計](https://timearrowwesley.github.io/w-dream-home/) · [版本比較](方案比較.html) · [家具清單](家具清單.html)

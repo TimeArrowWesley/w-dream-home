@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2040" height="1520" viewBox="0 0 2040 1520" font-family="Microsoft JhengHei,sans-serif"><rect width="100%" height="100%" fill="#f5f7f7"/>
+<text x="42" y="62.2" font-size="38" fill="#23313a" font-weight="700" text-anchor="start">V2  旋轉電視＋小中島</text>
+<text x="44" y="108.4" font-size="26" fill="#23313a" font-weight="400" text-anchor="start">喇叭不占獨立腳架位置｜5.2.4 配置提案</text>
+<text x="1995" y="57.7" font-size="23" fill="#23313a" font-weight="400" text-anchor="end">W 夢想之家</text>
+<text x="1995" y="95.2" font-size="18" fill="#67747c" font-weight="400" text-anchor="end">2026.09.14 · 2D 討論稿</text>
+<circle cx="54" cy="146" r="9" fill="#167d71" stroke="none" stroke-width="2"/>
+<text x="73" y="151.0" font-size="20" fill="#23313a" font-weight="400" text-anchor="start">前方 L／C／R</text>
+<circle cx="349" cy="146" r="9" fill="#7956a3" stroke="none" stroke-width="2"/>
+<text x="368" y="151.0" font-size="20" fill="#23313a" font-weight="400" text-anchor="start">耳平環繞 SL／SR</text>
+<circle cx="699" cy="146" r="9" fill="#237fb7" stroke="none" stroke-width="2"/>
+<text x="718" y="151.0" font-size="20" fill="#23313a" font-weight="400" text-anchor="start">天空 4 顆</text>
+<circle cx="969" cy="146" r="9" fill="#b47720" stroke="none" stroke-width="2"/>
+<text x="988" y="151.0" font-size="20" fill="#23313a" font-weight="400" text-anchor="start">重低音 2 顆・保留落地</text>
+<image x="40" y="190" width="1280" height="884" xlink:href="data:image/png;base64,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"/>
+<rect x="40" y="190" width="1280" height="884" fill="none" stroke="#d4dadd" stroke-width="1"/>
+<polyline points="409.1,364.1 514.3,364.1 514.3,609.7 409.1,609.7 409.1,364.1" fill="none" stroke="#88969d" stroke-width="2"/>
+<polyline points="1014.6,364.1 1138.1,364.1 1138.1,676.0 930.2,676.0 930.2,566.9 1014.6,566.9 1014.6,364.1" fill="none" stroke="#88969d" stroke-width="2"/>
+<rect x="128.8477157360406" y="624.0253807106599" width="90" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="173.8477157360406" y="644.0253807106599" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">廚房</text>
+<rect x="410.83756345177665" y="228.97969543147207" width="90" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="455.83756345177665" y="248.97969543147207" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">客浴</text>
+<rect x="651.243654822335" y="189.99492385786803" width="90" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="696.243654822335" y="209.99492385786803" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">儲藏室</text>
+<rect x="974.715736040609" y="212.08629441624365" width="98" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1023.715736040609" y="232.08629441624365" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">雙人書房</text>
+<rect x="583.6700507614213" y="967.0913705583756" width="90" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="628.6700507614213" y="987.0913705583756" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">入戶</text>
+<rect x="1006.0050761421319" y="805.9543147208121" width="90" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1051.0050761421319" y="825.9543147208121" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">客廳</text>
+<rect x="417.33502538071065" y="540.8578680203045" width="90" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="462.33502538071065" y="560.8578680203045" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">小中島</text>
+<rect x="279.5888324873096" y="837.1421319796954" width="90" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="324.5888324873096" y="857.1421319796954" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">收藏室</text>
+<circle cx="685.8477157360405" cy="488.88324873096445" r="126.7005076142132" fill="none" stroke="#b96d6a" stroke-width="2"/>
+<rect x="636.8477157360405" y="306.9492385786802" width="98" height="31" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="685.8477157360405" y="326.9492385786802" font-size="20" fill="#67747c" font-weight="400" text-anchor="middle">旋轉電視</text>
+<text x="562.3959390862943" y="661.8213197969543" font-size="16" fill="#a45754" font-weight="400" text-anchor="start">紅圈：電視轉動範圍</text>
+<polyline points="819.7,622.7 1079.6,488.9" fill="none" stroke="#a4b8b1" stroke-width="2" stroke-dasharray="8 8"/>
+<polyline points="819.7,355.0 1079.6,488.9" fill="none" stroke="#a4b8b1" stroke-width="2" stroke-dasharray="8 8"/>
+<circle cx="1079.5939086294416" cy="488.88324873096445" r="10" fill="#23313a" stroke="none" stroke-width="2"/>
+<polyline points="1079.6,488.9 1003.6,488.9" fill="none" stroke="#23313a" stroke-width="3"/>
+<polyline points="1014.1,483.1 1003.6,488.9 1014.1,494.6" fill="none" stroke="#23313a" stroke-width="3"/>
+<text x="1093.5939086294416" y="521.9832487309644" font-size="19" fill="#23313a" font-weight="700" text-anchor="start">主座</text>
+<polyline points="813.7,622.7 825.7,622.7" fill="none" stroke="#167d71" stroke-width="2"/>
+<polyline points="819.7,616.7 819.7,628.7" fill="none" stroke="#167d71" stroke-width="2"/>
+<polyline points="819.7,622.7 779.7,638.7" fill="none" stroke="#167d71" stroke-width="2"/>
+<rect x="813.1979695431471" y="612.6598984771573" width="12.99492385786802" height="20.14213197969543" fill="#167d71" stroke="none" stroke-width="1"/>
+<rect x="757.6954314720812" y="618.730964467005" width="44" height="40" fill="#167d71" stroke="none" stroke-width="1"/>
+<text x="779.6954314720812" y="645.730964467005" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">L</text>
+<polyline points="813.7,355.0 825.7,355.0" fill="none" stroke="#167d71" stroke-width="2"/>
+<polyline points="819.7,349.0 819.7,361.0" fill="none" stroke="#167d71" stroke-width="2"/>
+<polyline points="819.7,355.0 779.7,339.0" fill="none" stroke="#167d71" stroke-width="2"/>
+<rect x="813.1979695431471" y="344.96446700507613" width="12.99492385786802" height="20.14213197969543" fill="#167d71" stroke="none" stroke-width="1"/>
+<rect x="757.6954314720812" y="319.03553299492387" width="44" height="40" fill="#167d71" stroke="none" stroke-width="1"/>
+<text x="779.6954314720812" y="346.03553299492387" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">R</text>
+<polyline points="695.9,488.9 707.9,488.9" fill="none" stroke="#167d71" stroke-width="2"/>
+<polyline points="701.9,482.9 701.9,494.9" fill="none" stroke="#167d71" stroke-width="2"/>
+<polyline points="701.9,488.9 645.9,488.9" fill="none" stroke="#167d71" stroke-width="2"/>
+<rect x="623.8964467005076" y="468.88324873096445" width="44" height="40" fill="#167d71" stroke="none" stroke-width="1"/>
+<text x="645.8964467005076" y="495.88324873096445" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">C</text>
+<polyline points="1120.4,652.6 1132.4,652.6" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1126.4,646.6 1126.4,658.6" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1126.4,652.6 1138.4,696.6" fill="none" stroke="#7956a3" stroke-width="2"/>
+<rect x="1116.3756345177665" y="676.6192893401014" width="44" height="40" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="1138.3756345177665" y="703.6192893401014" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SL</text>
+<polyline points="1120.4,384.9 1132.4,384.9" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1126.4,378.9 1126.4,390.9" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1126.4,384.9 1138.4,340.9" fill="none" stroke="#7956a3" stroke-width="2"/>
+<rect x="1116.3756345177665" y="320.92385786802026" width="44" height="40" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="1138.3756345177665" y="347.92385786802026" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SR</text>
+<polyline points="878.7,603.2 890.7,603.2" fill="none" stroke="#237fb7" stroke-width="2"/>
+<polyline points="884.7,597.2 884.7,609.2" fill="none" stroke="#237fb7" stroke-width="2"/>
+<circle cx="884.6700507614213" cy="603.2385786802031" r="25" fill="#ffffff" stroke="#237fb7" stroke-width="3"/>
+<text x="884.6700507614213" y="610.3385786802031" font-size="19" fill="#237fb7" font-weight="700" text-anchor="middle">TFL</text>
+<polyline points="878.7,374.5 890.7,374.5" fill="none" stroke="#237fb7" stroke-width="2"/>
+<polyline points="884.7,368.5 884.7,380.5" fill="none" stroke="#237fb7" stroke-width="2"/>
+<circle cx="884.6700507614213" cy="374.5279187817259" r="25" fill="#ffffff" stroke="#237fb7" stroke-width="3"/>
+<text x="884.6700507614213" y="381.6279187817259" font-size="19" fill="#237fb7" font-weight="700" text-anchor="middle">TFR</text>
+<polyline points="1203.5,603.2 1215.5,603.2" fill="none" stroke="#237fb7" stroke-width="2"/>
+<polyline points="1209.5,597.2 1209.5,609.2" fill="none" stroke="#237fb7" stroke-width="2"/>
+<polyline points="1209.5,603.2 1233.5,603.2" fill="none" stroke="#237fb7" stroke-width="2"/>
+<circle cx="1233.5431472081218" cy="603.2385786802031" r="25" fill="#ffffff" stroke="#237fb7" stroke-width="3"/>
+<text x="1233.5431472081218" y="610.3385786802031" font-size="19" fill="#237fb7" font-weight="700" text-anchor="middle">TRL</text>
+<polyline points="1203.5,374.5 1215.5,374.5" fill="none" stroke="#237fb7" stroke-width="2"/>
+<polyline points="1209.5,368.5 1209.5,380.5" fill="none" stroke="#237fb7" stroke-width="2"/>
+<polyline points="1209.5,374.5 1233.5,374.5" fill="none" stroke="#237fb7" stroke-width="2"/>
+<circle cx="1233.5431472081218" cy="374.5279187817259" r="25" fill="#ffffff" stroke="#237fb7" stroke-width="3"/>
+<text x="1233.5431472081218" y="381.6279187817259" font-size="19" fill="#237fb7" font-weight="700" text-anchor="middle">TRR</text>
+<polyline points="877.4,800.8 889.4,800.8" fill="none" stroke="#b47720" stroke-width="2"/>
+<polyline points="883.4,794.8 883.4,806.8" fill="none" stroke="#b47720" stroke-width="2"/>
+<polyline points="883.4,800.8 833.4,800.8" fill="none" stroke="#b47720" stroke-width="2"/>
+<rect x="859.979695431472" y="775.0964467005076" width="46.78172588832487" height="51.32994923857868" fill="#f3e2c7" stroke="#b47720" stroke-width="2"/>
+<rect x="805.8705583756345" y="780.7614213197969" width="55" height="40" fill="#b47720" stroke="none" stroke-width="1"/>
+<text x="833.3705583756345" y="807.7614213197969" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SW1</text>
+<polyline points="1190.5,819.0 1202.5,819.0" fill="none" stroke="#b47720" stroke-width="2"/>
+<polyline points="1196.5,813.0 1196.5,825.0" fill="none" stroke="#b47720" stroke-width="2"/>
+<polyline points="1196.5,819.0 1242.5,834.0" fill="none" stroke="#b47720" stroke-width="2"/>
+<rect x="1173.1573604060914" y="793.2893401015228" width="46.78172588832487" height="51.32994923857868" fill="#f3e2c7" stroke="#b47720" stroke-width="2"/>
+<rect x="1215.0482233502537" y="813.9543147208121" width="55" height="40" fill="#b47720" stroke="none" stroke-width="1"/>
+<text x="1242.5482233502537" y="840.9543147208121" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SW2</text>
+<text x="55" y="1108.0" font-size="20" fill="#67747c" font-weight="400" text-anchor="start">L／R 以主座面向電視為準；十字為落點，色塊是放大標記，藍圈為天花投影。</text>
+<rect x="430" y="1150" width="890" height="290" fill="#e9eeee" stroke="none" stroke-width="1"/>
+<text x="454" y="1187.7" font-size="23" fill="#23313a" font-weight="700" text-anchor="start">懸空怎麼固定？</text>
+<polyline points="470.0,1216.0 890.0,1216.0" fill="none" stroke="#23313a" stroke-width="7"/>
+<text x="909" y="1221.1" font-size="19" fill="#23313a" font-weight="400" text-anchor="start">結構頂板承重</text>
+<polyline points="566.0,1216.0 566.0,1280.0" fill="none" stroke="#7956a3" stroke-width="5"/>
+<rect x="552" y="1280" width="28" height="53" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="607" y="1297.1" font-size="19" fill="#23313a" font-weight="400" text-anchor="start">環繞中心 H120，降到坐姿耳邊</text>
+<rect x="525" y="1350" width="145" height="54" fill="#bec7cc" stroke="none" stroke-width="1"/>
+<rect x="651" y="1318" width="19" height="74" fill="#a8b5bd" stroke="none" stroke-width="1"/>
+<circle cx="751" cy="1333" r="12" fill="none" stroke="#23313a" stroke-width="2"/>
+<polyline points="751.0,1345.0 751.0,1383.0" fill="none" stroke="#23313a" stroke-width="3"/>
+<polyline points="566.0,1306.0 733.0,1333.0" fill="none" stroke="#7956a3" stroke-width="2" stroke-dasharray="8 8"/>
+<text x="695" y="1413.2" font-size="18" fill="#67747c" font-weight="400" text-anchor="start">靠沙發背緣；底下沒有獨立腳座</text>
+<text x="454" y="1439.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="start">吊架形式需原廠／結構確認；主聲道吊架另核承重與防撞。</text>
+<image x="45" y="1174" width="335" height="248" xlink:href="data:image/png;base64,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"/>
+<text x="45" y="1153.8" font-size="22" fill="#23313a" font-weight="700" text-anchor="start">全屋位置索引</text>
+<circle cx="272.9861111111111" cy="1332.892361111111" r="3" fill="#167d71" stroke="none" stroke-width="2"/>
+<circle cx="272.9861111111111" cy="1284.96875" r="3" fill="#167d71" stroke="none" stroke-width="2"/>
+<circle cx="251.89739583333332" cy="1308.9305555555557" r="3" fill="#167d71" stroke="none" stroke-width="2"/>
+<circle cx="327.8888888888889" cy="1338.2430555555557" r="3" fill="#7956a3" stroke="none" stroke-width="2"/>
+<circle cx="327.8888888888889" cy="1290.3194444444443" r="3" fill="#7956a3" stroke="none" stroke-width="2"/>
+<circle cx="284.61805555555554" cy="1329.4027777777778" r="3" fill="#237fb7" stroke="none" stroke-width="2"/>
+<circle cx="284.61805555555554" cy="1288.4583333333333" r="3" fill="#237fb7" stroke="none" stroke-width="2"/>
+<circle cx="342.77777777777777" cy="1329.4027777777778" r="3" fill="#237fb7" stroke="none" stroke-width="2"/>
+<circle cx="342.77777777777777" cy="1288.4583333333333" r="3" fill="#237fb7" stroke="none" stroke-width="2"/>
+<circle cx="284.38541666666663" cy="1364.763888888889" r="3" fill="#b47720" stroke="none" stroke-width="2"/>
+<circle cx="340.4513888888889" cy="1368.0208333333333" r="3" fill="#b47720" stroke="none" stroke-width="2"/>
+<text x="1370" y="212.3" font-size="27" fill="#23313a" font-weight="700" text-anchor="start">11 個位置，逐顆對照</text>
+<text x="1370" y="248.2" font-size="18" fill="#67747c" font-weight="400" text-anchor="start">H＝喇叭中心離完成地面；單位 cm</text>
+<rect x="1370" y="277" width="620" height="58" fill="#ffffff" stroke="none" stroke-width="1"/>
+<rect x="1378" y="286" width="53" height="33" fill="#167d71" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="307.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">L</text>
+<text x="1445" y="300.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">左主聲道</text>
+<text x="1445" y="324.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">頂板吊架</text>
+<text x="1974" y="301.2" font-size="18" fill="#167d71" font-weight="700" text-anchor="end">H110</text>
+<text x="1974" y="324.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">電視客廳側・圖面下</text>
+<rect x="1370" y="338" width="620" height="58" fill="#eef2f3" stroke="none" stroke-width="1"/>
+<rect x="1378" y="347" width="53" height="33" fill="#167d71" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="368.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">R</text>
+<text x="1445" y="361.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">右主聲道</text>
+<text x="1445" y="385.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">頂板吊架</text>
+<text x="1974" y="362.2" font-size="18" fill="#167d71" font-weight="700" text-anchor="end">H110</text>
+<text x="1974" y="385.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">電視客廳側・圖面上</text>
+<rect x="1370" y="399" width="620" height="58" fill="#ffffff" stroke="none" stroke-width="1"/>
+<rect x="1378" y="408" width="53" height="33" fill="#167d71" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="429.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">C</text>
+<text x="1445" y="422.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">中置</text>
+<text x="1445" y="446.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">固定櫃開放艙</text>
+<text x="1974" y="423.2" font-size="18" fill="#167d71" font-weight="700" text-anchor="end">H32</text>
+<text x="1974" y="446.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">電視下方；朝沙發</text>
+<rect x="1370" y="460" width="620" height="58" fill="#eef2f3" stroke="none" stroke-width="1"/>
+<rect x="1378" y="469" width="53" height="33" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="490.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">SL</text>
+<text x="1445" y="483.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">左環繞</text>
+<text x="1445" y="507.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">沙發背緣吊桿</text>
+<text x="1974" y="484.2" font-size="18" fill="#7956a3" font-weight="700" text-anchor="end">H120</text>
+<text x="1974" y="507.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發後方・圖面下</text>
+<rect x="1370" y="521" width="620" height="58" fill="#ffffff" stroke="none" stroke-width="1"/>
+<rect x="1378" y="530" width="53" height="33" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="551.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">SR</text>
+<text x="1445" y="544.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">右環繞</text>
+<text x="1445" y="568.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">沙發背緣吊桿</text>
+<text x="1974" y="545.2" font-size="18" fill="#7956a3" font-weight="700" text-anchor="end">H120</text>
+<text x="1974" y="568.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發後方・圖面上</text>
+<rect x="1370" y="582" width="620" height="58" fill="#eef2f3" stroke="none" stroke-width="1"/>
+<rect x="1378" y="591" width="53" height="33" fill="#237fb7" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="612.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">TFL</text>
+<text x="1445" y="605.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">左前天空</text>
+<text x="1445" y="629.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">天花嵌入</text>
+<text x="1974" y="606.2" font-size="18" fill="#237fb7" font-weight="700" text-anchor="end">H272.8</text>
+<text x="1974" y="629.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發前方・圖面下</text>
+<rect x="1370" y="643" width="620" height="58" fill="#ffffff" stroke="none" stroke-width="1"/>
+<rect x="1378" y="652" width="53" height="33" fill="#237fb7" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="673.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">TFR</text>
+<text x="1445" y="666.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">右前天空</text>
+<text x="1445" y="690.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">天花嵌入</text>
+<text x="1974" y="667.2" font-size="18" fill="#237fb7" font-weight="700" text-anchor="end">H272.8</text>
+<text x="1974" y="690.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發前方・圖面上</text>
+<rect x="1370" y="704" width="620" height="58" fill="#eef2f3" stroke="none" stroke-width="1"/>
+<rect x="1378" y="713" width="53" height="33" fill="#237fb7" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="734.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">TRL</text>
+<text x="1445" y="727.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">左後天空</text>
+<text x="1445" y="751.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">天花嵌入</text>
+<text x="1974" y="728.2" font-size="18" fill="#237fb7" font-weight="700" text-anchor="end">H272.8</text>
+<text x="1974" y="751.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發後方・圖面下</text>
+<rect x="1370" y="765" width="620" height="58" fill="#ffffff" stroke="none" stroke-width="1"/>
+<rect x="1378" y="774" width="53" height="33" fill="#237fb7" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="795.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">TRR</text>
+<text x="1445" y="788.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">右後天空</text>
+<text x="1445" y="812.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">天花嵌入</text>
+<text x="1974" y="789.2" font-size="18" fill="#237fb7" font-weight="700" text-anchor="end">H272.8</text>
+<text x="1974" y="812.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發後方・圖面上</text>
+<rect x="1370" y="826" width="620" height="58" fill="#eef2f3" stroke="none" stroke-width="1"/>
+<rect x="1378" y="835" width="53" height="33" fill="#b47720" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="856.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">SW1</text>
+<text x="1445" y="849.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">重低音 1</text>
+<text x="1445" y="873.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">保留 SVS 落地</text>
+<text x="1974" y="850.2" font-size="18" fill="#b47720" font-weight="700" text-anchor="end">落地</text>
+<text x="1974" y="873.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沿用現有位置</text>
+<rect x="1370" y="887" width="620" height="58" fill="#ffffff" stroke="none" stroke-width="1"/>
+<rect x="1378" y="896" width="53" height="33" fill="#b47720" stroke="none" stroke-width="1"/>
+<text x="1404.5" y="917.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">SW2</text>
+<text x="1445" y="910.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">重低音 2</text>
+<text x="1445" y="934.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">保留 SVS 落地</text>
+<text x="1974" y="911.2" font-size="18" fill="#b47720" font-weight="700" text-anchor="end">落地</text>
+<text x="1974" y="934.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沿用現有位置</text>
+<text x="1370" y="1003.6" font-size="24" fill="#23313a" font-weight="700" text-anchor="start">這版的調整重點</text>
+<text x="1370" y="1040.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">左右主聲道由頂板承重吊架固定；中心 H110。</text>
+<text x="1370" y="1074.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">喇叭固定朝沙發，不隨電視轉向中島。</text>
+<text x="1370" y="1108.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">紫色環繞降到 H120，位於沙發背緣。</text>
+<rect x="1370" y="1142" width="620" height="112" fill="#f0e7d7" stroke="none" stroke-width="1"/>
+<text x="1385" y="1175.8" font-size="22" fill="#b47720" font-weight="700" text-anchor="start">兩顆重低音仍保留落地</text>
+<text x="1385" y="1209.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">本輪先取消兩支落地 Q7 與兩座環繞腳架。</text>
+<text x="1385" y="1240.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">若改嵌牆低音，需另設背腔、隔振與功放位置。</text>
+<text x="1370" y="1298.2" font-size="18" fill="#23313a" font-weight="700" text-anchor="start">圖面已核對：每版 5＋2＋4＝11 個喇叭位置。</text>
+<text x="1370" y="1329.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">底圖取自目前 3D 幾何；灰階僅用於辨認格局。</text>
+<text x="1370" y="1365.3" font-size="17" fill="#9b6640" font-weight="400" text-anchor="start">吊掛位置仍占空中體積，不能當成完全無障礙。</text>
+<polyline points="40.0,1467.0 1995.0,1467.0" fill="none" stroke="#cdd6d9" stroke-width="1"/>
+<text x="44" y="1498.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">位置提案，尚未更動 3D。安裝點、天花管線、音場與背腔須依現場條件確認。</text>
+<text x="1995" y="1498.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="end">02 / 04</text>
+</svg>
