@@ -36,9 +36,12 @@ def proposal(v):
             if q['id']=='SL':q['y']=686
     if v==3:
         for q in rows:
-            if q['id']=='SR':q['labelOffset']=[-50,0]
-            if q['id']=='SL':q['labelOffset']=[-50,15]
+            if q['id'] in ('SR','SL'):
+                q.update(x=1030,y=449 if q['id']=='SR' else 717,h=135,mount='重低音上方頂板吊架',where='離開沙發投影・朝主座',labelOffset=[-70,-65 if q['id']=='SR' else 65],envelope=dict(w=20,d=20,h=30,bottom=120),envelopeNote='小型環繞連支架的配置預留上限；機種及原廠固定條件待選定')
+            if q['id']=='SW1':q['labelOffset']=[44,0]
+            if q['id']=='SW2':q['labelOffset']=[44,10]
     notes=(['左右主聲道整合南牆裝修層；牆內背腔另設計。','中置保留開放艙，抬高至中心 H32，向主座上仰。','環繞吊桿位於沙發背緣；不以落地玻璃承重。'] if not rotating else ['左右主聲道由頂板承重吊架固定；中心 H110。','喇叭固定朝沙發，不隨電視轉向中島。','紫色環繞降到 H120，位於沙發背緣。'])
+    if v==3:notes=['SL／SR 移到 SW2／SW1 上方，完全離開沙發。','中心 H135；喇叭連支架預留 20×20×H30。','距沙發東緣至少 25cm；距模型窗簾約 38cm。']
     return dict(version=f'V{v}',title=TITLES[v-1],rotating=rotating,listener=ear,tv=[647,cy] if rotating else [917.5,948.6],speakers=rows,notes=notes,status='2D 討論提案；尚未套用 3D 或確認安裝結構',sourceCommit=json.loads((OUT/f'source-v{v}.json').read_text())['sourceCommit'])
 
 class Canvas:
@@ -135,6 +138,7 @@ def diagram(config):
         if dx or dy:d.line([(x,y),(lx,ly)],co,2)
         if q['category']=='sub':
             d.rect(x-18*s,y-19.75*s,36*s,39.5*s,'#f3e2c7',co,2)
+            if v==3:d.rect(x-10*s,y-10*s,20*s,20*s,None,COLORS['surround'],3)
         elif q['id'] in ('L','R'):
             d.rect(x-5*s,y-7.75*s,10*s,15.5*s,co) if config['rotating'] else d.rect(x-12*s,y-4*s,24*s,8*s,co)
         if q['category']=='top':
@@ -142,16 +146,27 @@ def diagram(config):
         else:
             bw=55 if q['category']=='sub' else 44;d.rect(lx-bw/2,ly-20,bw,40,co);d.text(lx,ly-11,q['id'],20,'#ffffff',True,'middle')
     d.text(55,1090,'L／R 以主座面向電視為準；十字為落點，色塊是放大標記，藍圈為天花投影。',20,MUTED)
-    # Explicit installation diagram prevents interpreting hung speakers as ceiling channels.
-    d.rect(430,1150,890,290,'#e9eeee');d.text(454,1167,'懸空怎麼固定？',23,bold=True)
-    d.line([(470,1216),(890,1216)],INK,7);d.text(909,1204,'結構頂板承重',19)
-    d.line([(566,1216),(566,1280)],COLORS['surround'],5)
-    d.rect(552,1280,28,53,COLORS['surround']);d.text(607,1280,'環繞中心 H120，降到坐姿耳邊',19)
-    d.rect(525,1350,145,54,'#bec7cc');d.rect(651,1318,19,74,'#a8b5bd')
-    d.circle(751,1333,12,None,INK);d.line([(751,1345),(751,1383)],INK,3)
-    d.line([(566,1306),(733,1333)],COLORS['surround'],2,True)
-    d.text(695,1397,'靠沙發背緣；底下沒有獨立腳座',18,MUTED)
-    d.text(454,1425,'吊架形式需原廠／結構確認；主聲道吊架另核承重與防撞。',16,MUTED)
+    # A separate section makes the V3 shared plan position explicit.
+    if v==3:
+        d.rect(430,1150,890,290,'#e9eeee');d.text(454,1167,'V3 修正：環繞在重低音上方，離開沙發',23,bold=True)
+        d.line([(470,1216),(1210,1216)],INK,7)
+        d.line([(950,1216),(950,1260)],COLORS['surround'],5)
+        d.rect(932,1260,36,54,COLORS['surround']);d.text(993,1268,'SL／SR 中心 H135',19)
+        d.rect(917,1350,66,68,'#f3e2c7',COLORS['sub'],2);d.text(993,1361,'SW1／SW2 留在地面',19)
+        d.rect(520,1360,230,58,'#bec7cc');d.rect(730,1310,20,108,'#a8b5bd')
+        d.text(557,1332,'沙發',19);d.line([(750,1340),(917,1340)],COLORS['surround'],2)
+        d.text(825,1308,'平面淨距至少25cm',17,COLORS['surround'],anchor='middle')
+        d.text(454,1425,'環繞連支架預留 20×20×H30cm；由頂板承重，不固定在沙發或玻璃上。',16,MUTED)
+    else:
+        d.rect(430,1150,890,290,'#e9eeee');d.text(454,1167,'懸空怎麼固定？',23,bold=True)
+        d.line([(470,1216),(890,1216)],INK,7);d.text(909,1204,'結構頂板承重',19)
+        d.line([(566,1216),(566,1280)],COLORS['surround'],5)
+        d.rect(552,1280,28,53,COLORS['surround']);d.text(607,1280,'環繞中心 H120，降到坐姿耳邊',19)
+        d.rect(525,1350,145,54,'#bec7cc');d.rect(651,1318,19,74,'#a8b5bd')
+        d.circle(751,1333,12,None,INK);d.line([(751,1345),(751,1383)],INK,3)
+        d.line([(566,1306),(733,1333)],COLORS['surround'],2,True)
+        d.text(695,1397,'靠沙發背緣；底下沒有獨立腳座',18,MUTED)
+        d.text(454,1425,'吊架形式需原廠／結構確認；主聲道吊架另核承重與防撞。',16,MUTED)
     mini,_=base_plan(source,335,248,(-230,-20,1210,1045));d.image(mini,45,1174)
     d.text(45,1134,'全屋位置索引',22,bold=True)
     for q in config['speakers']:
@@ -190,11 +205,61 @@ def build_page(configs):
     page=f'''<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>四版喇叭配置提案｜W夢想之家</title>
 <style>*{{box-sizing:border-box}}body{{margin:0;background:#10171b;color:#e2e9eb;font-family:system-ui,"Microsoft JhengHei",sans-serif}}main{{max-width:1800px;margin:auto;padding:28px}}h1{{font-size:clamp(25px,3vw,38px);margin:10px 0}}p{{color:#b8c8cc;line-height:1.7}}nav{{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0}}button{{padding:13px 18px;border:1px solid #50616b;border-radius:8px;background:#202b32;color:inherit;cursor:pointer;font:inherit}}button[aria-pressed=true]{{background:#bcd6cf;color:#173c33;border-color:#bcd6cf}}figure{{margin:0}}figure[hidden]{{display:none}}img{{width:100%;height:auto;border-radius:10px}}a{{color:#8fccc4}}figcaption{{display:flex;gap:24px;padding:16px 0}}aside{{padding:16px 22px;background:#242f36;border-radius:10px;margin:22px 0;line-height:1.8}}details{{margin:22px 0}}summary{{cursor:pointer;padding:12px}}.table{{overflow:auto}}table{{border-collapse:collapse;min-width:900px;width:100%}}td,th{{text-align:left;padding:10px;border-bottom:1px solid #3a454b}}footer{{line-height:1.9;margin-top:30px}}@media(max-width:650px){{main{{padding:14px}}nav button{{font-size:14px}}}}@media print{{body{{background:white;color:black}}nav,figcaption,details,footer,aside{{display:none}}figure[hidden]{{display:block}}figure{{break-after:page}}}}</style>
 <main><a href="../../index.html">← 回到 3D 設計</a><h1>每個版本，每一顆喇叭的位置</h1><p>四張 2D 圖各有 11 個位置：左右主聲道＋中置＋兩顆環繞＋四顆天空＋兩顆重低音。<br>點圖可開啟原尺寸；這是待討論的擺位提案，現有 3D 尚未更換設備。</p><nav aria-label="版本">{buttons}</nav>{figures}
-<aside><strong>先取消四個獨立落地腳座位置。</strong>兩顆 SVS 重低音仍保留落地，圖中為橘色 SW1／SW2。<br>落地玻璃不能當承重牆，因此紫色環繞使用頂板吊桿，降到沙發耳邊；藍色天空聲道仍在天花板。V2／V3 綠色主聲道也需獨立承重吊架，固定朝沙發。<br>V1／V4 的嵌入式主聲道需要另外設計裝修層及背腔；不在結構牆直接挖洞。中置仍為開放櫃提案，最終選型需一併核對前方三聲道搭配。</aside>
+<aside><strong>V3 已修正：</strong>SL／SR 已移出沙發投影，分別吊在 SW2／SW1 上方，中心 H135。<a href="V3-環繞位置修正.png">查看平面淨距與側面高度</a>。<br><strong>先取消四個獨立落地腳座位置。</strong>兩顆 SVS 重低音仍保留落地，圖中為橘色 SW1／SW2。<br>落地玻璃不能當承重牆，因此紫色環繞使用頂板吊架；V3 移至沙發外側的低音設備區，其他版本維持原討論稿。藍色天空聲道仍在天花板。V2／V3 綠色主聲道也需獨立承重吊架，固定朝沙發。<br>V1／V4 的嵌入式主聲道需要另外設計裝修層及背腔；不在結構牆直接挖洞。中置仍為開放櫃提案，最終選型需一併核對前方三聲道搭配。</aside>
 <details><summary>全部 44 個位置與高度表</summary><p>座標沿目前模型：X 向圖面右、Y 向圖面下；單位 cm。H 為中心高度，SW 的 0 表示底部落地。符號有放大，十字落點才是配置中心。</p><div class="table"><table><thead><tr><th>版本</th><th>聲道</th><th>X, Y</th><th>H</th><th>安裝</th><th>位置</th></tr></thead><tbody>{rows}</tbody></table></div></details>
 <footer>產品方向與依據：<a href="https://ca.kef.com/products/ci3160rlm">KEF 嵌牆主聲道</a> · <a href="https://www.focal.com/products/on-wall-302">Focal 薄型壁掛產品</a> · <a href="https://www.dolby.com/siteassets/technologies/dolby-atmos/atmos-installation-guidelines-121318_r3.1.pdf">Dolby 家用聲道配置指引</a><br>吊架是本案安裝設計方向，並非宣稱 Focal 原廠允許直接吊掛；最終承重構造、機種與原廠安裝條件需核對。天空位置尚須協調樑、吊隱冷氣及檢修孔。<br>2026-09-14 · <a href="位置表.json">下載位置資料</a> · <a href="四版總覽.png">查看四版總覽圖</a></footer></main>
 <script>for(const b of document.querySelectorAll('[data-v]'))b.addEventListener('click',()=>{{document.querySelectorAll('[data-v]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelectorAll('figure').forEach(x=>x.hidden=x.id!=='v'+b.dataset.v);}});</script></html>'''
     (OUT/'index.html').write_bytes(page.encode())
+
+def surround_detail(config):
+    d=Canvas(1780,1100);co=COLORS['surround'];orange=COLORS['sub'];red='#b36360'
+    d.text(42,26,'V3 環繞修正｜離開沙發，集中到低音設備區上方',34,bold=True)
+    d.text(44,82,'SL＝左環繞；SR＝右環繞。原吊點落在沙發投影內，這次移到兩顆重低音正上方。',22,MUTED)
+    d.text(45,135,'平面位置與淨距',25,bold=True);d.text(907,135,'側面投影與安裝高度',25,bold=True)
+    source=json.loads((OUT/'source-v3.json').read_text());im,s=base_plan(source,730,740,(795,375,1155,775));d.image(im,45,178)
+    p=lambda x,y:(45+(x-795)*s,178+(y-375)*s)
+    sofa=[[900,464],[995,464],[995,704],[835,704],[835,620],[900,620]]
+    d.line([p(*q) for q in sofa+[sofa[0]]],'#88969d',3)
+    d.text(*p(908,570),'沙發不移動',21,MUTED)
+    # This line is the innermost modeled curtain fold, not a structural mounting line.
+    d.line([p(1078.1,390),p(1078.1,565)],'#478795',3,True)
+    d.line([p(1078.1,665),p(1078.1,765)],'#478795',3,True)
+    d.text(*p(1088,420),'窗簾',20,'#478795')
+    for sid,subid,yy,oldy in [('SR','SW1',449,480),('SL','SW2',717,686)]:
+        x,y=p(1030,yy);old=p(986,oldy)
+        d.line([(old[0]-7,old[1]-7),(old[0]+7,old[1]+7)],red,3);d.line([(old[0]-7,old[1]+7),(old[0]+7,old[1]-7)],red,3)
+        arrow(d,old,(x-19,y),red,2)
+        d.rect(x-18*s,y-19.75*s,36*s,39.5*s,'#f3e2c7',orange,2)
+        d.rect(x-10*s,y-10*s,20*s,20*s,co)
+        d.text(x,y-10,sid,18,'#ffffff',True,'middle')
+        d.text(x-40,y-64 if sid=='SR' else y+50,subid+' 落地／'+sid+' 在上方',19,co,True,'middle')
+    def dimension(a,b,label):
+        aa,bb=p(*a),p(*b);d.line([aa,bb],co,2)
+        for x,y in [aa,bb]:d.line([(x,y-6),(x,y+6)],co,2)
+        d.text((aa[0]+bb[0])/2,aa[1]-27,label,19,co,True,'middle')
+    dimension((995,535),(1020,535),'25cm')
+    dimension((1040,535),(1078.1,535),'約38cm')
+    d.text(53,933,'紅色叉：原吊點（取消）',20,red);d.text(53,967,'紫色：上方環繞；橘色：地面重低音，兩者垂直疊置。',20)
+    # Dimensioned schematic projection: depth x follows the source model, H is above FFL.
+    zx=lambda x:1270+(x-995)*1.8;zy=lambda z:785-z*1.8
+    d.line([(950,zy(275)),(1660,zy(275))],INK,7);d.text(1000,zy(275)-40,'固定到結構頂板，另設承重與安全固定',21)
+    d.line([(950,785),(1660,785)],INK,3)
+    d.rect(zx(900),zy(48),95*1.8,48*1.8,'#b7c2c8');d.rect(zx(977),zy(84),18*1.8,84*1.8,'#94a6b0')
+    d.text(zx(900),803,'沙發',21)
+    d.line([(zx(1030),zy(275)),(zx(1030),zy(150))],co,5)
+    d.rect(zx(1020),zy(150),20*1.8,30*1.8,co)
+    d.line([(zx(1030),zy(135)),(1510,zy(135))],co,2,True);d.text(1515,zy(135)-12,'中心 135cm',22,co,True)
+    d.text(1460,zy(120)+15,'底部 120cm',19,co)
+    d.rect(zx(1012),zy(37.2),36*1.8,37.2*1.8,'#f3e2c7',orange,2)
+    d.text(1460,zy(37.2)+16,'原重低音 H37.2',21,orange)
+    d.line([(zx(1078.1),zy(240)),(zx(1078.1),785)],'#478795',3,True)
+    d.text(zx(1078.1)+14,zy(235),'窗簾',19,'#478795')
+    d.text(938,862,'喇叭連支架預留：20×20×高30cm；型號待選。',22)
+    d.text(938,902,'吊桿也位於重低音投影內，不在沙發或玻璃上受力。',20)
+    d.text(938,941,'主座到環繞平面距離約156cm，左右對稱。',20)
+    d.line([(43,1015),(1730,1015)],'#cdd6d9',1)
+    d.text(45,1038,'本圖為 2D 修正提案；25／38cm 依模型及預留包絡計算，實際喇叭、吊架與窗簾須複核。3D 尚未更換。',19,MUTED)
+    d.save('V3-環繞位置修正')
 
 configs=[proposal(v) for v in range(1,5)]
 for c in configs:
@@ -211,9 +276,17 @@ for c in configs:
     if c['rotating']:
         for q in c['speakers']:
             if q['id'] in ('L','R'):assert math.hypot(q['x']-c['tv'][0],q['y']-c['tv'][1])-10>97.5
+    if c['version']=='V3':
+        for q in c['speakers']:
+            if q['id'] not in ('SL','SR'):continue
+            e=q['envelope'];assert q['x']-e['w']/2-995>=25
+            assert 1078.1-(q['x']+e['w']/2)>=38
+            sub=next(x for x in c['speakers'] if x['id']==('SW1' if q['id']=='SR' else 'SW2'))
+            assert (q['x'],q['y'])==(sub['x'],sub['y']) and e['w']<=36 and e['d']<=39.5
     diagram(c)
 (OUT/'位置表.json').write_bytes((json.dumps(dict(date='2026-09-14',units='cm',purpose='2D speaker-location proposal only',versions=configs),ensure_ascii=False,indent=2)+'\n').encode())
 build_page(configs)
+surround_detail(configs[2])
 # Four public-area maps, large enough to identify all channels without the schedules.
 ov=Canvas(2080,1620);ov.text(38,25,'四版喇叭位置總覽',34,bold=True);ov.text(2040,34,'44 個位置・每版 5.2.4',22,MUTED,anchor='end')
 for x,key,label in [(42,'front','綠：前方 L／C／R'),(430,'surround','紫：耳平環繞 SL／SR'),(870,'top','藍：天花天空聲道'),(1250,'sub','橘：重低音 SW1／SW2（保留落地）')]:

@@ -58,16 +58,16 @@
 <polyline points="701.9,518.8 645.9,518.8" fill="none" stroke="#167d71" stroke-width="2"/>
 <rect x="623.8964467005076" y="498.7715736040609" width="44" height="40" fill="#167d71" stroke="none" stroke-width="1"/>
 <text x="645.8964467005076" y="525.7715736040609" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">C</text>
-<polyline points="1120.4,652.6 1132.4,652.6" fill="none" stroke="#7956a3" stroke-width="2"/>
-<polyline points="1126.4,646.6 1126.4,658.6" fill="none" stroke="#7956a3" stroke-width="2"/>
-<polyline points="1126.4,652.6 1076.4,667.6" fill="none" stroke="#7956a3" stroke-width="2"/>
-<rect x="1054.3756345177665" y="647.6192893401014" width="44" height="40" fill="#7956a3" stroke="none" stroke-width="1"/>
-<text x="1076.3756345177665" y="674.6192893401014" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SL</text>
-<polyline points="1120.4,384.9 1132.4,384.9" fill="none" stroke="#7956a3" stroke-width="2"/>
-<polyline points="1126.4,378.9 1126.4,390.9" fill="none" stroke="#7956a3" stroke-width="2"/>
-<polyline points="1126.4,384.9 1076.4,384.9" fill="none" stroke="#7956a3" stroke-width="2"/>
-<rect x="1054.3756345177665" y="364.92385786802026" width="44" height="40" fill="#7956a3" stroke="none" stroke-width="1"/>
-<text x="1076.3756345177665" y="391.92385786802026" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SR</text>
+<polyline points="1177.6,692.9 1189.6,692.9" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1183.6,686.9 1183.6,698.9" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1183.6,692.9 1113.6,757.9" fill="none" stroke="#7956a3" stroke-width="2"/>
+<rect x="1091.5532994923858" y="737.9035532994924" width="44" height="40" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="1113.5532994923858" y="764.9035532994924" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SL</text>
+<polyline points="1177.6,344.6 1189.6,344.6" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1183.6,338.6 1183.6,350.6" fill="none" stroke="#7956a3" stroke-width="2"/>
+<polyline points="1183.6,344.6 1113.6,279.6" fill="none" stroke="#7956a3" stroke-width="2"/>
+<rect x="1091.5532994923858" y="259.6395939086294" width="44" height="40" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="1113.5532994923858" y="286.6395939086294" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SR</text>
 <polyline points="878.7,633.1 890.7,633.1" fill="none" stroke="#237fb7" stroke-width="2"/>
 <polyline points="884.7,627.1 884.7,639.1" fill="none" stroke="#237fb7" stroke-width="2"/>
 <circle cx="884.6700507614213" cy="633.1269035532995" r="25" fill="#ffffff" stroke="#237fb7" stroke-width="3"/>
@@ -88,38 +88,40 @@
 <text x="1233.5431472081218" y="411.51624365482235" font-size="19" fill="#237fb7" font-weight="700" text-anchor="middle">TRR</text>
 <polyline points="1177.6,344.6 1189.6,344.6" fill="none" stroke="#b47720" stroke-width="2"/>
 <polyline points="1183.6,338.6 1183.6,350.6" fill="none" stroke="#b47720" stroke-width="2"/>
-<polyline points="1183.6,344.6 1133.6,344.6" fill="none" stroke="#b47720" stroke-width="2"/>
+<polyline points="1183.6,344.6 1227.6,344.6" fill="none" stroke="#b47720" stroke-width="2"/>
 <rect x="1160.1624365482235" y="318.97461928934007" width="46.78172588832487" height="51.32994923857868" fill="#f3e2c7" stroke="#b47720" stroke-width="2"/>
-<rect x="1106.0532994923858" y="324.6395939086294" width="55" height="40" fill="#b47720" stroke="none" stroke-width="1"/>
-<text x="1133.5532994923858" y="351.6395939086294" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SW1</text>
+<rect x="1170.5583756345177" y="331.6446700507614" width="25.98984771573604" height="25.98984771573604" fill="none" stroke="#7956a3" stroke-width="3"/>
+<rect x="1200.0532994923858" y="324.6395939086294" width="55" height="40" fill="#b47720" stroke="none" stroke-width="1"/>
+<text x="1227.5532994923858" y="351.6395939086294" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SW1</text>
 <polyline points="1177.6,692.9 1189.6,692.9" fill="none" stroke="#b47720" stroke-width="2"/>
 <polyline points="1183.6,686.9 1183.6,698.9" fill="none" stroke="#b47720" stroke-width="2"/>
-<polyline points="1183.6,692.9 1229.6,707.9" fill="none" stroke="#b47720" stroke-width="2"/>
+<polyline points="1183.6,692.9 1227.6,702.9" fill="none" stroke="#b47720" stroke-width="2"/>
 <rect x="1160.1624365482235" y="667.2385786802031" width="46.78172588832487" height="51.32994923857868" fill="#f3e2c7" stroke="#b47720" stroke-width="2"/>
-<rect x="1202.0532994923858" y="687.9035532994924" width="55" height="40" fill="#b47720" stroke="none" stroke-width="1"/>
-<text x="1229.5532994923858" y="714.9035532994924" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SW2</text>
+<rect x="1170.5583756345177" y="679.9086294416244" width="25.98984771573604" height="25.98984771573604" fill="none" stroke="#7956a3" stroke-width="3"/>
+<rect x="1200.0532994923858" y="682.9035532994924" width="55" height="40" fill="#b47720" stroke="none" stroke-width="1"/>
+<text x="1227.5532994923858" y="709.9035532994924" font-size="20" fill="#ffffff" font-weight="700" text-anchor="middle">SW2</text>
 <text x="55" y="1108.0" font-size="20" fill="#67747c" font-weight="400" text-anchor="start">L／R 以主座面向電視為準；十字為落點，色塊是放大標記，藍圈為天花投影。</text>
 <rect x="430" y="1150" width="890" height="290" fill="#e9eeee" stroke="none" stroke-width="1"/>
-<text x="454" y="1187.7" font-size="23" fill="#23313a" font-weight="700" text-anchor="start">懸空怎麼固定？</text>
-<polyline points="470.0,1216.0 890.0,1216.0" fill="none" stroke="#23313a" stroke-width="7"/>
-<text x="909" y="1221.1" font-size="19" fill="#23313a" font-weight="400" text-anchor="start">結構頂板承重</text>
-<polyline points="566.0,1216.0 566.0,1280.0" fill="none" stroke="#7956a3" stroke-width="5"/>
-<rect x="552" y="1280" width="28" height="53" fill="#7956a3" stroke="none" stroke-width="1"/>
-<text x="607" y="1297.1" font-size="19" fill="#23313a" font-weight="400" text-anchor="start">環繞中心 H120，降到坐姿耳邊</text>
-<rect x="525" y="1350" width="145" height="54" fill="#bec7cc" stroke="none" stroke-width="1"/>
-<rect x="651" y="1318" width="19" height="74" fill="#a8b5bd" stroke="none" stroke-width="1"/>
-<circle cx="751" cy="1333" r="12" fill="none" stroke="#23313a" stroke-width="2"/>
-<polyline points="751.0,1345.0 751.0,1383.0" fill="none" stroke="#23313a" stroke-width="3"/>
-<polyline points="566.0,1306.0 733.0,1333.0" fill="none" stroke="#7956a3" stroke-width="2" stroke-dasharray="8 8"/>
-<text x="695" y="1413.2" font-size="18" fill="#67747c" font-weight="400" text-anchor="start">靠沙發背緣；底下沒有獨立腳座</text>
-<text x="454" y="1439.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="start">吊架形式需原廠／結構確認；主聲道吊架另核承重與防撞。</text>
+<text x="454" y="1187.7" font-size="23" fill="#23313a" font-weight="700" text-anchor="start">V3 修正：環繞在重低音上方，離開沙發</text>
+<polyline points="470.0,1216.0 1210.0,1216.0" fill="none" stroke="#23313a" stroke-width="7"/>
+<polyline points="950.0,1216.0 950.0,1260.0" fill="none" stroke="#7956a3" stroke-width="5"/>
+<rect x="932" y="1260" width="36" height="54" fill="#7956a3" stroke="none" stroke-width="1"/>
+<text x="993" y="1285.1" font-size="19" fill="#23313a" font-weight="400" text-anchor="start">SL／SR 中心 H135</text>
+<rect x="917" y="1350" width="66" height="68" fill="#f3e2c7" stroke="#b47720" stroke-width="2"/>
+<text x="993" y="1378.1" font-size="19" fill="#23313a" font-weight="400" text-anchor="start">SW1／SW2 留在地面</text>
+<rect x="520" y="1360" width="230" height="58" fill="#bec7cc" stroke="none" stroke-width="1"/>
+<rect x="730" y="1310" width="20" height="108" fill="#a8b5bd" stroke="none" stroke-width="1"/>
+<text x="557" y="1349.1" font-size="19" fill="#23313a" font-weight="400" text-anchor="start">沙發</text>
+<polyline points="750.0,1340.0 917.0,1340.0" fill="none" stroke="#7956a3" stroke-width="2"/>
+<text x="825" y="1323.3" font-size="17" fill="#7956a3" font-weight="400" text-anchor="middle">平面淨距至少25cm</text>
+<text x="454" y="1439.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="start">環繞連支架預留 20×20×H30cm；由頂板承重，不固定在沙發或玻璃上。</text>
 <image x="45" y="1174" width="335" height="248" xlink:href="data:image/png;base64,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"/>
 <text x="45" y="1153.8" font-size="22" fill="#23313a" font-weight="700" text-anchor="start">全屋位置索引</text>
 <circle cx="272.9861111111111" cy="1338.2430555555557" r="3" fill="#167d71" stroke="none" stroke-width="2"/>
 <circle cx="272.9861111111111" cy="1290.3194444444443" r="3" fill="#167d71" stroke="none" stroke-width="2"/>
 <circle cx="251.89739583333332" cy="1314.28125" r="3" fill="#167d71" stroke="none" stroke-width="2"/>
-<circle cx="327.8888888888889" cy="1338.2430555555557" r="3" fill="#7956a3" stroke="none" stroke-width="2"/>
-<circle cx="327.8888888888889" cy="1290.3194444444443" r="3" fill="#7956a3" stroke="none" stroke-width="2"/>
+<circle cx="338.125" cy="1345.454861111111" r="3" fill="#7956a3" stroke="none" stroke-width="2"/>
+<circle cx="338.125" cy="1283.107638888889" r="3" fill="#7956a3" stroke="none" stroke-width="2"/>
 <circle cx="284.61805555555554" cy="1334.7534722222222" r="3" fill="#237fb7" stroke="none" stroke-width="2"/>
 <circle cx="284.61805555555554" cy="1293.8090277777778" r="3" fill="#237fb7" stroke="none" stroke-width="2"/>
 <circle cx="342.77777777777777" cy="1334.7534722222222" r="3" fill="#237fb7" stroke="none" stroke-width="2"/>
@@ -153,16 +155,16 @@
 <rect x="1378" y="469" width="53" height="33" fill="#7956a3" stroke="none" stroke-width="1"/>
 <text x="1404.5" y="490.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">SL</text>
 <text x="1445" y="483.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">左環繞</text>
-<text x="1445" y="507.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">沙發背緣吊桿</text>
-<text x="1974" y="484.2" font-size="18" fill="#7956a3" font-weight="700" text-anchor="end">H120</text>
-<text x="1974" y="507.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發後方・圖面下</text>
+<text x="1445" y="507.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">重低音上方頂板吊架</text>
+<text x="1974" y="484.2" font-size="18" fill="#7956a3" font-weight="700" text-anchor="end">H135</text>
+<text x="1974" y="507.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">離開沙發投影・朝主座</text>
 <rect x="1370" y="521" width="620" height="58" fill="#ffffff" stroke="none" stroke-width="1"/>
 <rect x="1378" y="530" width="53" height="33" fill="#7956a3" stroke="none" stroke-width="1"/>
 <text x="1404.5" y="551.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">SR</text>
 <text x="1445" y="544.9" font-size="21" fill="#23313a" font-weight="700" text-anchor="start">右環繞</text>
-<text x="1445" y="568.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">沙發背緣吊桿</text>
-<text x="1974" y="545.2" font-size="18" fill="#7956a3" font-weight="700" text-anchor="end">H120</text>
-<text x="1974" y="568.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沙發後方・圖面上</text>
+<text x="1445" y="568.3" font-size="17" fill="#67747c" font-weight="400" text-anchor="start">重低音上方頂板吊架</text>
+<text x="1974" y="545.2" font-size="18" fill="#7956a3" font-weight="700" text-anchor="end">H135</text>
+<text x="1974" y="568.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">離開沙發投影・朝主座</text>
 <rect x="1370" y="582" width="620" height="58" fill="#eef2f3" stroke="none" stroke-width="1"/>
 <rect x="1378" y="591" width="53" height="33" fill="#237fb7" stroke="none" stroke-width="1"/>
 <text x="1404.5" y="612.3" font-size="17" fill="#ffffff" font-weight="700" text-anchor="middle">TFL</text>
@@ -206,9 +208,9 @@
 <text x="1974" y="911.2" font-size="18" fill="#b47720" font-weight="700" text-anchor="end">落地</text>
 <text x="1974" y="934.4" font-size="16" fill="#67747c" font-weight="400" text-anchor="end">沿用現有位置</text>
 <text x="1370" y="1003.6" font-size="24" fill="#23313a" font-weight="700" text-anchor="start">這版的調整重點</text>
-<text x="1370" y="1040.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">左右主聲道由頂板承重吊架固定；中心 H110。</text>
-<text x="1370" y="1074.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">喇叭固定朝沙發，不隨電視轉向中島。</text>
-<text x="1370" y="1108.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">紫色環繞降到 H120，位於沙發背緣。</text>
+<text x="1370" y="1040.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">SL／SR 移到 SW2／SW1 上方，完全離開沙發。</text>
+<text x="1370" y="1074.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">中心 H135；喇叭連支架預留 20×20×H30。</text>
+<text x="1370" y="1108.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">距沙發東緣至少 25cm；距模型窗簾約 38cm。</text>
 <rect x="1370" y="1142" width="620" height="112" fill="#f0e7d7" stroke="none" stroke-width="1"/>
 <text x="1385" y="1175.8" font-size="22" fill="#b47720" font-weight="700" text-anchor="start">兩顆重低音仍保留落地</text>
 <text x="1385" y="1209.2" font-size="18" fill="#23313a" font-weight="400" text-anchor="start">本輪先取消兩支落地 Q7 與兩座環繞腳架。</text>
