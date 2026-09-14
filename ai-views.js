@@ -50,7 +50,7 @@
       #aiPhotoStage{position:absolute;inset:0;z-index:9;background:#11191b;
         display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;min-width:0;color:#edf3ee}
       #aiPhotoStage[hidden]{display:none!important}
-      #aiPhotoHeading::before{content:"更新前 AI 圖 · 設備現況請看 3D";display:block;color:#e4c286;font-size:12px;margin-right:12px}#aiPhotoHeading{padding:12px 15px;border-bottom:1px solid #3b4947;display:flex;
+      #aiPhotoHeading::before{content:"AI 成品效果 · 原模型可對照";display:block;color:#e4c286;font-size:12px;margin-right:12px}#aiPhotoHeading{padding:12px 15px;border-bottom:1px solid #3b4947;display:flex;
         align-items:flex-start;justify-content:space-between;gap:12px;background:#192323}
       #aiPhotoHeading strong{display:block;font-size:14px;font-weight:500;line-height:1.5}
       #aiPhotoHeading small{display:block;font-size:10px;color:#adbbb5;line-height:1.7;margin-top:3px}
@@ -84,7 +84,7 @@
       #aiPhotoEmpty{font-size:12px;line-height:1.7;padding:24px;margin:0;text-align:center;align-self:center}
       @media(max-width:1150px){#scenePanel{grid-template-rows:85px minmax(250px,1fr) auto}}
       @media(max-width:760px){#scenePanel{grid-template-rows:60px minmax(300px,1fr) auto}
-        #aiPhotoHeading::before{content:"更新前 AI 圖 · 設備現況請看 3D";display:block;color:#e4c286;font-size:12px;margin-right:12px}#aiPhotoHeading{padding:9px 10px}#aiPhotoHeading strong{font-size:12px}
+        #aiPhotoHeading::before{content:"AI 成品效果 · 原模型可對照";display:block;color:#e4c286;font-size:12px;margin-right:12px}#aiPhotoHeading{padding:9px 10px}#aiPhotoHeading strong{font-size:12px}
         #aiPhotoGallery button{flex-basis:95px;height:65px}#aiPhotoGallery{padding:6px 8px}
         #aiPhotoTools{padding:6px 8px}#aiPhotoNotice{padding:4px 10px 0}}
     `;
@@ -110,6 +110,7 @@
         <button type="button" data-ai-zoom="out" aria-label="縮小效果圖">−</button>
         <button type="button" data-ai-zoom="reset">回位</button>
         <a id="aiPhotoDownload" download>下載 AI 效果圖</a>
+        <a id="aiPhotoAlbum" target="_blank" rel="noopener">全屋圖集／模型對照 ↗</a>
       </div></div>
       <nav id="aiPhotoGallery" aria-label="此版本已完成的 AI 設計圖"></nav>
     `;
@@ -165,6 +166,7 @@
       const overview = requestedRoom === 'all';
       stage.dataset.overview = String(overview);
       roomSelect.value = requestedRoom;
+      $('aiPhotoAlbum').href = new URL('AI寫實視角.html?version=' + proposal + '&room=' + requestedRoom, assetBase).href;
       image.hidden = empty;
       $('aiPhotoEmpty').hidden = !empty || overview;
       $('aiPhotoEmpty').textContent = `${roomName(requestedRoom)}尚未加入 AI 圖片，可返回 3D 查看此區域。`;
@@ -207,7 +209,7 @@
       if (!selected) return;
       imageLoaded = false;
       image.hidden = true;
-      status.textContent = '這張 AI 效果圖無法讀取，請確認 ai-interiors 圖片資料夾與專案放在一起。';
+      status.textContent = '這張 AI 效果圖無法讀取，請確認圖集圖片資料夾與專案放在一起。';
       status.hidden = false;
     };
 
@@ -217,7 +219,7 @@
       button.dataset.aiPhoto = item.id;
       button.setAttribute('aria-pressed', 'false');
       const thumb = document.createElement('img');
-      thumb.src = photoURL(item);
+      thumb.src = new URL(item.thumb || item.src, assetBase).href;
       thumb.alt = '';
       thumb.loading = 'lazy';
       const label = document.createElement('span');
@@ -274,8 +276,8 @@
     document.querySelectorAll('[data-viewmode]').forEach(button => {
       button.onclick = () => tour.setMode(button.dataset.viewmode);
       if (button.dataset.viewmode === 'photo') {
-        button.textContent = 'AI 更新前參考';
-        button.title = '觀看 設備更新前的 AI 效果圖；目前設備以3D模型為準';
+        button.textContent = 'AI 成品效果';
+        button.title = '觀看目前模型生成的材質效果；尺寸以 3D 為準';
         button.hidden = photos.length === 0;
       }
     });
@@ -285,7 +287,7 @@
       const button = document.createElement('button');
       button.id = 'layoutAIPhotos';
       button.type = 'button';
-      button.textContent = 'AI 更新前參考';
+      button.textContent = 'AI 成品效果';
       button.onclick = () => open();
       const legacyGallery = Array.from(bar.querySelectorAll('a'))
         .find(link => link.getAttribute('href')?.includes('最新版導覽'));

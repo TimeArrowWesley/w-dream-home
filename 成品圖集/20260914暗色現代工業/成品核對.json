@@ -1,0 +1,18 @@
+{
+  "complete": true,
+  "viewSlots": 144,
+  "uniqueImages": 82,
+  "remaining": [],
+  "versions": {
+    "v1": 36,
+    "v2": 36,
+    "v3": 36,
+    "v4": 36
+  },
+  "displayBytes": 37840362,
+  "allImagesDecoded": true,
+  "all144SourceHashesMatched": true,
+  "correctionViews": 24,
+  "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
+  "browserVisualQA": false
+}

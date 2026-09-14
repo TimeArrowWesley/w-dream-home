@@ -9,7 +9,7 @@ function png(file,w,h,pixels){
  const rows=Buffer.alloc((w*3+1)*h);for(let y=0;y<h;y++)Buffer.from(pixels.buffer,y*w*3,w*3).copy(rows,y*(w*3+1)+1);
  fs.writeFileSync(file,Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ihdr),chunk('IDAT',zlib.deflateSync(rows,{level:5})),chunk('IEND',Buffer.alloc(0))]));
 }
-module.exports=function({T,V,version,out,views,cutaway=false,textured=false}){
+module.exports=function({T,V,version,out,views,cutaway=false,textured=false,width=740,height=480,fov=72}){
  fs.mkdirSync(out,{recursive:true});V.labels.visible=false;V.ceiling.visible=V.beams.visible=!cutaway;
  for(const p of V.wallParts){p.m.visible=true;p.m.scale.y=cutaway?Math.min(p.h,85)/p.h:1;p.m.position.y=p.z+p.h*p.m.scale.y/2;}
  V.scene.updateMatrixWorld(true);
@@ -24,8 +24,9 @@ module.exports=function({T,V,version,out,views,cutaway=false,textured=false}){
  viewpoints.push({id:'entry-living',room:'entry',name:'玄關客廳面',p:[733,665,159],t:[554,766,80]});
 
  if(views)viewpoints.splice(0,viewpoints.length,...views);
- const width=740,height=480,camera=new T.PerspectiveCamera(72,width/height,2,4000),light=new T.Vector3(-.4,.8,.5).normalize();
+ const camera=new T.PerspectiveCamera(fov,width/height,2,4000),light=new T.Vector3(-.4,.8,.5).normalize();
  function render(view){
+  camera.fov=view.fov??fov;
   camera.position.copy(V.pos(...view.p));camera.lookAt(V.pos(...view.t));camera.updateMatrixWorld(true);camera.updateProjectionMatrix();
   const pv=new T.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse),frustum=new T.Frustum().setFromProjectionMatrix(pv);
   const rgb=new Uint8Array(width*height*3),depth=new Float32Array(width*height);depth.fill(Infinity);for(let i=0;i<rgb.length;i+=3){rgb[i]=177;rgb[i+1]=188;rgb[i+2]=187;}

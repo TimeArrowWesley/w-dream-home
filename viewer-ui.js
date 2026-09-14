@@ -145,7 +145,7 @@
     resources.append(resourceGrid);
     const history = make('details', 'uiHistory'); history.append(make('summary', '', '歷史參考圖'));
     history.append(make('p', '', '以下圖片早於目前設備與材質更新，僅供回顧。最新設計請看 3D 模型。'));
-    for (const [label, file] of [['AI 材質參考 ↗', 'AI寫實視角.html']]) {
+    for (const [label, file] of [['全屋 AI 圖集 ↗', 'AI寫實視角.html']]) {
       const a = make('a', '', label); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener'; history.append(a);
     }
     resources.append(history);
@@ -202,10 +202,10 @@
     }); mobileNav.setAttribute('aria-controls','uiSidebar'); mobileNav.setAttribute('aria-expanded','false');
     roomHeading.prepend(mobileNav);
     const viewTabs = toolbar.querySelector('.viewTabs'); viewTabs.setAttribute('aria-label', '觀看方式');
-    const modeNames = {model:'3D 檢視', walk:'室內步行', photo:'AI 參考'};
+    const modeNames = {model:'3D 檢視', walk:'室內步行', photo:'AI 成品'};
     ['model','walk','photo'].forEach(mode => {
       const b = viewTabs.querySelector('[data-viewmode="'+mode+'"]'); if (!b) return;
-      b.textContent = modeNames[mode]; b.title = mode === 'photo' ? '設備更新前的材質參考圖' : modeNames[mode]; viewTabs.append(b);
+      b.textContent = modeNames[mode]; b.title = mode === 'photo' ? '目前模型生成的材質效果圖' : modeNames[mode]; viewTabs.append(b);
     });
     const sceneActions = make('div', 'uiSceneActions');
     const controlsButton = btn('設備控制', 'uiOpenControls', () => inspectorView === 'controls' ? closeInspector(true) : openInspector('controls', controlsButton));
@@ -218,7 +218,7 @@
     if ($('walkReset')) { $('walkReset').textContent = '回到起點'; sceneFooter.append($('walkReset')); }
     scene.querySelector('main').setAttribute('aria-label','設計預覽');
     $('view').tabIndex = 0;
-    const aiNote = $('aiPhotoHeading')?.querySelector('small'); if (aiNote) aiNote.textContent = '設備更新前的材質參考；最新配置請看 3D。';
+    const aiNote = $('aiPhotoHeading')?.querySelector('small'); if (aiNote) aiNote.textContent = '目前模型生成的材質效果；格局與尺寸以 3D 為準。';
     const navScrim = btn('關閉空間導覽', 'uiNavScrim', closeMobileNav); navScrim.hidden = true; navScrim.tabIndex = -1; body.append(navScrim);
 
     function closeMobileNav() { body.classList.remove('uiNavOpen'); mobileNav?.setAttribute('aria-expanded','false'); if (navScrim) navScrim.hidden = true; }

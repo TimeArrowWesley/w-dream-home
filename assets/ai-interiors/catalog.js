@@ -1,26 +1,1163 @@
-'use strict';
-// Shared images are used only when the captured geometry is identical.
-(() => {
-  const photo = (room,key,label) => ({id:key,room,label,src:`assets/ai-interiors/${key}-20260910.webp`});
-  const common = [
-    photo('kitchen','kitchen','廚房'),photo('bed','bed','主臥'),
-    photo('closet','closet','更衣室'),photo('study','study','雙人書房'),
-    photo('collection','collection','收藏室'),photo('bath1','bath1','主浴'),
-    photo('bath2','bath2','客浴'),photo('storage','storage','儲藏室'),photo('back','back','後陽台')
-  ];
-  window.HOME_AI_PHOTOS = Object.fromEntries(['v1','v2'].map(version => {
-    const rotating=version==='v2',low=version==='v1';
-    return [version,[
-      photo('entry','entry-'+(low?'v2':'v3'),'玄關・'+(low?'90cm 矮櫃':'高矮櫃')),
-      photo('living',rotating?'living-rotating':'living-v2',rotating?'客廳・旋轉電視':'客廳・L 型沙發'),
-      photo('island',rotating?'island-rotating':'island-curved',rotating?'直線中島・電視背面':'圓弧中島・雙面玻璃櫃'),
-      ...common.map(item=>({...item}))
-    ]];
-  }));
-})();
-
-
-// Only unchanged rooms are eligible as V3 material references.
-window.HOME_AI_PHOTOS.v3=window.HOME_AI_PHOTOS.v2.filter(p=>!['entry','living','island','collection'].includes(p.room)).map(p=>({...p}));
-
-window.HOME_AI_PHOTOS.v4=window.HOME_AI_PHOTOS.v3.map(p=>({...p}));
+/* 2026-09-15: current source model, 3 directions per room. Shared images require identical source pixels. */
+window.HOME_AI_PHOTOS={
+  "v1": [
+    {
+      "id": "v1-entry-A",
+      "room": "entry",
+      "label": "玄關・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-entry-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-entry-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-entry-A.webp"
+    },
+    {
+      "id": "v1-entry-B",
+      "room": "entry",
+      "label": "玄關・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-entry-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-entry-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-entry-B.webp"
+    },
+    {
+      "id": "v1-entry-C",
+      "room": "entry",
+      "label": "玄關・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-entry-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-entry-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-entry-C.webp"
+    },
+    {
+      "id": "v1-living-A",
+      "room": "living",
+      "label": "客廳・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-living-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-living-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-living-A.webp"
+    },
+    {
+      "id": "v1-living-B",
+      "room": "living",
+      "label": "客廳・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-living-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-living-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-living-B.webp"
+    },
+    {
+      "id": "v1-living-C",
+      "room": "living",
+      "label": "客廳・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-living-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-living-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-living-C.webp"
+    },
+    {
+      "id": "v1-island-A",
+      "room": "island",
+      "label": "中島・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-island-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-island-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-island-A.webp"
+    },
+    {
+      "id": "v1-island-B",
+      "room": "island",
+      "label": "中島・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-island-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-island-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-island-B.webp"
+    },
+    {
+      "id": "v1-island-C",
+      "room": "island",
+      "label": "中島・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-island-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-island-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-island-C.webp"
+    },
+    {
+      "id": "v1-kitchen-A",
+      "room": "kitchen",
+      "label": "廚房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-A.webp"
+    },
+    {
+      "id": "v1-kitchen-B",
+      "room": "kitchen",
+      "label": "廚房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-B.webp"
+    },
+    {
+      "id": "v1-kitchen-C",
+      "room": "kitchen",
+      "label": "廚房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C.webp"
+    },
+    {
+      "id": "v1-bed-A",
+      "room": "bed",
+      "label": "主臥・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-A.webp"
+    },
+    {
+      "id": "v1-bed-B",
+      "room": "bed",
+      "label": "主臥・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-B.webp"
+    },
+    {
+      "id": "v1-bed-C",
+      "room": "bed",
+      "label": "主臥・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-C.webp"
+    },
+    {
+      "id": "v1-closet-A",
+      "room": "closet",
+      "label": "更衣室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-A.webp"
+    },
+    {
+      "id": "v1-closet-B",
+      "room": "closet",
+      "label": "更衣室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B.webp"
+    },
+    {
+      "id": "v1-closet-C",
+      "room": "closet",
+      "label": "更衣室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-C.webp"
+    },
+    {
+      "id": "v1-study-A",
+      "room": "study",
+      "label": "雙人書房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-study-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-A.webp"
+    },
+    {
+      "id": "v1-study-B",
+      "room": "study",
+      "label": "雙人書房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-study-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-B.webp"
+    },
+    {
+      "id": "v1-study-C",
+      "room": "study",
+      "label": "雙人書房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-study-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-C.webp"
+    },
+    {
+      "id": "v1-collection-A",
+      "room": "collection",
+      "label": "收藏室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-collection-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-collection-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-collection-A.webp"
+    },
+    {
+      "id": "v1-collection-B",
+      "room": "collection",
+      "label": "收藏室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-collection-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-collection-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-collection-B.webp"
+    },
+    {
+      "id": "v1-collection-C",
+      "room": "collection",
+      "label": "收藏室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-collection-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-collection-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-collection-C.webp"
+    },
+    {
+      "id": "v1-bath1-A",
+      "room": "bath1",
+      "label": "主浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-A.webp"
+    },
+    {
+      "id": "v1-bath1-B",
+      "room": "bath1",
+      "label": "主浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-B.webp"
+    },
+    {
+      "id": "v1-bath1-C",
+      "room": "bath1",
+      "label": "主浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-C.webp"
+    },
+    {
+      "id": "v1-bath2-A",
+      "room": "bath2",
+      "label": "客浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-A.webp"
+    },
+    {
+      "id": "v1-bath2-B",
+      "room": "bath2",
+      "label": "客浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-B.webp"
+    },
+    {
+      "id": "v1-bath2-C",
+      "room": "bath2",
+      "label": "客浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-C.webp"
+    },
+    {
+      "id": "v1-storage-A",
+      "room": "storage",
+      "label": "儲藏室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-storage-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-storage-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-storage-A.webp"
+    },
+    {
+      "id": "v1-storage-B",
+      "room": "storage",
+      "label": "儲藏室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-storage-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-storage-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-storage-B.webp"
+    },
+    {
+      "id": "v1-storage-C",
+      "room": "storage",
+      "label": "儲藏室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-storage-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-storage-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-storage-C.webp"
+    },
+    {
+      "id": "v1-back-A",
+      "room": "back",
+      "label": "後陽台・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-A.webp"
+    },
+    {
+      "id": "v1-back-B",
+      "room": "back",
+      "label": "後陽台・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-B.webp"
+    },
+    {
+      "id": "v1-back-C",
+      "room": "back",
+      "label": "後陽台・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-C.webp"
+    }
+  ],
+  "v2": [
+    {
+      "id": "v2-entry-A",
+      "room": "entry",
+      "label": "玄關・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-entry-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-entry-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-entry-A.webp"
+    },
+    {
+      "id": "v2-entry-B",
+      "room": "entry",
+      "label": "玄關・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-entry-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-entry-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-entry-B.webp"
+    },
+    {
+      "id": "v2-entry-C",
+      "room": "entry",
+      "label": "玄關・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-entry-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-entry-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-entry-C.webp"
+    },
+    {
+      "id": "v2-living-A",
+      "room": "living",
+      "label": "客廳・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-living-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-living-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-living-A.webp"
+    },
+    {
+      "id": "v2-living-B",
+      "room": "living",
+      "label": "客廳・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-living-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-living-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-living-B.webp"
+    },
+    {
+      "id": "v2-living-C",
+      "room": "living",
+      "label": "客廳・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-living-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-living-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-living-C.webp"
+    },
+    {
+      "id": "v2-island-A",
+      "room": "island",
+      "label": "中島・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-island-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-island-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-island-A.webp"
+    },
+    {
+      "id": "v2-island-B",
+      "room": "island",
+      "label": "中島・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-island-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-island-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-island-B.webp"
+    },
+    {
+      "id": "v2-island-C",
+      "room": "island",
+      "label": "中島・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-island-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-island-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-island-C.webp"
+    },
+    {
+      "id": "v2-kitchen-A",
+      "room": "kitchen",
+      "label": "廚房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-A.webp"
+    },
+    {
+      "id": "v2-kitchen-B",
+      "room": "kitchen",
+      "label": "廚房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-B.webp"
+    },
+    {
+      "id": "v2-kitchen-C",
+      "room": "kitchen",
+      "label": "廚房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C.webp"
+    },
+    {
+      "id": "v2-bed-A",
+      "room": "bed",
+      "label": "主臥・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-A.webp"
+    },
+    {
+      "id": "v2-bed-B",
+      "room": "bed",
+      "label": "主臥・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-B.webp"
+    },
+    {
+      "id": "v2-bed-C",
+      "room": "bed",
+      "label": "主臥・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-C.webp"
+    },
+    {
+      "id": "v2-closet-A",
+      "room": "closet",
+      "label": "更衣室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-A.webp"
+    },
+    {
+      "id": "v2-closet-B",
+      "room": "closet",
+      "label": "更衣室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B.webp"
+    },
+    {
+      "id": "v2-closet-C",
+      "room": "closet",
+      "label": "更衣室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-C.webp"
+    },
+    {
+      "id": "v2-study-A",
+      "room": "study",
+      "label": "雙人書房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-study-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-A.webp"
+    },
+    {
+      "id": "v2-study-B",
+      "room": "study",
+      "label": "雙人書房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-study-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-B.webp"
+    },
+    {
+      "id": "v2-study-C",
+      "room": "study",
+      "label": "雙人書房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-study-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-C.webp"
+    },
+    {
+      "id": "v2-collection-A",
+      "room": "collection",
+      "label": "收藏室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-collection-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-collection-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-collection-A.webp"
+    },
+    {
+      "id": "v2-collection-B",
+      "room": "collection",
+      "label": "收藏室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-collection-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-collection-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-collection-B.webp"
+    },
+    {
+      "id": "v2-collection-C",
+      "room": "collection",
+      "label": "收藏室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-collection-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-collection-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-collection-C.webp"
+    },
+    {
+      "id": "v2-bath1-A",
+      "room": "bath1",
+      "label": "主浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-A.webp"
+    },
+    {
+      "id": "v2-bath1-B",
+      "room": "bath1",
+      "label": "主浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-B.webp"
+    },
+    {
+      "id": "v2-bath1-C",
+      "room": "bath1",
+      "label": "主浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-C.webp"
+    },
+    {
+      "id": "v2-bath2-A",
+      "room": "bath2",
+      "label": "客浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-A.webp"
+    },
+    {
+      "id": "v2-bath2-B",
+      "room": "bath2",
+      "label": "客浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-B.webp"
+    },
+    {
+      "id": "v2-bath2-C",
+      "room": "bath2",
+      "label": "客浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-C.webp"
+    },
+    {
+      "id": "v2-storage-A",
+      "room": "storage",
+      "label": "儲藏室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-storage-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-storage-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-storage-A.webp"
+    },
+    {
+      "id": "v2-storage-B",
+      "room": "storage",
+      "label": "儲藏室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-storage-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-storage-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-storage-B.webp"
+    },
+    {
+      "id": "v2-storage-C",
+      "room": "storage",
+      "label": "儲藏室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v2-storage-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-storage-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-storage-C.webp"
+    },
+    {
+      "id": "v2-back-A",
+      "room": "back",
+      "label": "後陽台・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-A.webp"
+    },
+    {
+      "id": "v2-back-B",
+      "room": "back",
+      "label": "後陽台・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-B.webp"
+    },
+    {
+      "id": "v2-back-C",
+      "room": "back",
+      "label": "後陽台・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-C.webp"
+    }
+  ],
+  "v3": [
+    {
+      "id": "v3-entry-A",
+      "room": "entry",
+      "label": "玄關・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-entry-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-entry-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-entry-A.webp"
+    },
+    {
+      "id": "v3-entry-B",
+      "room": "entry",
+      "label": "玄關・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-entry-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-entry-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-entry-B.webp"
+    },
+    {
+      "id": "v3-entry-C",
+      "room": "entry",
+      "label": "玄關・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-entry-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-entry-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-entry-C.webp"
+    },
+    {
+      "id": "v3-living-A",
+      "room": "living",
+      "label": "客廳・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-living-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-living-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-living-A.webp"
+    },
+    {
+      "id": "v3-living-B",
+      "room": "living",
+      "label": "客廳・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-living-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-living-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-living-B.webp"
+    },
+    {
+      "id": "v3-living-C",
+      "room": "living",
+      "label": "客廳・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-living-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-living-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-living-C.webp"
+    },
+    {
+      "id": "v3-island-A",
+      "room": "island",
+      "label": "中島・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-island-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-island-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-island-A.webp"
+    },
+    {
+      "id": "v3-island-B",
+      "room": "island",
+      "label": "中島・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-island-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-island-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-island-B.webp"
+    },
+    {
+      "id": "v3-island-C",
+      "room": "island",
+      "label": "中島・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-island-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-island-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-island-C.webp"
+    },
+    {
+      "id": "v3-kitchen-A",
+      "room": "kitchen",
+      "label": "廚房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-A.webp"
+    },
+    {
+      "id": "v3-kitchen-B",
+      "room": "kitchen",
+      "label": "廚房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-kitchen-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-kitchen-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-kitchen-B.webp"
+    },
+    {
+      "id": "v3-kitchen-C",
+      "room": "kitchen",
+      "label": "廚房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C.webp"
+    },
+    {
+      "id": "v3-bed-A",
+      "room": "bed",
+      "label": "主臥・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-A.webp"
+    },
+    {
+      "id": "v3-bed-B",
+      "room": "bed",
+      "label": "主臥・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-B.webp"
+    },
+    {
+      "id": "v3-bed-C",
+      "room": "bed",
+      "label": "主臥・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-C.webp"
+    },
+    {
+      "id": "v3-closet-A",
+      "room": "closet",
+      "label": "更衣室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-A.webp"
+    },
+    {
+      "id": "v3-closet-B",
+      "room": "closet",
+      "label": "更衣室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B.webp"
+    },
+    {
+      "id": "v3-closet-C",
+      "room": "closet",
+      "label": "更衣室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-C.webp"
+    },
+    {
+      "id": "v3-study-A",
+      "room": "study",
+      "label": "雙人書房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-study-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-study-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-study-A.webp"
+    },
+    {
+      "id": "v3-study-B",
+      "room": "study",
+      "label": "雙人書房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-study-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-B.webp"
+    },
+    {
+      "id": "v3-study-C",
+      "room": "study",
+      "label": "雙人書房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-study-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-study-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-study-C.webp"
+    },
+    {
+      "id": "v3-collection-A",
+      "room": "collection",
+      "label": "開放收藏收納・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-collection-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-collection-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-collection-A.webp"
+    },
+    {
+      "id": "v3-collection-B",
+      "room": "collection",
+      "label": "開放收藏收納・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-collection-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-collection-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-collection-B.webp"
+    },
+    {
+      "id": "v3-collection-C",
+      "room": "collection",
+      "label": "開放收藏收納・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-collection-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-collection-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-collection-C.webp"
+    },
+    {
+      "id": "v3-bath1-A",
+      "room": "bath1",
+      "label": "主浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-A.webp"
+    },
+    {
+      "id": "v3-bath1-B",
+      "room": "bath1",
+      "label": "主浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-B.webp"
+    },
+    {
+      "id": "v3-bath1-C",
+      "room": "bath1",
+      "label": "主浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-C.webp"
+    },
+    {
+      "id": "v3-bath2-A",
+      "room": "bath2",
+      "label": "客浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-A.webp"
+    },
+    {
+      "id": "v3-bath2-B",
+      "room": "bath2",
+      "label": "客浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-B.webp"
+    },
+    {
+      "id": "v3-bath2-C",
+      "room": "bath2",
+      "label": "客浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-C.webp"
+    },
+    {
+      "id": "v3-storage-A",
+      "room": "storage",
+      "label": "儲藏室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-storage-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-storage-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-storage-A.webp"
+    },
+    {
+      "id": "v3-storage-B",
+      "room": "storage",
+      "label": "儲藏室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-storage-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-storage-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-storage-B.webp"
+    },
+    {
+      "id": "v3-storage-C",
+      "room": "storage",
+      "label": "儲藏室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-storage-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-storage-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-storage-C.webp"
+    },
+    {
+      "id": "v3-back-A",
+      "room": "back",
+      "label": "後陽台・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-A.webp"
+    },
+    {
+      "id": "v3-back-B",
+      "room": "back",
+      "label": "後陽台・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-B.webp"
+    },
+    {
+      "id": "v3-back-C",
+      "room": "back",
+      "label": "後陽台・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-C.webp"
+    }
+  ],
+  "v4": [
+    {
+      "id": "v4-entry-A",
+      "room": "entry",
+      "label": "玄關・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-entry-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-entry-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-entry-A.webp"
+    },
+    {
+      "id": "v4-entry-B",
+      "room": "entry",
+      "label": "玄關・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-entry-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-entry-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-entry-B.webp"
+    },
+    {
+      "id": "v4-entry-C",
+      "room": "entry",
+      "label": "玄關・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-entry-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-entry-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-entry-C.webp"
+    },
+    {
+      "id": "v4-living-A",
+      "room": "living",
+      "label": "客廳・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-living-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-living-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-living-A.webp"
+    },
+    {
+      "id": "v4-living-B",
+      "room": "living",
+      "label": "客廳・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-living-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-living-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-living-B.webp"
+    },
+    {
+      "id": "v4-living-C",
+      "room": "living",
+      "label": "客廳・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-living-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-living-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-living-C.webp"
+    },
+    {
+      "id": "v4-island-A",
+      "room": "island",
+      "label": "中島・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-island-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-island-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-island-A.webp"
+    },
+    {
+      "id": "v4-island-B",
+      "room": "island",
+      "label": "中島・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-island-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-island-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-island-B.webp"
+    },
+    {
+      "id": "v4-island-C",
+      "room": "island",
+      "label": "中島・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-island-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-island-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-island-C.webp"
+    },
+    {
+      "id": "v4-kitchen-A",
+      "room": "kitchen",
+      "label": "廚房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-A.webp"
+    },
+    {
+      "id": "v4-kitchen-B",
+      "room": "kitchen",
+      "label": "廚房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v3-kitchen-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-kitchen-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-kitchen-B.webp"
+    },
+    {
+      "id": "v4-kitchen-C",
+      "room": "kitchen",
+      "label": "廚房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C.webp"
+    },
+    {
+      "id": "v4-bed-A",
+      "room": "bed",
+      "label": "主臥・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-A.webp"
+    },
+    {
+      "id": "v4-bed-B",
+      "room": "bed",
+      "label": "主臥・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-B.webp"
+    },
+    {
+      "id": "v4-bed-C",
+      "room": "bed",
+      "label": "主臥・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bed-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bed-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bed-C.webp"
+    },
+    {
+      "id": "v4-closet-A",
+      "room": "closet",
+      "label": "更衣室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-A.webp"
+    },
+    {
+      "id": "v4-closet-B",
+      "room": "closet",
+      "label": "更衣室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B.webp"
+    },
+    {
+      "id": "v4-closet-C",
+      "room": "closet",
+      "label": "更衣室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-C.webp"
+    },
+    {
+      "id": "v4-study-A",
+      "room": "study",
+      "label": "雙人書房・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-study-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-study-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-study-A.webp"
+    },
+    {
+      "id": "v4-study-B",
+      "room": "study",
+      "label": "雙人書房・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-study-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-B.webp"
+    },
+    {
+      "id": "v4-study-C",
+      "room": "study",
+      "label": "雙人書房・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-study-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-study-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-study-C.webp"
+    },
+    {
+      "id": "v4-collection-A",
+      "room": "collection",
+      "label": "開放收藏收納・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-collection-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-collection-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-collection-A.webp"
+    },
+    {
+      "id": "v4-collection-B",
+      "room": "collection",
+      "label": "開放收藏收納・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-collection-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-collection-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-collection-B.webp"
+    },
+    {
+      "id": "v4-collection-C",
+      "room": "collection",
+      "label": "開放收藏收納・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-collection-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-collection-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-collection-C.webp"
+    },
+    {
+      "id": "v4-bath1-A",
+      "room": "bath1",
+      "label": "主浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-A.webp"
+    },
+    {
+      "id": "v4-bath1-B",
+      "room": "bath1",
+      "label": "主浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-B.webp"
+    },
+    {
+      "id": "v4-bath1-C",
+      "room": "bath1",
+      "label": "主浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath1-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath1-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath1-C.webp"
+    },
+    {
+      "id": "v4-bath2-A",
+      "room": "bath2",
+      "label": "客浴・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-A.webp"
+    },
+    {
+      "id": "v4-bath2-B",
+      "room": "bath2",
+      "label": "客浴・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-B.webp"
+    },
+    {
+      "id": "v4-bath2-C",
+      "room": "bath2",
+      "label": "客浴・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-bath2-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-bath2-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-C.webp"
+    },
+    {
+      "id": "v4-storage-A",
+      "room": "storage",
+      "label": "儲藏室・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-storage-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-storage-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-storage-A.webp"
+    },
+    {
+      "id": "v4-storage-B",
+      "room": "storage",
+      "label": "儲藏室・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-storage-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-storage-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-storage-B.webp"
+    },
+    {
+      "id": "v4-storage-C",
+      "room": "storage",
+      "label": "儲藏室・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v4-storage-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-storage-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-storage-C.webp"
+    },
+    {
+      "id": "v4-back-A",
+      "room": "back",
+      "label": "後陽台・方向 A",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-A.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-A.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-A.webp"
+    },
+    {
+      "id": "v4-back-B",
+      "room": "back",
+      "label": "後陽台・方向 B",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-B.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-B.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-B.webp"
+    },
+    {
+      "id": "v4-back-C",
+      "room": "back",
+      "label": "後陽台・方向 C",
+      "src": "成品圖集/20260914暗色現代工業/images/v1-back-C.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-back-C.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-back-C.webp"
+    }
+  ]
+};

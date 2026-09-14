@@ -126,7 +126,16 @@ for(const v of ['v1','v2','v3','v4']){
   d.body.classList.remove('walkImmersive');
   d.querySelector('[data-viewmode="model"]').click();await Promise.resolve();assert(!c.HOME_WALK.getState().active);assert.equal(c.HOME_TOUR.getMode(),'model');
   const photo=d.querySelector('[data-viewmode="photo"]');if(photo&&!photo.hidden){photo.click();await Promise.resolve();assert.equal(c.HOME_TOUR.getMode(),'photo');$('planToggle').click();$('uiExpandPlan').click();const room=d.querySelector('.planroom[data-room="study"]');room.dispatchEvent(new a.dom.Event('click',{bubbles:true}));assert.equal(c.HOME_AI_VIEWS.getState().requestedRoom,'study');assert(!$('uiMapDialog').open,'choosing a map room closes enlargement during AI browsing');$('uiOpenControls').click();assert.equal(c.HOME_TOUR.getMode(),'model');}
-  if(['v3','v4'].includes(v)){c.HOME_VIEWER.selectRoom('island');c.HOME_AI_VIEWS.open();assert.equal(c.HOME_AI_VIEWS.getState().imageRoom,null);assert(!$('aiPhotoImage').getAttribute('src'));c.HOME_VIEWER.selectRoom('study');assert.equal(c.HOME_AI_VIEWS.getState().imageRoom,'study');c.HOME_AI_VIEWS.close();}
+  assert.equal(c.HOME_AI_VIEWS.getState().available.length,36,'Every version has 12 spaces with 3 AI directions');
+  c.HOME_AI_VIEWS.open();
+  for(const id of ['entry','living','island','kitchen','bed','closet','study','collection','bath1','bath2','storage','back']){
+    c.HOME_VIEWER.selectRoom(id);assert.equal(c.HOME_AI_VIEWS.getState().imageRoom,id);
+    const buttons=Array.from($('aiPhotoGallery').querySelectorAll('button')).filter(b=>!b.hidden);assert.equal(buttons.length,3,v+'/'+id);
+    const seen=new Set();for(const b of buttons){b.click();const state=c.HOME_AI_VIEWS.getState();assert.equal(state.imageRoom,id);seen.add(state.src);assert(b.querySelector('img').src.includes('/thumbs/'),'Gallery uses small thumbnails');assert($('aiPhotoDownload').href.endsWith('.webp'));}
+    assert.equal(seen.size,3,'Distinct images for all 3 directions');
+    const albumURL=new URL($('aiPhotoAlbum').href);assert.equal(albumURL.searchParams.get('version'),v);assert.equal(albumURL.searchParams.get('room'),id);
+  }
+  c.HOME_VIEWER.selectRoom('study');c.HOME_AI_VIEWS.close();
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(v==='v4'){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
