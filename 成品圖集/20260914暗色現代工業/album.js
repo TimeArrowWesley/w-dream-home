@@ -15,7 +15,7 @@ function draw(){
  $('count').textContent=visible.length+' 個視角 · '+(mode==='ai'?'AI 效果':'模型取景');
  for(const r of data.rooms){const entries=visible.filter(e=>e.room===r.id);if(!entries.length)continue;
   const section=document.createElement('section');section.className='space';const head=document.createElement('div');head.className='space-head';
-  const title=document.createElement('h2');title.textContent=roomLabel(r.id);const sub=document.createElement('span');sub.textContent=r.id==='entry'?'同一站位 · ← 左 / ↖ 左前 / ↑ 正前 / ↗ 右前 / → 右':'三個方向 / A · B · C';head.append(title,sub);
+  const title=document.createElement('h2');title.textContent=roomLabel(r.id);const sub=document.createElement('span');sub.textContent=r.id==='entry'?'門內入口 · ← 左 / ↖ 左前 / ↑ 正前 / ↗ 右前 / → 右':'三個方向 / A · B · C';head.append(title,sub);
   const grid=document.createElement('div');grid.className='photos';
   for(const e of entries){const b=button('',()=>open(e));b.className='photo';b.append(photo(e,mode));const cap=document.createElement('div');cap.className='caption';const label=document.createElement('span');label.textContent=viewLabel(e);const small=document.createElement('small');small.textContent='放大・對照 ↗';cap.append(label,small);b.append(cap);grid.append(b);}
   section.append(head,grid);$('gallery').append(section);

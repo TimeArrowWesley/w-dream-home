@@ -9,7 +9,7 @@ for(const v of data.versions)for(const r of data.rooms){
  if(r.id==='entry'){
   assert.deepEqual(Array.from(e,x=>x.directionLabel),['左','左前','正前','右前','右']);
   assert.deepEqual(Array.from(e,x=>x.camera.heading),[180,-135,-90,-45,0]);
-  for(const x of e){assert.deepEqual(Array.from(x.camera.position),[745,850,165]);assert.equal(x.camera.fov,70);assert.equal(x.entryFan,true);}
+  for(const x of e){assert.deepEqual(Array.from(x.camera.position),[606.5,925,165]);assert.equal(x.camera.fov,70);assert.equal(x.entryFan,true);}
  }
  // A narrow bathroom can show a different zone from a translated camera even
  // with a modest heading change: B is beside the vanity, C is by the tub.

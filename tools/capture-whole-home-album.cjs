@@ -32,12 +32,12 @@ function views(v){
   data.collection[1]=[[280,850,145],[375,773,85]];
   data.collection[2]=[[310,878,140],[231,825,105]];
  }
- // One standing position at the entry/living junction, facing north into the home.
+ // Door opening x553..660 at y955: one step (30 cm) inside its centre.
  // Left -> left-front -> front -> right-front -> right, in 45-degree steps.
- const station=[745,850,165],directions=[[-1,0],[-Math.SQRT1_2,-Math.SQRT1_2],[0,-1],[Math.SQRT1_2,-Math.SQRT1_2],[1,0]];
+ const station=[606.5,925,165],directions=[[-1,0],[-Math.SQRT1_2,-Math.SQRT1_2],[0,-1],[Math.SQRT1_2,-Math.SQRT1_2],[1,0]];
  const entryLabels=['左','左前','正前','右前','右'];
  data.entry=directions.map(([dx,dy])=>[station.slice(),[station[0]+dx*300,station[1]+dy*300,140]]);
- return Object.keys(names).flatMap(room=>data[room].map(([p,t],i)=>({id:room+'-'+(room==='entry'?'5':'')+'ABCDE'[i],room,name:(room==='collection'&&v===0?'貓房':room==='study'&&v===0?'書房・電子琴':room==='collection'&&v>=3?'開放收藏收納':names[room])+'・'+(room==='entry'?entryLabels[i]:'視角 '+'ABCDE'[i]),...(room==='entry'?{directionLabel:entryLabels[i],entryFan:true}:{}),p,t,fov:room==='entry'?70:['closet','bath1','bath2','storage','back'].includes(room)?86:74,direction:Math.atan2(t[1]-p[1],t[0]-p[0])*180/Math.PI})));
+ return Object.keys(names).flatMap(room=>data[room].map(([p,t],i)=>({id:room+'-'+(room==='entry'?'door5':'')+'ABCDE'[i],room,name:(room==='collection'&&v===0?'貓房':room==='study'&&v===0?'書房・電子琴':room==='collection'&&v>=3?'開放收藏收納':names[room])+'・'+(room==='entry'?entryLabels[i]:'視角 '+'ABCDE'[i]),...(room==='entry'?{directionLabel:entryLabels[i],entryFan:true}:{}),p,t,fov:room==='entry'?70:['closet','bath1','bath2','storage','back'].includes(room)?86:74,direction:Math.atan2(t[1]-p[1],t[0]-p[0])*180/Math.PI})));
 }
 function sha(p){return crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');}
 (async()=>{
@@ -50,8 +50,8 @@ function sha(p){return crypto.createHash('sha256').update(fs.readFileSync(p)).di
  for(const v of selected){
   const f=await build(v===0?0:v+1);f.c.HOME_COMFORT.setScene('daily');f.tick(3);
   const authored=views(v).filter(q=>(!roomFilter||roomFilter.split(',').includes(q.room))&&(!only||q.id===only));
-  if(authored.some(q=>q.room==='entry')){f.c.HOME_WALK.refreshColliders();if(!f.c.HOME_WALK.canStand(745-482.5,850-480))throw Error('Entry camera station blocked in V'+v);}
-  if(authored.some(q=>q.room==='entry'))old.entries=old.entries.filter(e=>e.version!=='v'+v||e.room!=='entry'||/entry-5[A-E]$/.test(e.key));
+  if(authored.some(q=>q.room==='entry')){f.c.HOME_WALK.refreshColliders();if(!f.c.HOME_WALK.canStand(606.5-482.5,925-480))throw Error('Door-entry camera station blocked in V'+v);}
+  if(authored.some(q=>q.room==='entry'))old.entries=old.entries.filter(e=>e.version!=='v'+v||e.room!=='entry'||/entry-door5[A-E]$/.test(e.key));
   for(const q of authored){
    if(q.room==='storage'){f.c.HOME_INTERACTION.setDoor('storage',true);f.tick(80,50);}
    if(q.room==='closet'&&!f.albumMirrorOpened){const mirror=f.V.scene.getObjectByName('更衣室側移滑鏡')?.children[0];if(mirror)mirror.position.x+=50;f.albumMirrorOpened=true;}

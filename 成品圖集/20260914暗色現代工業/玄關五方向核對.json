@@ -1,12 +1,18 @@
 {
   "date": "2026-09-15",
-  "sourceRevision": "bd915ac968e42dbf6be1f27d4ff3dd1f77d05889",
+  "sourceRevision": "8f9614b6210758e108ae6a9b1811cf87f11c1b08",
   "stationCm": [
-    745,
-    850,
+    606.5,
+    925,
     165
   ],
-  "station": "玄關與客廳交界",
+  "station": "大門中心跨入門內30cm",
+  "entryOpeningCm": {
+    "xMin": 553,
+    "xMax": 660,
+    "thresholdY": 955
+  },
+  "distanceInsideDoorCm": 30,
   "labels": [
     "左",
     "左前",
@@ -23,21 +29,27 @@
   ],
   "fov": 70,
   "total": 25,
-  "other165ViewsUnchanged": true,
-  "stationCollisionCheckedForAllVersions": true,
   "modelViewsInspected": 25,
-  "aiViewsInspected": 25,
-  "revisedAIImagesInspected": [
-    "v0-entry-5A",
-    "v0-entry-5B",
-    "v0-entry-5C",
-    "v0-entry-5E",
-    "v1-entry-5C",
-    "v2-entry-5A",
-    "v2-entry-5D",
-    "v2-entry-5E",
-    "v3-entry-5A",
-    "v3-entry-5D"
+  "stationCollisionCheckedForAllVersions": true,
+  "browserVisualQA": false,
+  "note": "保留大門側結構柱與玄關櫃的實際遮擋；不為取景移除模型。",
+  "other165ViewsUnchanged": true,
+  "uniqueAIImagesInspected": 24,
+  "aiViewSlots": 25,
+  "correctedImagesInspected": [
+    "v1-entry-door5B",
+    "v1-entry-door5D",
+    "v0-entry-door5C",
+    "v0-entry-door5D",
+    "v1-entry-door5E",
+    "v3-entry-door5D",
+    "v3-entry-door5B",
+    "v3-entry-door5C",
+    "v3-entry-door5E",
+    "v4-entry-door5B",
+    "v4-entry-door5E"
   ],
-  "browserVisualQA": false
+  "sharedPixelIdenticalView": {
+    "v2-entry-door5A": "v1-entry-door5A"
+  }
 }

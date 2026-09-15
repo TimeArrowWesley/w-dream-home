@@ -660,177 +660,177 @@
     },
     {
       "version": "v0",
-      "id": "entry-5A",
+      "id": "entry-door5A",
       "room": "entry",
       "name": "玄關・左",
       "directionLabel": "左",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        445,
-        850,
+        306.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 180,
-      "file": "v0-entry-5A.png",
-      "triangles": 79583,
-      "key": "v0-entry-5A",
+      "file": "v0-entry-door5A.png",
+      "triangles": 57525,
+      "key": "v0-entry-door5A",
       "versionTitle": "原始格局",
-      "model": "model/v0-entry-5A.png",
-      "modelHash": "0506f1370eb789b411940a13a2cf32b5b2512125d62aaa39952b0d77695f8c84",
+      "model": "model/v0-entry-door5A.png",
+      "modelHash": "22dbd3dc5ef3b5551cc9525b20e5fdbf475d5a62300142ea68e35c55405be263",
       "angle": "A",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v0-entry-5A",
+      "aiKey": "v0-entry-door5A",
       "sharedWith": [
-        "v0-entry-5A"
+        "v0-entry-door5A"
       ]
     },
     {
       "version": "v0",
-      "id": "entry-5B",
+      "id": "entry-door5B",
       "room": "entry",
       "name": "玄關・左前",
       "directionLabel": "左前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        532.8679656440357,
-        637.8679656440357,
+        394.36796564403573,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -135,
-      "file": "v0-entry-5B.png",
-      "triangles": 156161,
-      "key": "v0-entry-5B",
+      "file": "v0-entry-door5B.png",
+      "triangles": 127551,
+      "key": "v0-entry-door5B",
       "versionTitle": "原始格局",
-      "model": "model/v0-entry-5B.png",
-      "modelHash": "0602604de75975fd5d2f8784da661295bdb75b06896978af6dcfbbb48e5be482",
+      "model": "model/v0-entry-door5B.png",
+      "modelHash": "6a92edec9e2ec4701fed9373acc6f0875cca03ef3c3bfde26b6c718fed785b13",
       "angle": "B",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v0-entry-5B",
+      "aiKey": "v0-entry-door5B",
       "sharedWith": [
-        "v0-entry-5B"
+        "v0-entry-door5B"
       ]
     },
     {
       "version": "v0",
-      "id": "entry-5C",
+      "id": "entry-door5C",
       "room": "entry",
       "name": "玄關・正前",
       "directionLabel": "正前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        745,
-        550,
+        606.5,
+        625,
         140
       ],
       "fov": 70,
       "direction": -90,
-      "file": "v0-entry-5C.png",
-      "triangles": 172321,
-      "key": "v0-entry-5C",
+      "file": "v0-entry-door5C.png",
+      "triangles": 192239,
+      "key": "v0-entry-door5C",
       "versionTitle": "原始格局",
-      "model": "model/v0-entry-5C.png",
-      "modelHash": "cd28f48ee0cc75f4d6df06cc243ee96bc34275f2753a4f0ddb84c8b2140f7f47",
+      "model": "model/v0-entry-door5C.png",
+      "modelHash": "fa106886579a2aed349ed54b06a71352bd686eb86de894463e5cee6b1fb053b4",
       "angle": "C",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v0-entry-5C",
+      "aiKey": "v0-entry-door5C",
       "sharedWith": [
-        "v0-entry-5C"
+        "v0-entry-door5C"
       ]
     },
     {
       "version": "v0",
-      "id": "entry-5D",
+      "id": "entry-door5D",
       "room": "entry",
       "name": "玄關・右前",
       "directionLabel": "右前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        957.1320343559643,
-        637.8679656440357,
+        818.6320343559643,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -45,
-      "file": "v0-entry-5D.png",
-      "triangles": 109535,
-      "key": "v0-entry-5D",
+      "file": "v0-entry-door5D.png",
+      "triangles": 151602,
+      "key": "v0-entry-door5D",
       "versionTitle": "原始格局",
-      "model": "model/v0-entry-5D.png",
-      "modelHash": "7eaf41ddb9028ea87849b428bc30e876d441577526772bcb1870082db8c75f07",
+      "model": "model/v0-entry-door5D.png",
+      "modelHash": "634562d2e806cc07a65a10569e35dc1a1f08afee68ebf3ad3c46c29f46a7847c",
       "angle": "D",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v0-entry-5D",
+      "aiKey": "v0-entry-door5D",
       "sharedWith": [
-        "v0-entry-5D"
+        "v0-entry-door5D"
       ]
     },
     {
       "version": "v0",
-      "id": "entry-5E",
+      "id": "entry-door5E",
       "room": "entry",
       "name": "玄關・右",
       "directionLabel": "右",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        1045,
-        850,
+        906.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 0,
-      "file": "v0-entry-5E.png",
-      "triangles": 20024,
-      "key": "v0-entry-5E",
+      "file": "v0-entry-door5E.png",
+      "triangles": 29197,
+      "key": "v0-entry-door5E",
       "versionTitle": "原始格局",
-      "model": "model/v0-entry-5E.png",
-      "modelHash": "d0e488f7fc5e52ba570ed302c09ab557d482ef3fe9a11a6a05172479c34c3172",
+      "model": "model/v0-entry-door5E.png",
+      "modelHash": "9ef387dafab6b62ae8937ef1d19a356934fb96d2c1f8a240d460b3455ba9a6f0",
       "angle": "E",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v0-entry-5E",
+      "aiKey": "v0-entry-door5E",
       "sharedWith": [
-        "v0-entry-5E"
+        "v0-entry-door5E"
       ]
     },
     {
@@ -1999,177 +1999,178 @@
     },
     {
       "version": "v1",
-      "id": "entry-5A",
+      "id": "entry-door5A",
       "room": "entry",
       "name": "玄關・左",
       "directionLabel": "左",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        445,
-        850,
+        306.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 180,
-      "file": "v1-entry-5A.png",
-      "triangles": 110895,
-      "key": "v1-entry-5A",
+      "file": "v1-entry-door5A.png",
+      "triangles": 79005,
+      "key": "v1-entry-door5A",
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-entry-5A.png",
-      "modelHash": "6509f547122f2e9231a5a05bc36aaf7724420ba17ee0bcc2eb95006dc9e6227d",
+      "model": "model/v1-entry-door5A.png",
+      "modelHash": "0f9ea773b8dc4eb7487bdbffdc5e28502574c888540599258b3e737d160c8bfa",
       "angle": "A",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-entry-5A",
+      "aiKey": "v1-entry-door5A",
       "sharedWith": [
-        "v1-entry-5A"
+        "v1-entry-door5A",
+        "v2-entry-door5A"
       ]
     },
     {
       "version": "v1",
-      "id": "entry-5B",
+      "id": "entry-door5B",
       "room": "entry",
       "name": "玄關・左前",
       "directionLabel": "左前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        532.8679656440357,
-        637.8679656440357,
+        394.36796564403573,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -135,
-      "file": "v1-entry-5B.png",
-      "triangles": 185912,
-      "key": "v1-entry-5B",
+      "file": "v1-entry-door5B.png",
+      "triangles": 158399,
+      "key": "v1-entry-door5B",
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-entry-5B.png",
-      "modelHash": "bf4de37f8334d578454c590605fa2c92f02f9aaaf69799683ef22b554189f02c",
+      "model": "model/v1-entry-door5B.png",
+      "modelHash": "4e7b13a1eeff2726f85a24ed06ffbb2a60b8a7459a3c082abe3c091c368b1dcb",
       "angle": "B",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-entry-5B",
+      "aiKey": "v1-entry-door5B",
       "sharedWith": [
-        "v1-entry-5B"
+        "v1-entry-door5B"
       ]
     },
     {
       "version": "v1",
-      "id": "entry-5C",
+      "id": "entry-door5C",
       "room": "entry",
       "name": "玄關・正前",
       "directionLabel": "正前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        745,
-        550,
+        606.5,
+        625,
         140
       ],
       "fov": 70,
       "direction": -90,
-      "file": "v1-entry-5C.png",
-      "triangles": 183003,
-      "key": "v1-entry-5C",
+      "file": "v1-entry-door5C.png",
+      "triangles": 215939,
+      "key": "v1-entry-door5C",
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-entry-5C.png",
-      "modelHash": "df4885d4ecfba94cdabffaff12e2f8e637f65a99a16267b8b606f764f40a305d",
+      "model": "model/v1-entry-door5C.png",
+      "modelHash": "4df1b4b47be1b8172f0967c72fd766c2c1bf354cfc1caec35e7ce8eaf2629bf4",
       "angle": "C",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-entry-5C",
+      "aiKey": "v1-entry-door5C",
       "sharedWith": [
-        "v1-entry-5C"
+        "v1-entry-door5C"
       ]
     },
     {
       "version": "v1",
-      "id": "entry-5D",
+      "id": "entry-door5D",
       "room": "entry",
       "name": "玄關・右前",
       "directionLabel": "右前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        957.1320343559643,
-        637.8679656440357,
+        818.6320343559643,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -45,
-      "file": "v1-entry-5D.png",
-      "triangles": 114233,
-      "key": "v1-entry-5D",
+      "file": "v1-entry-door5D.png",
+      "triangles": 165215,
+      "key": "v1-entry-door5D",
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-entry-5D.png",
-      "modelHash": "24c6719b3b65d22bdd5de06dbc71e8cfc08a04e9ae6c20a4532f143fe31d9148",
+      "model": "model/v1-entry-door5D.png",
+      "modelHash": "730ebdcfc2ef6780354ffd67fc09e89cfcf59565bb1449ff6d50ccf72ccddd22",
       "angle": "D",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-entry-5D",
+      "aiKey": "v1-entry-door5D",
       "sharedWith": [
-        "v1-entry-5D"
+        "v1-entry-door5D"
       ]
     },
     {
       "version": "v1",
-      "id": "entry-5E",
+      "id": "entry-door5E",
       "room": "entry",
       "name": "玄關・右",
       "directionLabel": "右",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        1045,
-        850,
+        906.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 0,
-      "file": "v1-entry-5E.png",
-      "triangles": 15819,
-      "key": "v1-entry-5E",
+      "file": "v1-entry-door5E.png",
+      "triangles": 28979,
+      "key": "v1-entry-door5E",
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-entry-5E.png",
-      "modelHash": "10922b7eb14086409b265cd7c0a2abb9c7d5a97473e8a219c85d4e80282c25f2",
+      "model": "model/v1-entry-door5E.png",
+      "modelHash": "74aa8c69cd5572bc23519e9c71ae1274dc63f38d26da18005663aa2ad84520fe",
       "angle": "E",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-entry-5E",
+      "aiKey": "v1-entry-door5E",
       "sharedWith": [
-        "v1-entry-5E"
+        "v1-entry-door5E"
       ]
     },
     {
@@ -3342,177 +3343,178 @@
     },
     {
       "version": "v2",
-      "id": "entry-5A",
+      "id": "entry-door5A",
       "room": "entry",
       "name": "玄關・左",
       "directionLabel": "左",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        445,
-        850,
+        306.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 180,
-      "file": "v2-entry-5A.png",
-      "triangles": 113241,
-      "key": "v2-entry-5A",
+      "file": "v2-entry-door5A.png",
+      "triangles": 79414,
+      "key": "v2-entry-door5A",
       "versionTitle": "旋轉電視＋小中島",
-      "model": "model/v2-entry-5A.png",
-      "modelHash": "d148522a4e44559b673dd38193ef59ae41c8d84485261b83c937e51bd22434b6",
+      "model": "model/v2-entry-door5A.png",
+      "modelHash": "0f9ea773b8dc4eb7487bdbffdc5e28502574c888540599258b3e737d160c8bfa",
       "angle": "A",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v2-entry-5A",
+      "aiKey": "v1-entry-door5A",
       "sharedWith": [
-        "v2-entry-5A"
+        "v1-entry-door5A",
+        "v2-entry-door5A"
       ]
     },
     {
       "version": "v2",
-      "id": "entry-5B",
+      "id": "entry-door5B",
       "room": "entry",
       "name": "玄關・左前",
       "directionLabel": "左前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        532.8679656440357,
-        637.8679656440357,
+        394.36796564403573,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -135,
-      "file": "v2-entry-5B.png",
-      "triangles": 191363,
-      "key": "v2-entry-5B",
+      "file": "v2-entry-door5B.png",
+      "triangles": 160463,
+      "key": "v2-entry-door5B",
       "versionTitle": "旋轉電視＋小中島",
-      "model": "model/v2-entry-5B.png",
-      "modelHash": "059397e1cfb66beb17d0af3212c60fb97ad7f3d18831d575e1251f3ab37c3b19",
+      "model": "model/v2-entry-door5B.png",
+      "modelHash": "db8c882669539fea30e009e25f630bb35a5226dc04472a56cdde023a4c989729",
       "angle": "B",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v2-entry-5B",
+      "aiKey": "v2-entry-door5B",
       "sharedWith": [
-        "v2-entry-5B"
+        "v2-entry-door5B"
       ]
     },
     {
       "version": "v2",
-      "id": "entry-5C",
+      "id": "entry-door5C",
       "room": "entry",
       "name": "玄關・正前",
       "directionLabel": "正前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        745,
-        550,
+        606.5,
+        625,
         140
       ],
       "fov": 70,
       "direction": -90,
-      "file": "v2-entry-5C.png",
-      "triangles": 192915,
-      "key": "v2-entry-5C",
+      "file": "v2-entry-door5C.png",
+      "triangles": 224231,
+      "key": "v2-entry-door5C",
       "versionTitle": "旋轉電視＋小中島",
-      "model": "model/v2-entry-5C.png",
-      "modelHash": "80bcc6949a90543d98d7876ef5e9b10a24508c06cc9550dd722e38cef7c7c24f",
+      "model": "model/v2-entry-door5C.png",
+      "modelHash": "0c245fb435f68841cb7fd634798e3ffeff0cc483c098d97f372eae26fa0c638d",
       "angle": "C",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v2-entry-5C",
+      "aiKey": "v2-entry-door5C",
       "sharedWith": [
-        "v2-entry-5C"
+        "v2-entry-door5C"
       ]
     },
     {
       "version": "v2",
-      "id": "entry-5D",
+      "id": "entry-door5D",
       "room": "entry",
       "name": "玄關・右前",
       "directionLabel": "右前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        957.1320343559643,
-        637.8679656440357,
+        818.6320343559643,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -45,
-      "file": "v2-entry-5D.png",
-      "triangles": 121317,
-      "key": "v2-entry-5D",
+      "file": "v2-entry-door5D.png",
+      "triangles": 176493,
+      "key": "v2-entry-door5D",
       "versionTitle": "旋轉電視＋小中島",
-      "model": "model/v2-entry-5D.png",
-      "modelHash": "90e14f21f9c127e17f0d4a3346f731c5d2bcb7925aff8584f169eeca92532485",
+      "model": "model/v2-entry-door5D.png",
+      "modelHash": "39b8cf012e1b96529687cc640b7971a8454463cd05ac751638f4dacce2808a04",
       "angle": "D",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v2-entry-5D",
+      "aiKey": "v2-entry-door5D",
       "sharedWith": [
-        "v2-entry-5D"
+        "v2-entry-door5D"
       ]
     },
     {
       "version": "v2",
-      "id": "entry-5E",
+      "id": "entry-door5E",
       "room": "entry",
       "name": "玄關・右",
       "directionLabel": "右",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        1045,
-        850,
+        906.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 0,
-      "file": "v2-entry-5E.png",
-      "triangles": 27349,
-      "key": "v2-entry-5E",
+      "file": "v2-entry-door5E.png",
+      "triangles": 38564,
+      "key": "v2-entry-door5E",
       "versionTitle": "旋轉電視＋小中島",
-      "model": "model/v2-entry-5E.png",
-      "modelHash": "0e570af12350c5b964051aa7d8f3da3a1de26daa5a9349c50de1eeffd10fc878",
+      "model": "model/v2-entry-door5E.png",
+      "modelHash": "e91818cef454f1a2983271be253848da93d277385fd0e6ecaf8186b171ef5e50",
       "angle": "E",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v2-entry-5E",
+      "aiKey": "v2-entry-door5E",
       "sharedWith": [
-        "v2-entry-5E"
+        "v2-entry-door5E"
       ]
     },
     {
@@ -4682,177 +4684,177 @@
     },
     {
       "version": "v3",
-      "id": "entry-5A",
+      "id": "entry-door5A",
       "room": "entry",
       "name": "玄關・左",
       "directionLabel": "左",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        445,
-        850,
+        306.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 180,
-      "file": "v3-entry-5A.png",
-      "triangles": 88865,
-      "key": "v3-entry-5A",
+      "file": "v3-entry-door5A.png",
+      "triangles": 61837,
+      "key": "v3-entry-door5A",
       "versionTitle": "旋轉電視＋大中島",
-      "model": "model/v3-entry-5A.png",
-      "modelHash": "3b9d709ba3ea4550738ff2f46ae1ba5f16ab5e32dd03b7ee171d55690e15051b",
+      "model": "model/v3-entry-door5A.png",
+      "modelHash": "4b46f50a6dd2f1898e0bc46c00c4b00b115a95b13153e8635a3a51d821c17564",
       "angle": "A",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v3-entry-5A",
+      "aiKey": "v3-entry-door5A",
       "sharedWith": [
-        "v3-entry-5A"
+        "v3-entry-door5A"
       ]
     },
     {
       "version": "v3",
-      "id": "entry-5B",
+      "id": "entry-door5B",
       "room": "entry",
       "name": "玄關・左前",
       "directionLabel": "左前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        532.8679656440357,
-        637.8679656440357,
+        394.36796564403573,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -135,
-      "file": "v3-entry-5B.png",
-      "triangles": 167122,
-      "key": "v3-entry-5B",
+      "file": "v3-entry-door5B.png",
+      "triangles": 132599,
+      "key": "v3-entry-door5B",
       "versionTitle": "旋轉電視＋大中島",
-      "model": "model/v3-entry-5B.png",
-      "modelHash": "7c58f60dc13d6815b246b40709d965f7abb57a733ae9f031b6a64ef99415cf49",
+      "model": "model/v3-entry-door5B.png",
+      "modelHash": "24625d5283f13c5d42cee55a2b6c606de7433ea28b10700e167a1ab61f8c3a69",
       "angle": "B",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v3-entry-5B",
+      "aiKey": "v3-entry-door5B",
       "sharedWith": [
-        "v3-entry-5B"
+        "v3-entry-door5B"
       ]
     },
     {
       "version": "v3",
-      "id": "entry-5C",
+      "id": "entry-door5C",
       "room": "entry",
       "name": "玄關・正前",
       "directionLabel": "正前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        745,
-        550,
+        606.5,
+        625,
         140
       ],
       "fov": 70,
       "direction": -90,
-      "file": "v3-entry-5C.png",
-      "triangles": 185846,
-      "key": "v3-entry-5C",
+      "file": "v3-entry-door5C.png",
+      "triangles": 210759,
+      "key": "v3-entry-door5C",
       "versionTitle": "旋轉電視＋大中島",
-      "model": "model/v3-entry-5C.png",
-      "modelHash": "9979a7a8347a8c07325134f0a0d89544841afec17001f1d5f05b47a7f5377610",
+      "model": "model/v3-entry-door5C.png",
+      "modelHash": "764a7ad024de4d349c562a99f2a5b0581ebef017645648c82db3475455c9897e",
       "angle": "C",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v3-entry-5C",
+      "aiKey": "v3-entry-door5C",
       "sharedWith": [
-        "v3-entry-5C"
+        "v3-entry-door5C"
       ]
     },
     {
       "version": "v3",
-      "id": "entry-5D",
+      "id": "entry-door5D",
       "room": "entry",
       "name": "玄關・右前",
       "directionLabel": "右前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        957.1320343559643,
-        637.8679656440357,
+        818.6320343559643,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -45,
-      "file": "v3-entry-5D.png",
-      "triangles": 120353,
-      "key": "v3-entry-5D",
+      "file": "v3-entry-door5D.png",
+      "triangles": 171892,
+      "key": "v3-entry-door5D",
       "versionTitle": "旋轉電視＋大中島",
-      "model": "model/v3-entry-5D.png",
-      "modelHash": "78eb5dfa34f07a5d2214b32af4124ff432498265851847e9ff25328cf3cab141",
+      "model": "model/v3-entry-door5D.png",
+      "modelHash": "6846c178b107926e862dbdbea4c7b75350d9af042a84d112ffbc13b58ea3c6a1",
       "angle": "D",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v3-entry-5D",
+      "aiKey": "v3-entry-door5D",
       "sharedWith": [
-        "v3-entry-5D"
+        "v3-entry-door5D"
       ]
     },
     {
       "version": "v3",
-      "id": "entry-5E",
+      "id": "entry-door5E",
       "room": "entry",
       "name": "玄關・右",
       "directionLabel": "右",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        1045,
-        850,
+        906.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 0,
-      "file": "v3-entry-5E.png",
-      "triangles": 27335,
-      "key": "v3-entry-5E",
+      "file": "v3-entry-door5E.png",
+      "triangles": 38820,
+      "key": "v3-entry-door5E",
       "versionTitle": "旋轉電視＋大中島",
-      "model": "model/v3-entry-5E.png",
-      "modelHash": "91e4ae0a3607cafefabecd557f5418582626ef76ed69f8890809e0377d5d6695",
+      "model": "model/v3-entry-door5E.png",
+      "modelHash": "393e31cbf0baec83c1d501d59141db1a703995edc18771877c624c6b7ff5abb5",
       "angle": "E",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v3-entry-5E",
+      "aiKey": "v3-entry-door5E",
       "sharedWith": [
-        "v3-entry-5E"
+        "v3-entry-door5E"
       ]
     },
     {
@@ -6022,177 +6024,177 @@
     },
     {
       "version": "v4",
-      "id": "entry-5A",
+      "id": "entry-door5A",
       "room": "entry",
       "name": "玄關・左",
       "directionLabel": "左",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        445,
-        850,
+        306.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 180,
-      "file": "v4-entry-5A.png",
-      "triangles": 89549,
-      "key": "v4-entry-5A",
+      "file": "v4-entry-door5A.png",
+      "triangles": 61825,
+      "key": "v4-entry-door5A",
       "versionTitle": "大中島",
-      "model": "model/v4-entry-5A.png",
-      "modelHash": "8b1710aa6a04fe3cdef491e50b74f689ccb3fa576ebad488e48c0ec4b0a758dd",
+      "model": "model/v4-entry-door5A.png",
+      "modelHash": "1b919c5a8c50612759f8298809c3fbc74b87f19601288fb013843e208edb262b",
       "angle": "A",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v4-entry-5A",
+      "aiKey": "v4-entry-door5A",
       "sharedWith": [
-        "v4-entry-5A"
+        "v4-entry-door5A"
       ]
     },
     {
       "version": "v4",
-      "id": "entry-5B",
+      "id": "entry-door5B",
       "room": "entry",
       "name": "玄關・左前",
       "directionLabel": "左前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        532.8679656440357,
-        637.8679656440357,
+        394.36796564403573,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -135,
-      "file": "v4-entry-5B.png",
-      "triangles": 158680,
-      "key": "v4-entry-5B",
+      "file": "v4-entry-door5B.png",
+      "triangles": 130169,
+      "key": "v4-entry-door5B",
       "versionTitle": "大中島",
-      "model": "model/v4-entry-5B.png",
-      "modelHash": "e4f32e760a29c104f334342191441f9337909e4e14df3cacb03a9e84bdb443d0",
+      "model": "model/v4-entry-door5B.png",
+      "modelHash": "ab2f1f9769cdf32846838699fb27e9dea33c271b36695be329d4a6ea71aa04b7",
       "angle": "B",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v4-entry-5B",
+      "aiKey": "v4-entry-door5B",
       "sharedWith": [
-        "v4-entry-5B"
+        "v4-entry-door5B"
       ]
     },
     {
       "version": "v4",
-      "id": "entry-5C",
+      "id": "entry-door5C",
       "room": "entry",
       "name": "玄關・正前",
       "directionLabel": "正前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        745,
-        550,
+        606.5,
+        625,
         140
       ],
       "fov": 70,
       "direction": -90,
-      "file": "v4-entry-5C.png",
-      "triangles": 170592,
-      "key": "v4-entry-5C",
+      "file": "v4-entry-door5C.png",
+      "triangles": 194819,
+      "key": "v4-entry-door5C",
       "versionTitle": "大中島",
-      "model": "model/v4-entry-5C.png",
-      "modelHash": "c7d827189304de2214c4f9adc7136d66d59458e63c885c6838f2160d461711cb",
+      "model": "model/v4-entry-door5C.png",
+      "modelHash": "53aa31e555a13810b1b1c445b168642bfe7b5e203ffe7ab29febb0ff909faa9e",
       "angle": "C",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v4-entry-5C",
+      "aiKey": "v4-entry-door5C",
       "sharedWith": [
-        "v4-entry-5C"
+        "v4-entry-door5C"
       ]
     },
     {
       "version": "v4",
-      "id": "entry-5D",
+      "id": "entry-door5D",
       "room": "entry",
       "name": "玄關・右前",
       "directionLabel": "右前",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        957.1320343559643,
-        637.8679656440357,
+        818.6320343559643,
+        712.8679656440357,
         140
       ],
       "fov": 70,
       "direction": -45,
-      "file": "v4-entry-5D.png",
-      "triangles": 110471,
-      "key": "v4-entry-5D",
+      "file": "v4-entry-door5D.png",
+      "triangles": 150288,
+      "key": "v4-entry-door5D",
       "versionTitle": "大中島",
-      "model": "model/v4-entry-5D.png",
-      "modelHash": "3b92b2dd3efa8fde7effa3dd33cc5ccd5b659a9328042d49610013123c8d97a6",
+      "model": "model/v4-entry-door5D.png",
+      "modelHash": "1a2dff261eaea76a9563521016ff9c072d4d5eac3977f1e5a91d9da979418e59",
       "angle": "D",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v4-entry-5D",
+      "aiKey": "v4-entry-door5D",
       "sharedWith": [
-        "v4-entry-5D"
+        "v4-entry-door5D"
       ]
     },
     {
       "version": "v4",
-      "id": "entry-5E",
+      "id": "entry-door5E",
       "room": "entry",
       "name": "玄關・右",
       "directionLabel": "右",
       "entryFan": true,
       "p": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
       "t": [
-        1045,
-        850,
+        906.5,
+        925,
         140
       ],
       "fov": 70,
       "direction": 0,
-      "file": "v4-entry-5E.png",
-      "triangles": 16783,
-      "key": "v4-entry-5E",
+      "file": "v4-entry-door5E.png",
+      "triangles": 29054,
+      "key": "v4-entry-door5E",
       "versionTitle": "大中島",
-      "model": "model/v4-entry-5E.png",
-      "modelHash": "c32454471f995f2eb5dac78a2b675557444c1b241f2f665b923b1d8a72d1d8a2",
+      "model": "model/v4-entry-door5E.png",
+      "modelHash": "b77eac20c3af0431f0297cf4e4929adfd7c7818e02f9ae67c74383fc8ac42c57",
       "angle": "E",
       "width": 1152,
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v4-entry-5E",
+      "aiKey": "v4-entry-door5E",
       "sharedWith": [
-        "v4-entry-5E"
+        "v4-entry-door5E"
       ]
     },
     {
@@ -6729,13 +6731,19 @@
     },
     "entryFan": {
       "date": "2026-09-15",
-      "sourceRevision": "bd915ac968e42dbf6be1f27d4ff3dd1f77d05889",
+      "sourceRevision": "8f9614b6210758e108ae6a9b1811cf87f11c1b08",
       "stationCm": [
-        745,
-        850,
+        606.5,
+        925,
         165
       ],
-      "station": "玄關與客廳交界",
+      "station": "大門中心跨入門內30cm",
+      "entryOpeningCm": {
+        "xMin": 553,
+        "xMax": 660,
+        "thresholdY": 955
+      },
+      "distanceInsideDoorCm": 30,
       "labels": [
         "左",
         "左前",
@@ -6752,8 +6760,11 @@
       ],
       "fov": 70,
       "total": 25,
-      "other165ViewsUnchanged": true,
-      "stationCollisionCheckedForAllVersions": true
+      "modelViewsInspected": 25,
+      "stationCollisionCheckedForAllVersions": true,
+      "browserVisualQA": false,
+      "note": "保留大門側結構柱與玄關櫃的實際遮擋；不為取景移除模型。",
+      "other165ViewsUnchanged": true
     }
   }
 }
