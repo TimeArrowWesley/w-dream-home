@@ -3,13 +3,18 @@ const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('ass
 const root=path.resolve(__dirname,'../成品圖集/20260914暗色現代工業');
 const window={};vm.runInNewContext(fs.readFileSync(path.join(root,'album-data.js'),'utf8'),{window});
 const data=window.HOME_ALBUM;
-assert.equal(data.complete,true);assert.equal(data.entries.length,180);assert.deepEqual(Array.from(data.versions,v=>v.id),['v0','v1','v2','v3','v4']);assert.equal(data.uniqueImages,new Set(data.entries.map(e=>e.sourceKey)).size);
+assert.equal(data.complete,true);assert.equal(data.entries.length,190);assert.deepEqual(Array.from(data.versions,v=>v.id),['v0','v1','v2','v3','v4']);assert.equal(data.uniqueImages,new Set(data.entries.map(e=>e.sourceKey)).size);
 for(const v of data.versions)for(const r of data.rooms){
- const e=data.entries.filter(e=>e.version===v.id&&e.room===r.id);assert.equal(e.length,3,v.id+'/'+r.id);assert.equal(new Set(e.map(x=>x.angle)).size,3);assert.equal(new Set(e.map(x=>x.sourceHash)).size,3);
+ const expected=r.id==='entry'?5:3,e=data.entries.filter(e=>e.version===v.id&&e.room===r.id);assert.equal(e.length,expected,v.id+'/'+r.id);assert.equal(new Set(e.map(x=>x.angle)).size,expected);assert.equal(new Set(e.map(x=>x.sourceHash)).size,expected);
+ if(r.id==='entry'){
+  assert.deepEqual(Array.from(e,x=>x.directionLabel),['左','左前','正前','右前','右']);
+  assert.deepEqual(Array.from(e,x=>x.camera.heading),[180,-135,-90,-45,0]);
+  for(const x of e){assert.deepEqual(Array.from(x.camera.position),[745,850,165]);assert.equal(x.camera.fov,70);assert.equal(x.entryFan,true);}
+ }
  // A narrow bathroom can show a different zone from a translated camera even
  // with a modest heading change: B is beside the vanity, C is by the tub.
  // Reject repeated camera poses while accounting for that visible parallax.
- for(let a=0;a<3;a++)for(let b=a+1;b<3;b++){const d=Math.abs(e[a].camera.heading-e[b].camera.heading)%360,turn=Math.min(d,360-d),shift=Math.hypot(...e[a].camera.position.map((n,i)=>n-e[b].camera.position[i]));assert.ok(turn>5&&(turn>25||shift>100),'Views insufficiently distinct: '+e[a].key+'/'+e[b].key);}
+ for(let a=0;a<e.length;a++)for(let b=a+1;b<e.length;b++){const d=Math.abs(e[a].camera.heading-e[b].camera.heading)%360,turn=Math.min(d,360-d),shift=Math.hypot(...e[a].camera.position.map((n,i)=>n-e[b].camera.position[i]));assert.ok(turn>5&&(turn>25||shift>100),'Views insufficiently distinct: '+e[a].key+'/'+e[b].key);}
 }
 const hashes=new Map();for(const e of data.entries){if(hashes.has(e.sourceKey))assert.equal(hashes.get(e.sourceKey),e.sourceHash);hashes.set(e.sourceKey,e.sourceHash);for(const t of ['ai','model','thumb'])assert.ok(fs.statSync(path.join(root,e[t])).size>1000,e.key+'/'+t);}
 class E{
@@ -26,9 +31,9 @@ const location={search:''},history={replaceState(){}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'album.js'),'utf8'),{window,document,location,history,URL,URLSearchParams});
 const imgs=n=>[...(n.tag==='img'?[n]:[]),...n.children.flatMap(imgs)];
 let checks=0;
-for(const vb of ids.versions.children){vb.onclick();assert.equal(imgs(ids.gallery).length,36);for(const room of data.rooms){ids.room.value=room.id;ids.room.onchange();assert.equal(imgs(ids.gallery).length,3);for(const m of modes){m.onclick();const cards=ids.gallery.children[0].children[1].children;for(const c of cards){
+for(const vb of ids.versions.children){vb.onclick();assert.equal(imgs(ids.gallery).length,38);for(const room of data.rooms){ids.room.value=room.id;ids.room.onchange();assert.equal(imgs(ids.gallery).length,room.id==='entry'?5:3);for(const m of modes){m.onclick();const cards=ids.gallery.children[0].children[1].children;for(const c of cards){
  c.onclick();assert.equal(ids.detail.open,true);const key=data.entries.find(e=>e.version===vb.dataset.version&&e.room===room.id&&ids.detailTitle.textContent.endsWith(e.angle));assert.ok(key);assert.equal(imgs(ids.detailImages)[0].src,pathToFileURL(path.join(root,key[m.dataset.mode])).href);
  details[2].onclick();assert.equal(imgs(ids.detailImages).length,2);assert.equal(imgs(ids.detailImages)[0].src,pathToFileURL(path.join(root,key.model)).href);assert.equal(imgs(ids.detailImages)[1].src,pathToFileURL(path.join(root,key.ai)).href);
- ids.next.onclick();assert.notEqual(ids.detailTitle.textContent.split('方向 ')[1],key.angle);ids.previous.onclick();assert.ok(ids.detailTitle.textContent.endsWith(key.angle));ids.close.onclick();assert.equal(ids.detail.open,false);checks++;
+ ids.next.onclick();assert.ok(!ids.detailTitle.textContent.endsWith(key.angle));ids.previous.onclick();assert.ok(ids.detailTitle.textContent.endsWith(key.angle));ids.close.onclick();assert.equal(ids.detail.open,false);checks++;
  }} }ids.room.value='all';ids.room.onchange();}
 console.log(JSON.stringify({views:data.entries.length,uniqueImages:hashes.size,roomVersionGroups:60,detailInteractions:checks,sourceAndEffectAssetsVerified:true,method:'Offline DOM stub; browser visual QA not performed'}));

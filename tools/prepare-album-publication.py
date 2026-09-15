@@ -7,11 +7,11 @@ keys=sorted({e['aiKey'] for e in manifest['entries']})
 for file in ['提案/原始格局/index.html','index.html','提案/旋轉電視與直線中島/index.html','提案/開放大中島/index.html','提案/南牆電視與開放中島/index.html']:
  p=root/file;s=p.read_bytes().decode('utf8')
  for asset in ['assets/ai-interiors/catalog.js','ai-views.js','viewer-ui.js']:
-  s,n=re.subn(r'(?<=src=")'+re.escape(asset)+r'(?:\?[^"\s]*)?(?=")',asset+'?v=20260915-v0',s)
+  s,n=re.subn(r'(?<=src=")'+re.escape(asset)+r'(?:\?[^"\s]*)?(?=")',asset+'?v=20260915-entry5',s)
   assert n==1,(file,asset,n)
  p.write_bytes(s.encode('utf8'))
 p=root/'.github/publish-files.json';old=p.read_bytes().decode('utf8');data=json.loads(old)
-removed=[s for s in data['site'] if s.startswith('assets/ai-interiors/') and s.endswith('.webp')]
+removed=[s for s in data['site'] if s.endswith('.webp') and (s.startswith('assets/ai-interiors/') or (s.startswith(folder) and s.split('/')[-2] in ['images','models','thumbs'] and Path(s).stem not in keys))]
 data['site']=[s for s in data['site'] if s not in removed]
 needed=[folder+n for n in ['index.html','album.css','album.js','album-data.js','使用說明.md','生成紀錄.json','成品核對.json']]
 needed += [folder+f'{f}/{k}.webp' for f in ['images','models','thumbs'] for k in keys]

@@ -7,7 +7,10 @@ root=project/'成品圖集/20260914暗色現代工業'
 def read(name):return json.loads((root/name).read_text(encoding='utf8'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 manifest=read('album-manifest.json');entries=manifest['entries'];keys=sorted({e['aiKey'] for e in entries})
-assert len(entries)==180 and {e['version'] for e in entries}=={'v0','v1','v2','v3','v4'}
+assert len(entries)==190 and {e['version'] for e in entries}=={'v0','v1','v2','v3','v4'}
+for v in ['v0','v1','v2','v3','v4']:
+ assert len([e for e in entries if e['version']==v])==38
+ assert len([e for e in entries if e['version']==v and e['room']=='entry'])==5
 checked=read('視覺核對.json');assert set(checked['reviewedFinalImages'])==set(keys)
 fixes=read('修正清單.json');assert set(fixes)<=set(checked['reviewedCorrections'])
 records=[]

@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-15",
+  "sourceRevision": "bd915ac968e42dbf6be1f27d4ff3dd1f77d05889",
+  "stationCm": [
+    745,
+    850,
+    165
+  ],
+  "station": "玄關與客廳交界",
+  "labels": [
+    "左",
+    "左前",
+    "正前",
+    "右前",
+    "右"
+  ],
+  "headings": [
+    180,
+    -135,
+    -90,
+    -45,
+    0
+  ],
+  "fov": 70,
+  "total": 25,
+  "other165ViewsUnchanged": true,
+  "stationCollisionCheckedForAllVersions": true,
+  "modelViewsInspected": 25,
+  "aiViewsInspected": 25,
+  "revisedAIImagesInspected": [
+    "v0-entry-5A",
+    "v0-entry-5B",
+    "v0-entry-5C",
+    "v0-entry-5E",
+    "v1-entry-5C",
+    "v2-entry-5A",
+    "v2-entry-5D",
+    "v2-entry-5E",
+    "v3-entry-5A",
+    "v3-entry-5D"
+  ],
+  "browserVisualQA": false
+}
