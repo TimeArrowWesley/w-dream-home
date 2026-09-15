@@ -15,7 +15,7 @@ function cssValue(d,node,prop,width=1920){
   return best?.value;
 }
 function fixture(v,params='') {
-  const proposal=v!=='v1',prefix=v==='v4'?'提案/南牆電視與開放中島/':v==='v3'?'提案/開放大中島/':proposal?'提案/旋轉電視與直線中島/':'',modelPrefix=proposal?'提案/旋轉電視與直線中島/':'';
+  const proposal=['v2','v3','v4'].includes(v),prefix=v==='v0'?'提案/原始格局/':v==='v4'?'提案/南牆電視與開放中島/':v==='v3'?'提案/開放大中島/':proposal?'提案/旋轉電視與直線中島/':'',modelPrefix=proposal?'提案/旋轉電視與直線中島/':'';
   const {document,window:dom}=parseHTML(read(prefix+'index.html'));
   const listeners={},calls=[],storage=new Map();
   let activeElement=null,current='all';
@@ -38,8 +38,9 @@ function fixture(v,params='') {
   function el(tag,id,html,host=document.body){const n=document.createElement(tag);if(id)n.id=id;if(html)n.innerHTML=html;host.append(n);return n;}
   const $=id=>document.getElementById(id);
   // Actual room metadata and existing tour/walking/AI handlers, with a camera-only scene.
-  const layout={isV2:v==='v1'};
+  const layout={isV2:v==='v1'||v==='v0',originalPlan:v==='v0'};
   const rooms=vm.runInNewContext(read(modelPrefix+'design.js').match(/const ROOMS=(\[[\s\S]*?\n\]);/)[1],{layout});
+  if(v==='v0')for(const [id,n] of [['collection','貓房'],['study','書房・電子琴'],['living','客廳・弧形沙發']])rooms.find(r=>r.id===id).n=n;
   if(['v3','v4'].includes(v))for(const [id,n] of [['island','開放大中島'],['collection','展示與深收納']])rooms.find(r=>r.id===id).n=n;
   if(v==='v4'){const spec=JSON.parse(read('提案/南牆電視與開放中島/格局尺寸.json'));for(const [id,p] of Object.entries(spec.rooms))Object.assign(rooms.find(r=>r.id===id),p);}
   const scene=new T.Scene(),architecture=new T.Group(),fittings=new T.Group(),camera=new T.PerspectiveCamera();scene.add(architecture,fittings);
@@ -63,7 +64,7 @@ function fixture(v,params='') {
   el('div','realismControls','<button id="realismQuality">畫質：精細</button><span id="realismStatus">就緒</span>',$('walkHUD'));
   if(proposal&&v!=='v4'){const html=read(modelPrefix+'rotating-tv.js').match(/panel.innerHTML = `([\s\S]*?)`;/)[1];el('section','rotatingTVPanel',html,$('view').parentElement);document.querySelectorAll('[data-tv-facing]').forEach(b=>b.onclick=()=>calls.push(['tv',b.dataset.tvFacing]));}
   run('assets/ai-interiors/catalog.js');run('ai-views.js');
-  const equipment=geometry.variants[['v3','v4'].includes(v)?'v2':v].equipment.map(e=>{const g=new T.Group();g.name=e.name;g.userData.equipment=e.expected;g.userData.desc=e.name;return g;});
+  const equipment=geometry.variants[['v3','v4'].includes(v)?'v2':v==='v0'?'v1':v].equipment.map(e=>{const g=new T.Group();g.name=e.name;g.userData.equipment=e.expected;g.userData.desc=e.name;return g;});
   c.HOME_EQUIPMENT={items:equipment,switchStation:equipment.find(g=>g.userData.equipment.key==='switch2'),setInspection:on=>calls.push(['inspection',on])};
   // Door mechanics are already verified with full geometry. Track dispatch here.
   c.HOME_INTERACTION={blocksPoint:()=>false,toggleDoor:key=>calls.push(['door',key]),getState:()=>({entries:[]})};
@@ -82,11 +83,11 @@ function fixture(v,params='') {
   return {c,document,$,calls,originals,run,dom,listeners};
 }
 (async()=>{
-for(const v of ['v1','v2','v3','v4']){
+for(const v of ['v0','v1','v2','v3','v4']){
   const a=fixture(v),{c,document:d,$,calls,originals}=a;
   assert(c.HOME_UI, v+' initialized');assert.equal(c.HOME_UI.getState().room,'all');
   assert.equal(d.querySelectorAll('.uiPrimary > button').length,3);
-  assert.equal($('layoutSwitch').children.length,4);assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
+  assert.equal($('layoutSwitch').children.length,5);assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
   assert.equal(cssValue(d,d.querySelector('body > header'),'display'),'flex');assert.equal(cssValue(d,$('uiSidebar'),'display'),'flex');assert.equal(cssValue(d,$('planPanel'),'display'),'none');
   assert.equal(cssValue(d,d.querySelector('.shell'),'height'),'auto');assert.equal(cssValue(d,$('scenePanel'),'grid-template-rows'),'auto minmax(0,1fr) auto');
   const ids=Array.from(d.querySelectorAll('[id]')).map(n=>n.id);assert.equal(new Set(ids).size,ids.length,'No duplicate IDs '+v);
@@ -139,7 +140,7 @@ for(const v of ['v1','v2','v3','v4']){
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(v==='v4'){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,9);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
+  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,10);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
   assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
   assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
   d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));
@@ -148,7 +149,7 @@ for(const v of ['v1','v2','v3','v4']){
   d.querySelector('[data-comfort-scene="daily"]').click();assert.equal(c.HOME_COMFORT.getState().scene,'daily');
   $('export').click();assert(calls.some(q=>q[0]==='export'));
   const alt=v==='v2'?'v1':'v2',target=d.querySelector('[data-proposal="'+alt+'"], [data-layout="'+alt+'"]');target.click();const nav=calls.find(q=>q[0]==='navigate');assert(nav);assert(new URL(nav[1]).searchParams.get('uiRoom')==='study');
-  if(v!=='v1'&&v!=='v4'){assert($('uiInspector').contains($('rotatingTVPanel')));d.querySelector('[data-tv-facing="island"]').click();assert(calls.some(q=>q[0]==='tv'&&q[1]==='island'));}
+  if(v==='v2'||v==='v3'){assert($('uiInspector').contains($('rotatingTVPanel')));d.querySelector('[data-tv-facing="island"]').click();assert(calls.some(q=>q[0]==='tv'&&q[1]==='island'));}
   c.innerWidth=390;assert.equal(cssValue(d,$('uiSidebar'),'display',390),'none');$('uiMobileNav').click();assert(d.body.classList.contains('uiNavOpen'));assert.equal(cssValue(d,$('uiSidebar'),'display',390),'flex');$('uiNavScrim').click();assert(!d.body.classList.contains('uiNavOpen'));
   checks.push(v.toUpperCase()+': navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed');
 }
@@ -159,13 +160,13 @@ const deep=fixture('v2','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.
  assert(document.getElementById('versionTitle').textContent.startsWith('V3'));
  assert(document.getElementById('openModel').getAttribute('href').includes('開放大中島'));
  assert(document.getElementById('metrics').textContent.includes('300 × 95'));
- for(const v of ['v1','v2','v3','v4']){document.getElementById('tab-'+v).click();assert(document.getElementById('versionTitle').textContent.startsWith(v.toUpperCase()));}
- checks.push('Four design comparison tabs render correct names, metrics, drawings and 3D links');
+ for(const v of ['v0','v1','v2','v3','v4']){document.getElementById('tab-'+v).click();assert(document.getElementById('versionTitle').textContent.startsWith(v.toUpperCase()));}
+ checks.push('Five design comparison tabs render correct names, metrics, drawings and 3D links');
 }
 for(const f of ['viewer-base.css','viewer-ui.css','furniture.css']){const sheet=CSSOM.parse(read(f));assert(sheet.cssRules.length>20);checks.push(f+': stylesheet parsed successfully');}
 const retained=JSON.parse(read('調整紀錄/20260910開放大中島/驗證.json'));assert(Object.keys(retained.retained).length===2);
 for(const v of ['v1','v2'])assert(retained.retained[v].meshes>2000);
-checks.push('V1/V2 full mesh geometry verified separately; four-design UI and shared furniture handlers preserved');
+checks.push('Full mesh geometry verified separately in V0 layout tests; five-design UI and shared furniture handlers preserved');
 const files=['viewer-ui.js','viewer-ui.css','viewer-base.css','walk.js','furniture-app.js','furniture.css','index.html','提案/旋轉電視與直線中島/index.html'];
 const out=path.resolve(process.env.HOME_TEST_REPORT_DIR||path.join(R,'調整紀錄/20260910介面重整'));fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'介面驗證.json'),JSON.stringify({date:new Date().toISOString(),method:'LinkeDOM with actual tour, walk, interaction, AI, equipment and furniture UI handlers; camera-only Three.js fixture. No browser layout or GPU rendering.',checks,hashes:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(read(f)).digest('hex')]))},null,2));
 console.log(checks.join('\n'));

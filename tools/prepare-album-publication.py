@@ -4,10 +4,10 @@ root=Path(__file__).resolve().parents[1]
 folder='成品圖集/20260914暗色現代工業/'
 manifest=json.loads((root/folder/'album-manifest.json').read_text(encoding='utf8'))
 keys=sorted({e['aiKey'] for e in manifest['entries']})
-for file in ['index.html','提案/旋轉電視與直線中島/index.html','提案/開放大中島/index.html','提案/南牆電視與開放中島/index.html']:
+for file in ['提案/原始格局/index.html','index.html','提案/旋轉電視與直線中島/index.html','提案/開放大中島/index.html','提案/南牆電視與開放中島/index.html']:
  p=root/file;s=p.read_bytes().decode('utf8')
  for asset in ['assets/ai-interiors/catalog.js','ai-views.js','viewer-ui.js']:
-  s,n=re.subn(r'(?<=src=")'+re.escape(asset)+r'(?:\?[^"\s]*)?(?=")',asset+'?v=20260915-album',s)
+  s,n=re.subn(r'(?<=src=")'+re.escape(asset)+r'(?:\?[^"\s]*)?(?=")',asset+'?v=20260915-v0',s)
   assert n==1,(file,asset,n)
  p.write_bytes(s.encode('utf8'))
 p=root/'.github/publish-files.json';old=p.read_bytes().decode('utf8');data=json.loads(old)

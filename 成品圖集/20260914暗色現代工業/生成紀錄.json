@@ -1,14 +1,300 @@
 {
   "date": "2026-09-15",
   "sourceRevision": "e028e0fe82eedefaacc6f0e1d037a924aef65de5",
+  "versionSources": {
+    "v0": {
+      "capturedAt": "2026-09-15",
+      "basis": "格局.pdf original plan; shared current equipment and controls",
+      "sourceFileSha256": {
+        "design.js": "93812d675eda2e61d49eebc34e3ec4d72d0fa64fb5265be54e7ba4dfdb76297b",
+        "model-data.js": "67d6570cb6cec9066a836a6db69ba176e6627616cbd1ca1dad3e61457ff71674",
+        "equipment-models.js": "84be4735e0f437638c47d60dbb53268e92b86362098912aae1024cd8402dd9ab",
+        "bedroom-model.js": "b64a4ca942cf48badc3618c7bc0476eabebebf687b4f8e9ab645f1dc72ee9333",
+        "industrial-design.js": "ab87ec1403013f113c9819cad1e0429b6c80c7e9fefab4ad005a703ac4081bb8",
+        "flooring.js": "9ccac5fc7461eea71fe3012e7ce08e4d672e5889ee0fc44e33e66b3c520eb044",
+        "提案/原始格局/layout-spec.js": "bbd9b5a3b69b44892ed3ceca579010a570a0cdc22adda3d6b2176ad29e1b1d81",
+        "提案/原始格局/original-model.js": "779de7e03767932a608689e9e11523f1b0010c20d393e3016d57505406a2c9bb"
+      }
+    },
+    "v1-v4": {
+      "sourceRevision": "e028e0fe82eedefaacc6f0e1d037a924aef65de5",
+      "capturedAt": "2026-09-14/15",
+      "retained": true
+    }
+  },
   "sourceMethod": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "generationTool": "Built-in image_gen",
-  "viewSlots": 144,
-  "uniqueImages": 82,
+  "viewSlots": 180,
+  "uniqueImages": 100,
   "records": [
+    {
+      "key": "v0-collection-A",
+      "usedBy": [
+        "v0-collection-A"
+      ],
+      "sourcePngSha256": "9239ff94e5eb22513d575723748becafb5c18e6b80061f8f2a2efb7fc5c758ec",
+      "aiOriginalPngSha256": "4d064534046244d333c27beddf04fee4cf61187b661a5b154aadbcb191a6ae66",
+      "aiWebpSha256": "31446bd40640afa29ccc86f265759f3278c26108d4b0a7d65c478c4e2810e39e",
+      "sourceWebpSha256": "508ab21752d03eff9449a925202aeb3f1ffc3899298d3c5bf8f08e72183a63d4",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 independent CAT ROOM. Preserve source's curved reeded glass partition, north glass entry, two low open-front litter-box enclosures, wall-attached cat climbing platforms, and north utility storage. Not a glass collectible showroom. Do not add cats, showcases, doors or furniture not in source.\nExact source view: v0-collection-A. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-collection-B",
+      "usedBy": [
+        "v0-collection-B"
+      ],
+      "sourcePngSha256": "47a5fee9d3bd3b387052d2b02c24645eb6965ddd4a65f71ee2e0ad93074c9c20",
+      "aiOriginalPngSha256": "a6e5ce660d8fd7defa427a0c7434f6aea034a683a9695cf0c36218a9e152fbca",
+      "aiWebpSha256": "ac45d71af6b3619913cee01ec620dcd8d27ed615f9b1e30edaf64ee7f90071bd",
+      "sourceWebpSha256": "494368982701789ca22b8eaec8e846f399ae87e4fe004d7e565dd2af7a9045db",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 independent CAT ROOM. Preserve source's curved reeded glass partition, north glass entry, two low open-front litter-box enclosures, wall-attached cat climbing platforms, and north utility storage. Not a glass collectible showroom. Do not add cats, showcases, doors or furniture not in source.\nExact source view: v0-collection-B. Match image 1.\n",
+      "corrections": [
+        {
+          "instruction": "In the middle-distance island, replace the small white plate beneath the EXISTING faucet with a SMALL ROUND recessed stainless-steel drinking basin: dark visible bowl interior and thin metal rim flush with the counter, same position and diameter as the white circle in Image 2. Do not add another faucet or basin. Keep all the cat-room cabinetry and glazing unchanged.",
+          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: In the middle-distance island, replace the small white plate beneath the EXISTING faucet with a SMALL ROUND recessed stainless-steel drinking basin: dark visible bowl interior and thin metal rim flush with the counter, same position and diameter as the white circle in Image 2. Do not add another faucet or basin. Keep all the cat-room cabinetry and glazing unchanged.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-collection-C",
+      "usedBy": [
+        "v0-collection-C"
+      ],
+      "sourcePngSha256": "3324bd3876d26ecfb28b2b33e11065a59c10d38ad8aff3b01c30f2947b034c0f",
+      "aiOriginalPngSha256": "adc0ec77f25e85bd1ec28f6f5e4a5464824a7277a72ba428a031e052dfe60dac",
+      "aiWebpSha256": "3a5878e9019ca3a609241796748470eca263905ac939f638c397586c779beef7",
+      "sourceWebpSha256": "f844006635f5e1eacdaf25897d36d42a27f6f3ccea1dea5cab00dcaf34491ad3",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 independent CAT ROOM. Preserve source's curved reeded glass partition, north glass entry, two low open-front litter-box enclosures, wall-attached cat climbing platforms, and north utility storage. Not a glass collectible showroom. Do not add cats, showcases, doors or furniture not in source.\nExact source view: v0-collection-C. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-entry-A",
+      "usedBy": [
+        "v0-entry-A"
+      ],
+      "sourcePngSha256": "40717760a822259d4ee7cdf8f347d1caf020fe86dc264103d2682750e791e044",
+      "aiOriginalPngSha256": "001fe396c640482af78a4735880371f0e0edd967cab9643b406a3936d1ed0836",
+      "aiWebpSha256": "b0dae48c023d968e2bda2fa35dee901b970161077b10497a79160aadce8f55fc",
+      "sourceWebpSha256": "030c5bd50c348a0f7e713e4b31da1658573528e706646f0f1b01b96de154d9c4",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Original-plan V0 foyer. Small dark terrazzo entry patch only, adjacent herringbone wood living floor. Keep compact side shoe cabinet, coat/hat hooks, curved glass cat-room corner, fixed south TV only where visible.\nExact source view: v0-entry-A. Match image 1.\n",
+      "corrections": [
+        {
+          "instruction": "Restore the ONE missing black angular drinking-water faucet behind/right of the small round basin on the left island countertop exactly as in Image 2. Replace the white plate-like disc with a SMALL round recessed stainless-steel drinking-water basin, 22 cm diameter, dark visible bowl interior. Keep all other geometry and objects unchanged.",
+          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: Restore the ONE missing black angular drinking-water faucet behind/right of the small round basin on the left island countertop exactly as in Image 2. Replace the white plate-like disc with a SMALL round recessed stainless-steel drinking-water basin, 22 cm diameter, dark visible bowl interior. Keep all other geometry and objects unchanged.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-entry-B",
+      "usedBy": [
+        "v0-entry-B"
+      ],
+      "sourcePngSha256": "21ffcb0b57c5018a4ec46358a9a6caf624f483ff216c452b845f670a640d243e",
+      "aiOriginalPngSha256": "a93c68fbd306b21b507b3c0a42652729a3e9e3c8a215fb3bd987623dc18174be",
+      "aiWebpSha256": "a328e5c8ee43fd4d14a729c2bf6b4971a77b634f2f7fb372b24001e1f0f3cada",
+      "sourceWebpSha256": "b6b60cca48954bc9adea91600744c74ef447b759752e5fae86361e80c25d7e0e",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Original-plan V0 foyer. Small dark terrazzo entry patch only, adjacent herringbone wood living floor. Keep compact side shoe cabinet, coat/hat hooks, curved glass cat-room corner, fixed south TV only where visible.\nExact source view: v0-entry-B. Match image 1.\n",
+      "corrections": [
+        {
+          "instruction": "Correct ONLY the black glass hob at the far right of the island: remove the four burner rings and replace them with EXACTLY TWO circular heating-zone outlines arranged in one row along the existing narrow rectangular panel. It is a Bosch 30 cm TWO-ZONE domino induction hob. Do not change its footprint or location, and do not change the round drinking sink on the left.",
+          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: Correct ONLY the black glass hob at the far right of the island: remove the four burner rings and replace them with EXACTLY TWO circular heating-zone outlines arranged in one row along the existing narrow rectangular panel. It is a Bosch 30 cm TWO-ZONE domino induction hob. Do not change its footprint or location, and do not change the round drinking sink on the left.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-entry-C",
+      "usedBy": [
+        "v0-entry-C"
+      ],
+      "sourcePngSha256": "0a04357d49b8c61e5871ace69b13d729b930a958b09ffae4653ac38d767cbe38",
+      "aiOriginalPngSha256": "f9ee6a9cc72400bea6bea151903924d15d901bc8070116749483da1a34baa14d",
+      "aiWebpSha256": "954d2519973fbdaa0e698e28476fd0540929acddc53f44767d64ec70351169c5",
+      "sourceWebpSha256": "173ed2a48ba568c94d1167bcfdbd1f1d43de915c492d3d45bee38d699c5d81ac",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Original-plan V0 foyer. Small dark terrazzo entry patch only, adjacent herringbone wood living floor. Keep compact side shoe cabinet, coat/hat hooks, curved glass cat-room corner, fixed south TV only where visible.\nExact source view: v0-entry-C. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-island-A",
+      "usedBy": [
+        "v0-island-A"
+      ],
+      "sourcePngSha256": "17aeb2270e3d95b350427399667ff6d5be833fcc5f109b10ffa72f074c28bc2d",
+      "aiOriginalPngSha256": "71e25c97125299acb633e7b88d7264ad046fb9f35294ac8b101d477564638f9d",
+      "aiWebpSha256": "2c669f78d29dc54a9cb8581d65196f236d32eae788cde87bf81b566f71b941ae",
+      "sourceWebpSha256": "20221b1d7d6b4cc6c8839f2320068953ed1a53cdedd1d6ecc9189908cc2fa5eb",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 original curved island, 95 cm counter height. Preserve continuous 80 cm wide curved working surface, glass display behind, small round drinking basin with a real recessed bowl, single faucet and two-zone rectangular IH. Wine and robot equipment faces the kitchen/west, the wet equipment service door faces the inner aisle. Keep every visible door and appliance where shown.\nExact source view: v0-island-A. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-island-B",
+      "usedBy": [
+        "v0-island-B"
+      ],
+      "sourcePngSha256": "2c8a920a9487dc6f91a5949c0035441943ad0a1ae95e06a19d21b0f10fdf488b",
+      "aiOriginalPngSha256": "e3f3759faf4ef2add3fe021db21d070dd09e8734cae9c5c61c62e17a464a7807",
+      "aiWebpSha256": "85146732d6bfeeae19ca764826af26624524d9a7455e8b5e66eb4df1d005accf",
+      "sourceWebpSha256": "4a82277ae6c39d8aece891fcbb2cc2c7648bad065a844c441b940561852c821f",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 original curved island, 95 cm counter height. Preserve continuous 80 cm wide curved working surface, glass display behind, small round drinking basin with a real recessed bowl, single faucet and two-zone rectangular IH. Wine and robot equipment faces the kitchen/west, the wet equipment service door faces the inner aisle. Keep every visible door and appliance where shown.\nExact source view: v0-island-B. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-island-C",
+      "usedBy": [
+        "v0-island-C"
+      ],
+      "sourcePngSha256": "0ab978ad93cca4a38b0027cf222b5f7342174eb2999910a5b4f483cad7806f14",
+      "aiOriginalPngSha256": "d98f8eed097df10d1614467467f5fe6cb6899f3e3aeb56d164fb51c75403fac5",
+      "aiWebpSha256": "86ba81ab46337e310e4d1655b1c5583d0aa6c90291737600747ff0eba89bb080",
+      "sourceWebpSha256": "1d7121bc7f8c4a1c596c502df8c8407cc76591a0028419010acfb84d6297f5f6",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 original curved island. This camera looks SOUTH toward the foyer and the cat-room glass door. ONE SMALL round recessed stainless drinking basin and ONE angular black faucet are visible on the black stone countertop. Preserve that basin opening with dark bowl interior, never a white cover/plate. The large dark vertical cabinet panel below it is a closed service door, not a missing panel or an appliance. NO HOB is visible in this crop: do not add a cooktop, wine fridge or robot. Preserve exactly the rear curved glass cat room, doorway and foyer cabinet visible in the source.\nExact source view: v0-island-C. Match image 1.\n",
+      "corrections": [
+        {
+          "instruction": "Correct ONLY the tiny CAT ROOM visible through the curved glass partition in the upper middle background: its floor must be DARK SMOKED OAK HERRINGBONE wood continuous with the other dry rooms, NOT gray tile. The two low rectangular open-front objects there are dark wooden cat litter-box enclosures with shallow litter trays inside, NOT upholstered armchairs. Keep their exact source outlines and positions; do not add any animals or furniture. Preserve the entire foreground countertop, recessed round basin, faucet, service cabinet and all other room details exactly.",
+          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: Correct ONLY the tiny CAT ROOM visible through the curved glass partition in the upper middle background: its floor must be DARK SMOKED OAK HERRINGBONE wood continuous with the other dry rooms, NOT gray tile. The two low rectangular open-front objects there are dark wooden cat litter-box enclosures with shallow litter trays inside, NOT upholstered armchairs. Keep their exact source outlines and positions; do not add any animals or furniture. Preserve the entire foreground countertop, recessed round basin, faucet, service cabinet and all other room details exactly.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-kitchen-B",
+      "usedBy": [
+        "v0-kitchen-B"
+      ],
+      "sourcePngSha256": "997f30f6172691d9b1bed7bb6d7a7e613c8dc2ef42613b85755c3cdf52b9aa84",
+      "aiOriginalPngSha256": "60178dcaa17ec27258b9cc55e92b196636e467e4ea2d89a2e105a10018fa5b4f",
+      "aiWebpSha256": "a4bdf5ea84f6866ec081aef4f4eb19d83de31078ce71f9d6f6a036ce8ba5fb50",
+      "sourceWebpSha256": "276f135bcf9cfe0f7c69cbc4fb75d684cc96399e1c7ef1af29997f4fb8efb400",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Narrow galley kitchen: preserve cabinet depth, aisle width, exact two counter runs, tall appliances, sinks, existing ventilation hood/dish dryer and glass upper cabinets. Do NOT widen the room or add an island. Graphite lacquer and brushed dark steel cabinetry, honed gray stone countertops, dark glass and gray artistic cement finish. Keep all appliance locations.\nExact source view: v0-kitchen-B. Match image 1.\n",
+      "corrections": [
+        {
+          "instruction": "The foreground rectangular outline beneath the EXISTING black kitchen faucet is a stainless steel kitchen sink, not an inset stone slab. Give it a realistic recessed dark brushed stainless bowl with visible depth and drain, strictly INSIDE the existing outlined rectangle without changing its footprint, counter edge, camera or faucet. Keep all other furniture and the gray stone kitchen floor unchanged.",
+          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: The foreground rectangular outline beneath the EXISTING black kitchen faucet is a stainless steel kitchen sink, not an inset stone slab. Give it a realistic recessed dark brushed stainless bowl with visible depth and drain, strictly INSIDE the existing outlined rectangle without changing its footprint, counter edge, camera or faucet. Keep all other furniture and the gray stone kitchen floor unchanged.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-living-A",
+      "usedBy": [
+        "v0-living-A"
+      ],
+      "sourcePngSha256": "3d7e370ddfff6c92c46376abdfb50b2924f8f3117761f20239e9fbce2eea8d97",
+      "aiOriginalPngSha256": "f4b29c29b562e90787999aa8bd845efe0df1aca774e19bea05910eeb7bac957c",
+      "aiWebpSha256": "2248c286ed5755bff7c9c6f2f31f01b00e16f62a7c64ea3a7844d86062a83e82",
+      "sourceWebpSha256": "ae88c0c7f1584099efe721e9ffe1487b6cde81901f64a1d65cc4db1d190afd2e",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 original-plan living room. Preserve the source's broad crescent/bean-shaped curved sofa, round coffee table and round rug, two individual lounge chairs only where visible. TV is fixed on the south wall, NEVER a rotating central TV. Existing black floor speakers and ceiling details stay exactly.\nExact source view: v0-living-A. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-living-B",
+      "usedBy": [
+        "v0-living-B"
+      ],
+      "sourcePngSha256": "699591bdbe00e55cad3b90e8086ab5f97ee9e2ee8562010af6c2daed648bc421",
+      "aiOriginalPngSha256": "c2be8b313c46bd32ba54a92e7a9f1fd62b54fe777c7382e1e4eda3448be2b713",
+      "aiWebpSha256": "3fe924605210f3f309ffcd223a604e35de7ff8b2bc18469730d0293dc40db8b3",
+      "sourceWebpSha256": "1e522763101031e97aa689bbccdbc53b3749023f99bfb0e62c113c9313f40ee6",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 original-plan living room. Preserve the source's broad crescent/bean-shaped curved sofa, round coffee table and round rug, two individual lounge chairs only where visible. TV is fixed on the south wall, NEVER a rotating central TV. Existing black floor speakers and ceiling details stay exactly.\nExact source view: v0-living-B. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-living-C",
+      "usedBy": [
+        "v0-living-C"
+      ],
+      "sourcePngSha256": "c0ab142ddfa5c523d6dec91b5eb2bb17389a7634f499f1e67f825998cf0c18a9",
+      "aiOriginalPngSha256": "9df051641807db6f6be02bf9bcee1a53e1048857b5150696768664f3e2e5a277",
+      "aiWebpSha256": "bda478ae2bf26f40b334348b9cc9fa6bb5c683169c93fd7bc20bb231b4682372",
+      "sourceWebpSha256": "84fcba82c5051dcbb7502ae6370efd5dc7d28ef3bc2fa1b85387f45f5a810c1b",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 original-plan living room. Preserve the source's broad crescent/bean-shaped curved sofa, round coffee table and round rug, two individual lounge chairs only where visible. TV is fixed on the south wall, NEVER a rotating central TV. Existing black floor speakers and ceiling details stay exactly.\nExact source view: v0-living-C. Match image 1.\n",
+      "corrections": [
+        {
+          "instruction": "Correct only the distant island appliances using Image 2: LEFT is one SMALL ROUND 22 cm stainless-steel drinking basin with the existing angular black faucet; RIGHT is one FLAT RECTANGULAR black-glass induction cooktop with two rings, NOT a large open sink. Preserve the original curved countertop and the entire rest of the room.",
+          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: Correct only the distant island appliances using Image 2: LEFT is one SMALL ROUND 22 cm stainless-steel drinking basin with the existing angular black faucet; RIGHT is one FLAT RECTANGULAR black-glass induction cooktop with two rings, NOT a large open sink. Preserve the original curved countertop and the entire rest of the room.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-storage-B",
+      "usedBy": [
+        "v0-storage-B"
+      ],
+      "sourcePngSha256": "1356ab2ab50960bb47f0cc2d9cfb6f64d94cdbaa1a8e2d783365b282cccf578a",
+      "aiOriginalPngSha256": "27a701bc299682c5e92549f4bc7e05f31aef7134ef6b20e326707129f137bfcf",
+      "aiWebpSha256": "216b48799db538e7a3a57533af8973a58fa4a0fb09ee4a7e63a8ab62a612a45c",
+      "sourceWebpSha256": "f0b0082fa0dc903008dfa6f488ab3ca8200a77000fd8ed119b98ac3aadc21bd9",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Tiny utility storage room with adjustable metal shelving: retain all six existing wall-supported removable shelves, slotted vertical rails, doorway and EMPTY FLOOR-LEVEL PARKING BAY for a cleaning-machine trolley. Existing room must remain compact. Powder-coated charcoal steel shelves, gray artistic cement walls, existing dark wood floor. No fixed lower cabinets or new shelves that obstruct the reserved bay; do not invent or put a vacuum on the floor.\nExact source view: v0-storage-B. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-storage-C",
+      "usedBy": [
+        "v0-storage-C"
+      ],
+      "sourcePngSha256": "7f96021bdc35b3f2272f087a93fd0363da6ffe7678a9631068bc083d02b16b2a",
+      "aiOriginalPngSha256": "0085b362029884d12016c4021336131a138d78c3cd5bcb7a2455fae5e1044c55",
+      "aiWebpSha256": "9f3940867f9bc8be8bcce5815b793fbfaf4967099753d7a86eb251b2309ae3a7",
+      "sourceWebpSha256": "54a5566fd5025f0d409795ad119d4560796d2967cebcf695155f504b2acb18ce",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Tiny utility storage room with adjustable metal shelving: retain all six existing wall-supported removable shelves, slotted vertical rails, doorway and EMPTY FLOOR-LEVEL PARKING BAY for a cleaning-machine trolley. Existing room must remain compact. Powder-coated charcoal steel shelves, gray artistic cement walls, existing dark wood floor. No fixed lower cabinets or new shelves that obstruct the reserved bay; do not invent or put a vacuum on the floor.\nExact source view: v0-storage-C. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-study-A",
+      "usedBy": [
+        "v0-study-A"
+      ],
+      "sourcePngSha256": "be71d89af24c2f18f33c993451691ca7a536db8f2cfcdf35bfb853e3d474ca7e",
+      "aiOriginalPngSha256": "6a7e8ce1a3fb8a9daaae3832e9344fc118c5f7cf6d3a521e0d2b22e0fbe72cd7",
+      "aiWebpSha256": "5d396b2450a2eb0f4d572e3898c9cd33da279e17bfecdab16c355898dd110683",
+      "sourceWebpSha256": "063151dbc405994d285c9c34b8230a31dd702ad75f18f1000a2034098d0e1c74",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 study has ONE L-shaped black desk and one curved ultrawide monitor with gray rear shell, ONE chair, plus an electronic piano and bench by the glass partition. Preserve their exact count and viewpoint, including partially occluded objects. Glass display and books on west wall only where visible.\nExact source view: v0-study-A. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-study-B",
+      "usedBy": [
+        "v0-study-B"
+      ],
+      "sourcePngSha256": "b3db2eeca51cd13aca916e7c7cdadb91e50c4c2d8d72978fdf0e9288226f5d17",
+      "aiOriginalPngSha256": "aed8883cd6fa20a5921681722976d30446e786f6abbe5b7d946a2775671fa441",
+      "aiWebpSha256": "7960882514497390945e036ed7cad6b295566d347ac3cacc7a0f45f9527e63cb",
+      "sourceWebpSha256": "efb652d80439da9a26f13114dcc42c21886a67690c11e15dec9fb7f9c9ebcb36",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 study has ONE L-shaped black desk and one curved ultrawide monitor with gray rear shell, ONE chair, plus an electronic piano and bench by the glass partition. Preserve their exact count and viewpoint, including partially occluded objects. Glass display and books on west wall only where visible.\nExact source view: v0-study-B. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-study-C",
+      "usedBy": [
+        "v0-study-C"
+      ],
+      "sourcePngSha256": "9bc238498a9b94a8473e2eff794e2d23752d0bbc85159b19a639e3c664f3fced",
+      "aiOriginalPngSha256": "a0a4623f11e68c609bff18314098f821881bc2ac3a9347c7b5ad7000301cba51",
+      "aiWebpSha256": "a8fb3ea45de07389df68436660096e1e71ed38981c2ca3e8e4dc3ba1b922060d",
+      "sourceWebpSha256": "d3612a1112fcde54ca3f306c42b6d78f9263f94fc473d3017c588fc08e5a5cd6",
+      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: V0 study has ONE L-shaped black desk and one curved ultrawide monitor with gray rear shell, ONE chair, plus an electronic piano and bench by the glass partition. Preserve their exact count and viewpoint, including partially occluded objects. Glass display and books on west wall only where visible.\nExact source view: v0-study-C. Match image 1.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
     {
       "key": "v1-back-A",
       "usedBy": [
+        "v0-back-A",
         "v1-back-A",
         "v2-back-A",
         "v3-back-A",
@@ -25,6 +311,7 @@
     {
       "key": "v1-back-B",
       "usedBy": [
+        "v0-back-B",
         "v1-back-B",
         "v2-back-B",
         "v3-back-B",
@@ -41,6 +328,7 @@
     {
       "key": "v1-back-C",
       "usedBy": [
+        "v0-back-C",
         "v1-back-C",
         "v2-back-C",
         "v3-back-C",
@@ -57,6 +345,7 @@
     {
       "key": "v1-bath1-A",
       "usedBy": [
+        "v0-bath1-A",
         "v1-bath1-A",
         "v2-bath1-A",
         "v3-bath1-A",
@@ -73,6 +362,7 @@
     {
       "key": "v1-bath1-B",
       "usedBy": [
+        "v0-bath1-B",
         "v1-bath1-B",
         "v2-bath1-B",
         "v3-bath1-B",
@@ -94,6 +384,7 @@
     {
       "key": "v1-bath1-C",
       "usedBy": [
+        "v0-bath1-C",
         "v1-bath1-C",
         "v2-bath1-C",
         "v3-bath1-C",
@@ -115,6 +406,7 @@
     {
       "key": "v1-bath2-A",
       "usedBy": [
+        "v0-bath2-A",
         "v1-bath2-A",
         "v2-bath2-A",
         "v3-bath2-A",
@@ -131,6 +423,7 @@
     {
       "key": "v1-bath2-B",
       "usedBy": [
+        "v0-bath2-B",
         "v1-bath2-B",
         "v2-bath2-B",
         "v3-bath2-B",
@@ -147,6 +440,7 @@
     {
       "key": "v1-bath2-C",
       "usedBy": [
+        "v0-bath2-C",
         "v1-bath2-C",
         "v2-bath2-C",
         "v3-bath2-C",
@@ -168,6 +462,7 @@
     {
       "key": "v1-bed-A",
       "usedBy": [
+        "v0-bed-A",
         "v1-bed-A",
         "v2-bed-A",
         "v3-bed-A",
@@ -184,6 +479,7 @@
     {
       "key": "v1-bed-B",
       "usedBy": [
+        "v0-bed-B",
         "v1-bed-B",
         "v2-bed-B",
         "v3-bed-B",
@@ -200,6 +496,7 @@
     {
       "key": "v1-bed-C",
       "usedBy": [
+        "v0-bed-C",
         "v1-bed-C",
         "v2-bed-C",
         "v3-bed-C",
@@ -216,6 +513,7 @@
     {
       "key": "v1-closet-A",
       "usedBy": [
+        "v0-closet-A",
         "v1-closet-A",
         "v2-closet-A",
         "v3-closet-A",
@@ -232,6 +530,7 @@
     {
       "key": "v1-closet-B",
       "usedBy": [
+        "v0-closet-B",
         "v1-closet-B",
         "v2-closet-B",
         "v3-closet-B",
@@ -253,6 +552,7 @@
     {
       "key": "v1-closet-C",
       "usedBy": [
+        "v0-closet-C",
         "v1-closet-C",
         "v2-closet-C",
         "v3-closet-C",
@@ -409,6 +709,7 @@
     {
       "key": "v1-kitchen-A",
       "usedBy": [
+        "v0-kitchen-A",
         "v1-kitchen-A",
         "v2-kitchen-A",
         "v3-kitchen-A",
@@ -449,6 +750,7 @@
     {
       "key": "v1-kitchen-C",
       "usedBy": [
+        "v0-kitchen-C",
         "v1-kitchen-C",
         "v2-kitchen-C",
         "v3-kitchen-C",
@@ -514,6 +816,7 @@
     {
       "key": "v1-storage-A",
       "usedBy": [
+        "v0-storage-A",
         "v1-storage-A",
         "v2-storage-A",
         "v3-storage-A",

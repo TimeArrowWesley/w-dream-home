@@ -3,7 +3,7 @@
 const T=THREE,V=HOME_VIEWER,C=V.finishContext,F=C.industrialFinishes,M=C.materials;
 const version=window.HOME_LAYOUT.proposal;
 const color=hex=>new T.Color(hex).convertSRGBToLinear();
-const names={v1:'黑石弧吧・煙燻胡桃木',v2:'精密影音・拉絲不鏽鋼小中島',v3:'銀白脈紋大中島・深木酒廊',v4:'深礦石大中島・黑玻影音牆'};
+const names={v0:'原始弧形會客・黑石深木',v1:'黑石弧吧・煙燻胡桃木',v2:'精密影音・拉絲不鏽鋼小中島',v3:'銀白脈紋大中島・深木酒廊',v4:'深礦石大中島・黑玻影音牆'};
 const textures={},materials={},touched=new Set();
 // Generated once per page. Shared PBR maps, no extra render loop or surface meshes.
 function map(id,w,h,pixel,srgb=true){
@@ -28,7 +28,7 @@ const steelGrain=map('directional-brushed-metal',512,512,(u,v,x,y)=>{const q=219
 const steelHeight=steelGrain.clone();steelHeight.encoding=T.LinearEncoding;
 const hotRolled=map('blackened-steel-cloud',512,512,(u,v,x,y)=>{const a=noise(u,v,4),b=noise(u,v,19),q=55+(a-.5)*19+(b-.5)*7+(hash(x,y)-.5)*3;return [q*.94,q,q*1.03];});
 const stoneSettings={v1:{base:[37,40,39],vein:[181,184,174],width:.014,roughness:.29,name:'黑色細脈紋石材'},v2:{base:[83,87,85],vein:[177,182,173],width:.007,roughness:.40,name:'灰綠皂石細脈紋'},v3:{base:[183,185,179],vein:[42,46,47],width:.025,roughness:.34,name:'銀白深脈紋石材'},v4:{base:[61,68,69],vein:[132,141,139],width:.024,roughness:.49,name:'深礦石層理石材'}};
-const s=stoneSettings[version];
+const s=stoneSettings[version]||stoneSettings.v1;
 const stoneMap=map('island-'+version,512,512,(u,v,x,y)=>{
  const cloud=noise(u,v,6),fine=noise(u,v,31),warp=.08*Math.sin(v*tau*2)+.045*Math.sin(u*tau*3+v*tau);
  const d=Math.abs(Math.sin(tau*(u+v*2+warp))),d2=Math.abs(Math.sin(tau*(u*3-v+warp*1.7+.31)));

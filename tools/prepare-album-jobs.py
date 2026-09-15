@@ -3,7 +3,9 @@ import json
 root=Path(__file__).resolve().parents[1]/'成品圖集/20260914暗色現代工業'
 manifest=json.loads((root/'capture-manifest.json').read_text(encoding='utf8'))
 entries=sorted(manifest['entries'],key=lambda e:e['key'])
-canonical={}
+# Preserve existing canonical images when adding an earlier-numbered version.
+previous=json.loads((root/'album-manifest.json').read_text(encoding='utf8')) if (root/'album-manifest.json').exists() else {'entries':[]}
+canonical={e['modelHash']:e.get('aiKey',e['key']) for e in previous['entries']}
 for e in entries:canonical.setdefault(e['modelHash'],e['key'])
 jobs=[]
 for e in entries:

@@ -5,6 +5,1266 @@
   "method": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "entries": [
     {
+      "version": "v0",
+      "id": "back-A",
+      "room": "back",
+      "name": "後陽台・視角 A",
+      "p": [
+        -95,
+        605,
+        155
+      ],
+      "t": [
+        -102,
+        840,
+        100
+      ],
+      "fov": 86,
+      "direction": 91.70617829444701,
+      "file": "v0-back-A.png",
+      "triangles": 28840,
+      "key": "v0-back-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-back-A.png",
+      "modelHash": "9eadce7e0ff13453def7ec6b5a1ddb0ca88394a98ff22b0a83b3c87ced5f5b5a",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-back-A",
+      "sharedWith": [
+        "v0-back-A",
+        "v1-back-A",
+        "v2-back-A",
+        "v3-back-A",
+        "v4-back-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "back-B",
+      "room": "back",
+      "name": "後陽台・視角 B",
+      "p": [
+        -110,
+        900,
+        160
+      ],
+      "t": [
+        -90,
+        530,
+        120
+      ],
+      "fov": 86,
+      "direction": -86.9059419410829,
+      "file": "v0-back-B.png",
+      "triangles": 171109,
+      "key": "v0-back-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-back-B.png",
+      "modelHash": "fe1943941bb255847bc5f330f5eb38b494f824239b060bdbe2175a2a46e8e74b",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-back-B",
+      "sharedWith": [
+        "v0-back-B",
+        "v1-back-B",
+        "v2-back-B",
+        "v3-back-B",
+        "v4-back-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "back-C",
+      "room": "back",
+      "name": "後陽台・視角 C",
+      "p": [
+        -12,
+        675,
+        165
+      ],
+      "t": [
+        -188,
+        660,
+        105
+      ],
+      "fov": 86,
+      "direction": -175.1286089684759,
+      "file": "v0-back-C.png",
+      "triangles": 6953,
+      "key": "v0-back-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-back-C.png",
+      "modelHash": "7c61c309af40b5cd857d16a651c8f8836de1421a74a0c690abddba873de497f4",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-back-C",
+      "sharedWith": [
+        "v0-back-C",
+        "v1-back-C",
+        "v2-back-C",
+        "v3-back-C",
+        "v4-back-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bath1-A",
+      "room": "bath1",
+      "name": "主浴・視角 A",
+      "p": [
+        45,
+        310,
+        160
+      ],
+      "t": [
+        230,
+        445,
+        100
+      ],
+      "fov": 86,
+      "direction": 36.119340849479755,
+      "file": "v0-bath1-A.png",
+      "triangles": 210296,
+      "key": "v0-bath1-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bath1-A.png",
+      "modelHash": "7629592ce0c5e5869c9996b26992cf1a92305330074d720c5b68dc3887f6b891",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bath1-A",
+      "sharedWith": [
+        "v0-bath1-A",
+        "v1-bath1-A",
+        "v2-bath1-A",
+        "v3-bath1-A",
+        "v4-bath1-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bath1-B",
+      "room": "bath1",
+      "name": "主浴・視角 B",
+      "p": [
+        117,
+        354,
+        160
+      ],
+      "t": [
+        0,
+        463,
+        105
+      ],
+      "fov": 86,
+      "direction": 137.02732270050018,
+      "file": "v0-bath1-B.png",
+      "triangles": 37477,
+      "key": "v0-bath1-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bath1-B.png",
+      "modelHash": "67bb008c99e61d3a29f42fb0f47450a2fcb95701d942f865e711bb410b69f036",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bath1-B",
+      "sharedWith": [
+        "v0-bath1-B",
+        "v1-bath1-B",
+        "v2-bath1-B",
+        "v3-bath1-B",
+        "v4-bath1-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bath1-C",
+      "room": "bath1",
+      "name": "主浴・視角 C",
+      "p": [
+        270,
+        330,
+        160
+      ],
+      "t": [
+        180,
+        451,
+        115
+      ],
+      "fov": 86,
+      "direction": 126.6419315563,
+      "file": "v0-bath1-C.png",
+      "triangles": 55176,
+      "key": "v0-bath1-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bath1-C.png",
+      "modelHash": "a698f9b3c5d7931db7757b2b9ff04c489c2748d7fe48023e3d0315443f11fb66",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bath1-C",
+      "sharedWith": [
+        "v0-bath1-C",
+        "v1-bath1-C",
+        "v2-bath1-C",
+        "v3-bath1-C",
+        "v4-bath1-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bath2-A",
+      "room": "bath2",
+      "name": "客浴・視角 A",
+      "p": [
+        550,
+        350,
+        155
+      ],
+      "t": [
+        470,
+        245,
+        100
+      ],
+      "fov": 86,
+      "direction": -127.30394827798344,
+      "file": "v0-bath2-A.png",
+      "triangles": 55657,
+      "key": "v0-bath2-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bath2-A.png",
+      "modelHash": "447e7d0693e2b81e3fa6c774842afee11714b173047553f8a8b553914833cd95",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bath2-A",
+      "sharedWith": [
+        "v0-bath2-A",
+        "v1-bath2-A",
+        "v2-bath2-A",
+        "v3-bath2-A",
+        "v4-bath2-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bath2-B",
+      "room": "bath2",
+      "name": "客浴・視角 B",
+      "p": [
+        430,
+        340,
+        155
+      ],
+      "t": [
+        560,
+        250,
+        100
+      ],
+      "fov": 86,
+      "direction": -34.69515353123397,
+      "file": "v0-bath2-B.png",
+      "triangles": 130814,
+      "key": "v0-bath2-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bath2-B.png",
+      "modelHash": "b15fe8b654145a00ff0aaa57d4d8142f4dc65c016fb92a41a12bcde77df0a7d4",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bath2-B",
+      "sharedWith": [
+        "v0-bath2-B",
+        "v1-bath2-B",
+        "v2-bath2-B",
+        "v3-bath2-B",
+        "v4-bath2-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bath2-C",
+      "room": "bath2",
+      "name": "客浴・視角 C",
+      "p": [
+        550,
+        245,
+        155
+      ],
+      "t": [
+        450,
+        335,
+        100
+      ],
+      "fov": 86,
+      "direction": 138.01278750418336,
+      "file": "v0-bath2-C.png",
+      "triangles": 90572,
+      "key": "v0-bath2-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bath2-C.png",
+      "modelHash": "358d6cb6c6297a8df304a7cc36e346a4f7bf5ad2d532747570d3326e90060ddc",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bath2-C",
+      "sharedWith": [
+        "v0-bath2-C",
+        "v1-bath2-C",
+        "v2-bath2-C",
+        "v3-bath2-C",
+        "v4-bath2-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bed-A",
+      "room": "bed",
+      "name": "主臥・視角 A",
+      "p": [
+        360,
+        264,
+        155
+      ],
+      "t": [
+        190,
+        20,
+        110
+      ],
+      "fov": 74,
+      "direction": -124.86574871260432,
+      "file": "v0-bed-A.png",
+      "triangles": 26592,
+      "key": "v0-bed-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bed-A.png",
+      "modelHash": "fe72d865a90b7657811c455ede4f39c16249973a16efdb5eb24a4a9bd0080bf4",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bed-A",
+      "sharedWith": [
+        "v0-bed-A",
+        "v1-bed-A",
+        "v2-bed-A",
+        "v3-bed-A",
+        "v4-bed-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bed-B",
+      "room": "bed",
+      "name": "主臥・視角 B",
+      "p": [
+        95,
+        265,
+        160
+      ],
+      "t": [
+        250,
+        55,
+        105
+      ],
+      "fov": 74,
+      "direction": -53.569141879837645,
+      "file": "v0-bed-B.png",
+      "triangles": 85706,
+      "key": "v0-bed-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bed-B.png",
+      "modelHash": "f665ea3b89a72bde9b74b2d6d11c8f290397c71453aa53f46e377c566ee5d0c4",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bed-B",
+      "sharedWith": [
+        "v0-bed-B",
+        "v1-bed-B",
+        "v2-bed-B",
+        "v3-bed-B",
+        "v4-bed-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "bed-C",
+      "room": "bed",
+      "name": "主臥・視角 C",
+      "p": [
+        340,
+        40,
+        160
+      ],
+      "t": [
+        60,
+        220,
+        100
+      ],
+      "fov": 74,
+      "direction": 147.2647737278924,
+      "file": "v0-bed-C.png",
+      "triangles": 70229,
+      "key": "v0-bed-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-bed-C.png",
+      "modelHash": "a42674a08fdbbb30aca90a1d36d032035a19c84ad5e32e9b045af70ce740bcce",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-bed-C",
+      "sharedWith": [
+        "v0-bed-C",
+        "v1-bed-C",
+        "v2-bed-C",
+        "v3-bed-C",
+        "v4-bed-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "closet-A",
+      "room": "closet",
+      "name": "更衣室・視角 A",
+      "p": [
+        640,
+        75,
+        155
+      ],
+      "t": [
+        650,
+        220,
+        125
+      ],
+      "fov": 86,
+      "direction": 86.05481377096244,
+      "file": "v0-closet-A.png",
+      "triangles": 182383,
+      "key": "v0-closet-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-closet-A.png",
+      "modelHash": "e888abd0e1e1ab6c603a65750d4e060600544ae4d181cfd7ad0026919fa7daf8",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-closet-A",
+      "sharedWith": [
+        "v0-closet-A",
+        "v1-closet-A",
+        "v2-closet-A",
+        "v3-closet-A",
+        "v4-closet-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "closet-B",
+      "room": "closet",
+      "name": "更衣室・視角 B",
+      "p": [
+        675,
+        195,
+        155
+      ],
+      "t": [
+        610,
+        35,
+        125
+      ],
+      "fov": 86,
+      "direction": -112.10944834375168,
+      "file": "v0-closet-B.png",
+      "triangles": 30320,
+      "key": "v0-closet-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-closet-B.png",
+      "modelHash": "e0164df80aea10f812aa19c488466364d94764a165b2bdc0ada9f957babda703",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-closet-B",
+      "sharedWith": [
+        "v0-closet-B",
+        "v1-closet-B",
+        "v2-closet-B",
+        "v3-closet-B",
+        "v4-closet-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "closet-C",
+      "room": "closet",
+      "name": "更衣室・視角 C",
+      "p": [
+        620,
+        155,
+        150
+      ],
+      "t": [
+        735,
+        174,
+        125
+      ],
+      "fov": 86,
+      "direction": 9.381510160748237,
+      "file": "v0-closet-C.png",
+      "triangles": 118807,
+      "key": "v0-closet-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-closet-C.png",
+      "modelHash": "edd6a2873148b7c7b784fd9a7e62af2127af8f88bbec0cfbfae834d52b357e0e",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-closet-C",
+      "sharedWith": [
+        "v0-closet-C",
+        "v1-closet-C",
+        "v2-closet-C",
+        "v3-closet-C",
+        "v4-closet-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "collection-A",
+      "room": "collection",
+      "name": "貓房・視角 A",
+      "p": [
+        425,
+        853,
+        152
+      ],
+      "t": [
+        300,
+        910,
+        115
+      ],
+      "fov": 74,
+      "direction": 155.4870141933307,
+      "file": "v0-collection-A.png",
+      "triangles": 30951,
+      "key": "v0-collection-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-collection-A.png",
+      "modelHash": "9239ff94e5eb22513d575723748becafb5c18e6b80061f8f2a2efb7fc5c758ec",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-collection-A",
+      "sharedWith": [
+        "v0-collection-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "collection-B",
+      "room": "collection",
+      "name": "貓房・視角 B",
+      "p": [
+        280,
+        850,
+        145
+      ],
+      "t": [
+        375,
+        773,
+        85
+      ],
+      "fov": 74,
+      "direction": -39.025676713519374,
+      "file": "v0-collection-B.png",
+      "triangles": 174236,
+      "key": "v0-collection-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-collection-B.png",
+      "modelHash": "47a5fee9d3bd3b387052d2b02c24645eb6965ddd4a65f71ee2e0ad93074c9c20",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-collection-B",
+      "sharedWith": [
+        "v0-collection-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "collection-C",
+      "room": "collection",
+      "name": "貓房・視角 C",
+      "p": [
+        310,
+        878,
+        140
+      ],
+      "t": [
+        231,
+        825,
+        105
+      ],
+      "fov": 74,
+      "direction": -146.14288985833932,
+      "file": "v0-collection-C.png",
+      "triangles": 65504,
+      "key": "v0-collection-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-collection-C.png",
+      "modelHash": "3324bd3876d26ecfb28b2b33e11065a59c10d38ad8aff3b01c30f2947b034c0f",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-collection-C",
+      "sharedWith": [
+        "v0-collection-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "entry-A",
+      "room": "entry",
+      "name": "玄關・視角 A",
+      "p": [
+        660,
+        940,
+        160
+      ],
+      "t": [
+        550,
+        770,
+        105
+      ],
+      "fov": 74,
+      "direction": -122.90524292298792,
+      "file": "v0-entry-A.png",
+      "triangles": 193063,
+      "key": "v0-entry-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-entry-A.png",
+      "modelHash": "40717760a822259d4ee7cdf8f347d1caf020fe86dc264103d2682750e791e044",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-entry-A",
+      "sharedWith": [
+        "v0-entry-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "entry-B",
+      "room": "entry",
+      "name": "玄關・視角 B",
+      "p": [
+        780,
+        870,
+        160
+      ],
+      "t": [
+        565,
+        800,
+        100
+      ],
+      "fov": 74,
+      "direction": -161.96571443287013,
+      "file": "v0-entry-B.png",
+      "triangles": 104665,
+      "key": "v0-entry-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-entry-B.png",
+      "modelHash": "21ffcb0b57c5018a4ec46358a9a6caf624f483ff216c452b845f670a640d243e",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-entry-B",
+      "sharedWith": [
+        "v0-entry-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "entry-C",
+      "room": "entry",
+      "name": "玄關・視角 C",
+      "p": [
+        658,
+        781,
+        160
+      ],
+      "t": [
+        600,
+        955,
+        120
+      ],
+      "fov": 74,
+      "direction": 108.43494882292202,
+      "file": "v0-entry-C.png",
+      "triangles": 9548,
+      "key": "v0-entry-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-entry-C.png",
+      "modelHash": "0a04357d49b8c61e5871ace69b13d729b930a958b09ffae4653ac38d767cbe38",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-entry-C",
+      "sharedWith": [
+        "v0-entry-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "island-A",
+      "room": "island",
+      "name": "中島・視角 A",
+      "p": [
+        735,
+        700,
+        160
+      ],
+      "t": [
+        545,
+        560,
+        95
+      ],
+      "fov": 74,
+      "direction": -143.61564818416412,
+      "file": "v0-island-A.png",
+      "triangles": 132364,
+      "key": "v0-island-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-island-A.png",
+      "modelHash": "17aeb2270e3d95b350427399667ff6d5be833fcc5f109b10ffa72f074c28bc2d",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-island-A",
+      "sharedWith": [
+        "v0-island-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "island-B",
+      "room": "island",
+      "name": "中島・視角 B",
+      "p": [
+        355,
+        545,
+        160
+      ],
+      "t": [
+        540,
+        610,
+        95
+      ],
+      "fov": 74,
+      "direction": 19.35899417569472,
+      "file": "v0-island-B.png",
+      "triangles": 74984,
+      "key": "v0-island-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-island-B.png",
+      "modelHash": "2c8a920a9487dc6f91a5949c0035441943ad0a1ae95e06a19d21b0f10fdf488b",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-island-B",
+      "sharedWith": [
+        "v0-island-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "island-C",
+      "room": "island",
+      "name": "中島・視角 C",
+      "p": [
+        530,
+        532,
+        155
+      ],
+      "t": [
+        502,
+        625,
+        95
+      ],
+      "fov": 74,
+      "direction": 106.755748929199,
+      "file": "v0-island-C.png",
+      "triangles": 39084,
+      "key": "v0-island-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-island-C.png",
+      "modelHash": "0ab978ad93cca4a38b0027cf222b5f7342174eb2999910a5b4f483cad7806f14",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-island-C",
+      "sharedWith": [
+        "v0-island-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "kitchen-A",
+      "room": "kitchen",
+      "name": "廚房・視角 A",
+      "p": [
+        109,
+        930,
+        158
+      ],
+      "t": [
+        112,
+        533,
+        120
+      ],
+      "fov": 74,
+      "direction": -89.56704265271769,
+      "file": "v0-kitchen-A.png",
+      "triangles": 183659,
+      "key": "v0-kitchen-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-kitchen-A.png",
+      "modelHash": "8ab292c7fad2da23dac758748648a5e2314f4f46dc88dbeb68866e336f5ccb2a",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-kitchen-A",
+      "sharedWith": [
+        "v0-kitchen-A",
+        "v1-kitchen-A",
+        "v2-kitchen-A",
+        "v3-kitchen-A",
+        "v4-kitchen-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "kitchen-B",
+      "room": "kitchen",
+      "name": "廚房・視角 B",
+      "p": [
+        110,
+        590,
+        160
+      ],
+      "t": [
+        110,
+        940,
+        115
+      ],
+      "fov": 74,
+      "direction": 90,
+      "file": "v0-kitchen-B.png",
+      "triangles": 30784,
+      "key": "v0-kitchen-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-kitchen-B.png",
+      "modelHash": "997f30f6172691d9b1bed7bb6d7a7e613c8dc2ef42613b85755c3cdf52b9aa84",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-kitchen-B",
+      "sharedWith": [
+        "v0-kitchen-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "kitchen-C",
+      "room": "kitchen",
+      "name": "廚房・視角 C",
+      "p": [
+        125,
+        775,
+        152
+      ],
+      "t": [
+        30,
+        692,
+        105
+      ],
+      "fov": 74,
+      "direction": -138.85680098558984,
+      "file": "v0-kitchen-C.png",
+      "triangles": 44143,
+      "key": "v0-kitchen-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-kitchen-C.png",
+      "modelHash": "0dbb4ace8f1b9a71a886edadd178de97c7c3cc3bb8c67084c743339123809faf",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-kitchen-C",
+      "sharedWith": [
+        "v0-kitchen-C",
+        "v1-kitchen-C",
+        "v2-kitchen-C",
+        "v3-kitchen-C",
+        "v4-kitchen-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "living-A",
+      "room": "living",
+      "name": "客廳・視角 A",
+      "p": [
+        750,
+        730,
+        160
+      ],
+      "t": [
+        945,
+        940,
+        105
+      ],
+      "fov": 74,
+      "direction": 47.12109639666145,
+      "file": "v0-living-A.png",
+      "triangles": 18156,
+      "key": "v0-living-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-living-A.png",
+      "modelHash": "3d7e370ddfff6c92c46376abdfb50b2924f8f3117761f20239e9fbce2eea8d97",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-living-A",
+      "sharedWith": [
+        "v0-living-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "living-B",
+      "room": "living",
+      "name": "客廳・視角 B",
+      "p": [
+        910,
+        865,
+        160
+      ],
+      "t": [
+        910,
+        550,
+        100
+      ],
+      "fov": 74,
+      "direction": -90,
+      "file": "v0-living-B.png",
+      "triangles": 165755,
+      "key": "v0-living-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-living-B.png",
+      "modelHash": "699591bdbe00e55cad3b90e8086ab5f97ee9e2ee8562010af6c2daed648bc421",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-living-B",
+      "sharedWith": [
+        "v0-living-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "living-C",
+      "room": "living",
+      "name": "客廳・視角 C",
+      "p": [
+        1070,
+        710,
+        160
+      ],
+      "t": [
+        770,
+        610,
+        105
+      ],
+      "fov": 74,
+      "direction": -161.56505117707798,
+      "file": "v0-living-C.png",
+      "triangles": 212126,
+      "key": "v0-living-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-living-C.png",
+      "modelHash": "c0ab142ddfa5c523d6dec91b5eb2bb17389a7634f499f1e67f825998cf0c18a9",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-living-C",
+      "sharedWith": [
+        "v0-living-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "storage-A",
+      "room": "storage",
+      "name": "儲藏室・視角 A",
+      "p": [
+        695,
+        415,
+        165
+      ],
+      "t": [
+        650,
+        293,
+        113
+      ],
+      "fov": 86,
+      "direction": -110.24662007558824,
+      "file": "v0-storage-A.png",
+      "triangles": 111474,
+      "key": "v0-storage-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-storage-A.png",
+      "modelHash": "af1b690dd46919d3e80c5f8cb02bd692be8c9a39232f614e48064ea1212c99c1",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v1-storage-A",
+      "sharedWith": [
+        "v0-storage-A",
+        "v1-storage-A",
+        "v2-storage-A",
+        "v3-storage-A",
+        "v4-storage-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "storage-B",
+      "room": "storage",
+      "name": "儲藏室・視角 B",
+      "p": [
+        733,
+        350,
+        125
+      ],
+      "t": [
+        612,
+        312,
+        115
+      ],
+      "fov": 86,
+      "direction": -162.56512530520072,
+      "file": "v0-storage-B.png",
+      "triangles": 114526,
+      "key": "v0-storage-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-storage-B.png",
+      "modelHash": "1356ab2ab50960bb47f0cc2d9cfb6f64d94cdbaa1a8e2d783365b282cccf578a",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-storage-B",
+      "sharedWith": [
+        "v0-storage-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "storage-C",
+      "room": "storage",
+      "name": "儲藏室・視角 C",
+      "p": [
+        695,
+        292,
+        122
+      ],
+      "t": [
+        687,
+        379,
+        130
+      ],
+      "fov": 86,
+      "direction": 95.25380275126227,
+      "file": "v0-storage-C.png",
+      "triangles": 90921,
+      "key": "v0-storage-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-storage-C.png",
+      "modelHash": "7f96021bdc35b3f2272f087a93fd0363da6ffe7678a9631068bc083d02b16b2a",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-storage-C",
+      "sharedWith": [
+        "v0-storage-C"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "study-A",
+      "room": "study",
+      "name": "書房・電子琴・視角 A",
+      "p": [
+        1035,
+        220,
+        160
+      ],
+      "t": [
+        785,
+        142,
+        120
+      ],
+      "fov": 74,
+      "direction": -162.67207822275878,
+      "file": "v0-study-A.png",
+      "triangles": 172475,
+      "key": "v0-study-A",
+      "versionTitle": "原始格局",
+      "model": "model/v0-study-A.png",
+      "modelHash": "be71d89af24c2f18f33c993451691ca7a536db8f2cfcdf35bfb853e3d474ca7e",
+      "angle": "A",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-study-A",
+      "sharedWith": [
+        "v0-study-A"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "study-B",
+      "room": "study",
+      "name": "書房・電子琴・視角 B",
+      "p": [
+        800,
+        315,
+        160
+      ],
+      "t": [
+        1015,
+        70,
+        120
+      ],
+      "fov": 74,
+      "direction": -48.731396999160445,
+      "file": "v0-study-B.png",
+      "triangles": 29497,
+      "key": "v0-study-B",
+      "versionTitle": "原始格局",
+      "model": "model/v0-study-B.png",
+      "modelHash": "b3db2eeca51cd13aca916e7c7cdadb91e50c4c2d8d72978fdf0e9288226f5d17",
+      "angle": "B",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-study-B",
+      "sharedWith": [
+        "v0-study-B"
+      ]
+    },
+    {
+      "version": "v0",
+      "id": "study-C",
+      "room": "study",
+      "name": "書房・電子琴・視角 C",
+      "p": [
+        1045,
+        230,
+        160
+      ],
+      "t": [
+        945,
+        320,
+        95
+      ],
+      "fov": 74,
+      "direction": 138.01278750418336,
+      "file": "v0-study-C.png",
+      "triangles": 185742,
+      "key": "v0-study-C",
+      "versionTitle": "原始格局",
+      "model": "model/v0-study-C.png",
+      "modelHash": "9bc238498a9b94a8473e2eff794e2d23752d0bbc85159b19a639e3c664f3fced",
+      "angle": "C",
+      "width": 1152,
+      "height": 768,
+      "ai": null,
+      "status": "source-captured",
+      "aiKey": "v0-study-C",
+      "sharedWith": [
+        "v0-study-C"
+      ]
+    },
+    {
       "version": "v1",
       "id": "back-A",
       "room": "back",
@@ -34,6 +1294,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-A",
       "sharedWith": [
+        "v0-back-A",
         "v1-back-A",
         "v2-back-A",
         "v3-back-A",
@@ -70,6 +1331,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-B",
       "sharedWith": [
+        "v0-back-B",
         "v1-back-B",
         "v2-back-B",
         "v3-back-B",
@@ -106,6 +1368,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-C",
       "sharedWith": [
+        "v0-back-C",
         "v1-back-C",
         "v2-back-C",
         "v3-back-C",
@@ -142,6 +1405,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-A",
       "sharedWith": [
+        "v0-bath1-A",
         "v1-bath1-A",
         "v2-bath1-A",
         "v3-bath1-A",
@@ -178,6 +1442,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-B",
       "sharedWith": [
+        "v0-bath1-B",
         "v1-bath1-B",
         "v2-bath1-B",
         "v3-bath1-B",
@@ -214,6 +1479,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-C",
       "sharedWith": [
+        "v0-bath1-C",
         "v1-bath1-C",
         "v2-bath1-C",
         "v3-bath1-C",
@@ -250,6 +1516,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-A",
       "sharedWith": [
+        "v0-bath2-A",
         "v1-bath2-A",
         "v2-bath2-A",
         "v3-bath2-A",
@@ -286,6 +1553,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-B",
       "sharedWith": [
+        "v0-bath2-B",
         "v1-bath2-B",
         "v2-bath2-B",
         "v3-bath2-B",
@@ -322,6 +1590,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-C",
       "sharedWith": [
+        "v0-bath2-C",
         "v1-bath2-C",
         "v2-bath2-C",
         "v3-bath2-C",
@@ -358,6 +1627,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-A",
       "sharedWith": [
+        "v0-bed-A",
         "v1-bed-A",
         "v2-bed-A",
         "v3-bed-A",
@@ -394,6 +1664,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-B",
       "sharedWith": [
+        "v0-bed-B",
         "v1-bed-B",
         "v2-bed-B",
         "v3-bed-B",
@@ -430,6 +1701,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-C",
       "sharedWith": [
+        "v0-bed-C",
         "v1-bed-C",
         "v2-bed-C",
         "v3-bed-C",
@@ -466,6 +1738,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-A",
       "sharedWith": [
+        "v0-closet-A",
         "v1-closet-A",
         "v2-closet-A",
         "v3-closet-A",
@@ -502,6 +1775,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-B",
       "sharedWith": [
+        "v0-closet-B",
         "v1-closet-B",
         "v2-closet-B",
         "v3-closet-B",
@@ -538,6 +1812,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-C",
       "sharedWith": [
+        "v0-closet-C",
         "v1-closet-C",
         "v2-closet-C",
         "v3-closet-C",
@@ -874,6 +2149,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-A",
       "sharedWith": [
+        "v0-kitchen-A",
         "v1-kitchen-A",
         "v2-kitchen-A",
         "v3-kitchen-A",
@@ -944,6 +2220,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-C",
       "sharedWith": [
+        "v0-kitchen-C",
         "v1-kitchen-C",
         "v2-kitchen-C",
         "v3-kitchen-C",
@@ -1079,6 +2356,7 @@
       "status": "source-captured",
       "aiKey": "v1-storage-A",
       "sharedWith": [
+        "v0-storage-A",
         "v1-storage-A",
         "v2-storage-A",
         "v3-storage-A",
@@ -1283,6 +2561,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-A",
       "sharedWith": [
+        "v0-back-A",
         "v1-back-A",
         "v2-back-A",
         "v3-back-A",
@@ -1319,6 +2598,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-B",
       "sharedWith": [
+        "v0-back-B",
         "v1-back-B",
         "v2-back-B",
         "v3-back-B",
@@ -1355,6 +2635,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-C",
       "sharedWith": [
+        "v0-back-C",
         "v1-back-C",
         "v2-back-C",
         "v3-back-C",
@@ -1391,6 +2672,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-A",
       "sharedWith": [
+        "v0-bath1-A",
         "v1-bath1-A",
         "v2-bath1-A",
         "v3-bath1-A",
@@ -1427,6 +2709,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-B",
       "sharedWith": [
+        "v0-bath1-B",
         "v1-bath1-B",
         "v2-bath1-B",
         "v3-bath1-B",
@@ -1463,6 +2746,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-C",
       "sharedWith": [
+        "v0-bath1-C",
         "v1-bath1-C",
         "v2-bath1-C",
         "v3-bath1-C",
@@ -1499,6 +2783,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-A",
       "sharedWith": [
+        "v0-bath2-A",
         "v1-bath2-A",
         "v2-bath2-A",
         "v3-bath2-A",
@@ -1535,6 +2820,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-B",
       "sharedWith": [
+        "v0-bath2-B",
         "v1-bath2-B",
         "v2-bath2-B",
         "v3-bath2-B",
@@ -1571,6 +2857,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-C",
       "sharedWith": [
+        "v0-bath2-C",
         "v1-bath2-C",
         "v2-bath2-C",
         "v3-bath2-C",
@@ -1607,6 +2894,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-A",
       "sharedWith": [
+        "v0-bed-A",
         "v1-bed-A",
         "v2-bed-A",
         "v3-bed-A",
@@ -1643,6 +2931,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-B",
       "sharedWith": [
+        "v0-bed-B",
         "v1-bed-B",
         "v2-bed-B",
         "v3-bed-B",
@@ -1679,6 +2968,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-C",
       "sharedWith": [
+        "v0-bed-C",
         "v1-bed-C",
         "v2-bed-C",
         "v3-bed-C",
@@ -1715,6 +3005,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-A",
       "sharedWith": [
+        "v0-closet-A",
         "v1-closet-A",
         "v2-closet-A",
         "v3-closet-A",
@@ -1751,6 +3042,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-B",
       "sharedWith": [
+        "v0-closet-B",
         "v1-closet-B",
         "v2-closet-B",
         "v3-closet-B",
@@ -1787,6 +3079,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-C",
       "sharedWith": [
+        "v0-closet-C",
         "v1-closet-C",
         "v2-closet-C",
         "v3-closet-C",
@@ -2123,6 +3416,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-A",
       "sharedWith": [
+        "v0-kitchen-A",
         "v1-kitchen-A",
         "v2-kitchen-A",
         "v3-kitchen-A",
@@ -2193,6 +3487,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-C",
       "sharedWith": [
+        "v0-kitchen-C",
         "v1-kitchen-C",
         "v2-kitchen-C",
         "v3-kitchen-C",
@@ -2328,6 +3623,7 @@
       "status": "source-captured",
       "aiKey": "v1-storage-A",
       "sharedWith": [
+        "v0-storage-A",
         "v1-storage-A",
         "v2-storage-A",
         "v3-storage-A",
@@ -2532,6 +3828,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-A",
       "sharedWith": [
+        "v0-back-A",
         "v1-back-A",
         "v2-back-A",
         "v3-back-A",
@@ -2568,6 +3865,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-B",
       "sharedWith": [
+        "v0-back-B",
         "v1-back-B",
         "v2-back-B",
         "v3-back-B",
@@ -2604,6 +3902,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-C",
       "sharedWith": [
+        "v0-back-C",
         "v1-back-C",
         "v2-back-C",
         "v3-back-C",
@@ -2640,6 +3939,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-A",
       "sharedWith": [
+        "v0-bath1-A",
         "v1-bath1-A",
         "v2-bath1-A",
         "v3-bath1-A",
@@ -2676,6 +3976,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-B",
       "sharedWith": [
+        "v0-bath1-B",
         "v1-bath1-B",
         "v2-bath1-B",
         "v3-bath1-B",
@@ -2712,6 +4013,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-C",
       "sharedWith": [
+        "v0-bath1-C",
         "v1-bath1-C",
         "v2-bath1-C",
         "v3-bath1-C",
@@ -2748,6 +4050,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-A",
       "sharedWith": [
+        "v0-bath2-A",
         "v1-bath2-A",
         "v2-bath2-A",
         "v3-bath2-A",
@@ -2784,6 +4087,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-B",
       "sharedWith": [
+        "v0-bath2-B",
         "v1-bath2-B",
         "v2-bath2-B",
         "v3-bath2-B",
@@ -2820,6 +4124,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-C",
       "sharedWith": [
+        "v0-bath2-C",
         "v1-bath2-C",
         "v2-bath2-C",
         "v3-bath2-C",
@@ -2856,6 +4161,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-A",
       "sharedWith": [
+        "v0-bed-A",
         "v1-bed-A",
         "v2-bed-A",
         "v3-bed-A",
@@ -2892,6 +4198,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-B",
       "sharedWith": [
+        "v0-bed-B",
         "v1-bed-B",
         "v2-bed-B",
         "v3-bed-B",
@@ -2928,6 +4235,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-C",
       "sharedWith": [
+        "v0-bed-C",
         "v1-bed-C",
         "v2-bed-C",
         "v3-bed-C",
@@ -2964,6 +4272,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-A",
       "sharedWith": [
+        "v0-closet-A",
         "v1-closet-A",
         "v2-closet-A",
         "v3-closet-A",
@@ -3000,6 +4309,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-B",
       "sharedWith": [
+        "v0-closet-B",
         "v1-closet-B",
         "v2-closet-B",
         "v3-closet-B",
@@ -3036,6 +4346,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-C",
       "sharedWith": [
+        "v0-closet-C",
         "v1-closet-C",
         "v2-closet-C",
         "v3-closet-C",
@@ -3369,6 +4680,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-A",
       "sharedWith": [
+        "v0-kitchen-A",
         "v1-kitchen-A",
         "v2-kitchen-A",
         "v3-kitchen-A",
@@ -3439,6 +4751,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-C",
       "sharedWith": [
+        "v0-kitchen-C",
         "v1-kitchen-C",
         "v2-kitchen-C",
         "v3-kitchen-C",
@@ -3574,6 +4887,7 @@
       "status": "source-captured",
       "aiKey": "v1-storage-A",
       "sharedWith": [
+        "v0-storage-A",
         "v1-storage-A",
         "v2-storage-A",
         "v3-storage-A",
@@ -3778,6 +5092,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-A",
       "sharedWith": [
+        "v0-back-A",
         "v1-back-A",
         "v2-back-A",
         "v3-back-A",
@@ -3814,6 +5129,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-B",
       "sharedWith": [
+        "v0-back-B",
         "v1-back-B",
         "v2-back-B",
         "v3-back-B",
@@ -3850,6 +5166,7 @@
       "status": "source-captured",
       "aiKey": "v1-back-C",
       "sharedWith": [
+        "v0-back-C",
         "v1-back-C",
         "v2-back-C",
         "v3-back-C",
@@ -3886,6 +5203,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-A",
       "sharedWith": [
+        "v0-bath1-A",
         "v1-bath1-A",
         "v2-bath1-A",
         "v3-bath1-A",
@@ -3922,6 +5240,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-B",
       "sharedWith": [
+        "v0-bath1-B",
         "v1-bath1-B",
         "v2-bath1-B",
         "v3-bath1-B",
@@ -3958,6 +5277,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath1-C",
       "sharedWith": [
+        "v0-bath1-C",
         "v1-bath1-C",
         "v2-bath1-C",
         "v3-bath1-C",
@@ -3994,6 +5314,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-A",
       "sharedWith": [
+        "v0-bath2-A",
         "v1-bath2-A",
         "v2-bath2-A",
         "v3-bath2-A",
@@ -4030,6 +5351,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-B",
       "sharedWith": [
+        "v0-bath2-B",
         "v1-bath2-B",
         "v2-bath2-B",
         "v3-bath2-B",
@@ -4066,6 +5388,7 @@
       "status": "source-captured",
       "aiKey": "v1-bath2-C",
       "sharedWith": [
+        "v0-bath2-C",
         "v1-bath2-C",
         "v2-bath2-C",
         "v3-bath2-C",
@@ -4102,6 +5425,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-A",
       "sharedWith": [
+        "v0-bed-A",
         "v1-bed-A",
         "v2-bed-A",
         "v3-bed-A",
@@ -4138,6 +5462,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-B",
       "sharedWith": [
+        "v0-bed-B",
         "v1-bed-B",
         "v2-bed-B",
         "v3-bed-B",
@@ -4174,6 +5499,7 @@
       "status": "source-captured",
       "aiKey": "v1-bed-C",
       "sharedWith": [
+        "v0-bed-C",
         "v1-bed-C",
         "v2-bed-C",
         "v3-bed-C",
@@ -4210,6 +5536,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-A",
       "sharedWith": [
+        "v0-closet-A",
         "v1-closet-A",
         "v2-closet-A",
         "v3-closet-A",
@@ -4246,6 +5573,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-B",
       "sharedWith": [
+        "v0-closet-B",
         "v1-closet-B",
         "v2-closet-B",
         "v3-closet-B",
@@ -4282,6 +5610,7 @@
       "status": "source-captured",
       "aiKey": "v1-closet-C",
       "sharedWith": [
+        "v0-closet-C",
         "v1-closet-C",
         "v2-closet-C",
         "v3-closet-C",
@@ -4615,6 +5944,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-A",
       "sharedWith": [
+        "v0-kitchen-A",
         "v1-kitchen-A",
         "v2-kitchen-A",
         "v3-kitchen-A",
@@ -4685,6 +6015,7 @@
       "status": "source-captured",
       "aiKey": "v1-kitchen-C",
       "sharedWith": [
+        "v0-kitchen-C",
         "v1-kitchen-C",
         "v2-kitchen-C",
         "v3-kitchen-C",
@@ -4820,6 +6151,7 @@
       "status": "source-captured",
       "aiKey": "v1-storage-A",
       "sharedWith": [
+        "v0-storage-A",
         "v1-storage-A",
         "v2-storage-A",
         "v3-storage-A",
@@ -4994,5 +6326,26 @@
         "v4-study-C"
       ]
     }
-  ]
+  ],
+  "versionSources": {
+    "v0": {
+      "capturedAt": "2026-09-15",
+      "basis": "格局.pdf original plan; shared current equipment and controls",
+      "sourceFileSha256": {
+        "design.js": "93812d675eda2e61d49eebc34e3ec4d72d0fa64fb5265be54e7ba4dfdb76297b",
+        "model-data.js": "67d6570cb6cec9066a836a6db69ba176e6627616cbd1ca1dad3e61457ff71674",
+        "equipment-models.js": "84be4735e0f437638c47d60dbb53268e92b86362098912aae1024cd8402dd9ab",
+        "bedroom-model.js": "b64a4ca942cf48badc3618c7bc0476eabebebf687b4f8e9ab645f1dc72ee9333",
+        "industrial-design.js": "ab87ec1403013f113c9819cad1e0429b6c80c7e9fefab4ad005a703ac4081bb8",
+        "flooring.js": "9ccac5fc7461eea71fe3012e7ce08e4d672e5889ee0fc44e33e66b3c520eb044",
+        "提案/原始格局/layout-spec.js": "bbd9b5a3b69b44892ed3ceca579010a570a0cdc22adda3d6b2176ad29e1b1d81",
+        "提案/原始格局/original-model.js": "779de7e03767932a608689e9e11523f1b0010c20d393e3016d57505406a2c9bb"
+      }
+    },
+    "v1-v4": {
+      "sourceRevision": "e028e0fe82eedefaacc6f0e1d037a924aef65de5",
+      "capturedAt": "2026-09-14/15",
+      "retained": true
+    }
+  }
 }

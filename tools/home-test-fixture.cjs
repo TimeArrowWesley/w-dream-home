@@ -19,7 +19,8 @@ module.exports=async function build(n,overrides={}){
  const OriginalImage=c.Image;c.Image=class extends OriginalImage{constructor(){super();this.width=1024;this.height=512;images.push(this);}};
  c.window=c;c.Event=c.CustomEvent;vm.createContext(c);
  function run(f){vm.runInContext(overrides[f]??read(f),c,{filename:f,timeout:60000});}
- run(n===5?'提案/南牆電視與開放中島/layout-version.js':n===4?'提案/開放大中島/layout-version.js':n<3?'layout-version.js':'提案/旋轉電視與直線中島/layout-version.js');
+ run(n===0?'提案/原始格局/layout-version.js':n===5?'提案/南牆電視與開放中島/layout-version.js':n===4?'提案/開放大中島/layout-version.js':n<3?'layout-version.js':'提案/旋轉電視與直線中島/layout-version.js');
+ if(n===0){run('提案/原始格局/layout-spec.js');run('提案/原始格局/original-model.js');}
  if(n>=4){run(n===5?'提案/南牆電視與開放中島/layout-spec.js':'提案/開放大中島/layout-spec.js');run('提案/開放大中島/open-island-model.js');if(n===5)run('提案/南牆電視與開放中島/plan-a-model.js');}
  for(const f of ['model-data.js','bedroom-model.js','equipment-models.js',n<3?'design.js':'提案/旋轉電視與直線中島/design.js'])run(f);
  const V=c.HOME_VIEWER,E=c.HOME_EQUIPMENT;

@@ -55,7 +55,7 @@
     header.replaceChildren(brand, primary, actions);
 
     // Public version names; construction and entry configurations remain descriptive details.
-    const versions={v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島','玄關高矮櫃'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃'],v4:['大中島','南牆固定電視・玄關矮櫃']};
+    const versions={v0:['原始格局','弧形沙發・貓房・原圖玄關'],v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島','玄關高矮櫃'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃'],v4:['大中島','南牆固定電視・玄關矮櫃']};
     const versionMenu = make('details', 'uiMenu uiVersionMenu'); versionMenu.id = 'uiVersionMenu';
     const versionSummary = make('summary');
     versionSummary.append(make('small', '', '設計版本'), make('strong', '', version.toUpperCase() + ' · ' + versions[version][0]), make('span', '', versions[version][1]));
@@ -71,7 +71,7 @@
       b.onclick = () => {
         versionMenu.open = false;
         if (key === version) return;
-        const url = new URL((key==='v4'?'提案/南牆電視與開放中島/':key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
+        const url = new URL((key==='v0'?'提案/原始格局/':key==='v4'?'提案/南牆電視與開放中島/':key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
         url.searchParams.set('layout', key);
         url.searchParams.set('uiRoom', V.getCurrent());
         url.searchParams.set('uiMode', tour.getMode());
@@ -116,7 +116,7 @@
     planFooter.replaceChildren(expandPlan);
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
-    const sideFoot = make('div', 'uiSideFoot', 'V1～V3 共用家具清單 · 可隨時切換版本');
+    const sideFoot = make('div', 'uiSideFoot', 'V0～V4 共用家具清單 · 可隨時切換版本');
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -129,9 +129,10 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
+      ['V0・原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],
       ['拆收藏室・兩個替代格局', 'V4 大中島已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
       ['V3・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
-      ['版本比較', 'V1、V2、V3、V4 的 3D 配置與共用功能', '方案比較.html'],
+      ['版本比較', 'V0 原始格局與 V1～V4 的配置及共用功能', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
       ['材質與配色', '22 個工業風案例、四版材質前後對照與酒吧照明', '材質調整.html'],
       ['全屋核對與主臥細節', '最新收放操作、燈光與前後比較', '調整紀錄/20260911全屋核對與主臥細節/index.html'],
@@ -143,8 +144,8 @@
       a.append(make('strong', '', title + ' ↗'), make('span', '', note)); resourceGrid.append(a);
     }
     resources.append(resourceGrid);
-    const history = make('details', 'uiHistory'); history.append(make('summary', '', '歷史參考圖'));
-    history.append(make('p', '', '以下圖片早於目前設備與材質更新，僅供回顧。最新設計請看 3D 模型。'));
+    const history = make('details', 'uiHistory'); history.append(make('summary', '', 'AI 成品圖集'));
+    history.append(make('p', '', '每版 12 個空間、各 3 個方向，可對照模型取景與 AI 材質效果。尺寸以模型為準。'));
     for (const [label, file] of [['全屋 AI 圖集 ↗', 'AI寫實視角.html']]) {
       const a = make('a', '', label); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener'; history.append(a);
     }
@@ -256,7 +257,7 @@
     }
     function syncMode() {
       const mode = tour.getMode(); body.dataset.uiMode = mode;
-      modeBadge.textContent = mode === 'photo' ? '歷史參考圖' : version.toUpperCase() + ' · ' + (mode === 'walk' ? '步行模式' : '即時 3D');
+      modeBadge.textContent = mode === 'photo' ? 'AI 成品圖集' : version.toUpperCase() + ' · ' + (mode === 'walk' ? '步行模式' : '即時 3D');
       $('hint').hidden = mode === 'photo';
       if ($('walkReset')) $('walkReset').hidden = mode !== 'walk';
       if (mode === 'walk') $('hint').textContent = 'WASD 移動 · 拖曳轉頭 · E 開關門';
