@@ -63,6 +63,8 @@ const oldWalnut=F.darkVeneer,oldOak=F.oak;
 function ancestry(o){const a=[];for(let p=o;p&&p!==V.scene;p=p.parent)a.push(p.userData.name||p.name||'');return a.join('|');}
 function assign(o,m,role,uv){o.material=m;o.userData.industrialRole=role;touched.add(o);if(uv==='wood')F.cabinetUV(o);else if(uv)F.worldUV(o,uv);}
 function isDevice(o){for(let p=o;p;p=p.parent)if(p.userData.equipment)return true;return false;}
+const sofaFinishes=new Map();
+function sofaFinish(o){const role=o.userData.sofaRole,hex=o.userData.sofaColor,key=role+hex;if(!sofaFinishes.has(key)){const m=(role==='wood'?walnut:role==='fabric'?M.cloth:role==='steel'?architecturalSteel:M.linen).clone();m.color.copy(color(hex));m.name='整合沙發・'+role;m.userData.finishId='integrated-sofa-'+role;if(role==='fabric')m.roughness=.96;sofaFinishes.set(key,m);}return sofaFinishes.get(key);}
 function apply(){
  V.scene.updateMatrixWorld(true);
  C.ceilingMaterial.color.copy(color('#b4b6b1'));C.ceilingMaterial.roughness=.97;
@@ -75,6 +77,7 @@ function apply(){
   if(!o.isMesh)return;const n=o.userData.name||o.name||'',chain=ancestry(o),m=o.material;
   // Equipment retains manufacturer materials and all its working geometry.
   if(isDevice(o))return;
+  if(o.userData.sofaRole){assign(o,sofaFinish(o),'integrated-sofa-'+o.userData.sofaRole,o.userData.sofaRole==='wood'?'wood':o.userData.sofaRole==='fabric'?12:null);return;}
   if(o.userData.islandSurface==='countertop'||/^(260×160.2 曲線中島|81×189 直線中島)/.test(n))assign(o,stone,'island-stone',260);
   else if(/^sink-/.test(o.userData.islandSurface||''))assign(o,stainless,'sink-stainless',40);
   else if(o.userData.islandExterior)assign(o,version==='v2'?stainless:reeded,version==='v2'?'small-island-stainless':'curved-smoked-wood',version==='v2'?80:'wood');

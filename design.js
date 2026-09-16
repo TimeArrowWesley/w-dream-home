@@ -188,12 +188,7 @@ panel(760,951,315,2,45,125,M.blackglass,'黑玻電視背牆');
 EQ.consoleBase(false);EQ.audio(false);EQ.product('tv',917.5,948.6,47.15,'N');
 
 if(original)original.living(originalContext);else{
-// Owner-requested move toward study; chaise runs along the window side.
-info(box(797,490,240,95,9,29,M.darkcloth),'L 型沙發','依紅框向書房方向後移約70cm。總寬240cm、主座深95cm、靠窗貴妃段總深160cm，尺寸為配置提案，實品待選。','業主圈圖位置＋本次 L 型配置');
-box(949,581,88,69,9,29,M.darkcloth);box(797,490,240,18,38,46,M.cloth);
-for(let i=0;i<2;i++)box(817+i*66,510,64,72,38,10,M.cloth);
-box(951,510,66,137,38,10,M.cloth);box(797,508,18,77,38,26,M.darkcloth);box(1019,508,18,142,38,26,M.darkcloth);
-[805,1025].forEach(x=>[498,574].forEach(y=>box(x,y,3,3,0,9,M.steel)));[957,1025].forEach(x=>box(x,640,3,3,0,9,M.steel));
+window.HOME_SOFA_BUILD({T,M,info,EQ},{version:'v1',facing:'S',backY:490});
 box(789,550,265,340,.3,.7,M.cloth,fittings,'265×340短毛地毯');window.HOME_COFFEE_LIFT=EQ.coffee(false);
 }
 // Curved island uses the original vector contour rather than a rectangular substitute.
@@ -205,7 +200,7 @@ ctxIsland();
 function ctxIsland(){ if(original)original.island(originalContext);else EQ.appliances(true,is,IS); }
 
 // Master bedroom: compact king bed and split side storage.
-for(const c of [{x:0,w:100},{x:280,w:125}]){cabinet(c.x,0,c.w,35,0,70,'床頭抽屜','S',M.black);cabinet(c.x,0,c.w,35,85,160,'床頭黑玻高櫃','S',comfort?M.concrete:M.blackglass);panel(c.x,0,c.w,2,70,15,M.steel);line(c.x+3,32,84,c.w-6);}
+window.HOME_BEDROOM_HEADBOARD_BUILD({T,M,box,info,fittings,cabinet,panel,line,comfort});
 box(112,22,156,178,0,4,M.black,fittings,'床架內縮落地底座');panel(100,0,180,10,40,90,M.cloth,'床頭軟包');box(100,10,180,202,4,28,M.darkcloth,fittings,'180 × 202 KING 床');box(100,10,180,202,32,23,M.linen);box(101,68,178,143,55,3,M.white);box(102,166,176,43,58,2,M.cloth);for(const x of [112,198]){const p=box(x,26,70,38,56,12,M.linen);p.rotation.x=-.08;}
 EQ.projector();
 EQ.vanity();
@@ -375,15 +370,7 @@ M.light.color.set('#fff1d7');
 // Assign stone to horizontal counters; preserve all existing dimensions.
 scene.updateMatrixWorld(true);
 fittings.traverse(o=>{if(!o.isMesh)return;const b=new T.Box3().setFromObject(o),sz=b.getSize(new T.Vector3());if(o.material===M.grey&&sz.y<5&&Math.max(sz.x,sz.z)>55)o.material=stoneFinish;if(o.userData.name==='265×340短毛地毯')o.material=rugFinish;if(o.material===M.white&&sz.x>170&&sz.z>130&&sz.y<5)o.material=duvetFinish;});
-// Upholstered back cushions and piping fit within the approved sofa footprint.
-if(!original){
-for(const [x,w] of [[819,60],[885,60],[952,62]]){const p=box(x,508,w,17,49,31,M.cloth);p.rotation.x=-.12;}
-for(const [x,y,a] of [[819,528,.18],[985,533,-.24]]){const p=box(x,y,29,18,49,29,M.linen);p.rotation.z=a;p.rotation.x=-.18;}
-for(const [x,y,w,d] of [[817,510,64,72],[883,510,64,72],[951,510,66,137]]){
- const pts=[[x+3,y+3],[x+w-3,y+3],[x+w-3,y+d-3],[x+3,y+d-3],[x+3,y+3]].map(([a,b])=>pos(a,b,48.2));
- const seam=new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:'#858782'}));fittings.add(seam);
-}
-}
+// Integrated sofa geometry includes its own cushions and common support frame.
 // Fine ribbing on media speaker fronts gives their acoustic fabric a readable surface.
 // Speaker details now belong to the real Q7 models.
 // Centimetre UVs on each face prevent stretched grain across walls and countertops.
@@ -417,7 +404,7 @@ const ROOMS=[
 {id:'storage',n:'儲藏室',en:'STORAGE',p:[706,350,155],t:[610,294,115],note:'5cm孔距可調式層架；門正對區下方開放，先留75×90×高140cm推車停放空間，層板可依需求移高或拆除。',label:[665,315]},
 {id:'back',n:'後陽台',en:'UTILITY',p:[-95,605,155],t:[-102,840,98],note:'洗衣、洗手台與設備區概念；外機及給排水依正式機電圖複核。',label:[-130,690]},
 ];
-if(original){const notes={entry:{p:[635,930,160],t:[511,831,110],note:'原圖側向鞋櫃、掛衣帽與隨身物檯面；南側原門洞與結構柱保留。'},living:{n:'客廳・弧形沙發',p:[710,825,160],t:[930,553,110],note:'依原始PDF弧形沙發輪廓、兩張單椅與圓茶几，南牆固定83吋電視。'},island:{p:[710,725,158],t:[529,552,115],note:'原圖80cm寬弧檯，左側飲水槽；95cm檯高及酒櫃、IH、掃地機分艙。'},collection:{n:'貓房',en:'CAT ROOM',p:[418,860,157],t:[266,872,100],label:[344,849],note:'還原北側70cm入口與弧形隔間；貓砂櫃、跳台及清潔收納。'},study:{n:'書房・電子琴',p:[1050,260,160],t:[911,104,118],note:'原圖L型190×75＋120×50書桌，南牆電子琴，沿用螢幕、主機與燈光控制。'}};ROOMS.forEach(r=>Object.assign(r,notes[r.id]||{}));}
+if(original){const notes={entry:{p:[635,930,160],t:[511,831,110],note:'原圖側向鞋櫃、掛衣帽與隨身物檯面；南側原門洞與結構柱保留。'},living:{n:'客廳・整合背架沙發',p:[710,825,160],t:[930,553,110],note:'原始建築格局與南牆固定83吋電視保留；依本次確認改整合背架L型沙發，兩張單椅與圓茶几保留。'},island:{p:[710,725,158],t:[529,552,115],note:'原圖80cm寬弧檯，左側飲水槽；95cm檯高及酒櫃、IH、掃地機分艙。'},collection:{n:'貓房',en:'CAT ROOM',p:[418,860,157],t:[266,872,100],label:[344,849],note:'還原北側70cm入口與弧形隔間；貓砂櫃、跳台及清潔收納。'},study:{n:'書房・電子琴',p:[1050,260,160],t:[911,104,118],note:'原圖L型190×75＋120×50書桌，南牆電子琴，沿用螢幕、主機與燈光控制。'}};ROOMS.forEach(r=>Object.assign(r,notes[r.id]||{}));}
 ROOMS.slice(1).forEach(r=>roomLabel(r.n,...r.label));
 function updateWalls(){const cut=$('cut').checked;wallParts.forEach(({m,z,h})=>{const hh=cut?Math.max(0,Math.min(z+h,85)-z):h;m.visible=hh>.1;m.scale.y=hh/h;m.position.y=z+hh/2;});beams.visible=$('ceiling').checked;ceiling.visible=$('ceiling').checked;labels.visible=$('labels').checked;window.HOME_REALISM?.invalidate();}
 function applyCam(){camera.position.set(center.x+radius*Math.sin(pol)*Math.cos(az),center.y+radius*Math.cos(pol),center.z+radius*Math.sin(pol)*Math.sin(az));camera.lookAt(center);}

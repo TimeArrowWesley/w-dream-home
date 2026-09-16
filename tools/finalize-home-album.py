@@ -27,7 +27,7 @@ for key in keys:
   rec=json.loads(f.read_text(encoding='utf8'))
   history.append({'instruction':rec['correction'],'prompt':f.with_suffix('.txt').read_text(encoding='utf8')})
  records.append({'key':key,'usedBy':[e['key'] for e in entries if e['aiKey']==key],'sourcePngSha256':sha(source),'aiOriginalPngSha256':sha(original),'aiWebpSha256':sha(root/'images'/f'{key}.webp'),'sourceWebpSha256':sha(root/'models'/f'{key}.webp'),'prompt':(root/'prompts'/f'{key}.txt').read_text(encoding='utf8'),'corrections':history,'review':'Manually inspected against source view; conceptual materials, not dimensional proof'})
-provenance={'date':'2026-09-15','sourceRevision':manifest['modelRevision'],'versionSources':manifest.get('versionSources',{}),'sourceMethod':manifest['method'],'generationTool':'Built-in image_gen','viewSlots':len(entries),'uniqueImages':len(keys),'records':records}
+provenance={'date':manifest.get('capturedAt','2026-09-16')[:10],'sourceRevision':manifest['modelRevision'],'versionSources':manifest.get('versionSources',{}),'sourceMethod':manifest['method'],'generationTool':'Built-in image_gen','viewSlots':len(entries),'uniqueImages':len(keys),'records':records}
 (root/'生成紀錄.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 for e in entries:assert sha(root/'model'/e['file'])==e['modelHash'],e['key']
 report=read('成品核對.json');report.pop('all144SourceHashesMatched',None);report.update({'allImagesDecoded':True,'allSourceHashesMatched':True,'correctionViews':len(fixes),'visualReview':'Each unique AI image reviewed; original model is authoritative for dimensions','browserVisualQA':False})

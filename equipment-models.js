@@ -337,7 +337,21 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     return {base,pivot,screen,rotatingMeshes:meshes};
   }
   function coffee(rotating){const g=group('升降茶几 45／65cm'),x=fixed?openSpec.audio.coffee.x:rotating?819:916,y=fixed?openSpec.audio.coffee.y:rotating?549:751;box(x-19,y-19,38,38,0,4,graphite,g);cyl(x,y,4,5,38,M.steel,g);const lift=group('茶几可升降桌面',g);cyl(x,y,42,fixed?openSpec.audio.coffee.radiusCm:rotating?31:43,3,M.blackglass,lift);info(lift,'用餐升降茶几','預設45cm，按控制可升至65cm。造型與機構為家具選型提案，直徑'+(fixed?openSpec.audio.coffee.radiusCm*2:rotating?62:86)+'cm。');return lift;}
-  function projector(){box(167.5,0,45,40,190,3,M.steel,fittings,'投影機層板 · 深40cm');product('projector',190,23.1,193,'S',fittings,'24.3×21×23.8cm；暫以鏡頭平面y33.6放樣。實際鏡頭位移與校正需現場。');box(88.2,278,203.6,1,108,114.525,M.white,fittings,'投影幕先以92吋有效畫面放樣','保守92吋：1.2投射比需244.3cm。98吋需約260.4cm，鏡頭與後方散熱未核定前不宣稱可滿版。');box(80,279,220,3,225,5,M.black,fittings,'保留98吋幕盒尺度・有效畫面先92吋');}
+  function projector(){
+    const spec=window.HOME_BEDROOM_HEADBOARD_SPEC,{projector:p,screen:s}=spec;
+    const device=product('projector',p.x,p.y,p.z,'S',fittings,'外側上櫃開放設備格：層板H150，機身24.3×21×23.8cm，水平朝向約35.7°。床頭H70日常檯面保留。側投清晰度、有效畫面、坐姿遮擋、散熱與固定方式尚待實機核對。');
+    device.rotation.y=Math.PI-p.yawDeg*Math.PI/180;
+    device.userData.projectorPlacement={...p,opticsVerified:false,revision:spec.revision};
+    const adapter=part(device,-12.4,-10.8,24.8,21.6,-.8,.8,M.steel);
+    adapter.name='投影機相容固定座・結構示意';adapter.userData.fixedBaseConcept=true;
+    const cable=new T.Group();cable.name='投影機背側走線';fittings.add(cable);
+    device.updateMatrixWorld(true);
+    const rear=device.localToWorld(new T.Vector3(8,4,10.65));
+    const lead=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3([rear,pos(379,5,154.8),pos(389,5,157),pos(391,2.6,164)]),20,.32,6,false),M.black);cable.add(lead);
+    box(s.x,s.y,s.w,1,s.z,s.h,M.white,fittings,'投影幕・92吋尺寸參考，側投未驗證','原幕面位置保留，尺寸203.6×114.525cm僅供放樣；新側投位置未驗證可滿版，不依舊中心投射假設下單。');
+    box(80,279,220,3,225,5,M.black,fittings,'投影幕盒・原位置保留待試投');
+    refinements.bedroomProjector={device,...p,screen:{...s},opticsVerified:false};
+  }
   function closet(){
     allowance('管道保守外包絡79×51',546,69,79,51,0,275,'來源輪廓60×40與家具表79×51不一致。保留原結構，木作避開較大包絡');
     // Long-hang bay: no middle shelf through garments.

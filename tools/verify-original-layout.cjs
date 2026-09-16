@@ -26,7 +26,9 @@ function hash(f){const a=[];f.V.scene.updateMatrixWorld(true);f.V.scene.traverse
  if(leaf){const b=f.bounds(leaf),wine=E.items.find(o=>o.userData.equipment?.key==='wine');assert(!f.overlap(b,f.bounds(wine)),'Wet service door intersects wine cabinet');}
  assert(c.HOME_RGB&&c.HOME_CURTAINS&&c.HOME_COMFORT&&c.HOME_BEDROOM);result.checks.push('Common RGB, curtains, lighting scenes, bedroom controls and wet-bay service door retained');
  result.equipment=equipment;result.doors=I.getState().entries;
- const baseline=JSON.parse(fs.readFileSync(path.join(dir,'既有四版幾何基準.json')));
- for(let v=1;v<=4;v++){const q=await build(v+1),digest=hash(q);assert.equal(digest,baseline['v'+v],'V'+v+' geometry changed');result.retained['v'+v]=digest;console.log('V'+v+' geometry unchanged');}
+ if(!process.argv.includes('--current-only')){
+  const baseline=JSON.parse(fs.readFileSync(path.join(dir,'既有四版幾何基準.json')));
+  for(let v=1;v<=4;v++){const q=await build(v+1),digest=hash(q);assert.equal(digest,baseline['v'+v],'V'+v+' geometry changed');result.retained['v'+v]=digest;console.log('V'+v+' geometry unchanged');}
+ }else result.checks.push('Historical 20260915 exact mesh baseline skipped: shared bedroom and sofa intentionally changed; use verify-sofa-preservation.cjs for current bounded changes.');
  fs.writeFileSync(path.join(dir,'V0模型驗證.json'),JSON.stringify(result,null,2)+'\n');console.log(result.checks.join('\n'));
 })().catch(e=>{console.error(e);process.exitCode=1;});

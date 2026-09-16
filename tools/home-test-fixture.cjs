@@ -22,7 +22,7 @@ module.exports=async function build(n,overrides={}){
  run(n===0?'提案/原始格局/layout-version.js':n===5?'提案/南牆電視與開放中島/layout-version.js':n===4?'提案/開放大中島/layout-version.js':n<3?'layout-version.js':'提案/旋轉電視與直線中島/layout-version.js');
  if(n===0){run('提案/原始格局/layout-spec.js');run('提案/原始格局/original-model.js');}
  if(n>=4){run(n===5?'提案/南牆電視與開放中島/layout-spec.js':'提案/開放大中島/layout-spec.js');run('提案/開放大中島/open-island-model.js');if(n===5)run('提案/南牆電視與開放中島/plan-a-model.js');}
- for(const f of ['model-data.js','bedroom-model.js','equipment-models.js',n<3?'design.js':'提案/旋轉電視與直線中島/design.js'])run(f);
+ for(const f of ['model-data.js','bedroom-model.js','sofa-model.js','equipment-models.js',n<3?'design.js':'提案/旋轉電視與直線中島/design.js'])run(f);
  const V=c.HOME_VIEWER,E=c.HOME_EQUIPMENT;
  c.HOME_TOUR={getMode:()=>mode,setMode:m=>mode=m};
  for(const f of ['walk.js','interaction.js','realism.js','flooring.js','industrial-design.js','curtains.js','rgb-lighting.js','comfort-controls.js','equipment-controls.js','bedroom-controls.js',...(n===5?['提案/南牆電視與開放中島/plan-a-controls.js']:n>2?['提案/旋轉電視與直線中島/rotating-tv.js']:[])])run(f);await Promise.resolve();await Promise.resolve();

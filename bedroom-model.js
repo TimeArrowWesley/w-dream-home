@@ -1,4 +1,41 @@
 'use strict';
+// Shared by V0–V4. This is the approved model layout, not an optical/anchor sign-off.
+window.HOME_BEDROOM_HEADBOARD_SPEC={revision:'20260916-bedside',bedside:{x:280,y:0,w:125,d:35,h:70,nearWidth:60},projector:{x:372.5,y:24,z:150.8,yawDeg:35.7,shelfTop:150,bayX:340,bayW:65,bayD:45,upperBottom:205},screen:{x:88.2,y:278,w:203.6,z:108,h:114.525,verified:false}};
+window.HOME_BEDROOM_HEADBOARD_BUILD=function({T,M,box,info,fittings,cabinet,panel,line,comfort}){
+ const spec=window.HOME_BEDROOM_HEADBOARD_SPEC,root=new T.Group();root.name='主臥床頭櫃・保留日常檯面';fittings.add(root);
+ root.userData.bedroomHeadboard=spec;
+ // Retain the left cabinet exactly; replace only the approved right-hand arrangement.
+ cabinet(0,0,100,35,0,70,'床頭抽屜','S',M.black);cabinet(0,0,100,35,85,160,'床頭黑玻高櫃','S',comfort?M.concrete:M.blackglass);panel(0,0,100,2,70,15,M.steel);line(3,32,84,94);
+ function piece(name,x,y,w,d,z,h,mat=M.black,wood=false){const m=box(x,y,w,d,z,h,mat,root,name);m.userData.bedroomHeadboard=true;m.userData.bedroomUpgrade=true;if(wood)m.userData.bedroomWood=true;return m;}
+ piece('右床頭抽屜・內縮踢腳',283,3,119,29,0,7,M.black);
+ piece('右床頭抽屜・背板',280,0,125,1.8,7,61,M.black,true);
+ for(const x of [280,338.2,403.2])piece('右床頭抽屜・承重側板',x,1.8,1.8,33.2,7,61,M.black,true);
+ for(const [x,w] of [[281.8,56.4],[340,63.2]])for(const z of [7,27.2,47.4])piece('右床頭抽屜・櫃內層板',x,1.8,w,32,z,1.6,M.black,true);
+ for(const [x,w] of [[280,60],[340,65]])for(const z of [8,28,48]){
+  piece('右床頭抽屜・面板',x+.6,35,w-1.2,1,z,18.4,M.black,true);
+  piece('右床頭抽屜・內嵌指拉',x+4,36,w-8,.25,z+16.2,1.1,M.steel);
+ }
+ info(piece('右床頭櫃・H70日常檯面',280,0,125,36,68,2,M.steel),'右床頭櫃・H70日常檯面','125cm下櫃保留；靠床約60cm寬、35cm深日常檯面。外側上櫃改投影設備格，抽屜與閱讀燈保留。','2026-09-16 業主確認主臥套用V0–V4');
+ piece('床頭開放區・背板',280,.1,60,1,70,85,M.steel);
+ function upper(x,w,z,h,name){const carc=cabinet(x,0,w,35,z,h,name,'S',M.blackglass),g=carc.parent;root.add(g);g.traverse(o=>{if(o.isMesh){o.userData.bedroomHeadboard=true;o.userData.bedroomUpgrade=true;if(o.material===M.black)o.userData.bedroomWood=true;}});}
+ upper(280,60,155,90,'床頭近側上櫃');upper(340,65,205,40,'投影設備格上櫃');
+ piece('投影設備格・背板',340,0,65,1.8,70,135,M.steel);
+ piece('投影設備格・左承重側板',338.2,0,1.8,45,70,85,M.black,true);
+ piece('投影設備格・左側板前緣',338.2,35,1.8,10,155,90,M.black,true);
+ piece('投影設備格・右承重側板',403.2,0,1.8,45,70,135,M.black,true);
+ piece('投影設備格・右側板前緣',403.2,35,1.8,10,205,40,M.black,true);
+ info(piece('投影機層板・外側設備格H150',340,0,63.2,45,148,2,M.steel),'投影機層板・外側設備格H150','外側65cm模組、層板深45cm、完成面H150；前方開放。層板接櫃內框架，機身固定方式與散熱間距須依原廠及現場核對。','2026-09-16 業主確認主臥套用V0–V4');
+ for(const x of [342,399])piece('投影設備格・側托架',x,2,2,39,144,4,M.steel);
+ piece('投影設備格・後承重橫檔',342,2,59,2,144,4,M.steel);
+ // Power exits behind the equipment; no lead crosses the bedside countertop.
+ piece('投影設備格・插座面板',387,1.85,9,.5,161,7,M.steel);
+ for(const x of [389,393])piece('投影設備格・插座孔',x,2.4,.6,.1,163,2,M.black);
+ piece('床頭閱讀區・插座面板',311,1.15,12,.6,82,6,M.steel);
+ for(const x of [313,318])piece('床頭閱讀區・插座孔',x,1.8,.6,.1,84,2,M.black);
+ piece('床頭日常用品・手機',307,20,7,14,70,.7,M.black);
+ piece('床頭日常用品・書本',319,16,16,20,70,2,M.linen);
+ window.HOME_BEDROOM_HEADBOARD={root,spec};return root;
+};
 // Openings verified against the source drawing, independently of the bedroom millwork.
 window.HOME_SHARED_OPENINGS={
  storage({T,M,box,wall,architecture}){const g=new T.Group();g.name='儲藏室外掛拉門';g.userData.slidingDoor={name:'儲藏室拉門',key:'storage',axis:'x',distance:82};architecture.add(g);
@@ -77,7 +114,7 @@ window.HOME_BEDROOM_BUILD=function(C){
  for(const x of [-6,0]){piece('化妝台・插座孔',x,126.8,.5,.1,61,2,M.rubber);piece('化妝台・USB-C',x,126.8,2,.1,60,.4,M.rubber);}
  groups.stool=vanity.stool;vanity.stool.traverse(o=>{if(o.isMesh)o.userData.bedroomUpgrade=true;});
  // Bedside reading lights attach to the existing open recess, clear of cabinet leaves.
- for(const x of [64,316]){piece('床頭閱讀燈・固定座',x,2,8,2,77,6,charcoal);piece('床頭閱讀燈・支臂',x+3,4,2,22,78,2,charcoal);piece('床頭閱讀燈・遮光燈頭',x-2,22,12,7,76,4,charcoal);glow('reading','床頭閱讀燈・下照面',x-1,23,10,5,75.8,.2);}
+ for(const [x,z,reach] of [[64,77,22],[308,97,18]]){const front=reach+1;piece('床頭閱讀燈・固定座',x,2,8,2,z,6,charcoal);piece('床頭閱讀燈・支臂',x+3,4,2,reach,z+1,2,charcoal);piece('床頭閱讀燈・遮光燈頭',x-2,front-1,12,7,z-1,x===64?4:3,charcoal);glow('reading','床頭閱讀燈・下照面',x-1,front,10,5,z-1.2,.2);}
  for(const x of [113,265])glow('night','床架低位導光',x,28,1,164,7,1);
  // Retain the existing north long-coat bay. Refit only the eastern lower double-hang bay.
  const lower=[];fittings.traverse(o=>{if(!o.isMesh||o.userData.bedroomUpgrade)return;const q=o.position;if(q.x+482.5>=690&&q.x+482.5<=745&&q.z+480>=132&&q.z+480<=198&&q.y>12&&q.y<110)lower.push(o);});

@@ -88,22 +88,7 @@ window.HOME_ORIGINAL_BUILD={
  },
  living(c){
   const {T,M,pos,box,cyl,info,fittings,EQ}=c,s=HOME_ORIGINAL_SPEC.sofa;
-  const g=new T.Group();g.name='V0 原圖弧形沙發';fittings.add(g);
-  function layer(points,z,h,mat,name){
-   const shape=new T.Shape();points.forEach(([x,y],i)=>i?shape.lineTo(x-482.5,480-y):shape.moveTo(x-482.5,480-y));shape.closePath();
-   const o=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:h,bevelEnabled:true,bevelSegments:2,bevelSize:.8,bevelThickness:.8,curveSegments:16}),mat);
-   o.rotation.x=-Math.PI/2;o.position.y=z;o.castShadow=o.receiveShadow=true;g.add(o);if(name)info(o,name,s.note,'原始PDF沙發輪廓');return o;
-  }
-  layer(s.outline,8,28,M.darkcloth,'V0 原圖弧形沙發外緣');
-  layer(s.outline,36,7,M.cloth,'V0 弧形沙發座墊');
-  const outer=s.outline.slice(4,41),inner=outer.map((p,i)=>{
-   const a=outer[Math.max(i-1,0)],b=outer[Math.min(i+1,outer.length-1)],dx=b[0]-a[0],dy=b[1]-a[1],n=Math.hypot(dx,dy);
-   return [p[0]-dy/n*17,p[1]+dx/n*17];
-  });
-  layer([...outer,...inner.reverse()],43,38,M.darkcloth,'V0 弧形沙發連續靠背');
-  for(const [x,y] of [[764,554],[823,540],[910,535],[1015,570],[1037,634]])cyl(x,y,0,3,8,M.steel,g);
-  for(const [x,y,a] of [[810,524,-.3],[909,507,.08],[1005,556,.72]]){const p=box(x-18,y,36,16,44,28,M.linen,g,'V0 沙發靠枕');p.rotation.y=-a;}
-  g.userData.footprint={x:740.5,y:482.8,w:329.4,d:181.1,h:82};g.userData.sourcePolygon=s.outline;
+  const g=window.HOME_SOFA_BUILD(c,{version:'v0',facing:'S',backY:490});
   const rug=new T.Mesh(new T.CircleGeometry(166,80),M.cloth);rug.rotation.x=-Math.PI/2;rug.position.copy(pos(890,682,.8));fittings.add(rug);info(rug,'V0 原圖圓形地毯','依原圖圓形會客區位置；直徑332cm為圖面輪廓配置。');
   const lift=EQ.coffee(false);lift.parent.position.x-=26;lift.parent.position.z-=69;
   lift.children.filter(o=>o.isMesh&&o.geometry.type==='CylinderGeometry').forEach(o=>{o.scale.x=o.scale.z=60/43;});

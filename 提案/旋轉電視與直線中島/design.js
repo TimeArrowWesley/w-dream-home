@@ -203,20 +203,8 @@ for(let i=0;i<5;i++){const x=760+(i+.5)*63;box(x+25,912.8,1.1,1.5,111,18,M.steel
 const revisedTV=EQ.rotatingTV(),tvBase=revisedTV.base,tvPivot=revisedTV.pivot,tvScreen=revisedTV.screen,rotatingMeshes=revisedTV.rotatingMeshes;
 EQ.audio(true);window.HOME_COFFEE_LIFT=EQ.coffee(true);
 
-// New sofa faces west; the south chaise reaches x835 while the main seats start at x900.
-const westSofa=proposalGroup('朝西L型沙發');westSofa.userData.footprint={x:835,y:464,w:160,d:240,facing:'W'};
-named(box(900,464,95,240,9,29,M.darkcloth,westSofa),'朝西L型沙發主座','總包絡160×240cm；朝旋轉電視，南側貴妃延伸至x835。');
-box(835,620,65,84,9,29,M.darkcloth,westSofa,'沙發南側貴妃延伸');
-box(838,623,59,60,38,10,M.cloth,westSofa,'貴妃椅坐墊・承接抱枕');
-box(977,464,18,240,38,46,M.cloth,westSofa,'沙發靠窗背靠');
-box(900,464,77,18,38,26,M.darkcloth,westSofa,'沙發北側扶手');
-box(835,686,142,18,38,26,M.darkcloth,westSofa,'沙發南側扶手');
-for(const y of [484,551])box(903,y,71,64,38,10,M.cloth,westSofa,'沙發坐墊');
-box(839,620,135,64,38,10,M.cloth,westSofa,'貴妃躺椅坐墊');
-for(const [x,y] of [[908,472],[985,472],[908,611],[985,611],[843,696],[985,696]])box(x,y,3,3,0,9,M.steel,westSofa,'沙發內縮金屬腳');
-for(const y of [486,553,620]){const cushion=box(960,y,17,61,49,31,M.cloth,westSofa,'朝西沙發背靠墊');cushion.rotation.z=.1;}
-for(const [x,y,angle] of [[943,492,.13],[854,646,-.16]]){const pillow=box(x,y,18,29,49,29,M.linen,westSofa,'沙發亞麻抱枕');pillow.rotation.x=angle;pillow.rotation.z=.1;}
-for(const [x,y,w,d] of [[903,484,71,64],[903,551,71,64],[839,620,135,64]]){const pts=[[x+3,y+3],[x+w-3,y+3],[x+w-3,y+d-3],[x+3,y+d-3],[x+3,y+3]].map(([a,b])=>pos(a,b,48.2));const seam=new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:'#858782'}));westSofa.add(seam);}
+// The rack keeps the old window-side outer line x995; seat body moves 18cm toward TV.
+const westSofa=window.HOME_SOFA_BUILD({T,M,info,EQ},{version:open?'v3':'v2',facing:'W',backX:977});
 box(700,449,310,281,.3,.7,M.cloth,fittings,'客廳提案短毛地毯');
 
 
@@ -230,7 +218,7 @@ if(open){const tv=window.HOME_ROTATING_TV;Object.assign(tv.config,{axisY:583,isl
 }
 
 // Master bedroom: compact king bed and split side storage.
-for(const c of [{x:0,w:100},{x:280,w:125}]){cabinet(c.x,0,c.w,35,0,70,'床頭抽屜','S',M.black);cabinet(c.x,0,c.w,35,85,160,'床頭黑玻高櫃','S',comfort?M.concrete:M.blackglass);panel(c.x,0,c.w,2,70,15,M.steel);line(c.x+3,32,84,c.w-6);}
+window.HOME_BEDROOM_HEADBOARD_BUILD({T,M,box,info,fittings,cabinet,panel,line,comfort});
 box(112,22,156,178,0,4,M.black,fittings,'床架內縮落地底座');panel(100,0,180,10,40,90,M.cloth,'床頭軟包');box(100,10,180,202,4,28,M.darkcloth,fittings,'180 × 202 KING 床');box(100,10,180,202,32,23,M.linen);box(101,68,178,143,55,3,M.white);box(102,166,176,43,58,2,M.cloth);for(const x of [112,198]){const p=box(x,26,70,38,56,12,M.linen);p.rotation.x=-.08;}
 EQ.projector();
 EQ.vanity();

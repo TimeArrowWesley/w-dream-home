@@ -2,14 +2,10 @@
   "checks": [
     "V0 room metadata, one of each common core appliance and real basin/IH holes verified",
     "Cat-room north door and original entrance open 90 degrees and allow passage; electric kitchen door available",
-    "Common RGB, curtains, lighting scenes, bedroom controls and wet-bay service door retained"
+    "Common RGB, curtains, lighting scenes, bedroom controls and wet-bay service door retained",
+    "Historical 20260915 exact mesh baseline skipped: shared bedroom and sofa intentionally changed; use verify-sofa-preservation.cjs for current bounded changes."
   ],
-  "retained": {
-    "v1": "6595ef1541f39bc2ff585d0b8f0f0041881b55d270ecc20d1b4280c2f98be7df",
-    "v2": "fe586de85ed112f32e023c9b3e05f4574f0b0a003cba31fd1e4e006c579f1bf5",
-    "v3": "af7272512948e0170021e96a744d2501ad383b901e98441abc257e5a1952249d",
-    "v4": "fabbeea35f7a89672236999d16aa4214971b2c43632e01ea954801c3bd63179c"
-  },
+  "retained": {},
   "method": "Actual Three.js geometry and interaction code in an offline fixture; no browser/GPU verification.",
   "equipment": [
     "fridge",
@@ -293,7 +289,7 @@
     },
     {
       "id": 25,
-      "name": "床頭抽屜・櫃門",
+      "name": "床頭近側上櫃・櫃門",
       "angle": 0,
       "target": 0,
       "openAngle": -1.48,
@@ -303,17 +299,17 @@
     },
     {
       "id": 26,
-      "name": "床頭抽屜・櫃門",
+      "name": "投影設備格上櫃・櫃門",
       "angle": 0,
       "target": 0,
-      "openAngle": 1.48,
+      "openAngle": -1.48,
       "blocked": false,
       "sliding": false,
       "electric": false
     },
     {
       "id": 27,
-      "name": "床頭黑玻高櫃・櫃門",
+      "name": "床頭抽屜・櫃門",
       "angle": 0,
       "target": 0,
       "openAngle": -1.48,
@@ -323,7 +319,7 @@
     },
     {
       "id": 28,
-      "name": "床頭黑玻高櫃・櫃門",
+      "name": "床頭抽屜・櫃門",
       "angle": 0,
       "target": 0,
       "openAngle": 1.48,
@@ -333,7 +329,7 @@
     },
     {
       "id": 29,
-      "name": "床頭抽屜・櫃門",
+      "name": "床頭黑玻高櫃・櫃門",
       "angle": 0,
       "target": 0,
       "openAngle": -1.48,
@@ -343,7 +339,7 @@
     },
     {
       "id": 30,
-      "name": "床頭抽屜・櫃門",
+      "name": "床頭黑玻高櫃・櫃門",
       "angle": 0,
       "target": 0,
       "openAngle": 1.48,
@@ -353,26 +349,6 @@
     },
     {
       "id": 31,
-      "name": "床頭黑玻高櫃・櫃門",
-      "angle": 0,
-      "target": 0,
-      "openAngle": -1.48,
-      "blocked": false,
-      "sliding": false,
-      "electric": false
-    },
-    {
-      "id": 32,
-      "name": "床頭黑玻高櫃・櫃門",
-      "angle": 0,
-      "target": 0,
-      "openAngle": 1.48,
-      "blocked": false,
-      "sliding": false,
-      "electric": false
-    },
-    {
-      "id": 33,
       "name": "更衣室窗前矮櫃・櫃門",
       "angle": 0,
       "target": 0,
@@ -382,7 +358,7 @@
       "electric": false
     },
     {
-      "id": 34,
+      "id": 32,
       "name": "更衣室頂天櫃・櫃門",
       "angle": 0,
       "target": 0,
@@ -392,7 +368,7 @@
       "electric": false
     },
     {
-      "id": 35,
+      "id": 33,
       "name": "小包防塵門 110・櫃門",
       "angle": 0,
       "target": 0,
@@ -402,7 +378,7 @@
       "electric": false
     },
     {
-      "id": 36,
+      "id": 34,
       "name": "小包防塵門 150・櫃門",
       "angle": 0,
       "target": 0,
@@ -412,7 +388,7 @@
       "electric": false
     },
     {
-      "id": 37,
+      "id": 35,
       "name": "小包防塵門 190・櫃門",
       "angle": 0,
       "target": 0,
@@ -422,7 +398,7 @@
       "electric": false
     },
     {
-      "id": 38,
+      "id": 36,
       "name": "A區120cm雙開水槽櫃・櫃門",
       "angle": 0,
       "target": 0,
@@ -432,7 +408,7 @@
       "electric": false
     },
     {
-      "id": 39,
+      "id": 37,
       "name": "A區120cm雙開水槽櫃・櫃門",
       "angle": 0,
       "target": 0,
@@ -442,7 +418,7 @@
       "electric": false
     },
     {
-      "id": 40,
+      "id": 38,
       "name": "20cm側拉籃・櫃門",
       "angle": 0,
       "target": 0,
@@ -452,7 +428,7 @@
       "electric": false
     },
     {
-      "id": 41,
+      "id": 39,
       "name": "烘碗機上方80cm雙開櫃・櫃門",
       "angle": 0,
       "target": 0,
@@ -462,8 +438,28 @@
       "electric": false
     },
     {
-      "id": 42,
+      "id": 40,
       "name": "C區80cm收納高櫃・櫃門",
+      "angle": 0,
+      "target": 0,
+      "openAngle": -1.48,
+      "blocked": false,
+      "sliding": false,
+      "electric": false
+    },
+    {
+      "id": 41,
+      "name": "ICNh5123預留櫃・櫃門",
+      "angle": 0,
+      "target": 0,
+      "openAngle": -1.48,
+      "blocked": false,
+      "sliding": false,
+      "electric": false
+    },
+    {
+      "id": 42,
+      "name": "ICNh5123預留櫃・櫃門",
       "angle": 0,
       "target": 0,
       "openAngle": -1.48,
@@ -483,17 +479,17 @@
     },
     {
       "id": 44,
-      "name": "ICNh5123預留櫃・櫃門",
+      "name": "懸吊浴櫃・櫃門",
       "angle": 0,
       "target": 0,
-      "openAngle": -1.48,
+      "openAngle": 1.48,
       "blocked": false,
       "sliding": false,
       "electric": false
     },
     {
       "id": 45,
-      "name": "ICNh5123預留櫃・櫃門",
+      "name": "懸吊浴櫃・櫃門",
       "angle": 0,
       "target": 0,
       "openAngle": -1.48,
@@ -506,7 +502,7 @@
       "name": "懸吊浴櫃・櫃門",
       "angle": 0,
       "target": 0,
-      "openAngle": 1.48,
+      "openAngle": -1.48,
       "blocked": false,
       "sliding": false,
       "electric": false
@@ -523,26 +519,6 @@
     },
     {
       "id": 48,
-      "name": "懸吊浴櫃・櫃門",
-      "angle": 0,
-      "target": 0,
-      "openAngle": -1.48,
-      "blocked": false,
-      "sliding": false,
-      "electric": false
-    },
-    {
-      "id": 49,
-      "name": "懸吊浴櫃・櫃門",
-      "angle": 0,
-      "target": 0,
-      "openAngle": -1.48,
-      "blocked": false,
-      "sliding": false,
-      "electric": false
-    },
-    {
-      "id": 50,
       "name": "後陽台水槽右側頂天收納櫃・櫃門",
       "angle": 0,
       "target": 0,
@@ -552,7 +528,7 @@
       "electric": false
     },
     {
-      "id": 51,
+      "id": 49,
       "name": "後陽台水槽右側頂天收納櫃・櫃門",
       "angle": 0,
       "target": 0,

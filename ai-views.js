@@ -187,7 +187,8 @@
       }
       const label = selected.label || roomName(selected.room);
       $('aiPhotoTitle').textContent = `${proposal.toUpperCase()} · ${label}`;
-      $('aiPhotoNotice').hidden = true;
+      $('aiPhotoNotice').hidden = selected.room !== 'bed';
+      if (selected.room === 'bed') $('aiPhotoNotice').textContent = '主臥模型與AI已同步更新：保留床頭日常檯面，投影機位於外側設備格。AI呈現材質與燈光，尺寸及設備定位以3D為準。';
       image.alt = `${proposal.toUpperCase()} ${label}，AI 設計效果圖`;
       image.src = photoURL(selected);
       status.textContent = '載入 AI 設計效果圖…';

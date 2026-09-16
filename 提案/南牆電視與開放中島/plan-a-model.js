@@ -82,13 +82,7 @@ window.HOME_OPEN_ISLAND_BUILD={
   wallParts.push({m:backing,z:0,h:wallHeight});
   Object.assign(tv.userData,{name:'V4 LG 83吋固定電視',desc:'南牆固定安裝，中心高100cm；主座至螢幕約347cm。線路收在背牆與195×55影音底櫃。'});
   EQ.audio(false);window.HOME_COFFEE_LIFT=EQ.coffee(false);
-  const sofa=EQ.group('V4 朝南L型沙發');sofa.userData.footprint={x:797,y:540,w:240,d:160,facing:'S'};
-  box(797,540,240,95,9,29,M.darkcloth,sofa,'V4 沙發主座');box(949,635,88,65,9,29,M.darkcloth,sofa,'V4 靠窗貴妃段');
-  box(797,540,240,18,38,46,M.cloth,sofa,'V4 沙發背靠');
-  for(const x of [817,883])box(x,560,64,72,38,10,M.cloth,sofa,'V4 主座坐墊');
-  box(951,560,66,137,38,10,M.cloth,sofa,'V4 貴妃長坐墊');box(797,558,18,77,38,26,M.darkcloth,sofa,'V4 左扶手');box(1019,558,18,142,38,26,M.darkcloth,sofa,'V4 右扶手');
-  for(const [x,y] of [[805,548],[1025,548],[805,624],[1025,624],[957,690],[1025,690]])box(x,y,3,3,0,9,M.steel,sofa,'V4 沙發落地腳');
-  for(const x of [819,886,953])box(x,557,61,15,49,30,M.cloth,sofa,'V4 沙發背靠墊');
+  const sofa=window.HOME_SOFA_BUILD({T,M,info,EQ},{version:'v4',facing:'S',backY:540});
   box(782,560,270,310,.3,.7,M.cloth,sofa,'V4 客廳短毛地毯');
   const stools=[];for(const y of [610,710]){
    const g=EQ.group('V4 中島東側活動椅');g.userData.footprint={x:550,y:y-20,w:40,d:40,h:65};
