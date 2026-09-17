@@ -1,26 +1,27 @@
 {
-  "date": "2026-09-11T06:00:51.489Z",
+  "date": "2026-09-17T06:03:55.748Z",
   "method": "LinkeDOM with actual tour, walk, interaction, AI, equipment and furniture UI handlers; camera-only Three.js fixture. No browser layout or GPU rendering.",
   "checks": [
+    "V0: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
     "V1: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
     "V2: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
     "V3: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
     "V4: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
     "Switching versions retains selected room; normal startup returns to whole-home overview",
-    "Four design comparison tabs render correct names, metrics, drawings and 3D links",
+    "Five design comparison tabs render correct names, metrics, drawings and 3D links",
     "viewer-base.css: stylesheet parsed successfully",
     "viewer-ui.css: stylesheet parsed successfully",
     "furniture.css: stylesheet parsed successfully",
-    "V1/V2 full mesh geometry verified separately; four-design UI and shared furniture handlers preserved"
+    "Full mesh geometry verified separately in V0 layout tests; five-design UI and shared furniture handlers preserved"
   ],
   "hashes": {
-    "viewer-ui.js": "7c7486d50197c716d1730930c91d85133ee11365598af35feac17e53f068536a",
+    "viewer-ui.js": "1f3484817e086da206b1b0469e91db3b234d0c0c86602c6ae3718b30d2d6d1c2",
     "viewer-ui.css": "23a57edb2130ddaebd798c2488bbbc3b4d0ac7e9231578a0a0ce70b88abb2769",
     "viewer-base.css": "2455daac4025c3d2badaf30720a50bf7e4edad3823103feab684dec860cc1648",
-    "walk.js": "ef9c6f482339c22ca674b60f70a8907e84a91d221c3168b4d6ceff8100aee4d8",
-    "furniture-app.js": "6fd58613f3aea7530eff650608191a57253d60dc6994f0f6d11345dc32529993",
+    "walk.js": "0b1bac8d68dcb9860a37516626779391f19387c361d0a897321b7700ed4f2687",
+    "furniture-app.js": "cb536313d046775b2d4710b05533762698ac75a3683281c288cde483b02b54ed",
     "furniture.css": "c662300e4e3b00fe2c3ebb2eebfa5a648aecce1863a7b02494e8f6a3b862ebd2",
-    "index.html": "2bf0ede055d82b5783ecbe093e8b9581b1673991bd5f365a04460bec9d8c77ff",
-    "提案/旋轉電視與直線中島/index.html": "f20a8a9b366d70b33d60999d3bb2b4e96615283f4c5a71b40701d6cc2b2f88b0"
+    "index.html": "ad1c3e740eadd16a138e2896bf63a08257dc71e7e36ff798dffed27565ded2ee",
+    "提案/旋轉電視與直線中島/index.html": "7465483a28ed8b9485e31c57ec5fbbf0abb334071b6e5c1cc87724e280c7c933"
   }
 }

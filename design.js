@@ -1,3 +1,124 @@
+// V1-R05 owner-approved configuration; centimetres are proposal model values.
+// This factory runs only for current V1; V0 follows its original geometry path.
+window.HOME_R05_BUILD=function({T,M,pos,box,cyl,ball,info,fittings,architecture,line,IS}){
+ const revision='V1-R05',groups={},proxies=[],stools=[];
+ const makeMat=(hex,r=.75,m=0)=>new T.MeshStandardMaterial({color:new T.Color(hex).convertSRGBToLinear(),roughness:r,metalness:m});
+ const finishes={wood:makeMat('#443a32'),graphite:makeMat('#343c40'),back:makeMat('#666a68'),metal:makeMat('#737d85',.38,.75),fabric:makeMat('#535a60',.95),box:makeMat('#8c7760'),warm:new T.MeshBasicMaterial({color:'#ffe2b5'}),cool:new T.MeshBasicMaterial({color:'#dbeaff'})};
+ function group(id,label){const g=new T.Group();g.name=label;g.userData={reviewRevision:revision,reviewGroup:id};fittings.add(g);groups[id]=g;return g;}
+ function b(g,x,y,w,d,z,h,mat,label,extra={}){const o=box(x,y,w,d,z,h,mat,g,label);o.userData={...o.userData,reviewRevision:revision,reviewFinish:Object.keys(finishes).find(k=>finishes[k]===mat),...extra};return o;}
+ function leaf(g,x,y,w,d,z,h,mat,label,face='N'){const o=b(g,x,y,w,d,z,h,mat,label);o.userData.swingFront={name:label,face,hinge:'min'};return o;}
+ function figure(g,x,y,z,i,large){const W=large?40+(i%3)*4:16,D=large?30+(i%2)*6:12,H=large?35+(i%3)*10:23;
+  const proxy=new T.Group();proxy.name=(large?'大型公仔尺寸代理 ':'小型公仔示意 ')+(i+1);proxy.userData={reviewRevision:revision,reviewKind:large?'large-figure':'small-figure',envelope:{w:W,d:D,h:H},status:'顧問測試外形，非實品尺寸'};g.add(proxy);
+  b(proxy,x-W/2,y-D/2,W,D,z,3,finishes.graphite,proxy.name+' 底座');
+  const body=b(proxy,x-7,y-5,14,10,z+3,H-13,finishes.metal,proxy.name+' 本體');body.rotation.y=(i%2?.18:-.18);
+  ball(x,y,z+H-5,5,4,5,M.grey,proxy);proxies.push(proxy);return proxy;
+ }
+ // R05: remove the two aisle stands, including their inspection envelopes.
+ const removed=[];fittings.traverse(o=>{if(o.name.startsWith('耳平環繞 Ci160QR ')||o.userData.name==='環繞固定與背腔待核')removed.push(o);});
+ removed.forEach(o=>o.parent.remove(o));
+ const surrounds=group('surrounds','R05 背架承托小型環繞・候選形式');
+ for(const [i,x] of [809,1025].entries()){
+  const y=480.6,g=new T.Group();g.name='R05 小型完整音箱 '+(i+1);surrounds.add(g);
+  g.userData.speakerProposal={reference:'Focal Dôme Flax 外形參考，未核定採購',w:14.4,d:14.3,h:17.2,baseHeight:90,orientation:'直向客廳，轉向後包絡待核'};
+  b(g,x-8,y-8,16,16,72,1,finishes.graphite,'R05 背架上隔振底板');
+  b(g,x-1.5,y-1.5,3,3,73,16,finishes.graphite,'R05 家具連接短柱・中空理線');
+  b(g,x-7.3,y-7.3,14.6,14.6,89,1,finishes.graphite,'R05 音箱承台');
+  const base=cyl(x,y,90,5.5,2.8,finishes.graphite,g);info(base,'R05 小型音箱原廠底座外形示意','本體外形參考原廠172×144×143mm；下方18cm短柱為顧問提案，家具連接、隔振及抗傾由家具／影音商確認。');base.userData.reviewFinish='graphite';
+  const shell=ball(x,y,100,7.2,7.15,7.2,finishes.graphite,g);info(shell,'R05 小型音箱箱體示意','外形參考用；不能把原嵌入式單體直接縮小放入，聲學與型號未核定。');shell.userData.reviewFinish='graphite';
+  const face=new T.Mesh(new T.CircleGeometry(5.6,32),M.rubber);face.position.copy(pos(x,y+7.15,100));g.add(face);info(face,'R05 環繞面網','直向客廳；方向、聲壓與分頻待試聽調校。');
+ }
+ // Declared proposal: same opening (x788..872), surface sliding panel over fixed glass.
+ let oldDoor;architecture.traverse(o=>{if(o.userData.interactiveDoor?.name==='書房玻璃門')oldDoor=o;});
+ if(!oldDoor)throw Error('Missing study door');oldDoor.parent.remove(oldDoor);
+ const sliding=new T.Group();sliding.name='R05 書房外側吊軌門';sliding.userData.slidingDoor={name:'R05 書房吊軌門・待核定',key:'study-slide-r05',axis:'x',distance:-94};architecture.add(sliding);
+ const slide=(x,y,w,d,z,h,mat,name)=>{const m=b(sliding,x,y,w,d,z,h,mat,name);m.userData.slideRatio=1;m.userData.walkDoor=true;return m;};
+ slide(784,379,92,1.2,0,215,M.glass,'R05 書房滑門玻璃示意');
+ for(const x of [784,874])slide(x,378.8,2,1.6,0,215,finishes.graphite,'R05 書房滑門直框');
+ for(const z of [0,213])slide(784,378.8,92,1.6,z,2,finishes.graphite,'R05 書房滑門橫框');
+ slide(867,380.4,2,4.6,94,20,finishes.graphite,'R05 滑門外側拉手');
+ const rail=group('study-track','R05 吊軌門固定軌道・專業深化');
+ b(rail,782,376,190,10,215,5,finishes.graphite,'R05 上吊軌與承重預留',{status:'軌道承重、止擺、緩衝、夾傷與隔音封邊待專業確認'});
+ const display=group('display','R05 整段同深展示牆');
+ const segments=[{x:220,w:240,n:4},{x:460,w:90,n:1}];
+ for(const s of segments){const pitch=(s.w-2)/s.n;
+  b(display,s.x,801.2,s.w,1.8,0,275,finishes.back,'R05 平整背板，後界 y803');
+  for(let i=0;i<=s.n;i++)b(display,s.x+i*pitch,753,2,48.2,0,275,finishes.graphite,'R05 展示櫃直框');
+  for(const z of [0,58,130,202,273])b(display,s.x,753,s.w,48.2,z,2,finishes.graphite,'R05 展示水平結構');
+  for(let i=0;i<s.n;i++){
+   const x=s.x+i*pitch+2,w=pitch-2;
+   leaf(display,x+.3,753,w-.6,1.2,3,54,finishes.wood,'R05 展示下部封閉備品 '+x);
+   leaf(display,x+.3,753,w-.6,1.2,205,67,finishes.graphite,'R05 展示上部封閉備品 '+x);
+   for(let level=0;level<2;level++){
+    const z=60+72*level,id=(s.x===220?i:4)+5*level;
+    leaf(display,x+.3,753,w-.6,1,z,70,M.glass,'R05 大型展示格 '+(id+1));
+    b(display,x+2,758,w-4,1,z+67,.6,finishes.warm,'R05 展示遮光燈帶');
+    b(display,x+1,756,w-2,1,z+66,2,finishes.graphite,'R05 展示防眩唇');
+    figure(display,x+w/2,776,z,id,true);
+   }
+  }
+ }
+ // Door, structural wall and public front stay put. Rear at y803 has no extra jamb margin.
+ const store=group('collection-storage','R05 收藏室開放備藏');
+ for(const yy of [803,872.6,953.2])b(store,220,yy,60,1.8,0,245,finishes.graphite,'R05 側向備藏側板');
+ b(store,220,803,1.8,152,0,245,finishes.wood,'R05 側向備藏背板');
+ for(const z of [0,91.8,171.6,243.2])b(store,221.8,804.8,58.2,148.4,z,1.8,finishes.graphite,'R05 行李與箱藏層板');
+ for(const x of [280,356.6,433.2])b(store,x,905,1.8,50,0,245,finishes.graphite,'R05 後牆备藏直板');
+ b(store,280,953.2,155,1.8,0,245,finishes.wood,'R05 後牆備藏背板');
+ for(const z of [0,91.8,171.6,243.2])b(store,281.8,905,151.4,48.2,z,1.8,finishes.graphite,'R05 後牆備藏層板');
+ b(store,358.4,905,74.8,48.2,208,1.8,finishes.graphite,'R05 包盒加層');
+ function carton(x,y,z,w,d,label){const o=b(store,x,y,w,d,z,73,finishes.box,label,{reviewKind:'carton-proxy',status:'70×40×73 外箱包絡假設，非實測'});b(store,x+w*.47,y+.1,w*.06,d-.2,z+73,.15,finishes.wood,label+' 膠帶');return o;}
+ carton(230,878,93.6,40,70,'R05 大外箱試排 1');carton(284,910,1.8,70,40,'R05 大外箱試排 2');carton(360,910,1.8,70,40,'R05 大外箱試排 3');carton(284,910,93.6,70,40,'R05 大外箱試排 4');
+ for(const [y,d] of [[809,60],[879,65]]){b(store,231,y,40,d,1.8,78,finishes.graphite,'R05 行李箱外形假設');b(store,270,y+8,1,d-16,10,58,finishes.metal,'R05 行李箱飾條');}
+ for(const [x,y,z,w,d,h] of [[229,809,93.6,39,47,29],[229,809,125,39,47,28],[361,910,93.6,31,30,25],[395,910,93.6,31,30,25],[361,910,123,64,30,29],[288,910,173.4,33,30,30],[325,910,173.4,26,30,30],[362,910,173.4,64,30,30],[288,910,211,63,30,26],[362,910,211,64,30,26]])b(store,x,y,w,d,z,h,finishes.back,'R05 小包盒體積示意',{reviewKind:'bag-box-proxy',status:'非實物清點或容量保證'});
+ // Owner's sketch places two stools outside the arc. Keep original high glass display.
+ // Only the non-equipment outer shell is recessed for knees; appliance positions stay fixed.
+ const dining=group('dining','V1 圓弧外側兩席・依業主示意');
+ const center=[524.8,518.1],outer=IS.south;
+ const i0=outer.findIndex(p=>p[0]===547.5),i1=outer.findIndex(p=>p[0]===643.82);
+ const angle=p=>Math.atan2(p[0]-center[0],p[1]-center[1]);
+ if(i0<0||i1<0)throw Error('Missing curved counter knots');
+ const arc=outer.slice(i0,i1+1),theta0=angle(arc[0]),theta1=angle(arc.at(-1));
+ const island=fittings.children.find(g=>g.name==='曲線設備中島'),skins=[];
+ island.traverse(o=>{if(!o.isMesh||!o.userData.islandExterior)return;const q=angle([o.position.x+482.5,o.position.z+480]);if(q>theta0&&q<theta1)skins.push(o);});skins.forEach(o=>o.parent.remove(o));
+ const inward=p=>{const v=[p[0]-center[0],p[1]-center[1]],r=Math.hypot(...v);return p.map((x,i)=>x-v[i]*25/r);};
+ function segment(a,c,z,h,name,mat=finishes.graphite,th=1.6){const dx=c[0]-a[0],dy=c[1]-a[1],len=Math.hypot(dx,dy);const m=b(dining,(a[0]+c[0])/2-th/2,(a[1]+c[1])/2-len/2,th,len,z,h,mat,name);m.rotation.y=Math.atan2(dx,dy);return m;}
+ for(let i=1;i<arc.length;i++)segment(inward(arc[i-1]),inward(arc[i]),0,88,'V1 圓弧留膝內縮背板');
+ for(const p of [arc[0],arc.at(-1)])segment(inward(p),p,0,88,'V1 留膝側收口');
+ for(const i of [0,Math.floor(arc.length/2),arc.length-1])segment(inward(arc[i]),arc[i],88,4,'V1 檯下補強示意・待工程設計',finishes.graphite,3);
+ for(const [i,deg] of [23,46].entries()){
+  const a=deg*Math.PI/180,n=[Math.sin(a),Math.cos(a)],cx=center[0]+174*n[0],cy=center[1]+174*n[1];
+  const g=group('stool-'+i,'V1 圓弧外側圓凳 '+(i+1));g.userData.seatNormal=n;
+  for(const [z,r,h,mat,label] of [[0,18,1.2,finishes.graphite,'止滑底座'],[1.2,2.5,58.8,finishes.graphite,'支柱'],[60,20,5,finishes.fabric,'65cm高圓凳座面']]){const m=cyl(cx,cy,z,r,h,mat,g);info(m,'V1 '+label,'依業主外弧兩席示意試排；Ø40座面、座高65cm為提案外形，未選商品。');m.userData.reviewFinish=mat===finishes.fabric?'fabric':'graphite';}
+  const foot=new T.Mesh(new T.TorusGeometry(13.5,.8,8,32),finishes.graphite);foot.rotation.x=Math.PI/2;foot.position.copy(pos(cx,cy,27));g.add(foot);foot.userData.reviewFinish='graphite';stools.push(g);
+ }
+ const study=group('study-storage','R05 書房六抽與低位常用櫃');
+ b(study,755,180,2,185,0,245,finishes.wood,'R05 書房櫃背');
+ for(const y of [180,240.7,302.3,363.2])b(study,757,y,34,1.8,0,245,finishes.graphite,'R05 書房直板');
+ for(const z of [7,74,140,184,243.2])b(study,757,180,34,185,z,1.8,finishes.graphite,'R05 書房固定層板');
+ for(const z of [38,106])b(study,757,181.8,34,58.9,z,1.8,finishes.graphite,'R05 常用書層板');
+ leaf(study,791,181.8,1.2,58.5,8,130,finishes.wood,'R05 常用書與耗材門','E');
+ for(let i=1;i<3;i++)for(let k=0;k<3;k++)b(study,791,181.8+i*61.6,1.2,58.5,8+k*22,20.5,finishes.graphite,'R05 書房六抽抽面',{status:'抽屜拉出及五金待深化'});
+ for(let i=0;i<3;i++){
+  leaf(study,791,181.8+i*61.6,1,58.5,i?76:142,i?107:41,M.glass,'R05 書房展示門 '+i,'E');
+  leaf(study,791,181.8+i*61.6,1.2,58.5,186,57,finishes.graphite,'R05 高位歸檔門 '+i,'E');
+  b(study,787,184+i*61.6,1,54,180,1,finishes.cool,'R05 書房展示工作白光');
+ }
+ for(const y of [250,313]){b(study,759,y,30,46,112,1.8,finishes.graphite,'R05 中小型展示加層');figure(study,773,y+23,114,y===250?0:1,false);}
+ b(study,765,20,12,145,62,5,finishes.graphite,'R05 書桌一桌下理線槽');b(study,924,341,145,12,62,5,finishes.graphite,'R05 書桌二桌下理線槽');
+ const daily=group('daily','R05 日常收納與光線細節');
+ b(daily,850,474,34,14,73,8,finishes.wood,'R05 沙發背架遙控收納盒');
+ // Close the existing small open shoe bay on the entrance side, without increasing its 90cm height.
+ leaf(daily,676,802.2,32,1,8,79,finishes.wood,'R05 玄關矮櫃鞋格門','S');
+ // Top shelves remain above everyday reach; small seasonal boxes only, no large carton credit.
+ for(const yy of [137,179,221])b(daily,695,yy,43,32,217,21,finishes.fabric,'R05 更衣室換季布盒',{status:'布盒外形假設；不阻擋滑鏡與下部抽屜'});
+ // Mirror-edge task lights, on the existing mirror plane; no wet-area or drain relocation.
+ for(const xx of [-74,52])b(daily,xx,480.4,1.2,1,104,72,finishes.warm,'R05 主浴鏡側補光');
+ for(const xx of [497,559])b(daily,xx,218.2,1.2,1,104,72,finishes.warm,'R05 客浴鏡側補光');
+ b(daily,-188,497.8,60,1,184,.8,finishes.cool,'R05 家務水槽補光');
+ // Existing furniture, plumbing and wet-area boundaries are preserved; material patches run after shared finishes.
+ window.HOME_R05={revision,groups,proxies,stools,finishes,pulled:false,setDiningPulled(open){this.pulled=!!open;stools.forEach(g=>{g.position.x=open?g.userData.seatNormal[0]*20:0;g.position.z=open?g.userData.seatNormal[1]*20:0;});window.HOME_WALK?.refreshColliders?.();window.HOME_REALISM?.invalidate?.();return this.pulled;},dimensions:{display:{x:220,y:753,w:330,d:50,h:275,back:803},highDisplay:{x:404.8,y:468.1,w:260,d:30,h:275},kneeRecess:25,cartons:4}};
+};
+
 'use strict';
 (() => {
 const $=id=>document.getElementById(id), D=window.HOME_DATA, T=window.THREE;
@@ -166,9 +287,7 @@ for(const z of levels){box(x+2,y+2,w-4,d-4,z,1,M.glass,g);line(x+3,front==='N'?y
 for(let k=0;k<n;k++){const cx=x+(k+.5)*w/n,cy=y+d/2;if(bags||z<85){box(cx-12,cy-6,24,12,z+2,18,k%2?M.grey:M.black,g);const hnd=new T.Mesh(new T.TorusGeometry(6,.7,6,18,Math.PI),M.steel);hnd.position.copy(pos(cx,cy,z+23));g.add(hnd);}else{cyl(cx,cy,z+2,7,2,M.black,g);box(cx-4,cy-3,8,6,z+4,12,M.white,g);ball(cx,cy,z+20,5,4,5,M.grey,g);box(cx-8,cy-2,4,4,z+7,12,M.steel,g);box(cx+4,cy-2,4,4,z+7,12,M.steel,g);}}}
 return g;}
 if(original)original.storage(originalContext);else{
-EQ.luggage();
-display(215,753,245,40,245,'收藏室連續展示面','N');
-display(460,753,90,40,245,'玄關延伸玻璃展示櫃','N');display(275,905,160,50,245,'收藏室精品包櫃','N',true);
+// V1 collection replaced by owner-approved R05.
 }
 // Owner-confirmed island north-side 260 x 30 floor-to-ceiling double-sided glass display.
 const doubleGlass=new T.Group();doubleGlass.name='中島頂天雙面玻璃櫃';doubleGlass.position.set(-.2,0,8.1);fittings.add(doubleGlass);
@@ -235,11 +354,13 @@ EQ.allowance('書桌2最高桌面128cm・螢幕及支架使用包絡',922,290,14
 }
 function chair(x,y,rot=0,white=false){const g=new T.Group();g.position.copy(pos(x,y,0));g.rotation.y=rot;fittings.add(g);function b(px,pz,w,d,z,h,m){const mesh=new T.Mesh(new T.BoxGeometry(w,h,d),m);mesh.position.set(px+w/2,z+h/2,pz+d/2);g.add(mesh);return mesh;}const cloth=white?M.linen:M.darkcloth;info(b(-24,-23,48,46,45,7,cloth),'LiberNovo Omni PRO · 坐姿預排','依清單黑／白兩張。座深與五爪腳、160°後仰外徑未齊；此為外觀預排，未宣稱後仰通道已通過。');b(-24,18,48,7,52,48,cloth);b(-12,18,24,7,104,14,cloth);b(-3,-3,6,6,10,35,M.steel);for(let i=0;i<5;i++){const a=i*Math.PI*2/5;const leg=b(-1,-1,2,32,8,2,M.steel);leg.rotation.y=a;leg.position.x=Math.sin(a)*16;leg.position.z=Math.cos(a)*16;const wheel=b(Math.sin(a)*32-2,Math.cos(a)*32-2,4,4,0,8,M.rubber);}for(let j=0;j<5;j++)b(-21,17.5,42,2,58+j*8,5,white?M.white:M.grey);b(-4,23,8,3,76,30,M.steel);b(-30,-10,5,32,64,4,M.steel);b(25,-10,5,32,64,4,M.steel);}
 if(original)original.study(originalContext);else{chair(875,100,Math.PI/2);chair(980,243,Math.PI,true);}
+if(original){
 box(759,184,28,177,0,8,M.black,fittings,'書房抽屜櫃內縮踢腳');box(755,180,36,185,8,67,M.black);for(let i=0;i<3;i++)for(let j=0;j<3;j++){panel(791,181+i*61.3,1,59.8,9+j*22,20.5,M.steel,'書房九抽收納');}
 // Build the study cabinet directly on the west wall, facing east.
 panel(755,180,2,185,75,110,M.black);panel(790,180,1,185,75,110,M.glass,'書房模型玻璃門');for(let z=75;z<=185;z+=36){box(755,180,36,185,z,1.5,M.glass);line(780,181,z-1.3,1,183);box(783,181,1,183,z-2,2,M.steel,fittings,'書房展示層板遮光收邊');if(z+30>185)continue;for(let yy=207;yy<365;yy+=61){box(767,yy,8,8,z+2,18,M.grey);ball(771,yy+4,z+25,5,5,5,M.white);}}
 for(let yy=180;yy<=365;yy+=61)box(789,yy,2,2,75,110,M.steel);
 for(let z=185;z<245;z+=28){box(755,180,36,185,z,2,M.steel);for(let yy=184;yy<360;yy+=8)box(760,yy,24,5,z+2,20,[M.grey,M.black,M.white][Math.floor(yy/8)%3]);}box(755,180,2,185,185,60,M.black);
+}
 // Walk-in closet: open steel shelving and rails instead of solid white masses.
 function wardrobe(x,y,w,d,face){const along=w>d;box(x,y,w,d,0,8,M.black);box(x,y,w,d,240,3,M.black);if(along){box(x,y,2,d,0,245,M.steel);box(x+w-2,y,2,d,0,245,M.steel);}else{box(x,y,w,2,0,245,M.steel);box(x,y+d-2,w,2,0,245,M.steel);}for(const z of [100,205]){if(along){box(x+4,y+d/2,w-8,2,z,2,M.steel);for(let xx=x+10;xx<x+w-5;xx+=10){box(xx,y+9,3,d-18,z-67,61,(xx/10)%2?M.cloth:M.grey);box(xx+1,y+d/2+.5,1,1,z-6,6,M.steel,fittings,'更衣吊衣連接件');}}else{box(x+w/2,y+4,2,d-8,z,2,M.steel);for(let yy=y+10;yy<y+d-5;yy+=11){box(x+9,yy,w-18,3,z-67,61,(yy/11)%2?M.grey:M.darkcloth);box(x+w/2+.5,yy+1,1,1,z-6,6,M.steel,fittings,'更衣吊衣連接件');}}}info(box(x,y,w,d,215,2,M.steel),'開放式更衣櫃','55cm深；開放吊衣配置依既有規劃，衣物為示意。');}
 info(wall(555,80,60,40,275),'更衣室管道間','按客變輪廓補入，60×40cm原圖配準輪廓，截面待複量。','客變P-02');EQ.closet();wardrobe(690,130,55,130,'W');wardrobe(580,205,110,55,'N');EQ.closetMirror();{
@@ -333,6 +454,7 @@ for(const [x,y,w,d,z,name] of [[755,0,36,365,245,'書房整面櫃頂封板'],[58
 
 EQ.finish();
 // BEGIN INTERIOR FINISH
+if(!original)window.HOME_R05_BUILD({T,M,pos,box,cyl,ball,info,fittings,architecture,line,IS});
 // Runs inside the model closure. Physical finishes use centimetre-scaled UVs.
 let finishSeed=7291;
 function finishRandom(){finishSeed=(1664525*finishSeed+1013904223)>>>0;return finishSeed/4294967296;}
@@ -408,7 +530,7 @@ if(original){const notes={entry:{p:[635,930,160],t:[511,831,110],note:'原圖側
 ROOMS.slice(1).forEach(r=>roomLabel(r.n,...r.label));
 function updateWalls(){const cut=$('cut').checked;wallParts.forEach(({m,z,h})=>{const hh=cut?Math.max(0,Math.min(z+h,85)-z):h;m.visible=hh>.1;m.scale.y=hh/h;m.position.y=z+hh/2;});beams.visible=$('ceiling').checked;ceiling.visible=$('ceiling').checked;labels.visible=$('labels').checked;window.HOME_REALISM?.invalidate();}
 function applyCam(){camera.position.set(center.x+radius*Math.sin(pol)*Math.cos(az),center.y+radius*Math.cos(pol),center.z+radius*Math.sin(pol)*Math.sin(az));camera.lookAt(center);}
-function selectRoom(id){camera.fov=['closet','collection','bath1','bath2','storage'].includes(id)?65:(id==='island'?55:48);camera.updateProjectionMatrix();current=id;const r=ROOMS.find(r=>r.id===id);center.copy(pos(r.t[0],r.t[1],id==='all'?r.t[2]:165));const p=pos(r.p[0],r.p[1],id==='all'?r.p[2]:165),v=p.clone().sub(center);radius=v.length();pol=Math.acos(v.y/radius);az=Math.atan2(v.z,v.x);camera.fov=id==='all'?48:55;camera.updateProjectionMatrix();$('cut').checked=id==='all';$('ceiling').checked=id!=='all';$('labels').checked=id==='all';mode=id==='all'?'orbit':'look';$('orbit').classList.toggle('active',mode==='orbit');$('look').classList.toggle('active',mode==='look');$('roomtitle').textContent=r.n;$('roomnote').textContent=r.note;document.querySelectorAll('#rooms button').forEach(b=>b.classList.toggle('active',b.dataset.id===id));$('hint').textContent=id==='all'?'拖曳旋轉 · 右鍵拖曳平移 · 滾輪縮放 · 點選物件看規格':'拖曳環視 · W/A/S/D 移動 · 滾輪前後移動 · 可切回旋轉或其他房間';updateWalls();applyCam();window.dispatchEvent(new CustomEvent('roomchange',{detail:id}));}
+function selectRoom(id){camera.fov=['closet','collection','bath1','bath2','storage'].includes(id)?65:(id==='island'?55:48);camera.updateProjectionMatrix();current=id;const r=ROOMS.find(r=>r.id===id);center.copy(pos(r.t[0],r.t[1],(!original&&window.HOME_R05)?r.t[2]:(id==='all'?r.t[2]:165)));const p=pos(r.p[0],r.p[1],(!original&&window.HOME_R05)?r.p[2]:(id==='all'?r.p[2]:165)),v=p.clone().sub(center);radius=v.length();pol=Math.acos(v.y/radius);az=Math.atan2(v.z,v.x);camera.fov=id==='all'?48:(!original&&window.HOME_R05&&r.reviewFov?r.reviewFov:55);camera.updateProjectionMatrix();$('cut').checked=id==='all';$('ceiling').checked=id!=='all';$('labels').checked=id==='all';mode=id==='all'?'orbit':'look';$('orbit').classList.toggle('active',mode==='orbit');$('look').classList.toggle('active',mode==='look');$('roomtitle').textContent=r.n;$('roomnote').textContent=r.note;document.querySelectorAll('#rooms button').forEach(b=>b.classList.toggle('active',b.dataset.id===id));$('hint').textContent=id==='all'?'拖曳旋轉 · 右鍵拖曳平移 · 滾輪縮放 · 點選物件看規格':'拖曳環視 · W/A/S/D 移動 · 滾輪前後移動 · 可切回旋轉或其他房間';updateWalls();applyCam();window.dispatchEvent(new CustomEvent('roomchange',{detail:id}));}
 ROOMS.forEach(r=>{const b=document.createElement('button');b.dataset.id=r.id;b.innerHTML=`<span>${r.n}</span><small>${r.en}</small>`;b.onclick=()=>selectRoom(r.id);$('rooms').appendChild(b);});
 ['cut','ceiling','labels'].forEach(id=>$(id).onchange=updateWalls);
 $('glass').onchange=()=>{wallParts.forEach(({m})=>{if(m.userData.study)m.material=$('glass').checked?M.white:M.glass;});};

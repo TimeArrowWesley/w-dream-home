@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20260916-sofa-bedside",
-  "updatedAt": "2026-09-16",
+  "revision": "20260917-v1-r05",
+  "updatedAt": "2026-09-17",
   "source": {
     "title": "W夢想之家家具設備規格表",
     "url": "https://claude.ai/code/artifact/8efebff0-f6bf-4b4d-8099-99282e849203",
@@ -362,7 +362,7 @@
       "brand": "KEF 整套 9 支\n前 L／R：Q7 Meta 落地\n中置：Q6 Meta Satin\n環繞 ×2＋天空 ×4：Ci160QR",
       "specs": "逐項台灣報價：Q7 Meta 落地 L／R 75,000（名展音響）· Q6 Meta Satin 中置 31,000 · Ci160QR 嵌入式 14,960／支 × 6 ＝ 89,760（禾木音響）\n前三聲道同為 Q Meta 系列——聲音在畫面左右移動時音色一致，這是整套最該統一的地方\n天花 6 支同為 Ci160QR（6.5 吋 Uni-Q 同軸），環繞與天空共用同型號，離軸擴散均勻\n下單前確認兩件：Q7／Q3 標價是「一對」還是「一支」（書架與落地通常標一對，中置標一支）；Q6 Meta 中置的實際尺寸須能塞進電視櫃內開口——先定櫃體圖再下單",
       "priceText": "195,760",
-      "notes": "",
+      "notes": "後環繞已與原報價組合不同，待影音商重配與報價；不可據舊總額下單。",
       "status": "待確認",
       "includeInBudget": true,
       "modelKeys": [
@@ -370,7 +370,7 @@
         "q6"
       ],
       "modelSearch": [],
-      "currentNote": "模型含固定Q7左右主喇叭、Q6中置、兩只落地支架環繞及四只天花聲道示意。旋轉版的喇叭不跟電視旋轉。",
+      "currentNote": "V1 R05：前方Q7／Q6與天空聲道位置沿用；後方兩支改沙發背架承托的小型完整音箱，移除通道落地支架。模型以Focal Dôme外形試排，未核定品牌、採購、聲學或家具固定。195,760為舊KEF組合的歷史報價，不是本次新組合報價；需重新詢價。V0／V2／V3／V4保留其原配置。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1846,7 +1846,7 @@
       "modelSearch": [
         "書房九抽收納"
       ],
-      "currentNote": "左牆展示／九抽櫃已補落地踢腳，移除穿入頂層的公仔；九抽木色門片改深灰棕直紋木皮。",
+      "currentNote": "V1 R05：原九抽調整為六抽＋低位常用書櫃、上部封閉歸檔；櫃體外形755～792.2×y180～365×H245cm為模型值，抽屜五金及實物尺寸待深化。其他版本保留原配置。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1942,7 +1942,7 @@
       "modelSearch": [
         "收藏室行李箱門"
       ],
-      "currentNote": "行李箱收納與公共展示櫃內側改淺霧灰。",
+      "currentNote": "V1 R05：收藏室內開放層架試放原兩件行李代理與四組70×40×73cm大外箱包絡。業主接受箱子套疊但不拆平；實測套疊組數及取物仍待核定，非容量保證。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1968,7 +1968,7 @@
         "收藏室連續展示面",
         "玄關延伸玻璃展示櫃"
       ],
-      "currentNote": "公共展示櫃維持40cm外深，客廳面y753不往內移10cm；玄關延伸玻璃櫃接續，收藏室內側完成面另用淺灰。",
+      "currentNote": "V1 R05：公共展示面沿原y753向內加深至y803，整段背面平齊；共五列×兩層大型展示格，上下封閉備藏。中央高玻璃櫃保留。公仔十座是確認数量，淨尺寸及玻璃承重未核定；舊木作金額非新設計報價。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -2039,6 +2039,31 @@
       "archived": false,
       "original": null,
       "sourceAxId": null
+    },
+    {
+      "id": "v1-r05-island-stools",
+      "room": "island",
+      "name": "中島外弧圓凳 ×2",
+      "brand": "型號待選",
+      "specs": "V1 R05 模型試排：無靠背圓凳，座面Ø40cm、座高65cm、腳踏環；對應檯高95cm。實品尺寸、穩定性與坐感待選樣。",
+      "priceText": "待報價",
+      "notes": "費用屬家具範圍；未報價不作零元承諾。",
+      "status": "待確認",
+      "includeInBudget": true,
+      "modelKeys": [],
+      "modelSearch": [
+        "V1 圓弧外側圓凳 1",
+        "V1 圓弧外側圓凳 2"
+      ],
+      "currentNote": "業主示意已確認沿中島外側圓弧兩席，非內側餐翼。模型提供向外拉20cm檢查；檯下留膝內縮25cm是顧問建議，需廚具商確認。",
+      "modelDirty": false,
+      "archived": false,
+      "original": {
+        "name": "中島外弧圓凳 ×2",
+        "brand": "型號待選",
+        "specs": "2026-09-17 依業主位置示意新增",
+        "priceText": "待報價"
+      }
     }
   ],
   "pending": [

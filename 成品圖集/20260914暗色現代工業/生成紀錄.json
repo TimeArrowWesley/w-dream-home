@@ -1,17 +1,69 @@
 {
-  "date": "2026-09-16",
-  "sourceRevision": "20260916-integrated-sofa-bedside",
+  "date": "2026-09-17",
+  "sourceRevision": "20260917-v1-r05",
   "versionSources": {
-    "v0": "20260916-integrated-sofa-bedside",
-    "v1": "20260916-integrated-sofa-bedside",
-    "v2": "20260916-integrated-sofa-bedside",
-    "v3": "20260916-integrated-sofa-bedside",
-    "v4": "20260916-integrated-sofa-bedside"
+    "v0": {
+      "capturedAt": "2026-09-15",
+      "basis": "格局.pdf original plan; shared current equipment and controls",
+      "sourceFileSha256": {
+        "design.js": "93812d675eda2e61d49eebc34e3ec4d72d0fa64fb5265be54e7ba4dfdb76297b",
+        "model-data.js": "67d6570cb6cec9066a836a6db69ba176e6627616cbd1ca1dad3e61457ff71674",
+        "equipment-models.js": "84be4735e0f437638c47d60dbb53268e92b86362098912aae1024cd8402dd9ab",
+        "bedroom-model.js": "b64a4ca942cf48badc3618c7bc0476eabebebf687b4f8e9ab645f1dc72ee9333",
+        "industrial-design.js": "ab87ec1403013f113c9819cad1e0429b6c80c7e9fefab4ad005a703ac4081bb8",
+        "flooring.js": "9ccac5fc7461eea71fe3012e7ce08e4d672e5889ee0fc44e33e66b3c520eb044",
+        "提案/原始格局/layout-spec.js": "bbd9b5a3b69b44892ed3ceca579010a570a0cdc22adda3d6b2176ad29e1b1d81",
+        "提案/原始格局/original-model.js": "779de7e03767932a608689e9e11523f1b0010c20d393e3016d57505406a2c9bb"
+      }
+    },
+    "v1-v4": {
+      "sourceRevision": "e028e0fe82eedefaacc6f0e1d037a924aef65de5",
+      "capturedAt": "2026-09-14/15",
+      "retained": true
+    },
+    "entryFan": {
+      "date": "2026-09-15",
+      "sourceRevision": "8f9614b6210758e108ae6a9b1811cf87f11c1b08",
+      "stationCm": [
+        606.5,
+        925,
+        165
+      ],
+      "station": "大門中心跨入門內30cm",
+      "entryOpeningCm": {
+        "xMin": 553,
+        "xMax": 660,
+        "thresholdY": 955
+      },
+      "distanceInsideDoorCm": 30,
+      "labels": [
+        "左",
+        "左前",
+        "正前",
+        "右前",
+        "右"
+      ],
+      "headings": [
+        180,
+        -135,
+        -90,
+        -45,
+        0
+      ],
+      "fov": 70,
+      "total": 25,
+      "modelViewsInspected": 25,
+      "stationCollisionCheckedForAllVersions": true,
+      "browserVisualQA": false,
+      "note": "保留大門側結構柱與玄關櫃的實際遮擋；不為取景移除模型。",
+      "other165ViewsUnchanged": true
+    },
+    "v1": "20260917-v1-r05; original full-height glass, exterior arc seating, whole-home R04 adjustments"
   },
   "sourceMethod": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "generationTool": "Built-in image_gen",
   "viewSlots": 190,
-  "uniqueImages": 109,
+  "uniqueImages": 126,
   "records": [
     {
       "key": "v0-collection-A",
@@ -292,10 +344,10 @@
       "key": "v1-back-A",
       "usedBy": [
         "v0-back-A",
-        "v1-back-A",
         "v2-back-A",
         "v3-back-A",
-        "v4-back-A"
+        "v4-back-A",
+        "v1-back-A"
       ],
       "sourcePngSha256": "9eadce7e0ff13453def7ec6b5a1ddb0ca88394a98ff22b0a83b3c87ced5f5b5a",
       "aiOriginalPngSha256": "8905eb822eedcd7786a0f430d5b504413ab5e5ab367fbb5b646eb7b66db15774",
@@ -309,7 +361,6 @@
       "key": "v1-back-B",
       "usedBy": [
         "v0-back-B",
-        "v1-back-B",
         "v2-back-B",
         "v3-back-B",
         "v4-back-B"
@@ -323,10 +374,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-back-B-r05",
+      "usedBy": [
+        "v1-back-B"
+      ],
+      "sourcePngSha256": "0d0b70b353ce4021b94efcf962051686a2163b6d5e02d3edc31fffd5ef85a430",
+      "aiOriginalPngSha256": "99b43e2a2f4c7bdc74fd80a8245cc6b2de99598960d79d560648263f11c3669f",
+      "aiWebpSha256": "f66647808c7d775931d8b93c1dca5f93451f671eebe8a9adc45c3c17d2da4422",
+      "sourceWebpSha256": "381ffffecc5aa84ad61e52abc59a0fb99b350ff201536e34c5bae257dcedc606",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-back-B. Utility/service balcony: the low white boxes with BLACK ROUND FANS are OUTDOOR AIR-CONDITIONING CONDENSERS on supports, NOT washing machines. Show metal fan grilles and realistic condensers. Keep tall closed cabinet, small utility basin and clear narrow maintenance passage. Floor is grey outdoor tile, window/safety railing stays as source.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-back-C",
       "usedBy": [
         "v0-back-C",
-        "v1-back-C",
         "v2-back-C",
         "v3-back-C",
         "v4-back-C"
@@ -340,10 +403,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-back-C-r05",
+      "usedBy": [
+        "v1-back-C"
+      ],
+      "sourcePngSha256": "801500c4241f540f0d7a64539b6dfdc49a98460bf80d69bdcddd7f7e9fa6b414",
+      "aiOriginalPngSha256": "d03bd41369a42e435e822c641048452845595fcd00797663018206a52469156b",
+      "aiWebpSha256": "0de85bf6c97909730adcb273a66b9e9b111b30dda201a8febb06dce71a11aff5",
+      "sourceWebpSha256": "6f6163ac85fddfbae0c04dc1a1fb1ad3bbef59ab001ddb4380eb1dc7e2f92127",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-back-C. Utility/service balcony: the low white boxes with BLACK ROUND FANS are OUTDOOR AIR-CONDITIONING CONDENSERS on supports, NOT washing machines. Show metal fan grilles and realistic condensers. Keep tall closed cabinet, small utility basin and clear narrow maintenance passage. Floor is grey outdoor tile, window/safety railing stays as source.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bath1-A",
       "usedBy": [
         "v0-bath1-A",
-        "v1-bath1-A",
         "v2-bath1-A",
         "v3-bath1-A",
         "v4-bath1-A"
@@ -357,10 +432,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bath1-A-r05",
+      "usedBy": [
+        "v1-bath1-A"
+      ],
+      "sourcePngSha256": "ee7dece9e46ea3dd63dd79570d645df0046048eb627a966863096bace951592a",
+      "aiOriginalPngSha256": "7e14b220dcda9eae02cf5c1d0e91e4f4884b7c059e809de5b514e17d5501e81f",
+      "aiWebpSha256": "665c605f0e69dbfadda68bd494cc3b5183fd8c6b415d6249ee8c5975a6aac5df",
+      "sourceWebpSha256": "ef657060313855647b02748d549c3910d11e5c89782389930bf8ba848844251d",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bath1-A. Bathroom: grey porcelain/stone TILE floor and matte grey walls, not wood flooring. Preserve compact dimensions, toilet, oval inset sink, wood vanity, frameless rectangular mirror with thin vertical SIDE task lights. Preserve exact shower glass frame, shower fittings and bathtub only when shown. Do not add niches or wet-area fixtures.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bath1-B",
       "usedBy": [
         "v0-bath1-B",
-        "v1-bath1-B",
         "v2-bath1-B",
         "v3-bath1-B",
         "v4-bath1-B"
@@ -379,10 +466,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bath1-B-r05",
+      "usedBy": [
+        "v1-bath1-B"
+      ],
+      "sourcePngSha256": "302a56ec6aa65f9a4114115137430f792daf7841ff0df685628b81907dfa1390",
+      "aiOriginalPngSha256": "e60cdde1cb75e2d66b8f6b676cfc01ab63f1c963f98690f4392d82fb20a4d020",
+      "aiWebpSha256": "09c4261f865256a1d74c0732cf37fd7b936b9c2ca1041a06bf9f87da1a351186",
+      "sourceWebpSha256": "d96a04b57d5e791f5c011f0015bc796d824719936db7d1597ae96dd7cf7257ee",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bath1-B. Bathroom: grey porcelain/stone TILE floor and matte grey walls, not wood flooring. Preserve compact dimensions, toilet, oval inset sink, wood vanity, frameless rectangular mirror with thin vertical SIDE task lights. Preserve exact shower glass frame, shower fittings and bathtub only when shown. Do not add niches or wet-area fixtures.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bath1-C",
       "usedBy": [
         "v0-bath1-C",
-        "v1-bath1-C",
         "v2-bath1-C",
         "v3-bath1-C",
         "v4-bath1-C"
@@ -401,10 +500,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bath1-C-r05",
+      "usedBy": [
+        "v1-bath1-C"
+      ],
+      "sourcePngSha256": "35745cf30151c3da0c942b8bbf48584165c134b2726c84433b5fbea656bcee05",
+      "aiOriginalPngSha256": "81a8240c60d67089f35ffcc9f3a3109bcf736aee79be6239bd9abdc108038840",
+      "aiWebpSha256": "df19d0934a97ce08926c182a4bf6315e9597386b9a7a8904f37b0494ff595596",
+      "sourceWebpSha256": "82340eff6520b424aef48937a6b9789080bcfbd86a6e8c39d3ec75f355250e67",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bath1-C. Bathroom: grey porcelain/stone TILE floor and matte grey walls, not wood flooring. Preserve compact dimensions, toilet, oval inset sink, wood vanity, frameless rectangular mirror with thin vertical SIDE task lights. Preserve exact shower glass frame, shower fittings and bathtub only when shown. Do not add niches or wet-area fixtures.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bath2-A",
       "usedBy": [
         "v0-bath2-A",
-        "v1-bath2-A",
         "v2-bath2-A",
         "v3-bath2-A",
         "v4-bath2-A"
@@ -418,10 +529,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bath2-A-r05",
+      "usedBy": [
+        "v1-bath2-A"
+      ],
+      "sourcePngSha256": "41cb61e0d9d901f81ddd1e64c063438fe399d1015076627035a1dc2638a4ea13",
+      "aiOriginalPngSha256": "e282b849df4e1592b8564de8a7e7b3c14d2b145f0055893fc2d86d4a368fc03a",
+      "aiWebpSha256": "5b11ebf608dee1d974384995f95ec36d7bfd4f0f29623b7ebec3e8b7d3de0262",
+      "sourceWebpSha256": "033d5aace725a91a55e7fe4d861f100e74c338a0d7c221a877fbb3e6ffcccf8a",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bath2-A. Bathroom: grey porcelain/stone TILE floor and matte grey walls, not wood flooring. Preserve compact dimensions, toilet, oval inset sink, wood vanity, frameless rectangular mirror with thin vertical SIDE task lights. Preserve exact shower glass frame, shower fittings and bathtub only when shown. Do not add niches or wet-area fixtures.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bath2-B",
       "usedBy": [
         "v0-bath2-B",
-        "v1-bath2-B",
         "v2-bath2-B",
         "v3-bath2-B",
         "v4-bath2-B"
@@ -435,13 +558,26 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bath2-B-r05",
+      "usedBy": [
+        "v1-bath2-B"
+      ],
+      "sourcePngSha256": "708893a041338dbd58345e625ea4cdae35994d933a39479a1f78603959a685ab",
+      "aiOriginalPngSha256": "04a95259411ea151cb54cbfb81b89dac00b1916a9ed096ea0c75accc32e831e4",
+      "aiWebpSha256": "bd68dc5243562f9e87fc4f1c795a39eee2025ad7fe05dfaed5b85892fb2c9438",
+      "sourceWebpSha256": "31a4662fbc0e71405b869f37fae4cd43a26059336341a1825e345dcc5d2e38f6",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bath2-B. Bathroom: grey porcelain/stone TILE floor and matte grey walls, not wood flooring. Preserve compact dimensions, toilet, oval inset sink, wood vanity, frameless rectangular mirror with thin vertical SIDE task lights. Preserve exact shower glass frame, shower fittings and bathtub only when shown. Do not add niches or wet-area fixtures.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bath2-C",
       "usedBy": [
         "v0-bath2-C",
-        "v1-bath2-C",
         "v2-bath2-C",
         "v3-bath2-C",
-        "v4-bath2-C"
+        "v4-bath2-C",
+        "v1-bath2-C"
       ],
       "sourcePngSha256": "358d6cb6c6297a8df304a7cc36e346a4f7bf5ad2d532747570d3326e90060ddc",
       "aiOriginalPngSha256": "df3c9e6cdf242a9b0b9a1f2aca0f0c9cd8b3fe8c1328cfdb4ef198fed4ce325a",
@@ -457,10 +593,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bed-A-r05",
+      "usedBy": [
+        "v1-bed-A"
+      ],
+      "sourcePngSha256": "54205eb13eced782182ce186e2bee2b73d0c83a0438a76b1af20b16cefa2d41f",
+      "aiOriginalPngSha256": "7cc301d203f4a0f8e3556ade7156f1e0ae26f71229c556b58cfae2cdae6cd96d",
+      "aiWebpSha256": "3a55bde6245c049bfa7de98783a55248cc1c1fbba1b415b1e7be67c579161023",
+      "sourceWebpSha256": "6d4b07f24c808b6abaad453859fbc745e26057f4aff8e2f4d665edb0e15469d5",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bed-A. Bedroom: preserve the full bed size, asymmetric bedside storage, the SMALL WHITE PROJECTOR in the high SIDE shelving, and usable black bedside ledge below it. Do not place projector above pillows. Warm grey upholstered headboard panel stays exactly its original size. C view contains the white projection screen on the left wall and small tabletop mirror at window.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bed-A-r20260916",
       "usedBy": [
         "v0-bed-A",
-        "v1-bed-A",
         "v2-bed-A",
         "v3-bed-A",
         "v4-bed-A"
@@ -474,10 +622,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bed-B-r05",
+      "usedBy": [
+        "v1-bed-B"
+      ],
+      "sourcePngSha256": "3e2fb33a15cfb5929b2ece88311e0b5d290b331f710f21679e5369b1a6be5823",
+      "aiOriginalPngSha256": "ffd78636cfca3e3e7e75c1e66ebdaa1cf9b50fc74319f2b17c85d6253ff79fc4",
+      "aiWebpSha256": "5ae0e963949b9b5ae4ddb160798ff4b125f125e7efdb74028d1d55fbc9791153",
+      "sourceWebpSha256": "28fc1dbdf528987ab10130aa19a8227329130bc19fcd1f0c2b8e40a528e953ae",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bed-B. Bedroom: preserve the full bed size, asymmetric bedside storage, the SMALL WHITE PROJECTOR in the high SIDE shelving, and usable black bedside ledge below it. Do not place projector above pillows. Warm grey upholstered headboard panel stays exactly its original size. C view contains the white projection screen on the left wall and small tabletop mirror at window.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bed-B-r20260916",
       "usedBy": [
         "v0-bed-B",
-        "v1-bed-B",
         "v2-bed-B",
         "v3-bed-B",
         "v4-bed-B"
@@ -491,10 +651,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-bed-C-r05",
+      "usedBy": [
+        "v1-bed-C"
+      ],
+      "sourcePngSha256": "a3ef24437f7813c86f6c03259db4269cf94f6ee6a504782b45ce08c2f091259b",
+      "aiOriginalPngSha256": "40aa947190dddb2615c9e4538474a5df69e827b779c0ec04e59220fc9bfd347b",
+      "aiWebpSha256": "afe65e48394f39ea212265e1d009d8fe5c058a5ff3cfbfc050b6b9e62ef7dc64",
+      "sourceWebpSha256": "5936d0ddb0c2824bfe3278a200b272068be1e17488603388179b5e9c6bd18e0e",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bed-C. Bedroom: preserve the full bed size, asymmetric bedside storage, the SMALL WHITE PROJECTOR in the high SIDE shelving, and usable black bedside ledge below it. Do not place projector above pillows. Warm grey upholstered headboard panel stays exactly its original size. C view contains the white projection screen on the left wall and small tabletop mirror at window.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-bed-C-r20260916",
       "usedBy": [
         "v0-bed-C",
-        "v1-bed-C",
         "v2-bed-C",
         "v3-bed-C",
         "v4-bed-C"
@@ -516,7 +688,6 @@
       "key": "v1-closet-A",
       "usedBy": [
         "v0-closet-A",
-        "v1-closet-A",
         "v2-closet-A",
         "v3-closet-A",
         "v4-closet-A"
@@ -530,13 +701,26 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-closet-A-r05",
+      "usedBy": [
+        "v1-closet-A"
+      ],
+      "sourcePngSha256": "16fff526d0efc6576f9ac12ca087bfa52c2618b4c828710a884abb8c0ef3ecc6",
+      "aiOriginalPngSha256": "36ca59f0177eef3ba3c8849a3a85d254b644bfdfa20a7a239ac20ba2064a5bac",
+      "aiWebpSha256": "cc54c32469c5367df942dc4f47f45cffac56ce629791364e33c365dca8ac5b7a",
+      "sourceWebpSha256": "9837de0e307d707ee171866cc246661f5ab70303f5a09dd0838ac487080b8792",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-closet-A. Walk-in wardrobe. Central pale vertical panel is a sliding full-height MIRROR in front of shelving, NOT a doorway. Keep exact open clothes rails and drawer arrangement, narrow aisle and top seasonal fabric boxes when visible.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-closet-B",
       "usedBy": [
         "v0-closet-B",
-        "v1-closet-B",
         "v2-closet-B",
         "v3-closet-B",
-        "v4-closet-B"
+        "v4-closet-B",
+        "v1-closet-B"
       ],
       "sourcePngSha256": "e0164df80aea10f812aa19c488466364d94764a165b2bdc0ada9f957babda703",
       "aiOriginalPngSha256": "282b472c6901ccd5b73b8cd2b5283924bfbe4d74d68503356da139ebfd53bcab",
@@ -555,10 +739,10 @@
       "key": "v1-closet-C",
       "usedBy": [
         "v0-closet-C",
-        "v1-closet-C",
         "v2-closet-C",
         "v3-closet-C",
-        "v4-closet-C"
+        "v4-closet-C",
+        "v1-closet-C"
       ],
       "sourcePngSha256": "edd6a2873148b7c7b784fd9a7e62af2127af8f88bbec0cfbfae834d52b357e0e",
       "aiOriginalPngSha256": "4de2afd7099471db93c1032e1b1fb49be22518fa3be78a64344b50f6b1635a2e",
@@ -571,7 +755,6 @@
     {
       "key": "v1-collection-A",
       "usedBy": [
-        "v1-collection-A",
         "v2-collection-A"
       ],
       "sourcePngSha256": "a207f233424a889f2ec9bc23c90a511b62d6aa90274bf3c05758d657bb1619cd",
@@ -583,9 +766,21 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-collection-A-r05",
+      "usedBy": [
+        "v1-collection-A"
+      ],
+      "sourcePngSha256": "2853b71bf7fc93592c7abe41221ee1fffe1cccc01e01841cfce47f4778748161",
+      "aiOriginalPngSha256": "184e4578f7ebe4aa0ba7e89cf7c7cf235c218741a8e680b3b85f013663d73bc7",
+      "aiWebpSha256": "2790c10e2f86b81e6b9662dcbf46fc2c43b07a6802ea8bc836505a0f95eb7095",
+      "sourceWebpSha256": "25752ad6b21c66a13dd43ea5f910c01140ec04ad8a7ea1889d2986bc091f2210",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-collection-A. This is a SMALL CLOSED BACK-STORAGE ROOM, not the public display front. Preserve the open shelving exactly with four large cardboard computer-case carton proxies, grey premium bag boxes, and two upright rolling suitcases. Render each block as the corresponding realistic box or suitcase. Do not add display glass or enlarge the shelf openings.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-collection-B",
       "usedBy": [
-        "v1-collection-B",
         "v2-collection-B"
       ],
       "sourcePngSha256": "4c215434f5c8171c61b577fe31ef1c797cb72d6511ed7ab2f3b459d5701e50c2",
@@ -597,9 +792,21 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-collection-B-r05",
+      "usedBy": [
+        "v1-collection-B"
+      ],
+      "sourcePngSha256": "e04a4e5f24aa1e705420804051a2dc1fcca8d76de35247c84f24315c01556f6a",
+      "aiOriginalPngSha256": "ffc0a52bcf1c09b640aceb83f8496e0250d89726650e4c0524682458c22f03ab",
+      "aiWebpSha256": "ad49408b4d9bb153a049a1be69f688252ab24d34d16ce913a452b25ebfca8993",
+      "sourceWebpSha256": "0a188f0bb32e0265da9d771baacf8a0c66099fbf05d156c0cecb9cd6361d2a99",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-collection-B. This view shows the PUBLIC glass display wall with exactly FIVE columns and TWO glass display rows, ten large collectible slots. Preserve all ten divisions, graphite closed TOP cabinets and oak closed BASE cabinets. Put one sculptural collectible matching each proxy's size per visible glass cell. The WHITE appliance at right is one full-width tall refrigerator, no wine storage column may be added.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-collection-C",
       "usedBy": [
-        "v1-collection-C",
         "v2-collection-C"
       ],
       "sourcePngSha256": "17659f04b6a39998245c99f2f65715034f813ee393e4a3acc11fb53d4bc7ed87",
@@ -611,10 +818,23 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-collection-C-r05",
+      "usedBy": [
+        "v1-collection-C"
+      ],
+      "sourcePngSha256": "e46005db29aaca21c33410351afc2ae829c4c172d2cee19833e9edf16abf8ebb",
+      "aiOriginalPngSha256": "5d3fa146b3275aa226701a8a7d42397ea2ed35aeaddb00195185a369ff97c965",
+      "aiWebpSha256": "b1f2b12055ec413a060c16fd058873861e30bda4476c09941a350c0a6982adc7",
+      "sourceWebpSha256": "3a957a2c373a48035601652553589555d11bd8efa7c0a1c34f209170bdd2f1a2",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-collection-C. This is a SMALL CLOSED BACK-STORAGE ROOM, not the public display front. Preserve the open shelving exactly with four large cardboard computer-case carton proxies, grey premium bag boxes, and two upright rolling suitcases. Render each block as the corresponding realistic box or suitcase. Do not add display glass or enlarge the shelf openings.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-entry-door5A",
       "usedBy": [
-        "v1-entry-door5A",
-        "v2-entry-door5A"
+        "v2-entry-door5A",
+        "v1-entry-door5A"
       ],
       "sourcePngSha256": "0f9ea773b8dc4eb7487bdbffdc5e28502574c888540599258b3e737d160c8bfa",
       "aiOriginalPngSha256": "73087b906de6fbb9a18fdd7964f187dd8b5ac26f6f7910c1b2a47cc8e513851c",
@@ -625,102 +845,117 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-entry-door5B",
+      "key": "v1-entry-door5B-r05",
       "usedBy": [
         "v1-entry-door5B"
       ],
-      "sourcePngSha256": "4e7b13a1eeff2726f85a24ed06ffbb2a60b8a7459a3c082abe3c091c368b1dcb",
-      "aiOriginalPngSha256": "8c676c15fe2cdac8d8173e396fb6755b1bc867f3a0f00668a41f6b0ede4ab780",
-      "aiWebpSha256": "b63c52b771f03f04e668f3d1edaccaffa9a6beed0ec7d6a73044fffa1af89650",
-      "sourceWebpSha256": "588c0a076846f0bd52f756ce0768a9a31ea00f1584d0596059cce990a7b00bf5",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. ALL visible TAN/WOOD floors with zigzag seams in the source must stay dark smoked oak HERRINGBONE, in ANY room and beyond doorways. This includes the entire ISLAND and living floor viewed from the ENTRY. Never replace these wood floors with stone. The small speckled ENTRY floor patch alone is dark terrazzo. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Counter color follows the source: PALE stone is LIGHT COOL GRAY; BLACK stone stays charcoal, both with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nViewpoint requirement: Image 1 was taken at the CENTRE OF THE MAIN ENTRY DOOR, 30 cm inside the threshold, eye height 165 cm. Copy precisely this camera. Never move the camera forward into the living room or to the side to improve the composition. Near columns, walls or cabinets may occupy most of the frame; preserve their occlusion. V1: low entry cabinet and coat hanging from a black suspended rail, hat on side hook, straight glazed collection partition, curved wood-clad black-stone island, L-shaped sofa and south-wall TV. Visible black hanging rectangles are fabric jackets with shoulders and sleeves, not wooden wall panels. Where visible, pale small ellipse beside island black faucet is a recessed ROUND drinking-water sink, NOT a plate. Black rectangular inset is a flat two-zone IH cooktop. If present, hanging proxy black cloth rectangles attached to the rail are actual charcoal coats with shoulders, sleeves and drape; never rigid slabs. Black boxes standing ON THE FLOOR are subwoofers, not stools. The small black box ON THE ENTRY CONSOLE is a handbag. Keep exact object positions and only objects visible.\nSource view v1-entry-door5B. The five images form a fixed-station fan from left through front to right. Gray wooden/herringbone floors visible beyond doors remain WOOD. Windows show a subdued distant high-floor city view. No added clothes inside glass display cases, books, plants, bottles or new decoration. Produce one 1536 x 1024 image.\n",
+      "sourcePngSha256": "43c187ef7833b6af83968dafaeb00c4f51c313d3b2bd32d2b6d037800c381921",
+      "aiOriginalPngSha256": "8b9e7354b6938d6cec314b333b7b01a6181fcf85279365587888dc373624cf5a",
+      "aiWebpSha256": "a427a04c9e1f85fc60b148bcdedb39146232b802ad669b74c48382624060f1cd",
+      "sourceWebpSha256": "52b04544e8de21c0256fb188edfbc796bd34fd527f64b103d5c556654cd4d4f4",
+      "prompt": "undefined\nSpecific view v1-entry-door5B: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
       "corrections": [
         {
-          "instruction": "Remove the invented SOFA and black TV / black screen visible in the far background behind the hanging coats and glass. Image 2 has a metal-framed glass DISPLAY CABINET with sparse horizontal shelves against plain interior gray concrete walls; no sofa, TV or exterior window at this location. Reconstruct only that small background area from Image 2. Preserve coat realism and all foreground cabinet/pier geometry.",
-          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: Remove the invented SOFA and black TV / black screen visible in the far background behind the hanging coats and glass. Image 2 has a metal-framed glass DISPLAY CABINET with sparse horizontal shelves against plain interior gray concrete walls; no sofa, TV or exterior window at this location. Reconstruct only that small background area from Image 2. Preserve coat realism and all foreground cabinet/pier geometry.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+          "instruction": "The small visible area at the right of the hanging dark panel is WRONG. It must show the curved island with graphite recessed base, a partial round charcoal stool near the bottom right, and the tall glass display behind it, exactly as in source image 2. REMOVE the invented sofa, TV and living-room furnishings from this visible slice. Keep the close grey left wall, dark door, pole, hanging rectangular panel and wooden entrance cabinet foreground unchanged.",
+          "prompt": "Image 1 is the photorealistic edit target. Image 2 is the authoritative actual model camera and geometry. Correct image 1 to match image 2. The small visible area at the right of the hanging dark panel is WRONG. It must show the curved island with graphite recessed base, a partial round charcoal stool near the bottom right, and the tall glass display behind it, exactly as in source image 2. REMOVE the invented sofa, TV and living-room furnishings from this visible slice. Keep the close grey left wall, dark door, pole, hanging rectangular panel and wooden entrance cabinet foreground unchanged. Geometry fidelity is essential. Preserve materials, do not add unseen objects. Output 1536x1024, no text."
         }
       ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-entry-door5C-r20260916",
+      "key": "v1-entry-door5C-r05",
       "usedBy": [
         "v1-entry-door5C"
       ],
-      "sourcePngSha256": "a0344a47b79ff7de883b44a4ea2657d4e5b79e0eb3624617b03d6a081dc5db3e",
-      "aiOriginalPngSha256": "8d05ca524ebcd0fa80b0009251a45f835f31297e93160bc2ae0524f5e519dac5",
-      "aiWebpSha256": "730649a77bd1fcc1ccf41feee67e600db5ec24fa5311b6bbb5782e9e5fa7b775",
-      "sourceWebpSha256": "2d7e28d4bea412c79f5bda45c1eafde26f93aeb1e12fc7d53f136d38229c2b81",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling. View v1-entry-door5C-r20260916. Only render what is actually visible. Preserve every background WINDOW as a window, never a solid wall. Preserve glass transparency and exact shelf divisions. The source curved island, sink, induction panel, drinks fridge/robot dock and any piano must keep their actual shapes/locations.\n",
+      "sourcePngSha256": "e87a7f66042c16a404245156ed64acb9e3723070ca2cc866421b31f947a5d43c",
+      "aiOriginalPngSha256": "b1c1a0ea603f119efe53e2b9eb9c18fe44084c6807d13bfb93f8d1d89239881f",
+      "aiWebpSha256": "e3e7721959f1412e9b856e5215bdf8475cf45a5a616a92ef9b1f1fe7ae368f86",
+      "sourceWebpSha256": "d759e4ae64b87563bcb5ca4e30694a44e4943aebbb9d7dff09642a4bc7a8403d",
+      "prompt": "undefined\nSpecific view v1-entry-door5C: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-entry-door5D-r20260916",
+      "key": "v1-entry-door5D-r05",
       "usedBy": [
         "v1-entry-door5D"
       ],
-      "sourcePngSha256": "d96b7ccadff6cbb494135e446cbf764977acf2e4538f5af7df897e98853b1949",
-      "aiOriginalPngSha256": "72c5438efeb6667f4b50f002ed7e3d7b15636e5c5f238f2bc5b5056cbfbe6ec6",
-      "aiWebpSha256": "fed4dd72389803c9678e19fde17fdf87134a6997cd62224e4530a54e603970e7",
-      "sourceWebpSha256": "8d0f1a23b230f2b2a7ef8b247ac080d2a9aca00bb3301d8be38d50a6130c605d",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling. View v1-entry-door5D-r20260916. Preserve every foreground occluder and background WINDOW. Glass stays see-through. Only model objects visible from this exact angle; do not introduce the sofa when hidden. Workstations keep the curved ultrawide monitors and chairs shown. Entry coats and bag are existing objects, not additional televisions.\n",
+      "sourcePngSha256": "10d4b2dd5aa28b2953ef2ef316f51bff32b12d2c0e20f64f66ac0d912c92d6ff",
+      "aiOriginalPngSha256": "1770f7f6676c49d2cb4977deb63310aaebaae178830ca6fe0d9ccbe320966720",
+      "aiWebpSha256": "e6ce37851de29851ebce5f4de66b3b8b33b54b1a1154eb54a5dd4cfc1e1a71ee",
+      "sourceWebpSha256": "0045547f3dc0c2ec3f9946edc2669482d6fdb71fe7f65c87ba14f1aabb6a5b91",
+      "prompt": "undefined\nSpecific view v1-entry-door5D: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-entry-door5E-r20260916",
+      "key": "v1-entry-door5E-r05",
       "usedBy": [
         "v1-entry-door5E"
       ],
-      "sourcePngSha256": "3147a666f35c59520badd8ff582b2dea5bb74299a666d752797ca2cabce825ca",
-      "aiOriginalPngSha256": "e3d2ac2d3d5318cd47083358f7302d38a901cc77d64bb9e061f4f6f4c4f35ccd",
-      "aiWebpSha256": "9ec06b176c18f98c3c23d17a0dbc42983e8738ba6f382554fe6e22c9366c0ad2",
-      "sourceWebpSha256": "49bdd1c7d2ecc7357828dba90e30df0429907d3e7655b3e9d3e716ff1a145891",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling. View v1-entry-door5E-r20260916. Preserve every foreground occluder and background WINDOW. Glass stays see-through. Only model objects visible from this exact angle; do not introduce the sofa when hidden. Workstations keep the curved ultrawide monitors and chairs shown. Entry coats and bag are existing objects, not additional televisions.\n",
-      "corrections": [],
+      "sourcePngSha256": "5532009fd56a94392c30edd15e5248002a323375aae40a4a4b7a8f618e08f22c",
+      "aiOriginalPngSha256": "075dec4090ccf23097d009269682257e21d983b4b6e22f22157f24cc0e15d99a",
+      "aiWebpSha256": "0568f5ca5d6b5520d95380894b92568a2e709996c9c6c3f655435db7849f7fe5",
+      "sourceWebpSha256": "4e7d63386a3ee1afeee7bfdd4e77afbc08ddb024fb141e991aeda466cac4997c",
+      "prompt": "undefined\nSpecific view v1-entry-door5E: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
+      "corrections": [
+        {
+          "instruction": "Correct the small living-room slice on the left to match source image 2: restore the small black cube SUBWOOFER on the floor under the rear window. Remove the invented wood box at the right of that window, the invented hanging vertical black light, and invented extra rear round speakers at far left. Preserve partial sofa at far left, oval lift coffee table, foreground black cube, large close black cabinet faces on the right. Keep the window exactly the plain rectangular opening in source, no additional door openings.",
+          "prompt": "Image 1 is the photorealistic edit target. Image 2 is the authoritative actual model camera and geometry. Correct image 1 to match image 2. Correct the small living-room slice on the left to match source image 2: restore the small black cube SUBWOOFER on the floor under the rear window. Remove the invented wood box at the right of that window, the invented hanging vertical black light, and invented extra rear round speakers at far left. Preserve partial sofa at far left, oval lift coffee table, foreground black cube, large close black cabinet faces on the right. Keep the window exactly the plain rectangular opening in source, no additional door openings. Geometry fidelity is essential. Preserve materials, do not add unseen objects. Output 1536x1024, no text."
+        }
+      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-island-A",
+      "key": "v1-island-A-r05",
       "usedBy": [
         "v1-island-A"
       ],
-      "sourcePngSha256": "b2a24ad53e551f6ed6ec4aa108aaefcee62c60a3cc39f8bb94d9d15ddcb55992",
-      "aiOriginalPngSha256": "b38c8262c181aa566427651da918400e9711951974a9162d748d4a259ab7961b",
-      "aiWebpSha256": "249d43d5066db68dc199fcf2707c6a898c05e4470b8be4770323fb7fa25666f6",
-      "sourceWebpSha256": "89bae35ccf9d69136a665ff52fc6a460e16cff3cb603c6bc9d88ce5d30167b6b",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. Only EXISTING wood floors in living/bedroom/study/closet/storage are dark smoked oak HERRINGBONE. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Black stone counters with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Island area: preserve the EXACT island silhouette, size, sink and faucet size/location, induction hob, and visible open equipment bays. Preserve wine cooler, robot-vacuum dock and electronics in their existing compartments. V1 has a CURVED peninsula with a tall double-sided transparent glass display above its north edge. V2/V3/V4 have their respective STRAIGHT islands; do not add a curved one or add stools. Keep the current TV scheme seen in the model. Existing pale stone tops use cool light-gray veined stone; existing black stone tops use honed charcoal stone. Dark smoked oak fronts and blackened steel hardware. Transparent display cabinets must stay see-through, not become solid partitions.\nExact source view: v1-island-A. Match image 1.\n",
-      "corrections": [],
+      "sourcePngSha256": "8985f583add688afbf04c0a68cef3762e5f385a9b188ba3a0feabf06ebba94e2",
+      "aiOriginalPngSha256": "6cdc66500b581e60083513bf8bf5c5e817f5bfa93803ad2d665fef7f78d8eee7",
+      "aiWebpSha256": "8ce7bc8a1f0cb700cc6cd8182ab0a86c6a8b3fd8ce69a53e471db0825b0b9cc5",
+      "sourceWebpSha256": "99790fb42304314fa55476533406fd45759e98f7137b9eab39d6874af9709f63",
+      "prompt": "Edit the supplied ACTUAL 3D MODEL VIEW into a photorealistic premium Taiwan apartment interior photograph. Output 1536x1024 landscape. This is a geometry-locked material and lighting translation: exactly preserve the camera position, framing, walls, doors, glass partitions, beams, ceiling, furniture footprints, object count, cabinet subdivisions and perspective. Preserve full-height central glass cabinet; never lower or remove it. Keep all visible floor-standing front speakers and small rear speakers ON the sofa's back shelf. No rear speaker stands in walking aisles. Keep the existing curved island, its concave working side, equipment and convex outside shape. Exactly two round backless charcoal pedestal stools with foot rings are OUTSIDE the convex arc; render only stools visible in the source, no interior dining wing. Warm smoked oak herringbone floor, graphite matte cabinetry, restrained dark modern industrial character, thin black metal, subtle tactile fabrics, natural daylight and concealed warm-neutral light only at source fixture locations. Retain the measured-looking proportions of the source; do not widen the room, add furniture, alter openings, invent architectural features or decorate empty circulation space. Make glass readable and transparent with soft physically plausible reflections. Figures inside display cabinets may look like collectible sculptural models in the same positions and scale. No humans, labels, diagrams, text or watermark. Match the image as closely as an architectural photo, not a new layout.\nView v1-island-A. Retain the floor-to-ceiling double-sided glass cabinet visible in this view. A view shows both stools in foreground; B/C view from the working/other side may occlude stools: do not force hidden stools into view. Preserve original wine cooler, tiny round sink, induction and robot opening.",
+      "corrections": [
+        {
+          "instruction": "Remove the invented tall narrow wine-bottle column beside the white refrigerator. The whole white appliance bay must be the single full-width refrigerator shown in image 2, with one horizontal black handle, no extra niche. Preserve BOTH round stools in the foreground on the OUTSIDE curved side. The plain graphite panel under their counter must be visibly set BACK 25cm from the stone edge to create the knee recess; keep the fluted wood rounded ends at the original outer line. Empty excess objects in the central glass cabinet; keep just the sparse vase arrangement from the model, with light readable transparent glass.",
+          "prompt": "Precise architectural correction. Image 1 is the photorealistic edit target; image 2 is the authoritative actual 3D model geometry. Keep image 1 camera, materials and lighting. Make ONLY these corrections to reconcile the image with the model: Remove the invented tall narrow wine-bottle column beside the white refrigerator. The whole white appliance bay must be the single full-width refrigerator shown in image 2, with one horizontal black handle, no extra niche. Preserve BOTH round stools in the foreground on the OUTSIDE curved side. The plain graphite panel under their counter must be visibly set BACK 25cm from the stone edge to create the knee recess; keep the fluted wood rounded ends at the original outer line. Empty excess objects in the central glass cabinet; keep just the sparse vase arrangement from the model, with light readable transparent glass. Output 1536x1024 landscape, no text, no layout redesign."
+        }
+      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-island-B-r20260916",
+      "key": "v1-island-B-r05",
       "usedBy": [
         "v1-island-B"
       ],
-      "sourcePngSha256": "e7c758096431306bc7064e3be2b5475857db716efd03146730b5c9b4cfc91205",
-      "aiOriginalPngSha256": "bb807d2788b3f3f4d36e3f49dc3b9f76ef5942bca1bd233eba28a1e29fc2bbcf",
-      "aiWebpSha256": "f9f21adafa5ed0ac0f299f9be1211401b892da02c65386ad944f919911b5529c",
-      "sourceWebpSha256": "f1f0bf88a486c88d180d7e3d3280c1794930fbfb66a54806ab934846e9d733bd",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling. View v1-island-B-r20260916. Preserve every foreground occluder and background WINDOW. Glass stays see-through. Only model objects visible from this exact angle; do not introduce the sofa when hidden. Workstations keep the curved ultrawide monitors and chairs shown. Entry coats and bag are existing objects, not additional televisions.\n",
-      "corrections": [],
+      "sourcePngSha256": "9b63085c81341b2726744cfb994f4063941ad4575db3bdd196e479ab5cd54835",
+      "aiOriginalPngSha256": "3ec727088e5f8b2950eaff817bb23b4f961321383f16b9bf7d09ef59e0668e26",
+      "aiWebpSha256": "3552d79e4603e1f9112be5e204941cb04bc45843eebc55fc44700af6ca7bf950",
+      "sourceWebpSha256": "e126c354494716d0563dd1f52710512836c14cbf3d1ff4444091c5cbc8fb26bd",
+      "prompt": "Edit the supplied ACTUAL 3D MODEL VIEW into a photorealistic premium Taiwan apartment interior photograph. Output 1536x1024 landscape. This is a geometry-locked material and lighting translation: exactly preserve the camera position, framing, walls, doors, glass partitions, beams, ceiling, furniture footprints, object count, cabinet subdivisions and perspective. Preserve full-height central glass cabinet; never lower or remove it. Keep all visible floor-standing front speakers and small rear speakers ON the sofa's back shelf. No rear speaker stands in walking aisles. Keep the existing curved island, its concave working side, equipment and convex outside shape. Exactly two round backless charcoal pedestal stools with foot rings are OUTSIDE the convex arc; render only stools visible in the source, no interior dining wing. Warm smoked oak herringbone floor, graphite matte cabinetry, restrained dark modern industrial character, thin black metal, subtle tactile fabrics, natural daylight and concealed warm-neutral light only at source fixture locations. Retain the measured-looking proportions of the source; do not widen the room, add furniture, alter openings, invent architectural features or decorate empty circulation space. Make glass readable and transparent with soft physically plausible reflections. Figures inside display cabinets may look like collectible sculptural models in the same positions and scale. No humans, labels, diagrams, text or watermark. Match the image as closely as an architectural photo, not a new layout.\nView v1-island-B. Retain the floor-to-ceiling double-sided glass cabinet visible in this view. A view shows both stools in foreground; B/C view from the working/other side may occlude stools: do not force hidden stools into view. Preserve original wine cooler, tiny round sink, induction and robot opening.",
+      "corrections": [
+        {
+          "instruction": "REMOVE BOTH stools currently incorrectly placed inside the concave work area. This view must show ZERO stools in the concave interior opening. The two stools are on the OPPOSITE convex exterior side, fully OCCLUDED by the counter from this camera. Restore continuous clear oak floor where those two stools were. Do not add any stool elsewhere. Preserve the wine cooler foreground, curved stone countertop, IH hob, robot dock at left and full-height glass cabinet.",
+          "prompt": "Precise architectural correction. Image 1 is the photorealistic edit target; image 2 is the authoritative actual 3D model geometry. Keep image 1 camera, materials and lighting. Make ONLY these corrections to reconcile the image with the model: REMOVE BOTH stools currently incorrectly placed inside the concave work area. This view must show ZERO stools in the concave interior opening. The two stools are on the OPPOSITE convex exterior side, fully OCCLUDED by the counter from this camera. Restore continuous clear oak floor where those two stools were. Do not add any stool elsewhere. Preserve the wine cooler foreground, curved stone countertop, IH hob, robot dock at left and full-height glass cabinet. Output 1536x1024 landscape, no text, no layout redesign."
+        }
+      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-island-C",
+      "key": "v1-island-C-r05",
       "usedBy": [
         "v1-island-C"
       ],
-      "sourcePngSha256": "476bca05ece86e8b9a37a6317b4a4237194b6181b161070dbc3213c9a9cfd218",
-      "aiOriginalPngSha256": "583dff7d689eeecdb16ea7dbff8f02810e07127e1c0e950c56c7fcf1fc76b0ae",
-      "aiWebpSha256": "d5e8f0157f69814daf2e408d0c68e8f3b51b676408016c1cbacd5c68cf5587f5",
-      "sourceWebpSha256": "02631ac8c6f0a69920369ada007e931c7f3024494c2aacec85df485e6bccca93",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. Only EXISTING wood floors in living/bedroom/study/closet/storage are dark smoked oak HERRINGBONE. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Black stone counters with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nObject-count rule: the room description provides context ONLY. Never introduce a fixture or cabinet that is not visibly present in image 1. Do not add a sink, mirror, shower, shelves or display case merely because the room name suggests it. Preserve the exact visible objects and their count.\nSpecific scene: Island area: preserve the EXACT island silhouette, size, sink and faucet size/location, induction hob, and visible open equipment bays. Preserve wine cooler, robot-vacuum dock and electronics in their existing compartments. V1 has a CURVED peninsula with a tall double-sided transparent glass display above its north edge. V2/V3/V4 have their respective STRAIGHT islands; do not add a curved one or add stools. Keep the current TV scheme seen in the model. Existing pale stone tops use cool light-gray veined stone; existing black stone tops use honed charcoal stone. Dark smoked oak fronts and blackened steel hardware. Transparent display cabinets must stay see-through, not become solid partitions.\nExact source view: v1-island-C. Match image 1.\n",
+      "sourcePngSha256": "536e7b53b3a039e81376f3ecfa25a70f8613d6aea60f09ad5c49feaafe1ec003",
+      "aiOriginalPngSha256": "9f09d441934fd9c5ae55476848811008d81902de4d2cb9abd0f84284b94d1637",
+      "aiWebpSha256": "f51f026bd0925b962949d87abe6bcff50e1aec904c1602aef6886aa6180090b2",
+      "sourceWebpSha256": "844d9af4c43a1861c2d7108f5d74d203dc5ad1b86ac6885452b821614f4a1684",
+      "prompt": "Edit the supplied ACTUAL 3D MODEL VIEW into a photorealistic premium Taiwan apartment interior photograph. Output 1536x1024 landscape. This is a geometry-locked material and lighting translation: exactly preserve the camera position, framing, walls, doors, glass partitions, beams, ceiling, furniture footprints, object count, cabinet subdivisions and perspective. Preserve full-height central glass cabinet; never lower or remove it. Keep all visible floor-standing front speakers and small rear speakers ON the sofa's back shelf. No rear speaker stands in walking aisles. Keep the existing curved island, its concave working side, equipment and convex outside shape. Exactly two round backless charcoal pedestal stools with foot rings are OUTSIDE the convex arc; render only stools visible in the source, no interior dining wing. Warm smoked oak herringbone floor, graphite matte cabinetry, restrained dark modern industrial character, thin black metal, subtle tactile fabrics, natural daylight and concealed warm-neutral light only at source fixture locations. Retain the measured-looking proportions of the source; do not widen the room, add furniture, alter openings, invent architectural features or decorate empty circulation space. Make glass readable and transparent with soft physically plausible reflections. Figures inside display cabinets may look like collectible sculptural models in the same positions and scale. No humans, labels, diagrams, text or watermark. Match the image as closely as an architectural photo, not a new layout.\nView v1-island-C. Retain the floor-to-ceiling double-sided glass cabinet visible in this view. A view shows both stools in foreground; B/C view from the working/other side may occlude stools: do not force hidden stools into view. Preserve original wine cooler, tiny round sink, induction and robot opening.",
       "corrections": [
         {
-          "instruction": "Floor inside and outside island must be dark smoked oak herringbone, not stone. Rear display contains collectible figurines not wine bottles; small round item beside faucet is recessed sink not plate. Keep geometry.",
-          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: Floor inside and outside island must be dark smoked oak herringbone, not stone. Rear display contains collectible figurines not wine bottles; small round item beside faucet is recessed sink not plate. Keep geometry.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
+          "instruction": "Remove the round stool seat mistakenly visible on the far left edge. This camera looks through the tall glass cabinet and must show ZERO stools; the two stools are behind the counter and occluded. Leave the working-side cavity completely clear, exactly like image 2. Preserve the tall glass cabinet grid, curved counter, sink, distant five-by-two collectible display wall, and single white refrigerator.",
+          "prompt": "Precise architectural correction. Image 1 is the photorealistic edit target; image 2 is the authoritative actual 3D model geometry. Keep image 1 camera, materials and lighting. Make ONLY these corrections to reconcile the image with the model: Remove the round stool seat mistakenly visible on the far left edge. This camera looks through the tall glass cabinet and must show ZERO stools; the two stools are behind the counter and occluded. Leave the working-side cavity completely clear, exactly like image 2. Preserve the tall glass cabinet grid, curved counter, sink, distant five-by-two collectible display wall, and single white refrigerator. Output 1536x1024 landscape, no text, no layout redesign."
         }
       ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
@@ -729,7 +964,6 @@
       "key": "v1-kitchen-A",
       "usedBy": [
         "v0-kitchen-A",
-        "v1-kitchen-A",
         "v2-kitchen-A",
         "v3-kitchen-A",
         "v4-kitchen-A"
@@ -748,9 +982,21 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-kitchen-A-r05",
+      "usedBy": [
+        "v1-kitchen-A"
+      ],
+      "sourcePngSha256": "06b6442ae89d47f83d5f717ac444685367f22b4f15ed14b168151f6aefe119cd",
+      "aiOriginalPngSha256": "720e3ed0ac8955bab3ad80b9b89e601bf02e2d10819e5d511090627307d54497",
+      "aiWebpSha256": "d91d4da681ea2d56dc7d58270fb281d9b4ccc1e5077873ac541baa15dac5868b",
+      "sourceWebpSha256": "93d88d7ff6d6e17a3c5df6dce12d43b0d42fc1071c0a1df1211641521e1013d6",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-kitchen-A. Closed narrow galley kitchen, GREY STONE/TILE floor (not wood), parallel grey counters, preserve sink, gas hob, hood and tall integrated refrigerator positions. Visible through glass, keep adjacent collectibles and utility area exactly as source. No extra appliances.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-kitchen-B",
       "usedBy": [
-        "v1-kitchen-B",
         "v2-kitchen-B"
       ],
       "sourcePngSha256": "742745286f370a1623d3bb23460965f69a8d1506329c582b6493230e0a8ee2e6",
@@ -767,13 +1013,26 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v1-kitchen-B-r05",
+      "usedBy": [
+        "v1-kitchen-B"
+      ],
+      "sourcePngSha256": "118fb83581355866ed6290218352bb15be74a0ba004561c29d8cd33a879af4cc",
+      "aiOriginalPngSha256": "8bbcff5d2ac2d8e3871fb92ee96a1d0b806ae00c5a27971f5c25f117b17c5799",
+      "aiWebpSha256": "c62e245b89616b92677fcfb40fc47bcae492c099b873922d34afc2ca91773c5f",
+      "sourceWebpSha256": "c5cfcd4e3ad8966cad13ca2f1aaa88c45c463bba91f3e765ddb6ae5213ecbf47",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-kitchen-B. Closed narrow galley kitchen, GREY STONE/TILE floor (not wood), parallel grey counters, preserve sink, gas hob, hood and tall integrated refrigerator positions. Visible through glass, keep adjacent collectibles and utility area exactly as source. No extra appliances.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v1-kitchen-C",
       "usedBy": [
         "v0-kitchen-C",
-        "v1-kitchen-C",
         "v2-kitchen-C",
         "v3-kitchen-C",
-        "v4-kitchen-C"
+        "v4-kitchen-C",
+        "v1-kitchen-C"
       ],
       "sourcePngSha256": "0dbb4ace8f1b9a71a886edadd178de97c7c3cc3bb8c67084c743339123809faf",
       "aiOriginalPngSha256": "108c5230f573c0e04926ec0144ea418fffc735f5a8b1f918eae917fa4a3c5f6c",
@@ -789,41 +1048,46 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-living-A",
+      "key": "v1-living-A-r05",
       "usedBy": [
         "v1-living-A"
       ],
-      "sourcePngSha256": "e356b602eabd969e5234f2107e18b6215a4e63f5b9c26004daebde381b0fe2ff",
-      "aiOriginalPngSha256": "055bcfaecd5c3cb91bc9c650285e81b9b11a026505676fd8863b6a0939d4cf1f",
-      "aiWebpSha256": "3de29062c452125547eb12d301c06872b5e8f26be8939c39206c5d74e0231a05",
-      "sourceWebpSha256": "12670c1c7afcf39f9b3f5e11f8a89ff93b18d9dc9ed268e58e88ef71c91f9dc1",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. Wood floors must be dark smoked oak HERRINGBONE, cabinet grain straight vertical, never light orange wood. Black stone counters with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nSpecific scene: V1 living room toward fixed television wall: retain existing overhead cabinets, tall side cabinet, BOTH floor tower speakers and the separate small subwoofer at the left. Low AV cabinet with equipment, television and foreground table remain exactly placed.\n",
-      "corrections": [],
+      "sourcePngSha256": "9c150578418261f9a8babfb827d5f10672e5a7513713c8334a2f34c6709532f7",
+      "aiOriginalPngSha256": "7e61f7edc5cb43fd6a8270706886f74e973ba209b3100a7d25c61695b6b3f4ba",
+      "aiWebpSha256": "d1a2e5a4601cf4188520289326851fb30d8f21714141893f0ba066a860c8b08f",
+      "sourceWebpSha256": "2d70d5a45e06a79a0133c7dc16c07c02e08c1776b195f10bb07b59f6bdb62ebf",
+      "prompt": "undefined\nSpecific view v1-living-A: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
+      "corrections": [
+        {
+          "instruction": "Restore the SOURCE CAMERA VIEW and object arrangement exactly: REMOVE the entire invented sofa and its rear round speakers from the LEFT FOREGROUND. Replace it with the clear grey rug and a partial BLACK OVAL LIFT COFFEE TABLE entering from bottom-left, exactly as image 2. Restore the small black cube SUBWOOFER on the floor beside the left window, remove the invented wood box there and the invented vertical wall speaker beside that window. Retain the two front floorstanding speakers beside TV, low AV unit, TV, matte graphite backdrop, and black upper cabinets. Do not widen the view or move camera.",
+          "prompt": "Image 1 is the photorealistic edit target. Image 2 is the authoritative actual model camera and geometry. Correct image 1 to match image 2. Restore the SOURCE CAMERA VIEW and object arrangement exactly: REMOVE the entire invented sofa and its rear round speakers from the LEFT FOREGROUND. Replace it with the clear grey rug and a partial BLACK OVAL LIFT COFFEE TABLE entering from bottom-left, exactly as image 2. Restore the small black cube SUBWOOFER on the floor beside the left window, remove the invented wood box there and the invented vertical wall speaker beside that window. Retain the two front floorstanding speakers beside TV, low AV unit, TV, matte graphite backdrop, and black upper cabinets. Do not widen the view or move camera. Geometry fidelity is essential. Preserve materials, do not add unseen objects. Output 1536x1024, no text."
+        }
+      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-living-B-r20260916",
+      "key": "v1-living-B-r05",
       "usedBy": [
         "v1-living-B"
       ],
-      "sourcePngSha256": "002ea479e4d6cf2e0e910e4e5ecc558b1308650c4e57cdc7ad62ca58628d13f7",
-      "aiOriginalPngSha256": "ad13b859b8d83db18b8021580ab7b0212ccdf1cb9f1fc4ffe7dad71b84558851",
-      "aiWebpSha256": "4fd8131373bca481a774716c6983f550dc658abddd7c756ca8511df5e0f0ef87",
-      "sourceWebpSha256": "7267dcdabc3ae20003c0aa07a726ea3f7d849b97aaad8e2a785b990a38c4a9bb",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling.\n",
+      "sourcePngSha256": "c4915c2f3d9cb50c92c20beb835fc4bdba9d4fa07c84bdd2d9b200461cd1f248",
+      "aiOriginalPngSha256": "0a6ecfac8f1db9dad902563cd93d64d664ce99fc8aecdb8564a06c725f79e2e6",
+      "aiWebpSha256": "63f00c88580229c88671d2533700e16825f77d9dbd29ccd3eadedcccc7633561",
+      "sourceWebpSha256": "45baed306806b31074365237d404be1bc80d92e13c0b17f34c76a63ff2390107",
+      "prompt": "undefined\nSpecific view v1-living-B: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-living-C-r20260916",
+      "key": "v1-living-C-r05",
       "usedBy": [
         "v1-living-C"
       ],
-      "sourcePngSha256": "6ff7b3193bca4f1eb369c16fadef330957903700074ea97037dbfd1d7b9c6694",
-      "aiOriginalPngSha256": "0c4a2fbc9a222148542659542066760d3804c2188b83b98638167adf3d99d5fa",
-      "aiWebpSha256": "d4ef7ec28fdffb0bd80e9e8b91cd1026b34159e17dd149fed15449b7d8803111",
-      "sourceWebpSha256": "f025b466dfe0a455c2e6fc4800a3437721a0c41a7e10de57216f38634bc417f6",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling.\n",
+      "sourcePngSha256": "10d80aea089df11a1be3c70fa47f8509583870c5322952d0b25425e10bd594f6",
+      "aiOriginalPngSha256": "c17d5d7ed3f1e156201f6d43d58aa69bbb52bd00af3f5a35fd7d3be28a2fcd6e",
+      "aiWebpSha256": "f06a3ce9c16c4f26bdbf1adc2eca7c3ca17f60998ee0071d3c1ddd0848794b12",
+      "sourceWebpSha256": "c7c5596a5d5b054a8fdf42867c483a834e8eb83b8f3af059db4ae42d40a920b0",
+      "prompt": "undefined\nSpecific view v1-living-C: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
@@ -831,10 +1095,10 @@
       "key": "v1-storage-A",
       "usedBy": [
         "v0-storage-A",
-        "v1-storage-A",
         "v2-storage-A",
         "v3-storage-A",
-        "v4-storage-A"
+        "v4-storage-A",
+        "v1-storage-A"
       ],
       "sourcePngSha256": "af1b690dd46919d3e80c5f8cb02bd692be8c9a39232f614e48064ea1212c99c1",
       "aiOriginalPngSha256": "417ed51bf68124fafbc0e08acdfd4c3df8e12c14ab1fa25f1c1a81ff592366f2",
@@ -863,35 +1127,34 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-storage-C-r20260916",
+      "key": "v1-storage-C-r05",
       "usedBy": [
         "v1-storage-C"
       ],
-      "sourcePngSha256": "6701340ab45182b0ea3824a68d3822fa64f28f896a1b98e26d9170458fd94410",
-      "aiOriginalPngSha256": "41cc12ddd6bcbc4bbe93afedf9874983955dc582facc8c77fc55c77fd2537371",
-      "aiWebpSha256": "51a4fc65f4b10d30299a2f511e8caf662845e66fe85cea2afe9c736a57159342",
-      "sourceWebpSha256": "a107780e54ac144e0c6577a90ea0934a2f2c0331adf4bb5306fbf16ff1e60705",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling. View v1-storage-C-r20260916. Preserve every foreground occluder and background WINDOW. Glass stays see-through. Only model objects visible from this exact angle; do not introduce the sofa when hidden. Workstations keep the curved ultrawide monitors and chairs shown. Entry coats and bag are existing objects, not additional televisions.\n",
+      "sourcePngSha256": "a86b62034587de6bc3c2bcb51045f57a2e0e14ef670bbec7cc2c12e1d49731dd",
+      "aiOriginalPngSha256": "bd6c5f7563ba68ea335311c1ef358080959c3c1dcce3a45e5db9e4cf88549472",
+      "aiWebpSha256": "8f07bb7e24b651a22028a39cb0b0593298002b387afb8c594286295b55f55b31",
+      "sourceWebpSha256": "6c4b7dab9b21498cd4955a0d2b524185a1a7d82ec3590ff6dd75f5cb02f09c75",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-storage-C. Looking OUT from the small storage closet through its doorway: retain shelves on right, full-height thin end of glass display cabinet outside doorway, a glimpse of curved island with exterior stools, wood entrance cabinet and TV far beyond. No new furniture.",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-study-A",
+      "key": "v1-study-A-r05",
       "usedBy": [
         "v1-study-A"
       ],
-      "sourcePngSha256": "f9b4688a9574ed8fc5981078e661712c4109d529a353dff90989f93f5de34f1a",
-      "aiOriginalPngSha256": "c4c130a164ad71bc8a9a74b899fe91f84fcda9dcd5b71afa428e1c668499d643",
-      "aiWebpSha256": "e9459d7113996208a36cbe304b7883ff7235eaaca5e58a8d6ec0b292ed172bc8",
-      "sourceWebpSha256": "8f2ee315afcfcdbb83474353924e184abae5eaea47b441a911fe9907da830e35",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. Wood floors must be dark smoked oak HERRINGBONE, cabinet grain straight vertical, never light orange wood. Black stone counters with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nSpecific scene: Two-person computer study: preserve BOTH workstations, very wide curved monitors, black/white ergonomic office chairs, desktop computer towers, glass partition, existing collectible display cabinets with small FIGURINES and books. Do not turn figurines into wine glasses; no additional desks/chairs. Smoked wood cabinet fronts, charcoal metal desk frames, reflective clear glass, gray concrete plaster. Keep screens subtle with dark abstract desktop images.\nExact source view: v1-study-A. Match image 1.\n",
+      "sourcePngSha256": "cf1799ce89d946007b92bb29fcd34367512814039c2ca5ea6212280a836dca7b",
+      "aiOriginalPngSha256": "10694c2541fbc484f7c0e7907e7ba5355ee32fe4a41c13f8b07f0bddf250dedf",
+      "aiWebpSha256": "e5089d76beffd336b797dff34ad0a20d730da97c6ed2bfa1d7248d5be3cbe204",
+      "sourceWebpSha256": "b64382e066faaebdbc994237a982d95780e695500ec1ffecc1f057ed37ea384d",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-study-A. This is the two-person computer study. Keep the two separate black desks in their perpendicular offset arrangement, giant white ultrawide curved monitor backs/screens, floor-standing white PCs, two task chairs. The new wall unit has SIX drawers in two stacks of three, a third closed low book compartment and closed upper storage. Preserve the open sliding-glass door visible in C and empty route through it. Do not merge desks, add desks or add aisle speaker stands.",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
       "key": "v1-study-B",
       "usedBy": [
-        "v1-study-B",
         "v2-study-B",
         "v3-study-B",
         "v4-study-B"
@@ -910,15 +1173,28 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-study-C-r20260916",
+      "key": "v1-study-B-r05",
+      "usedBy": [
+        "v1-study-B"
+      ],
+      "sourcePngSha256": "9600e0e01cb3525e2b6777b0e9744f8cc6b44a6f518d0898e56b36b24cb36041",
+      "aiOriginalPngSha256": "a80a644aab741755435dbb5008c5ff17e2fc10dd1bb551c218d6231e4c6ab841",
+      "aiWebpSha256": "001afe4a98baac5a1429c4eec346fe5b43c0445e1276a443549da19516d9cff8",
+      "sourceWebpSha256": "a7f20d00232ab4181cbcdf12787cb8e94d560001421f7d94aebab3ac1bdc500e",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-study-B. This is the two-person computer study. Keep the two separate black desks in their perpendicular offset arrangement, giant white ultrawide curved monitor backs/screens, floor-standing white PCs, two task chairs. The new wall unit has SIX drawers in two stacks of three, a third closed low book compartment and closed upper storage. Preserve the open sliding-glass door visible in C and empty route through it. Do not merge desks, add desks or add aisle speaker stands.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v1-study-C-r05",
       "usedBy": [
         "v1-study-C"
       ],
-      "sourcePngSha256": "e65a6e251fd47613f1e0b25461c403742798532d49e8473e766e36b84be594a7",
-      "aiOriginalPngSha256": "ab8e917a34e9bb2c1a24cf1d30f89a50c0cd76b57a7172adba61672b83b0e960",
-      "aiWebpSha256": "301cb406b8504c47f5d6dbcce34a966b0941f977783ea9dac279d7af415985f0",
-      "sourceWebpSha256": "b839656bb3a33330c32c2f2d2cdb442c9f2230095124c28010504325209a4bb6",
-      "prompt": "Use case: sketch-to-render. Transform the attached current 3D model view into ONE photorealistic premium dark modern-industrial interior photograph, landscape 3:2. Match this camera/perspective and every wall, door, window, passage, furniture boundary and equipment location EXACTLY. Keep the new graphite woven L sofa shape, chaise handedness, slender black steel feet and common support frame. Its 18cm deep dark walnut open bookshelf is physically connected along the REAR of the sofa, lower than the cushions; show only the portions visible from this exact angle, do not invent a front shelf or enlarge it. Keep speakers and their stands, television orientation, island shape, all glass cabinets and background rooms where modeled. Finishes: dark smoked walnut herringbone floor and deep wood cabinetry; graphite fabric; mineral grey art-cement plaster; blackened steel, clear and black reflective glass. Elegant restrained layered lighting with realistic daylight and dark yet readable shadows. Black/grey/white palette with deep wood, not orange or bright beige. Enhance material and light only. No added/removal of furniture, no people, labels, dimensions, collage or watermark. Source geometry overrides styling. View v1-study-C-r20260916. Preserve every foreground occluder and background WINDOW. Glass stays see-through. Only model objects visible from this exact angle; do not introduce the sofa when hidden. Workstations keep the curved ultrawide monitors and chairs shown. Entry coats and bag are existing objects, not additional televisions.\n",
+      "sourcePngSha256": "9edd0611c533522c14be6d30de0c99e18e2ffa079f98ca161731d82539d0bcb9",
+      "aiOriginalPngSha256": "3069c52ccd50f93cd4532a6bd57d5ed93ca3310012e293fd1e7515b1331d43c2",
+      "aiWebpSha256": "b3854667ea7a89d639b47a384b2537ef06720d9b22dc985c5671e765dd3e7857",
+      "sourceWebpSha256": "7b3bf8335ced2131d1c4e5d2bda24acab5451c9e23f650703aa36f06742d404e",
+      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-study-C. This is the two-person computer study. Keep the two separate black desks in their perpendicular offset arrangement, giant white ultrawide curved monitor backs/screens, floor-standing white PCs, two task chairs. The new wall unit has SIX drawers in two stacks of three, a third closed low book compartment and closed upper storage. Preserve the open sliding-glass door visible in C and empty route through it. Do not merge desks, add desks or add aisle speaker stands.",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },

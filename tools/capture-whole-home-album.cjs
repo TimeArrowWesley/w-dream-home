@@ -32,12 +32,13 @@ function views(v){
   data.collection[1]=[[280,850,145],[375,773,85]];
   data.collection[2]=[[310,878,140],[231,825,105]];
  }
+ if(v===1)data.collection[1]=[[604,656,158],[371,776,135]];
  // Door opening x553..660 at y955: one step (30 cm) inside its centre.
  // Left -> left-front -> front -> right-front -> right, in 45-degree steps.
  const station=[606.5,925,165],directions=[[-1,0],[-Math.SQRT1_2,-Math.SQRT1_2],[0,-1],[Math.SQRT1_2,-Math.SQRT1_2],[1,0]];
  const entryLabels=['左','左前','正前','右前','右'];
  data.entry=directions.map(([dx,dy])=>[station.slice(),[station[0]+dx*300,station[1]+dy*300,140]]);
- return Object.keys(names).flatMap(room=>data[room].map(([p,t],i)=>({id:room+'-'+(room==='entry'?'door5':'')+'ABCDE'[i],room,name:(room==='collection'&&v===0?'貓房':room==='study'&&v===0?'書房・電子琴':room==='collection'&&v>=3?'開放收藏收納':names[room])+'・'+(room==='entry'?entryLabels[i]:'視角 '+'ABCDE'[i]),...(room==='entry'?{directionLabel:entryLabels[i],entryFan:true}:{}),p,t,fov:room==='entry'?70:['closet','bath1','bath2','storage','back'].includes(room)?86:74,direction:Math.atan2(t[1]-p[1],t[0]-p[0])*180/Math.PI})));
+ return Object.keys(names).flatMap(room=>data[room].map(([p,t],i)=>({id:room+'-'+(room==='entry'?'door5':'')+'ABCDE'[i],room,name:(room==='collection'&&v===0?'貓房':room==='study'&&v===0?'書房・電子琴':room==='collection'&&v>=3?'開放收藏收納':names[room])+'・'+(room==='entry'?entryLabels[i]:'視角 '+'ABCDE'[i]),...(room==='entry'?{directionLabel:entryLabels[i],entryFan:true}:{}),p,t,fov:room==='collection'&&v===1&&i===1?82:room==='entry'?70:['closet','bath1','bath2','storage','back'].includes(room)?86:74,direction:Math.atan2(t[1]-p[1],t[0]-p[0])*180/Math.PI})));
 }
 function sha(p){return crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');}
 (async()=>{
@@ -48,16 +49,17 @@ function sha(p){return crypto.createHash('sha256').update(fs.readFileSync(p)).di
  const jobsFile=path.join(out,'capture-manifest.json');
  const old=fs.existsSync(jobsFile)?JSON.parse(fs.readFileSync(jobsFile,'utf8')):{schema:1,capturedAt:'2026-09-14',modelRevision:process.env.HOME_ALBUM_SOURCE_COMMIT||'workspace',method:'actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture',entries:[]};
  for(const v of selected){
-  const f=await build(v===0?0:v+1);f.c.HOME_COMFORT.setScene('daily');f.tick(3);
+  const f=await build(v===0?0:v+1);f.c.HOME_COMFORT.setScene('daily');if(v===1){f.c.HOME_INTERACTION.setDoor('study-slide-r05',true);f.tick(80,50);}else f.tick(3);
   const authored=views(v).filter(q=>(!roomFilter||roomFilter.split(',').includes(q.room))&&(!only||q.id===only));
   if(authored.some(q=>q.room==='entry')){f.c.HOME_WALK.refreshColliders();if(!f.c.HOME_WALK.canStand(606.5-482.5,925-480))throw Error('Door-entry camera station blocked in V'+v);}
   if(authored.some(q=>q.room==='entry'))old.entries=old.entries.filter(e=>e.version!=='v'+v||e.room!=='entry'||/entry-door5[A-E]$/.test(e.key));
   for(const q of authored){
    if(q.room==='storage'){f.c.HOME_INTERACTION.setDoor('storage',true);f.tick(80,50);}
    if(q.room==='closet'&&!f.albumMirrorOpened){const mirror=f.V.scene.getObjectByName('更衣室側移滑鏡')?.children[0];if(mirror)mirror.position.x+=50;f.albumMirrorOpened=true;}
-   const file='v'+v+'-'+q.id+'.png',target=path.join(out,'model',file);
+   const captureView=v===1?{...q,id:q.id+'-r05'}:q;
+   const file='v'+v+'-'+captureView.id+'.png',target=path.join(out,'model',file);
    if(!process.argv.includes('--force')&&fs.existsSync(target)&&old.entries.some(e=>e.key==='v'+v+'-'+q.id))continue;
-   const [record]=render({T:f.T,V:f.V,version:'v'+v,out:path.join(out,'model'),textured:true,width:1152,height:768,views:[q]});
+   const [record]=render({T:f.T,V:f.V,version:'v'+v,out:path.join(out,'model'),textured:true,width:1152,height:768,views:[captureView]});
    const key='v'+v+'-'+q.id;old.entries=old.entries.filter(e=>e.key!==key);
    old.entries.push({...record,key,version:'v'+v,versionTitle:titles[v],model:'model/'+file,modelHash:sha(target),angle:q.id.slice(-1),width:1152,height:768,ai:null,status:'source-captured'});
    fs.writeFileSync(jobsFile,JSON.stringify(old,null,2)+'\n');

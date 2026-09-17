@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-17",
+  "pass": true,
+  "before": {
+    "v0": {
+      "meshCount": 1621,
+      "sha256": "afcba694014f2011b5986d400b3901631b0fa3d65106cbe867e095a197021c09"
+    },
+    "v2": {
+      "meshCount": 1805,
+      "sha256": "9b80a6d9491e4a678638fc9d80d347335bfb6441aae55dadb0f2c69b1a016e35"
+    },
+    "v3": {
+      "meshCount": 1653,
+      "sha256": "e4d96880b1983e3ec6a0f1bcdb8ba38a59c196dbaad7aa3ee65020d4e8fb0adb"
+    },
+    "v4": {
+      "meshCount": 1517,
+      "sha256": "42ebd503ce08db36d296dd215a0450a513813afac1b6f54424b336a59538cfde"
+    }
+  },
+  "after": {
+    "v0": {
+      "meshCount": 1621,
+      "sha256": "afcba694014f2011b5986d400b3901631b0fa3d65106cbe867e095a197021c09"
+    },
+    "v2": {
+      "meshCount": 1805,
+      "sha256": "9b80a6d9491e4a678638fc9d80d347335bfb6441aae55dadb0f2c69b1a016e35"
+    },
+    "v3": {
+      "meshCount": 1653,
+      "sha256": "e4d96880b1983e3ec6a0f1bcdb8ba38a59c196dbaad7aa3ee65020d4e8fb0adb"
+    },
+    "v4": {
+      "meshCount": 1517,
+      "sha256": "42ebd503ce08db36d296dd215a0450a513813afac1b6f54424b336a59538cfde"
+    }
+  }
+}

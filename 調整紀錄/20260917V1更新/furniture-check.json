@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-17",
+  "revision": "V1-R05",
+  "pass": true,
+  "items": 83,
+  "previousItems": 82,
+  "checks": [
+    "JSON and browser seed match",
+    "Existing catalog IDs preserved",
+    "New two-stool row has pending price, not zero quote",
+    "Historical priced totals unchanged; new speaker configuration requires requote",
+    "Changed V1 cabinet and stool model targets resolve"
+  ],
+  "resolved": [
+    "R05 書房六抽與低位常用櫃",
+    "R05 收藏室開放備藏",
+    "R05 整段同深展示牆",
+    "R05 整段同深展示牆",
+    "V1 圓弧外側圓凳 1",
+    "V1 圓弧外側圓凳 2"
+  ],
+  "limitations": [
+    "Historical 20260910 furniture integration test has obsolete fixed row counts and geometry hashes; not evidence of this revision",
+    "Browser local drafts can differ from published seed; user edits are not overwritten"
+  ]
+}
