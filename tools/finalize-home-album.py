@@ -18,7 +18,13 @@ for key in keys:
  source=root/'model'/f'{key}.png';original=root/'originals'/f'{key}.png'
  e=next(e for e in entries if e['aiKey']==key)
  assert sha(source)==e['modelHash'],key
- for family,size in [('images',(1536,1024)),('models',(1152,768)),('thumbs',(576,384))]:
+ # Preserve the image tool's native canvas (occasionally 1535 x 1025), rather
+ # than stretching an architectural image to fit a nominal output size.
+ with Image.open(original) as native:
+  native_size=native.size
+  assert min(native_size)>=1000 and 1.45<native_size[0]/native_size[1]<1.55,(key,native_size)
+  native.thumbnail((576,384),Image.Resampling.LANCZOS);thumb_size=native.size
+ for family,size in [('images',native_size),('models',(1152,768)),('thumbs',thumb_size)]:
   f=root/family/f'{key}.webp'
   with Image.open(f) as im:im.load();assert im.size==size,(key,family,im.size)
   assert f.stat().st_mtime>=original.stat().st_mtime or family=='models',f'Stale export: {f}'

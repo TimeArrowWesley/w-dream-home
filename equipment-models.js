@@ -386,6 +386,43 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     return backPanel;
   }
   function luggage(){const g=group('收藏室 B 行李箱專用格');for(const yy of [793,874,953.2])cover(215,yy,60,1.8,0,245,M.black,g);for(const zz of [0,92,148,202,243.2])cover(215,793,60,162,zz,1.8,M.black,g);cover(215,793,1.8,162,0,245,M.black,g);for(const yy of [794,875]){const door=protectedFinish(cover(274,yy,1,78,5,236,collectionFinish,g,'收藏室行李箱門'),'collection-inner');door.userData.swingFront={name:'收藏室深收納',face:'E',hinge:'min'};}box(223,805,45,65,2,85,M.black,g,'85cm高行李箱放入櫃內');box(224,886,42,60,2,75,M.grey,g,'75cm高行李箱放入櫃內');}
+  function guestStorage(){
+    const revision='20260921-gbath-r04',g=group('客浴原位收納・GB-R04');
+    const note='2026-09-21 業主採用方向；以下皆為模型試配 cm，非施工尺寸。馬桶、浴櫃與入口原位。紙包外徑、坐姿取用、門鉸與牆面固定待現場確認。';
+    info(g,'客浴原位收納・GB-R04',note,'業主決定＋R02／R03試配');
+    g.userData.guestStorage=true;g.userData.revision=revision;
+    const finish=explicitFinish('#343c3f',.65,.12,'guest-storage-graphite');
+    const inner=explicitFinish('#b7b3a8',.85,0,'guest-storage-inner');
+    function b(x,y,w,d,z,h,mat,name,parent=g){const o=box(x,y,w,d,z,h,mat,parent,name,note);o.userData.guestStorage=true;o.userData.finishGroup='guest-storage';return o;}
+    // 70 x 22 x 80 cm overall, including the closed door. The open interior is real geometry.
+    b(420,217,70,.9,150,80,inner,'客浴備品櫃・背板');
+    for(const x of [420,488.2])b(x,217.9,1.8,18.9,150,80,finish,'客浴備品櫃・側板');
+    for(const z of [150,228.2])b(421.8,217.9,66.4,18.9,z,1.8,finish,'客浴備品櫃・頂底板');
+    for(const z of [176,202])b(421.8,217.9,66.4,18.2,z,1.8,inner,'客浴備品櫃・可調層板');
+    for(let i=0;i<2;i++){
+      const leaf=b(420.2+i*35,237.2,34.6,1.8,150.2,79.6,finish,'客浴備品櫃・'+(i?'右':'左')+'門');
+      leaf.userData.swingFront={name:'客浴備品櫃・'+(i?'右':'左')+'門',face:'S',hinge:i?'max':'min'};
+      leaf.userData.recessedPull=true;
+    }
+    // Spare items illustrate zoning only; they are not a verified storage capacity.
+    for(const z of [152,178])for(const x of [426,453])b(x,220,24,13,z,9,M.linen,'客浴備品櫃・紙品示意');
+    for(let i=0;i<3;i++)b(427,220,38,14,204+i*4,3.5,M.linen,'客浴備品櫃・毛巾示意');
+    b(484,237,12,24,66.8,1.2,finish,'客浴手邊平台・頂面68cm');
+    b(494.8,237,1.2,24,65,1.8,finish,'客浴手邊平台・側板固定座');
+    // Flat phone proxy, separate from the tissue extraction opening; model does not specify a brand.
+    b(486,240,8,17,68,.7,M.black,'客浴手邊平台・手機示意');
+    b(486.4,240.4,7.2,16.2,68.71,.05,M.glass,'客浴手邊平台・手機螢幕示意');
+    // A hollow, open-top removable cassette below the shelf. Paper exits toward the toilet (-X).
+    const cassette=group('客浴抽取式紙盒・可取出補包',g);
+    for(const y of [237,260.4])b(485.6,y,10.4,.6,53,12,finish,'客浴抽取式紙盒・端板',cassette);
+    b(495.4,237.6,.6,22.8,53,12,finish,'客浴抽取式紙盒・背板',cassette);
+    b(485.6,237.6,9.8,22.8,53,.6,finish,'客浴抽取式紙盒・底板',cassette);
+    for(const [y,d,z,h] of [[237,24,53,4],[237,24,61,4],[237,8,57,4],[253,8,57,4]])b(485,y,.6,d,z,h,finish,'客浴抽取式紙盒・朝馬桶取紙口',cassette);
+    b(486.2,238.2,8.6,21.6,54,9.5,M.linen,'客浴抽取式紙盒・紙包佔位待實測',cassette);
+    const tissue=b(483.6,247,2.6,4.5,59,.12,M.linen,'客浴抽取式紙盒・取紙示意',cassette);tissue.rotation.z=.16;
+    refinements.guestStorage={revision,group:g,cassette,cabinet:{x:420,y:217,z:150,w:70,d:22,h:80,innerW:66.4,innerD:18.2},platform:{x:484,y:237,z:66.8,w:12,d:24,h:1.2},paperPackProxy:{w:8.6,d:21.6,h:9.5},status:'顧問試配，人體、紙包與施工待確認'};
+    return g;
+  }
   function guestDoor(){
     const g=group('客浴外掛雙聯滑門',architecture);g.position.copy(pos(0,0,0));
     g.userData.slidingDoor={name:'客浴雙聯滑門',key:'bath2',distance:43,opening:{x:490,y:365,w:80,d:10,h:215}};
@@ -451,5 +488,5 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
 
   }
   function finish(){const originalMaterials=new Map();window.HOME_EQUIPMENT={items,covers,allowances,bays,units,switchStation,refinements,revision:'20260910',setInspection(value){covers.forEach(m=>{if(value){if(!originalMaterials.has(m))originalMaterials.set(m,m.material);else return;m.material=m.material.clone();m.material.transparent=true;m.material.opacity=.13;m.material.depthWrite=false;}else if(originalMaterials.has(m)){m.material.dispose();m.material=originalMaterials.get(m);originalMaterials.delete(m);}m.material.needsUpdate=true;});allowances.forEach(m=>m.visible=value);window.HOME_REALISM?.invalidate();},getSchedule(){return items.map(g=>({name:g.name,...g.userData.equipment}));}};}
-  return {refinements,units,group,part,product,cover,allowance,bay,appliances,receivingSink,consoleBase,audio,rotatingTV,coffee,projector,vanity,closet,closetMirror,collectionBack,luggage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
+  return {refinements,units,group,part,product,cover,allowance,bay,appliances,receivingSink,consoleBase,audio,rotatingTV,coffee,projector,vanity,closet,closetMirror,collectionBack,luggage,guestStorage,guestDoor,kitchenDoor,kitchenEquipment,finish,items};
 };

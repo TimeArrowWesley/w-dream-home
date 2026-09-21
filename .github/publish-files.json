@@ -709,7 +709,24 @@
     "成品圖集/20260914暗色現代工業/thumbs/v1-study-C-r05.webp",
     "調整紀錄/20260917V1更新/index.html",
     "調整紀錄/20260917V1更新/overview.webp",
-    "調整紀錄/20260917V1更新/study-entry.webp"
+    "調整紀錄/20260917V1更新/study-entry.webp",
+    "調整紀錄/20260921客浴原位收納/index.html",
+    "調整紀錄/20260921客浴原位收納/驗證.json",
+    "成品圖集/20260914暗色現代工業/images/v0-bath2-A-gb04.webp",
+    "成品圖集/20260914暗色現代工業/models/v0-bath2-A-gb04.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/v0-bath2-A-gb04.webp",
+    "成品圖集/20260914暗色現代工業/images/v0-bath2-B-gb04.webp",
+    "成品圖集/20260914暗色現代工業/models/v0-bath2-B-gb04.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/v0-bath2-B-gb04.webp",
+    "成品圖集/20260914暗色現代工業/images/v0-bath2-C-gb04.webp",
+    "成品圖集/20260914暗色現代工業/models/v0-bath2-C-gb04.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/v0-bath2-C-gb04.webp",
+    "成品圖集/20260914暗色現代工業/images/v1-bath2-A-gb04.webp",
+    "成品圖集/20260914暗色現代工業/models/v1-bath2-A-gb04.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-A-gb04.webp",
+    "成品圖集/20260914暗色現代工業/images/v1-bath2-B-gb04.webp",
+    "成品圖集/20260914暗色現代工業/models/v1-bath2-B-gb04.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/v1-bath2-B-gb04.webp"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -773,6 +790,8 @@
     "調整紀錄/20260917V1更新/circulation-check.json",
     "調整紀錄/20260917V1更新/dining-check.json",
     "調整紀錄/20260917V1更新/furniture-check.json",
-    "調整紀錄/20260917V1更新/其他版本保留核對.json"
+    "調整紀錄/20260917V1更新/其他版本保留核對.json",
+    "tools/verify-guest-storage.cjs",
+    "tools/verify-guest-storage-catalog.cjs"
   ]
 }

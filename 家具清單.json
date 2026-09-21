@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20260917-v1-r05",
-  "updatedAt": "2026-09-17",
+  "revision": "20260921-gbath-r04",
+  "updatedAt": "2026-09-21",
   "source": {
     "title": "W夢想之家家具設備規格表",
     "url": "https://claude.ai/code/artifact/8efebff0-f6bf-4b4d-8099-99282e849203",
@@ -1298,12 +1298,12 @@
       "priceText": "待定",
       "notes": "",
       "status": "待報價",
-      "includeInBudget": true,
+      "includeInBudget": false,
       "modelKeys": [],
       "modelSearch": [],
-      "currentNote": "",
+      "currentNote": "2026-09-21 業主確認客浴無淋浴；此花灑為匯入歷史資料，移至封存，不列現行配置或採購預算。原始規格保留。",
       "modelDirty": false,
-      "archived": false,
+      "archived": true,
       "original": {
         "name": "淋浴花灑",
         "brand": "hansgrohe\n同系列較小尺寸\n選購條件見文末「型號待選」",
@@ -2062,6 +2062,54 @@
         "name": "中島外弧圓凳 ×2",
         "brand": "型號待選",
         "specs": "2026-09-17 依業主位置示意新增",
+        "priceText": "待報價"
+      }
+    },
+    {
+      "id": "gb04-spares",
+      "room": "gbath",
+      "name": "客浴上方備品櫃",
+      "brand": "訂製試案／型號待選",
+      "specs": "模型外徑70寬×22深×80高cm（含關閉門片）；完成地坪到櫃底150cm、到櫃頂230cm。內寬66.4、層板有效深18.2cm；實際五金會再占空間。",
+      "priceText": "待報價",
+      "notes": "屬客浴收納深化；人體、實際紙包、櫃體固定與五金須確認。平台不作扶手。",
+      "status": "待確認",
+      "includeInBudget": true,
+      "modelKeys": [],
+      "modelSearch": [
+        "客浴原位收納・GB-R04"
+      ],
+      "currentNote": "V0～V4 共用 GB-R04；方向獲業主採用，尺寸為顧問試配，非施工核定。紙盒向馬桶側抽出16cm後取起補包為模型路徑，實際掛扣尚未選定。",
+      "modelDirty": false,
+      "archived": false,
+      "original": {
+        "name": "客浴上方備品櫃",
+        "brand": "訂製試案／型號待選",
+        "specs": "2026-09-21 依業主採用方向加入全版本模型",
+        "priceText": "待報價"
+      }
+    },
+    {
+      "id": "gb04-phone-tissue",
+      "room": "gbath",
+      "name": "客浴手機平台＋抽取式紙盒",
+      "brand": "訂製試案／型號待選",
+      "specs": "平台沿浴櫃側板24cm、朝馬桶突出12cm，完成地坪到頂面68cm；紙盒外徑11×24×12cm，底高53cm。模型紙包8.6×21.6×9.5cm僅為佔位。",
+      "priceText": "待報價",
+      "notes": "屬客浴收納深化；人體、實際紙包、櫃體固定與五金須確認。平台不作扶手。",
+      "status": "待確認",
+      "includeInBudget": true,
+      "modelKeys": [],
+      "modelSearch": [
+        "客浴手邊平台・頂面68cm"
+      ],
+      "currentNote": "V0～V4 共用 GB-R04；方向獲業主採用，尺寸為顧問試配，非施工核定。紙盒向馬桶側抽出16cm後取起補包為模型路徑，實際掛扣尚未選定。",
+      "modelDirty": false,
+      "archived": false,
+      "original": {
+        "name": "客浴手機平台＋抽取式紙盒",
+        "brand": "訂製試案／型號待選",
+        "specs": "2026-09-21 依業主採用方向加入全版本模型",
         "priceText": "待報價"
       }
     }

@@ -10,19 +10,10 @@
     "v3": 38,
     "v4": 38
   },
-  "displayBytes": 54616086,
+  "displayBytes": 54214074,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 36,
+  "correctionViews": 37,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
-  "browserVisualQA": {
-    "revision": "V1 R05",
-    "checks": [
-      "Actual browser loaded V1 and 38-view gallery",
-      "Exterior stools, slider toggles and revision controls respond",
-      "Island A actual model / AI side-by-side reviewed",
-      "R05 review page and linked assets load"
-    ],
-    "scope": "Targeted V1 UI and representative imagery; not all 190 slots individually browser-tested"
-  }
+  "browserVisualQA": false
 }

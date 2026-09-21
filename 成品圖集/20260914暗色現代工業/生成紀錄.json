@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-17",
-  "sourceRevision": "20260917-v1-r05",
+  "date": "2026-09-21",
+  "sourceRevision": "20260921-gbath-r04",
   "versionSources": {
     "v0": {
       "capturedAt": "2026-09-15",
@@ -58,13 +58,100 @@
       "note": "保留大門側結構柱與玄關櫃的實際遮擋；不為取景移除模型。",
       "other165ViewsUnchanged": true
     },
-    "v1": "20260917-v1-r05; original full-height glass, exterior arc seating, whole-home R04 adjustments"
+    "v1": "20260917-v1-r05; original full-height glass, exterior arc seating, whole-home R04 adjustments",
+    "guestBathGB04": {
+      "capturedAt": "2026-09-21",
+      "versions": [
+        "v0",
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "updatedSlots": [
+        "v0-bath2-A",
+        "v0-bath2-B",
+        "v0-bath2-C",
+        "v1-bath2-A",
+        "v1-bath2-B",
+        "v1-bath2-C",
+        "v2-bath2-A",
+        "v2-bath2-B",
+        "v2-bath2-C",
+        "v3-bath2-A",
+        "v3-bath2-B",
+        "v3-bath2-C",
+        "v4-bath2-A",
+        "v4-bath2-B",
+        "v4-bath2-C"
+      ],
+      "basis": "D023 all-version original-position guest bathroom storage. Remaining 175 image slots retained from earlier revisions. Only identical source PNG hashes share AI assets.",
+      "sourceFileSha256": {
+        "equipment-models.js": "e6a8aea8d6f3ee3cc0d7aa071dfce7dea06ba7e0cf768c2dd222939eb1ef67f8",
+        "design.js": "ebf429844483bcb4060e3d0c7c2bd9d81dd94b1ee4a79046eb912edceea64795",
+        "提案/旋轉電視與直線中島/design.js": "16d79718ba41f1fe0d88133f8b18ca0349a7432feb3e20fde343d4ea2c0a678a"
+      }
+    }
   },
   "sourceMethod": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "generationTool": "Built-in image_gen",
   "viewSlots": 190,
   "uniqueImages": 126,
   "records": [
+    {
+      "key": "v0-bath2-A-gb04",
+      "usedBy": [
+        "v0-bath2-A",
+        "v2-bath2-A",
+        "v3-bath2-A",
+        "v4-bath2-A"
+      ],
+      "sourcePngSha256": "74c60b023646f2530bcd802217b1aba4888c737d5d4d76c7decbbdd4756a6f3b",
+      "aiOriginalPngSha256": "049962abefde56114974489573a125aaa3a74298f871339463e4f86c48babde3",
+      "aiWebpSha256": "be33548954c68115af02066e3c1dccb76c0c314b0e441947a12a1ec963bec4df",
+      "sourceWebpSha256": "f479639f14d50fcb388ffbd02c44f33c48551b4d796c1ab2e88c69aabaf9d095",
+      "prompt": "Edit this exact architectural source view into a realistic interior concept photograph, 1536x1024 landscape. Keep EXACT camera, crop, room footprint, wall corners, toilet location and facing direction, floating timber vanity, gray stone top and raised thin white oval basin rim, black faucet, large rectangular mirror, dark floor and existing closed sliding doorway. Gray warm mineral walls, dark brown timber, charcoal fittings, restrained modern industrial finish. There is NO shower. New shallow graphite closed two-leaf wall cabinet above toilet must match the source location/size/crop, NOT a wall-wide cabinet. New small charcoal cassette on toilet-facing vanity side has a separate phone shelf on top with a flat black phone and a front-facing slot with a small white pull tissue beneath; do not add toilet paper rolls or alter the toilet-to-vanity gap. Preserve any object's natural occlusion. Realistic soft warm-neutral illumination, subtle texture and correct perspective; not glossy marble decoration. Match all visible objects and existing door hardware; do not invent door lever handles, showers, windows, lights, shelving, decorations, labels or captions. This is a concept rendering, not dimensional construction proof. Mirror has NO luminous strips. The tissue module is mostly occluded by vanity here; do not move it into view.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-bath2-B-gb04",
+      "usedBy": [
+        "v0-bath2-B",
+        "v2-bath2-B",
+        "v3-bath2-B",
+        "v4-bath2-B"
+      ],
+      "sourcePngSha256": "3cea75fb38f09c3d02a99269ced1a59f2fb8197dc8f5732755334e9086c8e4d6",
+      "aiOriginalPngSha256": "a7f56e88ad3ddec1b193291aeb231eee7e862182be275388845f2fde9adc61de",
+      "aiWebpSha256": "9ff27d48c45b9f807badcd73b79cc1108e6e2cc9a42b447390105c2872fecffd",
+      "sourceWebpSha256": "f1f695753100f55c85f4677ab07c851e7ccbf4c47401ba5cecb1af7dccaf6073",
+      "prompt": "Edit this exact architectural source view into a realistic interior concept photograph, 1536x1024 landscape. Keep EXACT camera, crop, room footprint, wall corners, toilet location and facing direction, floating timber vanity, gray stone top and raised thin white oval basin rim, black faucet, large rectangular mirror, dark floor and existing closed sliding doorway. Gray warm mineral walls, dark brown timber, charcoal fittings, restrained modern industrial finish. There is NO shower. New shallow graphite closed two-leaf wall cabinet above toilet must match the source location/size/crop, NOT a wall-wide cabinet. New small charcoal cassette on toilet-facing vanity side has a separate phone shelf on top with a flat black phone and a front-facing slot with a small white pull tissue beneath; do not add toilet paper rolls or alter the toilet-to-vanity gap. Preserve any object's natural occlusion. Realistic soft warm-neutral illumination, subtle texture and correct perspective; not glossy marble decoration. Match all visible objects and existing door hardware; do not invent door lever handles, showers, windows, lights, shelving, decorations, labels or captions. This is a concept rendering, not dimensional construction proof. Mirror has NO luminous strips. This view clearly shows the little phone shelf and tissue cassette on the LEFT exposed SIDE of the vanity; keep it compact.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "v0-bath2-C-gb04",
+      "usedBy": [
+        "v0-bath2-C",
+        "v2-bath2-C",
+        "v3-bath2-C",
+        "v4-bath2-C",
+        "v1-bath2-C"
+      ],
+      "sourcePngSha256": "eba2e2b6a5640f3f6ae5a0be82dbdc107c0a70d4f5d0dcbd3d5d806ad4ce31b6",
+      "aiOriginalPngSha256": "922f34eb1e8b6ead1dbc6a50283540683c69ee5f09d0974d2251f19f230c781c",
+      "aiWebpSha256": "e2fad1bc987411d1fd7546f84a9467727896a761d589ca911f062550a9645ceb",
+      "sourceWebpSha256": "a67cf0e917761c24ba69b674209d293f9e8a41848ce35c44cf91a75b29a0b6d6",
+      "prompt": "Edit this exact architectural source view into a realistic interior concept photograph, 1536x1024 landscape. Keep EXACT camera, crop, room footprint, wall corners, toilet location and facing direction, floating timber vanity, gray stone top and raised thin white oval basin rim, black faucet, large rectangular mirror, dark floor and existing closed sliding doorway. Gray warm mineral walls, dark brown timber, charcoal fittings, restrained modern industrial finish. There is NO shower. New shallow graphite closed two-leaf wall cabinet above toilet must match the source location/size/crop, NOT a wall-wide cabinet. New small charcoal cassette on toilet-facing vanity side has a separate phone shelf on top with a flat black phone and a front-facing slot with a small white pull tissue beneath; do not add toilet paper rolls or alter the toilet-to-vanity gap. Preserve any object's natural occlusion. Realistic soft warm-neutral illumination, subtle texture and correct perspective; not glossy marble decoration. Match all visible objects and existing door hardware; do not invent door lever handles, showers, windows, lights, shelving, decorations, labels or captions. This is a concept rendering, not dimensional construction proof. This view looks BACK toward closed dual sliding entry panels; no projecting lever handles. Only a cropped portion of upper graphite cabinet is visible TOP RIGHT. Mirror and sink are mostly outside frame. Preserve occlusions.\n",
+      "corrections": [
+        {
+          "instruction": "移除右下方本應遮蔽的龍頭、盆、鏡與手邊紙盒；恢復模型前景遮蔽。",
+          "prompt": "Correct the FIRST image using the SECOND image as the strict geometric authority. Keep the FIRST image's realistic gray plaster, stone and graphite material finish, but restore exactly the SECOND image's camera framing, occlusion and visible objects. Critical correction: remove ALL invented mirror, light strips, faucet, sink bowl, visible phone shelf and visible tissue box from the lower RIGHT. They are outside frame or hidden behind the vanity in this camera. That foreground region contains ONLY the gray triangular stone counter edge obscuring a very thin black strip by the toilet, exactly as second source. Do NOT add new features in this area. Keep toilet exactly aligned to second source, keep the cropped shallow graphite wall cabinet at upper RIGHT, the blank gray wall center, two tall closed sliding door panels left with no lever handles, and stone floor. Cabinet has slim recessed horizontal pulls, no decorative light underneath it. No shower. Preserve composition absolutely. 1536x1024, photorealistic concept rendering, no captions.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
     {
       "key": "v0-collection-A",
       "usedBy": [
@@ -513,83 +600,29 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-bath2-A",
-      "usedBy": [
-        "v0-bath2-A",
-        "v2-bath2-A",
-        "v3-bath2-A",
-        "v4-bath2-A"
-      ],
-      "sourcePngSha256": "447e7d0693e2b81e3fa6c774842afee11714b173047553f8a8b553914833cd95",
-      "aiOriginalPngSha256": "8951a33728eec4bb7e48de99804898a0a3d02b4a8c01220712520170a9763530",
-      "aiWebpSha256": "6b99928b2dac3b0322375e969e9edf92d7f7347ba78e82cd36ebe92a051050c9",
-      "sourceWebpSha256": "22762ed7d9513b9b70b46fc0bd53d0ad1cd174314e4f5ccd6c99a1e04d59119d",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. Only EXISTING wood floors in living/bedroom/study/closet/storage are dark smoked oak HERRINGBONE. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Black stone counters with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nSpecific scene: Small guest bathroom: preserve its compact proportions and exact toilet, single floating vanity and mirror, black door and all walls. Nuanced charcoal/medium-gray cement plaster, dark stone floor and counter, smoked wood vanity, white porcelain, matte black hardware, mirror with credible reflection. Do not enlarge the room or add a shower, tub, extra sink or window.\nExact source view: v1-bath2-A. Match image 1.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-bath2-A-r05",
+      "key": "v1-bath2-A-gb04",
       "usedBy": [
         "v1-bath2-A"
       ],
-      "sourcePngSha256": "41cb61e0d9d901f81ddd1e64c063438fe399d1015076627035a1dc2638a4ea13",
-      "aiOriginalPngSha256": "e282b849df4e1592b8564de8a7e7b3c14d2b145f0055893fc2d86d4a368fc03a",
-      "aiWebpSha256": "5b11ebf608dee1d974384995f95ec36d7bfd4f0f29623b7ebec3e8b7d3de0262",
-      "sourceWebpSha256": "033d5aace725a91a55e7fe4d861f100e74c338a0d7c221a877fbb3e6ffcccf8a",
-      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bath2-A. Bathroom: grey porcelain/stone TILE floor and matte grey walls, not wood flooring. Preserve compact dimensions, toilet, oval inset sink, wood vanity, frameless rectangular mirror with thin vertical SIDE task lights. Preserve exact shower glass frame, shower fittings and bathtub only when shown. Do not add niches or wet-area fixtures.",
+      "sourcePngSha256": "6e73a0fa57fb8d64b189c9133f0c674bfb50265c0ab49318cb6e671ad43bd676",
+      "aiOriginalPngSha256": "a6c4fbced5f8ef2ccf487c9f827a23d237eeb3cf666a4bc0613959c2469a4b62",
+      "aiWebpSha256": "92eaa55fdacbe0457ab870cf75b1f159d65381aa9150908ad8eba13176e22eff",
+      "sourceWebpSha256": "0a30256e4304d0d04fa3740cb316d341f37df50ffaef98b59c88bd46ee95a58a",
+      "prompt": "Edit this exact architectural source view into a realistic interior concept photograph, 1536x1024 landscape. Keep EXACT camera, crop, room footprint, wall corners, toilet location and facing direction, floating timber vanity, gray stone top and raised thin white oval basin rim, black faucet, large rectangular mirror, dark floor and existing closed sliding doorway. Gray warm mineral walls, dark brown timber, charcoal fittings, restrained modern industrial finish. There is NO shower. New shallow graphite closed two-leaf wall cabinet above toilet must match the source location/size/crop, NOT a wall-wide cabinet. New small charcoal cassette on toilet-facing vanity side has a separate phone shelf on top with a flat black phone and a front-facing slot with a small white pull tissue beneath; do not add toilet paper rolls or alter the toilet-to-vanity gap. Preserve any object's natural occlusion. Realistic soft warm-neutral illumination, subtle texture and correct perspective; not glossy marble decoration. Match all visible objects and existing door hardware; do not invent door lever handles, showers, windows, lights, shelving, decorations, labels or captions. This is a concept rendering, not dimensional construction proof. Keep exactly the TWO vertical warm white illuminated bars on mirror, one at each edge. Tissue module is largely occluded by vanity; do not move it.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-bath2-B",
-      "usedBy": [
-        "v0-bath2-B",
-        "v2-bath2-B",
-        "v3-bath2-B",
-        "v4-bath2-B"
-      ],
-      "sourcePngSha256": "b15fe8b654145a00ff0aaa57d4d8142f4dc65c016fb92a41a12bcde77df0a7d4",
-      "aiOriginalPngSha256": "5b1820aa6e70aeaf2507d4c1f3afdb39c6bab093bbd377a4c1d31f4e015c0a18",
-      "aiWebpSha256": "ae87095241d4e4fd758edfdb55d93660b28f58adfaf7e8b92dd7b00fb2a8bd5e",
-      "sourceWebpSha256": "6c569ce6d56b46cd044e02090b942d7668e87dd6ff5b3e22849048369ac0700b",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. Only EXISTING wood floors in living/bedroom/study/closet/storage are dark smoked oak HERRINGBONE. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Black stone counters with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nSpecific scene: Small guest bathroom: preserve its compact proportions and exact toilet, single floating vanity and mirror, black door and all walls. Nuanced charcoal/medium-gray cement plaster, dark stone floor and counter, smoked wood vanity, white porcelain, matte black hardware, mirror with credible reflection. Do not enlarge the room or add a shower, tub, extra sink or window.\nExact source view: v1-bath2-B. Match image 1.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-bath2-B-r05",
+      "key": "v1-bath2-B-gb04",
       "usedBy": [
         "v1-bath2-B"
       ],
-      "sourcePngSha256": "708893a041338dbd58345e625ea4cdae35994d933a39479a1f78603959a685ab",
-      "aiOriginalPngSha256": "04a95259411ea151cb54cbfb81b89dac00b1916a9ed096ea0c75accc32e831e4",
-      "aiWebpSha256": "bd68dc5243562f9e87fc4f1c795a39eee2025ad7fe05dfaed5b85892fb2c9438",
-      "sourceWebpSha256": "31a4662fbc0e71405b869f37fae4cd43a26059336341a1825e345dcc5d2e38f6",
-      "prompt": "Edit this actual apartment 3D model source view into a photorealistic interior photograph, 1536x1024 landscape. Camera, perspective, composition, cabinet subdivisions, wall openings, furniture footprints, all equipment and existing objects must match the source EXACTLY. Source image is the geometry authority. Retain any tight or obstructed framing; never enlarge the room or remove walls. Premium restrained dark modern industrial materials: warm smoked oak herringbone floor, graphite matte cabinet fronts, warm grey surfaces, subtle black metal and realistic glazing. Natural daylight plus restrained warm-neutral integrated task lighting at existing locations. Transform blocky equipment/chairs/storage boxes into plausible real materials while preserving size, placement and object count. No new furniture, windows, doors, props, decor, people, text or watermark. No layout redesign. Use this source image only, not an invented ideal room.\nView v1-bath2-B. Bathroom: grey porcelain/stone TILE floor and matte grey walls, not wood flooring. Preserve compact dimensions, toilet, oval inset sink, wood vanity, frameless rectangular mirror with thin vertical SIDE task lights. Preserve exact shower glass frame, shower fittings and bathtub only when shown. Do not add niches or wet-area fixtures.",
+      "sourcePngSha256": "2ff82bd23488aa9b8f3e986a36746465f7b8547b801292e90f2f181ecfafb0d0",
+      "aiOriginalPngSha256": "6d26e59e20d7bc9ab1bc2832d8cdf4d914393853deb5733445fc1e3b3c3b4fd0",
+      "aiWebpSha256": "a523e9f066c6775376d2f9d5e2296eebaf9398bded0ba712eb450318031a89da",
+      "sourceWebpSha256": "a7c18f485af8893b86c8900b5e329358e26e53c5e9891d0da5e831ec17f92e5a",
+      "prompt": "Edit this exact architectural source view into a realistic interior concept photograph, 1536x1024 landscape. Keep EXACT camera, crop, room footprint, wall corners, toilet location and facing direction, floating timber vanity, gray stone top and raised thin white oval basin rim, black faucet, large rectangular mirror, dark floor and existing closed sliding doorway. Gray warm mineral walls, dark brown timber, charcoal fittings, restrained modern industrial finish. There is NO shower. New shallow graphite closed two-leaf wall cabinet above toilet must match the source location/size/crop, NOT a wall-wide cabinet. New small charcoal cassette on toilet-facing vanity side has a separate phone shelf on top with a flat black phone and a front-facing slot with a small white pull tissue beneath; do not add toilet paper rolls or alter the toilet-to-vanity gap. Preserve any object's natural occlusion. Realistic soft warm-neutral illumination, subtle texture and correct perspective; not glossy marble decoration. Match all visible objects and existing door hardware; do not invent door lever handles, showers, windows, lights, shelving, decorations, labels or captions. This is a concept rendering, not dimensional construction proof. Keep the TWO vertical warm white illuminated bars on mirror. Clearly show compact phone shelf and white PULL tissue emerging from cassette on LEFT SIDE of the vanity, exactly as source.\n",
       "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-bath2-C",
-      "usedBy": [
-        "v0-bath2-C",
-        "v2-bath2-C",
-        "v3-bath2-C",
-        "v4-bath2-C",
-        "v1-bath2-C"
-      ],
-      "sourcePngSha256": "358d6cb6c6297a8df304a7cc36e346a4f7bf5ad2d532747570d3326e90060ddc",
-      "aiOriginalPngSha256": "df3c9e6cdf242a9b0b9a1f2aca0f0c9cd8b3fe8c1328cfdb4ef198fed4ce325a",
-      "aiWebpSha256": "ce3b53a74249768d8529365dade920beb6186f7ee9cfab46534eb18eb8a885db",
-      "sourceWebpSha256": "6b1f2fc76cbc6dfb927e892b08cb87f21d2a938567d2a0717ce3d245ef53ee5d",
-      "prompt": "Use case: sketch-to-render. Create ONE finished high-end photorealistic interior photograph, landscape 3:2. Image 1 is the exact source-model edit target. Preserve its camera, perspective, proportions, all walls/openings/beams, cabinetry contours, furniture, appliances and their positions. No new furniture, no relocated equipment, no removal of existing objects, no new windows. Transform only materials, lighting and realistic fine detailing.\nUnified dark modern industrial design: black / charcoal / gray / restrained white, deep smoked oak, nuanced gray artistic concrete plaster, blackened steel, clear and smoked glass with credible reflections. Keep existing material boundaries. Only EXISTING wood floors in living/bedroom/study/closet/storage are dark smoked oak HERRINGBONE. Kitchen, BOTH bathrooms including their dry areas, and rear balcony have GRAY STONE TILE floors throughout, NEVER wood or herringbone. Cabinet grain is straight vertical, never light orange wood. Black stone counters with subtle restrained veining; realistic black metal frames and hardware. Neutral gray ceilings with existing lighting/AC details preserved. Soft balanced neutral light, sufficient readability, restrained warm concealed accent lines, a sophisticated private bar mood without overall yellow cast. Premium fabrication, subtle texture variation, believable reflected light and contact shadows; architectural magazine photography. No people, added logos, labels or watermark. Follow the source camera and geometry strictly.\nSpecific scene: Small guest bathroom: preserve its compact proportions and exact toilet, single floating vanity and mirror, black door and all walls. Nuanced charcoal/medium-gray cement plaster, dark stone floor and counter, smoked wood vanity, white porcelain, matte black hardware, mirror with credible reflection. Do not enlarge the room or add a shower, tub, extra sink or window.\nExact source view: v1-bath2-C. Match image 1.\n",
-      "corrections": [
-        {
-          "instruction": "Remove the hallucinated sink vanity mirror and towel from the wall. Source shows ONLY blank wall, black door and toilet. Restore bare gray concrete plaster, keep door/toilet/floor/camera unchanged.",
-          "prompt": "Targeted correction to Image 1, a finished architectural interior image. Preserve its exact camera, crop, geometry, all unaffected objects, lighting and dark modern industrial materials. Image 2 is the ORIGINAL SOURCE 3D GEOMETRY for spatial reference only. Do not copy its low-poly finish. Only apply this correction: Remove the hallucinated sink vanity mirror and towel from the wall. Source shows ONLY blank wall, black door and toilet. Restore bare gray concrete plaster, keep door/toilet/floor/camera unchanged.. Return one polished photorealistic 3:2 architectural photograph. No collage, labels, text, people. Do not redesign the room or add decorative furniture.\n"
-        }
-      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {

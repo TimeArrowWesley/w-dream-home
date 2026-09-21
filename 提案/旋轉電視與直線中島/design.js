@@ -294,7 +294,7 @@ for(const z of [114,192])showerPart(178,478,4,5,z,4,'淋浴桿固定座');
 showerPart(179,477,2,2,107,107,'主浴淋浴立桿');showerPart(179,451,2,28,213,2,'主浴頂噴支臂');
 cyl(180,451,211,10,2,M.steel,shower);showerPart(194,476,3,3,143,14,'手持蓮蓬頭');
 const hoseCurve=new T.CatmullRomCurve3([pos(192,477,104),pos(195,468,70),pos(201,471,76),pos(195.5,477,143)]);shower.add(new T.Mesh(new T.TubeGeometry(hoseCurve,24,.65,6,false),M.steel));
-basin(496,218,66,45);EQ.product('ls',445.7,263.25,0,'S',fittings,'客浴：本型號排水適用30.5～43.5cm；房間內徑与排水須複量。');box(421,295,141,64,.2,.8,M.grey,fittings,'客浴地面');
+basin(496,218,66,45);EQ.guestStorage();EQ.product('ls',445.7,263.25,0,'S',fittings,'客浴：本型號排水適用30.5～43.5cm；房間內徑与排水須複量。');box(421,295,141,64,.2,.8,M.grey,fittings,'客浴地面');
 // Shared adjustable shelves with an open floor-level trolley bay.
 window.HOME_STORAGE_BUILD({T,M,pos,box,info,fittings});
 // Luggage is now inside the purpose-built B cabinet, not in the aisle.

@@ -1,7 +1,10 @@
 {
-  "date": "2026-09-17",
-  "sourceRevision": "20260917-v1-r05",
+  "date": "2026-09-21",
+  "sourceRevision": "20260921-gbath-r04",
   "reviewedFinalImages": [
+    "v0-bath2-A-gb04",
+    "v0-bath2-B-gb04",
+    "v0-bath2-C-gb04",
     "v0-collection-A",
     "v0-collection-B-r20260916",
     "v0-collection-C",
@@ -33,11 +36,8 @@
     "v1-bath1-B-r05",
     "v1-bath1-C",
     "v1-bath1-C-r05",
-    "v1-bath2-A",
-    "v1-bath2-A-r05",
-    "v1-bath2-B",
-    "v1-bath2-B-r05",
-    "v1-bath2-C",
+    "v1-bath2-A-gb04",
+    "v1-bath2-B-gb04",
     "v1-bed-A-r05",
     "v1-bed-A-r20260916",
     "v1-bed-B-r05",
@@ -165,7 +165,8 @@
     "v4-entry-door5E-r20260916",
     "v4-island-A-r20260916",
     "v4-island-C",
-    "v4-living-B-r20260916"
+    "v4-living-B-r20260916",
+    "v0-bath2-C-gb04"
   ],
   "method": "51 unchanged AI images retain their recorded prior review; all 58 newly generated unique images reviewed against current actual model views, covering 70 changed view slots. Fourteen new images revised and inspected again for window openings, coats, unwanted equipment/furniture, countertop consistency and flush IH cooktops. All 190 source hashes matched to current model capture. AI material/lighting images are conceptual; source models remain authoritative for geometry and dimensions.",
   "newlyGenerated": 58,
@@ -176,5 +177,19 @@
     "correctedImages": 6,
     "checks": "30 images individually inspected against actual source views; six corrections inspected. Original geometry, not AI, controls measurements.",
     "limits": "AI textures, reflections, exterior views and small detailing are conceptual; no construction or exact-scale proof."
+  },
+  "guestBathGB04": {
+    "newlyReviewed": [
+      "v0-bath2-A-gb04",
+      "v0-bath2-B-gb04",
+      "v0-bath2-C-gb04",
+      "v1-bath2-A-gb04",
+      "v1-bath2-B-gb04"
+    ],
+    "updatedSlots": 15,
+    "geometryViewCount": 15,
+    "identicalPixelDeduplication": true,
+    "manualComparison": "Matched toilet, vanity, upper cabinet, side tissue and phone shelf; V1 mirror light bars retained. C corrected to remove invented foreground fixtures. Five images concept-only; furniture envelopes/hardware are governed by 3D and later specifications.",
+    "browserVisualQA": false
   }
 }
