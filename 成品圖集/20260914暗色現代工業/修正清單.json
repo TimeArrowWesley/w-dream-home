@@ -39,5 +39,125 @@
     "issue": "首版生成露出不應可見的鏡、龍頭、手機紙盒。",
     "fix": "依相同來源模型修正右下遮蔽，保留前景檯角。",
     "reviewed": true
+  },
+  "v1-island-B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Replace only the small RECTANGULAR prep sink on the far island with the small ROUND inset stainless-steel sink from image 2; keep existing black faucet. All island/cabinet outlines, glass grid, lighting, camera unchanged.",
+    "reviewed": true
+  },
+  "v1-island-C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Replace only the raised white oval plate/bowl on the island, behind glass at lower left, with a small ROUND inset stainless-steel prep sink as shown image 2. Its basin descends into the dark countertop, no white vessel above. Preserve black faucet and ALL other pixels/geometry/style.",
+    "reviewed": true
+  },
+  "v1-bed-C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Remove the two added potted plants, books and pen cup from vanity/side counter. The source has no extra tabletop decorations. Preserve original floating dressing mirror, stool, bed, cabinet, screen and exact camera, material color and light unchanged.",
+    "reviewed": true
+  },
+  "v1-bath1-B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Restore image 2 geometry at the RIGHT of vanity: the large invented glass doorway into a second bathroom must be removed entirely and replaced with SOLID GREY WALL exactly where image 2 shows wall. Only the original narrow pale frosted-glass strip immediately adjoining the black entry door remains. Remove invented shower, niche, second bathtub, extra toilet and room. Make vanity basin interior hollow white ceramic inside existing raised white oval rim, instead of a flat grey disk. Preserve camera, all furniture and exact original wall/opening outlines from image 2.",
+    "reviewed": true
+  },
+  "v1-storage-A-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Change ONLY all adjustable shelf surfaces from walnut brown to neutral medium-grey laminate, exactly image 2. Keep dark slotted rails/brackets, warm wood floor, all shelf counts/dimensions and every other item unchanged.",
+    "reviewed": true
+  },
+  "v1-back-B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Restore entire large upper LEFT pale-blue area above the balcony railing in image 2 as an outdoor opening with soft sky/daylight, not solid concrete wall. Keep exact opening boundaries, rail, condenser units and tall sink-side cabinet and camera. No new framing or extra equipment.",
+    "reviewed": true
+  },
+  "v2-collection-A-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Restore geometry from image 2: the gray rectangular volume at the back near floor is ONE existing plain gray suitcase proxy reaching almost to floor, not a floating drawer. Remove the invented floating drawer and two small black cases beneath; restore the SINGLE gray case with source exact position/size. Restore herringbone walnut floor from image 2 instead of tile. Preserve raised left bag-cabinet section and empty retrieval gap. Change nothing else.",
+    "reviewed": true
+  },
+  "v3-entry-door5E-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Restore the two large background pale-blue areas behind sofa/speaker from image 2 as exterior glazing with soft daylight and subtle blurred distant city, not opaque concrete walls. Preserve exact mullions, columns and every furniture position. Remove tiny invented extra items behind sofa; only show speaker components present in image 2.",
+    "reviewed": true
+  },
+  "v3-living-A-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Remove the invented black faucet and sink from the LEFT entry console. Image 2 shows a flat walnut console top with ONE black bag; restore that exact top and keep the bag. Preserve all other furniture, audio equipment, room geometry and camera.",
+    "reviewed": true
+  },
+  "v3-island-A-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Restore the LEFT outward island end/corner as a smooth vertical curved/rounded walnut slatted end following the exact model reference, including matching rounded countertop outline. The current squared-off end is wrong. Keep all footprint boundary points, length, width, appliances and camera otherwise fixed. Also lighten countertop to the reference off-white stone with sparse dark veining, not grey marble.",
+    "reviewed": true
+  },
+  "v3-island-B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-island-C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-kitchen-B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-study-C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-collection-A-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-collection-B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-collection-C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-storage-B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v3-storage-C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v4-entry-door5B-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v4-entry-door5C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v4-entry-door5D-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
+    "reviewed": true
+  },
+  "v4-collection-A-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Only restore the lower RIGHT island fragment to the exact source geometry. REMOVE the invented two faucets and black induction hob, which are outside this crop in the source. Show only the source cropped dark countertop and partial pale sink rim/basin. Keep all cabinet and wall edges unchanged.",
+    "reviewed": true
+  },
+  "v4-collection-C-mr01": {
+    "issue": "MR01 初稿視覺偏差",
+    "fix": "Only restore the RIGHT edge island fragment to source: REMOVE the added two faucets and dark sink; they are outside this crop. Keep the narrow original dark countertop with only the partially cropped black hob at extreme right as in source. No change to doors, cabinet, floor or camera.",
+    "reviewed": true
   }
 }

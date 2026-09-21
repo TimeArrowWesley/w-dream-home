@@ -140,7 +140,7 @@ for(const v of ['v0','v1','v2','v3','v4']){
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(v==='v4'){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,10);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
+  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,11);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
   assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
   assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
   d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));

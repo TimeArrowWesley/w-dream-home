@@ -61,7 +61,7 @@ def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--output'); parser.add_argument('--sync-ignore',action='store_true'); parser.add_argument('--check',action='store_true')
     args = parser.parse_args(); data, site, repo = entries(); links = verify(site)
     expected = ignore_text(repo)
-    if args.sync_ignore: (ROOT/'.gitignore').write_text(expected,encoding='utf-8')
+    if args.sync_ignore: (ROOT/'.gitignore').write_text(expected,encoding='utf-8',newline='\n')
     elif (ROOT/'.gitignore').read_text(encoding='utf-8') != expected: raise ValueError('Run --sync-ignore after changing the publication manifest')
     if args.output:
         output = (ROOT/args.output).resolve()

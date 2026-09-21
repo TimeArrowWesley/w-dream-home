@@ -116,7 +116,7 @@
     planFooter.replaceChildren(expandPlan);
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
-    const sideFoot = make('div', 'uiSideFoot', 'V0～V4 共用家具清單 · 可隨時切換版本');
+    const sideFoot = make('div', 'uiSideFoot', window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V4 共用家具清單 · 可隨時切換版本');
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -129,6 +129,7 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
+      ['四版動線修正 MR01', '收藏室入口、行李取出、V3窄道與主浴避撞的前後對照', '調整紀錄/20260921四版動線修正/index.html'],
       ['V0・原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],
       ['拆收藏室・兩個替代格局', 'V4 大中島已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
       ['V3・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
@@ -145,7 +146,7 @@
     }
     resources.append(resourceGrid);
     const history = make('details', 'uiHistory'); history.append(make('summary', '', 'AI 成品圖集'));
-    history.append(make('p', '', '每版 12 個空間、各 3 個方向，可對照模型取景與 AI 材質效果。尺寸以模型為準。'));
+    history.append(make('p', '', '每版12個空間，玄關5方向、其他各3方向，可對照模型取景與AI材質效果。尺寸以模型及核定圖說為準。'));
     for (const [label, file] of [['全屋 AI 圖集 ↗', 'AI寫實視角.html']]) {
       const a = make('a', '', label); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener'; history.append(a);
     }
@@ -174,6 +175,20 @@
     [kitchen, mirror, coffee, switch2, tv, stools].filter(Boolean).forEach(n => contextActions.append(n));
     if (tv) { $('rotatingTVBody').hidden = false; $('rotatingTVToggle').setAttribute('aria-expanded','true'); }
     if ($('bedroomControls')) controlsBody.append($('bedroomControls'));
+    const repairDoors=[];
+    if(window.HOME_MODEL_REPAIRS && window.HOME_INTERACTION){
+      const section=make('details','uiControlSection');section.open=true;
+      section.append(make('summary','','門片與取物檢查'));
+      for(const e of HOME_INTERACTION.getState().entries){
+        const room=/主浴/.test(e.name)?'bath1':/收藏室|精品包|左側上提包櫃|右側包櫃/.test(e.name)?'collection':/更衣室.*側移/.test(e.name)?'closet':/後陽台.*側移/.test(e.name)?'back':/儲藏室拉門/.test(e.name)?'storage':null;
+        if(!room)continue;
+        const b=btn('', 'uiRepairDoor'+e.id,()=>HOME_INTERACTION.toggleDoor(e.id));
+        b.style.cssText='display:block;width:100%;margin:6px 0;text-align:left';
+        section.append(b);repairDoors.push({id:e.id,room,b,section});
+      }
+      function syncDoorButtons(){for(const e of HOME_INTERACTION.getState().entries){const q=repairDoors.find(q=>q.id===e.id);if(q){const open=Math.abs(e.target)>.1;q.b.textContent=(open?'關閉':'開啟')+' · '+e.name;q.b.setAttribute('aria-pressed',String(open));}}}
+      syncDoorButtons();window.addEventListener('doorstatechange',syncDoorButtons);controlsBody.append(section);
+    }
     const lightSection = make('details', 'uiControlSection'); lightSection.append(make('summary', '', '燈光與窗簾'));
     const lighting = $('homeControls'); if (lighting) { lighting.hidden = false; lightSection.append(lighting); }
     controlsBody.append(lightSection);
@@ -247,6 +262,8 @@
     }
     function syncRoom() {
       const room = V.getCurrent(), isAll = room === 'all' || allControls;
+      for(const q of repairDoors)q.b.hidden=!isAll&&q.room!==room;
+      if(repairDoors.length)repairDoors[0].section.hidden=!repairDoors.some(q=>!q.b.hidden);
       context.textContent = (V.rooms.find(r => r.id === room)?.n || '') + ' · 設備互動';
       for (const [n, ids] of [[kitchen,['living','island','kitchen']],[mirror,['closet']],[coffee,['living']],[switch2,['living','island']],[tv,['living','island']],[stools,['island']]]) if (n) n.hidden = !isAll && !ids.includes(room);
       for (const b of roomButtons) b.setAttribute('aria-current',b.dataset.id === room ? 'location' : 'false');

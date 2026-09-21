@@ -1,7 +1,7 @@
 {
   "complete": true,
   "viewSlots": 190,
-  "uniqueImages": 126,
+  "uniqueImages": 138,
   "remaining": [],
   "versions": {
     "v0": 38,
@@ -10,10 +10,10 @@
     "v3": 38,
     "v4": 38
   },
-  "displayBytes": 54214074,
+  "displayBytes": 57801694,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 37,
+  "correctionViews": 61,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": false
 }

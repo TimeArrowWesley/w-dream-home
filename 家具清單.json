@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20260921-gbath-r04",
+  "revision": "20260921-mr01",
   "updatedAt": "2026-09-21",
   "source": {
     "title": "W夢想之家家具設備規格表",
@@ -370,7 +370,7 @@
         "q6"
       ],
       "modelSearch": [],
-      "currentNote": "V1 R05：前方Q7／Q6與天空聲道位置沿用；後方兩支改沙發背架承托的小型完整音箱，移除通道落地支架。模型以Focal Dôme外形試排，未核定品牌、採購、聲學或家具固定。195,760為舊KEF組合的歷史報價，不是本次新組合報價；需重新詢價。V0／V2／V3／V4保留其原配置。",
+      "currentNote": "V1 R05及V3 MR01：後環繞改為沙發背架承托小型完整音箱，移除相應落地支架；候選外形14.4寬×14.3深×17.2高cm，不是採購定案。V0、V2、V4保留其原配置。195,760為舊KEF組合歷史報價；新组合需影音商重新配搭、試聽、固定設計與報價。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -420,7 +420,7 @@
         "sub"
       ],
       "modelSearch": [],
-      "currentNote": "保留兩顆SVS SB-2000 Pro，非重複誤放。",
+      "currentNote": "保留兩顆SVS SB-2000 Pro，不縮小設備外徑。V3 MR01移至前場模型中心(705,548)／(705,618)cm、朝座位；其餘版本位置不變。原匯入的對角配置及聲學效果敘述不等於本次核定；低頻均勻度、相位、延遲、隔振與鄰戶影響須現場測量。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -491,7 +491,7 @@
       "modelSearch": [
         "整合背架L型沙發"
       ],
-      "currentNote": "2026-09-16 已套用五版3D。V2／V3保留靠窗外緣，座體向電視方向移18cm；V0／V1／V4保持主座體位置，背後增加18cm層架。V0原始建築格局保留，沙發為本次共用家具更新。",
+      "currentNote": "2026-09-16 已套用五版3D。V2／V3保留靠窗外緣，座體向電視方向移18cm；V0／V1／V4保持主座體位置，背後增加18cm層架。V0原始建築格局保留，沙發為本次共用家具更新。 V3 MR01同V1研究背架承托小型環繞，承載與隔振待確認。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -845,8 +845,11 @@
       "status": "已含工程",
       "includeInBudget": true,
       "modelKeys": [],
-      "modelSearch": [],
-      "currentNote": "",
+      "modelSearch": [
+        "MR01 主廚房中空水槽",
+        "78cm雙層水槽"
+      ],
+      "currentNote": "V1～V4 MR01把原水槽實心示意改為中空槽體與真實檯面開口。外形依本主檔既有BELEGA BESK-R15 78×45×28cm紀錄；淨深27.7cm、內膽直角與開孔42×75cm是建模試值，不能交付下料；圓角、雙層配件及開孔模板待已下單廚具商核對。V0保留原示意。",
       "modelDirty": false,
       "archived": false,
       "original": {
@@ -1940,9 +1943,11 @@
       "includeInBudget": true,
       "modelKeys": [],
       "modelSearch": [
-        "收藏室行李箱門"
+        "R05 收藏室開放備藏",
+        "收藏室 B 行李箱專用格",
+        "深收納櫃"
       ],
-      "currentNote": "V1 R05：收藏室內開放層架試放原兩件行李代理與四組70×40×73cm大外箱包絡。業主接受箱子套疊但不拆平；實測套疊組數及取物仍待核定，非容量保證。",
+      "currentNote": "V1 R05：收藏室內開放層架試放原兩件行李代理與四組70×40×73cm大外箱包絡。業主接受箱子套疊但不拆平；實測套疊組數及取物仍待核定，非容量保證。 V2 MR01：行李格改室內開放、相鄰包櫃左60cm段櫃底升至95cm，右100cm段落地保留；42×60×75cm模型行李可拉出後向北轉入室內空地。這是代理物尺寸，不是實際行李或所有大紙箱通過的保證；低位包格减少。",
       "modelDirty": false,
       "archived": false,
       "original": {

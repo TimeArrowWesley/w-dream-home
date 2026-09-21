@@ -1,0 +1,730 @@
+{
+  "revision": "20260921-mr01",
+  "date": "2026-09-21",
+  "method": "Source meshes and model coordinates; door/slider sweep samples; object extraction and 60cm proxy route. Not human, acoustic or site approval.",
+  "versions": [
+    {
+      "version": "v1",
+      "changes": [
+        {
+          "issue": "M01",
+          "choice": "two telescoping surface sliders",
+          "opening": [
+            545.2,
+            803,
+            883
+          ],
+          "effectiveY": [
+            804.2,
+            883
+          ],
+          "clearCm": 78.8,
+          "parkedMaxY": 930,
+          "siteApproval": false
+        },
+        {
+          "issue": "M06",
+          "choice": "sliding cabinet fronts; unchanged room doors",
+          "tradeoff": "單次開口約半櫃寬；增加雙軌與清潔細節，物品寬度須對照。"
+        },
+        {
+          "issue": "M05-closed-leaf",
+          "closedLeafY": [
+            282,
+            286
+          ],
+          "hingeY": 286,
+          "reason": "原關閉門板伸入臥室並碰化妝台；厚度移入原10cm門洞深度，80cm門洞與開向保留。"
+        },
+        {
+          "issue": "M05",
+          "choice": "wet-side sliding glass",
+          "openingY": [
+            300,
+            373
+          ],
+          "travel": 79,
+          "parkedY": [
+            377.5,
+            454.5
+          ],
+          "limit": "玻璃厚度、承重、止擺、止水及拆洗由廠商核定；不是既有現場門型確認。"
+        },
+        {
+          "issue": "M07",
+          "doorPlaneY": [
+            384,
+            387
+          ],
+          "clearOpeningX": [
+            655,
+            735
+          ],
+          "tradeoff": "門片向走道多突出8cm，維持80cm名義開口；軌道與門框節點待放樣。"
+        },
+        {
+          "issue": "M08",
+          "outer": {
+            "x": 11,
+            "y": 653,
+            "z": 86.50000000596046,
+            "w": 45,
+            "d": 78,
+            "h": 0.699999988079071
+          },
+          "cutout": {
+            "x": 12.5,
+            "y": 654.5,
+            "w": 42,
+            "d": 75
+          },
+          "recordedProduct": "BELEGA BESK-R15 78×45×28cm，家具主檔既有紀錄",
+          "externalHeightCm": 28,
+          "provisionalInnerDepthCm": 27.7,
+          "limit": "依既有產品外徑建模；內膽淨深、圓角、滴水板及開孔模板仍待廚具商核對。"
+        }
+      ],
+      "doorChecks": [
+        {
+          "name": "主浴80cm門洞",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "儲藏室拉門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "收藏室雙聯滑門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "主浴淋浴滑門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示下部封閉備品 222・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示上部封閉備品 222・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示下部封閉備品 281.5・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示上部封閉備品 281.5・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示下部封閉備品 341・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示上部封閉備品 341・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示下部封閉備品 400.5・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示上部封閉備品 400.5・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示下部封閉備品 462・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "R05 展示上部封閉備品 462・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        }
+      ],
+      "sinkFirstSurfaceZ": 59.50000001192093,
+      "luggageRoute": null,
+      "rearRoute": null,
+      "collectionRoute": {
+        "samples": 154,
+        "diameterCm": 60,
+        "method": "Conservative circle against visible source mesh world bounds, height 8–180cm",
+        "blocked": [],
+        "doorState": "入戶門與收藏室門開啟"
+      }
+    },
+    {
+      "version": "v2",
+      "changes": [
+        {
+          "issue": "M01",
+          "choice": "two telescoping surface sliders",
+          "opening": [
+            545.2,
+            803,
+            883
+          ],
+          "effectiveY": [
+            804.2,
+            883
+          ],
+          "clearCm": 78.8,
+          "parkedMaxY": 930,
+          "siteApproval": false
+        },
+        {
+          "issue": "M02",
+          "retainedCaseCount": 2,
+          "lowerRetrievalBay": {
+            "x": 275,
+            "y": 905,
+            "w": 60,
+            "d": 50,
+            "h": 95
+          },
+          "caseProxy": {
+            "x": 224,
+            "y": 886,
+            "w": 42,
+            "d": 60,
+            "h": 75
+          },
+          "route": [
+            [
+              224,
+              886
+            ],
+            [
+              280,
+              886
+            ],
+            [
+              280,
+              833
+            ],
+            [
+              355,
+              833
+            ]
+          ],
+          "limit": "左段櫃底升至95cm，該段低位包格減少；高位支撐、紙箱及取物站姿待確認。"
+        },
+        {
+          "issue": "M06",
+          "choice": "sliding cabinet fronts; unchanged room doors",
+          "tradeoff": "單次開口約半櫃寬；增加雙軌與清潔細節，物品寬度須對照。"
+        },
+        {
+          "issue": "M05-closed-leaf",
+          "closedLeafY": [
+            282,
+            286
+          ],
+          "hingeY": 286,
+          "reason": "原關閉門板伸入臥室並碰化妝台；厚度移入原10cm門洞深度，80cm門洞與開向保留。"
+        },
+        {
+          "issue": "M05",
+          "choice": "wet-side sliding glass",
+          "openingY": [
+            300,
+            373
+          ],
+          "travel": 79,
+          "parkedY": [
+            377.5,
+            454.5
+          ],
+          "limit": "玻璃厚度、承重、止擺、止水及拆洗由廠商核定；不是既有現場門型確認。"
+        },
+        {
+          "issue": "M07",
+          "doorPlaneY": [
+            384,
+            387
+          ],
+          "clearOpeningX": [
+            655,
+            735
+          ],
+          "tradeoff": "門片向走道多突出8cm，維持80cm名義開口；軌道與門框節點待放樣。"
+        },
+        {
+          "issue": "M08",
+          "outer": {
+            "x": 11,
+            "y": 653,
+            "z": 86.50000000596046,
+            "w": 45,
+            "d": 78,
+            "h": 0.699999988079071
+          },
+          "cutout": {
+            "x": 12.5,
+            "y": 654.5,
+            "w": 42,
+            "d": 75
+          },
+          "recordedProduct": "BELEGA BESK-R15 78×45×28cm，家具主檔既有紀錄",
+          "externalHeightCm": 28,
+          "provisionalInnerDepthCm": 27.7,
+          "limit": "依既有產品外徑建模；內膽淨深、圓角、滴水板及開孔模板仍待廚具商核對。"
+        }
+      ],
+      "doorChecks": [
+        {
+          "name": "主浴80cm門洞",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "儲藏室拉門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "收藏室雙聯滑門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "主浴淋浴滑門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "MR01 左側上提包櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "MR01 左側上提包櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "MR01 右側包櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "MR01 右側包櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        }
+      ],
+      "sinkFirstSurfaceZ": 59.50000001192093,
+      "luggageRoute": {
+        "samples": 96,
+        "hits": []
+      },
+      "rearRoute": null,
+      "collectionRoute": {
+        "samples": 154,
+        "diameterCm": 60,
+        "method": "Conservative circle against visible source mesh world bounds, height 8–180cm",
+        "blocked": [],
+        "doorState": "入戶門與收藏室門開啟"
+      }
+    },
+    {
+      "version": "v3",
+      "changes": [
+        {
+          "issue": "M03",
+          "rearAisle": {
+            "fromX": 995,
+            "toX": 1085,
+            "nominalClear": 90
+          },
+          "frontSubs": [
+            [
+              705,
+              548
+            ],
+            [
+              705,
+              618
+            ]
+          ],
+          "surroundsOnRack": true,
+          "limit": "模型動線試排；不以移位證明聲學效果。"
+        },
+        {
+          "issue": "M06",
+          "choice": "sliding cabinet fronts; unchanged room doors",
+          "tradeoff": "單次開口約半櫃寬；增加雙軌與清潔細節，物品寬度須對照。"
+        },
+        {
+          "issue": "M05-closed-leaf",
+          "closedLeafY": [
+            282,
+            286
+          ],
+          "hingeY": 286,
+          "reason": "原關閉門板伸入臥室並碰化妝台；厚度移入原10cm門洞深度，80cm門洞與開向保留。"
+        },
+        {
+          "issue": "M05",
+          "choice": "wet-side sliding glass",
+          "openingY": [
+            300,
+            373
+          ],
+          "travel": 79,
+          "parkedY": [
+            377.5,
+            454.5
+          ],
+          "limit": "玻璃厚度、承重、止擺、止水及拆洗由廠商核定；不是既有現場門型確認。"
+        },
+        {
+          "issue": "M07",
+          "doorPlaneY": [
+            384,
+            387
+          ],
+          "clearOpeningX": [
+            655,
+            735
+          ],
+          "tradeoff": "門片向走道多突出8cm，維持80cm名義開口；軌道與門框節點待放樣。"
+        },
+        {
+          "issue": "M09",
+          "bagY": [
+            811,
+            826
+          ],
+          "electricalAccess": "Keep service area clear."
+        },
+        {
+          "issue": "M08",
+          "outer": {
+            "x": 11,
+            "y": 653,
+            "z": 86.50000000596046,
+            "w": 45,
+            "d": 78,
+            "h": 0.699999988079071
+          },
+          "cutout": {
+            "x": 12.5,
+            "y": 654.5,
+            "w": 42,
+            "d": 75
+          },
+          "recordedProduct": "BELEGA BESK-R15 78×45×28cm，家具主檔既有紀錄",
+          "externalHeightCm": 28,
+          "provisionalInnerDepthCm": 27.7,
+          "limit": "依既有產品外徑建模；內膽淨深、圓角、滴水板及開孔模板仍待廚具商核對。"
+        }
+      ],
+      "doorChecks": [
+        {
+          "name": "主浴80cm門洞",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "儲藏室拉門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "主浴淋浴滑門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V3 行李與深收藏・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V3 行李與深收藏・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "電箱上段獨立維修門・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V3 飲水濕區檢修・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V3 飲水濕區檢修・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        }
+      ],
+      "sinkFirstSurfaceZ": 59.50000001192093,
+      "luggageRoute": null,
+      "rearRoute": {
+        "samples": 282,
+        "diameterCm": 60,
+        "method": "Conservative circle against visible source mesh world bounds, height 8–180cm",
+        "blocked": []
+      },
+      "collectionRoute": null
+    },
+    {
+      "version": "v4",
+      "changes": [
+        {
+          "issue": "M06",
+          "choice": "sliding cabinet fronts; unchanged room doors",
+          "tradeoff": "單次開口約半櫃寬；增加雙軌與清潔細節，物品寬度須對照。"
+        },
+        {
+          "issue": "M05-closed-leaf",
+          "closedLeafY": [
+            282,
+            286
+          ],
+          "hingeY": 286,
+          "reason": "原關閉門板伸入臥室並碰化妝台；厚度移入原10cm門洞深度，80cm門洞與開向保留。"
+        },
+        {
+          "issue": "M05",
+          "choice": "wet-side sliding glass",
+          "openingY": [
+            300,
+            373
+          ],
+          "travel": 79,
+          "parkedY": [
+            377.5,
+            454.5
+          ],
+          "limit": "玻璃厚度、承重、止擺、止水及拆洗由廠商核定；不是既有現場門型確認。"
+        },
+        {
+          "issue": "M07",
+          "doorPlaneY": [
+            384,
+            387
+          ],
+          "clearOpeningX": [
+            655,
+            735
+          ],
+          "tradeoff": "門片向走道多突出8cm，維持80cm名義開口；軌道與門框節點待放樣。"
+        },
+        {
+          "issue": "M09",
+          "bagY": [
+            811,
+            826
+          ],
+          "electricalAccess": "Keep service area clear."
+        },
+        {
+          "issue": "M08",
+          "outer": {
+            "x": 11,
+            "y": 653,
+            "z": 86.50000000596046,
+            "w": 45,
+            "d": 78,
+            "h": 0.699999988079071
+          },
+          "cutout": {
+            "x": 12.5,
+            "y": 654.5,
+            "w": 42,
+            "d": 75
+          },
+          "recordedProduct": "BELEGA BESK-R15 78×45×28cm，家具主檔既有紀錄",
+          "externalHeightCm": 28,
+          "provisionalInnerDepthCm": 27.7,
+          "limit": "依既有產品外徑建模；內膽淨深、圓角、滴水板及開孔模板仍待廚具商核對。"
+        }
+      ],
+      "doorChecks": [
+        {
+          "name": "主浴80cm門洞",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "儲藏室拉門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "主浴淋浴滑門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V4 行李與深收藏・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V4 行李與深收藏・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "電箱上段獨立維修門・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V4 飲水濕區檢修・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "V4 飲水濕區檢修・櫃門",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室窗前矮櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "更衣室頂天櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 1",
+          "samples": 91,
+          "hits": []
+        },
+        {
+          "name": "後陽台水槽右側頂天收納櫃側移門 2",
+          "samples": 91,
+          "hits": []
+        }
+      ],
+      "sinkFirstSurfaceZ": 59.50000001192093,
+      "luggageRoute": null,
+      "rearRoute": null,
+      "collectionRoute": null
+    }
+  ]
+}

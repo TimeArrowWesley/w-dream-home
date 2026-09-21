@@ -1,0 +1,41 @@
+{
+  "revision": "20260921-mr01",
+  "method": "Sampled source meshes; master entrance 0..90 degrees against full shower travel. Not site approval.",
+  "records": [
+    {
+      "version": "v1",
+      "masterDoorPair": {
+        "samples": 961,
+        "hits": 0
+      },
+      "tvAgainstMovedSubs": null
+    },
+    {
+      "version": "v2",
+      "masterDoorPair": {
+        "samples": 961,
+        "hits": 0
+      },
+      "tvAgainstMovedSubs": null
+    },
+    {
+      "version": "v3",
+      "masterDoorPair": {
+        "samples": 961,
+        "hits": 0
+      },
+      "tvAgainstMovedSubs": {
+        "samples": 181,
+        "hits": 0
+      }
+    },
+    {
+      "version": "v4",
+      "masterDoorPair": {
+        "samples": 961,
+        "hits": 0
+      },
+      "tvAgainstMovedSubs": null
+    }
+  ]
+}
