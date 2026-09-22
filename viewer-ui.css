@@ -63,11 +63,13 @@ body.uiApp .uiMenuBody button { display: block; border: 0; background: transpare
 /* Left navigation alternates between a room list and a plan. */
 body.uiApp .shell, body.uiApp.walkImmersive .shell {
   display: grid !important; grid-template-columns: var(--ui-sidebar) minmax(0,1fr);
+  /* Keep the sidebar's intrinsic height from pushing the preview below the viewport. */
+  grid-template-rows: minmax(0,1fr);
   height: auto !important; width: 100%; min-height: 0;
 }
 body.uiApp #uiSidebar, body.uiApp.walkImmersive #uiSidebar {
   display: flex !important; flex-direction: column; padding: 0;
-  min-width: 0; overflow: visible; border-right: 1px solid var(--ui-line); background: var(--ui-panel); z-index: 20;
+  min-width: 0; min-height: 0; overflow: visible; border-right: 1px solid var(--ui-line); background: var(--ui-panel); z-index: 20;
 }
 .uiVersionMenu { margin: 16px 14px 14px; }
 .uiVersionMenu > summary { display: grid; position: relative; gap: 4px; background: #ffffff04; border: 1px solid var(--ui-line); border-radius: 9px; padding: 12px 29px 12px 13px; }
