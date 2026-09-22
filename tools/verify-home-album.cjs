@@ -3,9 +3,9 @@ const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('ass
 const root=path.resolve(__dirname,'../成品圖集/20260914暗色現代工業');
 const window={};vm.runInNewContext(fs.readFileSync(path.join(root,'album-data.js'),'utf8'),{window});
 const data=window.HOME_ALBUM;
-assert.equal(data.complete,true);assert.equal(data.entries.length,190);assert.deepEqual(Array.from(data.versions,v=>v.id),['v0','v1','v2','v3','v4']);assert.equal(data.uniqueImages,new Set(data.entries.map(e=>e.sourceKey)).size);
+assert.equal(data.complete,true);assert.equal(data.entries.length,300);assert.deepEqual(Array.from(data.versions,v=>v.id),['v0','v1','v2','v3','v4']);assert.equal(data.uniqueImages,new Set(data.entries.map(e=>e.sourceKey)).size);
 for(const v of data.versions)for(const r of data.rooms){
- const expected=r.id==='entry'?5:3,e=data.entries.filter(e=>e.version===v.id&&e.room===r.id);assert.equal(e.length,expected,v.id+'/'+r.id);assert.equal(new Set(e.map(x=>x.angle)).size,expected);assert.equal(new Set(e.map(x=>x.sourceHash)).size,expected);
+ const expected=5,e=data.entries.filter(e=>e.version===v.id&&e.room===r.id);assert.equal(e.length,expected,v.id+'/'+r.id);assert.equal(new Set(e.map(x=>x.angle)).size,expected);assert.equal(new Set(e.map(x=>x.sourceHash)).size,expected);
  if(r.id==='entry'){
   assert.deepEqual(Array.from(e,x=>x.directionLabel),['左','左前','正前','右前','右']);
   assert.deepEqual(Array.from(e,x=>x.camera.heading),[180,-135,-90,-45,0]);
@@ -34,7 +34,7 @@ const location={search:''},history={replaceState(){}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'album.js'),'utf8'),{window,document,location,history,URL,URLSearchParams});
 const imgs=n=>[...(n.tag==='img'?[n]:[]),...n.children.flatMap(imgs)];
 let checks=0;
-for(const vb of ids.versions.children){vb.onclick();assert.equal(imgs(ids.gallery).length,38);for(const room of data.rooms){ids.room.value=room.id;ids.room.onchange();assert.equal(imgs(ids.gallery).length,room.id==='entry'?5:3);for(const m of modes){m.onclick();const cards=ids.gallery.children[0].children[1].children;for(const c of cards){
+for(const vb of ids.versions.children){vb.onclick();assert.equal(imgs(ids.gallery).length,60);for(const room of data.rooms){ids.room.value=room.id;ids.room.onchange();assert.equal(imgs(ids.gallery).length,5);for(const m of modes){m.onclick();const cards=ids.gallery.children[0].children[1].children;for(const c of cards){
  c.onclick();assert.equal(ids.detail.open,true);const key=data.entries.find(e=>e.version===vb.dataset.version&&e.room===room.id&&ids.detailTitle.textContent.endsWith(e.angle));assert.ok(key);assert.equal(imgs(ids.detailImages)[0].src,pathToFileURL(path.join(root,key[m.dataset.mode])).href);
  details[2].onclick();assert.equal(imgs(ids.detailImages).length,2);assert.equal(imgs(ids.detailImages)[0].src,pathToFileURL(path.join(root,key.model)).href);assert.equal(imgs(ids.detailImages)[1].src,pathToFileURL(path.join(root,key.ai)).href);
  ids.next.onclick();assert.ok(!ids.detailTitle.textContent.endsWith(key.angle));ids.previous.onclick();assert.ok(ids.detailTitle.textContent.endsWith(key.angle));ids.close.onclick();assert.equal(ids.detail.open,false);checks++;

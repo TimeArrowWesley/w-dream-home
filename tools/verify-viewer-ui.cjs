@@ -127,11 +127,11 @@ for(const v of ['v0','v1','v2','v3','v4']){
   d.body.classList.remove('walkImmersive');
   d.querySelector('[data-viewmode="model"]').click();await Promise.resolve();assert(!c.HOME_WALK.getState().active);assert.equal(c.HOME_TOUR.getMode(),'model');
   const photo=d.querySelector('[data-viewmode="photo"]');if(photo&&!photo.hidden){photo.click();await Promise.resolve();assert.equal(c.HOME_TOUR.getMode(),'photo');$('planToggle').click();$('uiExpandPlan').click();const room=d.querySelector('.planroom[data-room="study"]');room.dispatchEvent(new a.dom.Event('click',{bubbles:true}));assert.equal(c.HOME_AI_VIEWS.getState().requestedRoom,'study');assert(!$('uiMapDialog').open,'choosing a map room closes enlargement during AI browsing');$('uiOpenControls').click();assert.equal(c.HOME_TOUR.getMode(),'model');}
-  assert.equal(c.HOME_AI_VIEWS.getState().available.length,38,'Every version has 5 entry directions and 3 in each other space');
+  assert.equal(c.HOME_AI_VIEWS.getState().available.length,60,'Every version has 5 directions in every space');
   c.HOME_AI_VIEWS.open();
   for(const id of ['entry','living','island','kitchen','bed','closet','study','collection','bath1','bath2','storage','back']){
     c.HOME_VIEWER.selectRoom(id);assert.equal(c.HOME_AI_VIEWS.getState().imageRoom,id);
-    const expected=id==='entry'?5:3,buttons=Array.from($('aiPhotoGallery').querySelectorAll('button')).filter(b=>!b.hidden);assert.equal(buttons.length,expected,v+'/'+id);
+    const expected=5,buttons=Array.from($('aiPhotoGallery').querySelectorAll('button')).filter(b=>!b.hidden);assert.equal(buttons.length,expected,v+'/'+id);
     const seen=new Set();for(const b of buttons){b.click();const state=c.HOME_AI_VIEWS.getState();assert.equal(state.imageRoom,id);seen.add(state.src);assert(b.querySelector('img').src.includes('/thumbs/'),'Gallery uses small thumbnails');assert($('aiPhotoDownload').href.endsWith('.webp'));}
     assert.equal(seen.size,expected,'Distinct images for every direction');
     const albumURL=new URL($('aiPhotoAlbum').href);assert.equal(albumURL.searchParams.get('version'),v);assert.equal(albumURL.searchParams.get('room'),id);
@@ -140,7 +140,7 @@ for(const v of ['v0','v1','v2','v3','v4']){
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(v==='v4'){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,12);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
+  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,13);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
   assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
   assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
   d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));

@@ -129,6 +129,7 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
+      ['灰石全屋設計 GR06', '灰石、灰棕木、分區燈光與全屋五視角提案', '灰石全屋設計.html'],
       ['四版動線修正 MR01', '收藏室入口、行李取出、V3窄道與主浴避撞的前後對照', '調整紀錄/20260921四版動線修正/index.html'],
       ['V0・原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],
       ['拆收藏室・兩個替代格局', 'V4 大中島已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
@@ -139,7 +140,7 @@
       ['全屋核對與主臥細節', '最新收放操作、燈光與前後比較', '調整紀錄/20260911全屋核對與主臥細節/index.html'],
       ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],
       ['全屋設計檢視', '各空間的接縫、收邊與設計檢視', '全屋設計檢視.html'],
-      ['全版本模型與 AI 複核', '190 個角度核對、窗洞補牆與 AI 修改前後比較', '全版本複核.html'],
+      ['全版本模型與 AI 複核', 'QA03 歷史：190 個角度、窗洞補牆與修改前後比較', '全版本複核.html'],
       ['歷史模型檢查紀錄', '較早版本的模型尺寸、結構與設備核對', '全屋模型檢查.html']
     ]) {
       const a = make('a', 'uiResource'); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener';
@@ -147,7 +148,7 @@
     }
     resources.append(resourceGrid);
     const history = make('details', 'uiHistory'); history.append(make('summary', '', 'AI 成品圖集'));
-    history.append(make('p', '', '每版12個空間，玄關5方向、其他各3方向，可對照模型取景與AI材質效果。尺寸以模型及核定圖說為準。'));
+    history.append(make('p', '', '每版12個空間，各空間5方向，可對照模型取景與AI材質效果。尺寸以模型及核定圖說為準。'));
     for (const [label, file] of [['全屋 AI 圖集 ↗', 'AI寫實視角.html']]) {
       const a = make('a', '', label); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener'; history.append(a);
     }

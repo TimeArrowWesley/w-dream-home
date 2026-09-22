@@ -1,19 +1,19 @@
 {
   "complete": true,
-  "viewSlots": 190,
-  "uniqueImages": 137,
+  "viewSlots": 300,
+  "uniqueImages": 208,
   "remaining": [],
   "versions": {
-    "v0": 38,
-    "v1": 38,
-    "v2": 38,
-    "v3": 38,
-    "v4": 38
+    "v0": 60,
+    "v1": 60,
+    "v2": 60,
+    "v3": 60,
+    "v4": 60
   },
-  "displayBytes": 58364694,
+  "displayBytes": 72752612,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 115,
+  "correctionViews": 58,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": false
 }

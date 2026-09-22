@@ -1,295 +1,234 @@
 {
-  "v1-kitchen-A": "水槽改為可見深度的實際凹入槽盆",
-  "v1-kitchen-B": "水槽改為可見深度的實際凹入槽盆",
-  "v1-kitchen-C": "水槽改為可見深度的實際凹入槽盆",
-  "v1-storage-A": "木地板一致改成人字拼",
-  "v3-collection-A": "右下大中島檯面改為一致淺冷灰石材",
-  "v1-closet-B": "Long thin plank-like objects are proxy garments; replace with actual hanging long coats; no wood dividers between garments.",
-  "v1-island-C": "Floor inside and outside island must be dark smoked oak herringbone, not stone. Rear display contains collectible figurines not wine bottles; small round item beside faucet is recessed sink not plate. Keep geometry.",
-  "v1-bath1-B": "Replace all herringbone wood floor in bathroom with the matching gray honed stone tile. Keep all other pixels/composition unchanged.",
-  "v1-bath1-C": "Replace dry-area bathroom herringbone wood floor with matching gray honed stone tile. Keep all other objects/composition unchanged.",
-  "v1-bath2-C": "Remove the hallucinated sink vanity mirror and towel from the wall. Source shows ONLY blank wall, black door and toilet. Restore bare gray concrete plaster, keep door/toilet/floor/camera unchanged.",
-  "v1-study-B": "Remove added figurine shelves at extreme left/right edges. Source has two desks/chairs and two window walls, no display cabinets in this view. Keep everything else.",
-  "v3-island-C": "中島前方黑色矩形改為平齊檯面的雙口IH爐面，保留遠端水槽",
-  "v4-island-C": "中島前方黑色矩形改為平齊檯面的雙口IH爐面，保留遠端水槽",
-  "v0-kitchen-B": "The foreground rectangular outline beneath the EXISTING black kitchen faucet is a stainless steel kitchen sink, not an inset stone slab. Give it a realistic recessed dark brushed stainless bowl with visible depth and drain, strictly INSIDE the existing outlined rectangle without changing its footprint, counter edge, camera or faucet. Keep all other furniture and the gray stone kitchen floor unchanged.",
-  "v0-island-C": "Correct ONLY the tiny CAT ROOM visible through the curved glass partition in the upper middle background: its floor must be DARK SMOKED OAK HERRINGBONE wood continuous with the other dry rooms, NOT gray tile. The two low rectangular open-front objects there are dark wooden cat litter-box enclosures with shallow litter trays inside, NOT upholstered armchairs. Keep their exact source outlines and positions; do not add any animals or furniture. Preserve the entire foreground countertop, recessed round basin, faucet, service cabinet and all other room details exactly.",
-  "v1-entry-door5B": "Remove the invented SOFA and black TV / black screen visible in the far background behind the hanging coats and glass. Image 2 has a metal-framed glass DISPLAY CABINET with sparse horizontal shelves against plain interior gray concrete walls; no sofa, TV or exterior window at this location. Reconstruct only that small background area from Image 2. Preserve coat realism and all foreground cabinet/pier geometry.",
-  "v0-living-B-r20260916": "Restore the large original exterior WINDOW behind the piano/desk in the background study, exactly as the model. The generated image incorrectly replaced this with a solid concrete wall. Keep the internal glass partition, sofa/rear shelf and all other objects/camera unchanged.",
-  "v1-bed-C-r20260916": "Remove the hallucinated projector and reading lamp visible at the upper/right edge. This angle looks toward the foot/window vanity and cannot see the projector. Restore only the existing closed wood cabinetry at right exactly as model. Keep projection SCREEN on left, vanity, window, bed, camera and all other geometry. No equipment visible in the right cabinet.",
-  "v2-entry-door5C-r20260916": "The tall black rectangular proxy suspended over entry counter is hanging CLOTH COATS on hangers from the curved ceiling rail, not a monitor/TV on a stand. Replace that incorrect foreground display with hanging dark coats at same place. The small object on counter at right is a HANDBAG, not a speaker. Preserve the actual television behind the coats, sofa, windows, hat, side wood cabinet and all camera geometry.",
-  "v2-entry-door5D-r20260916": "The large tall black rectangular proxy immediately above the FOREGROUND LEFT entry counter is hanging CLOTH COATS from the curved ceiling rail, not a television/display on a stand. Replace that foreground rectangle with hanging dark coats on hangers. Small rectangle with handle on counter is HANDBAG. Preserve any actual television farther behind the coats. Keep sofa, wood rear shelf, windows, speakers, black cubes on floor, wood cabinet and camera unchanged.",
-  "v3-collection-B-r20260916": "Change only the island countertop visible at bottom left from dark black stone to LIGHT COOL GREY stone with restrained darker veining, matching the model and other V3 views. Preserve recessed sink, two faucets and everything else unchanged.",
-  "v3-entry-door5B-r20260916": "Remove the hallucinated coats, handbag and shelf added on the BACK WALL beside the black sliding door. The source has a BLANK cement wall there with a sliding door rail only. Restore the wall and rail, leave fridge, island, recessed sink, taps, white/cool light-grey stone countertop and entire composition unchanged.",
-  "v3-entry-door5C-r20260916": "Remove the hallucinated coats, handbag and shelf added on the back wall BEHIND the television. Source shows a blank concrete wall, no clothes/storage there. Restore blank cement wall only. Keep TV, speakers, island white/cool light grey countertop, sofa, window and internal glass study unchanged.",
-  "v3-island-B-r20260916": "Remove the invented SOFA CUSHIONS directly between the island and the television console. Source shows no sofa on this side of the TV; restore empty aisle floor and the original media console silhouette. Keep the real sofa on the FAR SIDE of TV only where visible. Keep LIGHT COOL GREY stone island top and every appliance, cabinet, TV, window, camera unchanged.",
-  "v3-living-C-r20260916": "Change only the sliver of island countertop at left to LIGHT COOL GREY stone with restrained grey veining, matching V3 source. Do not change sofa, television, architecture, windows, cabinetry, camera or anything else.",
-  "v4-entry-door5B-r20260916": "The small black rectangle BEHIND the existing stainless-steel sink is a FLUSH glossy black glass INDUCTION COOKTOP with two subtle circular heating-zone markings, not a second sink or recessed opening. Correct only this black rectangle so it is flat and flush. Preserve the large recessed stainless sink, the two black faucets and every other object, material, camera, light and boundary unchanged.",
-  "v4-entry-door5C-r20260916": "Restore the stainless-steel REFRIGERATOR inside the left tall wood cabinet. Generated image incorrectly makes it a concrete room door with a door lever. Source shows a silver double-door refrigerator with central seam and dark appliance handles. Keep surrounding cabinetry, island, sofa, all door/window openings and camera unchanged. Also preserve the IH as a flush flat glossy black two-zone glass induction cooktop on the countertop, not a second recessed hole.",
-  "v4-entry-door5E-r20260916": "Restore the original FLOOR-TO-CEILING EXTERIOR WINDOW in the BACKGROUND behind the sofa and speakers. Generated image incorrectly replaced the entire window with a solid cement wall. Match exact window boundary/mullions in source and realistic tree/city view. Keep foreground coats, hat, wood panel, furniture and composition unchanged.",
-  "v4-island-A-r20260916": "The small black rectangle BEHIND the existing stainless-steel sink is a FLUSH glossy black glass INDUCTION COOKTOP with two subtle circular heating-zone markings, not a second sink or recessed opening. Correct only this black rectangle so it is flat and flush. Preserve the large recessed stainless sink, the two black faucets and every other object, material, camera, light and boundary unchanged.",
-  "v4-living-B-r20260916": "Restore the original exterior WINDOW behind the computer desk in the far BACKGROUND study. Generated image made it opaque concrete/blind-looking wall; it must be a transparent window with daylight and distant greenery/city like source. Keep sofa, rear shelving, monitors, speakers, glass partition and all other geometry.",
-  "v1-entry-door5B-r05": "The small visible area at the right of the hanging dark panel is WRONG. It must show the curved island with graphite recessed base, a partial round charcoal stool near the bottom right, and the tall glass display behind it, exactly as in source image 2. REMOVE the invented sofa, TV and living-room furnishings from this visible slice. Keep the close grey left wall, dark door, pole, hanging rectangular panel and wooden entrance cabinet foreground unchanged.",
-  "v1-entry-door5E-r05": "Correct the small living-room slice on the left to match source image 2: restore the small black cube SUBWOOFER on the floor under the rear window. Remove the invented wood box at the right of that window, the invented hanging vertical black light, and invented extra rear round speakers at far left. Preserve partial sofa at far left, oval lift coffee table, foreground black cube, large close black cabinet faces on the right. Keep the window exactly the plain rectangular opening in source, no additional door openings.",
-  "v1-living-A-r05": "Restore the SOURCE CAMERA VIEW and object arrangement exactly: REMOVE the entire invented sofa and its rear round speakers from the LEFT FOREGROUND. Replace it with the clear grey rug and a partial BLACK OVAL LIFT COFFEE TABLE entering from bottom-left, exactly as image 2. Restore the small black cube SUBWOOFER on the floor beside the left window, remove the invented wood box there and the invented vertical wall speaker beside that window. Retain the two front floorstanding speakers beside TV, low AV unit, TV, matte graphite backdrop, and black upper cabinets. Do not widen the view or move camera.",
-  "v1-island-A-r05": "Remove the invented tall narrow wine-bottle column beside the white refrigerator. The whole white appliance bay must be the single full-width refrigerator shown in image 2, with one horizontal black handle, no extra niche. Preserve BOTH round stools in the foreground on the OUTSIDE curved side. The plain graphite panel under their counter must be visibly set BACK 25cm from the stone edge to create the knee recess; keep the fluted wood rounded ends at the original outer line. Empty excess objects in the central glass cabinet; keep just the sparse vase arrangement from the model, with light readable transparent glass.",
-  "v1-island-B-r05": "REMOVE BOTH stools currently incorrectly placed inside the concave work area. This view must show ZERO stools in the concave interior opening. The two stools are on the OPPOSITE convex exterior side, fully OCCLUDED by the counter from this camera. Restore continuous clear oak floor where those two stools were. Do not add any stool elsewhere. Preserve the wine cooler foreground, curved stone countertop, IH hob, robot dock at left and full-height glass cabinet.",
-  "v1-island-C-r05": "Remove the round stool seat mistakenly visible on the far left edge. This camera looks through the tall glass cabinet and must show ZERO stools; the two stools are behind the counter and occluded. Leave the working-side cavity completely clear, exactly like image 2. Preserve the tall glass cabinet grid, curved counter, sink, distant five-by-two collectible display wall, and single white refrigerator.",
-  "v0-bath2-C-gb04": {
-    "issue": "首版生成露出不應可見的鏡、龍頭、手機紙盒。",
-    "fix": "依相同來源模型修正右下遮蔽，保留前景檯角。",
-    "reviewed": true
+  "v1-entry-door5A-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "6657fc0814d90203fa5bdd9486df06b4f0ddf0129ebc482369f659d591429cfe"
   },
-  "v1-island-B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Replace only the small RECTANGULAR prep sink on the far island with the small ROUND inset stainless-steel sink from image 2; keep existing black faucet. All island/cabinet outlines, glass grid, lighting, camera unchanged.",
-    "reviewed": true
+  "v1-entry-door5B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "1a519aae058149ebe3b613145f07630c06b7465059fea297729428dcb4a2180b"
   },
-  "v1-island-C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Replace only the raised white oval plate/bowl on the island, behind glass at lower left, with a small ROUND inset stainless-steel prep sink as shown image 2. Its basin descends into the dark countertop, no white vessel above. Preserve black faucet and ALL other pixels/geometry/style.",
-    "reviewed": true
+  "v1-entry-door5C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "dc527428bd8beacd88c999444a9105a24d7cf18639e3f03bf1dd74baf5185a05"
   },
-  "v1-bed-C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Remove the two added potted plants, books and pen cup from vanity/side counter. The source has no extra tabletop decorations. Preserve original floating dressing mirror, stool, bed, cabinet, screen and exact camera, material color and light unchanged.",
-    "reviewed": true
+  "v1-entry-door5D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "581ca228394f59f77cc43faf74936e386354961df6e298997784bfdb33612715"
   },
-  "v1-bath1-B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Restore image 2 geometry at the RIGHT of vanity: the large invented glass doorway into a second bathroom must be removed entirely and replaced with SOLID GREY WALL exactly where image 2 shows wall. Only the original narrow pale frosted-glass strip immediately adjoining the black entry door remains. Remove invented shower, niche, second bathtub, extra toilet and room. Make vanity basin interior hollow white ceramic inside existing raised white oval rim, instead of a flat grey disk. Preserve camera, all furniture and exact original wall/opening outlines from image 2.",
-    "reviewed": true
+  "v1-entry-door5E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "54797698a77927e0ab4dd209d60398fb6f28874662e7031ca0b1ff8522e733bd"
   },
-  "v1-storage-A-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Change ONLY all adjustable shelf surfaces from walnut brown to neutral medium-grey laminate, exactly image 2. Keep dark slotted rails/brackets, warm wood floor, all shelf counts/dimensions and every other item unchanged.",
-    "reviewed": true
+  "v1-living-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "96630af1e20cb031f02d23daf40c1fffd149caaaaddd52f8433c3b3547d9d3d4"
   },
-  "v1-back-B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Restore entire large upper LEFT pale-blue area above the balcony railing in image 2 as an outdoor opening with soft sky/daylight, not solid concrete wall. Keep exact opening boundaries, rail, condenser units and tall sink-side cabinet and camera. No new framing or extra equipment.",
-    "reviewed": true
+  "v1-living-C-gr06": {
+    "nativeAttempts": 5,
+    "finalPngSha256": "bed79f22f0ef265d8f4be2ac8cd0d930a1883704d1d7eca6896d9ec6205aaaec"
   },
-  "v2-collection-A-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Restore geometry from image 2: the gray rectangular volume at the back near floor is ONE existing plain gray suitcase proxy reaching almost to floor, not a floating drawer. Remove the invented floating drawer and two small black cases beneath; restore the SINGLE gray case with source exact position/size. Restore herringbone walnut floor from image 2 instead of tile. Preserve raised left bag-cabinet section and empty retrieval gap. Change nothing else.",
-    "reviewed": true
+  "v1-island-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "a0e948284f5e39ea8d314939f2bd74c5cd3fe11bf09c5015c1b17f10fa45ea8a"
   },
-  "v3-entry-door5E-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Restore the two large background pale-blue areas behind sofa/speaker from image 2 as exterior glazing with soft daylight and subtle blurred distant city, not opaque concrete walls. Preserve exact mullions, columns and every furniture position. Remove tiny invented extra items behind sofa; only show speaker components present in image 2.",
-    "reviewed": true
+  "v1-island-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "938576482b83767e8747d7750881438b13f6aabb86bfe6cc9afd72415a3190f8"
   },
-  "v3-living-A-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Remove the invented black faucet and sink from the LEFT entry console. Image 2 shows a flat walnut console top with ONE black bag; restore that exact top and keep the bag. Preserve all other furniture, audio equipment, room geometry and camera.",
-    "reviewed": true
+  "v1-island-E-gr06": {
+    "nativeAttempts": 4,
+    "finalPngSha256": "60f31c99b9112981725cf2144b84e087bd9003c0e45c070e7029f28d3b424586"
   },
-  "v3-island-A-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Restore the LEFT outward island end/corner as a smooth vertical curved/rounded walnut slatted end following the exact model reference, including matching rounded countertop outline. The current squared-off end is wrong. Keep all footprint boundary points, length, width, appliances and camera otherwise fixed. Also lighten countertop to the reference off-white stone with sparse dark veining, not grey marble.",
-    "reviewed": true
+  "v1-kitchen-A-gr06": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "6d5ca5857dd94da49645e413fcd892f796aae5ef53ad4bab232ed74a9b5aca7e"
   },
-  "v3-island-B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-kitchen-B-gr06": {
+    "nativeAttempts": 4,
+    "finalPngSha256": "c746b8bce90eb990a5502cea47618b7fd514116a714af9608d8cad676775294d"
   },
-  "v3-island-C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-kitchen-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "8529be275d65045151521eee2a3847b5304395c813cd77c41f4b383fbdbea563"
   },
-  "v3-kitchen-B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-kitchen-D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "5cedfe67ef378ffb69cd449390a2cf959daab09bab27c0140eefd481772f8a0a"
   },
-  "v3-study-C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-bed-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "68d1dd6b27ece823fa2ed06a8a2da282ceaeba42cef916e85a2865d63ebbe29e"
   },
-  "v3-collection-A-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-bed-D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "921f4a916b1971e68230683ddc8c8a790a8eefce0bba09c41747cacdf3aa2af7"
   },
-  "v3-collection-B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-closet-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "6ef2420f0a149045ce04859af3354ff2cd0da878adbf5b8becdf58f96e6caeeb"
   },
-  "v3-collection-C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-study-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "970fd8024637bb2067a77a391fc812a0e6f3968a8158d07b4d855da0a006f122"
   },
-  "v3-storage-B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-study-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "58f1b119b0845ea6dc1e6e4ed9223312776b25b155ef78fe7b1e066de6a6a05e"
   },
-  "v3-storage-C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-collection-A-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "3cc545bf0903a458a77984ac87aabb9df17ee7a320356ac00b8a4e924ad24db9"
   },
-  "v4-entry-door5B-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-collection-B-gr06": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "505edbbae7908b3c5583592680ac90c0ac4447f2e2f782620b8206766cb6cbe4"
   },
-  "v4-entry-door5C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-collection-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "f1b139ba45831281b8c6012fb9621ce394048c8c28d28bca4e80096b94d2df51"
   },
-  "v4-entry-door5D-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "重製：恢復完整材質與光影指示，鎖定原模型；移除前稿新增物件或錯誤檯面色。",
-    "reviewed": true
+  "v1-collection-D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "6f32fd23a50bf3260727050de768d365bc7f73f666c14f31b04453c1c9c1d905"
   },
-  "v4-collection-A-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Only restore the lower RIGHT island fragment to the exact source geometry. REMOVE the invented two faucets and black induction hob, which are outside this crop in the source. Show only the source cropped dark countertop and partial pale sink rim/basin. Keep all cabinet and wall edges unchanged.",
-    "reviewed": true
+  "v1-collection-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "88d6711555c8906cc012a754042c47a4c54b6ecf4b408b7ee72ed47459d50653"
   },
-  "v4-collection-C-mr01": {
-    "issue": "MR01 初稿視覺偏差",
-    "fix": "Only restore the RIGHT edge island fragment to source: REMOVE the added two faucets and dark sink; they are outside this crop. Keep the narrow original dark countertop with only the partially cropped black hob at extreme right as in source. No change to doors, cabinet, floor or camera.",
-    "reviewed": true
+  "v1-bath2-D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "0f9fabecfefea69921606820032cba6fb2d14c71e11c0a371e33c4f9635f0dfb"
   },
-  "v1-bath1-A-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-bath1-A-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v1-storage-A-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "000bcae304039a5b7d0ea2caeec7f687d85f88851f9dbca822f4de850c61cec1"
   },
-  "v1-bath1-B-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-bath1-B-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v1-back-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "18901ca1f266f4c1bc91d7fa4cb2cd88982f654128abae3c94a330685a61a798"
   },
-  "v1-bath1-C-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-bath1-C-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 2,
-    "reviewed": true
+  "v0-entry-door5D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "87da9ef4dce8d0fa136c8276872180a7e43cd79a4e7d6cd92b2c2cf15f2bd112"
   },
-  "v1-bed-B-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-bed-B-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v0-island-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "88ab28b3aa52fc6f7dcd32c15237faacf3d2e770d9d03ac4fcbcb0e88dca1159"
   },
-  "v1-closet-B-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-closet-B-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 1,
-    "reviewed": true
+  "v0-island-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "b6ef51994d458476728baa9f0c69c73fc7ed7fdf612b0c83de3f977075b43b48"
   },
-  "v1-collection-B-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-collection-B-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 1,
-    "reviewed": true
+  "v0-island-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "2d4972f18bafc4dca9f26518afcf04f7a86e1aed72fe7fb5a1741fadadef898b"
   },
-  "v1-entry-door5E-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-entry-door5E-r05",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v0-kitchen-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "16cbe44f16594da92a068cc8dde1a39d51ed4c911490ccb2c21423bcc53af090"
   },
-  "v1-island-C-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-island-C-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v0-study-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "07ef696e483a3c4228a1ca52a0a0a53c66361d01c32d7fc79a769f3e0d8292d4"
   },
-  "v1-kitchen-A-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-kitchen-A-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v0-back-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "b2920b81828b106f49b837484493609b2720c9cb2ff1e39fa6d083408710f1ad"
   },
-  "v1-kitchen-B-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-kitchen-B-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v2-living-A-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "ccecade75a3e3e1d5d8385d39aa64f3ceb391b3bb8fffbac78e4b214d767778e"
   },
-  "v1-kitchen-C-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-kitchen-C-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v2-living-D-gr06": {
+    "nativeAttempts": 4,
+    "finalPngSha256": "972087d3033a6754ffcb98f005bb9698937a57577e87233170aa73ab32db017e"
   },
-  "v1-living-A-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-living-A-r05",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v2-living-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "248bb7a7e875929f505f0c7e55a80cc70422c2b685d7b8fb37cae86bb84b3f7d"
   },
-  "v1-study-C-ar02": {
-    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
-    "replaces": "v1-study-C-mr01",
-    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
-    "localCorrections": 0,
-    "reviewed": true
+  "v2-island-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "6afd7c4a50bf0096624170941e90a97da702222b42371912f609a5f33926324a"
   },
-  "v0-bath1-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v0-bath1-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-bath1-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-bath1-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v2-bath1-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v2-bath1-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v0-back-A-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：廚房窺視處疑似多出水槽龍頭，待局部移除。",
-  "v0-back-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v0-bed-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v0-island-A-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：高玻璃櫃多出杯罐；只保留來源單一黑色花器。",
-  "v0-island-B-qa03": "圓形接水槽誤成實心圓盤，須保留原口徑呈現凹槽。",
-  "v0-island-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：貓房地板仍誤成石材、設備須表達為前方開口貓砂櫃。",
-  "v0-kitchen-A-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：廚房地坪誤成木地板，後陽台牆新增堆疊冷氣，吊櫃增加餐具。",
-  "v0-kitchen-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：右側窗外新增了此視角原模型沒有露出的冷氣機。",
-  "v0-kitchen-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v0-living-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：中島後方高玻璃櫃新增杯盤，原模型空格應保持留白。 遠處廚房上櫃誤畫成百葉簾。",
-  "v0-storage-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v0-storage-C-qa03": "儲藏層架多出盆栽及擺飾。",
-  "v0-study-A-qa03": "多出原模型沒有的盆栽。",
-  "v0-study-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-back-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-back-C-qa03": "戶外欄杆上方被畫成大片不透明灰面，需明確保持室外開放。",
-  "v1-bed-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-collection-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-island-A-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：左側恢復透明，但展示物誤成花瓶，須恢復模型兩排公仔占位。",
-  "v1-island-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-kitchen-A-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-kitchen-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v1-living-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：遠處廚房上櫃誤畫成百葉簾。",
-  "v1-storage-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v2-back-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v2-bed-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v2-kitchen-A-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v2-kitchen-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：左側收藏櫃原有展示物被抹去。",
-  "v2-storage-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。；生成驗收再修：門外中島原有淺銀色設備面板誤畫成灰石材。",
-  "v3-kitchen-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v3-storage-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v4-entry-door5B-qa03": "中島水槽與兩支龍頭遺漏。",
-  "v4-entry-door5C-qa03": "中島水槽與兩支龍頭遺漏，隨身包誤移到中島。",
-  "v4-living-C-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。",
-  "v4-storage-B-qa03": "模型牆體收口／水槽更新，重新依修正模型生成。"
+  "v2-island-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "68f493a3a1c7a5de31b0a3002e4df7cb53916a672eb9f1d8306da2a6055fd873"
+  },
+  "v2-island-D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "2528fe94d99d859f78469b0e695573048c145932d050c31c46d292d4875ddabc"
+  },
+  "v2-kitchen-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "9080632f9cc5368edbdc6b101c805ea94d4d95ade6d7d62abbb300779fdf865a"
+  },
+  "v2-collection-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "32a6c73b8fdde32c4fc3d2365c453d34d6ce24fb00c0874f4ab78ccdd2fcd997"
+  },
+  "v2-storage-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "732817d002c4b3048011bb09ae0c2f7074f71ebcad78bbb6a09e0f52ee3696a3"
+  },
+  "v2-storage-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "1705028e8171770707a53af6c72c564dbf988a52d40399347a90318e0388baf6"
+  },
+  "v3-living-D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "93ad982e65cdcd4898fe7f55eef341f8aff0f55ae2803496bba1ea32be9d80ae"
+  },
+  "v3-island-B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "34d58580215f6657575421f079013029692102fd844558be6107ab663e30f9f3"
+  },
+  "v3-study-C-gr06": {
+    "nativeAttempts": 7,
+    "finalPngSha256": "c612e44a0df1cfe5aa099e7660c335ac7e14a2ed78fd6b2bb448522a744065f6"
+  },
+  "v3-study-E-gr06": {
+    "nativeAttempts": 4,
+    "finalPngSha256": "713ecd63d18633b1d0d7797c1d9c06f591f13ab6a0afbabf2683357bffbf3930"
+  },
+  "v3-collection-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "261d74fc9387283e0b82038e18cc8d6ca056b7523c9f6c8e0da1efe90e1358e5"
+  },
+  "v3-storage-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "386bbe54eca2d458177f25179eb6962a032c63cb60d038437d010a703c61aa4b"
+  },
+  "v3-storage-E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "4494878760d6a32e56d72c8cbd9c5a16a0581fef145cce0facd308aa89f91a74"
+  },
+  "v4-entry-door5B-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "f71c8ac391dcd456562b13538afbee3d6b2ff8a3fc050049e925efd9a8363463"
+  },
+  "v4-entry-door5C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "4a431bd229d03103cb9ae13c4f3b3647306936802b0b42645e9129a8a5daacf0"
+  },
+  "v4-entry-door5D-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "00d4dfd761772a19724ef23e8f3ebc2d8a6ee39ada8b8d6d61765797cc19988d"
+  },
+  "v4-entry-door5E-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "3e03c07efd7649acbfbbe2b67bd319c83d5afe9bed78f29c11d95a4c32971e7e"
+  },
+  "v4-living-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "47799edf734911e39376a229b048c3665eee27c612f085bc41a35e448cbb8d39"
+  },
+  "v4-island-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "3185e38b84d2e46ad66d965feed2cdd96534837fdad53c368db4675860026c6c"
+  },
+  "v4-collection-C-gr06": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "b4bcca77ce181b4ac03e2cd97bf98b8d83d8fc5cab92e01544f18cb043dc342b"
+  }
 }

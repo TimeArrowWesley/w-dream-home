@@ -40,9 +40,9 @@ if '--install' in sys.argv:
  catalog={}
  for v in ['v0','v1','v2','v3','v4']:
   catalog[v]=[{'id':e['key'],'room':e['room'],'label':('貓房' if v=='v0' and e['room']=='collection' else '書房・電子琴' if v=='v0' and e['room']=='study' else '開放收藏收納' if e['room']=='collection' and v in ['v3','v4'] else names[e['room']])+'・'+(e['directionLabel']+' · '+e['angle'] if e.get('directionLabel') else '方向 '+e['angle']),'src':prefix+e['ai'],'modelSrc':prefix+e['model'],'thumb':prefix+e['thumb']} for e in entries if e['version']==v]
- (project/'assets/ai-interiors/catalog.js').write_text('/* '+manifest.get('imageRevision',manifest['modelRevision'])+': five fixed-station entry directions; three directions per other room. Shared images require identical source pixels. */\nwindow.HOME_AI_PHOTOS='+json.dumps(catalog,ensure_ascii=False,indent=2)+';\n',encoding='utf8',newline='\n')
+ (project/'assets/ai-interiors/catalog.js').write_text('/* '+manifest.get('imageRevision',manifest['modelRevision'])+': five directions per room. Shared images require identical source pixels. */\nwindow.HOME_AI_PHOTOS='+json.dumps(catalog,ensure_ascii=False,indent=2)+';\n',encoding='utf8',newline='\n')
  html=(root/'index.html').read_text(encoding='utf8')
  for f in ['album.css','album-data.js','album.js','使用說明.md']:html=html.replace('"'+f,'"'+prefix+f)
- html=html.replace('../../index.html','index.html').replace('../../方案比較.html','方案比較.html').replace('../../全版本複核.html','全版本複核.html')
+ html=html.replace('../../index.html','index.html').replace('../../方案比較.html','方案比較.html').replace('../../全版本複核.html','全版本複核.html').replace('../../灰石全屋設計.html','灰石全屋設計.html')
  (project/'AI寫實視角.html').write_text(html,encoding='utf8',newline='\n')
 print(json.dumps(report,ensure_ascii=False))

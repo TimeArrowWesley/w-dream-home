@@ -7,10 +7,10 @@ root=project/'成品圖集/20260914暗色現代工業'
 def read(name):return json.loads((root/name).read_text(encoding='utf8'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 manifest=read('album-manifest.json');entries=manifest['entries'];keys=sorted({e['aiKey'] for e in entries})
-assert len(entries)==190 and {e['version'] for e in entries}=={'v0','v1','v2','v3','v4'}
+assert len(entries)==300 and {e['version'] for e in entries}=={'v0','v1','v2','v3','v4'}
 for v in ['v0','v1','v2','v3','v4']:
- assert len([e for e in entries if e['version']==v])==38
- assert len([e for e in entries if e['version']==v and e['room']=='entry'])==5
+ assert len([e for e in entries if e['version']==v])==60
+ for room in {e['room'] for e in entries}:assert len([e for e in entries if e['version']==v and e['room']==room])==5
 checked=read('視覺核對.json');assert set(checked['reviewedFinalImages'])==set(keys)
 fixes=read('修正清單.json');assert set(fixes)<=set(checked['reviewedCorrections'])
 records=[]
@@ -46,7 +46,8 @@ with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
   name=p.relative_to(root).as_posix()
   if name=='index.html':
    html=p.read_text(encoding='utf8').replace('../../index.html','index.html').replace('<a href="../../方案比較.html">五版格局比較 ↗</a>','<span>五版全屋 · 離線成品圖集</span>')
-   html=html.replace('<a href="../../全版本複核.html">查看本輪 190 角度複核與修改前後對照 ↗</a>','<span>QA03 複核已同步；完整修改前後紀錄請至線上專案查看。</span>')
+   html=html.replace('<a href="../../全版本複核.html">QA03 歷史複核與修改前後對照 ↗</a>','<span>歷史複核請至線上專案查看。</span>')
+   html=html.replace('<a href="../../灰石全屋設計.html">灰石全屋設計與材質說明 ↗</a>','<span>GR06 灰石、灰棕木與光；完整設計說明請至線上專案查看。</span>')
    z.writestr(name,html)
   else:z.write(p,name)
 with zipfile.ZipFile(out) as z:
