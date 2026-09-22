@@ -116,7 +116,7 @@
     planFooter.replaceChildren(expandPlan);
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
-    const sideFoot = make('div', 'uiSideFoot', window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V4 共用家具清單 · 可隨時切換版本');
+    const sideFoot = make('div', 'uiSideFoot', window.HOME_AUDIT_REPAIRS ? version.toUpperCase()+' · QA03 · 2026.09.22 · 模型複核，施工尺寸待確認' : window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V4 共用家具清單 · 可隨時切換版本');
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -139,7 +139,8 @@
       ['全屋核對與主臥細節', '最新收放操作、燈光與前後比較', '調整紀錄/20260911全屋核對與主臥細節/index.html'],
       ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],
       ['全屋設計檢視', '各空間的接縫、收邊與設計檢視', '全屋設計檢視.html'],
-      ['模型檢查紀錄', '模型尺寸、結構與設備核對結果', '全屋模型檢查.html']
+      ['全版本模型與 AI 複核', '190 個角度核對、窗洞補牆與 AI 修改前後比較', '全版本複核.html'],
+      ['歷史模型檢查紀錄', '較早版本的模型尺寸、結構與設備核對', '全屋模型檢查.html']
     ]) {
       const a = make('a', 'uiResource'); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener';
       a.append(make('strong', '', title + ' ↗'), make('span', '', note)); resourceGrid.append(a);

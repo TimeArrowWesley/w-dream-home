@@ -43,6 +43,6 @@ if '--install' in sys.argv:
  (project/'assets/ai-interiors/catalog.js').write_text('/* '+manifest.get('imageRevision',manifest['modelRevision'])+': five fixed-station entry directions; three directions per other room. Shared images require identical source pixels. */\nwindow.HOME_AI_PHOTOS='+json.dumps(catalog,ensure_ascii=False,indent=2)+';\n',encoding='utf8',newline='\n')
  html=(root/'index.html').read_text(encoding='utf8')
  for f in ['album.css','album-data.js','album.js','使用說明.md']:html=html.replace('"'+f,'"'+prefix+f)
- html=html.replace('../../index.html','index.html').replace('../../方案比較.html','方案比較.html')
+ html=html.replace('../../index.html','index.html').replace('../../方案比較.html','方案比較.html').replace('../../全版本複核.html','全版本複核.html')
  (project/'AI寫實視角.html').write_text(html,encoding='utf8',newline='\n')
 print(json.dumps(report,ensure_ascii=False))

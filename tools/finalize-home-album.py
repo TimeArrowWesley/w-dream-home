@@ -46,6 +46,7 @@ with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
   name=p.relative_to(root).as_posix()
   if name=='index.html':
    html=p.read_text(encoding='utf8').replace('../../index.html','index.html').replace('<a href="../../方案比較.html">五版格局比較 ↗</a>','<span>五版全屋 · 離線成品圖集</span>')
+   html=html.replace('<a href="../../全版本複核.html">查看本輪 190 角度複核與修改前後對照 ↗</a>','<span>QA03 複核已同步；完整修改前後紀錄請至線上專案查看。</span>')
    z.writestr(name,html)
   else:z.write(p,name)
 with zipfile.ZipFile(out) as z:
