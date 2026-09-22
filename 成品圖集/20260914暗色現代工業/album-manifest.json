@@ -1768,14 +1768,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-kitchen-C-mr01",
+      "aiKey": "v1-kitchen-C-ar02",
       "sharedWith": [
         "v2-kitchen-C",
         "v3-kitchen-C",
         "v4-kitchen-C",
         "v1-kitchen-C"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v2",
@@ -1949,14 +1950,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-closet-B-mr01",
+      "aiKey": "v1-closet-B-ar02",
       "sharedWith": [
         "v2-closet-B",
         "v3-closet-B",
         "v4-closet-B",
         "v1-closet-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v2",
@@ -3112,14 +3114,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-kitchen-C-mr01",
+      "aiKey": "v1-kitchen-C-ar02",
       "sharedWith": [
         "v2-kitchen-C",
         "v3-kitchen-C",
         "v4-kitchen-C",
         "v1-kitchen-C"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v3",
@@ -3293,14 +3296,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-closet-B-mr01",
+      "aiKey": "v1-closet-B-ar02",
       "sharedWith": [
         "v2-closet-B",
         "v3-closet-B",
         "v4-closet-B",
         "v1-closet-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v3",
@@ -4455,14 +4459,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-kitchen-C-mr01",
+      "aiKey": "v1-kitchen-C-ar02",
       "sharedWith": [
         "v2-kitchen-C",
         "v3-kitchen-C",
         "v4-kitchen-C",
         "v1-kitchen-C"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v4",
@@ -4636,14 +4641,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-closet-B-mr01",
+      "aiKey": "v1-closet-B-ar02",
       "sharedWith": [
         "v2-closet-B",
         "v3-closet-B",
         "v4-closet-B",
         "v1-closet-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v4",
@@ -5492,10 +5498,11 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-entry-door5E-r05",
+      "aiKey": "v1-entry-door5E-ar02",
       "sharedWith": [
         "v1-entry-door5E"
-      ]
+      ],
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -5525,10 +5532,11 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-living-A-r05",
+      "aiKey": "v1-living-A-ar02",
       "sharedWith": [
         "v1-living-A"
-      ]
+      ],
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -5694,11 +5702,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-island-C-mr01",
+      "aiKey": "v1-island-C-ar02",
       "sharedWith": [
         "v1-island-C"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -5728,11 +5737,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-kitchen-A-mr01",
+      "aiKey": "v1-kitchen-A-ar02",
       "sharedWith": [
         "v1-kitchen-A"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -5762,11 +5772,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-kitchen-B-mr01",
+      "aiKey": "v1-kitchen-B-ar02",
       "sharedWith": [
         "v1-kitchen-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -5796,14 +5807,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-kitchen-C-mr01",
+      "aiKey": "v1-kitchen-C-ar02",
       "sharedWith": [
         "v2-kitchen-C",
         "v3-kitchen-C",
         "v4-kitchen-C",
         "v1-kitchen-C"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -5866,11 +5878,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-bed-B-mr01",
+      "aiKey": "v1-bed-B-ar02",
       "sharedWith": [
         "v1-bed-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -5967,14 +5980,15 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-closet-B-mr01",
+      "aiKey": "v1-closet-B-ar02",
       "sharedWith": [
         "v2-closet-B",
         "v3-closet-B",
         "v4-closet-B",
         "v1-closet-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -6107,11 +6121,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-study-C-mr01",
+      "aiKey": "v1-study-C-ar02",
       "sharedWith": [
         "v1-study-C"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -6174,11 +6189,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-collection-B-mr01",
+      "aiKey": "v1-collection-B-ar02",
       "sharedWith": [
         "v1-collection-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -6241,11 +6257,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-bath1-A-mr01",
+      "aiKey": "v1-bath1-A-ar02",
       "sharedWith": [
         "v1-bath1-A"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -6275,11 +6292,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-bath1-B-mr01",
+      "aiKey": "v1-bath1-B-ar02",
       "sharedWith": [
         "v1-bath1-B"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -6309,11 +6327,12 @@
       "height": 768,
       "ai": null,
       "status": "source-captured",
-      "aiKey": "v1-bath1-C-mr01",
+      "aiKey": "v1-bath1-C-ar02",
       "sharedWith": [
         "v1-bath1-C"
       ],
-      "sourceRevision": "20260921-mr01"
+      "sourceRevision": "20260921-mr01",
+      "imageRevision": "20260922-ar02"
     },
     {
       "version": "v1",
@@ -6854,5 +6873,7 @@
       },
       "basis": "MR01 consultant model proposal: entries, storage retrieval, V3 audio route, sliding shower glass, door geometry and hollow kitchen sink. V0 unchanged. Only identical model PNG pixels share images."
     }
-  }
+  },
+  "imageRevision": "20260922-ar02",
+  "imagesUpdatedAt": "2026-09-22"
 }

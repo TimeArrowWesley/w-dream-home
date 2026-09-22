@@ -159,5 +159,96 @@
     "issue": "MR01 初稿視覺偏差",
     "fix": "Only restore the RIGHT edge island fragment to source: REMOVE the added two faucets and dark sink; they are outside this crop. Keep the narrow original dark countertop with only the partially cropped black hob at extreme right as in source. No change to doors, cabinet, floor or camera.",
     "reviewed": true
+  },
+  "v1-bath1-A-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-bath1-A-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-bath1-B-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-bath1-B-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-bath1-C-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-bath1-C-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 2,
+    "reviewed": true
+  },
+  "v1-bed-B-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-bed-B-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-closet-B-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-closet-B-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 1,
+    "reviewed": true
+  },
+  "v1-collection-B-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-collection-B-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 1,
+    "reviewed": true
+  },
+  "v1-entry-door5E-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-entry-door5E-r05",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-island-C-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-island-C-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-kitchen-A-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-kitchen-A-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-kitchen-B-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-kitchen-B-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-kitchen-C-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-kitchen-C-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-living-A-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-living-A-r05",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
+  },
+  "v1-study-C-ar02": {
+    "issue": "舊圖保留模型式平面材質與光影，未達AI寫實呈現品質。",
+    "replaces": "v1-study-C-mr01",
+    "fix": "使用完整材質、照明與構圖約束重新產圖，並大圖檢視。",
+    "localCorrections": 0,
+    "reviewed": true
   }
 }

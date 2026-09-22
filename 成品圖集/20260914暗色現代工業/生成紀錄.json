@@ -1,6 +1,7 @@
 {
-  "date": "2026-09-21",
+  "date": "2026-09-22",
   "sourceRevision": "20260921-mr01",
+  "imageRevision": "20260922-ar02",
   "versionSources": {
     "v0": {
       "capturedAt": "2026-09-15",
@@ -661,15 +662,15 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-bath1-A-mr01",
+      "key": "v1-bath1-A-ar02",
       "usedBy": [
         "v1-bath1-A"
       ],
       "sourcePngSha256": "070518ac80117e0a5df81dc47e0eef3992f3faa06c79ae9f603f8f5abbf1c4ee",
-      "aiOriginalPngSha256": "3ce17c48fe72b30a864df921fe714db925e080c09c32df8140276b9c712032c4",
-      "aiWebpSha256": "515a7899c3cece03996cff620bfbe218720023a6be6852770985d775f16001a5",
+      "aiOriginalPngSha256": "e6aa56903ae43511761f452761bb592f2df89ba150bfd4ff3524d16a3d22e892",
+      "aiWebpSha256": "ab940ae1f7adeecde7969e1dfd987887250045e628af3ea2d62e7d7789a43b9d",
       "sourceWebpSha256": "cade337ce17c87dfd2b3a1f802bd4676bfd79d8cd0f6112df65f2c48d4798d2b",
-      "prompt": "undefined\nView identity: v1-bath1-A. Master bathroom: retain raised white oval basin rim, slim wet-side sliding glass door, fixed glass partition, bathtub and all fixture positions. No shower hinge or swinging panel. Exactly preserve all foreground occlusions.",
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-bath1-A-mr01\nView-specific constraints: Bathroom: maintain the white oval bathtub at back left, ONE shower set on far wall, white toilet right, and partially cropped vanity and mirror at right. Retain two overlapping glass planes and dark top sliding rail, not a hinged swing panel. Grey stone tiled floor, grey mineral walls, dark wood vanity. Frame and all wall planes remain exactly as reference. The mirror has existing slim vertical side light strips.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
@@ -692,21 +693,16 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-bath1-B-mr01",
+      "key": "v1-bath1-B-ar02",
       "usedBy": [
         "v1-bath1-B"
       ],
       "sourcePngSha256": "5f925d2e333871d665ce101d98a76008d1991fd13bd29a3102add4bc3a522397",
-      "aiOriginalPngSha256": "ebd9f239f6127e496dfc93feab00c28c1e408cded4c4634f642ad9de0bec08a9",
-      "aiWebpSha256": "800810deb05334677bdfa6422f67214776081a87390bd12e6f1652d546af9f32",
+      "aiOriginalPngSha256": "24bd551d86da5f338b47c484b728f509fcd4e7eed880cf13cc79822166f5b781",
+      "aiWebpSha256": "3973409866ef03587192ba79f3a5b5b1d6205b9debc1f50cff39afcfd34c7f40",
       "sourceWebpSha256": "1bd7f0f67e12847d5b8bad096bc357987a453052b75a6b6e4b136b700c9f82d4",
-      "prompt": "undefined\nView identity: v1-bath1-B. Master bathroom: retain raised white oval basin rim, slim wet-side sliding glass door, fixed glass partition, bathtub and all fixture positions. No shower hinge or swinging panel. Exactly preserve all foreground occlusions.",
-      "corrections": [
-        {
-          "instruction": "Restore image 2 geometry at the RIGHT of vanity: the large invented glass doorway into a second bathroom must be removed entirely and replaced with SOLID GREY WALL exactly where image 2 shows wall. Only the original narrow pale frosted-glass strip immediately adjoining the black entry door remains. Remove invented shower, niche, second bathtub, extra toilet and room. Make vanity basin interior hollow white ceramic inside existing raised white oval rim, instead of a flat grey disk. Preserve camera, all furniture and exact original wall/opening outlines from image 2.",
-          "prompt": "Use case: architectural render correction. Image 1 is the image to edit. Image 2 is the authoritative model geometry reference. Make ONLY the requested correction; retain exact source camera and all unrelated details. Restore image 2 geometry at the RIGHT of vanity: the large invented glass doorway into a second bathroom must be removed entirely and replaced with SOLID GREY WALL exactly where image 2 shows wall. Only the original narrow pale frosted-glass strip immediately adjoining the black entry door remains. Remove invented shower, niche, second bathtub, extra toilet and room. Make vanity basin interior hollow white ceramic inside existing raised white oval rim, instead of a flat grey disk. Preserve camera, all furniture and exact original wall/opening outlines from image 2. Landscape 1536x1024. No text."
-        }
-      ],
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-bath1-B-mr01\nView-specific constraints: Bathroom vanity: ONE white shallow oval basin with a real visible hollow interior and one black tap, dark stone top on floating walnut cabinet. Toilet cropped at lower left, rectangular mirror with two slim side light bars. Right black entrance leaf and narrow frosted side strip stay in their original positions; all other walls solid, no extra doorway. Make the mirror a plausible reflection, not a solid flat blue rectangle.\n",
+      "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
@@ -728,16 +724,25 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-bath1-C-mr01",
+      "key": "v1-bath1-C-ar02",
       "usedBy": [
         "v1-bath1-C"
       ],
       "sourcePngSha256": "ec0eaa2ec414a514f0c3ba5ab018a9ba7b05606c0d657c982db4736e0cf259ac",
-      "aiOriginalPngSha256": "e1cd3b9fd52c9e503bfd9f705230f425d16ff9764a70bea0e29b29f3c5e62ac9",
-      "aiWebpSha256": "e9faaebb8cdf0b3a61a95e2c0451bcecf6f03fd2f0e4dbdbf62eb0ef926fef31",
+      "aiOriginalPngSha256": "f5cee909ff70f4896a868e2f051338773a48860985cbdd805a7e4ac8cff9c7ff",
+      "aiWebpSha256": "4d6d6b018854c1dc30e7f214ab4b8a2dca898770ab1ee0effabd69bd49af69f2",
       "sourceWebpSha256": "bb515b4e413bcb450dcfef2f073bfdd456033a1c014c49158e8b4f8ef8612de4",
-      "prompt": "undefined\nView identity: v1-bath1-C. Master bathroom: retain raised white oval basin rim, slim wet-side sliding glass door, fixed glass partition, bathtub and all fixture positions. No shower hinge or swinging panel. Exactly preserve all foreground occlusions.",
-      "corrections": [],
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-bath1-C-mr01\nView-specific constraints: Bathroom reverse angle: the bathtub remains cropped foreground left, ONE black shower system left; sliding shower glass divides the view; toilet and single-basin vanity in background right. Keep black entrance door and its narrow frosted side strip at far right. All walls remain solid. Preserve the slim vertical light bars at both mirror sides, one hollow white oval washbasin only.\n",
+      "corrections": [
+        {
+          "instruction": "Edit this photoreal bathroom image with ONLY two local corrections. (1) The walnut vanity behind the toilet must have TWO full-height VERTICAL wooden cabinet doors, one vertical central seam and two short dark vertical handles beside that seam. Remove the horizontal drawer seam. Preserve cabinet footprint, walnut material, countertop, basin, mirror and position. (2) All glazing in the very narrow sidelight strip beside the black entrance door is uniformly translucent frosted glass, including its middle pane: obscure any view of plants or landscape through that strip. Do not change its black frame or divide it differently. Keep the shower sliding glass transparent and intact. Preserve this exact camera, composition, tub, shower, toilet, black entrance door angle, lighting, realistic textures and every other part. Output the same full photographic image with only these fixes.",
+          "prompt": "Edit this photoreal bathroom image with ONLY two local corrections. (1) The walnut vanity behind the toilet must have TWO full-height VERTICAL wooden cabinet doors, one vertical central seam and two short dark vertical handles beside that seam. Remove the horizontal drawer seam. Preserve cabinet footprint, walnut material, countertop, basin, mirror and position. (2) All glazing in the very narrow sidelight strip beside the black entrance door is uniformly translucent frosted glass, including its middle pane: obscure any view of plants or landscape through that strip. Do not change its black frame or divide it differently. Keep the shower sliding glass transparent and intact. Preserve this exact camera, composition, tub, shower, toilet, black entrance door angle, lighting, realistic textures and every other part. Output the same full photographic image with only these fixes.\n"
+        },
+        {
+          "instruction": "Make one highly localized change to the existing walnut vanity cabinet behind the toilet: ERASE EVERY HORIZONTAL GROOVE/SEAM on the wooden FRONT BELOW THE COUNTERTOP, across the entire visible width, including the portion on the right of the shower's black vertical frame. It must be a plain full-height TWO-VERTICAL-DOOR cabinet, with a single VERTICAL center joint, no drawer lines whatsoever. Keep two small dark VERTICAL pulls at the center joint. Its horizontal countertop edge is preserved; only horizontal lines cut into the wooden front must disappear, replaced by continuous walnut grain. Do not change the glass frame, toilet, sink, mirror, wall, lighting, frosted sidelight or any other part. Same full photographic image and camera.",
+          "prompt": "Make one highly localized change to the existing walnut vanity cabinet behind the toilet: ERASE EVERY HORIZONTAL GROOVE/SEAM on the wooden FRONT BELOW THE COUNTERTOP, across the entire visible width, including the portion on the right of the shower's black vertical frame. It must be a plain full-height TWO-VERTICAL-DOOR cabinet, with a single VERTICAL center joint, no drawer lines whatsoever. Keep two small dark VERTICAL pulls at the center joint. Its horizontal countertop edge is preserved; only horizontal lines cut into the wooden front must disappear, replaced by continuous walnut grain. Do not change the glass frame, toilet, sink, mirror, wall, lighting, frosted sidelight or any other part. Same full photographic image and camera.\n"
+        }
+      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
@@ -796,15 +801,15 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-bed-B-mr01",
+      "key": "v1-bed-B-ar02",
       "usedBy": [
         "v1-bed-B"
       ],
       "sourcePngSha256": "e86617522da86b5fbc867ea2a72ae897f92797d98eb7c9b2b08b0100da2a66ec",
-      "aiOriginalPngSha256": "05f30caa49700171dee683a636f10133553dfe9536f9545ca59ccd39d1c18382",
-      "aiWebpSha256": "ba63b365bdf51001650f5898f7ffe981caa8fe0249c9c4ba6a84d81e7c1a9268",
+      "aiOriginalPngSha256": "ecdb58200ce04902f358d921db6cdfc69ad37899d873771fae9aa62e6af6c211",
+      "aiWebpSha256": "63dde84ec66c833bdb27976b97a36cf4209709ddc40d06b80cb6c730fb8c7274",
       "sourceWebpSha256": "f1a0590fb73670377fbaa29b5d76426a0c2204c2ae33f547c6d0f25f0a99176d",
-      "prompt": "undefined\nView identity: v1-bed-B.  Exactly preserve all foreground occlusions.",
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-bed-B-mr01\nView-specific constraints: Bedroom: preserve the king bed, exactly two pillows, upholstered grey headboard, side built-in walnut cabinet volumes and drawer counts, white projector on the existing elevated RIGHT side niche and original black doorway. Make bedding natural textile with subtle soft folds, dark woven bed runner, tactile charcoal upholstered headboard, fine walnut grain, soft wall washes. Do not add cushions, bedside furniture or decor.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
@@ -905,7 +910,7 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-closet-B-mr01",
+      "key": "v1-closet-B-ar02",
       "usedBy": [
         "v2-closet-B",
         "v3-closet-B",
@@ -913,11 +918,16 @@
         "v1-closet-B"
       ],
       "sourcePngSha256": "dfbe463759c2d454874c1ff80e8b84b400699263a2833586bd80a6c5ff1970dd",
-      "aiOriginalPngSha256": "21f621cbcc8767b84bc6a6c75ef0fe4eb03237b7999d233e8b1e1dbd501155f8",
-      "aiWebpSha256": "a954389a9479ec9fa224f0fb8323f7053001133ec38bf2bacd983cad6fa2d768",
+      "aiOriginalPngSha256": "b2828f9ecd2af08be3aa1521cd17f4ccf9ccb2a4f7678492acea3af262b04642",
+      "aiWebpSha256": "30f16c90d79c4f43bf39bb4147b545ddf521b8b2dff1075330aac682d35d409d",
       "sourceWebpSha256": "fe39fd80a23e79b5a2f79ef2b04c0d7e22b5041bb61e416465f7f032634d8edb",
-      "prompt": "undefined\nView identity: v1-closet-B.  Exactly preserve all foreground occlusions.",
-      "corrections": [],
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-closet-B-mr01\nView-specific constraints: Wardrobe: preserve the black door and wall foreground occlusions, sliding cabinet/glass frame, horizontal rails, existing clothes and shelving exactly. Produce detailed lifelike textile drape and hangers, fine walnut grain, dark metal, soft indoor ambient light and real contact shadows. Keep all visible cabinet divisions and narrow spaces; do not invent new shelving or mirror openings.\n",
+      "corrections": [
+        {
+          "instruction": "Edit this photoreal dressing room image with ONLY a local clothing correction. In the hanging wardrobe bay, remove the three tall flat grey rigid rectangular sheets extending from the hanging rail towards the floor: these were low-poly garment placeholders, not wardrobe dividers. Replace them with exactly THREE realistically draped long coats/jackets on three hangers, in charcoal, grey and taupe, occupying the same hanging envelope. Remove the extra garments currently crowded behind those three sheets so the bay has only three garments in total. There must be NO floor-length vertical dividers between the hanging clothes. Keep the hanging rail, shelf, two fabric boxes, upper shelf central divider, wardrobe carcass, original wall pier, open black door, side occlusions, floor, exact camera and all light/material quality unchanged. Do not add anything else. Photoreal full image.",
+          "prompt": "Edit this photoreal dressing room image with ONLY a local clothing correction. In the hanging wardrobe bay, remove the three tall flat grey rigid rectangular sheets extending from the hanging rail towards the floor: these were low-poly garment placeholders, not wardrobe dividers. Replace them with exactly THREE realistically draped long coats/jackets on three hangers, in charcoal, grey and taupe, occupying the same hanging envelope. Remove the extra garments currently crowded behind those three sheets so the bay has only three garments in total. There must be NO floor-length vertical dividers between the hanging clothes. Keep the hanging rail, shelf, two fabric boxes, upper shelf central divider, wardrobe carcass, original wall pier, open black door, side occlusions, floor, exact camera and all light/material quality unchanged. Do not add anything else. Photoreal full image.\n"
+        }
+      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
@@ -951,16 +961,21 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-collection-B-mr01",
+      "key": "v1-collection-B-ar02",
       "usedBy": [
         "v1-collection-B"
       ],
       "sourcePngSha256": "0ecefb25161b5285ddd1cd891d5352f897a2ec377d86be3d811ba3a4303fac5e",
-      "aiOriginalPngSha256": "732375e226e03a51765aac9353c7e369c577e042a5a12b603fd10e4902245f02",
-      "aiWebpSha256": "d1784901f2bddada6ca8298b770651a92564d9706d9681319556b08e8f69f501",
+      "aiOriginalPngSha256": "d01298946e67e1d8afdec8f6e1a5eb911f25a9cf4f003d049ca728ed7fce04fa",
+      "aiWebpSha256": "fdee8249730b0b601841d33b59b1b7165309716c7bb94ed6bc985b9d71971835",
       "sourceWebpSha256": "1205053ad332d61fb8b551f3392eb27de94d443b3f487fc164b0720e49eeb8b4",
-      "prompt": "undefined\nView identity: v1-collection-B.  Exactly preserve all foreground occlusions.",
-      "corrections": [],
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-collection-B-mr01\nView-specific constraints: View from collection/display side: preserve the continuous glass display wall, all grid divisions and abstract placeholder sculptures, the dark stone curved island and partial black hob, high glass island frame, wood wall/column, narrow kitchen beyond. Photographic walnut, charcoal stone, transparent glass, fine lighting and realistic sculpture material within original silhouettes. No new hob or sink, no new display content.\n",
+      "corrections": [
+        {
+          "instruction": "Edit this photoreal display-wall image with ONLY one local correction: the tall appliance behind the curved walnut vertical panel on the far RIGHT is a WHITE two-door refrigerator. Restore its visible front from the current dark grey cabinet-like finish to matte/off-white enamel, two vertical door leaves with the existing center seam and short dark horizontal handle(s) at the existing positions. Keep the refrigerator exact size, silhouette, location, amount cropped by the right edge and concealed by the foreground island. The black overhead cabinets ABOVE it stay black. Do not convert any other surface. Preserve all display-cabinet divisions, glass, sculpture placeholders, curved walnut panel, foreground hob and stone island, rear kitchen, exact camera, geometry and photographic lighting/texture quality. Output this full image with only that appliance finish corrected.",
+          "prompt": "Edit this photoreal display-wall image with ONLY one local correction: the tall appliance behind the curved walnut vertical panel on the far RIGHT is a WHITE two-door refrigerator. Restore its visible front from the current dark grey cabinet-like finish to matte/off-white enamel, two vertical door leaves with the existing center seam and short dark horizontal handle(s) at the existing positions. Keep the refrigerator exact size, silhouette, location, amount cropped by the right edge and concealed by the foreground island. The black overhead cabinets ABOVE it stay black. Do not convert any other surface. Preserve all display-cabinet divisions, glass, sculpture placeholders, curved walnut panel, foreground hob and stone island, rear kitchen, exact camera, geometry and photographic lighting/texture quality. Output this full image with only that appliance finish corrected.\n"
+        }
+      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
@@ -1030,21 +1045,16 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-entry-door5E-r05",
+      "key": "v1-entry-door5E-ar02",
       "usedBy": [
         "v1-entry-door5E"
       ],
       "sourcePngSha256": "5532009fd56a94392c30edd15e5248002a323375aae40a4a4b7a8f618e08f22c",
-      "aiOriginalPngSha256": "075dec4090ccf23097d009269682257e21d983b4b6e22f22157f24cc0e15d99a",
-      "aiWebpSha256": "0568f5ca5d6b5520d95380894b92568a2e709996c9c6c3f655435db7849f7fe5",
+      "aiOriginalPngSha256": "3df2eaa26aeaa4b779d85051639ceac819d13c7bc06138454bf7359e41644fc5",
+      "aiWebpSha256": "7222162a04902d4cd80ed7cb3999925e7298406f0aa411df52ccfc070c5803aa",
       "sourceWebpSha256": "4e7d63386a3ee1afeee7bfdd4e77afbc08ddb024fb141e991aeda466cac4997c",
-      "prompt": "undefined\nSpecific view v1-entry-door5E: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
-      "corrections": [
-        {
-          "instruction": "Correct the small living-room slice on the left to match source image 2: restore the small black cube SUBWOOFER on the floor under the rear window. Remove the invented wood box at the right of that window, the invented hanging vertical black light, and invented extra rear round speakers at far left. Preserve partial sofa at far left, oval lift coffee table, foreground black cube, large close black cabinet faces on the right. Keep the window exactly the plain rectangular opening in source, no additional door openings.",
-          "prompt": "Image 1 is the photorealistic edit target. Image 2 is the authoritative actual model camera and geometry. Correct image 1 to match image 2. Correct the small living-room slice on the left to match source image 2: restore the small black cube SUBWOOFER on the floor under the rear window. Remove the invented wood box at the right of that window, the invented hanging vertical black light, and invented extra rear round speakers at far left. Preserve partial sofa at far left, oval lift coffee table, foreground black cube, large close black cabinet faces on the right. Keep the window exactly the plain rectangular opening in source, no additional door openings. Geometry fidelity is essential. Preserve materials, do not add unseen objects. Output 1536x1024, no text."
-        }
-      ],
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-entry-door5E-r05\nView-specific constraints: Fixed entrance-right view: preserve the large dark foreground door/column blocking the right half, the left visible living area, windows, sofa, coffee table, loudspeaker/subwoofer objects and all seating positions. Foreground obstruction must remain. Photographic surface microtexture, realistic diffuse daylight through existing windows and soft interior illumination. Do not move foreground geometry to improve composition.\n",
+      "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
@@ -1079,21 +1089,16 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-island-C-mr01",
+      "key": "v1-island-C-ar02",
       "usedBy": [
         "v1-island-C"
       ],
       "sourcePngSha256": "380f955c3fcc918dd5db4ba7f44a6cc631a59fee0858eff0e270407b70aa20f8",
-      "aiOriginalPngSha256": "af48868339b5ecbd75e31069f4439eb927481dd1ac19d55c6c49b9a2df3b1e31",
-      "aiWebpSha256": "ff1a5d3013b22ee6bdad402b6a5e8999c50dabe9001bde01aced6e4b76a1cbdd",
+      "aiOriginalPngSha256": "7386fafe9aa0d941507300b007c1f1c49e3d292bdac369a541812a180048291e",
+      "aiWebpSha256": "6be15027ba4231be9ee5ec3232b16d708773fdfc496a26b24defb2a40fa6a3d6",
       "sourceWebpSha256": "8495ce7745087892c20ba61744e683e5f172dd201372b79397ab7ca11adc0568",
-      "prompt": "undefined\nView identity: v1-island-C.  Exactly preserve all foreground occlusions.",
-      "corrections": [
-        {
-          "instruction": "Replace only the raised white oval plate/bowl on the island, behind glass at lower left, with a small ROUND inset stainless-steel prep sink as shown image 2. Its basin descends into the dark countertop, no white vessel above. Preserve black faucet and ALL other pixels/geometry/style.",
-          "prompt": "Use case: architectural render correction. Image 1 is the image to edit. Image 2 is the authoritative model geometry reference. Make ONLY the requested correction; retain exact source camera and all unrelated details. Replace only the raised white oval plate/bowl on the island, behind glass at lower left, with a small ROUND inset stainless-steel prep sink as shown image 2. Its basin descends into the dark countertop, no white vessel above. Preserve black faucet and ALL other pixels/geometry/style. Landscape 1536x1024. No text."
-        }
-      ],
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-island-C-mr01\nView-specific constraints: View through FULL HEIGHT GLASS island display cabinet. Keep the black vertical and horizontal cabinet frame divisions and all foreground occlusions exactly. Beyond/within the island surface, retain the small ROUND recessed silver prep basin; no rectangle sink, no extra tap. Dark stone countertop, finely ribbed walnut base, correct display grid and silhouettes. Refine the actual glass into subtle reflections and physical transparency, wood/stone into real materials. Keep geometry and camera.\n",
+      "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
@@ -1115,28 +1120,28 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-kitchen-A-mr01",
+      "key": "v1-kitchen-A-ar02",
       "usedBy": [
         "v1-kitchen-A"
       ],
       "sourcePngSha256": "3fd1a2e5c471104b1c93148f33135eca356d227693ea64e1c9d830b2bd3b1f08",
-      "aiOriginalPngSha256": "b9871f1c3bf98382908a0f38f1448651d8bc7a5afefa1f9bff6997ddc485aafb",
-      "aiWebpSha256": "39ba7df436a488e675a7fe5dafb41b2569c2aacb5851c821910c6130a98eebca",
+      "aiOriginalPngSha256": "fdbe98baddb7a41a9df5c163a01e10a0d98996c78b5a7b40cadfbbe804187696",
+      "aiWebpSha256": "fff97ffd273d9141019cb6076a23eebdf98f8d8b225897e02aa36a398d723fd1",
       "sourceWebpSha256": "eadb784d62496b5f671e37c48ea5ef2cea3441b80e88afe611d1cb00e1b0255d",
-      "prompt": "undefined\nView identity: v1-kitchen-A. The existing kitchen sink is a recessed silver stainless steel bowl; show visible interior sidewalls and bottom inside its existing thin rim. Exactly preserve all foreground occlusions.",
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-kitchen-A-mr01\nView-specific constraints: Galley kitchen: keep the huge dark foreground cabinet edge at right, back cabinetry, grey stone countertop on the left, one existing rectangular silver stainless recessed sink at the same position, original black tap. Visible oval basin at far left belongs to the BATHROOM beyond, not a second kitchen sink. No extra sink, tap, hob or opening. Main kitchen fronts are brushed silver/grey and charcoal. Show realistic hollow stainless sink within original rim.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-kitchen-B-mr01",
+      "key": "v1-kitchen-B-ar02",
       "usedBy": [
         "v1-kitchen-B"
       ],
       "sourcePngSha256": "c03e662846f48cbdd4b5b9dcd21ea6af2abdc9c6b93e34bd08ae3f7c1be8c13d",
-      "aiOriginalPngSha256": "0b672e9dc85dd665b695e6e449ac0aae78b996c5d3443661810f19f25cdbed1b",
-      "aiWebpSha256": "96f5a99aea6ad43e9e01a46ff356cf268e7842f3298b556af7e082678abfd947",
+      "aiOriginalPngSha256": "6baa49e85c3d90ae847fe0e0cab2acea8f517c298e1d6dfd1123358dfda7da8d",
+      "aiWebpSha256": "eece436252e4a3590222328a8cc742bd4f731dd25833843f16e04283935d7980",
       "sourceWebpSha256": "1115ea654f9f4bcd68512ce5462dab02a0cd3267cd2175a7e39d08e9fe4783b3",
-      "prompt": "undefined\nView identity: v1-kitchen-B. The existing kitchen sink is a recessed silver stainless steel bowl; show visible interior sidewalls and bottom inside its existing thin rim. Exactly preserve all foreground occlusions.",
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-kitchen-B-mr01\nView-specific constraints: Galley kitchen reverse angle: preserve large dark central-left cabinet, glass door foreground left, long grey stone worktop on right, ONE recessed silver rectangular stainless kitchen sink at right front, ONE black squared tap, existing hob farther back and dark tall units. Keep stainless inner sidewalls and bottom, fine brushed texture and subtle reflection. No added fixtures.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
@@ -1159,7 +1164,7 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-kitchen-C-mr01",
+      "key": "v1-kitchen-C-ar02",
       "usedBy": [
         "v2-kitchen-C",
         "v3-kitchen-C",
@@ -1167,29 +1172,24 @@
         "v1-kitchen-C"
       ],
       "sourcePngSha256": "1f9add377faf44294c612da5d886adee3a3599e43d451a7aea1563a499a3a1f2",
-      "aiOriginalPngSha256": "d868bec14525ce42d3eb69df6dec1c7319166cf213b9648db8ba44d11d239a5b",
-      "aiWebpSha256": "3186d7ce8c4ad6c2b2ee92a56d7f5e6ee665095b8b84a760c1bb75c1c35aad17",
+      "aiOriginalPngSha256": "190e1ff3adfa6378014b88c69f52302ffca5e48e27e05b61bae4efa6391251cb",
+      "aiWebpSha256": "f0049b7554c73ca5b564dcea37875138317570759186b79351f69deae8f7b938",
       "sourceWebpSha256": "763a843875455d26443a44e338e07cf6f70469b60c9250e3a302a2e9849228e4",
-      "prompt": "undefined\nView identity: v1-kitchen-C. The existing kitchen sink is a recessed silver stainless steel bowl; show visible interior sidewalls and bottom inside its existing thin rim. Exactly preserve all foreground occlusions.",
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-kitchen-C-mr01\nView-specific constraints: Close kitchen sink view: retain ONE large rectangular silver stainless bowl within existing thin rim and dark grey stone countertop; ONE black squared faucet. Window at top left with the existing two outdoor AC units visible, tall dark appliance/cabinet at right. Make bowl authentically recessed with continuous metal sidewalls, soft interior reflections and a small drain. Maintain original rim size and view. No extra sink or tap, no additional accessories.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-living-A-r05",
+      "key": "v1-living-A-ar02",
       "usedBy": [
         "v1-living-A"
       ],
       "sourcePngSha256": "9c150578418261f9a8babfb827d5f10672e5a7513713c8334a2f34c6709532f7",
-      "aiOriginalPngSha256": "7e61f7edc5cb43fd6a8270706886f74e973ba209b3100a7d25c61695b6b3f4ba",
-      "aiWebpSha256": "d1a2e5a4601cf4188520289326851fb30d8f21714141893f0ba066a860c8b08f",
+      "aiOriginalPngSha256": "e6e94463fa877ab7bdf7c89e5acc0daf54f0844c0d9b95c02126cc530c8b4dd5",
+      "aiWebpSha256": "ee245ed728bd7dd7323e487c29d1c1f78f79e2823750b08cc34312abdc5bd083",
       "sourceWebpSha256": "2d70d5a45e06a79a0133c7dc16c07c02e08c1776b195f10bb07b59f6bdb62ebf",
-      "prompt": "undefined\nSpecific view v1-living-A: Keep original framing even when a nearby door or wall occupies much of the frame. The narrow dark object hanging from the vertical pole near the entrance is the existing hanging control/mirror panel; retain its exact size. Retain the wood low entrance cabinet. The rear glass study door is a surface SLIDING door, and its passage must remain empty. Sofa is a slim raised dark fabric right-chaise L sofa with two small spherical speakers attached to the BACK SHELF, not freestanding objects. Television back wall is matte graphite, never glossy marble. No added accessories.",
-      "corrections": [
-        {
-          "instruction": "Restore the SOURCE CAMERA VIEW and object arrangement exactly: REMOVE the entire invented sofa and its rear round speakers from the LEFT FOREGROUND. Replace it with the clear grey rug and a partial BLACK OVAL LIFT COFFEE TABLE entering from bottom-left, exactly as image 2. Restore the small black cube SUBWOOFER on the floor beside the left window, remove the invented wood box there and the invented vertical wall speaker beside that window. Retain the two front floorstanding speakers beside TV, low AV unit, TV, matte graphite backdrop, and black upper cabinets. Do not widen the view or move camera.",
-          "prompt": "Image 1 is the photorealistic edit target. Image 2 is the authoritative actual model camera and geometry. Correct image 1 to match image 2. Restore the SOURCE CAMERA VIEW and object arrangement exactly: REMOVE the entire invented sofa and its rear round speakers from the LEFT FOREGROUND. Replace it with the clear grey rug and a partial BLACK OVAL LIFT COFFEE TABLE entering from bottom-left, exactly as image 2. Restore the small black cube SUBWOOFER on the floor beside the left window, remove the invented wood box there and the invented vertical wall speaker beside that window. Retain the two front floorstanding speakers beside TV, low AV unit, TV, matte graphite backdrop, and black upper cabinets. Do not widen the view or move camera. Geometry fidelity is essential. Preserve materials, do not add unseen objects. Output 1536x1024, no text."
-        }
-      ],
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-living-A-r05\nView-specific constraints: TV wall living view: preserve TV size/location and dark overhead cabinets, long low walnut/charcoal media console, two tall front loudspeakers, visible equipment within the console, black subwoofer by window, sofa and round coffee table cropped foreground. Textured grey fabric and rug, deep walnut grain, muted dark cabinetry, actual glass and diffuse daylit window. No styling accessories or extra audio devices.\n",
+      "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
@@ -1330,15 +1330,15 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-study-C-mr01",
+      "key": "v1-study-C-ar02",
       "usedBy": [
         "v1-study-C"
       ],
       "sourcePngSha256": "ac25d25ddd309777c721fc4735064562c69fef2642e8932fb4aeb4adfac251fc",
-      "aiOriginalPngSha256": "0517d5fc3789893414febefd7be9b54e93b2831efc7a7b9b8eb2987fed994146",
-      "aiWebpSha256": "fab6ebe99b869c52dd8fcca79ac9e987074812deee58de68181d80d1d93baad0",
+      "aiOriginalPngSha256": "32a20a095aa0a86b3503ee4870ec87824f6818252ac9560c4274a862c2189f74",
+      "aiWebpSha256": "ac55f16283c463ff9492f7857601f9e240087f35ff640ab4a73aae678d9c2cdb",
       "sourceWebpSha256": "1e74341e603bdcabf3f79e74cb5d5666f4fdf88c27e913df09ff809f7178a3f2",
-      "prompt": "undefined\nView identity: v1-study-C.  Exactly preserve all foreground occlusions.",
+      "prompt": "Use case: sketch-to-render.\nPrimary request: Recreate this provided architectural model view as a convincingly PHOTOGRAPHIC, professionally photographed completed high-end dark modern industrial residence. This is a complete photoreal material and illumination transformation. The input is a crude geometry reference, not a finished picture.\nGeometry invariants: retain the exact camera, framing, perspective, room envelope, wall/column/beam silhouettes, all existing openings and occlusions, furniture and appliance locations, counts, sizes, door state and circulation. Refine proxy surface realism within their existing silhouettes only. Keep all empty circulation space. Do not widen rooms or move/crop the camera.\nPhotographic finish: physically plausible soft indirect bounce light, soft contact shadows that ground every object, detailed mineral-plaster microtexture, natural deep walnut grain, authentic brushed metal, dark steel, stone depth, transparent glass with restrained reflections, realistic fabric weave and gentle folds, smooth ceramic surfaces. Resolve large flat areas as actual finished materials. Cohesive neutral-warm 3000K practical interior light balanced with diffuse daylight only where an existing opening allows it. Restrained black/charcoal/deep wood palette; preserve the input surface color families. Real lens exposure and tonal depth, refined architectural photography. Not a viewport screenshot, low-poly game scene, cartoon, clay render, or filter applied to the old shading.\nAccuracy: no new furniture, accessories, plants, books, fixtures, doors, windows, niches, taps or sinks. Existing lamps may illuminate realistically. Preserve all relevant obstruction/foreground geometry. Exterior visible through existing windows can be softly defocused conceptual surroundings, never a new opening. Mirror reflections must not read as a new doorway. No text, labels, collage or watermark. Produce one landscape 3:2 image.\nView identity: v1-study-C-mr01\nView-specific constraints: Two-person computer room reverse angle: exactly two existing office chairs and two desks/monitor setups with unchanged boundaries. Both monitor faces should be subdued dark/neutral display glass, not luminous white voids. Render existing striped chair backs as real textile/mesh upholstery within the original silhouette; realistic dark desk laminates and metal. Retain display wall grid and original simplified sculpture positions, long glass partition, background island configuration. No third workstation, new books, plants or extra devices.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
