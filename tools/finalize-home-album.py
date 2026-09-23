@@ -37,6 +37,11 @@ provenance={'date':manifest.get('imagesUpdatedAt',manifest.get('capturedAt','202
 (root/'生成紀錄.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 for e in entries:assert sha(root/'model'/e['file'])==e['modelHash'],e['key']
 report=read('成品核對.json');report.pop('all144SourceHashesMatched',None);report.update({'allImagesDecoded':True,'allSourceHashesMatched':True,'correctionViews':len(fixes),'visualReview':'Each unique AI image reviewed; original model is authoritative for dimensions','browserVisualQA':False})
+if manifest.get('imageRevision')=='20260923-bi01':
+ browser_report=project/'調整紀錄/20260923全版本霧黑工業/瀏覽器核對.json'
+ if browser_report.exists():
+  b=json.loads(browser_report.read_text(encoding='utf8'))
+  report.update({'browserVisualQA':True,'browserScope':b['localChecks'],'browserLimitations':b['limits']})
 (root/'成品核對.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 files=[root/n for n in ['index.html','album.css','album.js','album-data.js','使用說明.md','生成紀錄.json','成品核對.json']]
 files += [root/folder/f'{key}.webp' for folder in ['images','models','thumbs'] for key in keys]
@@ -48,6 +53,7 @@ with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
    html=p.read_text(encoding='utf8').replace('../../index.html','index.html').replace('<a href="../../方案比較.html">五版格局比較 ↗</a>','<span>五版全屋 · 離線成品圖集</span>')
    html=html.replace('<a href="../../全版本複核.html">QA03 歷史複核與修改前後對照 ↗</a>','<span>歷史複核請至線上專案查看。</span>')
    html=html.replace('<a href="../../灰石全屋設計.html">灰石全屋設計與材質說明 ↗</a>','<span>GR06 灰石、灰棕木與光；完整設計說明請至線上專案查看。</span>')
+   html=html.replace('<a href="../../霧黑工業全屋.html">BI01 霧黑工業全屋與更新前後對照 ↗</a>','<span>BI01 霧黑天花、中灰牆與灰棕木；完整前後對照請至線上專案查看。</span>')
    z.writestr(name,html)
   else:z.write(p,name)
 with zipfile.ZipFile(out) as z:

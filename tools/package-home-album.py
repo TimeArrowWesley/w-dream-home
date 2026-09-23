@@ -6,7 +6,7 @@ root=project/'成品圖集/20260914暗色現代工業'
 manifest=json.loads((root/'album-manifest.json').read_text(encoding='utf8'))
 draft='--draft' in sys.argv
 names={'entry':'玄關','living':'客廳','island':'中島','kitchen':'廚房','bed':'主臥','closet':'更衣室','study':'雙人書房','collection':'收藏室','bath1':'主浴','bath2':'客浴','storage':'儲藏室','back':'後陽台'}
-titles=['原始格局','圓弧中島酒吧＋玄關矮櫃','旋轉電視＋小中島（已停用／歷史）','旋轉電視＋大中島','大中島 R02／GI01']
+titles=['原始格局／BI01','圓弧中島酒吧＋玄關矮櫃／BI01','旋轉電視＋小中島（已停用／歷史）／BI01','旋轉電視＋大中島／BI01','大中島 R02／BI01']
 jobs={e['aiKey'] for e in manifest['entries']}
 missing=[key for key in sorted(jobs) if not (root/'originals'/f'{key}.png').exists()]
 if missing and not draft:raise SystemExit('Missing AI originals: '+', '.join(missing))
@@ -43,6 +43,6 @@ if '--install' in sys.argv:
  (project/'assets/ai-interiors/catalog.js').write_text('/* '+manifest.get('imageRevision',manifest['modelRevision'])+': five directions per room. Shared images require identical source pixels. */\nwindow.HOME_AI_PHOTOS='+json.dumps(catalog,ensure_ascii=False,indent=2)+';\n',encoding='utf8',newline='\n')
  html=(root/'index.html').read_text(encoding='utf8')
  for f in ['album.css','album-data.js','album.js','使用說明.md']:html=html.replace('"'+f,'"'+prefix+f)
- html=html.replace('../../index.html','index.html').replace('../../方案比較.html','方案比較.html').replace('../../全版本複核.html','全版本複核.html').replace('../../灰石全屋設計.html','灰石全屋設計.html')
+ html=html.replace('../../index.html','index.html').replace('../../方案比較.html','方案比較.html').replace('../../全版本複核.html','全版本複核.html').replace('../../灰石全屋設計.html','灰石全屋設計.html').replace('../../霧黑工業全屋.html','霧黑工業全屋.html')
  (project/'AI寫實視角.html').write_text(html,encoding='utf8',newline='\n')
 print(json.dumps(report,ensure_ascii=False))

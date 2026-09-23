@@ -1,250 +1,158 @@
 {
-  "v1-entry-door5A-gr06": {
+  "v0-entry-door5B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "6657fc0814d90203fa5bdd9486df06b4f0ddf0129ebc482369f659d591429cfe"
+    "finalPngSha256": "02dbe2049b598f197abbd8ae7ef665cb88ac2843742149191d3e9d3a35142c49"
   },
-  "v1-entry-door5B-gr06": {
+  "v0-entry-door5C-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "1a519aae058149ebe3b613145f07630c06b7465059fea297729428dcb4a2180b"
+    "finalPngSha256": "a65f13a27aa3c53c5436f6b0131b8c211f28d2ec5b0ba4cac67c095c569777d7"
   },
-  "v1-entry-door5C-gr06": {
+  "v0-entry-door5D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "dc527428bd8beacd88c999444a9105a24d7cf18639e3f03bf1dd74baf5185a05"
+    "finalPngSha256": "9742a7ba542fe063dab38c1cb06064ea02f3687cfe54ecd518d3813e933b410d"
   },
-  "v1-entry-door5D-gr06": {
+  "v0-entry-door5E-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "581ca228394f59f77cc43faf74936e386354961df6e298997784bfdb33612715"
+    "finalPngSha256": "2e3feb01d1b87939d7a5e763033517c805d556409a9bcccea60de18af3f9a0e2"
   },
-  "v1-entry-door5E-gr06": {
+  "v0-living-B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "54797698a77927e0ab4dd209d60398fb6f28874662e7031ca0b1ff8522e733bd"
+    "finalPngSha256": "087194d7292ef70b60f64fb4b306f618da1896c3be87191c781a25362e467b98"
   },
-  "v1-living-B-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "96630af1e20cb031f02d23daf40c1fffd149caaaaddd52f8433c3b3547d9d3d4"
-  },
-  "v1-living-C-gr06": {
-    "nativeAttempts": 5,
-    "finalPngSha256": "bed79f22f0ef265d8f4be2ac8cd0d930a1883704d1d7eca6896d9ec6205aaaec"
-  },
-  "v1-island-B-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "a0e948284f5e39ea8d314939f2bd74c5cd3fe11bf09c5015c1b17f10fa45ea8a"
-  },
-  "v1-island-C-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "938576482b83767e8747d7750881438b13f6aabb86bfe6cc9afd72415a3190f8"
-  },
-  "v1-island-E-gr06": {
-    "nativeAttempts": 4,
-    "finalPngSha256": "60f31c99b9112981725cf2144b84e087bd9003c0e45c070e7029f28d3b424586"
-  },
-  "v1-kitchen-A-gr06": {
+  "v0-living-C-bi01": {
     "nativeAttempts": 3,
-    "finalPngSha256": "6d5ca5857dd94da49645e413fcd892f796aae5ef53ad4bab232ed74a9b5aca7e"
+    "finalPngSha256": "4d22a7ed0a16b95c5c65dd5f166854238c76fc8e9466e21ecc02588c9aed5112"
   },
-  "v1-kitchen-B-gr06": {
-    "nativeAttempts": 4,
-    "finalPngSha256": "c746b8bce90eb990a5502cea47618b7fd514116a714af9608d8cad676775294d"
-  },
-  "v1-kitchen-C-gr06": {
+  "v0-living-D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "8529be275d65045151521eee2a3847b5304395c813cd77c41f4b383fbdbea563"
+    "finalPngSha256": "fb156dd8f4c5cfc2fcb11d86c27e2620cf9181f6001f90fd49d7407f6cdb22b2"
   },
-  "v1-kitchen-D-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "5cedfe67ef378ffb69cd449390a2cf959daab09bab27c0140eefd481772f8a0a"
-  },
-  "v1-bed-B-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "68d1dd6b27ece823fa2ed06a8a2da282ceaeba42cef916e85a2865d63ebbe29e"
-  },
-  "v1-bed-D-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "921f4a916b1971e68230683ddc8c8a790a8eefce0bba09c41747cacdf3aa2af7"
-  },
-  "v1-closet-C-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "6ef2420f0a149045ce04859af3354ff2cd0da878adbf5b8becdf58f96e6caeeb"
-  },
-  "v1-study-B-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "970fd8024637bb2067a77a391fc812a0e6f3968a8158d07b4d855da0a006f122"
-  },
-  "v1-study-E-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "58f1b119b0845ea6dc1e6e4ed9223312776b25b155ef78fe7b1e066de6a6a05e"
-  },
-  "v1-collection-A-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "3cc545bf0903a458a77984ac87aabb9df17ee7a320356ac00b8a4e924ad24db9"
-  },
-  "v1-collection-B-gr06": {
+  "v0-living-E-bi01": {
     "nativeAttempts": 3,
-    "finalPngSha256": "505edbbae7908b3c5583592680ac90c0ac4447f2e2f782620b8206766cb6cbe4"
+    "finalPngSha256": "bb15da2869cac11236280e367880885ea558b3525d574aca7d6fdbc64098a92d"
   },
-  "v1-collection-C-gr06": {
+  "v0-island-A-bi01": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "e4e9183dd44f95fd71e182eff83591a14698d78185a6419b2dd39a76a3db62ba"
+  },
+  "v0-island-B-bi01": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "4f7df517d67edddfd5234047e6bcada1f195c3dea1bc0ead47ffa8db10b00e7a"
+  },
+  "v0-kitchen-E-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "f1b139ba45831281b8c6012fb9621ce394048c8c28d28bca4e80096b94d2df51"
+    "finalPngSha256": "66e2b6028cb4618e12a3be9b4406caa836da09d15074f0a6eeec7c029b344c91"
   },
-  "v1-collection-D-gr06": {
+  "v0-closet-D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "6f32fd23a50bf3260727050de768d365bc7f73f666c14f31b04453c1c9c1d905"
+    "finalPngSha256": "5c0526e778de9dd37ca633955fd32fda6724f5fa560ec4dea8c81ae0c4fe1c34"
   },
-  "v1-collection-E-gr06": {
+  "v0-storage-C-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "88d6711555c8906cc012a754042c47a4c54b6ecf4b408b7ee72ed47459d50653"
+    "finalPngSha256": "be2393ada18b9cfb55c07da72747156ddc94427f7464704c77c8cfa47670cb09"
   },
-  "v1-bath2-D-gr06": {
+  "v0-storage-E-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "0f9fabecfefea69921606820032cba6fb2d14c71e11c0a371e33c4f9635f0dfb"
+    "finalPngSha256": "efc5310df81aec1dae83a84fde55f4ac02e5354626ee8d7847916a875c9e0615"
   },
-  "v1-storage-A-gr06": {
+  "v0-back-A-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "000bcae304039a5b7d0ea2caeec7f687d85f88851f9dbca822f4de850c61cec1"
+    "finalPngSha256": "68a403cc04a8eb6a7e78077975df07966d2bf3ae5ae4fd908b62cbf78860a325"
   },
-  "v1-back-E-gr06": {
+  "v1-entry-door5A-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "18901ca1f266f4c1bc91d7fa4cb2cd88982f654128abae3c94a330685a61a798"
+    "finalPngSha256": "28e23ca5cbe78652b90643093193956cfbeaf83b3189d55fbc826f056e3b5408"
   },
-  "v0-entry-door5D-gr06": {
+  "v1-island-B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "87da9ef4dce8d0fa136c8276872180a7e43cd79a4e7d6cd92b2c2cf15f2bd112"
+    "finalPngSha256": "6f1a69491e7a2b46a891c878c4dc1fea3b63b87fe217a981c92c17466c7a0317"
   },
-  "v0-island-B-gr06": {
+  "v1-island-C-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "88ab28b3aa52fc6f7dcd32c15237faacf3d2e770d9d03ac4fcbcb0e88dca1159"
+    "finalPngSha256": "a888f8a1a6be41b1abdef49591cd61e8ac5471c7cec7fbfb7fe03cdce157f2c2"
   },
-  "v0-island-C-gr06": {
+  "v1-island-E-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "b6ef51994d458476728baa9f0c69c73fc7ed7fdf612b0c83de3f977075b43b48"
+    "finalPngSha256": "5c17d9b7d40f03a4aa2de3a9ac9342ae0310ae73400d1a588f7c740a037efca1"
   },
-  "v0-island-E-gr06": {
+  "v1-kitchen-B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "2d4972f18bafc4dca9f26518afcf04f7a86e1aed72fe7fb5a1741fadadef898b"
+    "finalPngSha256": "6a472732170e0586ef72b0db0e5f8ff800ceccd115b084f85bab58fa5be77b85"
   },
-  "v0-kitchen-B-gr06": {
+  "v1-closet-D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "16cbe44f16594da92a068cc8dde1a39d51ed4c911490ccb2c21423bcc53af090"
+    "finalPngSha256": "e53c53a1d481c8e05bb5f53f41b43d55248f9c262344be1b77aa19d6c84da3e1"
   },
-  "v0-study-E-gr06": {
+  "v1-study-C-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "07ef696e483a3c4228a1ca52a0a0a53c66361d01c32d7fc79a769f3e0d8292d4"
+    "finalPngSha256": "1a1c0cebeeb220008ce4bb591c7adfe6496406fd631af85f182a43c6a7cde951"
   },
-  "v0-back-E-gr06": {
+  "v1-study-D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "b2920b81828b106f49b837484493609b2720c9cb2ff1e39fa6d083408710f1ad"
+    "finalPngSha256": "1d1e49d482907dc3c7693580277af1f06652ca8175b983f71008d0975851241f"
   },
-  "v2-living-A-gr06": {
+  "v1-study-E-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "ccecade75a3e3e1d5d8385d39aa64f3ceb391b3bb8fffbac78e4b214d767778e"
+    "finalPngSha256": "48ad05c5b5ad860e8b3cc03a94cf94b25e2a7d3821ade6a991dc3b223c3fdb68"
   },
-  "v2-living-D-gr06": {
-    "nativeAttempts": 4,
-    "finalPngSha256": "972087d3033a6754ffcb98f005bb9698937a57577e87233170aa73ab32db017e"
-  },
-  "v2-living-E-gr06": {
+  "v1-collection-B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "248bb7a7e875929f505f0c7e55a80cc70422c2b685d7b8fb37cae86bb84b3f7d"
+    "finalPngSha256": "b99faecf63531e6c023be218f0acb67a1b3164d18391e8e9e102b54a5773a481"
   },
-  "v2-island-B-gr06": {
+  "v1-back-D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "6afd7c4a50bf0096624170941e90a97da702222b42371912f609a5f33926324a"
+    "finalPngSha256": "cc440d66ec8a1b73f56f7330980cd53ba896e9d126a4cbdc6c4f0b0c01adac2a"
   },
-  "v2-island-C-gr06": {
+  "v2-entry-door5B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "68f493a3a1c7a5de31b0a3002e4df7cb53916a672eb9f1d8306da2a6055fd873"
+    "finalPngSha256": "fe2bf3ce119e081e9002a9d5078404e57c26112c28c7a8e5376841110f5e6e3c"
   },
-  "v2-island-D-gr06": {
+  "v2-collection-D-bi01": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "ffe2a85d4c19fe02839e1d8baa0952409173e86a53c7848fcee389c6e37e75dc"
+  },
+  "v2-bath1-C-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "2528fe94d99d859f78469b0e695573048c145932d050c31c46d292d4875ddabc"
+    "finalPngSha256": "415cf8734fc7b6c8ff4863e25e15e2ef689e63016b7fe867e8284080c14bb1e6"
   },
-  "v2-kitchen-B-gr06": {
+  "v3-living-D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "9080632f9cc5368edbdc6b101c805ea94d4d95ade6d7d62abbb300779fdf865a"
+    "finalPngSha256": "8784d2f3a9c99dc2f1e8c4dd9064eed61eb0bc2d6abc8143f1d5a5e8ad08b8e6"
   },
-  "v2-collection-E-gr06": {
+  "v3-collection-A-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "32a6c73b8fdde32c4fc3d2365c453d34d6ce24fb00c0874f4ab78ccdd2fcd997"
+    "finalPngSha256": "cfcf5f0598aa2ef8affec5162205747f7682fcb58fe4d4b512e280b1cd428aa5"
   },
-  "v2-storage-C-gr06": {
+  "v3-collection-B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "732817d002c4b3048011bb09ae0c2f7074f71ebcad78bbb6a09e0f52ee3696a3"
+    "finalPngSha256": "fa277c23a7f66955086a76990dd4e0d3da995ea7cea87afb99f73886a4a7dda0"
   },
-  "v2-storage-E-gr06": {
+  "v3-storage-B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "1705028e8171770707a53af6c72c564dbf988a52d40399347a90318e0388baf6"
+    "finalPngSha256": "8dbd0f9409b6c22b8ef5c92f26186182286922afa352d23d28ae1a0e39733462"
   },
-  "v3-living-D-gr06": {
+  "v4-entry-door5B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "93ad982e65cdcd4898fe7f55eef341f8aff0f55ae2803496bba1ea32be9d80ae"
+    "finalPngSha256": "e030c1eae311020cdd8a7d86e1bc54b80254769302673a69d1380be1f9c35077"
   },
-  "v3-island-B-gr06": {
+  "v4-entry-door5C-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "34d58580215f6657575421f079013029692102fd844558be6107ab663e30f9f3"
+    "finalPngSha256": "1496333ffab50ef2b0fbf39ccbc34138a6ffe123fdfe955dd514d54134e55bc7"
   },
-  "v3-study-C-gr06": {
-    "nativeAttempts": 7,
-    "finalPngSha256": "c612e44a0df1cfe5aa099e7660c335ac7e14a2ed78fd6b2bb448522a744065f6"
-  },
-  "v3-study-E-gr06": {
-    "nativeAttempts": 4,
-    "finalPngSha256": "713ecd63d18633b1d0d7797c1d9c06f591f13ab6a0afbabf2683357bffbf3930"
-  },
-  "v3-collection-C-gr06": {
+  "v4-island-B-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "261d74fc9387283e0b82038e18cc8d6ca056b7523c9f6c8e0da1efe90e1358e5"
+    "finalPngSha256": "7062fa8d3257311f3550f5d17dba4449543b2aae385c8c54b9e0a56a8351f399"
   },
-  "v3-storage-C-gr06": {
+  "v4-collection-A-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "386bbe54eca2d458177f25179eb6962a032c63cb60d038437d010a703c61aa4b"
+    "finalPngSha256": "4a85431aee34bbc76f7843407690e0181fdfa934fa257ad741afca669d507039"
   },
-  "v3-storage-E-gr06": {
+  "v4-collection-C-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "4494878760d6a32e56d72c8cbd9c5a16a0581fef145cce0facd308aa89f91a74"
+    "finalPngSha256": "769ce021e166b4ab139fa41fad32f34e04d97124b9804977bb5c0c62f4ae53d1"
   },
-  "v4-entry-door5D-v4gi01": {
+  "v4-collection-D-bi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "4a2afb150549ba61edf540e7604bd396496841b482340923efc41a3e3a18f810"
-  },
-  "v4-living-C-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "2ffdbbc421d2f30a05799035ac649af8b53f2250b43b437676897da194e0065d"
-  },
-  "v4-island-B-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "50015b1e95726e8d964990ae19974caa848807e80943b6775d77e9d723b1e686"
-  },
-  "v4-island-E-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "cb18b10e61902df6d98dd0b166fb9f98c923a22710f77435641928a2b7bfc942"
-  },
-  "v4-kitchen-B-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "b57940dc6b92fbbac4b9d43873c6aa5ad5863c4169f075d9a7253e4abb820f0b"
-  },
-  "v4-study-A-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "af69047905774e9c3684af493e6c8725228ac1111540058b2b868bf0fa037bfb"
-  },
-  "v4-study-C-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "9886f52747b35c87f9d5b3d6a1ffaf05adb5c963ea34bf8195535a7fccbc29c3"
-  },
-  "v4-study-E-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "bf3d57bc94158f2d742c40f1fec610837d4c69038b8768c665ce31cb3ec77b1b"
-  },
-  "v4-collection-D-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "aa9e108c69f08d2872c661ab0572a266d9a3f365d0d22f0ab449c3fe0cd3073c"
-  },
-  "v4-collection-E-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "0d0d14cd026491acbe0c10e299ccf4de74a12e4161bf37b2459053233ddbf559"
-  },
-  "v4-storage-C-v4gi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "f76f58c62fbf3ee70dc84b49aee7f041976bebda76e621094e5c56b3f5732a6b"
+    "finalPngSha256": "b248083bd4fdf2caf061e34ed94da7083317c8cdf5e58e883da8ebee49ccc6f0"
   }
 }

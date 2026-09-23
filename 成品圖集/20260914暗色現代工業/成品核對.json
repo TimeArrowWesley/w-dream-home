@@ -1,7 +1,7 @@
 {
   "complete": true,
   "viewSlots": 300,
-  "uniqueImages": 213,
+  "uniqueImages": 211,
   "remaining": [],
   "versions": {
     "v0": 60,
@@ -10,10 +10,19 @@
     "v3": 60,
     "v4": 60
   },
-  "displayBytes": 73886764,
+  "displayBytes": 64977190,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 62,
+  "correctionViews": 39,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
-  "browserVisualQA": false
+  "browserVisualQA": true,
+  "browserScope": [
+    "V0、V1、V2、V3、V4客廳A均載入BI01新圖，五張照片列在視窗內",
+    "五版均操作A切至E，確認下載連結切換為对应BI01檔案",
+    "V2保持已停用及歷史標記",
+    "V1載入後材質被舊控制器重新套用的問題已修正；重開後版本標記保持BI01",
+    "V4真實WebGL模型可載入；未宣稱全屋連續視角GPU或照度驗收",
+    "前後對照頁V4廚房篩選出五角度，並提供更新前、來源模型、新AI三欄"
+  ],
+  "browserLimitations": "桌機1280×720抽查，非所有螢幕尺寸或所有連續模型視角。全300圖位另有離線資料與600次圖集操作驗證。"
 }

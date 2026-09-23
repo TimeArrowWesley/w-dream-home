@@ -31,5 +31,6 @@ if(n===2)run('v1-finishes.js');
 run('grey-stone-design.js');
 if(n===5)run('v4-public-finalize.js');
 if(n===5)run('v4-industrial-refinement.js');
+run('black-industrial-design.js');
 return {T,c,V,E,events,raf,get,run,bounds,overlap,near,tick(count=1,step=16){for(let i=0;i<count;i++){time+=step;for(const fn of [...raf])fn(time);}V.scene.updateMatrixWorld(true);},setTime(t){time=t;}};
 };
