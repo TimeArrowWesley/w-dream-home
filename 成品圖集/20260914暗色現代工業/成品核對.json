@@ -10,19 +10,21 @@
     "v3": 60,
     "v4": 60
   },
-  "displayBytes": 64977190,
+  "displayBytes": 65220260,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 39,
+  "correctionViews": 48,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": true,
   "browserScope": [
-    "V0、V1、V2、V3、V4客廳A均載入BI01新圖，五張照片列在視窗內",
-    "五版均操作A切至E，確認下載連結切換為对应BI01檔案",
-    "V2保持已停用及歷史標記",
-    "V1載入後材質被舊控制器重新套用的問題已修正；重開後版本標記保持BI01",
-    "V4真實WebGL模型可載入；未宣稱全屋連續視角GPU或照度驗收",
-    "前後對照頁V4廚房篩選出五角度，並提供更新前、來源模型、新AI三欄"
+    "V1與V4實際3D客廳畫面，AU01模型已載入",
+    "V1與V4客廳AI方向A／E切換，連結均為au01新版圖片",
+    "兩版五張縮圖照片列位於視窗內，可操作切換",
+    "影音統一比較頁V4／V1篩選、客廳五角度及舊AI／來源模型／新AI三欄對照"
   ],
-  "browserLimitations": "桌機1280×720抽查，非所有螢幕尺寸或所有連續模型視角。全300圖位另有離線資料與600次圖集操作驗證。"
+  "browserLimitations": [
+    "僅本輪實際檢視的桌面1280×720畫面，未宣稱手機或所有尺寸已驗收",
+    "模型取樣與圖集視角不能取代全部連續視角、真人試坐或現場施工檢核",
+    "AI為概念圖，細部五金、收藏物形狀與反射以模型及後續深化為準"
+  ]
 }

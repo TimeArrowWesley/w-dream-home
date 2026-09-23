@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20260921-mr01",
-  "updatedAt": "2026-09-21",
+  "revision": "20260923-au01",
+  "updatedAt": "2026-09-23",
   "source": {
     "title": "W夢想之家家具設備規格表",
     "url": "https://claude.ai/code/artifact/8efebff0-f6bf-4b4d-8099-99282e849203",
@@ -370,7 +370,7 @@
         "q6"
       ],
       "modelSearch": [],
-      "currentNote": "V1 R05及V3 MR01：後環繞改為沙發背架承托小型完整音箱，移除相應落地支架；候選外形14.4寬×14.3深×17.2高cm，不是採購定案。V0、V2、V4保留其原配置。195,760為舊KEF組合歷史報價；新组合需影音商重新配搭、試聽、固定設計與報價。",
+      "currentNote": "AU01：V1／V4統一主座及前後聲道試配，兩支Q7＋Q6保留；後環繞以沙發背架上的小型完整音箱候選取代V4舊嵌入式單體背腔。外形14.4寬×14.3深×17.2高cm為候選示意，型號、音色配搭、承重、隔振及報價未核定。V3 MR01既有小型後環繞保持，V0／V2保持歷史配置。天空4支Ci160QR在V1／V4改於主座前後兩排；實際樑位、埋深與聲學另核。195,760為舊KEF組合歷史報價，不能作新組合總價。",
       "modelDirty": false,
       "archived": false,
       "original": {

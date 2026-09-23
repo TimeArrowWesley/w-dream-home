@@ -3,6 +3,13 @@ const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('ass
 const root=path.resolve(__dirname,'../成品圖集/20260914暗色現代工業');
 const window={};vm.runInNewContext(fs.readFileSync(path.join(root,'album-data.js'),'utf8'),{window});
 const data=window.HOME_ALBUM;
+vm.runInNewContext(fs.readFileSync(path.resolve(root,'../../assets/ai-interiors/catalog.js'),'utf8'),{window});
+for(const e of data.entries){
+ const c=window.HOME_AI_PHOTOS[e.version].find(c=>c.id===e.key);
+ assert.ok(c,'Main viewer catalog entry missing: '+e.key);
+ for(const [target,source] of [['src','ai'],['modelSrc','model'],['thumb','thumb']])
+  assert.equal(c[target],'成品圖集/20260914暗色現代工業/'+e[source],'Main viewer/album mismatch: '+e.key+'/'+target);
+}
 assert.equal(data.complete,true);assert.equal(data.entries.length,300);assert.deepEqual(Array.from(data.versions,v=>v.id),['v0','v1','v2','v3','v4']);assert.equal(data.uniqueImages,new Set(data.entries.map(e=>e.sourceKey)).size);
 for(const v of data.versions)for(const r of data.rooms){
  const expected=5,e=data.entries.filter(e=>e.version===v.id&&e.room===r.id);assert.equal(e.length,expected,v.id+'/'+r.id);assert.equal(new Set(e.map(x=>x.angle)).size,expected);assert.equal(new Set(e.map(x=>x.sourceHash)).size,expected);

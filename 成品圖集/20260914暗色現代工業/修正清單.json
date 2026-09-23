@@ -63,14 +63,6 @@
     "nativeAttempts": 2,
     "finalPngSha256": "28e23ca5cbe78652b90643093193956cfbeaf83b3189d55fbc826f056e3b5408"
   },
-  "v1-island-B-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "6f1a69491e7a2b46a891c878c4dc1fea3b63b87fe217a981c92c17466c7a0317"
-  },
-  "v1-island-C-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "a888f8a1a6be41b1abdef49591cd61e8ac5471c7cec7fbfb7fe03cdce157f2c2"
-  },
   "v1-island-E-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "5c17d9b7d40f03a4aa2de3a9ac9342ae0310ae73400d1a588f7c740a037efca1"
@@ -83,17 +75,9 @@
     "nativeAttempts": 2,
     "finalPngSha256": "e53c53a1d481c8e05bb5f53f41b43d55248f9c262344be1b77aa19d6c84da3e1"
   },
-  "v1-study-C-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "1a1c0cebeeb220008ce4bb591c7adfe6496406fd631af85f182a43c6a7cde951"
-  },
   "v1-study-D-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "1d1e49d482907dc3c7693580277af1f06652ca8175b983f71008d0975851241f"
-  },
-  "v1-study-E-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "48ad05c5b5ad860e8b3cc03a94cf94b25e2a7d3821ade6a991dc3b223c3fdb68"
   },
   "v1-collection-B-bi01": {
     "nativeAttempts": 2,
@@ -135,14 +119,6 @@
     "nativeAttempts": 2,
     "finalPngSha256": "e030c1eae311020cdd8a7d86e1bc54b80254769302673a69d1380be1f9c35077"
   },
-  "v4-entry-door5C-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "1496333ffab50ef2b0fbf39ccbc34138a6ffe123fdfe955dd514d54134e55bc7"
-  },
-  "v4-island-B-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "7062fa8d3257311f3550f5d17dba4449543b2aae385c8c54b9e0a56a8351f399"
-  },
   "v4-collection-A-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "4a85431aee34bbc76f7843407690e0181fdfa934fa257ad741afca669d507039"
@@ -154,5 +130,65 @@
   "v4-collection-D-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "b248083bd4fdf2caf061e34ed94da7083317c8cdf5e58e883da8ebee49ccc6f0"
+  },
+  "v1-living-A-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "eb179bebda71a74f2a6b5d8b7c4dea70e28fd9949207cfa45eb9fb1cc014a9e4"
+  },
+  "v1-entry-door5E-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "b4e74492cd36d4617a32ae70e1aacb7ee000c97aaef885a1cc785aa20e5b3dd7"
+  },
+  "v1-living-B-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "0d18b4e39474479607675cef6452348ada693a17cd976111700936c80b19d650"
+  },
+  "v1-living-C-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "708bb88db7a5ef27b720cf9857a9df8bb73ee5cefda2f68ae94b9d5729e75828"
+  },
+  "v1-living-E-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "7cee78c3a00189db8bfda825398e93306493a6085bdebc2b5ba510842dab0870"
+  },
+  "v1-island-B-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "5ec31a820681dc9ad2cb6b2cd56aeacbc6a9e398095c7a79e1ccf3a29e269e3c"
+  },
+  "v1-study-C-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "0f62180b65e70f2e3ae6df155d7f54471068f875f7c7952a80aa4a0621ab4297"
+  },
+  "v1-study-E-au01": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "25fd101a6ff3ddb2d3c973ba15d798860375c6f239ba82eaacb1447aadbb9cec"
+  },
+  "v1-storage-C-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "0ebc0f4e5f1e67559096276432795c9ae4424f9b9fb989629d33c6e8cef13a23"
+  },
+  "v1-storage-E-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "cb6a0cf85f9888879d3971e4db231f8d0b9770f59ddfe40c710369ee37da6c42"
+  },
+  "v4-living-C-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "12a617d6552a3371ff1b98563d385706780a1d4fac70014e96bf78f15486b720"
+  },
+  "v4-study-C-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "2329c541dfdb2fd13090485876dfb6bdc86404a281a8489ea3b3b7f1d4971430"
+  },
+  "v4-study-E-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "a32a5ae347e1a2d7ca7e5874e8ea28bd4305a78517d26361254dee24f051e40e"
+  },
+  "v4-storage-C-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "f90b8706494e6066a61ba1917678b407f1a2e68c5e02798cc02cc2d0332c12b9"
+  },
+  "v4-storage-E-au01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "23b5f8b401d673652242e18143591bdea35845f62223463e714dfbd1a315f86c"
   }
 }
