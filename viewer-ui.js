@@ -55,7 +55,7 @@
     header.replaceChildren(brand, primary, actions);
 
     // Public version names; construction and entry configurations remain descriptive details.
-    const versions={v0:['原始格局','弧形沙發・貓房・原圖玄關'],v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島（已停用）','歷史參考・停止深化'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃'],v4:['大中島','R02・客廳比例調整・固定電視']};
+    const versions={v0:['原始格局','弧形沙發・貓房・原圖玄關'],v1:['圓弧中島酒吧','玄關矮櫃'],v2:['旋轉電視+小中島（已停用）','歷史參考・停止深化'],v3:['旋轉電視+大中島','共享展示與玄關矮櫃'],v4:['大中島','R02格局・GI01灰石現代工業']};
     const versionMenu = make('details', 'uiMenu uiVersionMenu'); versionMenu.id = 'uiVersionMenu';
     const versionSummary = make('summary');
     versionSummary.append(make('small', '', '設計版本'), make('strong', '', version.toUpperCase() + ' · ' + versions[version][0]), make('span', '', versions[version][1]));
@@ -119,7 +119,7 @@
     planFooter.replaceChildren(expandPlan);
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
-    const sideFoot = make('div', 'uiSideFoot', version==='v2' ? 'V2 已停用・僅供歷史參考' : window.HOME_V4_PUBLIC ? 'V4 · R02 · 2026.09.23 · 採用配置，尺寸與工程待核' : window.HOME_AUDIT_REPAIRS ? version.toUpperCase()+' · QA03 · 2026.09.22 · 模型複核，施工尺寸待確認' : window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V4 共用家具清單 · 可隨時切換版本');
+    const sideFoot = make('div', 'uiSideFoot', version==='v2' ? 'V2 已停用・僅供歷史參考' : window.HOME_V4_INDUSTRIAL ? 'V4 · R02格局／GI01材質 · 工程待核' : window.HOME_V4_PUBLIC ? 'V4 · R02 · 2026.09.23 · 採用配置，尺寸與工程待核' : window.HOME_AUDIT_REPAIRS ? version.toUpperCase()+' · QA03 · 2026.09.22 · 模型複核，施工尺寸待確認' : window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V4 共用家具清單 · 可隨時切換版本');
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -132,7 +132,8 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
-      ['V4 公共區調整 R02', '客廳比例、背架後環繞與更新AI；V2停止深化', '調整紀錄/20260923V4公共區更新/index.html'],
+      ['V4 灰石現代工業 GI01', '石墨櫃面、槍灰金屬與分區燈光；30個AI前後對照', '調整紀錄/20260923V4灰石工業校正/index.html'],
+      ['V4 公共區調整 R02', '歷史：客廳比例與背架後環繞；材質以GI01為準', '調整紀錄/20260923V4公共區更新/index.html'],
       ['灰石全屋設計 GR06', '灰石、灰棕木、分區燈光與全屋五視角提案', '灰石全屋設計.html'],
       ['四版動線修正 MR01', '收藏室入口、行李取出、V3窄道與主浴避撞的前後對照', '調整紀錄/20260921四版動線修正/index.html'],
       ['V0・原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],

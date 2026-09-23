@@ -203,40 +203,48 @@
     "nativeAttempts": 2,
     "finalPngSha256": "4494878760d6a32e56d72c8cbd9c5a16a0581fef145cce0facd308aa89f91a74"
   },
-  "v4-collection-C-gr06": {
+  "v4-entry-door5D-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "b4bcca77ce181b4ac03e2cd97bf98b8d83d8fc5cab92e01544f18cb043dc342b"
+    "finalPngSha256": "4a2afb150549ba61edf540e7604bd396496841b482340923efc41a3e3a18f810"
   },
-  "v4-entry-door5B-v4r02": {
+  "v4-living-C-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "cfe38936bbf936e82797d8983883ad7e9fd37968d44739516852ec54e460d87b"
+    "finalPngSha256": "2ffdbbc421d2f30a05799035ac649af8b53f2250b43b437676897da194e0065d"
   },
-  "v4-entry-door5D-v4r02": {
+  "v4-island-B-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "a183f7bc65922f30e9e40a2e19b8776953a629f1d2aaddcb7d794a874e37eb35"
+    "finalPngSha256": "50015b1e95726e8d964990ae19974caa848807e80943b6775d77e9d723b1e686"
   },
-  "v4-entry-door5E-v4r02": {
+  "v4-island-E-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "5357bb8fd27cf9a0dfab841400080da3fb9418109bdcfee51317d056b9c33a6b"
+    "finalPngSha256": "cb18b10e61902df6d98dd0b166fb9f98c923a22710f77435641928a2b7bfc942"
   },
-  "v4-living-A-v4r02": {
+  "v4-kitchen-B-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "e50107a4c62d3e0bb0c0f6653661575530ccd71543bc7c875f4662450f6a1d62"
+    "finalPngSha256": "b57940dc6b92fbbac4b9d43873c6aa5ad5863c4169f075d9a7253e4abb820f0b"
   },
-  "v4-living-E-v4r02": {
+  "v4-study-A-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "2c6dcebda43a18ea982556548666bf60570c0d24885d85d02d7725201246f269"
+    "finalPngSha256": "af69047905774e9c3684af493e6c8725228ac1111540058b2b868bf0fa037bfb"
   },
-  "v4-island-B-v4r02": {
+  "v4-study-C-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "919f05f6af57aa45f48c065880ddd2bd53f5ae89aa4223383b64c67bb8c67f13"
+    "finalPngSha256": "9886f52747b35c87f9d5b3d6a1ffaf05adb5c963ea34bf8195535a7fccbc29c3"
   },
-  "v4-collection-B-v4r02": {
+  "v4-study-E-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "4c2d8fb8a59439590cd1564ec688b19b46e22a69ba4518b76f41dae602ced18e"
+    "finalPngSha256": "bf3d57bc94158f2d742c40f1fec610837d4c69038b8768c665ce31cb3ec77b1b"
   },
-  "v4-storage-E-v4r02": {
+  "v4-collection-D-v4gi01": {
     "nativeAttempts": 2,
-    "finalPngSha256": "47df563e3ab04adfc4a430a9a5d7a3328ddff1d74e45ff18c7430b6b53abd028"
+    "finalPngSha256": "aa9e108c69f08d2872c661ab0572a266d9a3f365d0d22f0ab449c3fe0cd3073c"
+  },
+  "v4-collection-E-v4gi01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "0d0d14cd026491acbe0c10e299ccf4de74a12e4161bf37b2459053233ddbf559"
+  },
+  "v4-storage-C-v4gi01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "f76f58c62fbf3ee70dc84b49aee7f041976bebda76e621094e5c56b3f5732a6b"
   }
 }

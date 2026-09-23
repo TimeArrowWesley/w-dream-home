@@ -38,7 +38,7 @@ function reapply(){
   C.fill.intensity=(night?.015+power*.09:.32)*(1-.78*closed);
   C.sun.intensity=(night?.008:1.05)*(1-.94*closed);
   if(night){C.hemi.color.copy(c);C.fill.color.copy(c);}else{C.hemi.color.set('#f0f3ff');C.fill.color.set('#f4f6ff');}
-  V.scene.userData.lightingScene={...state};window.HOME_REALISM?.invalidate(false);
+  V.scene.userData.lightingScene={...state};window.HOME_V4_INDUSTRIAL?.applyLighting?.();window.HOME_REALISM?.invalidate(false);
  }finally{applying=false;}
 }
 function sync(){for(const b of row.querySelectorAll('[data-comfort-scene]'))b.setAttribute('aria-pressed',String(b.dataset.comfortScene===state.scene));for(const [key,id,suffix] of [['brightness','comfortBrightness','%'],['kelvin','comfortKelvin',' K'],['display','comfortDisplay','%']]){$(id).value=state[key];$(id+'Value').textContent=state[key]+suffix;}$('comfortStatus').textContent=(presets[state.scene]?.label||'自訂')+' · 亮度與光色可分別調整；RGB 另行控制。';}

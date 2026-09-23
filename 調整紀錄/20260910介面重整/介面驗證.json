@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-17T06:03:55.748Z",
+  "date": "2026-09-23T03:55:25.662Z",
   "method": "LinkeDOM with actual tour, walk, interaction, AI, equipment and furniture UI handlers; camera-only Three.js fixture. No browser layout or GPU rendering.",
   "checks": [
     "V0: navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed",
@@ -15,13 +15,13 @@
     "Full mesh geometry verified separately in V0 layout tests; five-design UI and shared furniture handlers preserved"
   ],
   "hashes": {
-    "viewer-ui.js": "1f3484817e086da206b1b0469e91db3b234d0c0c86602c6ae3718b30d2d6d1c2",
-    "viewer-ui.css": "23a57edb2130ddaebd798c2488bbbc3b4d0ac7e9231578a0a0ce70b88abb2769",
+    "viewer-ui.js": "5d78a36a6b4f93f594e07948b3954235ba2811249d21e4c1de225c05d1d04d89",
+    "viewer-ui.css": "21f6df15659b3a8b0310b98667a2ac8d5d878c1d1a2125ead487f6187d604813",
     "viewer-base.css": "2455daac4025c3d2badaf30720a50bf7e4edad3823103feab684dec860cc1648",
     "walk.js": "0b1bac8d68dcb9860a37516626779391f19387c361d0a897321b7700ed4f2687",
-    "furniture-app.js": "cb536313d046775b2d4710b05533762698ac75a3683281c288cde483b02b54ed",
+    "furniture-app.js": "baa2ee4117d262a1e9750a6af2dc177bdb14c833d27c361fcd602e0264336617",
     "furniture.css": "c662300e4e3b00fe2c3ebb2eebfa5a648aecce1863a7b02494e8f6a3b862ebd2",
-    "index.html": "ad1c3e740eadd16a138e2896bf63a08257dc71e7e36ff798dffed27565ded2ee",
-    "提案/旋轉電視與直線中島/index.html": "7465483a28ed8b9485e31c57ec5fbbf0abb334071b6e5c1cc87724e280c7c933"
+    "index.html": "d5ac3c80b68e6f15bd03e68288c6cd29b291088e3e4f519b271e3e7d53597f20",
+    "提案/旋轉電視與直線中島/index.html": "0f1189e65ebea8fa84c6f630d34f870ada265b5774ca9f9d23285c63b5934aff"
   }
 }
