@@ -203,32 +203,40 @@
     "nativeAttempts": 2,
     "finalPngSha256": "4494878760d6a32e56d72c8cbd9c5a16a0581fef145cce0facd308aa89f91a74"
   },
-  "v4-entry-door5B-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "f71c8ac391dcd456562b13538afbee3d6b2ff8a3fc050049e925efd9a8363463"
-  },
-  "v4-entry-door5C-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "4a431bd229d03103cb9ae13c4f3b3647306936802b0b42645e9129a8a5daacf0"
-  },
-  "v4-entry-door5D-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "00d4dfd761772a19724ef23e8f3ebc2d8a6ee39ada8b8d6d61765797cc19988d"
-  },
-  "v4-entry-door5E-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "3e03c07efd7649acbfbbe2b67bd319c83d5afe9bed78f29c11d95a4c32971e7e"
-  },
-  "v4-living-C-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "47799edf734911e39376a229b048c3665eee27c612f085bc41a35e448cbb8d39"
-  },
-  "v4-island-C-gr06": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "3185e38b84d2e46ad66d965feed2cdd96534837fdad53c368db4675860026c6c"
-  },
   "v4-collection-C-gr06": {
     "nativeAttempts": 2,
     "finalPngSha256": "b4bcca77ce181b4ac03e2cd97bf98b8d83d8fc5cab92e01544f18cb043dc342b"
+  },
+  "v4-entry-door5B-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "cfe38936bbf936e82797d8983883ad7e9fd37968d44739516852ec54e460d87b"
+  },
+  "v4-entry-door5D-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "a183f7bc65922f30e9e40a2e19b8776953a629f1d2aaddcb7d794a874e37eb35"
+  },
+  "v4-entry-door5E-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "5357bb8fd27cf9a0dfab841400080da3fb9418109bdcfee51317d056b9c33a6b"
+  },
+  "v4-living-A-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "e50107a4c62d3e0bb0c0f6653661575530ccd71543bc7c875f4662450f6a1d62"
+  },
+  "v4-living-E-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "2c6dcebda43a18ea982556548666bf60570c0d24885d85d02d7725201246f269"
+  },
+  "v4-island-B-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "919f05f6af57aa45f48c065880ddd2bd53f5ae89aa4223383b64c67bb8c67f13"
+  },
+  "v4-collection-B-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "4c2d8fb8a59439590cd1564ec688b19b46e22a69ba4518b76f41dae602ced18e"
+  },
+  "v4-storage-E-v4r02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "47df563e3ab04adfc4a430a9a5d7a3328ddff1d74e45ff18c7430b6b53abd028"
   }
 }

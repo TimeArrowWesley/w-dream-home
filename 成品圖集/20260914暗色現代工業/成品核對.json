@@ -10,10 +10,10 @@
     "v3": 60,
     "v4": 60
   },
-  "displayBytes": 72752612,
+  "displayBytes": 72646698,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 58,
+  "correctionViews": 60,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": false
 }
