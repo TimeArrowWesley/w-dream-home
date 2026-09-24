@@ -404,6 +404,6 @@
       window.HOME_AI_VIEWS?.open();
     }
   }
-  if (document.readyState === 'loading') window.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.readyState !== 'complete') window.addEventListener('DOMContentLoaded', start, { once: true });
   else start();
 })();

@@ -4,7 +4,7 @@
  function init(){
   const E=window.HOME_EQUIPMENT,V=window.HOME_VIEWER,bar=document.getElementById('layoutSwitch');if(!E||!V||!bar)return;
   const version=window.HOME_LAYOUT.proposal||window.HOME_LAYOUT.version;
-  const changes=document.createElement('a');changes.id='versionChanges';changes.className='equipmentAction';changes.href=new URL('版本調整.html?version='+version,rootURL).href;changes.target='_blank';changes.rel='noopener';changes.textContent=version.toUpperCase()+' 調整內容 ↗';bar.appendChild(changes);
+  const changes=document.createElement('a');changes.id='versionChanges';changes.className='equipmentAction';changes.href=new URL('設計現況.html?version='+version,rootURL).href;changes.target='_blank';changes.rel='noopener';changes.textContent=version.toUpperCase()+' 調整內容 ↗';bar.appendChild(changes);
   const controls=document.createElement('div');controls.id='equipmentControls';controls.innerHTML='<strong>設備與收納</strong><label>查看設備 <select id="equipmentSelect"><option value="">選擇設備，查看實際尺寸</option></select></label><button id="inspectEquipment" aria-pressed="false">檢視櫃內／維修預留</button><button id="coffeeLift" aria-pressed="false">茶几升到用餐高度 65 cm</button><small>設備外徑按核對規格；黄色線框為設計預留。未定機型與安裝條件請看本版調整內容。</small>';
   const host=document.querySelector('aside')||bar;host.appendChild(controls);
   const doorButtons=[];
@@ -36,5 +36,5 @@
   document.querySelectorAll('a[href*="正反視角總覽"]').forEach(a=>{a.textContent='更新前 A／B 參考圖';a.title='本次設備更新前的靜態圖；現況請看3D模型';});
  }
  // layout-version.js builds its bar on window's DOMContentLoaded, after document listeners.
- if(document.readyState==='loading')window.addEventListener('DOMContentLoaded',init);else init();
+ if(document.readyState!=='complete')window.addEventListener('DOMContentLoaded',init);else init();
 })();

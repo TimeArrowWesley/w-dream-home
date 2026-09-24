@@ -18,5 +18,5 @@
   button.onclick=()=>toggleStools();document.getElementById('equipmentControls').appendChild(button);paint();
   window.HOME_A_CONTROLS={toggleStools,blocksPoint,getState:()=>({stoolsVisible:visible(),fixedTV:true})};
  }
- if(document.readyState==='loading')window.addEventListener('DOMContentLoaded',init);else init();
+ if(document.readyState!=='complete')window.addEventListener('DOMContentLoaded',init);else init();
 })();

@@ -57,6 +57,7 @@ with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
    html=html.replace('<a href="../../灰石全屋設計.html">灰石全屋設計與材質說明 ↗</a>','<span>GR06 灰石、灰棕木與光；完整設計說明請至線上專案查看。</span>')
    html=html.replace('<a href="../../霧黑工業全屋.html">BI01 霧黑工業全屋與更新前後對照 ↗</a>','<span>BI01 霧黑天花、中灰牆與灰棕木；完整前後對照請至線上專案查看。</span>')
    html=html.replace('<a href="../../模型修復.html">IR01 全版本模型修復與AI前後對照 ↗</a>','<span>IR01 模型修復與AI前後對照請至線上專案查看。</span>')
+   html=html.replace('<a href="../../設計現況.html">目前設計與待確認事項 ↗</a>', '<span>現行模型及工程待核摘要請至線上專案查看。</span>')
    z.writestr(name,html)
   else:z.write(p,name)
 with zipfile.ZipFile(out) as z:

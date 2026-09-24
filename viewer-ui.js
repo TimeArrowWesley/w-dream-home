@@ -135,26 +135,12 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
-      ['全版本模型修復 IR01', '六版中島封板、水槽內壁與電視表面；受影響AI同步更新', '模型修復.html'],
-      ['版本重編與新增V3 VN01', '目前六版對照、圓弧中島與頂天玻璃櫃', '版本重編與V3.html'],
-      ['無上櫃電視牆 TW01', 'V1採目前V2灰石主牆；歷史TW01對照', '電視牆統一.html'],
-      ['V1／V2 影音統一 AU01', '回靠窗側、保留中島旁留空；共同影音定位與32個AI更新', '影音統一.html'],
-      ['全版本霧黑工業 BI01', '霧黑天花、中灰牆與灰棕木；全屋五視角AI重製', '霧黑工業全屋.html'],
-      ['原V4（現V2）灰石工業 GI01', '歷史：石墨櫃面、槍灰金屬與分區燈光', '調整紀錄/20260923V4灰石工業校正/index.html'],
-      ['原V4（現V2）公共區 R02', '歷史：客廳比例與背架後環繞；目前位置見AU01', '調整紀錄/20260923V4公共區更新/index.html'],
-      ['灰石全屋設計 GR06', '灰石、灰棕木、分區燈光與全屋五視角提案', '灰石全屋設計.html'],
-      ['四版動線修正 MR01', '收藏室入口、行李取出、原V3（現V5）窄道與主浴避撞的前後對照', '調整紀錄/20260921四版動線修正/index.html'],
-      ['V0・原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],
-      ['拆收藏室・兩個替代格局', '現V2 大中島已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
-      ['V5・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
-      ['版本比較', 'V0 原始格局與 V1～V5 的配置及共用功能', '方案比較.html'],
-      ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
-      ['材質與配色', '22 個工業風案例、四版材質前後對照與酒吧照明', '材質調整.html'],
-      ['全屋核對與主臥細節', '最新收放操作、燈光與前後比較', '調整紀錄/20260911全屋核對與主臥細節/index.html'],
-      ['設計修正對照', '平面與設備調整的前後紀錄', '設計修正對照.html'],
-      ['全屋設計檢視', '各空間的接縫、收邊與設計檢視', '全屋設計檢視.html'],
-      ['全版本模型與 AI 複核', 'QA03 歷史：190 個角度、窗洞補牆與修改前後比較', '全版本複核.html'],
-      ['歷史模型檢查紀錄', '較早版本的模型尺寸、結構與設備核對', '全屋模型檢查.html']
+      ['目前設計與待確認事項', '目前配置、風格、成果及工程待核項目', '設計現況.html'],
+      ['六版格局比較', 'V0～V5的平面、配置及模型入口', '方案比較.html'],
+      ['全屋 AI 圖集', '六版360圖位；每區五角度，可並排核對模型來源', 'AI寫實視角.html'],
+      ['家具與設備預算', '共用清單、分區圓餅圖與待報價項目', '家具清單.html'],
+      ['V0 原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],
+      ['收藏區替代格局', '收藏室與開放格局的空間取捨', '提案/拆收藏室替代方案/index.html']
     ]) {
       const a = make('a', 'uiResource'); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener';
       a.append(make('strong', '', title + ' ↗'), make('span', '', note)); resourceGrid.append(a);
@@ -254,6 +240,7 @@
 
     function closeMobileNav() { body.classList.remove('uiNavOpen'); mobileNav?.setAttribute('aria-expanded','false'); if (navScrim) navScrim.hidden = true; }
     function setNav(view) {
+      if(view==='plan')tour.ensurePlan?.();
       navView = view; roomList.hidden = view !== 'rooms'; plan.hidden = view !== 'plan';
       for (const [b,key] of [[roomTab,'rooms'],[planTab,'plan']]) {
         const active = key === view; b.setAttribute('aria-selected',String(active)); b.tabIndex = active ? 0 : -1;
@@ -337,5 +324,5 @@
     setNav('rooms'); syncRoom(); syncMode();
     window.HOME_UI = {setNav,openInspector,closeInspector,getState:()=>({version,navView,inspectorView,room:V.getCurrent(),mode:tour.getMode()})};
   }
-  if(document.readyState==='loading')window.addEventListener('DOMContentLoaded',init,{once:true});else init();
+  if(document.readyState!=='complete')window.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

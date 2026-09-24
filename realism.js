@@ -30,7 +30,7 @@ V.fittings.traverse(o=>{if(!o.isMesh||o.geometry.type!=='BoxGeometry'||o.materia
 // Stuffed cushions have curved fabric faces, while keeping their existing bounding envelope.
 stats.softPillows=0;V.fittings.traverse(o=>{if(!o.isMesh||o.material!==M.linen)return;o.geometry.computeBoundingBox();const bb=o.geometry.boundingBox,size=bb.getSize(new T.Vector3()),mid=bb.getCenter(new T.Vector3());if(size.x>85||size.z>45||size.y>35||size.y<8)return;const geo=new T.SphereGeometry(1,48,24),p=geo.attributes.position;const soften=v=>Math.sign(v)*Math.pow(Math.abs(v),.35);for(let i=0;i<p.count;i++){const x=p.getX(i),y=p.getY(i),z=p.getZ(i);p.setXYZ(i,mid.x+soften(x)*size.x/2,mid.y+soften(y)*size.y/2,mid.z+soften(z)*size.z/2);}geo.computeVertexNormals();o.geometry.dispose();o.geometry=geo;stats.softPillows++;});
 // Surface-specific world UVs keep stone and textile grain at the same scale throughout the home.
-function worldUV(o,scale){const g=o.geometry,p=g.attributes.position,n=g.attributes.normal,uv=[];for(let i=0;i<p.count;i++){const v=new T.Vector3().fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld),normal=new T.Vector3().fromBufferAttribute(n,i).transformDirection(o.matrixWorld);const a=[Math.abs(normal.x),Math.abs(normal.y),Math.abs(normal.z)];if(a[1]>=a[0]&&a[1]>=a[2])uv.push(v.x/scale,v.z/scale);else if(a[0]>=a[2])uv.push(v.z/scale,v.y/scale);else uv.push(v.x/scale,v.y/scale);}g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));}
+function worldUV(o,scale){const g=o.geometry,p=g.attributes.position,n=g.attributes.normal,uv=new Float32Array(p.count*2),v=new T.Vector3(),normal=new T.Vector3();for(let i=0;i<p.count;i++){v.fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld);normal.fromBufferAttribute(n,i).transformDirection(o.matrixWorld);const ax=Math.abs(normal.x),ay=Math.abs(normal.y),az=Math.abs(normal.z);uv[i*2]=(ay>=ax&&ay>=az?v.x:ax>=az?v.z:v.x)/scale;uv[i*2+1]=(ay>=ax&&ay>=az?v.z:v.y)/scale;}g.setAttribute('uv',new T.BufferAttribute(uv,2));}
 // Modelled grout: fine, slightly recessed lines, independent of the stone image.
 function groutMaterial(material){material.onBeforeCompile=shader=>{shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 stoneWorld;').replace('#include <begin_vertex>','#include <begin_vertex>\nstoneWorld=(modelMatrix*vec4(position,1.0)).xyz;');shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 stoneWorld;').replace('#include <map_fragment>','#include <map_fragment>\nvec2 joint=abs(fract((stoneWorld.xz+vec2(32.5,30.0))/90.0)-.5)*90.0;float grout=1.0-smoothstep(.11,.27,min(joint.x,joint.y));diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*.34,grout);');};material.customProgramCacheKey=()=> 'stone-grout-v2';material.needsUpdate=true;}
 groutMaterial(M.floor);M.floor.color.copy(color('#676e76'));M.floor.roughness=.6;M.floor.envMapIntensity=.3;M.floor.userData.finishScale=180;
@@ -113,7 +113,7 @@ function resizeBudget(){
  stats.pixelRatio=ratio;stats.maxFPS=p.fps;stats.maxPixels=p.maxPixels;invalidate(false);
 }
 function render(force=false){
- if(drawing||document.hidden)return;
+ if(drawing||document.hidden||window.HOME_BOOT_PENDING)return;
  const mode=window.HOME_TOUR?.getMode()||'model';
  if(mode!==lastMode){lastMode=mode;invalidate();}
  if(mode!=='model'&&mode!=='walk')return;
@@ -200,7 +200,9 @@ for(const [x,y,z,range] of [[920,913,156,250],[530,481,216,220],[190,40,160,230]
 stats.style='黑灰白現代工業風・黑鈦與黑玻・煙燻橡木・石墨灰大板磚';
 C.industrialFinishes={steel,black,ceramic,darkVeneer,oak,veneerMap,veneerBump,worldUV,cabinetUV,lens,warmLights,bounce};
 steel.userData.finishId='industrial-black-titanium';black.userData.finishId='industrial-matte-black';M.blackglass.userData.finishId='industrial-black-glass';C.stoneMaterial.name='石墨灰細紋檯面';C.stoneMaterial.userData.finishId='industrial-graphite-stone';
-const woodReady=new Promise(resolve=>{const img=new Image();img.onload=()=>{oak.map=veneerMap;oak.map.wrapS=oak.map.wrapT=T.MirroredRepeatWrapping;oak.bumpMap=oak.map.clone();oak.bumpMap.encoding=T.LinearEncoding;oak.bumpMap.needsUpdate=true;oak.bumpScale=.015;oak.needsUpdate=true;S.updateMatrixWorld(true);V.fittings.traverse(o=>{if(o.isMesh&&o.material===oak)worldUV(o,100);});stats.woodTextureLoaded=true;resolve();};img.onerror=()=>{stats.woodTextureLoaded=false;resolve();};img.src=window.REALISM_WOOD;});
+// The current veneer is procedural; no unused warm-oak image download is needed.
+oak.map=veneerMap;oak.map.wrapS=oak.map.wrapT=T.MirroredRepeatWrapping;oak.bumpMap=oak.map.clone();oak.bumpMap.encoding=T.LinearEncoding;oak.bumpMap.needsUpdate=true;oak.bumpScale=.015;oak.needsUpdate=true;S.updateMatrixWorld(true);V.fittings.traverse(o=>{if(o.isMesh&&o.material===oak)worldUV(o,100);});stats.woodTextureLoaded=true;
+const woodReady=Promise.resolve();
 
 stats.wallTextureLoaded=false;
 // JunPin reference: smoky cement walls, graphite beam bands, pale grey ceiling.
@@ -224,7 +226,8 @@ S.updateMatrixWorld(true);S.traverse(o=>{if(o.isMesh&&(o.material===M.concrete||
 stats.wallTextureLoaded=true;stats.wallPalette={wall:'#686d73',beam:'#4d535b',ceiling:'#a8adb3',finish:'中性水泥灰・石墨灰梁・霧黑收邊'};
 const plasterReady=Promise.resolve();
 const image=new Image();image.onload=()=>{const stone=texture(image,true);stone.wrapS=stone.wrapT=T.MirroredRepeatWrapping;const height=stone.clone();height.encoding=T.LinearEncoding;height.needsUpdate=true;M.floor.map=stone;M.floor.bumpMap=height;M.floor.bumpScale=.028;M.floor.roughnessMap=height;M.floor.needsUpdate=true;C.stoneMaterial.map=stone;C.stoneMaterial.bumpMap=height;C.stoneMaterial.bumpScale=.018;C.stoneMaterial.needsUpdate=true;stats.textureLoaded=true;finish();};image.onerror=()=>{$('realismStatus').textContent='石材載入失敗，使用基本材質';finish();};
-async function finish(){await Promise.all([plasterReady,woodReady]);stats.ready=true;window.HOME_INDUSTRIAL?.apply();S.userData.realism={version:3,generatedStone:stats.textureLoaded,generatedPlaster:stats.wallTextureLoaded,beveled:stats.beveled,contactShadows:stats.contactShadows};if(stats.textureLoaded)$('realismStatus').textContent='材質已就緒 · 視點 165 cm';lighting();if(location.hash==='#walk'){document.querySelector('.workspace').classList.add('planhidden');$('planToggle').textContent='顯示平面圖';HOME_TOUR.setMode('walk');}}
+let finishReady;window.HOME_REALISM.whenReady=new Promise(resolve=>finishReady=resolve);
+async function finish(){await Promise.all([plasterReady,woodReady]);stats.ready=true;window.HOME_INDUSTRIAL?.apply();S.userData.realism={version:3,generatedStone:stats.textureLoaded,generatedPlaster:stats.wallTextureLoaded,beveled:stats.beveled,contactShadows:stats.contactShadows};if(stats.textureLoaded)$('realismStatus').textContent='材質已就緒 · 視點 165 cm';lighting();if(location.hash==='#walk'){document.querySelector('.workspace').classList.add('planhidden');$('planToggle').textContent='顯示平面圖';HOME_TOUR.setMode('walk');}finishReady();}
 image.src=window.REALISM_STONE;
 window.HOME_REALISM.ready=Promise.all([woodReady,plasterReady]);
 })();

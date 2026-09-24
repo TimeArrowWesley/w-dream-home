@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),path=require('path'),assert=require('assert/strict'),build=require('./home-test-fixture.cjs');
-const root=path.resolve(__dirname,'..'),out=path.join(root,'調整紀錄/20260924全版本模型修復');
+const root=path.resolve(__dirname,'..'),out=path.resolve(process.env.HOME_TEST_REPORT_DIR||path.join(root,'調整紀錄/20260924全版本模型修復'));fs.mkdirSync(out,{recursive:true});
 const versions=JSON.parse(fs.readFileSync(path.join(root,'version-registry.json'),'utf8')).versions;
 (async()=>{const report={revision:'20260924-ir01',passed:false,method:'Actual Three.js geometry and interaction with an offline renderer stub; browser GPU review recorded separately.',versions:[]};
  for(const v of versions){const f=await build(v.fixture),{T,V,E,c,bounds}=f;f.tick(3);const shell=c.HOME_ISLAND_SHELL;assert(shell&&shell.version===v.id);V.scene.updateMatrixWorld(true);

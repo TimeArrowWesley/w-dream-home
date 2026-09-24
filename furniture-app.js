@@ -104,5 +104,5 @@ window.addEventListener('storage',e=>{if(e.key!==storageKey||!e.newValue)return;
 
 window.addEventListener('beforeunload',e=>{persist();if(dirty||editBuffer){e.preventDefault();e.returnValue='';}});
 window.HOME_CATALOG={open,modelTargets,jumpToModel:jump,getState:()=>({data:C.clone(data),baseRevision,dirty,editBuffer:C.clone(editBuffer),storageOK}),saveProject,importText};
-if(document.readyState==='loading')window.addEventListener('DOMContentLoaded',init);else init();
+if(document.readyState!=='complete')window.addEventListener('DOMContentLoaded',init);else init();
 })();

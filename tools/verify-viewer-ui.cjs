@@ -44,7 +44,7 @@ function fixture(v,params='') {
   if(cfg.openStorage)for(const [id,n] of [['island','開放大中島'],['collection','展示與深收納']])rooms.find(r=>r.id===id).n=n;
   if(['v2','v3'].includes(v)){const spec=JSON.parse(read('提案/南牆電視與開放中島/格局尺寸.json'));for(const [id,p] of Object.entries(spec.rooms))Object.assign(rooms.find(r=>r.id===id),p);}
   const scene=new T.Scene(),architecture=new T.Group(),fittings=new T.Group(),camera=new T.PerspectiveCamera();scene.add(architecture,fittings);
-  c.HOME_VIEWER={rooms,scene,architecture,fittings,camera,wallParts:[],finishContext:{materials:{steel:new T.MeshBasicMaterial()}},pos:(x,y,z)=>new T.Vector3(x-482.5,z,y-480),capturePlan:()=>'',doorPlan:()=>[],syncWalkCamera(){},nudge:action=>calls.push(['camera',action]),focusObject:g=>calls.push(['focus',g.name]),getCurrent:()=>current,selectRoom:id=>{
+  c.HOME_VIEWER={rooms,scene,architecture,fittings,camera,wallParts:[],finishContext:{materials:{steel:new T.MeshBasicMaterial()}},pos:(x,y,z)=>new T.Vector3(x-482.5,z,y-480),capturePlan:()=>{calls.push(['capturePlan']);return 'data:image/png;base64,plan-fixture';},doorPlan:()=>[],syncWalkCamera(){},nudge:action=>calls.push(['camera',action]),focusObject:g=>calls.push(['focus',g.name]),getCurrent:()=>current,selectRoom:id=>{
     current=id;const r=rooms.find(r=>r.id===id);assert(r,id);camera.position.copy(c.HOME_VIEWER.pos(...r.p));
     $('roomtitle').textContent=r.n;$('roomnote').textContent=r.note;$('hint').textContent='拖曳轉向 · 滾輪縮放';
     document.querySelectorAll('#rooms [data-id]').forEach(b=>b.classList.toggle('active',b.dataset.id===id));c.dispatchEvent(new dom.CustomEvent('roomchange',{detail:id}));
@@ -93,7 +93,7 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   const ids=Array.from(d.querySelectorAll('[id]')).map(n=>n.id);assert.equal(new Set(ids).size,ids.length,'No duplicate IDs '+v);
   for(const [id,n]of Object.entries(originals))assert.strictEqual($(id),n,'Preserved original control '+id);
   assert($('uiInspector').contains($('kitchenDoorToggle')));assert($('uiInspector').contains($('curtainOpen')));assert($('uiInspector').contains($('cut')));
-  $('planToggle').click();assert(!$('planPanel').hidden);assert($('uiRoomList').hidden);
+  assert.equal(calls.filter(x=>x[0]==='capturePlan').length,0,'startup does not draw an invisible plan');$('planToggle').click();assert(!$('planPanel').hidden);assert($('uiRoomList').hidden);assert.equal(calls.filter(x=>x[0]==='capturePlan').length,1,'first plan tab draws once');$('planToggle').click();assert.equal(calls.filter(x=>x[0]==='capturePlan').length,1,'reopening reuses cached plan');
   $('uiExpandPlan').click();assert($('uiMapDialog').open);assert.equal($('planPanel').parentElement.id,'uiMapDialog');
   $('uiMapDialogClose').click();assert(!$('uiMapDialog').open);assert.equal($('planPanel').parentElement.className,'uiSideContent');
   $('uiRoomsTab').click();assert($('planPanel').hidden);assert(!$('uiRoomList').hidden);
@@ -140,7 +140,7 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(['v2','v3'].includes(v)){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,20);assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/霧黑工業全屋.html')),'BI01 review linked');assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/調整紀錄/20260923V4公共區更新/index.html')),'V4 R02 release review linked');assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/提案/拆收藏室替代方案/index.html')),'alternative floor plans linked from every version');$('uiResourcesClose').click();
+  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,6);for(const page of ['設計現況.html','AI寫實視角.html','家具清單.html','方案比較.html'])assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/'+page)),page+' linked');$('uiResourcesClose').click();
   assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
   assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
   d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));
@@ -155,14 +155,9 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
 }
 const deep=fixture('v2','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.getState().room,'bed');checks.push('Switching versions retains selected room; normal startup returns to whole-home overview');
 {
- const html=read('版本調整.html'),{document}=parseHTML(html),c={document,location:{search:'?version=v3'},history:{replaceState(){}},URLSearchParams};c.window=c;vm.createContext(c);
- vm.runInContext(read('version-registry.js'),c);vm.runInContext(read('version-changes.js'),c);vm.runInContext([...html.matchAll(/<script>([\s\S]*?)<\/script>/g)][0][1],c);
- assert(document.getElementById('versionTitle').textContent.startsWith('V3'));
- assert(document.getElementById('openModel').getAttribute('href').includes('南牆電視與圓弧中島'));
- assert(document.getElementById('metrics').textContent.includes('260 × 160.2'));
- for(const v of ['v0','v1','v2','v3','v4','v5']){document.getElementById('tab-'+v).click();assert(document.getElementById('versionTitle').textContent.startsWith(v.toUpperCase()));}
- checks.push('Six design comparison tabs render correct names, metrics, drawings and 3D links');
+ const {document}=parseHTML(read('設計現況.html'));assert.equal(document.querySelectorAll('tbody tr').length,6);assert(document.body.textContent.includes('已停用'));assert(document.body.textContent.includes('360'));checks.push('Current design summary retains six versions, disabled states and complete gallery scope');
 }
+
 for(const f of ['viewer-base.css','viewer-ui.css','furniture.css']){const sheet=CSSOM.parse(read(f));assert(sheet.cssRules.length>20);checks.push(f+': stylesheet parsed successfully');}
 const retained=JSON.parse(read('調整紀錄/20260910開放大中島/驗證.json'));assert(Object.keys(retained.retained).length===2);
 for(const v of ['v1','v2'])assert(retained.retained[v].meshes>2000);

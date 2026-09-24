@@ -41,6 +41,6 @@ for(const owner of [I,G,window.HOME_V4_INDUSTRIAL].filter(Boolean)){const base=o
 if(window.HOME_R05){const base=window.HOME_R05.applyFinishes;window.HOME_R05.applyFinishes=function(){base?.();apply();};}
 // V1 controls reapply finishes at DOMContentLoaded. Always finish that startup
 // pass with the accepted BI01 palette, just as later material resets do.
-if(document.readyState==='loading')window.addEventListener('DOMContentLoaded',apply,{once:true});
+if(document.readyState!=='complete')window.addEventListener('DOMContentLoaded',apply,{once:true});
 apply();window.HOME_REALISM?.ready?.then(apply);
 })();
