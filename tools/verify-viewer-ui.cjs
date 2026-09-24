@@ -87,7 +87,7 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   const a=fixture(v),{c,document:d,$,calls,originals}=a;
   assert(c.HOME_UI, v+' initialized');assert.equal(c.HOME_UI.getState().room,'all');
   assert.equal(d.querySelectorAll('.uiPrimary > button').length,3);
-  assert.equal($('layoutSwitch').children.length,6);assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
+  assert.equal($('layoutSwitch').children.length,5);assert.deepEqual(Array.from(d.querySelectorAll('.uiVersionHistory [data-proposal]'),b=>b.dataset.proposal),['v4','v5']);assert(!/原V[234]|新增/.test($('layoutSwitch').textContent));assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
   assert.equal(cssValue(d,d.querySelector('body > header'),'display'),'flex');assert.equal(cssValue(d,$('uiSidebar'),'display'),'flex');assert.equal(cssValue(d,$('planPanel'),'display'),'none');
   assert.equal(cssValue(d,d.querySelector('.shell'),'height'),'auto');assert.equal(cssValue(d,$('scenePanel'),'grid-template-rows'),'auto minmax(0,1fr) auto');
   const ids=Array.from(d.querySelectorAll('[id]')).map(n=>n.id);assert.equal(new Set(ids).size,ids.length,'No duplicate IDs '+v);

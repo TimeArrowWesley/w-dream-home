@@ -1,5 +1,5 @@
 {
-  "revision": "20260924-vn01",
+  "revision": "20260924-ui08",
   "legacyMap": {
     "v0": "v0",
     "v1": "v1",
@@ -33,7 +33,7 @@
     {
       "id": "v2",
       "name": "大中島・固定電視",
-      "detail": "原V4・開放收藏區・AU01",
+      "detail": "開放收藏區・AU01",
       "path": "提案/南牆電視與開放中島/index.html",
       "legacy": "v4",
       "fixture": 5,
@@ -44,7 +44,7 @@
     {
       "id": "v3",
       "name": "圓弧中島＋頂天玻璃櫃",
-      "detail": "新增・開放收藏區・固定電視",
+      "detail": "開放收藏區・固定電視",
       "path": "提案/南牆電視與圓弧中島/index.html",
       "legacy": "v4",
       "fixture": 6,
@@ -55,7 +55,7 @@
     {
       "id": "v4",
       "name": "旋轉電視＋小中島（已停用）",
-      "detail": "原V2・歷史參考",
+      "detail": "歷史參考",
       "path": "提案/旋轉電視與直線中島/index.html",
       "legacy": "v2",
       "fixture": 3,
@@ -65,12 +65,12 @@
     },
     {
       "id": "v5",
-      "name": "旋轉電視＋大中島",
-      "detail": "原V3・開放收藏區",
+      "name": "旋轉電視＋大中島（已停用）",
+      "detail": "開放收藏區・歷史參考",
       "path": "提案/開放大中島/index.html",
       "legacy": "v3",
       "fixture": 4,
-      "history": false,
+      "history": true,
       "openStorage": true,
       "rotation": true
     }

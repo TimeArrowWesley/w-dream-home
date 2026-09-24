@@ -645,7 +645,7 @@ window.HOME_VERSION_CHANGES={
       "legacyNumber": "V2"
     },
     "v5": {
-      "title": "V5 旋轉電視＋大中島",
+      "title": "V5 旋轉電視＋大中島（已停用）",
       "rows": [
         [
           "全屋材質 BI01",
