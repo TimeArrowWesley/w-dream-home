@@ -1,7 +1,7 @@
 'use strict';
 window.HOME_VERSION_CHANGES={
   "date": "2026-09-23",
-  "revision": "V1／V4 AU01影音統一；全版BI01材質",
+  "revision": "V1 TW01無上櫃電視牆；V1／V4 AU01影音；BI01材質",
   "shared": [
     [
       "整合背架沙發",
@@ -407,8 +407,14 @@ window.HOME_VERSION_CHANGES={
       ]
     },
     "v1": {
-      "title": "V1 圓弧中島酒吧／AU01・BI01",
+      "title": "V1 圓弧中島酒吧／TW01・AU01・BI01",
       "rows": [
+        [
+          "無上櫃電視牆 TW01",
+          "中段灰石，上方封閉櫃",
+          "移除電視上櫃；灰石至樑下，洗牆燈置頂，採V4主牆版型。",
+          "少一排315×35×75cm外廓上櫃；電箱與影音櫃保留。模型值，施工待核。"
+        ],
         [
           "影音統一 AU01",
           "兩版沙發與前後聲道各自試配；V4向中島側移45cm",

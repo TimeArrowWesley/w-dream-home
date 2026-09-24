@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "capturedAt": "2026-09-23",
-  "modelRevision": "20260923-au01+bi01",
+  "modelRevision": "20260924-tw01+au01+bi01",
   "method": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "entries": [
     {
@@ -2281,7 +2281,7 @@
     },
     {
       "version": "v1",
-      "id": "living-A-au01",
+      "id": "living-A-tw01",
       "room": "living",
       "name": "客廳・視角 A",
       "p": [
@@ -2298,25 +2298,25 @@
       "direction": 47.12109639666145,
       "angle": "A",
       "key": "v1-living-A",
-      "file": "v1-living-A-au01.png",
-      "triangles": 16331,
+      "file": "v1-living-A-tw01.png",
+      "triangles": 16139,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-living-A-au01.png",
-      "modelHash": "85af5dee8bf074f96b3f49b5b5f2914142ec46d1c3df19557647248fb585a4ea",
+      "model": "model/v1-living-A-tw01.png",
+      "modelHash": "fb38bc13213c610e923f617a41648a7ae555c2bf9660cf43839848f50eac7b4c",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-living-A-au01.png",
-      "aiKey": "v1-living-A-au01",
+      "ai": "originals/v1-living-A-tw01.png",
+      "aiKey": "v1-living-A-tw01",
       "sharedWith": [
         "v1-living-A"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-living-A-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-living-A-au01",
       "changed": true,
-      "previousModelHash": "1de365b841ae1c5599d149b5a679dcb281372ce3a7878ffcd7c845fce6f0ac46"
+      "previousModelHash": "85af5dee8bf074f96b3f49b5b5f2914142ec46d1c3df19557647248fb585a4ea"
     },
     {
       "version": "v1",
@@ -2678,7 +2678,7 @@
     },
     {
       "version": "v1",
-      "id": "living-D-au01",
+      "id": "living-D-tw01",
       "room": "living",
       "name": "客廳・視角 D",
       "p": [
@@ -2695,25 +2695,25 @@
       "direction": 69.14554196042165,
       "angle": "D",
       "key": "v1-living-D",
-      "file": "v1-living-D-au01.png",
-      "triangles": 22003,
+      "file": "v1-living-D-tw01.png",
+      "triangles": 21811,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-living-D-au01.png",
-      "modelHash": "a7672ec579ab6932c8e0d5dcbf40ef70c043c3bfda8a463d7dddfd10c8db6ca2",
+      "model": "model/v1-living-D-tw01.png",
+      "modelHash": "63a874f7caec7f87522df080f443c097fbb5484bd5183b4bbac0b3f167838c7a",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-living-D-au01.png",
-      "aiKey": "v1-living-D-au01",
+      "ai": "originals/v1-living-D-tw01.png",
+      "aiKey": "v1-living-D-tw01",
       "sharedWith": [
         "v1-living-D"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-living-D-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-living-D-au01",
       "changed": true,
-      "previousModelHash": "d00bd541da6d53db5a66a5bf4902923dc08e54b4bcc7dfdbf85ec3d73a7d3923"
+      "previousModelHash": "a7672ec579ab6932c8e0d5dcbf40ef70c043c3bfda8a463d7dddfd10c8db6ca2"
     },
     {
       "version": "v1",
@@ -2793,7 +2793,7 @@
     },
     {
       "version": "v1",
-      "id": "island-B-au01",
+      "id": "island-B-tw01",
       "room": "island",
       "name": "中島・視角 B",
       "p": [
@@ -2810,29 +2810,29 @@
       "direction": 19.35899417569472,
       "angle": "B",
       "key": "v1-island-B",
-      "file": "v1-island-B-au01.png",
-      "triangles": 100862,
+      "file": "v1-island-B-tw01.png",
+      "triangles": 100670,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-island-B-au01.png",
-      "modelHash": "997b32c605ef25eb9d0966711dc40602690bdf036fc5f984df2ee47394520e4a",
+      "model": "model/v1-island-B-tw01.png",
+      "modelHash": "229ad7b571cd7480b0e794fb62c060fa54a63a5a7aa32ea80280d03662aee2bb",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-island-B-au01.png",
-      "aiKey": "v1-island-B-au01",
+      "ai": "originals/v1-island-B-tw01.png",
+      "aiKey": "v1-island-B-tw01",
       "sharedWith": [
         "v1-island-B"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-island-B-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-island-B-au01",
       "changed": true,
-      "previousModelHash": "4e6b35e3d3f183f312b190c424fd8ac25f649477c0203d8d9e0f8bc4ead50bbe"
+      "previousModelHash": "997b32c605ef25eb9d0966711dc40602690bdf036fc5f984df2ee47394520e4a"
     },
     {
       "version": "v1",
-      "id": "island-C-au01",
+      "id": "island-C-tw01",
       "room": "island",
       "name": "中島・視角 C",
       "p": [
@@ -2849,29 +2849,29 @@
       "direction": 116.56505117707799,
       "angle": "C",
       "key": "v1-island-C",
-      "file": "v1-island-C-au01.png",
-      "triangles": 83023,
+      "file": "v1-island-C-tw01.png",
+      "triangles": 82951,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-island-C-au01.png",
-      "modelHash": "2ad6fcbf236de869af05bfb4edf2fc7ee68635d7f94f855a5b64233f2a73992a",
+      "model": "model/v1-island-C-tw01.png",
+      "modelHash": "f338637ace2c33a1fd9909df09df329ef83459166667c8ae8304b37dd35e0b6c",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-island-C-au01.png",
-      "aiKey": "v1-island-C-au01",
+      "ai": "originals/v1-island-C-tw01.png",
+      "aiKey": "v1-island-C-tw01",
       "sharedWith": [
         "v1-island-C"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-island-C-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-island-C-au01",
       "changed": true,
-      "previousModelHash": "d1c18a7f48904c569afc4cd1613f91863f8ea919ae709903c583ba3cea98841d"
+      "previousModelHash": "2ad6fcbf236de869af05bfb4edf2fc7ee68635d7f94f855a5b64233f2a73992a"
     },
     {
       "version": "v1",
-      "id": "island-D-au01",
+      "id": "island-D-tw01",
       "room": "island",
       "name": "中島・視角 D",
       "p": [
@@ -2888,25 +2888,25 @@
       "direction": -23.962488974578182,
       "angle": "D",
       "key": "v1-island-D",
-      "file": "v1-island-D-au01.png",
-      "triangles": 149196,
+      "file": "v1-island-D-tw01.png",
+      "triangles": 149076,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-island-D-au01.png",
-      "modelHash": "9b299a373c844966789b31c9c356786ed9f0981e98bebbacc9a54f8b8703b3e4",
+      "model": "model/v1-island-D-tw01.png",
+      "modelHash": "07815aa9f377726139c93e2a552f0e537cd7fea890d97e65989c792a7de754a1",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-island-D-au01.png",
-      "aiKey": "v1-island-D-au01",
+      "ai": "originals/v1-island-D-tw01.png",
+      "aiKey": "v1-island-D-tw01",
       "sharedWith": [
         "v1-island-D"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-island-D-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-island-D-au01",
       "changed": true,
-      "previousModelHash": "a6ae8275dfe82f758763da19eea18aa101f334deb21587e24b03e41433219388"
+      "previousModelHash": "9b299a373c844966789b31c9c356786ed9f0981e98bebbacc9a54f8b8703b3e4"
     },
     {
       "version": "v1",
@@ -3256,7 +3256,7 @@
     },
     {
       "version": "v1",
-      "id": "bed-E-au01",
+      "id": "bed-E-tw01",
       "room": "bed",
       "name": "主臥・視角 E",
       "p": [
@@ -3273,25 +3273,25 @@
       "direction": 90,
       "angle": "E",
       "key": "v1-bed-E",
-      "file": "v1-bed-E-au01.png",
-      "triangles": 123615,
+      "file": "v1-bed-E-tw01.png",
+      "triangles": 123423,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-bed-E-au01.png",
-      "modelHash": "e9067be99cd6dc7d14715ffbbb23fa587aabb19cafb12dce9c756656181adf5e",
+      "model": "model/v1-bed-E-tw01.png",
+      "modelHash": "e103bbb4db05a9e426cd6fcd0257dc95515096f7288ba10221d78faf1148c8c3",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-bed-E-au01.png",
-      "aiKey": "v1-bed-E-au01",
+      "ai": "originals/v1-bed-E-tw01.png",
+      "aiKey": "v1-bed-E-tw01",
       "sharedWith": [
         "v1-bed-E"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-bed-E-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-bed-E-au01",
       "changed": true,
-      "previousModelHash": "82fc3a06e744ce30dd97c48b7f1450d7c3416954a4549a793eba70e178de3395"
+      "previousModelHash": "e9067be99cd6dc7d14715ffbbb23fa587aabb19cafb12dce9c756656181adf5e"
     },
     {
       "version": "v1",
@@ -3528,7 +3528,7 @@
     },
     {
       "version": "v1",
-      "id": "study-C-au01",
+      "id": "study-C-tw01",
       "room": "study",
       "name": "雙人書房・視角 C",
       "p": [
@@ -3545,25 +3545,25 @@
       "direction": 131.92254460057563,
       "angle": "C",
       "key": "v1-study-C",
-      "file": "v1-study-C-au01.png",
-      "triangles": 267588,
+      "file": "v1-study-C-tw01.png",
+      "triangles": 267396,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-study-C-au01.png",
-      "modelHash": "a67a3335fe5fb3c4835c115926ee3919234cfade42d23aa586ed3ba06841ec67",
+      "model": "model/v1-study-C-tw01.png",
+      "modelHash": "3b31106b4e673174362a1debb755ebd3e02a661a84acac6e08e271fab9e17dd0",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-study-C-au01.png",
-      "aiKey": "v1-study-C-au01",
+      "ai": "originals/v1-study-C-tw01.png",
+      "aiKey": "v1-study-C-tw01",
       "sharedWith": [
         "v1-study-C"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-study-C-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-study-C-au01",
       "changed": true,
-      "previousModelHash": "270cbca70b7414a6634dc4ac35c2b27993b0a8461f3b955920a806945b038375"
+      "previousModelHash": "a67a3335fe5fb3c4835c115926ee3919234cfade42d23aa586ed3ba06841ec67"
     },
     {
       "version": "v1",
@@ -3607,7 +3607,7 @@
     },
     {
       "version": "v1",
-      "id": "study-E-au01",
+      "id": "study-E-tw01",
       "room": "study",
       "name": "雙人書房・視角 E",
       "p": [
@@ -3624,25 +3624,25 @@
       "direction": 65.92450174492117,
       "angle": "E",
       "key": "v1-study-E",
-      "file": "v1-study-E-au01.png",
-      "triangles": 102646,
+      "file": "v1-study-E-tw01.png",
+      "triangles": 102454,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-study-E-au01.png",
-      "modelHash": "29a60ae3f4cc795dc0442797392d45eb5f3c18f5f35a470579dd99ddd505f9f2",
+      "model": "model/v1-study-E-tw01.png",
+      "modelHash": "b8e723e3bf48f8c159bbede37a8dbecdd58578ea829e39fa43b731c1686ef0d9",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-study-E-au01.png",
-      "aiKey": "v1-study-E-au01",
+      "ai": "originals/v1-study-E-tw01.png",
+      "aiKey": "v1-study-E-tw01",
       "sharedWith": [
         "v1-study-E"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-study-E-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-study-E-au01",
       "changed": true,
-      "previousModelHash": "c88bba952fd5db8d04bb7d970faf95ae3e55db6519e81309b66174896469b188"
+      "previousModelHash": "29a60ae3f4cc795dc0442797392d45eb5f3c18f5f35a470579dd99ddd505f9f2"
     },
     {
       "version": "v1",
@@ -4285,7 +4285,7 @@
     },
     {
       "version": "v1",
-      "id": "storage-C-au01",
+      "id": "storage-C-tw01",
       "room": "storage",
       "name": "儲藏室・視角 C",
       "p": [
@@ -4302,25 +4302,25 @@
       "direction": 95.25380275126227,
       "angle": "C",
       "key": "v1-storage-C",
-      "file": "v1-storage-C-au01.png",
-      "triangles": 112924,
+      "file": "v1-storage-C-tw01.png",
+      "triangles": 112732,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-storage-C-au01.png",
-      "modelHash": "82ca010dd9d2428bdca90e845c8b2b3b64973879243fa4daa5e1877824fc1c16",
+      "model": "model/v1-storage-C-tw01.png",
+      "modelHash": "2b75da6a5397f47ade6754081f9622d7cc44fc4d712288717193458ed8023451",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-storage-C-au01.png",
-      "aiKey": "v1-storage-C-au01",
+      "ai": "originals/v1-storage-C-tw01.png",
+      "aiKey": "v1-storage-C-tw01",
       "sharedWith": [
         "v1-storage-C"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-storage-C-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-storage-C-au01",
       "changed": true,
-      "previousModelHash": "8219dd207214348b4ebee4785c4b0b2f1ab5372a70eb33170a26e5d217a9ea43"
+      "previousModelHash": "82ca010dd9d2428bdca90e845c8b2b3b64973879243fa4daa5e1877824fc1c16"
     },
     {
       "version": "v1",
@@ -4361,7 +4361,7 @@
     },
     {
       "version": "v1",
-      "id": "storage-E-au01",
+      "id": "storage-E-tw01",
       "room": "storage",
       "name": "儲藏室・視角 E",
       "p": [
@@ -4378,25 +4378,25 @@
       "direction": 37.15829678489693,
       "angle": "E",
       "key": "v1-storage-E",
-      "file": "v1-storage-E-au01.png",
-      "triangles": 80328,
+      "file": "v1-storage-E-tw01.png",
+      "triangles": 80136,
       "versionTitle": "圓弧中島酒吧＋玄關矮櫃",
-      "model": "model/v1-storage-E-au01.png",
-      "modelHash": "94947606c3bec3de166ad295798d5ac97cee118fd4b513351065da075b5ccb40",
+      "model": "model/v1-storage-E-tw01.png",
+      "modelHash": "aa2a999dadb8daa25b72f1600f1fbb42770dabe2205b21a5412732f8193eb6a4",
       "width": 1152,
       "height": 768,
-      "sourceRevision": "20260923-au01",
+      "sourceRevision": "20260923-tw01",
       "captureRevision": "20260922-f05",
       "status": "ai-reviewed",
-      "ai": "originals/v1-storage-E-au01.png",
-      "aiKey": "v1-storage-E-au01",
+      "ai": "originals/v1-storage-E-tw01.png",
+      "aiKey": "v1-storage-E-tw01",
       "sharedWith": [
         "v1-storage-E"
       ],
-      "lastReviewed": "2026-09-23",
-      "previousAI": "v1-storage-E-bi01",
+      "lastReviewed": "2026-09-24",
+      "previousAI": "v1-storage-E-au01",
       "changed": true,
-      "previousModelHash": "e8badb1a218d853e50f88f9386ec1af59bd1ad3926170985759520fa6bca4ba5"
+      "previousModelHash": "94947606c3bec3de166ad295798d5ac97cee118fd4b513351065da075b5ccb40"
     },
     {
       "version": "v1",
@@ -12000,8 +12000,22 @@
       "recapturedSlots": 120,
       "newNativeAI": 32,
       "updatedSlots": 32
+    },
+    "TW01": {
+      "date": "2026-09-24",
+      "versions": [
+        "v1"
+      ],
+      "sourceFileSha256": {
+        "tv-wall-unification.js": "774c3be898703639f757e2875484d48c653c0c4b5bc7c038ef5d32a125051234",
+        "grey-stone-design.js": "9e89407b9240648e36c37f11c8f2a5159bf03afd564bab78ff19655a34bb9015"
+      },
+      "basis": "Owner adopts V4 full-height gray-stone TV feature without overhead cabinet in V1. Lower AV console and electrical service retained; AU01 positioning preserved. Model dimensions, stone fixing and service details pending.",
+      "recapturedSlots": 60,
+      "newNativeAI": 10,
+      "updatedSlots": 10
     }
   },
-  "imageRevision": "20260923-au01+bi01",
-  "imagesUpdatedAt": "2026-09-23"
+  "imageRevision": "20260924-tw01+au01+bi01",
+  "imagesUpdatedAt": "2026-09-24"
 }

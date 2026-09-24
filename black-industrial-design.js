@@ -33,7 +33,7 @@ V.fittings.traverse(o=>{
 function apply(){
  for(const [o,t] of targets){o.material=t.material;o.userData.blackIndustrialRole=t.role;}
  V.scene.userData.blackIndustrial={revision,version,surfaces:targets.size,palette:'霧黑天花／中灰牆／深灰門框帶／灰石／石墨櫃／灰棕人字木地板',geometry:'各版既有格局、收納、設備保留',limits:'業主採用風格；實體色票、樑下淨高與照明待核。非照度或施工認證。'};
- const foot=document.querySelector?.('.uiSideFoot');if(foot)foot.textContent=version.toUpperCase()+(window.HOME_LIVING_AUDIO?' · AU01影音／BI01材質':' · BI01霧黑工業')+(version==='v2'?' · 已停用／歷史':' · 工程待核');
+ const foot=document.querySelector?.('.uiSideFoot');if(foot)foot.textContent=version.toUpperCase()+(window.HOME_TV_WALL?' · TW01主牆／AU01影音／BI01材質':window.HOME_LIVING_AUDIO?' · AU01影音／BI01材質':' · BI01霧黑工業')+(version==='v2'?' · 已停用／歷史':' · 工程待核');
  window.HOME_REALISM?.registerMaterials?.();window.HOME_REALISM?.invalidate?.();
 }
 window.HOME_BLACK_INDUSTRIAL={revision,apply,materials,targets,getState:()=>({...V.scene.userData.blackIndustrial})};

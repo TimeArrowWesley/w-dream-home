@@ -6,7 +6,7 @@ root=project/'成品圖集/20260914暗色現代工業'
 manifest=json.loads((root/'album-manifest.json').read_text(encoding='utf8'))
 draft='--draft' in sys.argv
 names={'entry':'玄關','living':'客廳','island':'中島','kitchen':'廚房','bed':'主臥','closet':'更衣室','study':'雙人書房','collection':'收藏室','bath1':'主浴','bath2':'客浴','storage':'儲藏室','back':'後陽台'}
-titles=['原始格局／BI01','圓弧中島酒吧＋玄關矮櫃／AU01・BI01','旋轉電視＋小中島（已停用／歷史）／BI01','旋轉電視＋大中島／BI01','大中島／AU01・BI01']
+titles=['原始格局／BI01','圓弧中島酒吧＋玄關矮櫃／TW01・AU01・BI01','旋轉電視＋小中島（已停用／歷史）／BI01','旋轉電視＋大中島／BI01','大中島／AU01・BI01']
 jobs={e['aiKey'] for e in manifest['entries']}
 missing=[key for key in sorted(jobs) if not (root/'originals'/f'{key}.png').exists()]
 if missing and not draft:raise SystemExit('Missing AI originals: '+', '.join(missing))

@@ -17,7 +17,7 @@ function device(o){for(let p=o;p;p=p.parent)if(p.userData.equipment)return true;
 // A recessed linear light is a proposed fitting, not a new wall or cabinet.
 const lights=new T.Group();lights.name='GR06 灰石洗牆燈試案';lights.userData.gr06NewFitting=true;V.fittings.add(lights);
 if(['v0','v1','v4'].includes(version)){
- const h=version==='v4'?244.4:169.4,m=new T.MeshBasicMaterial({color:col('#fff1d9')}),strip=new T.Mesh(new T.BoxGeometry(305,.6,1.2),m);strip.name='GR06 石牆上緣內藏線燈・位置待燈具深化';strip.position.copy(V.pos(917.5,948,h));strip.userData.gr06NewFitting=true;lights.add(strip);
+ const h=version==='v4'||window.HOME_TV_WALL?244.4:169.4,m=new T.MeshBasicMaterial({color:col('#fff1d9')}),strip=new T.Mesh(new T.BoxGeometry(305,.6,1.2),m);strip.name='GR06 石牆上緣內藏線燈・位置待燈具深化';strip.position.copy(V.pos(917.5,948,h));strip.userData.gr06NewFitting=true;lights.add(strip);
 }
 function apply(){
  C.ceilingMaterial.color.copy(col('#c6c7c4'));

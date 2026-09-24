@@ -37,7 +37,7 @@ provenance={'date':manifest.get('imagesUpdatedAt',manifest.get('capturedAt','202
 (root/'生成紀錄.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 for e in entries:assert sha(root/'model'/e['file'])==e['modelHash'],e['key']
 report=read('成品核對.json');report.pop('all144SourceHashesMatched',None);report.update({'allImagesDecoded':True,'allSourceHashesMatched':True,'correctionViews':len(fixes),'visualReview':'Each unique AI image reviewed; original model is authoritative for dimensions','browserVisualQA':False})
-browser_reports={'20260923-bi01':'調整紀錄/20260923全版本霧黑工業/瀏覽器核對.json','20260923-au01+bi01':'調整紀錄/20260923V1V4影音統一/瀏覽器核對.json'}
+browser_reports={'20260924-tw01+au01+bi01':'調整紀錄/20260924電視牆統一/瀏覽器核對.json','20260923-bi01':'調整紀錄/20260923全版本霧黑工業/瀏覽器核對.json','20260923-au01+bi01':'調整紀錄/20260923V1V4影音統一/瀏覽器核對.json'}
 if manifest.get('imageRevision') in browser_reports:
  browser_report=project/browser_reports[manifest['imageRevision']]
  if browser_report.exists():

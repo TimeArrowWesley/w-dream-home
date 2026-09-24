@@ -1,0 +1,27 @@
+'use strict';
+const fs=require('fs'),path=require('path'),assert=require('assert/strict'),crypto=require('crypto'),build=require('./home-test-fixture.cjs');
+const R=path.resolve(__dirname,'../調整紀錄/20260924電視牆統一');
+const meshes=g=>{const a=[];g.traverse(o=>{if(o.isMesh)a.push(o);});return a;};
+const stamp=o=>{o.updateWorldMatrix(true,false);return JSON.stringify([o.userData.name||o.name,crypto.createHash('sha256').update(Buffer.from(o.geometry.attributes.position.array.buffer)).digest('hex'),o.matrixWorld.elements]);};
+const full=f=>{for(const p of f.V.wallParts){p.m.visible=true;p.m.scale.y=1;p.m.position.y=p.z+p.h/2;}f.V.scene.updateMatrixWorld(true);};
+const feature=f=>meshes(f.V.fittings).find(o=>o.userData.greyStoneRole==='fixed-stone-feature');
+const ignore=o=>{for(let p=o;p;p=p.parent)if(p.name==='電視上櫃'||p.name==='GR06 灰石洗牆燈試案'||p.userData.greyStoneRole==='fixed-stone-feature')return true;return false;};
+(async()=>{
+ const a=await build(2,{'tv-wall-unification.js':''}),b=await build(2),v4=await build(5);
+ [a,b,v4].forEach(full);
+ assert(!b.V.fittings.getObjectByName('電視上櫃'));
+ assert(b.V.fittings.getObjectByName('電箱整合櫃'),'electrical access retained');
+ assert.equal(b.c.HOME_INTERACTION.getState().entries.filter(e=>e.name.includes('電視上櫃')).length,0);
+ const fa=feature(b),fb=feature(v4);
+ for(const k of ['x','y','z','w','d','h'])assert(Math.abs(b.bounds(fa)[k]-v4.bounds(fb)[k])<.001,k+' V1/V4 feature');
+ assert.equal(fa.material.name,fb.material.name);
+ assert.deepEqual(Array.from(fa.geometry.attributes.uv.array),Array.from(fb.geometry.attributes.uv.array),'stone panel pattern mapping');
+ const la=b.V.fittings.getObjectByName('GR06 灰石洗牆燈試案').children[0],lb=v4.V.fittings.getObjectByName('GR06 灰石洗牆燈試案').children[0];
+ assert.deepEqual(b.bounds(la),v4.bounds(lb),'linear light match');
+ for(const key of ['architecture','beams','ceiling'])assert.deepEqual(meshes(a.V[key]).map(stamp).sort(),meshes(b.V[key]).map(stamp).sort(),key+' unchanged');
+ assert.deepEqual(meshes(a.V.fittings).filter(o=>!ignore(o)).map(stamp).sort(),meshes(b.V.fittings).filter(o=>!ignore(o)).map(stamp).sort(),'other fittings unchanged');
+ assert.equal(JSON.stringify(a.c.HOME_LIVING_AUDIO.audio),JSON.stringify(b.c.HOME_LIVING_AUDIO.audio),'AU01 audio unchanged');
+ const count=meshes(b.V.fittings).length;b.run('tv-wall-unification.js');assert.equal(meshes(b.V.fittings).length,count,'idempotent');
+ const report={revision:'20260924-tw01',passed:true,feature:b.bounds(fa),linearLight:b.bounds(la),removedCabinet:b.c.HOME_TV_WALL.removedOuter,retained:['all architecture','beams','ceiling','all other fittings and equipment','electrical access','AU01 audio'],v4GeometryMaterialAndUvMatch:true,limits:'模型值；只核對本輪改動及保留條件，非施工定案。'};
+ fs.writeFileSync(path.join(R,'驗證.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+})().catch(e=>{console.error(e);process.exitCode=1;});

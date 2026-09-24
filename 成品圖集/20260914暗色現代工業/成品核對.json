@@ -10,21 +10,19 @@
     "v3": 60,
     "v4": 60
   },
-  "displayBytes": 65220260,
+  "displayBytes": 65360108,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 48,
+  "correctionViews": 45,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": true,
   "browserScope": [
-    "V1與V4實際3D客廳畫面，AU01模型已載入",
-    "V1與V4客廳AI方向A／E切換，連結均為au01新版圖片",
-    "兩版五張縮圖照片列位於視窗內，可操作切換",
-    "影音統一比較頁V4／V1篩選、客廳五角度及舊AI／來源模型／新AI三欄對照"
+    "IAB 1280×720：V1 TW01 3D 主牆無上櫃、灰石至樑下。",
+    "AI 客廳 A 實際截圖：無上櫃、照片列 A–E 在視窗內；D 切換與下載 URL 均為 tw01。",
+    "五版離線介面測試與 300 圖位／600 明細操作測試通過。"
   ],
   "browserLimitations": [
-    "僅本輪實際檢視的桌面1280×720畫面，未宣稱手機或所有尺寸已驗收",
-    "模型取樣與圖集視角不能取代全部連續視角、真人試坐或現場施工檢核",
-    "AI為概念圖，細部五金、收藏物形狀與反射以模型及後續深化為準"
+    "實際瀏覽器抽查，不宣稱全設備／全連續視角驗證。",
+    "原生AI逐張核對主要配置；圖片不能證明尺度、固定強度、材料及施工可行性。"
   ]
 }
