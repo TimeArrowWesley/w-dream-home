@@ -1,7 +1,7 @@
 'use strict';
 (()=>{
 const version='v2',proposal=version,proposalName='V2 旋轉電視+小中島';
-window.HOME_LAYOUT={comfort:true,version,proposal,isV2:false,entryCabinetHeight:null,entryDoorY:955};
+window.HOME_LAYOUT={displayVersion:'v4',comfort:true,version,proposal,isV2:false,entryCabinetHeight:null,entryDoorY:955};
 window.addEventListener('DOMContentLoaded',()=>{
  const entryIndex=HOME_VIEWER.rooms.findIndex(r=>r.id==='entry');if(entryIndex>1)HOME_VIEWER.rooms.splice(1,0,HOME_VIEWER.rooms.splice(entryIndex,1)[0]);const roomNav=document.getElementById('rooms'),entryButton=roomNav.querySelector('[data-id="entry"]');if(entryButton)roomNav.insertBefore(entryButton,roomNav.children[1]);
  const bar=document.createElement('div');bar.id='layoutSwitch';bar.setAttribute('aria-label','設計版本');

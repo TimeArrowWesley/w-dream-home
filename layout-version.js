@@ -1,7 +1,7 @@
 'use strict';
 (()=>{
 const version='v1',proposal=version,proposalName='V1 圓弧中島酒吧+玄關矮櫃';
-window.HOME_LAYOUT={comfort:true,version,proposal,isV2:true,entryCabinetHeight:90,entryDoorY:955};
+window.HOME_LAYOUT={displayVersion:'v1',comfort:true,version,proposal,isV2:true,entryCabinetHeight:90,entryDoorY:955};
 window.addEventListener('DOMContentLoaded',()=>{
  const entryIndex=HOME_VIEWER.rooms.findIndex(r=>r.id==='entry');if(entryIndex>1)HOME_VIEWER.rooms.splice(1,0,HOME_VIEWER.rooms.splice(entryIndex,1)[0]);const roomNav=document.getElementById('rooms'),entryButton=roomNav.querySelector('[data-id="entry"]');if(entryButton)roomNav.insertBefore(entryButton,roomNav.children[1]);
  const bar=document.createElement('div');bar.id='layoutSwitch';bar.setAttribute('aria-label','設計版本');

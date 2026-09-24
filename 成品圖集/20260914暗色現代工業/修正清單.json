@@ -178,5 +178,21 @@
   "v1-storage-C-tw01": {
     "nativeAttempts": 3,
     "finalPngSha256": "37c82457596b38d47f03fd57b7afed5b902d7fa6cc0c2a2886ab39f098e51869"
+  },
+  "v3-living-C-vn01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "18e29915c3405faf0c3d1792f46f2e86eb09bd00eec983dba3dcb6e13f800ef0"
+  },
+  "v3-study-C-vn01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "f21d66e123975dc5136814fb5a65c1c283ffde716d98f5e1feee82df510369b4"
+  },
+  "v3-collection-A-vn01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "8ceb8527e5873e6fcd61895d728a04c506267f0e364506e87800d072af703d5d"
+  },
+  "v3-collection-C-vn01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "3911133d7e777e7c2e47ebd64b770f464ba514f41fd9477de1a80aa3b42ecff5"
   }
 }

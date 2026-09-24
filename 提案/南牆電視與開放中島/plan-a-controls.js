@@ -13,7 +13,7 @@
    if(show&&window.HOME_WALK?.getState().active&&blocksPoint(V.camera.position.x,V.camera.position.z,18)){
     model.stools.forEach(g=>g.traverse(o=>o.visible=false));button.title='請先離開座椅位置，再加入活動椅。';paint();return false;
    }
-   button.title='座椅放在東側留膝區，南端通道保留。';paint();window.HOME_REALISM?.invalidate();return true;
+   button.title=window.HOME_HYBRID?'兩張圓凳放在圓弧外側留膝區。':'座椅放在東側留膝區，南端通道保留。';paint();window.HOME_REALISM?.invalidate();return true;
   }
   button.onclick=()=>toggleStools();document.getElementById('equipmentControls').appendChild(button);paint();
   window.HOME_A_CONTROLS={toggleStools,blocksPoint,getState:()=>({stoolsVisible:visible(),fixedTV:true})};

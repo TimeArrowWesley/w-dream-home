@@ -11,6 +11,7 @@ const overlap=(a,b,t=.04)=>a.x<b.x+b.w-t&&a.x+a.w>b.x+t&&a.y<b.y+b.d-t&&a.y+a.d>
 const near=(a,b,msg,t=.03)=>assert(Math.abs(a-b)<t,`${msg}: ${a} vs ${b}`);
 
 module.exports=async function build(n,overrides={}){
+ const hybrid=n===6;if(hybrid)n=5;
  const nodes=new Map(),events=new Map(),raf=new Set(),images=[];let time=0,mode='model';
  function element(){const classes=new Set(),e={style:{},dataset:{},children:[],value:'',checked:false,hidden:false,width:1024,height:512,addEventListener:noop,dispatchEvent:noop,setAttribute(k,v){this[k]=v;},getAttribute(k){return this[k];},getContext(){if(!this._ctx)this._ctx=new Proxy({putImageData:im=>this.__pixels=im},{get:(o,k)=>k in o?o[k]:ctx2d[k]});return this._ctx;},getBoundingClientRect:()=>({width:960,height:720,left:0,top:0}),appendChild(o){this.children.push(o);o.parentElement=this;return o;},insertBefore(o){return this.appendChild(o);},prepend(o){this.children.unshift(o);},append(...xs){xs.forEach(x=>this.appendChild(x));},after:noop,querySelector:()=>element(),querySelectorAll:()=>[],focus:noop,click(){this.onclick?.();},classList:{contains:k=>classes.has(k),add:k=>classes.add(k),remove:k=>classes.delete(k),toggle(k,v){if(v===undefined)v=!classes.has(k);v?classes.add(k):classes.delete(k);return v;}}};Object.defineProperty(e,'id',{get(){return this._id;},set(id){this._id=id;nodes.set(id,this);}});return e;}
  function get(id){if(!nodes.has(id)){const e=element();e.id=id;nodes.set(id,e);}return nodes.get(id);}
@@ -19,13 +20,15 @@ module.exports=async function build(n,overrides={}){
  const OriginalImage=c.Image;c.Image=class extends OriginalImage{constructor(){super();this.width=1024;this.height=512;images.push(this);}};
  c.window=c;c.Event=c.CustomEvent;vm.createContext(c);
  function run(f){vm.runInContext(overrides[f]??read(f),c,{filename:f,timeout:60000});}
- run(n===0?'提案/原始格局/layout-version.js':n===5?'提案/南牆電視與開放中島/layout-version.js':n===4?'提案/開放大中島/layout-version.js':n<3?'layout-version.js':'提案/旋轉電視與直線中島/layout-version.js');
+ run('version-registry.js');
+ run(hybrid?'提案/南牆電視與圓弧中島/layout-version.js':n===0?'提案/原始格局/layout-version.js':n===5?'提案/南牆電視與開放中島/layout-version.js':n===4?'提案/開放大中島/layout-version.js':n<3?'layout-version.js':'提案/旋轉電視與直線中島/layout-version.js');
  if(n===0){run('提案/原始格局/layout-spec.js');run('提案/原始格局/original-model.js');}
  if(n>=4){run(n===5?'提案/南牆電視與開放中島/layout-spec.js':'提案/開放大中島/layout-spec.js');run('提案/開放大中島/open-island-model.js');if(n===5)run('提案/南牆電視與開放中島/plan-a-model.js');}
+ if(hybrid)run('hybrid-arc-island.js');
  for(const f of ['model-data.js','bedroom-model.js','sofa-model.js','equipment-models.js',n<3?'design.js':'提案/旋轉電視與直線中島/design.js'])run(f);
  const V=c.HOME_VIEWER,E=c.HOME_EQUIPMENT;
  c.HOME_TOUR={getMode:()=>mode,setMode:m=>mode=m};
- for(const f of [...(n===0?[]:['model-repairs.js']),'model-audit-repairs.js',...(n===5?['v4-public-adjustments.js']:[]),...([2,5].includes(n)?['living-audio-unification.js']:[]),...(n===2?['tv-wall-unification.js']:[]),'walk.js','interaction.js','realism.js','flooring.js','industrial-design.js','curtains.js','rgb-lighting.js','comfort-controls.js','equipment-controls.js','bedroom-controls.js',...(n===5?['提案/南牆電視與開放中島/plan-a-controls.js']:n>2?['提案/旋轉電視與直線中島/rotating-tv.js']:[])])run(f);await Promise.resolve();await Promise.resolve();
+ for(const f of [...(n===0?[]:['model-repairs.js']),'model-audit-repairs.js',...(n===5?['v4-public-adjustments.js']:[]),...([2,5].includes(n)?['living-audio-unification.js']:[]),...(hybrid?['hybrid-arc-adjustments.js']:[]),...(n===2?['tv-wall-unification.js']:[]),'walk.js','interaction.js','realism.js','flooring.js','industrial-design.js','curtains.js','rgb-lighting.js','comfort-controls.js','equipment-controls.js','bedroom-controls.js',...(n===5?['提案/南牆電視與開放中島/plan-a-controls.js']:n>2?['提案/旋轉電視與直線中島/rotating-tv.js']:[])])run(f);await Promise.resolve();await Promise.resolve();
 
 if(n===2)run('v1-finishes.js');
 run('grey-stone-design.js');

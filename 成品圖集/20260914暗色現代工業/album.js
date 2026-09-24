@@ -2,7 +2,7 @@
 (()=>{'use strict';
 const data=window.HOME_ALBUM,base=new URL('.',document.currentScript.src),$=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);let version=data.versions.some(v=>v.id===params.get('version'))?params.get('version'):'v1',room=data.rooms.some(r=>r.id===params.get('room'))?params.get('room'):'all',mode='ai',detailMode='ai',selected=null,visible=[];
-const url=p=>new URL(p,base).href,roomLabel=(id,v=version)=>v==='v0'&&id==='collection'?'貓房':v==='v0'&&id==='study'?'書房・電子琴':id==='collection'&&['v3','v4'].includes(v)?'開放收藏收納':data.rooms.find(r=>r.id===id)?.name||id;
+const url=p=>new URL(p,base).href,roomLabel=(id,v=version)=>v==='v0'&&id==='collection'?'貓房':v==='v0'&&id==='study'?'書房・電子琴':id==='collection'&&['v2','v3','v5'].includes(v)?'開放收藏收納':data.rooms.find(r=>r.id===id)?.name||id;
 const button=(text,action)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.onclick=action;return b;};
 const viewLabel=e=>e.directionLabel?e.directionLabel+' · '+e.angle:'方向 '+e.angle;
 function photo(e,type,full=false){const im=document.createElement('img');im.src=url(type==='ai'&&!full?e.thumb:e[type]);im.alt=e.version.toUpperCase()+' '+roomLabel(e.room,e.version)+'・'+viewLabel(e)+'・'+(type==='ai'?'AI 效果':'原始 3D');im.loading='lazy';im.decoding='async';im.width=1536;im.height=1024;im.onerror=()=>{const p=document.createElement('p');p.className='error';p.textContent='圖片未能載入，請確認圖集與圖片資料夾一起保存。';im.replaceWith(p);};return im;}

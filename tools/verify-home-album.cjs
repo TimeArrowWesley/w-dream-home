@@ -10,7 +10,7 @@ for(const e of data.entries){
  for(const [target,source] of [['src','ai'],['modelSrc','model'],['thumb','thumb']])
   assert.equal(c[target],'成品圖集/20260914暗色現代工業/'+e[source],'Main viewer/album mismatch: '+e.key+'/'+target);
 }
-assert.equal(data.complete,true);assert.equal(data.entries.length,300);assert.deepEqual(Array.from(data.versions,v=>v.id),['v0','v1','v2','v3','v4']);assert.equal(data.uniqueImages,new Set(data.entries.map(e=>e.sourceKey)).size);
+assert.equal(data.complete,true);assert.equal(data.entries.length,360);assert.deepEqual(Array.from(data.versions,v=>v.id),['v0','v1','v2','v3','v4','v5']);assert.equal(data.uniqueImages,new Set(data.entries.map(e=>e.sourceKey)).size);
 for(const v of data.versions)for(const r of data.rooms){
  const expected=5,e=data.entries.filter(e=>e.version===v.id&&e.room===r.id);assert.equal(e.length,expected,v.id+'/'+r.id);assert.equal(new Set(e.map(x=>x.angle)).size,expected);assert.equal(new Set(e.map(x=>x.sourceHash)).size,expected);
  if(r.id==='entry'){
@@ -46,4 +46,4 @@ for(const vb of ids.versions.children){vb.onclick();assert.equal(imgs(ids.galler
  details[2].onclick();assert.equal(imgs(ids.detailImages).length,2);assert.equal(imgs(ids.detailImages)[0].src,pathToFileURL(path.join(root,key.model)).href);assert.equal(imgs(ids.detailImages)[1].src,pathToFileURL(path.join(root,key.ai)).href);
  ids.next.onclick();assert.ok(!ids.detailTitle.textContent.endsWith(key.angle));ids.previous.onclick();assert.ok(ids.detailTitle.textContent.endsWith(key.angle));ids.close.onclick();assert.equal(ids.detail.open,false);checks++;
  }} }ids.room.value='all';ids.room.onchange();}
-console.log(JSON.stringify({views:data.entries.length,uniqueImages:hashes.size,roomVersionGroups:60,detailInteractions:checks,sourceAndEffectAssetsVerified:true,method:'Offline DOM stub; browser visual QA not performed'}));
+console.log(JSON.stringify({views:data.entries.length,uniqueImages:hashes.size,roomVersionGroups:72,detailInteractions:checks,sourceAndEffectAssetsVerified:true,method:'Offline DOM stub; browser visual QA not performed'}));

@@ -1,7 +1,7 @@
 {
   "date": "2026-09-24",
-  "sourceRevision": "20260924-tw01+au01+bi01",
-  "imageRevision": "20260924-tw01+au01+bi01",
+  "sourceRevision": "20260924-vn01",
+  "imageRevision": "20260924-vn01",
   "versionSources": {
     "v0": {
       "capturedAt": "2026-09-15",
@@ -385,21 +385,43 @@
       "recapturedSlots": 60,
       "newNativeAI": 10,
       "updatedSlots": 10
+    },
+    "VN01": {
+      "date": "2026-09-24",
+      "legacyMap": {
+        "v0": "v0",
+        "v1": "v1",
+        "v2": "v4",
+        "v3": "v5",
+        "v4": "v2"
+      },
+      "sourceFileSha256": {
+        "version-registry.json": "c9de284a0059209d54e1f67f7eb9b2d34654a7987c984bcdbe0a67055c34e072",
+        "hybrid-arc-island.js": "f0f0b527fff23ea7c291a34a518addf4e8e5a57db50999e836e2fd0060b02f9b",
+        "hybrid-arc-adjustments.js": "9b9b1fbc227cd6d5bdd1ca1f2b8b00a05df019c3aa911fb32765d42cd7337479",
+        "提案/南牆電視與圓弧中島/layout-version.js": "ccb5fff967cab7a4ed04b007616b3d81fcd7a4f7efaeb4cf4a2ba8bf8174afc8"
+      },
+      "basis": "New public V2=oldV4, V4=oldV2(discontinued), V5=oldV3; V3 combines oldV4 base with exact V1 arc island, full-height double-sided glass and two outside stools. Physical dimensions and construction details pending. Legacy versionSources and asset filenames preserve their historical identifiers.",
+      "recapturedSlots": 60,
+      "newNativeAI": 19,
+      "addedSlots": 60,
+      "sameSourceRetained": 41
     }
   },
   "sourceMethod": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "generationTool": "Built-in image_gen",
-  "viewSlots": 300,
-  "uniqueImages": 211,
+  "viewSlots": 360,
+  "uniqueImages": 230,
   "records": [
     {
       "key": "v0-back-A-bi01",
       "usedBy": [
         "v0-back-A",
         "v1-back-A",
+        "v4-back-A",
+        "v5-back-A",
         "v2-back-A",
-        "v3-back-A",
-        "v4-back-A"
+        "v3-back-A"
       ],
       "sourcePngSha256": "215a0d72c4ee0469e935ecd666f21e44f516f0c9ecf43bb2e957976496f1c558",
       "aiOriginalPngSha256": "68a403cc04a8eb6a7e78077975df07966d2bf3ae5ae4fd908b62cbf78860a325",
@@ -535,9 +557,10 @@
       "key": "v0-bath2-A-bi01",
       "usedBy": [
         "v0-bath2-A",
+        "v4-bath2-A",
+        "v5-bath2-A",
         "v2-bath2-A",
-        "v3-bath2-A",
-        "v4-bath2-A"
+        "v3-bath2-A"
       ],
       "sourcePngSha256": "ff46f9f30d6540a38c9bbc5bf9ff125904b44e3c3f8bf28c023fb898a2d129f7",
       "aiOriginalPngSha256": "c9e9573b8747d2411e146799d303a64f4966f1df207868873087ae0b966e670f",
@@ -551,9 +574,10 @@
       "key": "v0-bath2-B-bi01",
       "usedBy": [
         "v0-bath2-B",
+        "v4-bath2-B",
+        "v5-bath2-B",
         "v2-bath2-B",
-        "v3-bath2-B",
-        "v4-bath2-B"
+        "v3-bath2-B"
       ],
       "sourcePngSha256": "9d8be13594135785dc9b609f3d8dd7552d40f7e115041a5e172477c34bcdb8b4",
       "aiOriginalPngSha256": "ad0e146602b12ecbd9b7a91d190bdbf742dd5a09694dbc5dc2e8ca73332029a1",
@@ -568,9 +592,10 @@
       "usedBy": [
         "v0-bath2-C",
         "v1-bath2-C",
+        "v4-bath2-C",
+        "v5-bath2-C",
         "v2-bath2-C",
-        "v3-bath2-C",
-        "v4-bath2-C"
+        "v3-bath2-C"
       ],
       "sourcePngSha256": "46ef99b1127dc988adceff519167040f5a3e5423839a8f58806d3108b7798b99",
       "aiOriginalPngSha256": "a7a0a06ba830d39a3f6b4e9d03a2dcefbed1cf1f69d13c5da51984423deafa4c",
@@ -584,9 +609,10 @@
       "key": "v0-bath2-D-bi01",
       "usedBy": [
         "v0-bath2-D",
+        "v4-bath2-D",
+        "v5-bath2-D",
         "v2-bath2-D",
-        "v3-bath2-D",
-        "v4-bath2-D"
+        "v3-bath2-D"
       ],
       "sourcePngSha256": "a941df2c5f2223d655571d6c2894fced7731fd4b26d1c9f11c19177bbf8ab4ab",
       "aiOriginalPngSha256": "1480ea1006df6da1c38c434c092c5a7bf80ddbdc395fb234fcd28a95de0e1389",
@@ -600,9 +626,10 @@
       "key": "v0-bath2-E-bi01",
       "usedBy": [
         "v0-bath2-E",
+        "v4-bath2-E",
+        "v5-bath2-E",
         "v2-bath2-E",
-        "v3-bath2-E",
-        "v4-bath2-E"
+        "v3-bath2-E"
       ],
       "sourcePngSha256": "04faf291f837b16a6988f99332908a43c8a63ba5cb73e375f19bae908f4937b6",
       "aiOriginalPngSha256": "a9bc554098b15146f5b191f383f813b45b56e5d887d78cf03ce168d3baf5e86e",
@@ -617,9 +644,10 @@
       "usedBy": [
         "v0-bed-A",
         "v1-bed-A",
+        "v4-bed-A",
+        "v5-bed-A",
         "v2-bed-A",
-        "v3-bed-A",
-        "v4-bed-A"
+        "v3-bed-A"
       ],
       "sourcePngSha256": "3ccf25db23d213574158e9d9b0cf714abe3c5286a4ef9ba99fb4af09ec33112a",
       "aiOriginalPngSha256": "6a85f6b5dd2ea2729edd0805310cb1619fdaa6513152caef6119b894ffba17fa",
@@ -659,9 +687,10 @@
       "key": "v0-bed-D-bi01",
       "usedBy": [
         "v0-bed-D",
+        "v4-bed-D",
+        "v5-bed-D",
         "v2-bed-D",
-        "v3-bed-D",
-        "v4-bed-D"
+        "v3-bed-D"
       ],
       "sourcePngSha256": "250d5b95d71516f1ac6de3f94d854d9f389f5e7701f10c4ac301d804e1744692",
       "aiOriginalPngSha256": "9fc55d9758def87774c2623b5aa525a0ca7502d9fedb5a53412d227009235f32",
@@ -688,9 +717,10 @@
       "key": "v0-closet-A-bi01",
       "usedBy": [
         "v0-closet-A",
+        "v4-closet-A",
+        "v5-closet-A",
         "v2-closet-A",
-        "v3-closet-A",
-        "v4-closet-A"
+        "v3-closet-A"
       ],
       "sourcePngSha256": "8eb242f0f7c2b1f91a428c3ca03c7ca8cb77c80c4506e703600db287e4d527f2",
       "aiOriginalPngSha256": "8f3b2d59d1314e9af5b936090e32f1906227e0813d57ed7549ea3e885b18db93",
@@ -718,9 +748,10 @@
       "usedBy": [
         "v0-closet-C",
         "v1-closet-C",
+        "v4-closet-C",
+        "v5-closet-C",
         "v2-closet-C",
-        "v3-closet-C",
-        "v4-closet-C"
+        "v3-closet-C"
       ],
       "sourcePngSha256": "826af41a6114de5e150c0a9088ade35fb3062e8cd13ef6b0b1064493e105893f",
       "aiOriginalPngSha256": "1c9c110a6b7d8c8ecb6f865f242dbf3ac78513346f2b62e09f23d4f7a2fbc592",
@@ -734,9 +765,10 @@
       "key": "v0-closet-D-bi01",
       "usedBy": [
         "v0-closet-D",
+        "v4-closet-D",
+        "v5-closet-D",
         "v2-closet-D",
-        "v3-closet-D",
-        "v4-closet-D"
+        "v3-closet-D"
       ],
       "sourcePngSha256": "842e940eab3b4a210da658b3abb86af79d2f28caff13c2a7e8ecd5d415445091",
       "aiOriginalPngSha256": "5c0526e778de9dd37ca633955fd32fda6724f5fa560ec4dea8c81ae0c4fe1c34",
@@ -756,9 +788,10 @@
       "usedBy": [
         "v0-closet-E",
         "v1-closet-E",
+        "v4-closet-E",
+        "v5-closet-E",
         "v2-closet-E",
-        "v3-closet-E",
-        "v4-closet-E"
+        "v3-closet-E"
       ],
       "sourcePngSha256": "f963f76ee070e696f2e5bd5803d580de5d0f25be893bec550eec80f0267132fa",
       "aiOriginalPngSha256": "130774144409a1aa71596176d0c5683d2ab21cdf5766aa32d1e3c7108e20e649",
@@ -1058,9 +1091,10 @@
       "usedBy": [
         "v0-kitchen-E",
         "v1-kitchen-E",
+        "v4-kitchen-E",
+        "v5-kitchen-E",
         "v2-kitchen-E",
-        "v3-kitchen-E",
-        "v4-kitchen-E"
+        "v3-kitchen-E"
       ],
       "sourcePngSha256": "979789a2dd9e5d0cc320754e4b6df8951049d953269d4727872368db56a2dd42",
       "aiOriginalPngSha256": "66e2b6028cb4618e12a3be9b4406caa836da09d15074f0a6eeec7c029b344c91",
@@ -1408,9 +1442,10 @@
       "key": "v1-bath1-D-bi01",
       "usedBy": [
         "v1-bath1-D",
+        "v4-bath1-D",
+        "v5-bath1-D",
         "v2-bath1-D",
-        "v3-bath1-D",
-        "v4-bath1-D"
+        "v3-bath1-D"
       ],
       "sourcePngSha256": "5f04fcbe718e7dfd41df52aa3721c572b81ea3164e5b10f098b51e1a7ec4cff8",
       "aiOriginalPngSha256": "0f4230ff07e53e6e60bd5c32232c76129c5a6979f44d8db924efcbc8c359588b",
@@ -1502,9 +1537,10 @@
       "key": "v1-bed-C-bi01",
       "usedBy": [
         "v1-bed-C",
+        "v4-bed-C",
+        "v5-bed-C",
         "v2-bed-C",
-        "v3-bed-C",
-        "v4-bed-C"
+        "v3-bed-C"
       ],
       "sourcePngSha256": "937938700df6a53101cd35b438429ed438e74543a36dffdb742fe6ab6f70ef87",
       "aiOriginalPngSha256": "f44910b3e4997071e459ed60cff7d6f91b3256ec6b09ea93eabc5993afcb4a50",
@@ -1562,9 +1598,10 @@
       "key": "v1-closet-B-bi01",
       "usedBy": [
         "v1-closet-B",
+        "v4-closet-B",
+        "v5-closet-B",
         "v2-closet-B",
-        "v3-closet-B",
-        "v4-closet-B"
+        "v3-closet-B"
       ],
       "sourcePngSha256": "28859edfb6531c1b098777442e06c53e7c557c62a9795fd84020265142d8fa08",
       "aiOriginalPngSha256": "f2b06ed75ddae426c9bbd2d5e063b4bda6e2c02b10b23d1e8e93724a1812a6ef",
@@ -1666,7 +1703,7 @@
       "key": "v1-entry-door5A-bi01",
       "usedBy": [
         "v1-entry-door5A",
-        "v2-entry-door5A"
+        "v4-entry-door5A"
       ],
       "sourcePngSha256": "b30fe8e7e2b8c61b93e2cd5d3d5f517d9eb8087bdd8f6e8e99c87cb8831ea68a",
       "aiOriginalPngSha256": "28e23ca5cbe78652b90643093193956cfbeaf83b3189d55fbc826f056e3b5408",
@@ -1843,9 +1880,10 @@
       "key": "v1-kitchen-C-bi01",
       "usedBy": [
         "v1-kitchen-C",
+        "v4-kitchen-C",
+        "v5-kitchen-C",
         "v2-kitchen-C",
-        "v3-kitchen-C",
-        "v4-kitchen-C"
+        "v3-kitchen-C"
       ],
       "sourcePngSha256": "c850366e3a1abf70399c0af76155257cfda5096d03816129967956815ea1f1ca",
       "aiOriginalPngSha256": "fd7735e0aa25c4dcbfa09aec792e4e9b8de472bbc30905c725728f8e41f32c84",
@@ -1859,9 +1897,10 @@
       "key": "v1-kitchen-D-bi01",
       "usedBy": [
         "v1-kitchen-D",
+        "v4-kitchen-D",
+        "v5-kitchen-D",
         "v2-kitchen-D",
-        "v3-kitchen-D",
-        "v4-kitchen-D"
+        "v3-kitchen-D"
       ],
       "sourcePngSha256": "64fdfef2dfd961b28ff15b09ce3a38942f513ba74a067dae9bd5d46173b844be",
       "aiOriginalPngSha256": "86258afa3a88e48689f3d420994676badaa0e904be4bc2390006912a58a2e563",
@@ -1955,9 +1994,10 @@
       "key": "v1-storage-A-bi01",
       "usedBy": [
         "v1-storage-A",
+        "v4-storage-A",
+        "v5-storage-A",
         "v2-storage-A",
-        "v3-storage-A",
-        "v4-storage-A"
+        "v3-storage-A"
       ],
       "sourcePngSha256": "765646360abe1f57de88deae12cc639cca4b44751479369b773d2a82bdac9f9f",
       "aiOriginalPngSha256": "8dd8e26594967f55ceae5a4353f30d8634d8b789db42b7489d6e06f111335199",
@@ -1970,7 +2010,8 @@
     {
       "key": "v1-storage-B-bi01",
       "usedBy": [
-        "v1-storage-B"
+        "v1-storage-B",
+        "v3-storage-B"
       ],
       "sourcePngSha256": "f867101e26c9705d11a7e7ea8f4e31083efade15b81dae8b09973fbf16982fd1",
       "aiOriginalPngSha256": "acc4ee9c1faff5414a03e4ac7702f8a98fa6266a167d8aae9ff47528aaeb7cbf",
@@ -2005,7 +2046,8 @@
     {
       "key": "v1-storage-D-bi01",
       "usedBy": [
-        "v1-storage-D"
+        "v1-storage-D",
+        "v3-storage-D"
       ],
       "sourcePngSha256": "4eb319d4dd38d8dcb4114068cf6452e7f0285df3838b973d35ecc82b5c5095ee",
       "aiOriginalPngSha256": "e909d87063eec96ba798305fa228f0285da577e69e1dc333d2015df7aede00fc",
@@ -2071,9 +2113,10 @@
       "key": "v1-study-D-bi01",
       "usedBy": [
         "v1-study-D",
+        "v4-study-D",
+        "v5-study-D",
         "v2-study-D",
-        "v3-study-D",
-        "v4-study-D"
+        "v3-study-D"
       ],
       "sourcePngSha256": "20f98dc8a536d25349685afd49c6549caef90eccea40b015356310e1f39ad11a",
       "aiOriginalPngSha256": "1d1e49d482907dc3c7693580277af1f06652ca8175b983f71008d0975851241f",
@@ -2113,9 +2156,10 @@
     {
       "key": "v2-back-B-bi01",
       "usedBy": [
+        "v4-back-B",
+        "v5-back-B",
         "v2-back-B",
-        "v3-back-B",
-        "v4-back-B"
+        "v3-back-B"
       ],
       "sourcePngSha256": "9d4c18e3f0a4775116415ba8cd61d29137fb34f9acaede16cfc3078df0c512d1",
       "aiOriginalPngSha256": "739f87de955ea27090faf6f53e32ae2f856106cf5efb66bf8b527ce888e756ab",
@@ -2128,9 +2172,10 @@
     {
       "key": "v2-back-C-bi01",
       "usedBy": [
+        "v4-back-C",
+        "v5-back-C",
         "v2-back-C",
-        "v3-back-C",
-        "v4-back-C"
+        "v3-back-C"
       ],
       "sourcePngSha256": "d84f179632815873b39dbb1d8e0c3877a462ec26e122b63f89ec1d8b3b918f75",
       "aiOriginalPngSha256": "ae5d7ab3d02a22cb73fce319188f7aacb20773b1b88f48ed0352c716e9409ded",
@@ -2143,9 +2188,10 @@
     {
       "key": "v2-back-D-bi01",
       "usedBy": [
+        "v4-back-D",
+        "v5-back-D",
         "v2-back-D",
-        "v3-back-D",
-        "v4-back-D"
+        "v3-back-D"
       ],
       "sourcePngSha256": "781e1ce7c27f1608ef468815fa676a6de53e0d7d4997ed22d8e6172b39814d0f",
       "aiOriginalPngSha256": "4caa3f9ffeb0d188db8d10538e1884c26f5670e37fe20531b02bfdab5392ee0f",
@@ -2158,9 +2204,10 @@
     {
       "key": "v2-back-E-bi01",
       "usedBy": [
+        "v4-back-E",
+        "v5-back-E",
         "v2-back-E",
-        "v3-back-E",
-        "v4-back-E"
+        "v3-back-E"
       ],
       "sourcePngSha256": "9947f5a2bbde226cc79236b645f15b1ba01f4d75e744a0b3bae7611cfb6eceea",
       "aiOriginalPngSha256": "8a9d7ef8dad66dcbaa810062ffbc66ce3f6b502dddc45639960514cb28389dfb",
@@ -2173,9 +2220,10 @@
     {
       "key": "v2-bath1-A-bi01",
       "usedBy": [
+        "v4-bath1-A",
+        "v5-bath1-A",
         "v2-bath1-A",
-        "v3-bath1-A",
-        "v4-bath1-A"
+        "v3-bath1-A"
       ],
       "sourcePngSha256": "68eaec29be7b42574b6d29d3937996d518e17a5975b6fa03d11e647dbc0a8821",
       "aiOriginalPngSha256": "9114dbc9577a1cbc736bca49eef9cab5795a9eeb1481e2c0394b3e8e6bcde8b9",
@@ -2188,9 +2236,10 @@
     {
       "key": "v2-bath1-B-bi01",
       "usedBy": [
+        "v4-bath1-B",
+        "v5-bath1-B",
         "v2-bath1-B",
-        "v3-bath1-B",
-        "v4-bath1-B"
+        "v3-bath1-B"
       ],
       "sourcePngSha256": "ebfe368b810db87457f471ff0596b2c1ef33faa58b420eb56412b09602656e8a",
       "aiOriginalPngSha256": "5da7a6fd7f5e8900dca619ab3b0a37064344b382221f753d90ea1fd0d8aedd1f",
@@ -2203,9 +2252,10 @@
     {
       "key": "v2-bath1-C-bi01",
       "usedBy": [
+        "v4-bath1-C",
+        "v5-bath1-C",
         "v2-bath1-C",
-        "v3-bath1-C",
-        "v4-bath1-C"
+        "v3-bath1-C"
       ],
       "sourcePngSha256": "1a8822fcb5f82219aed8ae0b26e06bb650de77d209e4be1093944fe618afd85a",
       "aiOriginalPngSha256": "415cf8734fc7b6c8ff4863e25e15e2ef689e63016b7fe867e8284080c14bb1e6",
@@ -2223,9 +2273,10 @@
     {
       "key": "v2-bath1-E-bi01",
       "usedBy": [
+        "v4-bath1-E",
+        "v5-bath1-E",
         "v2-bath1-E",
-        "v3-bath1-E",
-        "v4-bath1-E"
+        "v3-bath1-E"
       ],
       "sourcePngSha256": "9e59d379e3b503f79cb3dc9f31f390807c4ae50b1086def4a0924be87e513fe7",
       "aiOriginalPngSha256": "e2c1dfb501039e53cb8b6d3b82d02ce2d8116d4169228019ba008860dca38f44",
@@ -2238,9 +2289,10 @@
     {
       "key": "v2-bed-B-bi01",
       "usedBy": [
+        "v4-bed-B",
+        "v5-bed-B",
         "v2-bed-B",
-        "v3-bed-B",
-        "v4-bed-B"
+        "v3-bed-B"
       ],
       "sourcePngSha256": "51983a4d3bc4925c3f9a0b9fe97d42057429924151de4305ec0d9875547246ac",
       "aiOriginalPngSha256": "af2d9fb3c17be5ab97b7c591b78ad8f05ad85c2e3b6f492b964b432055487c46",
@@ -2253,7 +2305,7 @@
     {
       "key": "v2-bed-E-bi01",
       "usedBy": [
-        "v2-bed-E"
+        "v4-bed-E"
       ],
       "sourcePngSha256": "20675470f8bf844cd9dae2309b72116be092cc0e5d0b9b292de79547733e3361",
       "aiOriginalPngSha256": "f1e7c802b70ada775de7d810b05fbd6acaf297c286f200172b2ce0cd940265be",
@@ -2266,7 +2318,7 @@
     {
       "key": "v2-collection-A-bi01",
       "usedBy": [
-        "v2-collection-A"
+        "v4-collection-A"
       ],
       "sourcePngSha256": "7bd33622375a468c77bbe90c8634b3e7bf210e68e723937ce2475696454d7f72",
       "aiOriginalPngSha256": "e942831d5be86db9e5fa6693cbb03ada2ff14012b30363e353b2506108ad4a9b",
@@ -2279,7 +2331,7 @@
     {
       "key": "v2-collection-B-bi01",
       "usedBy": [
-        "v2-collection-B"
+        "v4-collection-B"
       ],
       "sourcePngSha256": "68b5a32771fdebffc284389caca257896594d5158396a2b6f5a543439f8cc265",
       "aiOriginalPngSha256": "25d90b25ec6e62fc27ea49e0231a6f8440694883d6686433b15242d40c150d5f",
@@ -2292,7 +2344,7 @@
     {
       "key": "v2-collection-C-bi01",
       "usedBy": [
-        "v2-collection-C"
+        "v4-collection-C"
       ],
       "sourcePngSha256": "d2c60db85b66e0e90dcc22ef503f669e207e60798fc367717ec12494fd3dbc1d",
       "aiOriginalPngSha256": "4eb43d6111002759d90e28087021e9fcba68b341699a0d2d8c56527f4620c97e",
@@ -2305,7 +2357,7 @@
     {
       "key": "v2-collection-D-bi01",
       "usedBy": [
-        "v2-collection-D"
+        "v4-collection-D"
       ],
       "sourcePngSha256": "d98f68281c6b1adef366ba83af18746a8f579ee1e5e3653fe66ac46281cbf3ea",
       "aiOriginalPngSha256": "ffe2a85d4c19fe02839e1d8baa0952409173e86a53c7848fcee389c6e37e75dc",
@@ -2327,7 +2379,7 @@
     {
       "key": "v2-collection-E-bi01",
       "usedBy": [
-        "v2-collection-E"
+        "v4-collection-E"
       ],
       "sourcePngSha256": "5268dc39da5acd0adaff37fb409a371516b09846e81f61b9246fb1bec2d2c366",
       "aiOriginalPngSha256": "fd34d3d596294bbef556a9572e04880b9602f69402a20b561663109344ef9286",
@@ -2340,7 +2392,7 @@
     {
       "key": "v2-entry-door5B-bi01",
       "usedBy": [
-        "v2-entry-door5B"
+        "v4-entry-door5B"
       ],
       "sourcePngSha256": "799c503d96e27a34c4f1b04a84816bab5ea015369d1f11cae4b5521050db4675",
       "aiOriginalPngSha256": "fe2bf3ce119e081e9002a9d5078404e57c26112c28c7a8e5376841110f5e6e3c",
@@ -2358,7 +2410,7 @@
     {
       "key": "v2-entry-door5C-bi01",
       "usedBy": [
-        "v2-entry-door5C"
+        "v4-entry-door5C"
       ],
       "sourcePngSha256": "82e68cdfc3e8e4b0b9b8383bc3d188ddf749fdf4b71f2d27738b2b486d5b471e",
       "aiOriginalPngSha256": "e44eb91cbc179c5825b1e49e123d20867a7bb509601b889b2d8bdc3747a1f6cd",
@@ -2371,7 +2423,7 @@
     {
       "key": "v2-entry-door5D-bi01",
       "usedBy": [
-        "v2-entry-door5D"
+        "v4-entry-door5D"
       ],
       "sourcePngSha256": "7a1e60958d3abc61dc463977879633e74675992ea7aeae5837097f4230aeba2f",
       "aiOriginalPngSha256": "412a48acea3f6c7dfe4eac31ab382749a15e68ebaa8453626c98671c5c5544ef",
@@ -2384,7 +2436,7 @@
     {
       "key": "v2-entry-door5E-bi01",
       "usedBy": [
-        "v2-entry-door5E"
+        "v4-entry-door5E"
       ],
       "sourcePngSha256": "77fe596f5bab623b9b53ea39f3250454031b4bddd4190eef5089c5566196403f",
       "aiOriginalPngSha256": "ffe61a642bd78572aee5abfbeb3768df11824b18cabe6f7b572cf75d00a759c2",
@@ -2397,7 +2449,7 @@
     {
       "key": "v2-island-A-bi01",
       "usedBy": [
-        "v2-island-A"
+        "v4-island-A"
       ],
       "sourcePngSha256": "65ab12c5dda950d39dcc7fffb7c72a81ed399ed738dc13a2b99a423f0713d5ba",
       "aiOriginalPngSha256": "e836bd9ef05f691098780eb5332bc2feeddc2bddd3c30dc68a9a69d8a837ac14",
@@ -2410,7 +2462,7 @@
     {
       "key": "v2-island-B-bi01",
       "usedBy": [
-        "v2-island-B"
+        "v4-island-B"
       ],
       "sourcePngSha256": "f98faa3604f16bd87e58120268bbb3ddeae048f46375eebf1ba8c4a9f3e7e4a9",
       "aiOriginalPngSha256": "4e3001bad3a7f762210751ee5f3ac27993df7b27299720ce74428650f98b8893",
@@ -2423,7 +2475,7 @@
     {
       "key": "v2-island-C-bi01",
       "usedBy": [
-        "v2-island-C"
+        "v4-island-C"
       ],
       "sourcePngSha256": "d993264c4cf58206a004a8cf49a6fe00504da74a96440f9d608216e0e19441c5",
       "aiOriginalPngSha256": "e312b450b466b95b1fe8e3468c8b6916e6ceacd43d75a0b2a34fb398a5c34f2f",
@@ -2436,7 +2488,7 @@
     {
       "key": "v2-island-D-bi01",
       "usedBy": [
-        "v2-island-D"
+        "v4-island-D"
       ],
       "sourcePngSha256": "bf79615e9c9afa10fa7e194256579425d9404a1764bb6f467e6351a810af5ac2",
       "aiOriginalPngSha256": "8007adfc86dd82c37554676f85837937d41c5bdaf1b0ec0dbce88677e3a71cc2",
@@ -2449,7 +2501,7 @@
     {
       "key": "v2-island-E-bi01",
       "usedBy": [
-        "v2-island-E"
+        "v4-island-E"
       ],
       "sourcePngSha256": "8ca346326692e6a2ffcbe97c842aae269ba088ecd3fad6192a6084ecff86388b",
       "aiOriginalPngSha256": "b8c54423d3e67a8042856290c4819c589c7b376eeb8f56ecafd6f930e09d6009",
@@ -2462,9 +2514,10 @@
     {
       "key": "v2-kitchen-A-bi01",
       "usedBy": [
+        "v4-kitchen-A",
+        "v5-kitchen-A",
         "v2-kitchen-A",
-        "v3-kitchen-A",
-        "v4-kitchen-A"
+        "v3-kitchen-A"
       ],
       "sourcePngSha256": "88110f0e1b0ed50991ddf8e1602806a39229fd2deead0ba82f54b3ef05e0ce2f",
       "aiOriginalPngSha256": "ebb25cc227ed4a12a429094f49d54f5809ec351cc15f8d69e387d3904429575b",
@@ -2477,7 +2530,7 @@
     {
       "key": "v2-kitchen-B-bi01",
       "usedBy": [
-        "v2-kitchen-B"
+        "v4-kitchen-B"
       ],
       "sourcePngSha256": "baa1c2deb689242285fe1977fb4eb3e87fd3ed846db638a365e1bfaac6036e1e",
       "aiOriginalPngSha256": "c773b8c667d6f72ba9ac9ff0f3f2626a4d26a0edd588e53cd9828eb402ddf3cb",
@@ -2490,7 +2543,7 @@
     {
       "key": "v2-living-A-bi01",
       "usedBy": [
-        "v2-living-A"
+        "v4-living-A"
       ],
       "sourcePngSha256": "f3c818fa6db551a451d931a9decad99a60d1bcbfaa87ff1fc013a6a2bb0066e4",
       "aiOriginalPngSha256": "46395701a731b7db09050d65322c07194ea1ace769a50dbed22f75d47c4834d8",
@@ -2503,7 +2556,7 @@
     {
       "key": "v2-living-B-bi01",
       "usedBy": [
-        "v2-living-B"
+        "v4-living-B"
       ],
       "sourcePngSha256": "f421269f8c2b97700cd4cc80616f6280030495e08090c21b12960e9f7b0f68b6",
       "aiOriginalPngSha256": "34a4d768c7ac3dc03af2e3ba4e72df0ee78882a32ee776dab3abc9de642bd02f",
@@ -2516,7 +2569,7 @@
     {
       "key": "v2-living-C-bi01",
       "usedBy": [
-        "v2-living-C"
+        "v4-living-C"
       ],
       "sourcePngSha256": "34b9db2244ba4bdcd61a318e63563dc4527dd92df5bae5db4b85655921217179",
       "aiOriginalPngSha256": "d3c86f11d14014438e35bc6c3d5abbb6fd3816398424de5ff0864c5926932e05",
@@ -2529,7 +2582,7 @@
     {
       "key": "v2-living-D-bi01",
       "usedBy": [
-        "v2-living-D"
+        "v4-living-D"
       ],
       "sourcePngSha256": "29128a618b085de847cbf22c93a307122752e882b060135b9a54d5fd7ec3a724",
       "aiOriginalPngSha256": "f60f6d1053a819e43177bcbcf4bd9938c4a883841dcd18bfd732562b12efff04",
@@ -2542,7 +2595,7 @@
     {
       "key": "v2-living-E-bi01",
       "usedBy": [
-        "v2-living-E"
+        "v4-living-E"
       ],
       "sourcePngSha256": "e7c9e8e151c01529d57eea98988105b917cb27797435fb0dc0148a0660011b90",
       "aiOriginalPngSha256": "d9f590f89486de229b141eb8fd96f99568c5b5dd4b8a4d80711bd3f0b867de58",
@@ -2555,7 +2608,7 @@
     {
       "key": "v2-storage-B-bi01",
       "usedBy": [
-        "v2-storage-B"
+        "v4-storage-B"
       ],
       "sourcePngSha256": "67ab5f9d30f1154187ac10082aa249359ae85f104a62a3c1c99a019601db74c8",
       "aiOriginalPngSha256": "bca3cb1f28f76883367d6e398ff513b3be877313474a8323d1ef21e38f970aff",
@@ -2568,7 +2621,7 @@
     {
       "key": "v2-storage-C-bi01",
       "usedBy": [
-        "v2-storage-C"
+        "v4-storage-C"
       ],
       "sourcePngSha256": "01df9529610304f639036a54c698d8ae95a77ea3ab126d19ad619f75d2959ea4",
       "aiOriginalPngSha256": "f413a50bad8b366b1d1fc95a8ac8d13593bcdffb455b0d9d53b4c6da6207a6cf",
@@ -2581,7 +2634,7 @@
     {
       "key": "v2-storage-D-bi01",
       "usedBy": [
-        "v2-storage-D"
+        "v4-storage-D"
       ],
       "sourcePngSha256": "f9ad1b9dc3816510a2fa7547e61dba25be041fe40fcf9e9d99baeadaa6ae3e66",
       "aiOriginalPngSha256": "70ba0296e30e6c1018b79b8fa247ba122b90d08e7be1aa3383013a217a3c038f",
@@ -2594,7 +2647,7 @@
     {
       "key": "v2-storage-E-bi01",
       "usedBy": [
-        "v2-storage-E"
+        "v4-storage-E"
       ],
       "sourcePngSha256": "1c5c51fadba98e8e997a2bad8d3042060888d40b9376e0514327b3df12f2a5aa",
       "aiOriginalPngSha256": "1b1338e4dad42dacc48da6bc552690294be0e5d41f55f367fbdbbf50a8a3323a",
@@ -2607,7 +2660,7 @@
     {
       "key": "v2-study-A-bi01",
       "usedBy": [
-        "v2-study-A"
+        "v4-study-A"
       ],
       "sourcePngSha256": "8ee7f6478a895690d30aaff39c40be4da22c87fbe559e825c97f1dc65f4e9d36",
       "aiOriginalPngSha256": "1d023f95803244f04cca07d2f7454106a48b7973c16b5f07e12bfe4fb420fb3d",
@@ -2620,8 +2673,8 @@
     {
       "key": "v2-study-B-bi01",
       "usedBy": [
-        "v2-study-B",
-        "v3-study-B"
+        "v4-study-B",
+        "v5-study-B"
       ],
       "sourcePngSha256": "9a75bfa1da200b44b6e1c2d5ae824bf44ec1df4f69e7835ffec9ba4f3ce6d202",
       "aiOriginalPngSha256": "6ee227cae74cf3049a0671652acbdc9cfe0cc7cceb073c7249b70b3dcba88d4c",
@@ -2634,7 +2687,7 @@
     {
       "key": "v2-study-C-bi01",
       "usedBy": [
-        "v2-study-C"
+        "v4-study-C"
       ],
       "sourcePngSha256": "b3f9d0875d022c48452f506f0f8299fadcb51c3064f1acb584824b9703545168",
       "aiOriginalPngSha256": "77e5a156d041f1943a6e5f6055bb3048ad810f70ab750ad34fbef927e2d0744f",
@@ -2647,7 +2700,7 @@
     {
       "key": "v2-study-E-bi01",
       "usedBy": [
-        "v2-study-E"
+        "v4-study-E"
       ],
       "sourcePngSha256": "9bf2477423a7f4cc5592dfb538947acff6cca8c4ac68837668ada48720959643",
       "aiOriginalPngSha256": "c45202b4b39063e47f744ead93be6fdff76de3aa7dfeb1802b903a6df59dc654",
@@ -2660,7 +2713,7 @@
     {
       "key": "v3-bed-E-bi01",
       "usedBy": [
-        "v3-bed-E"
+        "v5-bed-E"
       ],
       "sourcePngSha256": "b2e50647ae14e338e8b625a33caceb1d92953c31a715e5faf1c0cc15f8465cfd",
       "aiOriginalPngSha256": "158ec1a72b889e0e53f5053d8aef45cd9993c40f1f5d873686d911eb6b1c06d1",
@@ -2671,9 +2724,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-bed-E-vn01",
+      "usedBy": [
+        "v3-bed-E"
+      ],
+      "sourcePngSha256": "682f823974bab35fd70952050fb744af39c1239539fa0b34835cfa3fb996ca23",
+      "aiOriginalPngSha256": "624a192f86a1acfcd90222c151c8bb9aa6745dca7fe3461cd9ad37c9b82bd874",
+      "aiWebpSha256": "fcc53a4d5f5c2925a48d9cd1e4dee0fc66f0f3f99be94afc049ecc9423726b8d",
+      "sourceWebpSha256": "136821fc20037e8c16c1c73a32d4d171dc87317bf6bfb4622a8b5c3fc7a2b31f",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Bedroom E: almost unchanged. The central large WHITE RECTANGLE is the projection screen on solid gray wall; do not turn it into a window or TV. The only change is a tiny view of new display through extreme left doorway. Keep doorway unobstructed, existing bathroom view, bed and dresser.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-collection-A-bi01",
       "usedBy": [
-        "v3-collection-A"
+        "v5-collection-A"
       ],
       "sourcePngSha256": "7bbdce8b7644d88cfbc742c501dbe56a99130e065c22cd6b68f059c358b53baf",
       "aiOriginalPngSha256": "cfcf5f0598aa2ef8affec5162205747f7682fcb58fe4d4b512e280b1cd428aa5",
@@ -2689,9 +2755,27 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-collection-A-vn01",
+      "usedBy": [
+        "v3-collection-A"
+      ],
+      "sourcePngSha256": "2c71df1ce36c03d93f96c055cd2a6310e670c400c1b492c9a976718820a4ede6",
+      "aiOriginalPngSha256": "8ceb8527e5873e6fcd61895d728a04c506267f0e364506e87800d072af703d5d",
+      "aiWebpSha256": "8d77f9390e721a650296676157552017d30cc48d1a0adf22d3ee5e5a9dcdef8c",
+      "sourceWebpSha256": "b776d62028183f46f8d26da79442fc54cfebfb832986f4446af0f22c144d2b5b",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Collection A: keep the large wall/pier foreground LEFT and middle solid tall graphite cabinet. Change only very narrow far-right glimpse to show curved island/glass edge; do not invent new window or open up opaque wall.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [
+        {
+          "instruction": "移除廚房門後錯加的中島、圓凳與展示玻璃櫃。",
+          "prompt": "Edit image1 only in the view through the kitchen doorway on the right. The curved bar, stools and tall glass display inside that doorway are HALLUCINATIONS. Remove them completely. Restore the compact kitchen through that opening exactly as in image2 (previous correct photo), crosschecked with image3 geometry: gray tiled floor, gray kitchen cabinetry at left, solid architectural pier/right return wall, far rear service area, no bar and no stools. Do not invent another room or a full-height window at the doorway. The curved island is outside this camera frame to the right, and MUST stay out of frame. All foreground gray wall, black storage double doors, kitchen black doorframe and horizontal glass rails, black ceiling, herringbone wood floor remain unchanged. Keep photorealistic material lighting.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-collection-B-bi01",
       "usedBy": [
-        "v3-collection-B"
+        "v5-collection-B"
       ],
       "sourcePngSha256": "facc8278c4dad7ad74c429724a69da65018341844a8f2b848da111e414fb3a81",
       "aiOriginalPngSha256": "fa277c23a7f66955086a76990dd4e0d3da995ea7cea87afb99f73886a4a7dda0",
@@ -2707,9 +2791,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-collection-B-vn01",
+      "usedBy": [
+        "v3-collection-B"
+      ],
+      "sourcePngSha256": "39cd395a855ae8efc09354b3e1497ab7328ba84fdd503ac349631299fe6a8f43",
+      "aiOriginalPngSha256": "7849805d9b616d4686bdef17c3bbdaaa4b80eece311d7e7436c5dc393ea17992",
+      "aiWebpSha256": "78717e0fa592f88eea97c1a79a6ab840ddfff36f6367c7eac134630a76591dff",
+      "sourceWebpSha256": "6bc21929e2f7d8e0516dbc613634d05bded8ae72d05bea245bd9ecfbb158c93c",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Collection B: open collection zone toward living; keep foreground pillar RIGHT, sofa and windows. LEFT cropped rectangular counter becomes V1 curved island with visible circular pedestal stools. Retain open passage; do not add a room enclosure or extra wall.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-collection-C-bi01",
       "usedBy": [
-        "v3-collection-C"
+        "v5-collection-C"
       ],
       "sourcePngSha256": "58176b4b31384e63e1929819248e796226e49328be706c4eba25091727342814",
       "aiOriginalPngSha256": "9cd95ef3d297e768a25cf1dd0146e818272f8a4c9266b5dbc0acbe9eb0fe5c60",
@@ -2720,9 +2817,27 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-collection-C-vn01",
+      "usedBy": [
+        "v3-collection-C"
+      ],
+      "sourcePngSha256": "d7e02f43484ade9c6b6c9e64fc3974a0e64a24b662b6d73c3547575f489a1d6b",
+      "aiOriginalPngSha256": "3911133d7e777e7c2e47ebd64b770f464ba514f41fd9477de1a80aa3b42ecff5",
+      "aiWebpSha256": "0c1e5646554e41dd2e7b3eb44cf9b8262ab125b0ac8b77a1fa319cc88f54dd20",
+      "sourceWebpSha256": "a7894667d6d8cf52ffd191e68d7ad0037890575378c184f85528aa431e5a4d41",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Collection C: keep foreground tall solid graphite cabinets LEFT, kitchen doorway center. Right cropped island becomes curved with wine fridge lower front and floor-to-ceiling glass cabinet above behind it. Keep same camera.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [
+        {
+          "instruction": "頂天雙面玻璃櫃改回透明簡潔層板，右側酒櫃恢復模型直線端面。",
+          "prompt": "Correct only the narrow right edge of image1 using authoritative geometry image3 and style image2. The new tall double-sided glass cabinet must be transparent and sparsely furnished exactly as the model, no rows of wine glasses, no additional glass compartments or opaque backing. REMOVE ALL champagne flutes, glasses, cups and extra glass shelving introduced in the right-edge tall cabinet. Restore its broad simple transparent panes/shelves and slender straight gunmetal frame matching image3. The small lower wine refrigerator and island END face in the lower right are RECTANGULAR with a straight vertical front/side edge in this view, not a rounded bulging counter corner. All foreground storage doors, gray rounded architectural wall beside refrigerator, corridor to bedroom shelving, white refrigerator face, kitchen doorway at left, ceiling, camera, floor and their positions MUST stay unchanged. The tiny background white rectangle is an object on shelving, not a window. Photorealistic landscape1536x1024.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-collection-D-bi01",
       "usedBy": [
-        "v3-collection-D"
+        "v5-collection-D"
       ],
       "sourcePngSha256": "96daa4fb55658bb182ec1801a95bd9e38ace2f657bcfbecd023b20de2740829d",
       "aiOriginalPngSha256": "f6e7bc8a34fa109b9299726afbd349be834030490ee51b8252490da641634b60",
@@ -2735,7 +2850,7 @@
     {
       "key": "v3-collection-E-bi01",
       "usedBy": [
-        "v3-collection-E"
+        "v5-collection-E"
       ],
       "sourcePngSha256": "659e8aa9c9f170532197addc9f879346e07d4898c93e5e20e17fb5823e5489bd",
       "aiOriginalPngSha256": "1b94f35a90e6ac014095ea34381eda2a3d0d0a5437b9efe10dce6d457cdb7e9b",
@@ -2748,7 +2863,7 @@
     {
       "key": "v3-entry-door5A-bi01",
       "usedBy": [
-        "v3-entry-door5A"
+        "v5-entry-door5A"
       ],
       "sourcePngSha256": "62d83f46dffcf233e8c6af13e4236e78b6a458a428cce6129ad11b3139fb0f3f",
       "aiOriginalPngSha256": "32baedfd84e3aa66d4ec9896d260bcadd9ab1f3c8dba4ce44d87d7e3e1e1e8ae",
@@ -2759,9 +2874,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-entry-door5A-vn01",
+      "usedBy": [
+        "v3-entry-door5A"
+      ],
+      "sourcePngSha256": "1377f52d0438a403ed1371ee28908648d55e943cea02f2ec17c384cef56d3ce0",
+      "aiOriginalPngSha256": "ad9b0c8d9249385b88f0ad9bd47ca5dd8ed0be50313e824e6dc714f86c80cabf",
+      "aiWebpSha256": "5c57f1745ea9a86c46ef36f4199e3d64caaf08cb758681a696dfaba3a904e183",
+      "sourceWebpSha256": "698a175b6bc74f2ed0e974b5e2bd78089f9692120d166a1ff3c1f676fb14f633",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Entrance A is looking left into a mostly blocked wall close-up. Keep the large central solid gray wall and dark left edge. Only the very narrow far-right glimpse of the public room changes; do not make this wall glass or invent a new view.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-entry-door5B-bi01",
       "usedBy": [
-        "v3-entry-door5B"
+        "v5-entry-door5B"
       ],
       "sourcePngSha256": "2590321ca4ec59a10c5a064664d1c91d19345b7648a66c87c57445cecbc76a9f",
       "aiOriginalPngSha256": "4fdef9696fe67ce92e47ca3dd779c85988a4f245e66cc1736caf2329907e648d",
@@ -2772,9 +2900,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-entry-door5B-vn01",
+      "usedBy": [
+        "v3-entry-door5B"
+      ],
+      "sourcePngSha256": "1ca2b1d5761ddadeab16ceedad912310a65567faae5ee5e6874f75064f79ccc5",
+      "aiOriginalPngSha256": "a1a30c515a69b15b964ea31d571e76c2ea0d4c878aa94df84cb5fe14d61e7b54",
+      "aiWebpSha256": "f97eacb3fb2300a6d330e9103fca86dfb1f5aaca70ee79474cfa00f801002f3c",
+      "sourceWebpSha256": "31baa67894ff25d740d96ad724da5905458fb96673863da27830b4aab0ff829b",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Entrance left-forward B: preserve the huge foreground pier covering the LEFT HALF. On the right reveal the shorter curved island in graphite gray, a single visible circular stool, and its floor-to-ceiling shallow double-sided glass display behind it. Keep the white opaque door beyond as an opaque door.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-entry-door5C-bi01",
       "usedBy": [
-        "v3-entry-door5C"
+        "v5-entry-door5C"
       ],
       "sourcePngSha256": "0f7d01ae5e64c555d4c48690b5da42e74b10dc7e2bb3cd1f6a43cf931654c179",
       "aiOriginalPngSha256": "e1b3d25a69035f9fc875d02edde1ee0e0a1bec19ca0872c5f3ab028d1b30928e",
@@ -2785,9 +2926,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-entry-door5C-vn01",
+      "usedBy": [
+        "v3-entry-door5C"
+      ],
+      "sourcePngSha256": "68e2e7ce2758eea18451c3b826a84191ffec9a71998ace5ff0d8e977a60e55b0",
+      "aiOriginalPngSha256": "9d331a124aa67d9d4ef738f7a0dc063f6ae4775f0bc27314b2bc4f7b27ca5915",
+      "aiWebpSha256": "f2fe99f9f5bae2b10bbae87e5376c8da3064f75e74c1ef83584ae830749bef80",
+      "sourceWebpSha256": "fe1a101bf77f44a10eb1e124fd35e56eebe9a4f1954b969eb9ea302e892ae390",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Entrance straight C: the old long rectangle becomes a gently curved/C-shaped island with two circular pedestal stools OUTSIDE the curve, separate round drinking basin and black faucet, black IH. Tall narrow double-sided transparent glass cabinet spans behind island, not a window. Keep foreground entry console/bag and right sofa.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-entry-door5D-bi01",
       "usedBy": [
-        "v3-entry-door5D"
+        "v5-entry-door5D"
       ],
       "sourcePngSha256": "5d5efef73a5daf9d9c7a41a34bdd3be0de197602e4b06853f9ab4fe8176bf389",
       "aiOriginalPngSha256": "bf360e4a8ae03fc4fc62fb40e722134e7cbbd80121083473d5abd17ad8c255d1",
@@ -2798,9 +2952,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-entry-door5D-vn01",
+      "usedBy": [
+        "v3-entry-door5D"
+      ],
+      "sourcePngSha256": "ad371ad8097bac8ba65cb26d81a9366db80ca4fcda4827eb18d88d40a55eb9ea",
+      "aiOriginalPngSha256": "6b05d3343ef65deaebc5e09368dcb30c3e3a06f8f50f25a90f75fd0314301d31",
+      "aiWebpSha256": "6ddc9c0b04e22a83b73566dd08e877cff6726dd49d70bb7afb5aa347d73d2332",
+      "sourceWebpSha256": "1dabf77e1d9636d939747e0599d37f2292dadfd807af19cd57dbc96ee35daf06",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Entrance D: only the left cropped old island becomes the curved island, with tall glass display occupying LEFT EDGE. Keep fixed sofa, TV edge, entry console/bag, black ceiling and study.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-entry-door5E-bi01",
       "usedBy": [
-        "v3-entry-door5E"
+        "v5-entry-door5E"
       ],
       "sourcePngSha256": "7535fcd5050ba3b885f62865165880302d944fe751cd19269c8f4301b3cceac9",
       "aiOriginalPngSha256": "04bea11e8475b0083260736073a9fadd8e4003c51875502cc581dfec40634739",
@@ -2813,7 +2980,7 @@
     {
       "key": "v3-island-A-bi01",
       "usedBy": [
-        "v3-island-A"
+        "v5-island-A"
       ],
       "sourcePngSha256": "fbf12ab2d015d82481eeb92aac1140c18316f6df18ab7279d8874c998738508d",
       "aiOriginalPngSha256": "5609a5a58cd8043063246aa3e652b4b943e7cc98e36466c93b5506733d232a58",
@@ -2824,9 +2991,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-island-A-vn01",
+      "usedBy": [
+        "v3-island-A"
+      ],
+      "sourcePngSha256": "d787cfdb820418bd85b280c19ab8ebcb58071d053c05a95bd9fe361e9cb47188",
+      "aiOriginalPngSha256": "796513b3a0b717801e0f678e4d5d0f67064724603597980c6184aedd9f6bb835",
+      "aiWebpSha256": "c9de537a2de53fa0f96d1889b0822b795acc1efcb9ccfb62852462980a80c100",
+      "sourceWebpSha256": "d588c59358ce859a017da0aef48bd48580debeb71f441787a23906a51659703f",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Island A front: retain the V1-style curved counter and two outside stools, shallow floor-to-ceiling glass cabinet, black induction hob and tiny round drinking bowl. REPLACE the old enclosed collection cabinet wall background with new model's open collection zone and tall charcoal cabinet at LEFT. Keep white opaque door left of glass.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-island-B-bi01",
       "usedBy": [
-        "v3-island-B"
+        "v5-island-B"
       ],
       "sourcePngSha256": "ba3fbb600acd2b0da64363413b9f7bda38617314f928a392e96f28c288b53420",
       "aiOriginalPngSha256": "2cc4b17c260312471b3aafd06f1e663b1c84bfecf0b293256413ad7b09bca827",
@@ -2837,9 +3017,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-island-B-vn01",
+      "usedBy": [
+        "v3-island-B"
+      ],
+      "sourcePngSha256": "abd43ad43664c0c1f6341200875c2469a682c8b7dc73f90ff9bd847a6a7ad608",
+      "aiOriginalPngSha256": "49ab7fc03b749b68be4b53981c2cd34d62543e37fe8dcdc3be69b05a4b032e06",
+      "aiWebpSha256": "1550eebe2d062049b6ea65a90b4223f0afce5ddf9c6bc84aacddfbfde4b7d1f2",
+      "sourceWebpSha256": "82c4764134a64a23682cd97a968ede6f08f52cd1191d14ac22b2b2d95ff3ad86",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Island B from service side: curved stone top, black wine fridge foreground below; tall glass display to LEFT; distant TV is FIXED on uninterrupted full-height gray stone wall without overhead TV cabinet. Keep open view toward sofa and entry. Do not restore an enclosed collection room.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-island-C-bi01",
       "usedBy": [
-        "v3-island-C"
+        "v5-island-C"
       ],
       "sourcePngSha256": "7875eadcad40d842d28db5f20928a9bcd7e4c009ce5442fcb18534f893393826",
       "aiOriginalPngSha256": "5c4e832c8d21b613660d87625da061845c2aaea6a4371e3e1b0ab37e95b22c38",
@@ -2850,9 +3043,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-island-C-vn01",
+      "usedBy": [
+        "v3-island-C"
+      ],
+      "sourcePngSha256": "cc8ac7a9db0d3d1157117c92ef55ef015a4747d04ff8fa2f175feacc2ddff4ae",
+      "aiOriginalPngSha256": "9f4b52d502d78f5ed72cde245e579902d8bc3f2f950d0e81d448ae914f7e1a8f",
+      "aiWebpSha256": "9470b34896874d40adfac9eba303bfc156f4deacaa73e8007671f174167b3c97",
+      "sourceWebpSha256": "6b9ce96e5fc8e8ed8c5fb317e5375ca2821b28abf900779b86685de8320c3244",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Island C through glass cabinet: keep cabinet frames, clear transparent shelves and handles in close foreground. Beyond must be the open collection area and V4 base cabinetry according to model, NOT an enclosed collection room. Preserve exact occlusion and pale opaque door right.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-island-D-bi01",
       "usedBy": [
-        "v3-island-D"
+        "v5-island-D"
       ],
       "sourcePngSha256": "6aef08c602988f4da84d1b7ebe15480fbdbe333399cbc30d3aa52e0773afd0b3",
       "aiOriginalPngSha256": "1f1ae63bdb77adc6d9460574ee864e2aaf1317cd98b0e28cf4d6d102cc38ba1e",
@@ -2863,9 +3069,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-island-D-vn01",
+      "usedBy": [
+        "v3-island-D"
+      ],
+      "sourcePngSha256": "d58a13ab76873e67b7079d76d83faf15a59b51d28a06b70d455e58433479ec40",
+      "aiOriginalPngSha256": "99651a009432935f76da531bbd7370707a4ab8ca60586654b12f110090433de7",
+      "aiWebpSha256": "06faf5b8b93059858dea75a58bf3c25a7583bf1ce9ef9b8d68b79bd4c5c768d4",
+      "sourceWebpSha256": "1a835bdaa42252ca4032a71f34718b7a42f9e586e53ca43200a8f64311902f74",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Island D along top: keep close black IH at bottom-left, curved top right, two outside circular stools, tall glass cabinet left. Distant living sofa/black TV/full-height gray stone wall preserved; no upper TV cabinet. Do not move equipment.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-island-E-bi01",
       "usedBy": [
-        "v3-island-E"
+        "v5-island-E"
       ],
       "sourcePngSha256": "4ae5bafa26931c177b8943113cce34c90ebf3f9b16fbcec3aba8bb93d0f686a5",
       "aiOriginalPngSha256": "e3b6a4b7b248b711ee0e886907562a31b2ee6d007fb35b54ad65f4111bd2c7ec",
@@ -2876,10 +3095,24 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-island-E-vn01",
+      "usedBy": [
+        "v3-island-E"
+      ],
+      "sourcePngSha256": "4c4f125df69d961450f1b1e159a457c28808df0f29b5310eab6a3a34d1352c7f",
+      "aiOriginalPngSha256": "c339cc1d5e674a0c798e019c8dc98e7eff105552a6613d33111e802d992534ca",
+      "aiWebpSha256": "973069424ecde6a401316af587effee3d6d77bcfbe93b0c0d2bab6529420d775",
+      "sourceWebpSha256": "2e408574376182035844d4c844e6ab6f82664270bbfcf021943c8ba76170faae",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Island E overhead drinking-bowl side: keep small round bowl at bottom-right and single black faucet, curved top with black hob away, two stools outside arc. Far-left collection area is OPEN with original V4 display/deep storage; the old V1 continuous enclosed cabinet wall must not remain. Keep opaque white door and black ceiling.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-kitchen-B-bi01",
       "usedBy": [
-        "v3-kitchen-B",
-        "v4-kitchen-B"
+        "v5-kitchen-B",
+        "v2-kitchen-B",
+        "v3-kitchen-B"
       ],
       "sourcePngSha256": "b90abed530224b3d9a3817243216a2ea82731fb5d3daf053a4e8a9c09a1a8923",
       "aiOriginalPngSha256": "ec535712fd7e43badb68254fb1696425c6a0c165a936cee3881904b39905d5be",
@@ -2892,7 +3125,7 @@
     {
       "key": "v3-living-A-bi01",
       "usedBy": [
-        "v3-living-A"
+        "v5-living-A"
       ],
       "sourcePngSha256": "88f659f7c41e5b4fdbcdce90e5990e7535e4fe6f7a5ce676fa3f158f0f41add3",
       "aiOriginalPngSha256": "1a59f401a7afb0d8d2dfd7a1555913cdb4b57f0b84ce2f84525f263e85ebeabb",
@@ -2905,7 +3138,7 @@
     {
       "key": "v3-living-B-bi01",
       "usedBy": [
-        "v3-living-B"
+        "v5-living-B"
       ],
       "sourcePngSha256": "0c94091355ccd314332fb32c9a022faacc7111a858d3acc363138e865207725f",
       "aiOriginalPngSha256": "346c5c963e66576903e8bcbd9317266530869b0031fd0e44a62130bca436ddcf",
@@ -2916,9 +3149,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-living-B-vn01",
+      "usedBy": [
+        "v3-living-B"
+      ],
+      "sourcePngSha256": "3395ecd685d649346511ccc9c63c7e9910d0e665a30cde298e8eb329d565939d",
+      "aiOriginalPngSha256": "6a34d5efc3c89c86da704930494842e3b0ad93544169460f0e2dd4710dd8bc5b",
+      "aiWebpSha256": "aa608a9ce2a4ecf86878a1973f70f8fbda403def88f981df6ca64bd77d6cd8f8",
+      "sourceWebpSha256": "7e83b4d20c1b81ff4f9eedebe9b2d8ba1d1cea28809589b7f1a4d2342a887414",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Living B looks back at sofa/study: change LEFT side to curved island and tall shallow glass display, with visible exterior round stools; preserve the entire L sofa, right windows, coffee table, study partition and equipment.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-living-C-bi01",
       "usedBy": [
-        "v3-living-C"
+        "v5-living-C"
       ],
       "sourcePngSha256": "f44c60c1efdb0772bce8e8c9d7c22202e6c3bfe14edccf297d44538e6871e36f",
       "aiOriginalPngSha256": "f587dd5d3c420d7de6055a82750fad0784edffbed8f78c1a4cdec5a91b3ea990",
@@ -2929,9 +3175,27 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-living-C-vn01",
+      "usedBy": [
+        "v3-living-C"
+      ],
+      "sourcePngSha256": "b0b757c77dc2e7cfdf07cea0e298ecd2b83bdf81a260f9b9a591e6283e296671",
+      "aiOriginalPngSha256": "18e29915c3405faf0c3d1792f46f2e86eb09bd00eec983dba3dcb6e13f800ef0",
+      "aiWebpSha256": "2444ec915dd4bd4a8cb0c0792cf516d2caa03185b973e36ea1a0b008d245de14",
+      "sourceWebpSha256": "c57bd312579a00e2b73c67718bacb0e99c986704222ff808d5d938ff839c8c2b",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Living C: replace background rectangular island with curved one and two exterior round stools, glass display behind curved top. The tall cabinet is seen obliquely and is transparent from both sides, not full-width wall. Preserve sofa foreground, entry console and study doors.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [
+        {
+          "instruction": "移除頂天玻璃櫃內新增的小雕像並校正飲水龍頭。",
+          "prompt": "Edit this interior photograph with two strictly local corrections only. Keep the camera, walls, all cabinets, curved island, stools, couch, monitor, bookshelves, windows, lighting and material finish exactly unchanged. The tall transparent glass cabinet attached to the curved island must NOT be filled with small statues or bottles: remove those added figures/objects from that cabinet, retaining only the single small dark vase and the few simple neutral books shown in the authoritative second reference model. This must remain a transparent double-sided cabinet, not an opaque display wall. The island drinking faucet must be a single slim matte black angular L-shaped faucet as in the second reference, next to its small ROUND bowl. Do not change any other room's existing figurine display. Preserve photorealistic quality, landscape1536x1024.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-living-D-bi01",
       "usedBy": [
-        "v3-living-D"
+        "v5-living-D"
       ],
       "sourcePngSha256": "ce987c82be6ff8a58a0d34c3008bc69ae63eddc2001662321b1c9e708ac4d521",
       "aiOriginalPngSha256": "8784d2f3a9c99dc2f1e8c4dd9064eed61eb0bc2d6abc8143f1d5a5e8ad08b8e6",
@@ -2949,7 +3213,7 @@
     {
       "key": "v3-living-E-bi01",
       "usedBy": [
-        "v3-living-E"
+        "v5-living-E"
       ],
       "sourcePngSha256": "70de7216ede09d6e24df733889f0d1f6cde1dc07ff2b89b4237d7ba3c2467a89",
       "aiOriginalPngSha256": "db1a7f895fa0ad399b8de6fc7b18eda29fbbfe8ed46a9abb2d375c109576b7f0",
@@ -2960,9 +3224,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-living-E-vn01",
+      "usedBy": [
+        "v3-living-E"
+      ],
+      "sourcePngSha256": "de389e56b596525ff4cd3cbcb62acf3566edc98920d9f4c276bea00d45d3ebc6",
+      "aiOriginalPngSha256": "9689dea57c61ab2183cba790138994c6bb217e54b4546f3f8433ae8f59d4ed85",
+      "aiWebpSha256": "2283915a4dbb64faabca917df3864d02816938539dbe43375adaadedbb121cfa",
+      "sourceWebpSha256": "1f0d9a546d5b7952f072839b5f60eb0ccd067de618d5e3c374653053eb950992",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Living E: medium-wide public view, curved dark island and two round pedestal stools left-background, tall double-sided glass display behind island. The open original collection area remains open. Preserve L sofa at right, coffee table and study at back.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-storage-B-bi01",
       "usedBy": [
-        "v3-storage-B"
+        "v5-storage-B"
       ],
       "sourcePngSha256": "673c46cde0fc924b445380cef6a6160b8e4b251c36abc951a4666977e5f7e0dc",
       "aiOriginalPngSha256": "8dbd0f9409b6c22b8ef5c92f26186182286922afa352d23d28ae1a0e39733462",
@@ -2980,7 +3257,7 @@
     {
       "key": "v3-storage-C-bi01",
       "usedBy": [
-        "v3-storage-C"
+        "v5-storage-C"
       ],
       "sourcePngSha256": "577574baf727b6fcf3a3832e0f880d10615394e8e1140cb9f0523177a745dea6",
       "aiOriginalPngSha256": "08d743b41b7538f9df799846ef8f78554960a028db003660e444598c274d4eb2",
@@ -2991,9 +3268,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-storage-C-vn01",
+      "usedBy": [
+        "v3-storage-C"
+      ],
+      "sourcePngSha256": "39a0b10dfef72205ebd5707319a41a2bf7298a1dc361a947ffe9a1c187bd3c37",
+      "aiOriginalPngSha256": "b6ca085f871d144913166d0c8b5a9a5e7c8eee54e9a39db57ac0e595e2a053d7",
+      "aiWebpSha256": "bb45712bf961dd8dd39741e9d5cbde30710f5f18c2aaf5b6daf1dc1ecef5252d",
+      "sourceWebpSha256": "f777470728071e8b1050bae5ec674eba42e4a61366f8e353130a43445a42a7f7",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Storage C: keep white/gray empty shelving and doorway foreground, no added items. Only the far public view gets curved island and tall glass display; distant fixed TV stays on full-height stone without overhead cabinets. Do not move/remove near shelf divider.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-storage-D-bi01",
       "usedBy": [
-        "v3-storage-D"
+        "v5-storage-D"
       ],
       "sourcePngSha256": "ce57bd0b8874b6698d90503143e18690192d4042c02ea73df2fc990fc0f6d66b",
       "aiOriginalPngSha256": "8b8743f5293a341f614d54a6ee23072b9a4b0e1fc93880b99f8afd2215d2f1a5",
@@ -3006,7 +3296,7 @@
     {
       "key": "v3-storage-E-bi01",
       "usedBy": [
-        "v3-storage-E"
+        "v5-storage-E"
       ],
       "sourcePngSha256": "fbb946231f52e6d260318e790a48beaa37b6391f17aa88445ed0497a4411a5be",
       "aiOriginalPngSha256": "d825c21d2353c7a960d49395e180c6c63c7545cf892c285e804610228d56ea23",
@@ -3019,7 +3309,7 @@
     {
       "key": "v3-study-A-bi01",
       "usedBy": [
-        "v3-study-A"
+        "v5-study-A"
       ],
       "sourcePngSha256": "9f1892c863b9c1a50a76de0820732a580bcf3f261a48d254ea237a67a7f86cad",
       "aiOriginalPngSha256": "ffa35393ae13109bf4a7c74e1b56f84ba8f2888d44884c0f8e0988b357d0a4c0",
@@ -3030,9 +3320,22 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-study-A-vn01",
+      "usedBy": [
+        "v3-study-A"
+      ],
+      "sourcePngSha256": "fb1b91167c8c5d861287d0a896fea28670b64de22bb610f7625b256b44edad0f",
+      "aiOriginalPngSha256": "01e1d426414cb63f96cd9ae5b41b35310c672c546ef7b538721ab0a11a597834",
+      "aiWebpSha256": "e913bf23ae83ed00066f1a50260a660b499fddfbd1d79c56b34c3146c4fff978",
+      "sourceWebpSha256": "12e4ca202d636cdd0c0397a41f902846c1192f94a18568697b27cd085cc4f524",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Study A: keep the desks, cabinets with figures, large windows and black ceiling exactly. Only the sliver at the FAR LEFT doorway changes to show the shallow glass display behind the public island; no new windows or desks.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-study-C-bi01",
       "usedBy": [
-        "v3-study-C"
+        "v5-study-C"
       ],
       "sourcePngSha256": "a30fcfbe8af655427155e8011e3aa2b5068d63bf3ce24f38a1aa4c5fa2e98516",
       "aiOriginalPngSha256": "1bca083bc0d7d2f145593dcca73e2b7f91bf1fbad43dc95fc930ba4ecd10c8e0",
@@ -3043,9 +3346,27 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
+      "key": "v3-study-C-vn01",
+      "usedBy": [
+        "v3-study-C"
+      ],
+      "sourcePngSha256": "95b80599a5c8ab4f2c88adfea20232933382e8047e41bf83a2a08e69cc0c4005",
+      "aiOriginalPngSha256": "f21d66e123975dc5136814fb5a65c1c283ffde716d98f5e1feee82df510369b4",
+      "aiWebpSha256": "7bc8102b8810d0d4149708a6d80edf95e4d7a15d919861cc353d3a2c62f8146b",
+      "sourceWebpSha256": "028ff987954eee53919b6178fb3a4a633df7a325ec111f339696429b07250468",
+      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Study C: keep two desks/office chairs, glass partition and large display cabinet. Only the PUBLIC AREA behind glass, left background, changes to the curved island and tall glass cabinet. No changes to study storage, windows, screen positions or geometry.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
+      "corrections": [
+        {
+          "instruction": "移除書房反向視角錯置於電視前的玻璃展示櫃與中島。",
+          "prompt": "Strict local architectural correction of image1. The generated tall statue cabinet and thick white counter directly in front of the living-room television (background center-left through the study glass) are WRONG. Remove that entire misplaced cabinet and thick white counter from that background, restoring the unobstructed living room/TV view shown in reference2 (previous correct photo) and reference3 (authoritative new model). The new V3 curved island is farther to the right OUTSIDE this camera frame, its tall glass cabinet is largely OCCLUDED by the right wall/bookshelf: DO NOT move it into the center of the room to make it visible. Only the two small round stools are barely visible through the far center-right doorway beside the wall as in reference3. Retain the foreground double desks, black monitors, chairs, PC, three-by-three figure display, bookshelves, glass partition, TV, black ceiling, gray walls and low-red brown-gray herringbone flooring exactly. This is not a new design or a new camera. Output photorealistic landscape1536x1024.\n"
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
       "key": "v3-study-E-bi01",
       "usedBy": [
-        "v3-study-E"
+        "v5-study-E"
       ],
       "sourcePngSha256": "72085e926f5314932c4c26008217cbd8e6cfa68dd211d02b208a8583d01a6c6f",
       "aiOriginalPngSha256": "eab993704bad2a78f608efceac0321e0aa756bbb73bd23e0c5c17000a886311a",
@@ -3058,7 +3379,7 @@
     {
       "key": "v4-bed-E-au01",
       "usedBy": [
-        "v4-bed-E"
+        "v2-bed-E"
       ],
       "sourcePngSha256": "73100f26cfcd3382cc11dc78da6b0d05ba9f579d65ff81aea8e5cbdc093118d8",
       "aiOriginalPngSha256": "a8be8b6d4154c7bd609f502ff539498a42a7b974dcbbd7e3c2f20eebffc20135",
@@ -3071,7 +3392,7 @@
     {
       "key": "v4-collection-A-bi01",
       "usedBy": [
-        "v4-collection-A"
+        "v2-collection-A"
       ],
       "sourcePngSha256": "4400fac71a807103ba831a2fa47441424f6622bc057e94d955a22a5f133f3f6e",
       "aiOriginalPngSha256": "4a85431aee34bbc76f7843407690e0181fdfa934fa257ad741afca669d507039",
@@ -3089,7 +3410,7 @@
     {
       "key": "v4-collection-B-au01",
       "usedBy": [
-        "v4-collection-B"
+        "v2-collection-B"
       ],
       "sourcePngSha256": "e086fb81406875c535e68367e6d2830bdcebf4638c7d23e97a0d342898ce402a",
       "aiOriginalPngSha256": "0ef4627e790d7bcee08580b69118af104320a9ffdb1a6ebd54086f46d4d8eed6",
@@ -3102,7 +3423,7 @@
     {
       "key": "v4-collection-C-bi01",
       "usedBy": [
-        "v4-collection-C"
+        "v2-collection-C"
       ],
       "sourcePngSha256": "ab1a2e71dac52abba3389cbf47598cf5af2a3c5c006921605cc122dd4d9fb221",
       "aiOriginalPngSha256": "769ce021e166b4ab139fa41fad32f34e04d97124b9804977bb5c0c62f4ae53d1",
@@ -3120,7 +3441,8 @@
     {
       "key": "v4-collection-D-bi01",
       "usedBy": [
-        "v4-collection-D"
+        "v2-collection-D",
+        "v3-collection-D"
       ],
       "sourcePngSha256": "f963b72b6bcb7b244da2295162c3ac655a66acdcb913bfcb9e158f0c2544f25d",
       "aiOriginalPngSha256": "b248083bd4fdf2caf061e34ed94da7083317c8cdf5e58e883da8ebee49ccc6f0",
@@ -3138,7 +3460,8 @@
     {
       "key": "v4-collection-E-bi01",
       "usedBy": [
-        "v4-collection-E"
+        "v2-collection-E",
+        "v3-collection-E"
       ],
       "sourcePngSha256": "3f31385045aa62becd6030469f418e49c2869c568e5c5bc26150fd125c93e5e7",
       "aiOriginalPngSha256": "2b712890b6c6171d16c9bd088c4b98de8b2d64f5c6066723bde55dc376be8413",
@@ -3151,7 +3474,7 @@
     {
       "key": "v4-entry-door5A-bi01",
       "usedBy": [
-        "v4-entry-door5A"
+        "v2-entry-door5A"
       ],
       "sourcePngSha256": "dd3f2ecf2cab869299b1b58bab74de69505812bcff38fdf2b9713f2d10003c05",
       "aiOriginalPngSha256": "d28e6c61137b90c9704c80282d78d63cdc3c0bb5a22a8d0700e8195dd651f905",
@@ -3164,7 +3487,7 @@
     {
       "key": "v4-entry-door5B-bi01",
       "usedBy": [
-        "v4-entry-door5B"
+        "v2-entry-door5B"
       ],
       "sourcePngSha256": "95b8a117895096b7573ef2a40ad9765cebd9e102ba102eb0c08dcb8fee7b36f1",
       "aiOriginalPngSha256": "e030c1eae311020cdd8a7d86e1bc54b80254769302673a69d1380be1f9c35077",
@@ -3182,7 +3505,7 @@
     {
       "key": "v4-entry-door5C-au01",
       "usedBy": [
-        "v4-entry-door5C"
+        "v2-entry-door5C"
       ],
       "sourcePngSha256": "b2c96bf6d0d882451a54cdbbd20d3ac1299e4c853223778158982acc32bdc4d3",
       "aiOriginalPngSha256": "ee8bcd4386552715a4b772cc813b8222dd0631783e981e864eb3db70aac63895",
@@ -3195,7 +3518,7 @@
     {
       "key": "v4-entry-door5D-au01",
       "usedBy": [
-        "v4-entry-door5D"
+        "v2-entry-door5D"
       ],
       "sourcePngSha256": "8ebea692998868b5854c7d0c9535d891c55c84561cf635f0d27c3722033758bd",
       "aiOriginalPngSha256": "bfe2281fc17f667e739ef66d9d93f105828d9a9661ae9ae227fb0287540b30fc",
@@ -3208,7 +3531,8 @@
     {
       "key": "v4-entry-door5E-au01",
       "usedBy": [
-        "v4-entry-door5E"
+        "v2-entry-door5E",
+        "v3-entry-door5E"
       ],
       "sourcePngSha256": "f81fa9bbba83fe41fb75b59b0e433a8b25233c87f8b7dcd7d97b928af0e4ec55",
       "aiOriginalPngSha256": "c8dc3b55c9cb6ffcd1c7c689cc20c3a51e94a31301a7805eba507037c628f204",
@@ -3221,7 +3545,7 @@
     {
       "key": "v4-island-A-bi01",
       "usedBy": [
-        "v4-island-A"
+        "v2-island-A"
       ],
       "sourcePngSha256": "ff5a1a8909ef7ad68f35810aebb953fea678dad4e40970b76887a7ed5d4260dd",
       "aiOriginalPngSha256": "daaa739877a71bb041cc046d4256b4e162d1de4abbc3462331aea585e177a723",
@@ -3234,7 +3558,7 @@
     {
       "key": "v4-island-B-au01",
       "usedBy": [
-        "v4-island-B"
+        "v2-island-B"
       ],
       "sourcePngSha256": "f1f74b92548f1469a3874253260006c4b59985df0c5d88157a78a6a3ea6b8688",
       "aiOriginalPngSha256": "feb61708f47de47fd6ec7c2336fca305bf8d2db9b5eeaa6e7d8d5d607f9aca89",
@@ -3247,7 +3571,7 @@
     {
       "key": "v4-island-C-au01",
       "usedBy": [
-        "v4-island-C"
+        "v2-island-C"
       ],
       "sourcePngSha256": "c20d9722d8e2d6f0609ddd5076ae3e49aaa7ee2963f0bb90ccbb445160f55bd4",
       "aiOriginalPngSha256": "d7f0534bfe1e583787593e5fafb7c95117bf6b4bb34a5c21c02087d2547e9241",
@@ -3260,7 +3584,7 @@
     {
       "key": "v4-island-D-bi01",
       "usedBy": [
-        "v4-island-D"
+        "v2-island-D"
       ],
       "sourcePngSha256": "b9da300c4b2dcd19b24bb5eb2eec5f5faab13650b5cbb41d1b1375d9252f779e",
       "aiOriginalPngSha256": "db8997efe032e8308da8f06b422faaf7a7137f26fefdca7c6cbbd1f7b8686952",
@@ -3273,7 +3597,7 @@
     {
       "key": "v4-island-E-bi01",
       "usedBy": [
-        "v4-island-E"
+        "v2-island-E"
       ],
       "sourcePngSha256": "cae0375548ff5a20b9e21bb1b6f844783e65d2d5e4944bf96783e314ae986f92",
       "aiOriginalPngSha256": "d9aea811ad32e4162392c9041b2fb15361b8c75e485cd0fd129e3b06062ea2e3",
@@ -3286,7 +3610,8 @@
     {
       "key": "v4-living-A-au01",
       "usedBy": [
-        "v4-living-A"
+        "v2-living-A",
+        "v3-living-A"
       ],
       "sourcePngSha256": "1a4ae5807f5e2a4ea69cbcba5cde5767ab036ccca7f485ae28262fd7dcd1f3be",
       "aiOriginalPngSha256": "895c96a7354548819c01ca64db6a89ab28532c8ced712367bb217e067e24fb4b",
@@ -3299,7 +3624,7 @@
     {
       "key": "v4-living-B-au01",
       "usedBy": [
-        "v4-living-B"
+        "v2-living-B"
       ],
       "sourcePngSha256": "b5c335f94258bad2e955bb05734c3f8a2527b0eb2423543c0dc44bf86bbd5603",
       "aiOriginalPngSha256": "36ca76ff08359e28e1221f3d09b9f7ba28e887169d05a3c7c56960e8b4a0e68e",
@@ -3312,7 +3637,7 @@
     {
       "key": "v4-living-C-au01",
       "usedBy": [
-        "v4-living-C"
+        "v2-living-C"
       ],
       "sourcePngSha256": "6879c34e3c3e0db7b7fff00c444c00fd80d4b003645741ee5f268855741bbb36",
       "aiOriginalPngSha256": "12a617d6552a3371ff1b98563d385706780a1d4fac70014e96bf78f15486b720",
@@ -3330,7 +3655,8 @@
     {
       "key": "v4-living-D-au01",
       "usedBy": [
-        "v4-living-D"
+        "v2-living-D",
+        "v3-living-D"
       ],
       "sourcePngSha256": "8453530240d670fd947d8dae2301f9caee0e8b27c0d265cd9d75fbba09f5aa9a",
       "aiOriginalPngSha256": "5e9b0d1ae3fc4a72715318382236ec7167bc8c1c525ea36136322a989f50d286",
@@ -3343,7 +3669,7 @@
     {
       "key": "v4-living-E-au01",
       "usedBy": [
-        "v4-living-E"
+        "v2-living-E"
       ],
       "sourcePngSha256": "134a37ddd9a350af537b0848a58ec7cf7a595a84b898923d605091f919b60a05",
       "aiOriginalPngSha256": "fd9c204d979e52cadc204a284782616e45eee0ce99b03d2c05fa6ca55c15295f",
@@ -3356,7 +3682,7 @@
     {
       "key": "v4-storage-B-bi01",
       "usedBy": [
-        "v4-storage-B"
+        "v2-storage-B"
       ],
       "sourcePngSha256": "b397876054e6e22c5b54b6b2a400062fb78bf884ea292a27a6c5b85bb88d4c1f",
       "aiOriginalPngSha256": "b5a9a919cde5c61a5d410fe22011ef6c98fcb0e54b342aa6f1722edd92a97ad9",
@@ -3369,7 +3695,7 @@
     {
       "key": "v4-storage-C-au01",
       "usedBy": [
-        "v4-storage-C"
+        "v2-storage-C"
       ],
       "sourcePngSha256": "c5ef4e8e7cbadf26c562be0db4a978b07dfb6e128f972bc35485417bf5a3ba3c",
       "aiOriginalPngSha256": "f90b8706494e6066a61ba1917678b407f1a2e68c5e02798cc02cc2d0332c12b9",
@@ -3387,7 +3713,7 @@
     {
       "key": "v4-storage-D-bi01",
       "usedBy": [
-        "v4-storage-D"
+        "v2-storage-D"
       ],
       "sourcePngSha256": "4d132fd448d43fa1a2d922308ff34eaf4f2f77fece7710343d0ad5a9f1bfaae8",
       "aiOriginalPngSha256": "b11454127f63c09822f98d0b15725db83c0981bd66a21dccd42ff4fba95b35d7",
@@ -3400,7 +3726,8 @@
     {
       "key": "v4-storage-E-au01",
       "usedBy": [
-        "v4-storage-E"
+        "v2-storage-E",
+        "v3-storage-E"
       ],
       "sourcePngSha256": "14a52d86b84a9de105349b0ddcd96c3f15a461e449149399249a5e9b47bac6ad",
       "aiOriginalPngSha256": "23b5f8b401d673652242e18143591bdea35845f62223463e714dfbd1a315f86c",
@@ -3418,7 +3745,7 @@
     {
       "key": "v4-study-A-bi01",
       "usedBy": [
-        "v4-study-A"
+        "v2-study-A"
       ],
       "sourcePngSha256": "f9fcea3506e165315d35a905f9543fb4bb5ead47f9d6ebe77899da2295ab94d2",
       "aiOriginalPngSha256": "6e362a39869cc6085ea45def0502b8e57c59fad4e2fd80d660b07769f9eb730b",
@@ -3431,7 +3758,8 @@
     {
       "key": "v4-study-B-bi01",
       "usedBy": [
-        "v4-study-B"
+        "v2-study-B",
+        "v3-study-B"
       ],
       "sourcePngSha256": "e10d642d5467c2ae628221b8024f48161d58a46ea8bd92f5bfa0a75617ec1afc",
       "aiOriginalPngSha256": "81c0329046bdf490130a390e121e0eb63787f849f13de852f9225711fb855d8a",
@@ -3444,7 +3772,7 @@
     {
       "key": "v4-study-C-au01",
       "usedBy": [
-        "v4-study-C"
+        "v2-study-C"
       ],
       "sourcePngSha256": "383ac99a4fd9b1213df5dbd30939e22fdafad7b2b8fca9821dcfb9a1857ba5b1",
       "aiOriginalPngSha256": "2329c541dfdb2fd13090485876dfb6bdc86404a281a8489ea3b3b7f1d4971430",
@@ -3462,7 +3790,8 @@
     {
       "key": "v4-study-E-au01",
       "usedBy": [
-        "v4-study-E"
+        "v2-study-E",
+        "v3-study-E"
       ],
       "sourcePngSha256": "d1498ec774678d4ea15c8032e85680981950325a724c386c271c2eaac81c0f10",
       "aiOriginalPngSha256": "a32a5ae347e1a2d7ca7e5874e8ea28bd4305a78517d26361254dee24f051e40e",

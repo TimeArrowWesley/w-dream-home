@@ -20,7 +20,7 @@
   function init() {
     const V = window.HOME_VIEWER, tour = window.HOME_TOUR;
     if (!V || !tour || !$('layoutSwitch') || window.HOME_UI) return;
-    const version = HOME_LAYOUT.proposal || HOME_LAYOUT.version;
+    const version = window.HOME_CURRENT_VERSION();
     const body = document.body, shell = document.querySelector('.shell');
     const sidebar = shell.querySelector('aside'), workspace = document.querySelector('.workspace');
     const scene = $('scenePanel'), header = document.querySelector('body > header');
@@ -55,7 +55,9 @@
     header.replaceChildren(brand, primary, actions);
 
     // Public version names; construction and entry configurations remain descriptive details.
-    const versions={v0:['原始格局','原始配置・BI01霧黑工業'],v1:['圓弧中島酒吧','TW01無上櫃・AU01影音'],v2:['旋轉電視+小中島（已停用）','歷史參考・BI01配色同步'],v3:['旋轉電視+大中島','共享展示・BI01霧黑工業'],v4:['大中島','AU01影音・BI01霧黑工業']};
+    const registry=window.HOME_VERSION_REGISTRY.versions;
+    const versions=Object.fromEntries(registry.map(v=>[v.id,[v.name,v.detail]]));
+    document.title='W夢想之家｜'+version.toUpperCase()+' '+versions[version][0];
     const versionMenu = make('details', 'uiMenu uiVersionMenu'); versionMenu.id = 'uiVersionMenu';
     const versionSummary = make('summary');
     versionSummary.append(make('small', '', '設計版本'), make('strong', '', version.toUpperCase() + ' · ' + versions[version][0]), make('span', '', versions[version][1]));
@@ -66,20 +68,19 @@
     const historyVersions=make('details','uiVersionHistory');
     historyVersions.append(make('summary','','歷史版本（已停用）'));
     for (const key of Object.keys(versions)) {
-      const b = versionButtons.find(n => (n.dataset.proposal || n.dataset.layout) === key);
-      if (!b) continue;
+      const b = make('button');b.dataset.proposal=key;
       b.replaceChildren(make('strong', '', key.toUpperCase()), make('span', '', versions[key].join(' / ')));
       b.title = versions[key].join(' / '); b.setAttribute('aria-pressed', String(key === version));
       b.onclick = () => {
         versionMenu.open = false;
         if (key === version) return;
-        const url = new URL((key==='v0'?'提案/原始格局/':key==='v4'?'提案/南牆電視與開放中島/':key==='v3'?'提案/開放大中島/':key==='v2' ? '提案/旋轉電視與直線中島/' : '') + 'index.html', root);
+        const url = new URL(registry.find(v=>v.id===key).path, root);
         url.searchParams.set('layout', key);
         url.searchParams.set('uiRoom', V.getCurrent());
         url.searchParams.set('uiMode', tour.getMode());
         location.assign(url.href);
       };
-      if(key==='v2')historyVersions.append(b);else bar.append(b);
+      if(registry.find(v=>v.id===key).history)historyVersions.append(b);else bar.append(b);
     }
     bar.append(historyVersions);
     bar.className = 'uiMenuBody'; versionMenu.append(bar);
@@ -104,6 +105,7 @@
       ids.forEach(id => {
         const b = roomButtons.find(n => n.dataset.id === id); if (!b) return;
         b.title = V.rooms.find(r => r.id === id)?.n || id;
+        if(window.HOME_HYBRID && id==='island') b.textContent='圓弧中島・頂天玻璃櫃';
         b.onclick = () => { V.selectRoom(id); closeMobileNav(); };
         group.append(b);
       });
@@ -119,7 +121,7 @@
     planFooter.replaceChildren(expandPlan);
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
-    const sideFoot = make('div', 'uiSideFoot', window.HOME_TV_WALL ? 'V1 · TW01主牆／AU01影音／BI01材質 · 工程待核' : window.HOME_LIVING_AUDIO ? version.toUpperCase()+' · AU01影音／BI01材質 · 工程待核' : window.HOME_BLACK_INDUSTRIAL ? version.toUpperCase()+' · BI01霧黑工業 · '+(version==='v2'?'已停用／歷史':'工程待核') : version==='v2' ? 'V2 已停用・僅供歷史參考' : window.HOME_V4_INDUSTRIAL ? 'V4 · R02格局／GI01材質 · 工程待核' : window.HOME_V4_PUBLIC ? 'V4 · R02 · 2026.09.23 · 採用配置，尺寸與工程待核' : window.HOME_AUDIT_REPAIRS ? version.toUpperCase()+' · QA03 · 2026.09.22 · 模型複核，施工尺寸待確認' : window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V4 共用家具清單 · 可隨時切換版本');
+    const sideFoot = make('div', 'uiSideFoot', window.HOME_HYBRID ? 'V3 · VN01圓弧中島／AU01影音／BI01材質 · 工程待核' : window.HOME_TV_WALL ? 'V1 · TW01主牆／AU01影音／BI01材質 · 工程待核' : window.HOME_LIVING_AUDIO ? version.toUpperCase()+' · AU01影音／BI01材質 · 工程待核' : window.HOME_BLACK_INDUSTRIAL ? version.toUpperCase()+' · BI01霧黑工業 · '+(version==='v4'?'已停用／歷史':'工程待核') : version==='v4' ? 'V4 已停用・僅供歷史參考' : window.HOME_V4_INDUSTRIAL ? 'V4 · R02格局／GI01材質 · 工程待核' : window.HOME_V4_PUBLIC ? 'V4 · R02 · 2026.09.23 · 採用配置，尺寸與工程待核' : window.HOME_AUDIT_REPAIRS ? version.toUpperCase()+' · QA03 · 2026.09.22 · 模型複核，施工尺寸待確認' : window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V5 共用家具清單 · 可隨時切換版本');
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -132,17 +134,18 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
-      ['無上櫃電視牆 TW01', 'V1採V4整面灰石主牆；10個AI角度更新', '電視牆統一.html'],
-      ['V1／V4 影音統一 AU01', '回靠窗側、保留中島旁留空；共同影音定位與32個AI更新', '影音統一.html'],
+      ['版本重編與新增V3 VN01', '目前六版對照、圓弧中島與頂天玻璃櫃', '版本重編與V3.html'],
+      ['無上櫃電視牆 TW01', 'V1採目前V2灰石主牆；歷史TW01對照', '電視牆統一.html'],
+      ['V1／V2 影音統一 AU01', '回靠窗側、保留中島旁留空；共同影音定位與32個AI更新', '影音統一.html'],
       ['全版本霧黑工業 BI01', '霧黑天花、中灰牆與灰棕木；全屋五視角AI重製', '霧黑工業全屋.html'],
-      ['V4 灰石現代工業 GI01', '歷史：石墨櫃面、槍灰金屬與分區燈光', '調整紀錄/20260923V4灰石工業校正/index.html'],
-      ['V4 公共區調整 R02', '歷史：客廳比例與背架後環繞；目前位置見AU01', '調整紀錄/20260923V4公共區更新/index.html'],
+      ['原V4（現V2）灰石工業 GI01', '歷史：石墨櫃面、槍灰金屬與分區燈光', '調整紀錄/20260923V4灰石工業校正/index.html'],
+      ['原V4（現V2）公共區 R02', '歷史：客廳比例與背架後環繞；目前位置見AU01', '調整紀錄/20260923V4公共區更新/index.html'],
       ['灰石全屋設計 GR06', '灰石、灰棕木、分區燈光與全屋五視角提案', '灰石全屋設計.html'],
-      ['四版動線修正 MR01', '收藏室入口、行李取出、V3窄道與主浴避撞的前後對照', '調整紀錄/20260921四版動線修正/index.html'],
+      ['四版動線修正 MR01', '收藏室入口、行李取出、原V3（現V5）窄道與主浴避撞的前後對照', '調整紀錄/20260921四版動線修正/index.html'],
       ['V0・原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],
-      ['拆收藏室・兩個替代格局', 'V4 大中島已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
-      ['V3・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
-      ['版本比較', 'V0 原始格局與 V1～V4 的配置及共用功能', '方案比較.html'],
+      ['拆收藏室・兩個替代格局', '現V2 大中島已製作 3D／B 保留 2D，完整尺寸與設計比較', '提案/拆收藏室替代方案/index.html'],
+      ['V5・旋轉電視+大中島', '開放大中島的尺寸、影音配置與設計對照', '提案/開放大中島/方案說明.html'],
+      ['版本比較', 'V0 原始格局與 V1～V5 的配置及共用功能', '方案比較.html'],
       ['本版調整內容', version.toUpperCase() + ' 的設備尺寸及設計決定', '版本調整.html?version=' + version],
       ['材質與配色', '22 個工業風案例、四版材質前後對照與酒吧照明', '材質調整.html'],
       ['全屋核對與主臥細節', '最新收放操作、燈光與前後比較', '調整紀錄/20260911全屋核對與主臥細節/index.html'],

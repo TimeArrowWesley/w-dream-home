@@ -12,7 +12,7 @@
     if (!V || !tour || !main || window.HOME_AI_VIEWS) return;
 
     const $ = id => document.getElementById(id);
-    const proposal = window.HOME_LAYOUT?.proposal || window.HOME_LAYOUT?.version || 'v1';
+    const proposal = window.HOME_CURRENT_VERSION();
     const source = window.HOME_AI_PHOTOS?.[proposal];
     const seen = new Set();
     const photos = (Array.isArray(source) ? source : []).filter(item => {
