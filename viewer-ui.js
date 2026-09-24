@@ -122,6 +122,7 @@
     plan.querySelector('.materialNotes')?.remove();
     const sideContent = make('div', 'uiSideContent'); sideContent.append(roomList, plan);
     const sideFoot = make('div', 'uiSideFoot', registry.find(v=>v.id===version).history ? version.toUpperCase()+' · 已停用／歷史參考' : window.HOME_HYBRID ? 'V3 · VN01圓弧中島／AU01影音／BI01材質 · 工程待核' : window.HOME_TV_WALL ? 'V1 · TW01主牆／AU01影音／BI01材質 · 工程待核' : window.HOME_LIVING_AUDIO ? version.toUpperCase()+' · AU01影音／BI01材質 · 工程待核' : window.HOME_BLACK_INDUSTRIAL ? version.toUpperCase()+' · BI01霧黑工業 · '+(version==='v4'?'已停用／歷史':'工程待核') : version==='v4' ? 'V4 已停用・僅供歷史參考' : window.HOME_V4_INDUSTRIAL ? 'V4 · R02格局／GI01材質 · 工程待核' : window.HOME_V4_PUBLIC ? 'V4 · R02 · 2026.09.23 · 採用配置，尺寸與工程待核' : window.HOME_AUDIT_REPAIRS ? version.toUpperCase()+' · QA03 · 2026.09.22 · 模型複核，施工尺寸待確認' : window.HOME_MODEL_REPAIRS ? version.toUpperCase()+' · MR01 · 2026.09.21 · 設計試案，尺寸待複量' : 'V0～V5 共用家具清單 · 可隨時切換版本');
+    if (window.HOME_ISLAND_SHELL) sideFoot.textContent += ' · IR01模型修復';
     sidebar.replaceChildren(versionMenu, sideTabs, sideContent, sideFoot);
     workspace.classList.remove('planhidden');
 
@@ -134,6 +135,7 @@
     const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
     const resourceGrid = make('div', 'uiResourceGrid');
     for (const [title, note, file] of [
+      ['全版本模型修復 IR01', '六版中島封板、水槽內壁與電視表面；受影響AI同步更新', '模型修復.html'],
       ['版本重編與新增V3 VN01', '目前六版對照、圓弧中島與頂天玻璃櫃', '版本重編與V3.html'],
       ['無上櫃電視牆 TW01', 'V1採目前V2灰石主牆；歷史TW01對照', '電視牆統一.html'],
       ['V1／V2 影音統一 AU01', '回靠窗側、保留中島旁留空；共同影音定位與32個AI更新', '影音統一.html'],

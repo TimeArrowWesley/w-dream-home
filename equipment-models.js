@@ -95,7 +95,11 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
       const dims=localBox.getSize(new T.Vector3()),c=localBox.getCenter(new T.Vector3());
       for(const o of g.children){o.position.x=(o.position.x-c.x)*w/dims.x;o.position.z=(o.position.z-c.z)*d/dims.z;o.position.y=(o.position.y-localBox.min.y)*h/dims.y;o.scale.multiply(new T.Vector3(w/dims.x,h/dims.y,d/dims.z));}
     }else if(key==='tv'){
-      part(g,-w/2,front,w,d,0,h,graphite);part(g,-w/2+.35,front,w-.7,.03,.35,h-.7,M.screen);
+      // Keep the screen in front of the casing, within the same product envelope.
+      // Coplanar front faces previously produced torn stripes as the camera moved.
+      part(g,-w/2,front+.08,w,d-.08,0,h,graphite);
+      const display=part(g,-w/2+.35,front,w-.7,.06,.35,h-.7,M.screen);
+      display.userData.equipmentSurface='tv-screen';
     }else if(key==='q7'||key==='q6'||key==='sub'){
       part(g,-w/2,front+.5,w,d-.5,0,h,M.black);part(g,-w/2+.3,front,w-.6,.5,.3,h-.6,M.rubber);
       if(key==='q6'){for(const x of [-21,0,21])round(g,x,h/2,front+.15,x===0?7.2:7.6,.25,graphite);}

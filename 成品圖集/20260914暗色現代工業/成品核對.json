@@ -11,22 +11,17 @@
     "v4": 60,
     "v5": 60
   },
-  "displayBytes": 71854112,
+  "displayBytes": 72809864,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 49,
+  "correctionViews": 50,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": true,
   "browserScope": [
-    "V3互動3D顯示V1圓弧中島、頂天玻璃櫃與原V4基底。",
-    "V3中島AI A／E可切換，五張照片列完整顯示，下載連結指向本輪成品。",
-    "版本切換保留中島／AI模式；V2為原V4固定電視長中島，V5為原V3旋轉電視大中島。",
-    "展開歷史選單切換V4，顯示原V2旋轉電視小中島及已停用標示，照片列五張可見。",
-    "V3放大平面顯示圓弧中島、玻璃櫃與兩凳輪廓，文字為圓弧中島。",
-    "版本重編與V3頁面的六版對照、模型／AI連結及設計差異可見。"
+    "IAB實際WebGL逐版檢視V0、V1、V2、V3、V4、V5中島操作側：櫃面完整、掃地機入口保留、水槽內壁可見；V1與V4另與修正前破面畫面比較。",
+    "指定畫面中的電視表面已消除共面破裂條紋；既有圓弧、頂天玻璃櫃、兩席位置及長中島配置保留。",
+    "安裝新圖後實際檢視V3中島AI的五張照片列，A／B／E切換及返回3D正常，B／E下載連結對應IR01新檔；版本選單V4／V5仍為停用歷史。",
+    "模型修復對照頁的V4／V5及中島篩選正確，修復前AI、目前模型來源、本輪新AI對應一致。"
   ],
-  "browserLimitations": [
-    "本輪為桌面1280x720指定操作抽查，未宣稱所有手機尺寸或連續視角均通過。",
-    "AI為概念示意；門片、工程固定與現場尺度仍需設計師核定。"
-  ]
+  "browserLimitations": "六版指定模型視角及1280×720桌面介面抽樣；不代表所有連續視角、人體使用、聲學、結構或施工驗收。"
 }

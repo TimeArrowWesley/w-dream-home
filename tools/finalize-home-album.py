@@ -38,6 +38,7 @@ provenance={'date':manifest.get('imagesUpdatedAt',manifest.get('capturedAt','202
 for e in entries:assert sha(root/'model'/e['file'])==e['modelHash'],e['key']
 report=read('成品核對.json');report.pop('all144SourceHashesMatched',None);report.update({'allImagesDecoded':True,'allSourceHashesMatched':True,'correctionViews':len(fixes),'visualReview':'Each unique AI image reviewed; original model is authoritative for dimensions','browserVisualQA':False})
 browser_reports={'20260924-vn01':'調整紀錄/20260924版本重編與V3/瀏覽器核對.json','20260924-tw01+au01+bi01':'調整紀錄/20260924電視牆統一/瀏覽器核對.json','20260923-bi01':'調整紀錄/20260923全版本霧黑工業/瀏覽器核對.json','20260923-au01+bi01':'調整紀錄/20260923V1V4影音統一/瀏覽器核對.json'}
+browser_reports['20260924-ir01']='調整紀錄/20260924全版本模型修復/瀏覽器核對.json'
 if manifest.get('imageRevision') in browser_reports:
  browser_report=project/browser_reports[manifest['imageRevision']]
  if browser_report.exists():
@@ -55,6 +56,7 @@ with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
    html=html.replace('<a href="../../全版本複核.html">QA03 歷史複核與修改前後對照 ↗</a>','<span>歷史複核請至線上專案查看。</span>')
    html=html.replace('<a href="../../灰石全屋設計.html">灰石全屋設計與材質說明 ↗</a>','<span>GR06 灰石、灰棕木與光；完整設計說明請至線上專案查看。</span>')
    html=html.replace('<a href="../../霧黑工業全屋.html">BI01 霧黑工業全屋與更新前後對照 ↗</a>','<span>BI01 霧黑天花、中灰牆與灰棕木；完整前後對照請至線上專案查看。</span>')
+   html=html.replace('<a href="../../模型修復.html">IR01 全版本模型修復與AI前後對照 ↗</a>','<span>IR01 模型修復與AI前後對照請至線上專案查看。</span>')
    z.writestr(name,html)
   else:z.write(p,name)
 with zipfile.ZipFile(out) as z:

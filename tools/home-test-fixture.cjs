@@ -28,7 +28,7 @@ module.exports=async function build(n,overrides={}){
  for(const f of ['model-data.js','bedroom-model.js','sofa-model.js','equipment-models.js',n<3?'design.js':'提案/旋轉電視與直線中島/design.js'])run(f);
  const V=c.HOME_VIEWER,E=c.HOME_EQUIPMENT;
  c.HOME_TOUR={getMode:()=>mode,setMode:m=>mode=m};
- for(const f of [...(n===0?[]:['model-repairs.js']),'model-audit-repairs.js',...(n===5?['v4-public-adjustments.js']:[]),...([2,5].includes(n)?['living-audio-unification.js']:[]),...(hybrid?['hybrid-arc-adjustments.js']:[]),...(n===2?['tv-wall-unification.js']:[]),'walk.js','interaction.js','realism.js','flooring.js','industrial-design.js','curtains.js','rgb-lighting.js','comfort-controls.js','equipment-controls.js','bedroom-controls.js',...(n===5?['提案/南牆電視與開放中島/plan-a-controls.js']:n>2?['提案/旋轉電視與直線中島/rotating-tv.js']:[])])run(f);await Promise.resolve();await Promise.resolve();
+ for(const f of [...(n===0?[]:['model-repairs.js']),'model-audit-repairs.js',...(n===5?['v4-public-adjustments.js']:[]),...([2,5].includes(n)?['living-audio-unification.js']:[]),...(hybrid?['hybrid-arc-adjustments.js']:[]),...(n===2?['tv-wall-unification.js']:[]),'island-shell-repairs.js','walk.js','interaction.js','realism.js','flooring.js','industrial-design.js','curtains.js','rgb-lighting.js','comfort-controls.js','equipment-controls.js','bedroom-controls.js',...(n===5?['提案/南牆電視與開放中島/plan-a-controls.js']:n>2?['提案/旋轉電視與直線中島/rotating-tv.js']:[])])run(f);await Promise.resolve();await Promise.resolve();
 
 if(n===2)run('v1-finishes.js');
 run('grey-stone-design.js');

@@ -45,5 +45,6 @@ if '--install' in sys.argv:
  html=(root/'index.html').read_text(encoding='utf8')
  for f in ['album.css','album-data.js','album.js','使用說明.md']:html=html.replace('"'+f,'"'+prefix+f)
  html=html.replace('../../index.html','index.html').replace('../../方案比較.html','方案比較.html').replace('../../全版本複核.html','全版本複核.html').replace('../../灰石全屋設計.html','灰石全屋設計.html').replace('../../霧黑工業全屋.html','霧黑工業全屋.html')
+ html=html.replace('../../模型修復.html','模型修復.html')
  (project/'AI寫實視角.html').write_text(html,encoding='utf8',newline='\n')
 print(json.dumps(report,ensure_ascii=False))

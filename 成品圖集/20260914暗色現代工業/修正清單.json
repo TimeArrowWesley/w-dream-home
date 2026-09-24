@@ -23,10 +23,6 @@
     "nativeAttempts": 3,
     "finalPngSha256": "4d22a7ed0a16b95c5c65dd5f166854238c76fc8e9466e21ecc02588c9aed5112"
   },
-  "v0-living-D-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "fb156dd8f4c5cfc2fcb11d86c27e2620cf9181f6001f90fd49d7407f6cdb22b2"
-  },
   "v0-living-E-bi01": {
     "nativeAttempts": 3,
     "finalPngSha256": "bb15da2869cac11236280e367880885ea558b3525d574aca7d6fdbc64098a92d"
@@ -34,10 +30,6 @@
   "v0-island-A-bi01": {
     "nativeAttempts": 3,
     "finalPngSha256": "e4e9183dd44f95fd71e182eff83591a14698d78185a6419b2dd39a76a3db62ba"
-  },
-  "v0-island-B-bi01": {
-    "nativeAttempts": 3,
-    "finalPngSha256": "4f7df517d67edddfd5234047e6bcada1f195c3dea1bc0ead47ffa8db10b00e7a"
   },
   "v0-kitchen-E-bi01": {
     "nativeAttempts": 2,
@@ -47,14 +39,6 @@
     "nativeAttempts": 2,
     "finalPngSha256": "5c0526e778de9dd37ca633955fd32fda6724f5fa560ec4dea8c81ae0c4fe1c34"
   },
-  "v0-storage-C-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "be2393ada18b9cfb55c07da72747156ddc94427f7464704c77c8cfa47670cb09"
-  },
-  "v0-storage-E-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "efc5310df81aec1dae83a84fde55f4ac02e5354626ee8d7847916a875c9e0615"
-  },
   "v0-back-A-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "68a403cc04a8eb6a7e78077975df07966d2bf3ae5ae4fd908b62cbf78860a325"
@@ -62,10 +46,6 @@
   "v1-entry-door5A-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "28e23ca5cbe78652b90643093193956cfbeaf83b3189d55fbc826f056e3b5408"
-  },
-  "v1-island-E-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "5c17d9b7d40f03a4aa2de3a9ac9342ae0310ae73400d1a588f7c740a037efca1"
   },
   "v1-kitchen-B-bi01": {
     "nativeAttempts": 2,
@@ -98,10 +78,6 @@
   "v2-bath1-C-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "415cf8734fc7b6c8ff4863e25e15e2ef689e63016b7fe867e8284080c14bb1e6"
-  },
-  "v3-living-D-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "8784d2f3a9c99dc2f1e8c4dd9064eed61eb0bc2d6abc8143f1d5a5e8ad08b8e6"
   },
   "v3-collection-A-bi01": {
     "nativeAttempts": 2,
@@ -143,49 +119,13 @@
     "nativeAttempts": 2,
     "finalPngSha256": "708bb88db7a5ef27b720cf9857a9df8bb73ee5cefda2f68ae94b9d5729e75828"
   },
-  "v1-living-E-au01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "7cee78c3a00189db8bfda825398e93306493a6085bdebc2b5ba510842dab0870"
-  },
   "v4-living-C-au01": {
     "nativeAttempts": 2,
     "finalPngSha256": "12a617d6552a3371ff1b98563d385706780a1d4fac70014e96bf78f15486b720"
   },
-  "v4-study-C-au01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "2329c541dfdb2fd13090485876dfb6bdc86404a281a8489ea3b3b7f1d4971430"
-  },
-  "v4-study-E-au01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "a32a5ae347e1a2d7ca7e5874e8ea28bd4305a78517d26361254dee24f051e40e"
-  },
-  "v4-storage-C-au01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "f90b8706494e6066a61ba1917678b407f1a2e68c5e02798cc02cc2d0332c12b9"
-  },
-  "v4-storage-E-au01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "23b5f8b401d673652242e18143591bdea35845f62223463e714dfbd1a315f86c"
-  },
-  "v1-bed-E-tw01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "e1036afc09729e33b0fc5cd9dbecc88b6358a4b92297dac5ecb920336f55e952"
-  },
-  "v1-study-E-tw01": {
-    "nativeAttempts": 3,
-    "finalPngSha256": "b6d321d0edd9f42885c4c61ce91d652bc7b62bff942fde0399d2f12a99f345af"
-  },
-  "v1-storage-C-tw01": {
-    "nativeAttempts": 3,
-    "finalPngSha256": "37c82457596b38d47f03fd57b7afed5b902d7fa6cc0c2a2886ab39f098e51869"
-  },
   "v3-living-C-vn01": {
     "nativeAttempts": 2,
     "finalPngSha256": "18e29915c3405faf0c3d1792f46f2e86eb09bd00eec983dba3dcb6e13f800ef0"
-  },
-  "v3-study-C-vn01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "f21d66e123975dc5136814fb5a65c1c283ffde716d98f5e1feee82df510369b4"
   },
   "v3-collection-A-vn01": {
     "nativeAttempts": 2,
@@ -194,5 +134,69 @@
   "v3-collection-C-vn01": {
     "nativeAttempts": 2,
     "finalPngSha256": "3911133d7e777e7c2e47ebd64b770f464ba514f41fd9477de1a80aa3b42ecff5"
+  },
+  "v0-study-C-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "4b9735163d0acac65b0b40f0b79767d35591d2e6e005e24268cd0b745bda2ef2"
+  },
+  "v0-collection-B-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "666371e8634666d643011b853f4c95e3b453bb15d843a7c039b5ff87641dfa9f"
+  },
+  "v1-bed-E-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "1763c634f13b3b0ece14a7a950809cf9d7f3ff96eff49fe14db0870d9dd0da6d"
+  },
+  "v1-study-C-ir01": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "8ad73d6d223e0587114c93b1c897600f0235bda821b5e8add0894e7d222722c8"
+  },
+  "v1-study-E-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "0953a6f832b8a084202840e6352e37377ef873947c78fadca608233e50184281"
+  },
+  "v1-storage-E-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "7e82dbb8e85f98d695f644f87fd894303c7f887aca0364e8775788059f9af709"
+  },
+  "v2-study-C-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "18df4c5fdb34c9be01a696fc2b7bfc3ecd3967b01e1fae61696a656f2e296aa2"
+  },
+  "v2-study-E-ir01": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "8f4930baa310c9cf507c304361b9ef11212a5c06f07a60fd37b23255bb6a75d9"
+  },
+  "v2-storage-C-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "91c1622985e77e0fba7273ed8ec8d8bf513aec6591438541d3f28b89ee2c29b3"
+  },
+  "v2-storage-E-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "ad22f2a51387d17e90acff639b4d587aa6de94d81e3f70da4949431a53b32588"
+  },
+  "v3-bed-E-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "9d09288953f135ca025551ab9b2f8915d02f52ec12a0f891c8e5a81518a657ef"
+  },
+  "v3-study-C-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "48b0a91ded4007950c72231b62948c026c4d1a6b0fc10c4881036d4fe7b5da9b"
+  },
+  "v3-storage-C-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "2f083613b3cd0d669b4bab0621327efbadbf2c107c2db85f7a7c8c39500f0678"
+  },
+  "v4-study-C-ir01": {
+    "nativeAttempts": 3,
+    "finalPngSha256": "e5830eb6fe2b11cf865764b39d45a08fb7993ee9161fd8c8a259358eb9a1ee96"
+  },
+  "v5-living-A-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "a3f27ddf7c50fc1cb8ace32b3d048dd733dcdbd9fe34edcbb98c2fc26f073181"
+  },
+  "v5-study-C-ir01": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "0d3f97b2647874debdab0607082897f0e6548461a4d96a500a62c8bb192d8caf"
   }
 }

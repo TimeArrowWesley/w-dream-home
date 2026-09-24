@@ -52,6 +52,9 @@ reeded.onBeforeCompile=shader=>{
  shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>','#include <map_fragment>\nfloat reed=abs(fract(vUv.x*25.0)-.5);float groove=smoothstep(.35,.49,reed);groove=mix(groove,.16,smoothstep(.25,.9,fwidth(vUv.x*25.0)));diffuseColor.rgb*=mix(1.0,.42,groove);');
 };reeded.customProgramCacheKey=()=> 'walnut-fine-reeds-20260911';
 const stainless=material('stainless','銀色拉絲不鏽鋼',{color:color('#c5c8c7'),map:steelGrain,bumpMap:steelHeight,bumpScale:.009,roughness:.3,metalness:.88,envMapIntensity:1.05});
+// Basin interiors include thin, inward-facing walls. Preserve both faces when
+// replacing their original materials; a front-only finish hides the inner bowl.
+const sinkStainless=stainless.clone();sinkStainless.side=T.DoubleSide;sinkStainless.name='雙面拉絲不鏽鋼槽內膽';
 const tvMetal=material('blackened-steel','黑化鋼板・細雲紋',{color:color('#ffffff'),map:hotRolled,roughness:.46,metalness:.83,envMapIntensity:.75});
 const matte=material('matte-black','碳黑霧面烤漆',{color:color('#202421'),roughness:.79,metalness:.04,envMapIntensity:.18});
 const stone=material('island-stone',s.name,{color:color('#ffffff'),map:stoneMap,roughness:s.roughness,metalness:0,clearcoat:.12,clearcoatRoughness:.4,envMapIntensity:.5});
@@ -78,8 +81,9 @@ function apply(){
   // Equipment retains manufacturer materials and all its working geometry.
   if(isDevice(o))return;
   if(o.userData.sofaRole){assign(o,sofaFinish(o),'integrated-sofa-'+o.userData.sofaRole,o.userData.sofaRole==='wood'?'wood':o.userData.sofaRole==='fabric'?12:null);return;}
-  if(o.userData.islandSurface==='countertop'||/^(260×160.2 曲線中島|81×189 直線中島)/.test(n))assign(o,stone,'island-stone',260);
-  else if(/^sink-/.test(o.userData.islandSurface||''))assign(o,stainless,'sink-stainless',40);
+  if(o.userData.ir01)assign(o,matte,'island-service-matte');
+  else if(o.userData.islandSurface==='countertop'||/^(260×160.2 曲線中島|81×189 直線中島)/.test(n))assign(o,stone,'island-stone',260);
+  else if(/^sink-/.test(o.userData.islandSurface||''))assign(o,sinkStainless,'sink-stainless',40);
   else if(o.userData.islandExterior)assign(o,version==='v2'?stainless:reeded,version==='v2'?'small-island-stainless':'curved-smoked-wood',version==='v2'?80:'wood');
   else if(o.userData.finishGroup==='tv-graphite'||/金屬周框/.test(n))assign(o,tvMetal,'tv-metal',160);
   else if(version==='v4'&&/V4 南牆(灰礦物塗料背牆|反射黑玻完成面)/.test(n)){assign(o,blackGlass,'fixed-tv-black-glass');o.userData.name='V4 南牆反射黑玻完成面';o.userData.desc='反射黑玻搭深木影音櫃及黑化鋼細框；原牆面與設備尺寸。';}
