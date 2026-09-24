@@ -5,6 +5,7 @@ if(!C||!window.HOME_FURNITURE_DATA)return;
 const storageKey='w-dream-home:furniture:v1',originalSeed=C.validate(window.HOME_FURNITURE_DATA);
 let data=C.clone(originalSeed),baseRevision=data.revision,dirty=false,editBuffer=null,conflict=null,storageOK=true,directory=null,busy=false,ui=null,currentRoom='all',filter='active',query='',lastMessage='',lastError=false,lastKnownStorage=null,localEdits=false;
 const money=v=>Math.round(v).toLocaleString('zh-TW'),range=b=>b.min===b.max?'NT$ '+money(b.min):'NT$ '+money(b.min)+' – '+money(b.max);
+let budgetBound='max';
 const displayVersion=()=>window.HOME_LAYOUT?window.HOME_CURRENT_VERSION():(new URLSearchParams(location.search).get('version')||'v1');
 const version=()=>window.HOME_VERSION_REGISTRY.versions.find(v=>v.id===displayVersion())?.legacy||'v1';
 function incomingConflict(saved){const incoming=C.validate(saved.data);conflict={kind:'tab',a:{...saved,data:incoming},b:{data:C.clone(data),baseRevision:saved.baseRevision,dirty:true,editBuffer:C.clone(editBuffer)},aLabel:'使用另一分頁的清單',bLabel:'保留目前草稿'};}
@@ -49,12 +50,37 @@ function render(){if(!ui)return;renderSidebar();renderMain();renderEditor();stat
 function roomLabel(r){if(version()==='v0'&&r.modelRoom==='collection')return '貓房';if(version()==='v0'&&r.modelRoom==='study')return '書房・電子琴';return ['v3','v4'].includes(version())&&r.modelRoom==='collection'?'展示與深收納（原收藏室）':r.name;}
 function renderSidebar(){ui.sidebar.replaceChildren();const active=data.items.filter(i=>!i.archived);for(const r of [{id:'all',name:'全屋總覽'},...data.rooms,{id:'pending',name:'選購條件'}]){const n=r.id==='pending'?data.pending.length:r.id==='all'?active.length:active.filter(i=>i.room===r.id).length;const b=button('',()=>{if(!applyEditor())return;currentRoom=r.id;query='';render();});b.append(node('span',{text:roomLabel(r)}),node('small',{text:String(n)}));b.setAttribute('aria-pressed',String(currentRoom===r.id));ui.sidebar.append(b);}}
 function metric(label,val){return node('div',{className:'fcMetric'},node('small',{text:label}),node('strong',{text:val}));}
+function budgetChart(){
+ const colors=['#b7bc90','#d3bd9c','#7dabc8','#91b9a4','#cbb18c','#aa9fca','#d59b90','#8cbfc0','#a2aac7','#c4acbc','#c5c9a4','#bcaf97'];
+ const rows=C.budgetByRoom(data).map((r,i)=>({...r,color:colors[i%colors.length],value:r[budgetBound]})).sort((a,b)=>b.value-a.value);
+ const total=rows.reduce((n,r)=>n+r.value,0),negative=rows.some(r=>r.value<0),hasPie=total>0&&!negative,boundName=budgetBound==='max'?'上限':'下限';
+ const section=node('section',{className:'fcBudgetChart','aria-label':'依空間分區的家具與設備預算'}),controls=node('div',{className:'fcBudgetToggle',role:'group','aria-label':'圓餅圖金額基準'});
+ const body=node('div',{className:'fcBudgetBody','aria-live':'polite'});
+ for(const [key,label] of [['min','金額下限'],['max','金額上限']]){const b=button(label,()=>{budgetBound=key;section.replaceWith(budgetChart());ui.main.querySelector('.fcBudgetToggle [aria-pressed="true"]').focus();});b.setAttribute('aria-pressed',String(key===budgetBound));controls.append(b);}
+ section.append(node('div',{className:'fcBudgetHeading'},node('div',{},node('h4',{text:'各空間預算占比'}),node('p',{className:'fcMuted',text:'依已填金額分配 · 點選區域查看明細'})),controls));
+ if(hasPie){let cursor=0;const stops=rows.filter(r=>r.value>0).map(r=>{const start=cursor;cursor+=r.value/total*100;return `${r.color} ${start}% ${cursor}%`;});
+  const disc=node('div',{className:'fcBudgetPie',role:'img','aria-label':`各空間已填金額${boundName}圓餅圖，合計新臺幣${money(total)}元。各區金額及占比見右側或下方明細。`});disc.style.background='conic-gradient('+stops.join(',')+')';
+  disc.append(node('div',{className:'fcBudgetCenter','aria-hidden':'true'},node('span',{text:'已填金額'+boundName}),node('strong',{text:(total/10000).toLocaleString('zh-TW',{maximumFractionDigits:1})+' 萬'}),node('small',{text:'新臺幣'})));body.append(node('div',{className:'fcBudgetVisual'},disc));
+ }else body.append(node('p',{className:'fcBudgetEmpty',text:negative?'分區含負金額，圓餅圖不適合呈現；請查看下方實際金額。':'目前尚無可繪製的正金額；待報價不代表零元。'}));
+ const legend=node('div',{className:'fcBudgetLegend'}),unpriced=node('div',{className:'fcBudgetUnpriced'});
+ for(const r of rows){const notes=[r.pending?`待填／待報價 ${r.pending} 筆`:'',r.invalid?`金額待釐清 ${r.invalid} 筆`:'',r.included?`已含其他項目 ${r.included} 筆`:''].filter(Boolean).join(' · ');
+  const line=button('',()=>{if(!applyEditor())return;currentRoom=r.room.id;query='';filter='active';render();ui.main.scrollTop=0;},'fcBudgetRoom');line.setAttribute('data-budget-room',r.room.id);
+  const swatch=node('span',{className:'fcBudgetSwatch','aria-hidden':'true'});swatch.style.background=r.value>0?r.color:'#53615c';
+  const label=node('span',{className:'fcBudgetRoomName'},node('span',{text:roomLabel(r.room)}),notes?node('small',{text:notes}):null);
+  const percent=hasPie&&r.value>0?r.value/total*100:null,share=percent===null?'':percent<.1?'低於 0.1%':percent.toFixed(1)+'%';
+  line.append(swatch,label,node('span',{className:'fcBudgetAmount'},node('strong',{text:r.value===0&&r.count===r.pending+r.invalid+r.included?'無已填金額':'NT$ '+money(r.value)}),share?node('small',{text:share}):null));
+  (r.value===0?unpriced:legend).append(line);
+ }
+ body.append(legend);section.append(body);
+ if(unpriced.children.length)section.append(node('div',{className:'fcBudgetOther'},node('p',{className:'fcMuted',text:'以下區域未分配扇形；待報價不代表零元。'}),unpriced));
+ section.append(node('p',{className:'fcSmallNote',text:`目前採金額${boundName}計算占比，含清單內家具、廚具、衛浴及其他設備；待填、待釐清、已含其他項目與不納入預算者不計入。這是已填金額的分布，非全屋完整預算。搜尋及明細篩選不影響此圖。`}));return section;
+}
 function renderMain(){const m=ui.main;m.replaceChildren();if(['v3','v4'].includes(version()))m.append(node('p',{className:'fcNotes',text:displayVersion().toUpperCase()+' 共用原品項規格與預算；中島、玄關、收藏收納和影音擺位已變更。各筆明細的「本版配置」顯示新布局，原文仍保留。'}));if(conflict){m.append(node('div',{className:'fcConflict'},node('p',{text:'專案檔和先前瀏覽器草稿有不同版本，請選擇這次接續哪一份。'}),button(conflict.aLabel,()=>restoreConflict(false)),button(conflict.bLabel,()=>restoreConflict(true))));}
  if(currentRoom==='pending'){m.append(node('h3',{text:'規格已定，型號待選'}),node('p',{className:'fcMuted',text:'原文件的11組選購條件已搬入本專案，可直接更新；舊規劃仍須與目前3D及各品項的現行調整對照。'}));for(const p of data.pending)m.append(node('article',{className:'fcSelectionCard'},node('h4',{text:p.name}),node('p',{text:p.text}),button('編輯條件',()=>startEdit('pending',p.id))));return;}
  const room=data.rooms.find(r=>r.id===currentRoom),items=data.items.filter(i=>!room||i.room===room.id),b=C.budget(items);
  m.append(node('h3',{text:room?roomLabel(room):'家具與設備總覽'}),node('p',{className:'fcMuted',text:'品牌、规格、金額與備註可直接編輯。金額以整列計算；含工程、不採用與資料參考不重複加總。'}),node('div',{className:'fcMetrics'},metric('已填預算範圍',range(b)),metric('待填／待報價',String(b.pending)),metric('金額待釐清',String(b.invalid))));
  if(room){m.append(node('div',{className:'fcNotes',text:room.notes}),node('div',{className:'fcRowActions'},button('查看此區3D',()=>jumpRoom(room)),button('編輯區域備註',()=>startEdit('room',room.id))));const details=node('details',{},node('summary',{text:'查看匯入時的區域說明'}),node('pre',{className:'fcSource',text:room.sourceOverview}));m.append(details);}
- else{const details=node('details',{},node('summary',{text:'各區已填金額分布'})),bars=node('div',{className:'fcBudgetList'});for(const r of data.rooms){const rb=C.budget(data.items.filter(i=>i.room===r.id));bars.append(node('div',{className:'fcBudgetLine'},node('span',{text:roomLabel(r)}),node('progress',{value:Math.max(0,rb.max),max:Math.max(1,b.max),'aria-label':r.name+'預算'}),node('span',{text:range(rb)})));}details.append(bars);m.append(details);}
+ else m.append(budgetChart());
  const search=node('input',{type:'search',placeholder:'搜尋品項、型號、規格或備註',value:query,'aria-label':'搜尋家具',oninput:()=>{query=search.value;renderRows();}}),sel=node('select',{'aria-label':'清單篩選',onchange:()=>{filter=sel.value;renderRows();}});for(const [value,label] of [['active','全部未封存'],['purchase','採購與設備'],['pending','待填價格'],['model','模型待同步'],['unused','不採用'],['archived','已封存']])sel.append(node('option',{value,text:label,selected:filter===value}));m.append(node('div',{className:'fcFilters'},search,sel,button('＋ 新增品項',()=>startEdit('item','item-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7)))));
  ui.resultCount=node('p',{className:'fcMuted'});ui.tbody=node('tbody');m.append(ui.resultCount,node('div',{className:'fcTableWrap'},node('table',{className:'fcTable'},node('thead',{},node('tr',{},...['品項／品牌','狀態','整列金額','操作'].map(t=>node('th',{scope:'col',text:t})))),ui.tbody)));
  m.append(node('p',{className:'fcSmallNote',text:'匯入來源：2026/09/10 上午11:08本機備份。原文保存在各筆明細，後續設計另註。規格變更會標記模型待核對，修改價格與備註不會改動3D尺寸。'}));renderRows();}
@@ -68,7 +94,7 @@ function renderEditor(){if(!ui)return;const e=ui.editor;e.replaceChildren();e.hi
  if(existing)e.append(button(existing.archived?'恢復此品項':'封存此品項',()=>{if(!applyEditor())return;data=C.updateItem(data,id,{archived:!data.items.find(i=>i.id===id).archived});touch();render();}));
  }else if(kind==='room')field('notes','目前區域設計與備註','textarea');else{field('name','條件名稱');field('text','內容','textarea');}
  e.append(node('div',{className:'fcEditorActions'},button('套用修改',()=>applyEditor(),'fcPrimary'),button('取消這次編輯',()=>{editBuffer=null;lastMessage='';persist();renderEditor();})));}
-function build(){if(ui)return;const standalone=document.getElementById('catalogStandalone'),dialog=standalone?null:node('dialog',{className:'fcDialog fcApp','aria-label':'家具與設備清單'}),app=standalone||dialog;app.classList.add('fcApp');if(dialog)document.body.append(dialog);const style=node('link',{rel:'stylesheet',href:new URL('furniture.css?v=20260910-ui',rootURL).href});document.head.append(style);
+function build(){if(ui)return;const standalone=document.getElementById('catalogStandalone'),dialog=standalone?null:node('dialog',{className:'fcDialog fcApp','aria-label':'家具與設備清單'}),app=standalone||dialog;app.classList.add('fcApp');if(dialog)document.body.append(dialog);const style=node('link',{rel:'stylesheet',href:new URL('furniture.css?v=20260924-bp01',rootURL).href});document.head.append(style);
  const save=button('儲存到專案',saveProject,'fcPrimary'),statusNode=node('p',{className:'fcStatus',role:'status','aria-live':'polite'});
  const files=node('details',{className:'fcFileMenu'},node('summary',{text:'匯入／匯出'}),node('div',{className:'fcFileOptions'},button('載入專案檔',loadProject),button('載入清單',importFile),button('匯出備份',exportBackup),button('匯出文字',()=>{if(applyEditor())exportFile('家具清單.md',C.markdown(data),'text/markdown;charset=utf-8');})));
  const header=node('div',{className:'fcHeader'},node('div',{className:'fcTitleRow'},button('← 空間設計',()=>{if(applyEditor())close();},'fcBack'),node('div',{},node('h2',{text:'家具與設備清單'}),node('p',{className:'fcSubtitle',text:'V0～V5 共用 · 規格、採購與預算'}))),node('div',{className:'fcActions'},files,save),statusNode),sidebar=node('nav',{className:'fcSidebar','aria-label':'家具區域'}),main=node('section',{className:'fcMain'}),editor=node('aside',{className:'fcEditor',hidden:true,'aria-label':'編輯家具'}),layout=node('div',{className:'fcLayout'},sidebar,main,editor);app.append(header,layout);ui={app,dialog,save,status:statusNode,sidebar,main,editor,layout};dialog?.addEventListener('cancel',()=>persist());render();}

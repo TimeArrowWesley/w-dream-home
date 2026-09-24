@@ -117,6 +117,7 @@
 !/tools/verify-audit-pairs.cjs
 !/tools/verify-audit-repairs.cjs
 !/tools/verify-bedroom-wall.cjs
+!/tools/verify-budget-chart.cjs
 !/tools/verify-equipment-revision.cjs
 !/tools/verify-furniture-catalog.cjs
 !/tools/verify-grey-home.cjs

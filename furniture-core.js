@@ -33,6 +33,7 @@ function parsePrice(raw){
  return {kind:match[2]?'range':estimated?'estimate':'recorded',min:Math.min(a,b),max:Math.max(a,b)};
 }
 function budget(items){const b={min:0,max:0,pending:0,included:0,invalid:0,count:0};for(const i of items){if(i.archived||!i.includeInBudget||['不採用','資料參考'].includes(i.status))continue;const p=parsePrice(i.priceText);b.count++;if(p.kind==='pending')b.pending++;else if(p.kind==='included')b.included++;else if(p.kind==='invalid')b.invalid++;else{b.min+=p.min;b.max+=p.max;}}return b;}
+function budgetByRoom(data){return data.rooms.map(room=>({room,...budget(data.items.filter(item=>item.room===room.id))}));}
 function updateItem(data,id,changes){const d=clone(data),i=d.items.find(i=>i.id===id);if(!i)throw Error('找不到品項');const editable=['name','brand','specs','priceText','notes','status','room','includeInBudget','archived'];
  for(const k of editable)if(Object.prototype.hasOwnProperty.call(changes,k)){if(['name','brand','specs','room'].includes(k)&&changes[k]!==i[k]&&(i.modelKeys.length||i.modelSearch.length))i.modelDirty=true;i[k]=changes[k];}
  d.updatedAt=new Date().toISOString();return validate(d);
@@ -50,5 +51,5 @@ async function saveDirectory(dir,data,expectedRevision){
  const check=await readFile(dir,'家具清單.json');if(check!==old)throw Error('寫入期間專案清單有新變更，未覆蓋 JSON。草稿與上次儲存檔可用來核對。');
  await writeFile(dir,'家具清單.json',JSON.stringify(d,null,2));return d;
 }
-const api={PROJECT,statuses,clone,validate,parsePrice,budget,updateItem,script,markdown,readFile,saveDirectory};scope.HOME_FURNITURE_CORE=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
+const api={PROJECT,statuses,clone,validate,parsePrice,budget,budgetByRoom,updateItem,script,markdown,readFile,saveDirectory};scope.HOME_FURNITURE_CORE=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

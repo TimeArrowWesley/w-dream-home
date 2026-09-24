@@ -3051,6 +3051,7 @@
     "tools/capture-island-repairs.cjs",
     "tools/verify-island-repairs.cjs",
     "tools/install-island-repairs.py",
-    "tools/publish-island-repairs.py"
+    "tools/publish-island-repairs.py",
+    "tools/verify-budget-chart.cjs"
   ]
 }
