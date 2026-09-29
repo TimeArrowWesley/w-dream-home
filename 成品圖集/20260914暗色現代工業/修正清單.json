@@ -198,5 +198,30 @@
   "v5-study-C-ir01": {
     "nativeAttempts": 2,
     "finalPngSha256": "0d3f97b2647874debdab0607082897f0e6548461a4d96a500a62c8bb192d8caf"
+  },
+  "v2-entry-door5D-hr01": {
+    "revision": "HR01",
+    "reason": "誤將近鏡短外套代理物繪成落地黑板；改空桿展示，固定配置不變",
+    "reviewed": true
+  },
+  "v2-entry-door5E-hr01": {
+    "revision": "HR01",
+    "reason": "誤將近鏡短外套代理物繪成落地黑板；改空桿展示，固定配置不變",
+    "reviewed": true
+  },
+  "v3-entry-door5D-hr01": {
+    "revision": "HR01",
+    "reason": "誤將近鏡短外套代理物繪成落地黑板；改空桿展示，固定配置不變",
+    "reviewed": true
+  },
+  "v5-entry-door5D-hr01": {
+    "revision": "HR01",
+    "reason": "誤將近鏡短外套代理物繪成落地黑板；改空桿展示，固定配置不變",
+    "reviewed": true
+  },
+  "v5-entry-door5E-hr01": {
+    "revision": "HR01",
+    "reason": "誤將近鏡短外套代理物繪成落地黑板；改空桿展示，固定配置不變",
+    "reviewed": true
   }
 }

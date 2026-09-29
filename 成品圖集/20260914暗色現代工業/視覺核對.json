@@ -1,5 +1,5 @@
 {
-  "revision": "20260924-ir01",
+  "revision": "20260929-hr01",
   "reviewedFinalImages": [
     "v0-back-A-bi01",
     "v0-back-B-bi01",
@@ -133,7 +133,9 @@
     "v2-entry-door5B-bi01",
     "v2-entry-door5C-bi01",
     "v2-entry-door5D-bi01",
+    "v2-entry-door5D-hr01",
     "v2-entry-door5E-bi01",
+    "v2-entry-door5E-hr01",
     "v2-island-A-bi01",
     "v2-island-B-ir01",
     "v2-island-C-ir01",
@@ -170,8 +172,7 @@
     "v3-entry-door5B-bi01",
     "v3-entry-door5B-vn01",
     "v3-entry-door5C-vn01",
-    "v3-entry-door5D-vn01",
-    "v3-entry-door5E-bi01",
+    "v3-entry-door5D-hr01",
     "v3-island-A-vn01",
     "v3-island-B-ir01",
     "v3-island-C-bi01",
@@ -203,8 +204,6 @@
     "v4-entry-door5A-bi01",
     "v4-entry-door5B-bi01",
     "v4-entry-door5C-au01",
-    "v4-entry-door5D-au01",
-    "v4-entry-door5E-au01",
     "v4-island-A-bi01",
     "v4-island-B-ir01",
     "v4-island-C-ir01",
@@ -223,7 +222,8 @@
     "v4-study-B-bi01",
     "v4-study-C-ir01",
     "v5-entry-door5C-ir01",
-    "v5-entry-door5D-ir01",
+    "v5-entry-door5D-hr01",
+    "v5-entry-door5E-hr01",
     "v5-island-A-ir01",
     "v5-island-B-ir01",
     "v5-living-A-ir01",
@@ -262,6 +262,8 @@
     "v2-bath1-C-bi01",
     "v2-collection-D-bi01",
     "v2-entry-door5B-bi01",
+    "v2-entry-door5D-hr01",
+    "v2-entry-door5E-hr01",
     "v2-storage-C-ir01",
     "v2-storage-E-ir01",
     "v2-study-C-ir01",
@@ -271,6 +273,7 @@
     "v3-collection-A-vn01",
     "v3-collection-B-bi01",
     "v3-collection-C-vn01",
+    "v3-entry-door5D-hr01",
     "v3-living-C-vn01",
     "v3-storage-B-bi01",
     "v3-storage-C-ir01",
@@ -281,9 +284,16 @@
     "v4-entry-door5B-bi01",
     "v4-living-C-au01",
     "v4-study-C-ir01",
+    "v5-entry-door5D-hr01",
+    "v5-entry-door5E-hr01",
     "v5-living-A-ir01",
     "v5-study-C-ir01"
   ],
   "scope": "每個獨立AI對照來源檢視主要配置、材質及設備；細紋、外景、反射為示意，非施工或照度核定",
-  "latestScope": "IR01六版360來源角度重新比對；55張原生AI逐圖核對、更新59圖位，其餘301圖位來源相同保留。"
+  "latestScope": "IR01六版360來源角度重新比對；55張原生AI逐圖核對、更新59圖位，其餘301圖位來源相同保留。",
+  "HR01": {
+    "date": "2026-09-29",
+    "scope": "230 paired images screened for this defect only; five new outputs individually checked",
+    "limitations": "Not a fresh comprehensive audit of unrelated room details or construction. Empty-rail styling removes clothing proxy, not storage function."
+  }
 }

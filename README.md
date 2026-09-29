@@ -18,13 +18,13 @@
 
 現行名稱與路徑以 `version-registry.json` 為準。內部 legacy 代號與來源素材舊檔名不可全域改名。首頁預設不代表施工主案已選定。
 
-模型沿用 BI01 霧黑天花／中灰牆、AU01 影音、TW01 無上櫃主牆及 IR01 中島修復；所有工程尺寸、材質產品與五金仍須現場核定。AI 為概念圖，不能當作尺寸證據。
+模型沿用 BI01 霧黑天花／中灰牆、AU01 影音、TW01 無上櫃主牆及 IR01 中島修復；所有工程尺寸、材質產品與五金仍須現場核定。AI 為概念圖，不能當作尺寸證據。HR01 已校正玄關吊衣桿誤畫：V2／V3／V5 的玄關 D／E 採空桿展示，固定吊桿與格局保留。
 
 ## 本機預覽與維護
 
 在此目錄執行 `python -m http.server 8873 --bind 127.0.0.1`，開啟 `http://127.0.0.1:8873/`。使用其他可用 Python 路徑亦可。停止伺服器後才清理其使用中的 log。
 
-唯一編輯來源為根目錄。家具資料主檔是 `家具清單.json`，修改後執行 `node tools/sync-furniture-seed.cjs`。現行原生 AI、模型 PNG、提示與公開 WebP 位於 `成品圖集/20260914暗色現代工業/`，以 `album-manifest.json` 對照。離線 ZIP 可由 `tools/finalize-home-album.py` 重製，不另保存多版副本。
+唯一編輯來源為根目錄。家具資料主檔是 `家具清單.json`，修改後執行 `node tools/sync-furniture-seed.cjs`。現行原生 AI、模型 PNG、提示與公開 WebP 位於 `成品圖集/20260914暗色現代工業/`，以 `album-manifest.json` 對照。加上 `--no-zip` 可只驗證並更新來源紀錄，不建立 ZIP。離線 ZIP 可由 `tools/finalize-home-album.py` 重製，不另保存多版副本。
 
 PF01：材質改為像素一致的 WebP，移除未使用的載入；六版依序延後執行腳本，完成模型與材質初始化後才繪製。靜止、背景及看 AI 圖時沿用停止 3D 繪製機制。
 

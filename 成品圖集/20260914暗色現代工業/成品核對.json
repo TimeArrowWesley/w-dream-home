@@ -11,17 +11,10 @@
     "v4": 60,
     "v5": 60
   },
-  "displayBytes": 72809864,
+  "displayBytes": 72039844,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 50,
+  "correctionViews": 55,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
-  "browserVisualQA": true,
-  "browserScope": [
-    "IAB實際WebGL逐版檢視V0、V1、V2、V3、V4、V5中島操作側：櫃面完整、掃地機入口保留、水槽內壁可見；V1與V4另與修正前破面畫面比較。",
-    "指定畫面中的電視表面已消除共面破裂條紋；既有圓弧、頂天玻璃櫃、兩席位置及長中島配置保留。",
-    "安裝新圖後實際檢視V3中島AI的五張照片列，A／B／E切換及返回3D正常，B／E下載連結對應IR01新檔；版本選單V4／V5仍為停用歷史。",
-    "模型修復對照頁的V4／V5及中島篩選正確，修復前AI、目前模型來源、本輪新AI對應一致。"
-  ],
-  "browserLimitations": "六版指定模型視角及1280×720桌面介面抽樣；不代表所有連續視角、人體使用、聲學、結構或施工驗收。"
+  "browserVisualQA": false
 }

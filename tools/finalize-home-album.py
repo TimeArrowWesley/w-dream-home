@@ -1,7 +1,7 @@
 """Build provenance, validate image payloads, and write a self-contained album ZIP."""
 from pathlib import Path
 from PIL import Image
-import json,hashlib,zipfile,csv,io
+import json,hashlib,zipfile,csv,io,sys
 project=Path(__file__).resolve().parents[1]
 root=project/'成品圖集/20260914暗色現代工業'
 def read(name):return json.loads((root/name).read_text(encoding='utf8'))
@@ -45,6 +45,9 @@ if manifest.get('imageRevision') in browser_reports:
   b=json.loads(browser_report.read_text(encoding='utf8'))
   report.update({'browserVisualQA':True,'browserScope':b['localChecks'],'browserLimitations':b['limits']})
 (root/'成品核對.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
+if '--no-zip' in sys.argv:
+ print(json.dumps({'viewSlots':len(entries),'uniqueImages':len(keys),'imagesDecoded':len(keys)*3,'sourceHashesVerified':len(entries),'zipCreated':False}))
+ sys.exit(0)
 files=[root/n for n in ['index.html','album.css','album.js','album-data.js','使用說明.md','生成紀錄.json','成品核對.json']]
 files += [root/folder/f'{key}.webp' for folder in ['images','models','thumbs'] for key in keys]
 out=project/'成品圖集/W夢想之家_六版全屋AI圖集_精簡包.zip'
