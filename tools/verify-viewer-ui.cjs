@@ -86,7 +86,7 @@ function fixture(v,params='') {
 for(const v of ['v0','v1','v2','v3','v4','v5']){
   const a=fixture(v),{c,document:d,$,calls,originals}=a;
   assert(c.HOME_UI, v+' initialized');assert.equal(c.HOME_UI.getState().room,'all');
-  assert.equal(d.querySelectorAll('.uiPrimary > button').length,3);
+  assert.equal(d.querySelectorAll('.uiPrimary > button, .uiPrimary > a').length,3);
   assert.equal($('layoutSwitch').children.length,5);assert.deepEqual(Array.from(d.querySelectorAll('.uiVersionHistory [data-proposal]'),b=>b.dataset.proposal),['v4','v5']);assert(!/原V[234]|新增/.test($('layoutSwitch').textContent));assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
   assert.equal(cssValue(d,d.querySelector('body > header'),'display'),'flex');assert.equal(cssValue(d,$('uiSidebar'),'display'),'flex');assert.equal(cssValue(d,$('planPanel'),'display'),'none');
   assert.equal(cssValue(d,d.querySelector('.shell'),'height'),'auto');assert.equal(cssValue(d,$('scenePanel'),'grid-template-rows'),'auto minmax(0,1fr) auto');
@@ -140,7 +140,12 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(['v2','v3'].includes(v)){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
-  $('uiResourcesButton').click();assert($('uiResources').open);assert.equal(d.querySelectorAll('.uiResource').length,6);for(const page of ['設計現況.html','AI寫實視角.html','家具清單.html','方案比較.html'])assert(Array.from(d.querySelectorAll('.uiResource')).some(a=>decodeURI(a.href).endsWith('/'+page)),page+' linked');$('uiResourcesClose').click();
+  for(const [id,file] of [['homeFurnitureCatalog','家具清單.html'],['uiResourcesButton','設計資料.html']]){
+    const a=$(id),url=new URL(a.href);assert.equal(a.tagName,'A');assert.equal(a.target,'_blank');assert.equal(a.rel,'noopener');
+    assert.equal(decodeURI(url.pathname),'/project/'+file,'nested versions link to shared root');assert.equal(url.searchParams.get('version'),v);
+    assert(!a.onclick,'navigation does not trigger old dialog handler');
+  }
+  assert(!$('uiResources'),'resource library no longer creates a modal');
   assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
   assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
   d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));
@@ -154,6 +159,22 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   checks.push(v.toUpperCase()+': navigation, plan enlargement, all original controls, contextual room actions, walking, AI room switch, furniture return, resources, export and version handoff passed');
 }
 const deep=fixture('v2','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.getState().room,'bed');checks.push('Switching versions retains selected room; normal startup returns to whole-home overview');
+{
+ const a=fixture('v1'),{c,$,dom}=a,door={key:'study-slide-r05',target:0};
+ c.HOME_R05={pulled:false,setDiningPulled(out){this.pulled=!!out;return this.pulled;},applyFinishes(){}};
+ c.HOME_INTERACTION={getState:()=>({entries:[door]}),setDoor(key,open){assert.equal(key,door.key);door.target=open?90:0;c.dispatchEvent(new dom.Event('doorstatechange'));return true;}};
+ a.run('v1-controls.js');for(const fn of a.listeners.DOMContentLoaded||[])fn();
+ assert.equal($('uiDiningSwitch').getAttribute('role'),'switch');assert.equal($('uiDiningSwitch').checked,false);assert.equal($('uiStudyDoorSwitch').checked,true);
+ $('uiDiningSwitch').checked=true;$('uiDiningSwitch').dispatchEvent(new dom.Event('change'));assert(c.HOME_R05.pulled);
+ $('uiStudyDoorSwitch').checked=false;$('uiStudyDoorSwitch').dispatchEvent(new dom.Event('change'));assert.equal(door.target,0);
+ c.HOME_INTERACTION.setDoor(door.key,true);assert.equal($('uiStudyDoorSwitch').checked,true,'external door changes update switch');
+ checks.push('V1 switches dispatch stool/door state and sync external door changes');
+}
+{
+ const {document}=parseHTML(read('設計資料.html'));assert.equal(document.querySelectorAll('.resource').length,6);
+ for(const a of document.querySelectorAll('.resource'))assert(fs.existsSync(path.join(R,a.getAttribute('href'))),'resource target exists');
+ checks.push('Standalone resource page retains all six existing destinations');
+}
 {
  const {document}=parseHTML(read('設計現況.html'));assert.equal(document.querySelectorAll('tbody tr').length,6);assert(document.body.textContent.includes('已停用'));assert(document.body.textContent.includes('360'));checks.push('Current design summary retains six versions, disabled states and complete gallery scope');
 }

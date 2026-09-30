@@ -32,7 +32,7 @@
     body.classList.add('uiApp');
     sidebar.id = 'uiSidebar'; sidebar.setAttribute('aria-label', '版本與空間');
     // Append after feature styles. All selectors are scoped to this shell.
-    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20260922-ui07', root).href;
+    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20260930-ui09', root).href;
     document.head.append(theme);
 
     // Primary navigation: one entry per task, with export as a secondary action.
@@ -41,9 +41,16 @@
     const primary = make('nav', 'uiPrimary'); primary.setAttribute('aria-label', '專案功能');
     const designTab = btn('空間設計', 'uiDesignTab', () => closeInspector());
     designTab.setAttribute('aria-current', 'page');
-    const furniture = $('homeFurnitureCatalog');
-    if (furniture) { furniture.textContent = '家具設備'; furniture.className = ''; }
-    const resourcesButton = btn('設計資料', 'uiResourcesButton', () => openDialog(resources, resourcesButton));
+    const pageLink = (label, id, file) => {
+      const a = make('a', '', label), url = new URL(file, root);
+      url.searchParams.set('version', version);
+      a.id = id; a.href = url.href; a.target = '_blank'; a.rel = 'noopener';
+      a.title = label + '（另開分頁）'; return a;
+    };
+    const oldFurniture = $('homeFurnitureCatalog');
+    const furniture = pageLink('家具設備', 'homeFurnitureCatalog', '家具清單.html');
+    oldFurniture?.replaceWith(furniture);
+    const resourcesButton = pageLink('設計資料', 'uiResourcesButton', '設計資料.html');
     primary.append(designTab); if (furniture) primary.append(furniture); primary.append(resourcesButton);
     const actions = make('div', 'uiHeaderActions');
     const exportMenu = make('details', 'uiMenu uiExportMenu');
@@ -130,28 +137,6 @@
     mapDialog.addEventListener('close', () => { sideContent.append(plan); setNav(navView); });
     $('planstage').addEventListener('click', e => { if (e.target.closest?.('.planroom')) { if (mapDialog.open) mapDialog.close(); closeMobileNav(); } });
     $('planstage').addEventListener('keydown', e => { if (['Enter',' '].includes(e.key) && e.target.closest?.('.planroom')) { if (mapDialog.open) mapDialog.close(); closeMobileNav(); } });
-
-    // A resource library replaces scattered links in the version toolbar.
-    const resources = makeDialog('uiResources', '設計資料', '比較方案、查看調整依據，或回顧參考圖。');
-    const resourceGrid = make('div', 'uiResourceGrid');
-    for (const [title, note, file] of [
-      ['目前設計與待確認事項', '目前配置、風格、成果及工程待核項目', '設計現況.html'],
-      ['六版格局比較', 'V0～V5的平面、配置及模型入口', '方案比較.html'],
-      ['全屋 AI 圖集', '六版360圖位；每區五角度，可並排核對模型來源', 'AI寫實視角.html'],
-      ['家具與設備預算', '共用清單、分區圓餅圖與待報價項目', '家具清單.html'],
-      ['V0 原始格局', '原圖還原、全屋平面與功能說明', '提案/原始格局/方案說明.html'],
-      ['收藏區替代格局', '收藏室與開放格局的空間取捨', '提案/拆收藏室替代方案/index.html']
-    ]) {
-      const a = make('a', 'uiResource'); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener';
-      a.append(make('strong', '', title + ' ↗'), make('span', '', note)); resourceGrid.append(a);
-    }
-    resources.append(resourceGrid);
-    const history = make('details', 'uiHistory'); history.append(make('summary', '', 'AI 成品圖集'));
-    history.append(make('p', '', '每版12個空間，各空間5方向，可對照模型取景與AI材質效果。尺寸以模型及核定圖說為準。'));
-    for (const [label, file] of [['全屋 AI 圖集 ↗', 'AI寫實視角.html']]) {
-      const a = make('a', '', label); a.href = new URL(file, root).href; a.target = '_blank'; a.rel = 'noopener'; history.append(a);
-    }
-    resources.append(history);
 
     // A single inspector keeps controls off the scene and groups them by purpose.
     const inspector = make('section', 'uiInspector'); inspector.id = 'uiInspector'; inspector.hidden = true;

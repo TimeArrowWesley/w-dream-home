@@ -46,11 +46,23 @@ body.uiApp > header, body.uiApp.walkImmersive > header {
 .uiBrand h1 { font-family: Georgia, 'Microsoft JhengHei', serif; font-weight: 400; font-size: 22px; letter-spacing: .09em; margin: 0; }
 .uiBrand .sub { color: var(--ui-muted); font-size: 10px; letter-spacing: .08em; margin-top: 3px; }
 .uiPrimary { display: flex; align-self: stretch; align-items: stretch; gap: 8px; margin-right: auto; }
-body.uiApp .uiPrimary button { background: transparent; border: 0; border-radius: 0; min-width: 88px; padding: 0 14px; color: var(--ui-muted); position: relative; white-space: nowrap; }
-body.uiApp .uiPrimary button:hover { color: var(--ui-text); background: #ffffff06; }
+body.uiApp .uiPrimary :is(button,a) { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 13px; background: transparent; border: 0; border-radius: 0; min-width: 88px; padding: 0 14px; color: var(--ui-muted); position: relative; white-space: nowrap; }
+body.uiApp .uiPrimary :is(button,a):hover { color: var(--ui-text); background: #ffffff06; }
 body.uiApp .uiPrimary [aria-current=page] { color: var(--ui-text); font-weight: 600; }
 .uiPrimary [aria-current=page]::after { content: ''; height: 3px; background: var(--ui-accent); position: absolute; bottom: 0; left: 14px; right: 14px; border-radius: 2px 2px 0 0; }
 .uiHeaderActions { display: flex; gap: 8px; align-items: center; white-space: nowrap; }
+.uiQuickControls { display: flex; gap: 20px; align-items: center; flex-shrink: 0; padding-left: 20px; border-left: 1px solid var(--ui-line); }
+.uiQuickSwitch { display: flex; position: relative; align-items: center; gap: 10px; min-height: 44px; cursor: pointer; white-space: nowrap; }
+.uiQuickCaption { font-size: 12px; line-height: 1.5; }
+.uiQuickCaption small { display: block; color: var(--ui-muted); font-size: 10px; }
+body.uiApp .uiQuickSwitch input { position: absolute; right: 0; width: 44px; height: 28px; margin: 0; opacity: 0; cursor: pointer; }
+.uiSwitchTrack { display: block; width: 44px; height: 26px; border-radius: 20px; background: #555a5c; box-shadow: inset 0 0 0 1px #ffffff16; transition: background .18s ease; pointer-events: none; }
+.uiSwitchTrack::before { content: ''; display: block; width: 22px; height: 22px; margin: 2px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px #0005; transition: transform .18s ease; }
+.uiQuickSwitch input:checked + .uiSwitchTrack { background: #34c759; }
+.uiQuickSwitch input:checked + .uiSwitchTrack::before { transform: translateX(18px); }
+.uiQuickSwitch input:focus-visible + .uiSwitchTrack { outline: 2px solid var(--ui-warm); outline-offset: 4px; }
+.uiQuickSwitch input:disabled + .uiSwitchTrack { opacity: .4; }
+@media (prefers-reduced-motion: reduce) { .uiSwitchTrack,.uiSwitchTrack::before { transition: none; } }
 .uiMenu { position: relative; }
 .uiMenu > summary { list-style: none; cursor: pointer; }
 .uiMenu > summary::-webkit-details-marker { display: none; }
@@ -235,7 +247,7 @@ body.uiApp #uiMobileNav, body.uiApp #uiNavScrim { display: none; }
   body.uiApp .sceneToolbar .uiSceneTitle { width: calc(100% - 190px); }
   body.uiApp .sceneToolbar .viewTabs { order: 3; margin-top: 2px; }
   .uiBrand .sub { display: none; }
-  body.uiApp .uiPrimary button { min-width: 72px; padding: 0 10px; }
+  body.uiApp .uiPrimary :is(button,a) { min-width: 72px; padding: 0 10px; }
   body.uiApp > header { gap: 16px; }
 }
 @media (max-width: 760px) {
@@ -243,7 +255,7 @@ body.uiApp #uiMobileNav, body.uiApp #uiNavScrim { display: none; }
   body.uiApp > header,body.uiApp.walkImmersive > header { height: var(--ui-header); padding: 10px 14px 0; display: grid !important; grid-template-columns: 1fr auto; grid-template-rows: 38px 42px; gap: 0 8px; }
   .uiBrand h1 { font-size: 19px; }
   .uiPrimary { grid-column: 1/-1; grid-row: 2; align-self: stretch; margin: 0; }
-  body.uiApp .uiPrimary button { min-width: 0; padding: 0 14px; }
+  body.uiApp .uiPrimary :is(button,a) { min-width: 0; padding: 0 14px; }
   .uiHeaderActions { grid-column: 2; grid-row: 1; gap: 5px; }
   body.uiApp .uiHeaderActions :is(button,summary) { font-size: 11px; min-height: 30px; padding: 5px 8px; }
   body.uiApp .shell,body.uiApp.walkImmersive .shell { grid-template-columns: minmax(0,1fr); }
@@ -270,6 +282,18 @@ body.uiApp #uiMobileNav, body.uiApp #uiNavScrim { display: none; }
   .uiHistory { margin: 0 18px 18px; }
   body.uiApp #aiPhotoHeading { padding: 10px 12px; }
   body.uiApp #aiPhotoHeading small { font-size: 11px; }
+}
+@media (max-width: 1100px) {
+  body.uiApp.uiHasQuickControls { --ui-header: 112px; }
+  body.uiApp.uiHasQuickControls > header { display: grid !important; grid-template-columns: auto 1fr auto; grid-template-rows: 60px 44px; gap: 0 16px; }
+  .uiHasQuickControls .uiQuickControls { grid-row: 2; grid-column: 1/-1; justify-content: flex-end; border-left: 0; border-top: 1px solid var(--ui-line); padding: 0; }
+  .uiHasQuickControls .uiHeaderActions { grid-column: 3; grid-row: 1; }
+}
+@media (max-width: 760px) {
+  body.uiApp.uiHasQuickControls { --ui-header: 150px; }
+  body.uiApp.uiHasQuickControls > header { grid-template-columns: 1fr auto; grid-template-rows: 38px 42px 50px; gap: 0 8px; }
+  .uiHasQuickControls .uiHeaderActions { grid-column: 2; grid-row: 1; }
+  .uiHasQuickControls .uiQuickControls { grid-row: 3; justify-content: space-between; gap: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
   body.uiApp *,body.uiApp *::before,body.uiApp *::after { transition: none !important; scroll-behavior: auto !important; }

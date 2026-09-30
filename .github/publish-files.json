@@ -817,7 +817,8 @@
     "viewer-startup.js",
     "assets/realism/wood-asset.js",
     "assets/realism/warm-oak.webp",
-    "設計現況.html"
+    "設計現況.html",
+    "設計資料.html"
   ],
   "repositoryOnly": [
     ".gitattributes",
