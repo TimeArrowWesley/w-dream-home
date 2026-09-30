@@ -79,6 +79,7 @@ function fixture(v,params='') {
   c.HOME_REALISM={invalidate(){},refreshReflections(){},ready:Promise.resolve()};
   const rgbStates={living:{on:false,color:'#55ccff',mode:'static',brightness:65},study:{on:false,color:'#ac65ff',mode:'static',brightness:65}};
   c.HOME_RGB={getState:()=>JSON.parse(JSON.stringify(rgbStates)),update:(room,patch)=>{calls.push(['rgbScene',room,patch]);Object.assign(rgbStates[room],patch);c.dispatchEvent(new dom.Event('rgblightingchange'));}};
+  c.HOME_RGB.setEnabled=on=>{calls.push(['rgbMaster',on]);for(const room in rgbStates)c.HOME_RGB.update(room,{on});};
   for(const id of ['day','night'])$(id).onclick=()=>{for(const key of ['day','night'])$(key).classList.toggle('active',id===key);};
   run('comfort-controls.js');run('bedroom-controls.js');if(v==='v3')c.HOME_HYBRID={};run('viewer-ui.js');
   return {c,document,$,calls,originals,run,dom,listeners};
@@ -149,11 +150,14 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   assert(!$('uiResources'),'resource library no longer creates a modal');
   const led=$('uiLedSwitch');assert.equal(led.getAttribute('role'),'switch');
   const rgbBefore=c.HOME_RGB.getState();led.checked=true;led.dispatchEvent(new a.dom.Event('change'));
+  assert(calls.some(q=>q[0]==='rgbMaster'&&q[1]===true),'LED delegates to the shared master controller');
   assert(Object.values(c.HOME_RGB.getState()).every(s=>s.on));
   c.HOME_RGB.update('study',{on:false});assert(led.checked);assert(led.parentElement.textContent.includes('部分開啟'));
   led.checked=false;led.dispatchEvent(new a.dom.Event('change'));assert(Object.values(c.HOME_RGB.getState()).every(s=>!s.on));
   for(const [room,s] of Object.entries(c.HOME_RGB.getState()))for(const key of ['color','mode','brightness'])assert.equal(s[key],rgbBefore[room][key],'LED switch retains '+key);
   c.HOME_AI_VIEWS.open();led.checked=true;led.dispatchEvent(new a.dom.Event('change'));assert.equal(c.HOME_TOUR.getMode(),'model','LED control shows live 3D instead of static AI');
+  for(const room of ['living','study'])c.HOME_RGB.update(room,{on:true,brightness:0});
+  assert(!led.checked,'zero-brightness lights must not falsely show ON');
   assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
   assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
   d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));

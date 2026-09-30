@@ -22,6 +22,21 @@ function sample(f,n,action){const before=counters(f);for(let i=0;i<n;i++){action
   c.HOME_CURTAINS.set(1,'all');const curtain=sample(f,120);assert(curtain.draws>20);assert(c.HOME_CURTAINS.getState().every(e=>e.closed>.99));
   c.HOME_RGB.update('living',{on:true,mode:'wave',brightness:65});const rgb=sample(f,180);assert(rgb.draws>70&&rgb.draws<=92);assert.equal(rgb.shadows,0,'RGB colors do not rebuild shadow maps');
   c.HOME_RGB.update('living',{mode:'static'});f.tick(30,step);assert.equal(sample(f,120).draws,0,'animation returns to idle');
+  // Regression: cutaway/overview hid the ceiling and silently forced RGB lights to zero.
+  const rgbControl=c.HOME_RGB,retained=rgbControl.getState(),ceilingBefore=V.ceiling.visible;
+  V.ceiling.visible=false;rgbControl.setEnabled(false);f.tick(30,step);
+  const rgbOff=Object.values(rgbControl.fixtures).flatMap(f=>f.lights.map(e=>e.light.intensity));
+  assert(rgbOff.every(v=>v===0),'master OFF extinguishes actual lights');
+  rgbControl.setEnabled(true);const cutaway=sample(f,30);
+  assert(cutaway.draws>0,'master ON redraws the stationary cutaway');
+  const rgbOn=Object.values(rgbControl.fixtures).flatMap(f=>f.lights.map(e=>e.light.intensity));
+  assert(rgbOn.every(v=>v>0),'hidden ceiling must not disable real RGB illumination');
+  for(const [room,s] of Object.entries(rgbControl.getState()))for(const key of ['color','brightness','mode','speed'])assert.equal(s[key],retained[room][key],'retain '+room+' '+key);
+  rgbControl.update('living',{brightness:0});rgbControl.setEnabled(true);
+  assert.equal(rgbControl.getState().living.brightness,retained.living.brightness,'master ON restores the last nonzero dimmer value');
+  rgbControl.update('living',{mode:'wave'});assert(sample(f,90).draws>30,'hidden-ceiling RGB animation stays responsive');
+  rgbControl.setEnabled(false);rgbControl.update('living',{mode:'static'});V.ceiling.visible=ceilingBefore;f.tick(30,step);
+  assert.equal(sample(f,120).draws,0,'LED OFF returns to idle');
   c.HOME_EQUIPMENT.setInspection(true);assert(sample(f,15).draws>0,'inspection updates on demand');c.HOME_EQUIPMENT.setInspection(false);
   const tv=c.HOME_ROTATING_TV_CONTROLS;if(tv){tv.setTarget('island');const turn=sample(f,420);assert(turn.draws>30);assert(Math.abs(tv.getState().angle-180)<.01);tv.setTarget('living');f.tick(420,step);}
   c.HOME_CURTAINS.set(0,'all');c.document.hidden=true;const hidden=sample(f,300);assert.equal(hidden.draws,0);assert.equal(hidden.rgb,0);assert(c.HOME_CURTAINS.getState().every(e=>e.closed>.99),'background animations pause');
@@ -30,7 +45,7 @@ function sample(f,n,action){const before=counters(f);for(let i=0;i<n;i++){action
   get('realismQuality').onclick();assert.equal(R.getState().quality,'balanced');get('realismQuality').onclick();assert.equal(R.getState().quality,'high');f.tick(60,step);assert(R.getState().postPasses>0,'fine postprocess remains available');assert.equal(sample(f,120).draws,0,'fine mode also sleeps at rest');
   get('realismQuality').onclick();assert.equal(R.getState().quality,'eco');const rect=get('view').getBoundingClientRect;get('view').getBoundingClientRect=()=>({width:3840,height:2160});R.resizeBudget();assert(V.renderer.getPixelRatio()**2*3840*2160<=1100001,'4K displays respect pixel budget');get('view').getBoundingClientRect=rect;R.resizeBudget();
   const before=counters(f).draws;R.render(true);assert(counters(f).draws>before,'explicit export forces a fresh frame');
-  report.versions[cfg.id]={idle10Seconds:idle,moving10Seconds:moving,walkIdle10Seconds:walkIdle,door,curtain,rgb3Seconds:rgb,hidden5Seconds:hidden,checks:'door, curtains, RGB, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed'};
+  report.versions[cfg.id]={idle10Seconds:idle,moving10Seconds:moving,walkIdle10Seconds:walkIdle,door,curtain,rgb3Seconds:rgb,ledCutaway:{off:rgbOff,on:rgbOn,render:cutaway},hidden5Seconds:hidden,checks:'door, curtains, RGB master/zero dimmer/cutaway, inspection, TV, hidden/resume, quality cycling, pixel budget and export passed'};
  }
  const out=path.resolve(process.env.HOME_TEST_REPORT_DIR||path.join(root,'調整紀錄/20260911效能優化'));fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'效能驗證.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 })().catch(e=>{console.error(e);process.exit(1);});

@@ -75,14 +75,14 @@
       label.append(caption, input, track); quick.append(label); header.insertBefore(quick, actions);
       body.classList.add('uiHasQuickControls');
       const syncLED = () => {
-        const rooms = Object.values(window.HOME_RGB.getState()), count = rooms.filter(s => s.on).length;
+        const rooms = Object.values(window.HOME_RGB.getState()), count = rooms.filter(s => s.on && s.brightness > 0).length;
         input.checked = count > 0; input.disabled = !rooms.length;
         state.textContent = count === 0 ? '關閉' : count === rooms.length ? '開啟' : '部分開啟';
       };
       input.onchange = () => {
         const on = input.checked;
         if (tour.getMode() === 'photo') tour.setMode('model');
-        for (const room of Object.keys(window.HOME_RGB.getState())) window.HOME_RGB.update(room, {on});
+        window.HOME_RGB.setEnabled(on);
         syncLED();
       };
       window.addEventListener('rgblightingchange', syncLED); syncLED();
