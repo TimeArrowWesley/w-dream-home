@@ -50,6 +50,7 @@
 !/model-audit-repairs.js
 !/model-data.js
 !/model-repairs.js
+!/plan-measure.js
 !/realism.js
 !/rgb-lighting.js
 !/sofa-model.js
@@ -143,6 +144,7 @@
 !/tools/verify-open-island.cjs
 !/tools/verify-original-layout.cjs
 !/tools/verify-plan-a.cjs
+!/tools/verify-plan-measure.cjs
 !/tools/verify-private-upgrade.cjs
 !/tools/verify-render-performance.cjs
 !/tools/verify-retained-versions.cjs

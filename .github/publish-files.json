@@ -818,7 +818,8 @@
     "assets/realism/wood-asset.js",
     "assets/realism/warm-oak.webp",
     "設計現況.html",
-    "設計資料.html"
+    "設計資料.html",
+    "plan-measure.js"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -938,6 +939,7 @@
     "調整紀錄/20260917V1更新/dining-check.json",
     "調整紀錄/20260917V1更新/furniture-check.json",
     "調整紀錄/20260917V1更新/其他版本保留核對.json",
-    "調整紀錄/20260910開放大中島/驗證.json"
+    "調整紀錄/20260910開放大中島/驗證.json",
+    "tools/verify-plan-measure.cjs"
   ]
 }

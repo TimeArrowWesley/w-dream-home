@@ -81,13 +81,17 @@ function fixture(v,params='') {
   c.HOME_RGB={getState:()=>JSON.parse(JSON.stringify(rgbStates)),update:(room,patch)=>{calls.push(['rgbScene',room,patch]);Object.assign(rgbStates[room],patch);c.dispatchEvent(new dom.Event('rgblightingchange'));}};
   c.HOME_RGB.setEnabled=on=>{calls.push(['rgbMaster',on]);for(const room in rgbStates)c.HOME_RGB.update(room,{on});};
   for(const id of ['day','night'])$(id).onclick=()=>{for(const key of ['day','night'])$(key).classList.toggle('active',id===key);};
-  run('comfort-controls.js');run('bedroom-controls.js');if(v==='v3')c.HOME_HYBRID={};run('viewer-ui.js');
+  run('comfort-controls.js');run('bedroom-controls.js');if(v==='v3')c.HOME_HYBRID={};run('viewer-ui.js');run('plan-measure.js');
   return {c,document,$,calls,originals,run,dom,listeners};
 }
 (async()=>{
 for(const v of ['v0','v1','v2','v3','v4','v5']){
   const a=fixture(v),{c,document:d,$,calls,originals}=a;
   assert(c.HOME_UI, v+' initialized');assert.equal(c.HOME_UI.getState().room,'all');
+  assert(c.HOME_PLAN_MEASURE, v+' measurement initialized');
+  c.HOME_PLAN_MEASURE.setOn(true);assert(c.HOME_PLAN_MEASURE.on());
+  c.HOME_TOUR.showSource('walls');assert(!c.HOME_PLAN_MEASURE.on());assert($('pmToggle').disabled);
+  c.HOME_TOUR.showSource('model');assert(!$('pmToggle').disabled);
   assert.equal(d.querySelectorAll('.uiPrimary > button, .uiPrimary > a').length,3);
   assert.equal($('layoutSwitch').children.length,5);assert.deepEqual(Array.from(d.querySelectorAll('.uiVersionHistory [data-proposal]'),b=>b.dataset.proposal),['v4','v5']);assert(!/原V[234]|新增/.test($('layoutSwitch').textContent));assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
   assert.equal(cssValue(d,d.querySelector('body > header'),'display'),'flex');assert.equal(cssValue(d,$('uiSidebar'),'display'),'flex');assert.equal(cssValue(d,$('planPanel'),'display'),'none');
