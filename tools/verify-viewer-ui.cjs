@@ -77,7 +77,8 @@ function fixture(v,params='') {
   Object.assign(finish,{hemi:new T.HemisphereLight(),fill:new T.DirectionalLight(),sun:new T.DirectionalLight(),finishLights:[],industrialFinishes:{lens:new T.MeshStandardMaterial(),warmLights:[]}});
   finish.materials.light=new T.MeshBasicMaterial();const livingLight=new T.PointLight();livingLight.position.copy(c.HOME_VIEWER.pos(900,600,260));finish.roomLights.push(livingLight);
   c.HOME_REALISM={invalidate(){},refreshReflections(){},ready:Promise.resolve()};
-  c.HOME_RGB={update:(room,patch)=>calls.push(['rgbScene',room,patch])};
+  const rgbStates={living:{on:false,color:'#55ccff',mode:'static',brightness:65},study:{on:false,color:'#ac65ff',mode:'static',brightness:65}};
+  c.HOME_RGB={getState:()=>JSON.parse(JSON.stringify(rgbStates)),update:(room,patch)=>{calls.push(['rgbScene',room,patch]);Object.assign(rgbStates[room],patch);c.dispatchEvent(new dom.Event('rgblightingchange'));}};
   for(const id of ['day','night'])$(id).onclick=()=>{for(const key of ['day','night'])$(key).classList.toggle('active',id===key);};
   run('comfort-controls.js');run('bedroom-controls.js');if(v==='v3')c.HOME_HYBRID={};run('viewer-ui.js');
   return {c,document,$,calls,originals,run,dom,listeners};
@@ -146,6 +147,13 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
     assert(!a.onclick,'navigation does not trigger old dialog handler');
   }
   assert(!$('uiResources'),'resource library no longer creates a modal');
+  const led=$('uiLedSwitch');assert.equal(led.getAttribute('role'),'switch');
+  const rgbBefore=c.HOME_RGB.getState();led.checked=true;led.dispatchEvent(new a.dom.Event('change'));
+  assert(Object.values(c.HOME_RGB.getState()).every(s=>s.on));
+  c.HOME_RGB.update('study',{on:false});assert(led.checked);assert(led.parentElement.textContent.includes('部分開啟'));
+  led.checked=false;led.dispatchEvent(new a.dom.Event('change'));assert(Object.values(c.HOME_RGB.getState()).every(s=>!s.on));
+  for(const [room,s] of Object.entries(c.HOME_RGB.getState()))for(const key of ['color','mode','brightness'])assert.equal(s[key],rgbBefore[room][key],'LED switch retains '+key);
+  c.HOME_AI_VIEWS.open();led.checked=true;led.dispatchEvent(new a.dom.Event('change'));assert.equal(c.HOME_TOUR.getMode(),'model','LED control shows live 3D instead of static AI');
   assert($('uiInspector').contains($('comfortScenes')),'White light controls remain in the actual inspector');
   assert.equal(d.querySelectorAll('[data-comfort-scene]').length,6);
   d.querySelector('[data-comfort-scene="bar"]').click();assert.equal(c.HOME_COMFORT.getState().kelvin,2400);assert($('night').classList.contains('active'));

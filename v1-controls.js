@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded',()=>{
  const R=window.HOME_R05,V=window.HOME_VIEWER;if(!R||!V)return;
  const header=document.querySelector('body > header'),interaction=window.HOME_INTERACTION;
  if(!header||!interaction)return;
- const quick=document.createElement('div');quick.className='uiQuickControls';quick.setAttribute('role','group');quick.setAttribute('aria-label','中島與書房快捷控制');
+ const quick=header.querySelector('.uiQuickControls')||document.createElement('div');quick.className='uiQuickControls';quick.setAttribute('role','group');quick.setAttribute('aria-label','快捷控制');
  function toggle(label,id,accessibleName,onChange){
   const host=document.createElement('label');host.className='uiQuickSwitch';
   const caption=document.createElement('span');caption.className='uiQuickCaption';caption.append(document.createTextNode(label));

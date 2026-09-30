@@ -32,7 +32,7 @@
     body.classList.add('uiApp');
     sidebar.id = 'uiSidebar'; sidebar.setAttribute('aria-label', '版本與空間');
     // Append after feature styles. All selectors are scoped to this shell.
-    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20260930-ui09', root).href;
+    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20260930-ui10', root).href;
     document.head.append(theme);
 
     // Primary navigation: one entry per task, with export as a secondary action.
@@ -60,6 +60,33 @@
     exportItems.append($('export'), $('planExport')); exportMenu.append(exportItems);
     $('full').textContent = '全螢幕'; actions.append(exportMenu, $('full'));
     header.replaceChildren(brand, primary, actions);
+
+    // Shared LED master switch; retain each room's colour/effect/brightness.
+    if (window.HOME_RGB?.getState) {
+      const quick = make('div', 'uiQuickControls');
+      quick.setAttribute('role', 'group'); quick.setAttribute('aria-label', '快捷控制');
+      const label = make('label', 'uiQuickSwitch');
+      label.title = '控制客廳與雙人書房的天花 RGB 燈帶';
+      const caption = make('span', 'uiQuickCaption', 'LED 燈帶');
+      const state = make('small'); state.setAttribute('aria-hidden', 'true'); caption.append(state);
+      const input = make('input'); input.type = 'checkbox'; input.id = 'uiLedSwitch';
+      input.setAttribute('role', 'switch'); input.setAttribute('aria-label', '客廳與雙人書房 LED 燈帶');
+      const track = make('span', 'uiSwitchTrack'); track.setAttribute('aria-hidden', 'true');
+      label.append(caption, input, track); quick.append(label); header.insertBefore(quick, actions);
+      body.classList.add('uiHasQuickControls');
+      const syncLED = () => {
+        const rooms = Object.values(window.HOME_RGB.getState()), count = rooms.filter(s => s.on).length;
+        input.checked = count > 0; input.disabled = !rooms.length;
+        state.textContent = count === 0 ? '關閉' : count === rooms.length ? '開啟' : '部分開啟';
+      };
+      input.onchange = () => {
+        const on = input.checked;
+        if (tour.getMode() === 'photo') tour.setMode('model');
+        for (const room of Object.keys(window.HOME_RGB.getState())) window.HOME_RGB.update(room, {on});
+        syncLED();
+      };
+      window.addEventListener('rgblightingchange', syncLED); syncLED();
+    }
 
     // Public version names; construction and entry configurations remain descriptive details.
     const registry=window.HOME_VERSION_REGISTRY.versions;

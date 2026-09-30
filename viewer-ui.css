@@ -295,6 +295,16 @@ body.uiApp #uiMobileNav, body.uiApp #uiNavScrim { display: none; }
   .uiHasQuickControls .uiHeaderActions { grid-column: 2; grid-row: 1; }
   .uiHasQuickControls .uiQuickControls { grid-row: 3; justify-content: space-between; gap: 12px; }
 }
+@media (max-width: 360px) {
+  .uiHasQuickControls .uiQuickControls { gap: 8px; }
+  .uiQuickSwitch { gap: 5px; }
+  .uiQuickCaption { font-size: 10px; }
+  .uiQuickCaption small { font-size: 9px; }
+  body.uiApp .uiQuickSwitch input { width: 40px; height: 26px; }
+  .uiSwitchTrack { width: 40px; height: 24px; }
+  .uiSwitchTrack::before { width: 20px; height: 20px; }
+  .uiQuickSwitch input:checked + .uiSwitchTrack::before { transform: translateX(16px); }
+}
 @media (prefers-reduced-motion: reduce) {
   body.uiApp *,body.uiApp *::before,body.uiApp *::after { transition: none !important; scroll-behavior: auto !important; }
 }
