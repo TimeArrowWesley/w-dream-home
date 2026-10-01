@@ -1,4 +1,4 @@
-/* 20260929-hr01: five directions per room. Shared images require identical source pixels. */
+/* 20261001-cp02: five directions per room. Shared images require identical source pixels. */
 window.HOME_AI_PHOTOS={
   "v0": [
     {
@@ -727,41 +727,41 @@ window.HOME_AI_PHOTOS={
       "id": "v1-study-A",
       "room": "study",
       "label": "雙人書房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-A-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-A-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-A-cp02.webp"
     },
     {
       "id": "v1-study-B",
       "room": "study",
       "label": "雙人書房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-B-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-B-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-B-cp02.webp"
     },
     {
       "id": "v1-study-C",
       "room": "study",
       "label": "雙人書房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-C-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-C-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-C-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-C-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-C-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-C-cp02.webp"
     },
     {
       "id": "v1-study-D",
       "room": "study",
       "label": "雙人書房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-D-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-D-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-D-cp02.webp"
     },
     {
       "id": "v1-study-E",
       "room": "study",
       "label": "雙人書房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-E-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-E-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-E-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-E-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-E-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-E-cp02.webp"
     },
     {
       "id": "v1-collection-A",
@@ -1209,41 +1209,41 @@ window.HOME_AI_PHOTOS={
       "id": "v2-study-A",
       "room": "study",
       "label": "雙人書房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v4-study-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-study-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-study-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-A-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-A-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-A-cp02.webp"
     },
     {
       "id": "v2-study-B",
       "room": "study",
       "label": "雙人書房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v4-study-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-study-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-study-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-B-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-B-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-B-cp02.webp"
     },
     {
       "id": "v2-study-C",
       "room": "study",
       "label": "雙人書房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-study-C-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-C-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-C-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-C-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-C-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-C-cp02.webp"
     },
     {
       "id": "v2-study-D",
       "room": "study",
       "label": "雙人書房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-D-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-D-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-D-cp02.webp"
     },
     {
       "id": "v2-study-E",
       "room": "study",
       "label": "雙人書房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-study-E-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-E-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-E-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-E-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-E-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-E-cp02.webp"
     },
     {
       "id": "v2-collection-A",
@@ -1691,41 +1691,41 @@ window.HOME_AI_PHOTOS={
       "id": "v3-study-A",
       "room": "study",
       "label": "雙人書房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v3-study-A-vn01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-study-A-vn01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-study-A-vn01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-A-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-A-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-A-cp02.webp"
     },
     {
       "id": "v3-study-B",
       "room": "study",
       "label": "雙人書房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v4-study-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-study-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-study-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-B-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-B-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-B-cp02.webp"
     },
     {
       "id": "v3-study-C",
       "room": "study",
       "label": "雙人書房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v3-study-C-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-study-C-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-study-C-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-C-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-C-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-C-cp02.webp"
     },
     {
       "id": "v3-study-D",
       "room": "study",
       "label": "雙人書房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-D-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-D-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-D-cp02.webp"
     },
     {
       "id": "v3-study-E",
       "room": "study",
       "label": "雙人書房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-study-E-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-E-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-E-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-E-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-E-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-E-cp02.webp"
     },
     {
       "id": "v3-collection-A",
@@ -2173,41 +2173,41 @@ window.HOME_AI_PHOTOS={
       "id": "v4-study-A",
       "room": "study",
       "label": "雙人書房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-study-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-A-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-A-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-A-cp02.webp"
     },
     {
       "id": "v4-study-B",
       "room": "study",
       "label": "雙人書房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-study-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-B-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-B-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-B-cp02.webp"
     },
     {
       "id": "v4-study-C",
       "room": "study",
       "label": "雙人書房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v4-study-C-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v4-study-C-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v4-study-C-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-C-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-C-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-C-cp02.webp"
     },
     {
       "id": "v4-study-D",
       "room": "study",
       "label": "雙人書房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-D-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-D-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-D-cp02.webp"
     },
     {
       "id": "v4-study-E",
       "room": "study",
       "label": "雙人書房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-study-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-E-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-E-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-E-cp02.webp"
     },
     {
       "id": "v4-collection-A",
@@ -2655,41 +2655,41 @@ window.HOME_AI_PHOTOS={
       "id": "v5-study-A",
       "room": "study",
       "label": "雙人書房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v3-study-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-study-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-study-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-A-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-A-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-A-cp02.webp"
     },
     {
       "id": "v5-study-B",
       "room": "study",
       "label": "雙人書房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-study-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-study-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-study-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-B-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-B-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-B-cp02.webp"
     },
     {
       "id": "v5-study-C",
       "room": "study",
       "label": "雙人書房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v5-study-C-ir01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v5-study-C-ir01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v5-study-C-ir01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-C-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-C-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-C-cp02.webp"
     },
     {
       "id": "v5-study-D",
       "room": "study",
       "label": "雙人書房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-study-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-study-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-study-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-D-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-D-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-D-cp02.webp"
     },
     {
       "id": "v5-study-E",
       "room": "study",
       "label": "雙人書房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v3-study-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-study-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-study-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/study-E-cp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/study-E-cp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/study-E-cp02.webp"
     },
     {
       "id": "v5-collection-A",

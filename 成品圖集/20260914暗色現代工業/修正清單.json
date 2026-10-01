@@ -55,10 +55,6 @@
     "nativeAttempts": 2,
     "finalPngSha256": "e53c53a1d481c8e05bb5f53f41b43d55248f9c262344be1b77aa19d6c84da3e1"
   },
-  "v1-study-D-bi01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "1d1e49d482907dc3c7693580277af1f06652ca8175b983f71008d0975851241f"
-  },
   "v1-collection-B-bi01": {
     "nativeAttempts": 2,
     "finalPngSha256": "b99faecf63531e6c023be218f0acb67a1b3164d18391e8e9e102b54a5773a481"
@@ -147,25 +143,9 @@
     "nativeAttempts": 2,
     "finalPngSha256": "1763c634f13b3b0ece14a7a950809cf9d7f3ff96eff49fe14db0870d9dd0da6d"
   },
-  "v1-study-C-ir01": {
-    "nativeAttempts": 3,
-    "finalPngSha256": "8ad73d6d223e0587114c93b1c897600f0235bda821b5e8add0894e7d222722c8"
-  },
-  "v1-study-E-ir01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "0953a6f832b8a084202840e6352e37377ef873947c78fadca608233e50184281"
-  },
   "v1-storage-E-ir01": {
     "nativeAttempts": 2,
     "finalPngSha256": "7e82dbb8e85f98d695f644f87fd894303c7f887aca0364e8775788059f9af709"
-  },
-  "v2-study-C-ir01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "18df4c5fdb34c9be01a696fc2b7bfc3ecd3967b01e1fae61696a656f2e296aa2"
-  },
-  "v2-study-E-ir01": {
-    "nativeAttempts": 3,
-    "finalPngSha256": "8f4930baa310c9cf507c304361b9ef11212a5c06f07a60fd37b23255bb6a75d9"
   },
   "v2-storage-C-ir01": {
     "nativeAttempts": 2,
@@ -179,25 +159,13 @@
     "nativeAttempts": 2,
     "finalPngSha256": "9d09288953f135ca025551ab9b2f8915d02f52ec12a0f891c8e5a81518a657ef"
   },
-  "v3-study-C-ir01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "48b0a91ded4007950c72231b62948c026c4d1a6b0fc10c4881036d4fe7b5da9b"
-  },
   "v3-storage-C-ir01": {
     "nativeAttempts": 2,
     "finalPngSha256": "2f083613b3cd0d669b4bab0621327efbadbf2c107c2db85f7a7c8c39500f0678"
   },
-  "v4-study-C-ir01": {
-    "nativeAttempts": 3,
-    "finalPngSha256": "e5830eb6fe2b11cf865764b39d45a08fb7993ee9161fd8c8a259358eb9a1ee96"
-  },
   "v5-living-A-ir01": {
     "nativeAttempts": 2,
     "finalPngSha256": "a3f27ddf7c50fc1cb8ace32b3d048dd733dcdbd9fe34edcbb98c2fc26f073181"
-  },
-  "v5-study-C-ir01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "0d3f97b2647874debdab0607082897f0e6548461a4d96a500a62c8bb192d8caf"
   },
   "v2-entry-door5D-hr01": {
     "revision": "HR01",
@@ -223,5 +191,21 @@
     "revision": "HR01",
     "reason": "誤將近鏡短外套代理物繪成落地黑板；改空桿展示，固定配置不變",
     "reviewed": true
+  },
+  "study-A-cp02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "d549445b57a0e2dc661e211366afec5b5462498bb4cfc700e2565278bf8f6eb7"
+  },
+  "study-C-cp02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "c670c53c00d8bec07b4b8739427ecca26600242b170e5012dd603143873c5711"
+  },
+  "study-D-cp02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "b3016157080a6321c71e61a1a862f48cf871b947510e8e8c275f1fe14dfd41a9"
+  },
+  "study-E-cp02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "18015511acf4e21404e65f5b6e02598428129ff99ad67b566212940a42c96722"
   }
 }

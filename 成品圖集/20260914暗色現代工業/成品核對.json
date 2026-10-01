@@ -1,7 +1,7 @@
 {
   "complete": true,
   "viewSlots": 360,
-  "uniqueImages": 230,
+  "uniqueImages": 217,
   "remaining": [],
   "versions": {
     "v0": 60,
@@ -11,10 +11,19 @@
     "v4": 60,
     "v5": 60
   },
-  "displayBytes": 72039844,
+  "displayBytes": 66691456,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 55,
+  "correctionViews": 51,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
-  "browserVisualQA": false
+  "browserVisualQA": true,
+  "browserScope": [
+    "V1實際WebGL書房與LED開關",
+    "V1新版AI A／E切換及五張照片列在1280×720視窗內",
+    "六版介面離線回歸及360圖位720次圖集操作",
+    "V0既有原案幾何不變；五版25來源逐角度像素相同",
+    "V5停用狀態保留，實際WebGL書房模型與LED開啟已檢視",
+    "V5 AI圖位載入共用CP02 A與五張照片列"
+  ],
+  "browserLimitations": "本輪僅書房五角度及桌面抽查；非全連續視角、照度、容量或工程验收。其他335個AI圖位延續前版，部分跨房背景未反映CP02。"
 }

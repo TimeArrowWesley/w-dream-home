@@ -188,6 +188,7 @@
       const label = selected.label || roomName(selected.room);
       $('aiPhotoTitle').textContent = `${proposal.toUpperCase()} · ${label}`;
       $('aiPhotoNotice').hidden = selected.room !== 'bed';
+      if (selected.room === 'study' && proposal !== 'v0') { $('aiPhotoNotice').hidden = false; $('aiPhotoNotice').textContent = 'CP02 賽博電競房｜五版共用五個室內取景；朝客廳採玻璃霧化顯示，窗外為中性示意。燈光與公仔外觀非施工或容量證明。'; }
       if (selected.room === 'bed') $('aiPhotoNotice').textContent = '主臥模型與AI已同步更新：保留床頭日常檯面，投影機位於外側設備格。AI呈現材質與燈光，尺寸及設備定位以3D為準。';
       image.alt = `${proposal.toUpperCase()} ${label}，AI 設計效果圖`;
       image.src = photoURL(selected);

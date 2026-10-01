@@ -819,7 +819,24 @@
     "assets/realism/warm-oak.webp",
     "設計現況.html",
     "設計資料.html",
-    "plan-measure.js"
+    "plan-measure.js",
+    "study-cyberpunk.js",
+    "study-cyberpunk-finalize.js",
+    "成品圖集/20260914暗色現代工業/images/study-A-cp02.webp",
+    "成品圖集/20260914暗色現代工業/images/study-B-cp02.webp",
+    "成品圖集/20260914暗色現代工業/images/study-C-cp02.webp",
+    "成品圖集/20260914暗色現代工業/images/study-D-cp02.webp",
+    "成品圖集/20260914暗色現代工業/images/study-E-cp02.webp",
+    "成品圖集/20260914暗色現代工業/models/study-A-cp02.webp",
+    "成品圖集/20260914暗色現代工業/models/study-B-cp02.webp",
+    "成品圖集/20260914暗色現代工業/models/study-C-cp02.webp",
+    "成品圖集/20260914暗色現代工業/models/study-D-cp02.webp",
+    "成品圖集/20260914暗色現代工業/models/study-E-cp02.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/study-A-cp02.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/study-B-cp02.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/study-C-cp02.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/study-D-cp02.webp",
+    "成品圖集/20260914暗色現代工業/thumbs/study-E-cp02.webp"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -940,6 +957,9 @@
     "調整紀錄/20260917V1更新/furniture-check.json",
     "調整紀錄/20260917V1更新/其他版本保留核對.json",
     "調整紀錄/20260910開放大中島/驗證.json",
-    "tools/verify-plan-measure.cjs"
+    "tools/verify-plan-measure.cjs",
+    "tools/capture-study-cp02.cjs",
+    "tools/verify-study-cp02.cjs",
+    "tools/install-study-cp02.py"
   ]
 }

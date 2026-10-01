@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20260923-au01",
-  "updatedAt": "2026-09-23",
+  "revision": "20261001-cp02",
+  "updatedAt": "2026-10-01",
   "source": {
     "title": "W夢想之家家具設備規格表",
     "url": "https://claude.ai/code/artifact/8efebff0-f6bf-4b4d-8099-99282e849203",
@@ -87,7 +87,7 @@
       "name": "雙人書房",
       "modelRoom": "study",
       "sourceOverview": "11\n書房\n330 × 365cm · 樓高 330 · 西向大窗 ＋ 右牆陽台雙拉門 · 擺法：方案 K（左牆櫃 36 深：落地 185 ＋ 吊櫃整面 365 ＋ 桌 1 靠左牆、桌 2 靠下牆右端） · 冷氣吊隱\n小計 373,980 1 項待填",
-      "notes": "雙人書房、吊隱冷氣、RGB燈條與展示櫃已入模。九抽門片為深灰棕直紋木皮。"
+      "notes": "V1～V5採CP02雙人電競房，青藍／紫紅LED、六抽、漫畫與公仔展示；V0保留原始書房電子琴。漫畫100～300冊為需求，容量與施工待核。"
     },
     {
       "id": "cat",
@@ -1847,9 +1847,10 @@
       "includeInBudget": true,
       "modelKeys": [],
       "modelSearch": [
-        "書房九抽收納"
+        "CP02 六抽抽面",
+        "CP02 漫畫玻璃門"
       ],
-      "currentNote": "V1 R05：原九抽調整為六抽＋低位常用書櫃、上部封閉歸檔；櫃體外形755～792.2×y180～365×H245cm為模型值，抽屜五金及實物尺寸待深化。其他版本保留原配置。",
+      "currentNote": "CP02：V1～V5统一六抽＋低位漫畫玻璃門、兩列公仔展示、三格高位封閉櫃；櫃外形X755～792.2、Y180～365、Z0～245cm為模型值。漫畫需求100～300冊，圖上書本僅示意，容量、層板承重與五金待核。V0保留原案；原文九抽、520冊與可先發包說法均非本輪核定。",
       "modelDirty": false,
       "archived": false,
       "original": {

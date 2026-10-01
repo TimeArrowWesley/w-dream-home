@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-29",
-  "sourceRevision": "20260924-ir01",
-  "imageRevision": "20260929-hr01",
+  "date": "2026-10-01",
+  "sourceRevision": "20261001-cp02",
+  "imageRevision": "20261001-cp02",
   "versionSources": {
     "v0": {
       "capturedAt": "2026-09-15",
@@ -436,13 +436,132 @@
       "sameAIBytesRetained": 225,
       "fixedGeometryChanged": false,
       "interactiveModelChanged": false
+    },
+    "CP02": {
+      "date": "2026-10-01",
+      "sourceFileSha256": {
+        "study-cyberpunk.js": "c5154699c06bfb86b59375184cf3826c502cb2031fce1c8c92974a829accfc5e",
+        "study-cyberpunk-finalize.js": "13d51af52d9ae0b2b53f4585d32f581f1ca24d377a0b9afa7767ce926199c546",
+        "rgb-lighting.js": "de7b912faf089532f69ec00ada2d1cd8f88138b0d4a5152cb9b881f7b926bef2"
+      },
+      "basis": "Owner-approved cyberpunk study in V1–V5; V0 original preserved. Existing desks, room openings and version-specific door types retained. Shared six drawers, manga display, opaque upper storage, graphite desk wall, cyan/magenta LEDs and PC appearance. Five shared model camera renders checked pixel-identical across five variants. Gallery uses existing privacy-glass display state; no fictional exterior view.",
+      "recapturedSlots": 25,
+      "newNativeAI": 5,
+      "updatedSlots": 25,
+      "otherSlotsRetained": 335,
+      "limits": "Other room AI views remain their prior revisions, including any older study glimpses through glazing. This is a study-only gallery update, not a revalidation of all 360 views. Book capacity, shelf loads and construction remain unverified."
     }
   },
   "sourceMethod": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "generationTool": "Built-in image_gen",
   "viewSlots": 360,
-  "uniqueImages": 230,
+  "uniqueImages": 217,
   "records": [
+    {
+      "key": "study-A-cp02",
+      "usedBy": [
+        "v1-study-A",
+        "v4-study-A",
+        "v5-study-A",
+        "v2-study-A",
+        "v3-study-A"
+      ],
+      "sourcePngSha256": "ac69733183e42f6456834a8eaf9edd3f609f748482b1a11a4cdbbe340bf3a4bc",
+      "aiOriginalPngSha256": "d549445b57a0e2dc661e211366afec5b5462498bb4cfc700e2565278bf8f6eb7",
+      "aiWebpSha256": "28a47761fb26addeb91f61cf893be20236827976433243e69189dd96a110bff3",
+      "sourceWebpSha256": "4241cb7d85f2c6006b40bd35ff2c9061123ab375e9522a6826c02fd38483e131",
+      "prompt": "Create ONE photorealistic interior photograph, landscape 3:2, of the exact existing two-person gaming study shown in reference 1 (the authoritative 3D model camera). Reference 2 is the owner-approved cyberpunk material/lighting mood only; DO NOT copy its camera, outside living room or alter the room layout. Reference 1 is strict geometry: preserve camera position, field of view, room proportions, windows including all mullions and railings, black ceiling and bulkheads, desk and monitor positions, chair positions, cabinet outline, shelf divisions and visible cropping. Do not enlarge the room. No collage, no text labels or watermark.\nUse the approved matte black ceiling, dark graphite/gunmetal joinery and paneled desk wall, muted grey-brown herringbone wood floor, restrained cyan and magenta LED coves with realistic bounce and subtle desk backlights. KEEP usable neutral-white general/task illumination and neutral display illumination. Black steel frames, softly smoky display glass, physical shadows, natural microtexture and premium materials, professional architectural photography. Bright clear windows remain windows with a deliberately neutral overexposed background; do not invent skyline, ocean, river, buildings or scenery. Glass behind the second desk is in the EXISTING switchable privacy/opaque display state for this gallery: keep its frames and plane; do not put a visible living room or fictional wall behind it.\nTwo existing separate 180x80 black standing desks are perpendicular, NEVER side by side. Huge 32:9 curved ultrawide gaming monitors with abstract cyan/magenta sci-fi wallpaper. One graphite ergonomic chair and one light grey ergonomic chair exactly where the source shows them. Two black gaming PC towers with subtle RGB and glass details at their original floor positions if visible, never on desks. Keyboard/mouse modestly added on existing desktops; no new furniture. Any monitor partly cropped by reference frame must stay cropped. No extra door or window, no pillar, no suspended objects.\nThe west cabinet has THREE vertical bays and three opaque dark upper storage cupboards. At the visible front, the TWO left bays have six closed drawers total (three drawers per bay) below glass figure display cells; the right bay has glass-front manga shelves at low and middle levels and a small figure compartment above. Preserve the source frame's actual visibility: do not force all cabinet features to appear if outside frame. Manga are actual tightly arranged books, detailed neutral spines without illegible giant text; figures are small tasteful articulated sci-fi/robot collectibles in the existing display cells, never life-size. Replace the blocky proxy figures with realistic collectible detail, maintaining shelf positions. This is a conceptual design illustration, not a dimension/engineering certificate. Render the room ONLY from reference 1's viewpoint.\nANGLE: Oblique room view from the south-east toward the west desk and collection wall; near edge of white-chair workstation remains cropped in foreground as in source.",
+      "corrections": [
+        {
+          "instruction": "移除真實椅背後殘留的方塊椅代理",
+          "prompt": "Edit only the first image: there is a REAL ergonomic BLACK CHAIR in front of the right-hand desk. Immediately behind its backrest and headrest, the image incorrectly retained black rectangular blocks from the crude 3D chair proxy, resembling a weird dark column or stacked boxes. REMOVE those leftover blocky rectangles entirely. There must be exactly ONE realistic graphite chair at that desk and no black column behind it. Restore the unobstructed pale bright window background in that small area. Keep the real black chair, foreground light-grey chair, desks, PCs, both monitors, six cabinet drawers, collectible displays, manga shelves, lights, camera and all other details exactly unchanged. Same landscape 3:2 framing."
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "study-B-cp02",
+      "usedBy": [
+        "v1-study-B",
+        "v4-study-B",
+        "v5-study-B",
+        "v2-study-B",
+        "v3-study-B"
+      ],
+      "sourcePngSha256": "5a01ec40887d41f4308d26d3026655252a3e070be0ee55e24239026cd0dad993",
+      "aiOriginalPngSha256": "5f7f909d03a2e362da811cab446595f09a10729c4e0891fa18bc700f706047d5",
+      "aiWebpSha256": "31ee91ac7a7e338f9180c001ec81c93132c4c627b0e2a7f4cae298de94f2463d",
+      "sourceWebpSha256": "0ddf4e384ce9bc26d333cb40b2f0d488215312095ab3154b68e977c6439e3abb",
+      "prompt": "Create ONE photorealistic interior photograph, landscape 3:2, of the exact existing two-person gaming study shown in reference 1 (the authoritative 3D model camera). Reference 2 is the owner-approved cyberpunk material/lighting mood only; DO NOT copy its camera, outside living room or alter the room layout. Reference 1 is strict geometry: preserve camera position, field of view, room proportions, windows including all mullions and railings, black ceiling and bulkheads, desk and monitor positions, chair positions, cabinet outline, shelf divisions and visible cropping. Do not enlarge the room. No collage, no text labels or watermark.\nUse the approved matte black ceiling, dark graphite/gunmetal joinery and paneled desk wall, muted grey-brown herringbone wood floor, restrained cyan and magenta LED coves with realistic bounce and subtle desk backlights. KEEP usable neutral-white general/task illumination and neutral display illumination. Black steel frames, softly smoky display glass, physical shadows, natural microtexture and premium materials, professional architectural photography. Bright clear windows remain windows with a deliberately neutral overexposed background; do not invent skyline, ocean, river, buildings or scenery. Glass behind the second desk is in the EXISTING switchable privacy/opaque display state for this gallery: keep its frames and plane; do not put a visible living room or fictional wall behind it.\nTwo existing separate 180x80 black standing desks are perpendicular, NEVER side by side. Huge 32:9 curved ultrawide gaming monitors with abstract cyan/magenta sci-fi wallpaper. One graphite ergonomic chair and one light grey ergonomic chair exactly where the source shows them. Two black gaming PC towers with subtle RGB and glass details at their original floor positions if visible, never on desks. Keyboard/mouse modestly added on existing desktops; no new furniture. Any monitor partly cropped by reference frame must stay cropped. No extra door or window, no pillar, no suspended objects.\nThe west cabinet has THREE vertical bays and three opaque dark upper storage cupboards. At the visible front, the TWO left bays have six closed drawers total (three drawers per bay) below glass figure display cells; the right bay has glass-front manga shelves at low and middle levels and a small figure compartment above. Preserve the source frame's actual visibility: do not force all cabinet features to appear if outside frame. Manga are actual tightly arranged books, detailed neutral spines without illegible giant text; figures are small tasteful articulated sci-fi/robot collectibles in the existing display cells, never life-size. Replace the blocky proxy figures with realistic collectible detail, maintaining shelf positions. This is a conceptual design illustration, not a dimension/engineering certificate. Render the room ONLY from reference 1's viewpoint.\nANGLE: Wide reverse view toward the two existing windows; both workstation chairs and desk edges retain their positions. No cabinet added across the windows.",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "study-C-cp02",
+      "usedBy": [
+        "v1-study-C",
+        "v4-study-C",
+        "v5-study-C",
+        "v2-study-C",
+        "v3-study-C"
+      ],
+      "sourcePngSha256": "52c1dbb2a8aff7dceba118c76a34f52f23c4cdf80936001fc19d7f1e2f503a99",
+      "aiOriginalPngSha256": "c670c53c00d8bec07b4b8739427ecca26600242b170e5012dd603143873c5711",
+      "aiWebpSha256": "34b61b3414a1b47753de637539aed0c94341495f423b9bbf208609325ec79a30",
+      "sourceWebpSha256": "a47cdf745fb50d2fb3c5697adcd1842931845da837adc6054b0a3361c99baea4",
+      "prompt": "Create ONE photorealistic interior photograph, landscape 3:2, of the exact existing two-person gaming study shown in reference 1 (the authoritative 3D model camera). Reference 2 is the owner-approved cyberpunk material/lighting mood only; DO NOT copy its camera, outside living room or alter the room layout. Reference 1 is strict geometry: preserve camera position, field of view, room proportions, windows including all mullions and railings, black ceiling and bulkheads, desk and monitor positions, chair positions, cabinet outline, shelf divisions and visible cropping. Do not enlarge the room. No collage, no text labels or watermark.\nUse the approved matte black ceiling, dark graphite/gunmetal joinery and paneled desk wall, muted grey-brown herringbone wood floor, restrained cyan and magenta LED coves with realistic bounce and subtle desk backlights. KEEP usable neutral-white general/task illumination and neutral display illumination. Black steel frames, softly smoky display glass, physical shadows, natural microtexture and premium materials, professional architectural photography. Bright clear windows remain windows with a deliberately neutral overexposed background; do not invent skyline, ocean, river, buildings or scenery. Glass behind the second desk is in the EXISTING switchable privacy/opaque display state for this gallery: keep its frames and plane; do not put a visible living room or fictional wall behind it.\nTwo existing separate 180x80 black standing desks are perpendicular, NEVER side by side. Huge 32:9 curved ultrawide gaming monitors with abstract cyan/magenta sci-fi wallpaper. One graphite ergonomic chair and one light grey ergonomic chair exactly where the source shows them. Two black gaming PC towers with subtle RGB and glass details at their original floor positions if visible, never on desks. Keyboard/mouse modestly added on existing desktops; no new furniture. Any monitor partly cropped by reference frame must stay cropped. No extra door or window, no pillar, no suspended objects.\nThe west cabinet has THREE vertical bays and three opaque dark upper storage cupboards. At the visible front, the TWO left bays have six closed drawers total (three drawers per bay) below glass figure display cells; the right bay has glass-front manga shelves at low and middle levels and a small figure compartment above. Preserve the source frame's actual visibility: do not force all cabinet features to appear if outside frame. Manga are actual tightly arranged books, detailed neutral spines without illegible giant text; figures are small tasteful articulated sci-fi/robot collectibles in the existing display cells, never life-size. Replace the blocky proxy figures with realistic collectible detail, maintaining shelf positions. This is a conceptual design illustration, not a dimension/engineering certificate. Render the room ONLY from reference 1's viewpoint.\nANGLE: Tight architectural detail of the existing collection cabinet and right-hand manga column; preserve close framing, do not add a doorway at left.",
+      "corrections": [
+        {
+          "instruction": "移除本取景不應出現的前景椅",
+          "prompt": "Edit this architectural image: remove ONLY the foreground office chair at the bottom right. That chair is outside this camera view in the source. Reconstruct the cropped dark desk surface and monitor support behind it, without moving the monitor, cabinet, books, glass doors, shelf lines, floor or camera. Keep the rest of the image exactly the same, same 3:2 landscape crop. No new furniture."
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "study-D-cp02",
+      "usedBy": [
+        "v1-study-D",
+        "v4-study-D",
+        "v5-study-D",
+        "v2-study-D",
+        "v3-study-D"
+      ],
+      "sourcePngSha256": "96b93901d43906067d5522710bbc1160504bd04a6b7cb86b1f1a32c21ba2cfc0",
+      "aiOriginalPngSha256": "b3016157080a6321c71e61a1a862f48cf871b947510e8e8c275f1fe14dfd41a9",
+      "aiWebpSha256": "877204d876e4202805de52f2afcc42b0c8d02edc75dde578d2c4e6bda50c821a",
+      "sourceWebpSha256": "6ca15bb1379c21e7b927e7bfae708201e1257be4ae15635e2c8ec0e763feba60",
+      "prompt": "Create ONE photorealistic interior photograph, landscape 3:2, of the exact existing two-person gaming study shown in reference 1 (the authoritative 3D model camera). Reference 2 is the owner-approved cyberpunk material/lighting mood only; DO NOT copy its camera, outside living room or alter the room layout. Reference 1 is strict geometry: preserve camera position, field of view, room proportions, windows including all mullions and railings, black ceiling and bulkheads, desk and monitor positions, chair positions, cabinet outline, shelf divisions and visible cropping. Do not enlarge the room. No collage, no text labels or watermark.\nUse the approved matte black ceiling, dark graphite/gunmetal joinery and paneled desk wall, muted grey-brown herringbone wood floor, restrained cyan and magenta LED coves with realistic bounce and subtle desk backlights. KEEP usable neutral-white general/task illumination and neutral display illumination. Black steel frames, softly smoky display glass, physical shadows, natural microtexture and premium materials, professional architectural photography. Bright clear windows remain windows with a deliberately neutral overexposed background; do not invent skyline, ocean, river, buildings or scenery. Glass behind the second desk is in the EXISTING switchable privacy/opaque display state for this gallery: keep its frames and plane; do not put a visible living room or fictional wall behind it.\nTwo existing separate 180x80 black standing desks are perpendicular, NEVER side by side. Huge 32:9 curved ultrawide gaming monitors with abstract cyan/magenta sci-fi wallpaper. One graphite ergonomic chair and one light grey ergonomic chair exactly where the source shows them. Two black gaming PC towers with subtle RGB and glass details at their original floor positions if visible, never on desks. Keyboard/mouse modestly added on existing desktops; no new furniture. Any monitor partly cropped by reference frame must stay cropped. No extra door or window, no pillar, no suspended objects.\nThe west cabinet has THREE vertical bays and three opaque dark upper storage cupboards. At the visible front, the TWO left bays have six closed drawers total (three drawers per bay) below glass figure display cells; the right bay has glass-front manga shelves at low and middle levels and a small figure compartment above. Preserve the source frame's actual visibility: do not force all cabinet features to appear if outside frame. Manga are actual tightly arranged books, detailed neutral spines without illegible giant text; figures are small tasteful articulated sci-fi/robot collectibles in the existing display cells, never life-size. Replace the blocky proxy figures with realistic collectible detail, maintaining shelf positions. This is a conceptual design illustration, not a dimension/engineering certificate. Render the room ONLY from reference 1's viewpoint.\nANGLE: Closer primary workstation view with graphite chair and ultrawide monitor, partial manga cabinet at left, window at right.",
+      "corrections": [
+        {
+          "instruction": "移除自行新增的窗中橫框",
+          "prompt": "Edit the first photorealistic image ONLY to restore the window geometry from reference 2 (the 3D source). The large exterior window to the right of the gaming monitor is ONE UNDIVIDED full-height pane: remove the invented horizontal black bar behind the chair and do not add any new horizontal or vertical bar within that visible opening. Keep the existing outer perimeter frame, curtain and original bright featureless background. Preserve the photo camera, desk, chair, manga cabinet, cyberpunk cyan/magenta lighting, materials and all other objects exactly. Keep landscape 3:2. Do not change the monitor or enlarge the room."
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "study-E-cp02",
+      "usedBy": [
+        "v1-study-E",
+        "v4-study-E",
+        "v5-study-E",
+        "v2-study-E",
+        "v3-study-E"
+      ],
+      "sourcePngSha256": "230ab1f3d06690d73ce0ac1272518a49bc0bf088862773159d85775fd8badc3e",
+      "aiOriginalPngSha256": "18015511acf4e21404e65f5b6e02598428129ff99ad67b566212940a42c96722",
+      "aiWebpSha256": "01637d3ba6820f373795b621a40e6e759ac79004e6f3f6cef1cb692fa501ae27",
+      "sourceWebpSha256": "058791a8cbbc23d031290a2d24fe37f70d983a8a46bc2cd400065965b64b0937",
+      "prompt": "Create ONE photorealistic interior photograph, landscape 3:2, of the exact existing two-person gaming study shown in reference 1 (the authoritative 3D model camera). Reference 2 is the owner-approved cyberpunk material/lighting mood only; DO NOT copy its camera, outside living room or alter the room layout. Reference 1 is strict geometry: preserve camera position, field of view, room proportions, windows including all mullions and railings, black ceiling and bulkheads, desk and monitor positions, chair positions, cabinet outline, shelf divisions and visible cropping. Do not enlarge the room. No collage, no text labels or watermark.\nUse the approved matte black ceiling, dark graphite/gunmetal joinery and paneled desk wall, muted grey-brown herringbone wood floor, restrained cyan and magenta LED coves with realistic bounce and subtle desk backlights. KEEP usable neutral-white general/task illumination and neutral display illumination. Black steel frames, softly smoky display glass, physical shadows, natural microtexture and premium materials, professional architectural photography. Bright clear windows remain windows with a deliberately neutral overexposed background; do not invent skyline, ocean, river, buildings or scenery. Glass behind the second desk is in the EXISTING switchable privacy/opaque display state for this gallery: keep its frames and plane; do not put a visible living room or fictional wall behind it.\nTwo existing separate 180x80 black standing desks are perpendicular, NEVER side by side. Huge 32:9 curved ultrawide gaming monitors with abstract cyan/magenta sci-fi wallpaper. One graphite ergonomic chair and one light grey ergonomic chair exactly where the source shows them. Two black gaming PC towers with subtle RGB and glass details at their original floor positions if visible, never on desks. Keyboard/mouse modestly added on existing desktops; no new furniture. Any monitor partly cropped by reference frame must stay cropped. No extra door or window, no pillar, no suspended objects.\nThe west cabinet has THREE vertical bays and three opaque dark upper storage cupboards. At the visible front, the TWO left bays have six closed drawers total (three drawers per bay) below glass figure display cells; the right bay has glass-front manga shelves at low and middle levels and a small figure compartment above. Preserve the source frame's actual visibility: do not force all cabinet features to appear if outside frame. Manga are actual tightly arranged books, detailed neutral spines without illegible giant text; figures are small tasteful articulated sci-fi/robot collectibles in the existing display cells, never life-size. Replace the blocky proxy figures with realistic collectible detail, maintaining shelf positions. This is a conceptual design illustration, not a dimension/engineering certificate. Render the room ONLY from reference 1's viewpoint.\nANGLE: Second workstation with light grey chair, existing opaque privacy partition behind, exterior window and railing at left. Keep the desk placement and do not invent a solid concrete replacement wall.",
+      "corrections": [
+        {
+          "instruction": "恢復霧化玻璃、主機原位置及陽台灰磚",
+          "prompt": "Correct the first photorealistic image according to the second 3D source. (1) The entire large surface BEHIND the monitor and desk is existing switchable privacy GLASS, not a charcoal panel wall. Replace that entire dark paneled surface with smooth pale milky-grey opaque privacy glass, NO panel grooves, no concrete texture, no decorative wall. Preserve its perimeter black framing and the very same plane. Cyan and magenta may reflect softly on the glass. (2) REMOVE the invented PC tower on the floor at the LEFT of the chair. The real PC is at the far RIGHT desk end, outside this camera crop; do not insert a replacement elsewhere. (3) The exterior balcony floor at far left, beyond the window bottom frame, is matte plain grey tile, not herringbone wood. Keep indoor wood floor unchanged. Keep original camera, white chair, desktop, monitor, ceiling and lights, and window railing exactly. This is the same room, do not enlarge it or add furniture. Landscape 3:2."
+        }
+      ],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
     {
       "key": "v0-back-A-bi01",
       "usedBy": [
@@ -2073,94 +2192,6 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v1-study-A-bi01",
-      "usedBy": [
-        "v1-study-A"
-      ],
-      "sourcePngSha256": "a9e75830be2abcb1ec61509985fa1c29e4d7962e9b25fa80fea6489868062028",
-      "aiOriginalPngSha256": "54276e0f633385f1f544157daf2e601afd4f019c24506a9378aa1c700dc0621a",
-      "aiWebpSha256": "e2ad5ca6159eebf7abb831a8343fee2216e6ec5d64af4e33e47d59dc85840be5",
-      "sourceWebpSha256": "acbcceeef7236be9c91f39b6d8cf93636433808f56d23e06c496fadf9cf761e6",
-      "prompt": "Use case: sketch-to-render. Produce ONE polished PHOTOREALISTIC architectural interior photograph, landscape 1536x1024. Image 1 is the STRICT geometry, camera and material-location source; image 2 is ONLY a reference for the approved matte black ceiling / medium gray walls / graphite cabinets / gray-brown wood mood. Never copy image 2 layout or objects. Rebuild realistic photographed materials, depth, natural indirect light, soft contact shadows, fine surface detail, realistic glazing and reflections; not a flat CAD, illustration or clay render. Invariants: preserve EXACT image 1 framing, perspective, walls, beams, doors, window openings, solid wall below and above windows, furniture footprint, ALL storage cabinet partitions, equipment count, shelf contents and foreground occlusions. Empty shelves remain EMPTY. Matte near-black #242628 ceiling including beams; medium neutral gray #858986 painted/mineral walls; deep gray door surrounds only where modeled. Stone ONLY where a modeled stone feature or counter exists; never turn ordinary walls into stone. Graphite opaque cabinets stay opaque; clear glass stays clear. Keep desaturated gray-brown HERRINGBONE WOOD only where the model shows wood floor, and gray tile only where shown. Preserve dark versus lighter material hierarchy, do not brighten black ceilings or gray walls to white. Existing light sources only, balanced natural interior photography exposure, not black underexposure; no invented strip lights, recesses, windows, furniture, props, plants or people. Large white FLUSH CIRCULAR SPEAKER GRILLES on ceilings are opaque, finely perforated, NON-LUMINOUS discs, not recessed light bowls. Actual small downlights stay lights. Do not add text, labels or watermarks. This is an exact-view material photorealization, not a redesign of the architecture.\nRoom constraints (material location always follows image 1): Study. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do not add figurines on desks. Keep the modeled number of toy figures in each showcase. Gray round sphere speakers beyond are AUDIO SPEAKERS, not toys. Neutral functional work light, restrained display light.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-study-B-bi01",
-      "usedBy": [
-        "v1-study-B"
-      ],
-      "sourcePngSha256": "57ab2c03250072bb8e9dc5b338570872acbdbe668cd973af8b75fdd789d536a2",
-      "aiOriginalPngSha256": "9dab7a1314bd53753d0d2457adab0ee90c13888b9a53f43f48d89579c76433df",
-      "aiWebpSha256": "0d29ca07b0227114c915d9af89d7a92bfe4fab1803e4191219d1c6ceb9d533ae",
-      "sourceWebpSha256": "223932ac701b36dec6f9296bb3f3900e649cf0de8e7f2dbe13ad18da1b75aff2",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-study-C-ir01",
-      "usedBy": [
-        "v1-study-C"
-      ],
-      "sourcePngSha256": "7f12bcf3e88f17122da3389247a8ec3c9e97607300df60f45af49d37d2a8eee0",
-      "aiOriginalPngSha256": "8ad73d6d223e0587114c93b1c897600f0235bda821b5e8add0894e7d222722c8",
-      "aiWebpSha256": "3406b420e150359b88624d0c67248ed6bb1abaf17ac36152e5fbccc1f5494a31",
-      "sourceWebpSha256": "44abd6d5e556bdf886203e93eb446433bff80640cd93640d4e392d267e90e81d",
-      "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nKeep the exact model camera, display cabinet type and background television/wall configuration. Model takes priority over any discrepancy in the old AI. No invented ceiling speakers: keep only the discs present in model. The study E foreground ceiling has no white circular speaker. Preserve piano only in V0; V1/V2 are twin computer workstations.\n",
-      "corrections": [
-        {
-          "instruction": "將模型占位球體校正為公仔，維持櫃格與空間幾何",
-          "prompt": "Make a precise local correction to reference image 1. The simple white spheres/discs on blocks inside the glass display cabinets are low-detail 3D placeholders for collectible figurines, NOT lamps or devices. Replace those placeholders with actual detailed small collectible figures on neat pedestals, matching the realistic figure styling in reference image 2. If the case looks empty restore the visible figures in the same cubbies. In V4/V5 also replace the rectangular block placeholders in the distant public display wall with small collectible figures; keep bags on the lower row if present. Keep all glass, cabinet divisions, shelves, camera, furniture, televisions, ceiling and lighting exactly as in image 1. Do not add lights or change architecture. Photoreal 1536x1024 single image.\n"
-        },
-        {
-          "instruction": "移除誤增牆上展示並依模型恢復書架與櫃格",
-          "prompt": "Precise local correction of reference image 1: Remove the newly invented tiny wall shelves and figures on the distant TV stone wall, on BOTH sides of the TV. That entire stone wall must be plain stone slabs with TV and existing speakers only. Keep figures ONLY inside the study display cabinet at center-right. No other changes. Single photoreal image, identical camera, no new architecture or lighting.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-study-D-bi01",
-      "usedBy": [
-        "v1-study-D",
-        "v4-study-D",
-        "v5-study-D",
-        "v2-study-D",
-        "v3-study-D"
-      ],
-      "sourcePngSha256": "20f98dc8a536d25349685afd49c6549caef90eccea40b015356310e1f39ad11a",
-      "aiOriginalPngSha256": "1d1e49d482907dc3c7693580277af1f06652ca8175b983f71008d0975851241f",
-      "aiWebpSha256": "04361829a49adaf14fd20185817953ffbc5dc41f79cc9ea28f64f10f28e9fdc2",
-      "sourceWebpSha256": "a5608cf204e7e097981e728808292073103b09422ee40bfc810fce58de675f5d",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks.\n",
-      "corrections": [
-        {
-          "instruction": "對照來源模型後修正生成錯誤",
-          "prompt": "Precise local material/detail correction of the supplied photorealistic interior. At the TOP edge is an erroneous pale-blue SKYLIGHT. The home has NO skylights. Replace ONLY that blue/white opening with an opaque BLACK metal ventilation grille with closely spaced dark slats, in the same footprint. No sky or daylight through the ceiling. Keep all other image pixels, geometry and finishes. ONE landscape 1536x1024 photograph, no text. Do not redesign.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-study-E-ir01",
-      "usedBy": [
-        "v1-study-E"
-      ],
-      "sourcePngSha256": "4d4b39d7f42d5452b670edab58d6291f7461174fe217155746598046d588ccf8",
-      "aiOriginalPngSha256": "0953a6f832b8a084202840e6352e37377ef873947c78fadca608233e50184281",
-      "aiWebpSha256": "5b897f065d1dbbdb9946d00bdb3bb2755dfe91073d7a1d66982fb942284dc17d",
-      "sourceWebpSha256": "fea9cce8ffed3ce92b6d2ad6e502b08fd616fd1c5a0b1f6ca2dd6039ff33cf69",
-      "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nKeep the exact model camera, display cabinet type and background television/wall configuration. Model takes priority over any discrepancy in the old AI. No invented ceiling speakers: keep only the discs present in model. The study E foreground ceiling has no white circular speaker. Preserve piano only in V0; V1/V2 are twin computer workstations.\n",
-      "corrections": [
-        {
-          "instruction": "將模型占位球體校正為公仔，維持櫃格與空間幾何",
-          "prompt": "Edit this interior photograph only inside the glass display cabinets. Replace the simple white balls on rectangular blocks with small, friendly decorative robot collectible toys, one toy per existing pedestal. Populate any visibly empty display cubbies with the same modest toy style. For distant display cabinets, keep lower-row handbags. This is a residential display cabinet, not a shop. Preserve all cabinet geometry, glass doors, shelves, all ceiling fixtures, furniture, televisions, architectural lines, photographic lighting, framing and every other part of the image. No weapons, text or people. Same 1536x1024 single photograph.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
       "key": "v2-back-B-bi01",
       "usedBy": [
         "v4-back-B",
@@ -2715,87 +2746,6 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v2-study-A-bi01",
-      "usedBy": [
-        "v4-study-A"
-      ],
-      "sourcePngSha256": "8ee7f6478a895690d30aaff39c40be4da22c87fbe559e825c97f1dc65f4e9d36",
-      "aiOriginalPngSha256": "1d023f95803244f04cca07d2f7454106a48b7973c16b5f07e12bfe4fb420fb3d",
-      "aiWebpSha256": "49bd64d12687b796917a07a0f4da5d6332e9109ea1ed14dc5cd1dee28aa9a192",
-      "sourceWebpSha256": "f30e5782907769cdebcbf006e53acc89bbf2653c2266c5f54590720440ef714b",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all existing real figurines and monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do NOT add vases, books or any new objects to showcase shelves. Existing empty compartments stay empty. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v2-study-B-bi01",
-      "usedBy": [
-        "v4-study-B",
-        "v5-study-B"
-      ],
-      "sourcePngSha256": "9a75bfa1da200b44b6e1c2d5ae824bf44ec1df4f69e7835ffec9ba4f3ce6d202",
-      "aiOriginalPngSha256": "6ee227cae74cf3049a0671652acbdc9cfe0cc7cceb073c7249b70b3dcba88d4c",
-      "aiWebpSha256": "7ee40beb8c265250448d0e686b2530ce0f2c9f4ab0db754292d353c6afcdef31",
-      "sourceWebpSha256": "6b7f142fbd88bb8de73eec433a6abf0518278c042391f9c2f50bf51ba73ee470",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all existing real figurines and monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do NOT add vases, books or any new objects to showcase shelves. Existing empty compartments stay empty. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v2-study-C-ir01",
-      "usedBy": [
-        "v2-study-C"
-      ],
-      "sourcePngSha256": "472df6a607526e8f6133801e77ca31a16b5845ddf26d638f5d2ab6739ef04b8a",
-      "aiOriginalPngSha256": "18df4c5fdb34c9be01a696fc2b7bfc3ecd3967b01e1fae61696a656f2e296aa2",
-      "aiWebpSha256": "68a6bcce1157d39a2ea9a6e8e3430205dc578e8dba1034b21fb60e0e1b2e80c0",
-      "sourceWebpSha256": "d0fa54d70026b5059ea04d138eb55662332cb54edf390324f57c32c2c1b739f7",
-      "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nKeep the exact model camera, display cabinet type and background television/wall configuration. Model takes priority over any discrepancy in the old AI. No invented ceiling speakers: keep only the discs present in model. The study E foreground ceiling has no white circular speaker. Preserve piano only in V0; V1/V2 are twin computer workstations.\n",
-      "corrections": [
-        {
-          "instruction": "將模型占位球體校正為公仔，維持櫃格與空間幾何",
-          "prompt": "Edit this interior photograph only inside the glass display cabinets. Replace the simple white balls on rectangular blocks with small, friendly decorative robot collectible toys, one toy per existing pedestal. Populate any visibly empty display cubbies with the same modest toy style. For distant display cabinets, keep lower-row handbags. This is a residential display cabinet, not a shop. Preserve all cabinet geometry, glass doors, shelves, all ceiling fixtures, furniture, televisions, architectural lines, photographic lighting, framing and every other part of the image. No weapons, text or people. Same 1536x1024 single photograph.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v2-study-E-bi01",
-      "usedBy": [
-        "v4-study-E"
-      ],
-      "sourcePngSha256": "9bf2477423a7f4cc5592dfb538947acff6cca8c4ac68837668ada48720959643",
-      "aiOriginalPngSha256": "c45202b4b39063e47f744ead93be6fdff76de3aa7dfeb1802b903a6df59dc654",
-      "aiWebpSha256": "a45c50fa28115bb06394d6732d20f070703ac81338e49bc18d96047410817776",
-      "sourceWebpSha256": "958a1dacfcf3fb2d2e38d882c17773625433e5f30c812f666f0213223a4ba26d",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all existing real figurines and monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do NOT add vases, books or any new objects to showcase shelves. Existing empty compartments stay empty. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v2-study-E-ir01",
-      "usedBy": [
-        "v2-study-E",
-        "v3-study-E"
-      ],
-      "sourcePngSha256": "7acb0fdf6fddeb204c697d500439c8c2186f2d3a29034ab1b130b603deb5f360",
-      "aiOriginalPngSha256": "8f4930baa310c9cf507c304361b9ef11212a5c06f07a60fd37b23255bb6a75d9",
-      "aiWebpSha256": "74d9718a5fc5bcfb9503546dbc40489bae298fca7f34c4c60f22d0180a736a61",
-      "sourceWebpSha256": "35c7e75512a8e038df4e3485bc872cfe478f72258790bfdb7b8462e2909f026b",
-      "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nKeep the exact model camera, display cabinet type and background television/wall configuration. Model takes priority over any discrepancy in the old AI. No invented ceiling speakers: keep only the discs present in model. The study E foreground ceiling has no white circular speaker. Preserve piano only in V0; V1/V2 are twin computer workstations.\n",
-      "corrections": [
-        {
-          "instruction": "將模型占位球體校正為公仔，維持櫃格與空間幾何",
-          "prompt": "Edit this interior photograph only inside the glass display cabinets. Replace the simple white balls on rectangular blocks with small, friendly decorative robot collectible toys, one toy per existing pedestal. Populate any visibly empty display cubbies with the same modest toy style. For distant display cabinets, keep lower-row handbags. This is a residential display cabinet, not a shop. Preserve all cabinet geometry, glass doors, shelves, all ceiling fixtures, furniture, televisions, architectural lines, photographic lighting, framing and every other part of the image. No weapons, text or people. Same 1536x1024 single photograph.\n"
-        },
-        {
-          "instruction": "移除誤增牆上展示並依模型恢復書架與櫃格",
-          "prompt": "Precise local correction of reference image 1: In the display cabinet along the RIGHT edge, restore the two UPPERMOST open rows to upright black/white BOOKS as shown in reference 2. Those two upper rows are book storage, never figures or glass cubbies. Keep the realistic figures in the glass-fronted middle display rows below, and preserve their exact cabinet geometry. No other changes. Single photoreal image, identical camera, no new architecture or lighting.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
       "key": "v3-bed-E-bi01",
       "usedBy": [
         "v5-bed-E"
@@ -3285,63 +3235,6 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v3-study-A-bi01",
-      "usedBy": [
-        "v5-study-A"
-      ],
-      "sourcePngSha256": "9f1892c863b9c1a50a76de0820732a580bcf3f261a48d254ea237a67a7f86cad",
-      "aiOriginalPngSha256": "ffa35393ae13109bf4a7c74e1b56f84ba8f2888d44884c0f8e0988b357d0a4c0",
-      "aiWebpSha256": "523eba100d578fecc8cb956b74b2e547d5e77c3d4dc28b3bbcd0ae8bc21e28d6",
-      "sourceWebpSha256": "d884aba8aa1c6b091efb397dc6c56eeec2bc38322a90ef0df46c932bdaa1bb62",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all existing real figurines and monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do NOT add vases, books or any new objects to showcase shelves. Existing empty compartments stay empty. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v3-study-A-vn01",
-      "usedBy": [
-        "v3-study-A"
-      ],
-      "sourcePngSha256": "fb1b91167c8c5d861287d0a896fea28670b64de22bb610f7625b256b44edad0f",
-      "aiOriginalPngSha256": "01e1d426414cb63f96cd9ae5b41b35310c672c546ef7b538721ab0a11a597834",
-      "aiWebpSha256": "e913bf23ae83ed00066f1a50260a660b499fddfbd1d79c56b34c3146c4fff978",
-      "sourceWebpSha256": "12e4ca202d636cdd0c0397a41f902846c1192f94a18568697b27cd085cc4f524",
-      "prompt": "Use case: precise-object-edit. Asset type: photoreal architectural concept visualization for a new V3 plan.\nInput image 1: NEW CURRENT 3D model, authoritative for the geometry and camera.\nInput image 2: PREVIOUS photoreal concept from the closest same camera, lighting and material reference; its old layout may be wrong.\nPrimary request: bring the photograph into exact agreement with the NEW model. Study A: keep the desks, cabinets with figures, large windows and black ceiling exactly. Only the sliver at the FAR LEFT doorway changes to show the shallow glass display behind the public island; no new windows or desks.\nDesign: matte black ceilings and beams, medium gray plaster walls, charcoal/graphite cabinet faces, dark gunmetal frames, finely textured gray stone, low-red gray-brown herringbone wood flooring; realistic neutral-warm indirect light and daylight. All-white circles in ceiling are round speaker grilles when shown as speakers; never replace them with lamps. Existing solid pale gray/white door panels are NOT windows.\nConstraints: exact input camera, framing, full visible room boundaries, fixed architecture, openings, existing equipment and furniture placement. The new V3 uses former V4 open collection layout, fixed TV and existing AV seating, with former V1 curved island, two outside round stools, and 260cm-wide by 30cm-deep transparent double-sided glass cabinet rising to ceiling. Do not add opaque backing or extra cabinetry behind the glass. Do not widen the island, move chairs inward, add appliances, relocate openings or invent windows. Keep glass see-through with slim gunmetal framing. Do not modify private rooms except tiny distant public-zone glimpses. No added marble luxury, gold, LED patterns, rug changes, decorative objects, text, labels or watermark. Preserve photographic texture and believable illumination; do not output a raw CAD screenshot. Landscape 1536x1024.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v3-study-C-ir01",
-      "usedBy": [
-        "v3-study-C"
-      ],
-      "sourcePngSha256": "e46b2073d2ca3bacb51dc0791c6c2b689de6b65497c442c2502df01cb493e4db",
-      "aiOriginalPngSha256": "48b0a91ded4007950c72231b62948c026c4d1a6b0fc10c4881036d4fe7b5da9b",
-      "aiWebpSha256": "d19c8c029bb44a1cbb1453dfde01d51952873e3472551bed2abb498184aa129e",
-      "sourceWebpSha256": "f2b9d19d560a0ea8a23f322b1e414d18a849592d467bca6d4fca7878a8f62fd7",
-      "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nMaintain exact model geometry, small distant television and island details. Storage foreground has practical open solid-metal shelves without decorative strip lighting or glass. Study display case and public display case must keep their model shelf grids. Only ceiling fixtures that are visible in model; no extra lights or speakers. Do not turn a distant sink into a white disc; it is a hollow stainless-steel bowl. Photographic textures and realistic light, preserve the camera and all furniture.\n",
-      "corrections": [
-        {
-          "instruction": "將模型占位球體校正為公仔，維持櫃格與空間幾何",
-          "prompt": "Edit this interior photograph only inside the glass display cabinets. Replace the simple white balls on rectangular blocks with small, friendly decorative robot collectible toys, one toy per existing pedestal. Populate any visibly empty display cubbies with the same modest toy style. For distant display cabinets, keep lower-row handbags. This is a residential display cabinet, not a shop. Preserve all cabinet geometry, glass doors, shelves, all ceiling fixtures, furniture, televisions, architectural lines, photographic lighting, framing and every other part of the image. No weapons, text or people. Same 1536x1024 single photograph.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v3-study-E-bi01",
-      "usedBy": [
-        "v5-study-E"
-      ],
-      "sourcePngSha256": "72085e926f5314932c4c26008217cbd8e6cfa68dd211d02b208a8583d01a6c6f",
-      "aiOriginalPngSha256": "eab993704bad2a78f608efceac0321e0aa756bbb73bd23e0c5c17000a886311a",
-      "aiWebpSha256": "932b18dee3e2332e94bdc4add6759e7a2e18a93c85a4a8520ae9280ecea79c5b",
-      "sourceWebpSha256": "1212ef2203c31b7fb39c2e157c06a94305dd847c48a3311b5ccc553a0b1f1bc2",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all existing real figurines and monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do NOT add vases, books or any new objects to showcase shelves. Existing empty compartments stay empty. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
       "key": "v4-bed-E-au01",
       "usedBy": [
         "v2-bed-E"
@@ -3668,55 +3561,6 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v4-study-A-bi01",
-      "usedBy": [
-        "v2-study-A"
-      ],
-      "sourcePngSha256": "f9fcea3506e165315d35a905f9543fb4bb5ead47f9d6ebe77899da2295ab94d2",
-      "aiOriginalPngSha256": "6e362a39869cc6085ea45def0502b8e57c59fad4e2fd80d660b07769f9eb730b",
-      "aiWebpSha256": "212693849b92545e80123fdefada2d21d9bd224f0660f2bb05f655c92dcaca09",
-      "sourceWebpSha256": "36991992a5988e8d94f75b2d028223959f40f8eb8b9c4251bc3dc9422d10f25c",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all existing real figurines and monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do NOT add vases, books or any new objects to showcase shelves. Existing empty compartments stay empty. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v4-study-B-bi01",
-      "usedBy": [
-        "v2-study-B",
-        "v3-study-B"
-      ],
-      "sourcePngSha256": "e10d642d5467c2ae628221b8024f48161d58a46ea8bd92f5bfa0a75617ec1afc",
-      "aiOriginalPngSha256": "81c0329046bdf490130a390e121e0eb63787f849f13de852f9225711fb855d8a",
-      "aiWebpSha256": "a4243d3e2986b177ca551c9af4c5d29ce41e28e788a9b928b0438afd0ac1ecb8",
-      "sourceWebpSha256": "0e2b9a4767c56b3b29f1b0ccd4cef674f0827e1eb0baaa52a148227e761e0186",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all existing real figurines and monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nStudy. Keep both workstations where visible, monitor shapes, desktop PC towers, ergonomic chairs, exact glass display divisions, closed drawers and tall upper cabinets. Replace simple figure proxies by modest neutral collectible figures in those same footprints and numbers; no new collections. Black desks and gray-brown wood; comfortable neutral working light, restrained display light. No new stone wall or windows. V0 includes an electronic piano where shown; other versions retain their shown desks. Do NOT add vases, books or any new objects to showcase shelves. Existing empty compartments stay empty. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v4-study-C-ir01",
-      "usedBy": [
-        "v4-study-C"
-      ],
-      "sourcePngSha256": "c1f1a058f62a5ac10cc61ba31a6a19d9fe72debf1a5603c5ee38882cc9e4cf4b",
-      "aiOriginalPngSha256": "e5830eb6fe2b11cf865764b39d45a08fb7993ee9161fd8c8a259358eb9a1ee96",
-      "aiWebpSha256": "6c55f5810045cf2d4252324673f3851dca3400c7cba49320ef228ac885632464",
-      "sourceWebpSha256": "6a5eee44b2dfe19dda51382a4e8804588c44db448091093fa5824747b4010466",
-      "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nMaintain exact model geometry, small distant television and island details. Storage foreground has practical open solid-metal shelves without decorative strip lighting or glass. Study display case and public display case must keep their model shelf grids. Only ceiling fixtures that are visible in model; no extra lights or speakers. Do not turn a distant sink into a white disc; it is a hollow stainless-steel bowl. Photographic textures and realistic light, preserve the camera and all furniture.\n",
-      "corrections": [
-        {
-          "instruction": "將模型占位球體校正為公仔，維持櫃格與空間幾何",
-          "prompt": "Edit this interior photograph only inside the glass display cabinets. Replace the simple white balls on rectangular blocks with small, friendly decorative robot collectible toys, one toy per existing pedestal. Populate any visibly empty display cubbies with the same modest toy style. For distant display cabinets, keep lower-row handbags. This is a residential display cabinet, not a shop. Preserve all cabinet geometry, glass doors, shelves, all ceiling fixtures, furniture, televisions, architectural lines, photographic lighting, framing and every other part of the image. No weapons, text or people. Same 1536x1024 single photograph.\n"
-        },
-        {
-          "instruction": "移除誤增牆上展示並依模型恢復書架與櫃格",
-          "prompt": "Precise local correction of reference image 1: Correct ONLY the central study display cabinet to exactly THREE columns and THREE rows of glass display compartments (3 by 3, nine compartments total), with one small collectible toy per compartment. Its overall cabinet width and height must stay unchanged. Reference 2 has the correct three-column cabinet geometry. Preserve the two open book rows above, the lower drawers, all other furniture and the distant display wall. No other changes. Single photoreal image, identical camera, no new architecture or lighting.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
       "key": "v5-entry-door5C-ir01",
       "usedBy": [
         "v5-entry-door5C"
@@ -3846,24 +3690,6 @@
       "sourceWebpSha256": "325319736aafef25ce6843da609a03c6b905143bae1ecaab3559d76fe88f5bc7",
       "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nThis is a view out from a practical storeroom. Keep foreground open solid-metal shelf boards without decorative lighting or glass. Preserve exact model camera, distant island, TV equipment and furniture. Display figurine placeholders in model represent collectible figures; render realistic small collectible figures as in reference 2, not round spheres. Preserve the tall glass island cabinet and its vase only where present in model. Do not add ceiling fixtures absent from model.\n",
       "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v5-study-C-ir01",
-      "usedBy": [
-        "v5-study-C"
-      ],
-      "sourcePngSha256": "3a2a8d03cad8595e5e7614bed63a676ab09e5460527040c7c56e088a8fe9bccd",
-      "aiOriginalPngSha256": "0d3f97b2647874debdab0607082897f0e6548461a4d96a500a62c8bb192d8caf",
-      "aiWebpSha256": "2e65ea95c71b98ff307e316ddec2e159db8626a4784477b9c5a73667bdacae41",
-      "sourceWebpSha256": "d6c62f98c12443e55d7d5a47e44658552695f37c2251b32fbc17455e1c558afa",
-      "prompt": "Use case: precise architectural image edit. Produce one photorealistic interior concept image, landscape 1536x1024.\nInput 1 is the CURRENT authoritative 3D model with repaired cabinet geometry. Input 2 is the previous AI view, used for photographic finish and lighting only. Match the EXACT camera, framing and every fixed object in input 1. Keep the photographic quality of input 2, not the crude CAD shading.\nThis repair fills missing island service-side panels, retaining real appliance access and narrow ventilation slots. The robot bay stays open at floor level, the wine refrigerator stays glass-fronted, and sinks are hollow bowls with visible inner walls and drains. Do not seal appliance entries or cover the sink. Preserve the existing countertop silhouette, real sink/IH cutouts, recessed knee space, stools, tall transparent double-sided glass cabinet if present, and all appliance positions. The TV has an intact flat dark screen without broken stripes.\nDesign must remain: matte BLACK ceilings and beams, medium gray mineral walls, graphite charcoal cabinet fronts, slim gunmetal frames, calm finely textured gray stone counters and TV feature walls, low-red gray-brown herringbone timber flooring. Existing kitchen and bathroom tiled floors stay tiled. Daylight plus soft neutral-warm interior light, believable photographic texture and shadows, no broad white ceilings. Tall glass displays remain see-through, not mirrored or solid walls. Preserve all existing partitions, windows, window sills, solid doors, shelves, furniture, and equipment. Do not invent windows, new doors, extra glass partitions, extra seating, appliances, shelving, LED patterns, ornaments, gold or dramatic marble. Ceiling round speaker grilles are speakers, not extra lamps.\nOnly apply what is visible in this camera. Other-room views may show a tiny distant public-space change; preserve all foreground furniture and architecture exactly. Do not add an island to a room where it is not visible. No collage, labels, text, watermark or dimensions. AI concept only, not a construction drawing.\nMaintain exact model geometry, small distant television and island details. Storage foreground has practical open solid-metal shelves without decorative strip lighting or glass. Study display case and public display case must keep their model shelf grids. Only ceiling fixtures that are visible in model; no extra lights or speakers. Do not turn a distant sink into a white disc; it is a hollow stainless-steel bowl. Photographic textures and realistic light, preserve the camera and all furniture.\n",
-      "corrections": [
-        {
-          "instruction": "將模型占位球體校正為公仔，維持櫃格與空間幾何",
-          "prompt": "Edit this interior photograph only inside the glass display cabinets. Replace the simple white balls on rectangular blocks with small, friendly decorative robot collectible toys, one toy per existing pedestal. Populate any visibly empty display cubbies with the same modest toy style. For distant display cabinets, keep lower-row handbags. This is a residential display cabinet, not a shop. Preserve all cabinet geometry, glass doors, shelves, all ceiling fixtures, furniture, televisions, architectural lines, photographic lighting, framing and every other part of the image. No weapons, text or people. Same 1536x1024 single photograph.\n"
-        }
-      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     }
   ]

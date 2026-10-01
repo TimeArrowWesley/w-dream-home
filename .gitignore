@@ -55,6 +55,8 @@
 !/rgb-lighting.js
 !/sofa-model.js
 !/source-plan.js
+!/study-cyberpunk-finalize.js
+!/study-cyberpunk.js
 !/tools/
 !/tools/album-contact-sheets.py
 !/tools/build-audit-review.py
@@ -74,6 +76,7 @@
 !/tools/capture-island-repairs.cjs
 !/tools/capture-living-audio.cjs
 !/tools/capture-model-repairs.cjs
+!/tools/capture-study-cp02.cjs
 !/tools/capture-tv-wall.cjs
 !/tools/capture-v4-industrial.cjs
 !/tools/capture-v4-public.cjs
@@ -90,6 +93,7 @@
 !/tools/install-island-repairs.py
 !/tools/install-living-audio.py
 !/tools/install-mr01-album.py
+!/tools/install-study-cp02.py
 !/tools/install-tv-wall.py
 !/tools/install-v4-industrial.py
 !/tools/install-v4-public.py
@@ -150,6 +154,7 @@
 !/tools/verify-retained-versions.cjs
 !/tools/verify-startup.cjs
 !/tools/verify-storage-shelves.cjs
+!/tools/verify-study-cp02.cjs
 !/tools/verify-tv-wall.cjs
 !/tools/verify-v4-industrial.cjs
 !/tools/verify-v4-public.cjs
@@ -178,6 +183,11 @@
 !/成品圖集/20260914暗色現代工業/album.css
 !/成品圖集/20260914暗色現代工業/album.js
 !/成品圖集/20260914暗色現代工業/images/
+!/成品圖集/20260914暗色現代工業/images/study-A-cp02.webp
+!/成品圖集/20260914暗色現代工業/images/study-B-cp02.webp
+!/成品圖集/20260914暗色現代工業/images/study-C-cp02.webp
+!/成品圖集/20260914暗色現代工業/images/study-D-cp02.webp
+!/成品圖集/20260914暗色現代工業/images/study-E-cp02.webp
 !/成品圖集/20260914暗色現代工業/images/v0-back-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-back-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-back-C-bi01.webp
@@ -410,6 +420,11 @@
 !/成品圖集/20260914暗色現代工業/images/v5-study-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/index.html
 !/成品圖集/20260914暗色現代工業/models/
+!/成品圖集/20260914暗色現代工業/models/study-A-cp02.webp
+!/成品圖集/20260914暗色現代工業/models/study-B-cp02.webp
+!/成品圖集/20260914暗色現代工業/models/study-C-cp02.webp
+!/成品圖集/20260914暗色現代工業/models/study-D-cp02.webp
+!/成品圖集/20260914暗色現代工業/models/study-E-cp02.webp
 !/成品圖集/20260914暗色現代工業/models/v0-back-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-back-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-back-C-bi01.webp
@@ -641,6 +656,11 @@
 !/成品圖集/20260914暗色現代工業/models/v5-storage-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/models/v5-study-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/
+!/成品圖集/20260914暗色現代工業/thumbs/study-A-cp02.webp
+!/成品圖集/20260914暗色現代工業/thumbs/study-B-cp02.webp
+!/成品圖集/20260914暗色現代工業/thumbs/study-C-cp02.webp
+!/成品圖集/20260914暗色現代工業/thumbs/study-D-cp02.webp
+!/成品圖集/20260914暗色現代工業/thumbs/study-E-cp02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-back-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-back-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-back-C-bi01.webp
