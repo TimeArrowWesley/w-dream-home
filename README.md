@@ -33,3 +33,5 @@ PF01：材質改為像素一致的 WebP，移除未使用的載入；六版依�
 發布由 `.github/publish-files.json` 白名單控制；執行 `python tools/build-site.py --sync-ignore --check` 驗證相依。原始 PDF、私人需求、原生 PNG 與工作檔不發布。Git 提交與 Pages 成功是不同狀態。
 
 常用驗證：`verify-viewer-ui.cjs`、`verify-home-album.cjs`、`verify-budget-chart.cjs`、`verify-render-performance.cjs`、`verify-island-repairs.cjs`（均在 `tools/`）。透過 `HOME_TEST_REPORT_DIR` 將新報告存到本輪資料夾；離線測試不能取代瀏覽器 WebGL 檢視。
+
+VT02（2026-10-01）：六版主臥採玻璃展示化妝桌與隱藏翻蓋前拉鏡，新增左右香水盤、飾品盤及近景控制；保留原桌位與其他家具。30 個主臥來源比對後，9 張新原生 AI 更新 18 圖位，12 個主臥來源相同保留，其他330圖位沿用。操作與示意見 `化妝桌設計.html`；尺寸及五金仍待核定。驗證工具：`tools/verify-vanity-vt02.cjs`。

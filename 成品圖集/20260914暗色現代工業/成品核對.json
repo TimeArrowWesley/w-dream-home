@@ -11,19 +11,21 @@
     "v4": 60,
     "v5": 60
   },
-  "displayBytes": 66691456,
+  "displayBytes": 66545062,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 51,
+  "correctionViews": 52,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": true,
   "browserScope": [
-    "V1實際WebGL書房與LED開關",
-    "V1新版AI A／E切換及五張照片列在1280×720視窗內",
-    "六版介面離線回歸及360圖位720次圖集操作",
-    "V0既有原案幾何不變；五版25來源逐角度像素相同",
-    "V5停用狀態保留，實際WebGL書房模型與LED開啟已檢視",
-    "V5 AI圖位載入共用CP02 A與五張照片列"
+    "IAB 1280x720: V1 main bedroom close-up, hidden mirror open/close, makeup light state, left/right perfume trays and central jewelry tray actions. Seated-view left/right corrected and visually rechecked.",
+    "IAB 1280x720: V0 and disabled V5 bedroom close-ups, mirror and perfume tray operations. Fixed bed, window, adjacent storage retained in sampled views.",
+    "IAB 1280x720: V1 AI C and V5 AI E with all five thumbnail buttons visible and new asset URLs.",
+    "Detail page: closed/open AI toggle and V0 direct bedroom link."
   ],
-  "browserLimitations": "本輪僅書房五角度及桌面抽查；非全連續視角、照度、容量或工程验收。其他335個AI圖位延續前版，部分跨房背景未反映CP02。"
+  "browserLimitations": [
+    "Three browser-sampled versions and specific actions; six versions covered by model/DOM checks, not six full browser inspections.",
+    "No mobile, all-continuous-view, physical fit, window-swing, hardware load or construction certification.",
+    "Existing model exterior is a placeholder; new AI window backgrounds are neutral and not real site views."
+  ]
 }

@@ -22,6 +22,10 @@
 !/assets/realism/warm-oak.webp
 !/assets/realism/wood-asset.js
 !/assets/three.min.js
+!/assets/vanity/
+!/assets/vanity/vt02-closed.webp
+!/assets/vanity/vt02-dimensions.svg
+!/assets/vanity/vt02-open.webp
 !/bedroom-controls.js
 !/bedroom-model.js
 !/black-industrial-design.js
@@ -80,6 +84,7 @@
 !/tools/capture-tv-wall.cjs
 !/tools/capture-v4-industrial.cjs
 !/tools/capture-v4-public.cjs
+!/tools/capture-vanity-vt02.cjs
 !/tools/capture-whole-home-album.cjs
 !/tools/document-black-home.py
 !/tools/draw-original-plan.py
@@ -97,6 +102,7 @@
 !/tools/install-tv-wall.py
 !/tools/install-v4-industrial.py
 !/tools/install-v4-public.py
+!/tools/install-vanity-vt02.py
 !/tools/manage-black-ai.py
 !/tools/package-home-album.py
 !/tools/prepare-album-jobs.py
@@ -109,6 +115,8 @@
 !/tools/prepare-original-publication.py
 !/tools/prepare-v4-ai.py
 !/tools/prepare-v4-industrial-ai.py
+!/tools/prepare-vanity-publication.py
+!/tools/prepare-vanity-vt02.py
 !/tools/publish-black-home.py
 !/tools/publish-hybrid-version.py
 !/tools/publish-island-repairs.py
@@ -158,6 +166,7 @@
 !/tools/verify-tv-wall.cjs
 !/tools/verify-v4-industrial.cjs
 !/tools/verify-v4-public.cjs
+!/tools/verify-vanity-vt02.cjs
 !/tools/verify-viewer-ui.cjs
 !/tour.js
 !/tv-wall-unification.js
@@ -166,6 +175,8 @@
 !/v4-industrial-refinement.js
 !/v4-public-adjustments.js
 !/v4-public-finalize.js
+!/vanity-display-finalize.js
+!/vanity-display.js
 !/version-changes.js
 !/version-registry.js
 !/version-registry.json
@@ -174,6 +185,7 @@
 !/viewer-ui.css
 !/viewer-ui.js
 !/walk.js
+!/化妝桌設計.html
 !/家具清單.html
 !/家具清單.json
 !/成品圖集/
@@ -204,10 +216,13 @@
 !/成品圖集/20260914暗色現代工業/images/v0-bath2-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-bath2-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-bed-A-bi01.webp
+!/成品圖集/20260914暗色現代工業/images/v0-bed-A-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v0-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-bed-C-bi01.webp
+!/成品圖集/20260914暗色現代工業/images/v0-bed-C-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v0-bed-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/images/v0-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v0-closet-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-closet-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v0-closet-C-bi01.webp
@@ -263,8 +278,10 @@
 !/成品圖集/20260914暗色現代工業/images/v1-bath2-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v1-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v1-bed-C-bi01.webp
+!/成品圖集/20260914暗色現代工業/images/v1-bed-C-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v1-bed-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v1-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/images/v1-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v1-closet-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v1-closet-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v1-closet-D-bi01.webp
@@ -312,6 +329,7 @@
 !/成品圖集/20260914暗色現代工業/images/v2-bath1-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v2-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v2-bed-E-bi01.webp
+!/成品圖集/20260914暗色現代工業/images/v2-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v2-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v2-collection-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v2-collection-C-bi01.webp
@@ -346,6 +364,7 @@
 !/成品圖集/20260914暗色現代工業/images/v2-study-E-ir01.webp
 !/成品圖集/20260914暗色現代工業/images/v3-bed-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v3-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/images/v3-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v3-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v3-collection-A-vn01.webp
 !/成品圖集/20260914暗色現代工業/images/v3-collection-B-bi01.webp
@@ -383,6 +402,7 @@
 !/成品圖集/20260914暗色現代工業/images/v3-study-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/images/v3-study-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v4-bed-E-au01.webp
+!/成品圖集/20260914暗色現代工業/images/v4-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v4-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v4-collection-B-au01.webp
 !/成品圖集/20260914暗色現代工業/images/v4-collection-C-bi01.webp
@@ -408,6 +428,7 @@
 !/成品圖集/20260914暗色現代工業/images/v4-study-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v4-study-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/images/v4-study-C-ir01.webp
+!/成品圖集/20260914暗色現代工業/images/v5-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/images/v5-entry-door5C-ir01.webp
 !/成品圖集/20260914暗色現代工業/images/v5-entry-door5D-hr01.webp
 !/成品圖集/20260914暗色現代工業/images/v5-entry-door5E-hr01.webp
@@ -441,10 +462,13 @@
 !/成品圖集/20260914暗色現代工業/models/v0-bath2-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-bath2-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-bed-A-bi01.webp
+!/成品圖集/20260914暗色現代工業/models/v0-bed-A-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v0-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-bed-C-bi01.webp
+!/成品圖集/20260914暗色現代工業/models/v0-bed-C-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v0-bed-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/models/v0-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v0-closet-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-closet-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v0-closet-C-bi01.webp
@@ -500,8 +524,10 @@
 !/成品圖集/20260914暗色現代工業/models/v1-bath2-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v1-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v1-bed-C-bi01.webp
+!/成品圖集/20260914暗色現代工業/models/v1-bed-C-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v1-bed-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v1-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/models/v1-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v1-closet-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v1-closet-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v1-closet-D-bi01.webp
@@ -549,6 +575,7 @@
 !/成品圖集/20260914暗色現代工業/models/v2-bath1-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v2-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v2-bed-E-bi01.webp
+!/成品圖集/20260914暗色現代工業/models/v2-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v2-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v2-collection-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v2-collection-C-bi01.webp
@@ -583,6 +610,7 @@
 !/成品圖集/20260914暗色現代工業/models/v2-study-E-ir01.webp
 !/成品圖集/20260914暗色現代工業/models/v3-bed-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v3-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/models/v3-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v3-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v3-collection-A-vn01.webp
 !/成品圖集/20260914暗色現代工業/models/v3-collection-B-bi01.webp
@@ -620,6 +648,7 @@
 !/成品圖集/20260914暗色現代工業/models/v3-study-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/models/v3-study-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v4-bed-E-au01.webp
+!/成品圖集/20260914暗色現代工業/models/v4-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v4-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v4-collection-B-au01.webp
 !/成品圖集/20260914暗色現代工業/models/v4-collection-C-bi01.webp
@@ -645,6 +674,7 @@
 !/成品圖集/20260914暗色現代工業/models/v4-study-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v4-study-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/models/v4-study-C-ir01.webp
+!/成品圖集/20260914暗色現代工業/models/v5-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/models/v5-entry-door5C-ir01.webp
 !/成品圖集/20260914暗色現代工業/models/v5-entry-door5D-hr01.webp
 !/成品圖集/20260914暗色現代工業/models/v5-entry-door5E-hr01.webp
@@ -677,10 +707,13 @@
 !/成品圖集/20260914暗色現代工業/thumbs/v0-bath2-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-bath2-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-bed-A-bi01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v0-bed-A-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-bed-C-bi01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v0-bed-C-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-bed-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v0-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-closet-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-closet-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v0-closet-C-bi01.webp
@@ -736,8 +769,10 @@
 !/成品圖集/20260914暗色現代工業/thumbs/v1-bath2-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v1-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v1-bed-C-bi01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v1-bed-C-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v1-bed-D-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v1-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v1-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v1-closet-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v1-closet-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v1-closet-D-bi01.webp
@@ -785,6 +820,7 @@
 !/成品圖集/20260914暗色現代工業/thumbs/v2-bath1-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v2-bed-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v2-bed-E-bi01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v2-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v2-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v2-collection-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v2-collection-C-bi01.webp
@@ -819,6 +855,7 @@
 !/成品圖集/20260914暗色現代工業/thumbs/v2-study-E-ir01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v3-bed-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v3-bed-E-ir01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v3-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v3-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v3-collection-A-vn01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v3-collection-B-bi01.webp
@@ -856,6 +893,7 @@
 !/成品圖集/20260914暗色現代工業/thumbs/v3-study-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v3-study-E-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v4-bed-E-au01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v4-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v4-collection-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v4-collection-B-au01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v4-collection-C-bi01.webp
@@ -881,6 +919,7 @@
 !/成品圖集/20260914暗色現代工業/thumbs/v4-study-A-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v4-study-B-bi01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v4-study-C-ir01.webp
+!/成品圖集/20260914暗色現代工業/thumbs/v5-bed-E-vt02.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v5-entry-door5C-ir01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v5-entry-door5D-hr01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v5-entry-door5E-hr01.webp

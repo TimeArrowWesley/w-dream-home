@@ -40,6 +40,7 @@ report=read('成品核對.json');report.pop('all144SourceHashesMatched',None);re
 browser_reports={'20260924-vn01':'調整紀錄/20260924版本重編與V3/瀏覽器核對.json','20260924-tw01+au01+bi01':'調整紀錄/20260924電視牆統一/瀏覽器核對.json','20260923-bi01':'調整紀錄/20260923全版本霧黑工業/瀏覽器核對.json','20260923-au01+bi01':'調整紀錄/20260923V1V4影音統一/瀏覽器核對.json'}
 browser_reports['20260924-ir01']='調整紀錄/20260924全版本模型修復/瀏覽器核對.json'
 browser_reports['20261001-cp02']='調整紀錄/20261001電競房CP02/瀏覽器核對.json'
+browser_reports['20261001-vt02']='調整紀錄/20261001全版本化妝桌VT02/瀏覽器核對.json'
 if manifest.get('imageRevision') in browser_reports:
  browser_report=project/browser_reports[manifest['imageRevision']]
  if browser_report.exists():

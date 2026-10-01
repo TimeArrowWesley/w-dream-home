@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1130" viewBox="0 0 1120 1130">
+<rect width="1120" height="1130" fill="#f5f3ef"/>
+<style>text{font-family:'Microsoft JhengHei','Noto Sans TC',sans-serif;fill:#263137;font-size:19px}.small{font-size:16px}.title{font-size:28px;font-weight:700}.dim{fill:none;stroke:#657177;stroke-width:1.5}.outline{stroke:#39474e;stroke-width:2}.glass{fill:#d9e4e3;stroke:#39474e;stroke-width:2}.body{fill:#42484c;stroke:#263137;stroke-width:2}.light{fill:#f6f4ef}.proposal{fill:#845b2e}</style>
+<text x="55" y="52" class="title">VT02｜玻璃展示化妝桌・局部翻蓋＋前拉鏡</text>
+<text x="55" y="82" class="small">2026-10-01 · V0～V5 主臥 · 業主採用概念／尺寸待核 · 單位：cm · 非施工圖</text>
+<text x="55" y="124">俯視｜鏡子收妥</text>
+<rect x="150" y="163" width="760" height="16" fill="#aaaead"/><text x="530" y="153" text-anchor="middle" class="small">既有窗戶／窗簾側（窗型不由本示意推定）</text>
+<path d="M150 184V219M910 184V219" class="dim"/>
+<text x="931" y="208" class="small">原模型簾後間距 10，保留</text>
+<rect x="150" y="220" width="760" height="300" class="glass"/>
+<rect x="150" y="220" width="144" height="300" fill="#c1d1d0" stroke="#39474e" stroke-width="2"/>
+<rect x="766" y="220" width="144" height="300" fill="#c1d1d0" stroke="#39474e" stroke-width="2"/>
+<rect x="430" y="240" width="200" height="176" class="body"/>
+<text x="530" y="315" text-anchor="middle" class="light">鏡背蓋板</text><text x="530" y="345" text-anchor="middle" class="light">50 × 44</text>
+<rect x="302" y="428" width="456" height="84" fill="#b8b1a6" stroke="#39474e" stroke-width="1.5"/>
+<path d="M392 428V512M484 428V512M576 428V512M672 428V512" class="dim"/>
+<text x="530" y="477" text-anchor="middle">中央淺飾品抽盤</text>
+<text x="222" y="320" text-anchor="middle">香水區</text><text x="222" y="348" text-anchor="middle" class="small">抽盤向前 55</text>
+<text x="838" y="320" text-anchor="middle">香水區</text><text x="838" y="348" text-anchor="middle" class="small">抽盤向前 55</text>
+<path d="M222 360V410M215 400L222 410L229 400M838 360V410M831 400L838 410L845 400" class="dim"/>
+<path d="M150 550H910M150 535V560M294 535V560M766 535V560M910 535V560" class="dim"/>
+<text x="222" y="578" text-anchor="middle">36</text><text x="530" y="578" text-anchor="middle">中央 118</text><text x="838" y="578" text-anchor="middle">36</text>
+<text x="530" y="610" text-anchor="middle">桌長 190（兩端外側至外側）</text>
+<path d="M115 220V520M105 220H130M105 520H130" class="dim"/>
+<text x="96" y="370" text-anchor="middle" transform="rotate(-90 96 370)">桌深 75（窗側後緣至前緣）</text>
+<text x="55" y="660">正面｜香水區加深只在兩端，中央留腿</text>
+<rect x="150" y="700" width="760" height="4" class="glass"/>
+<rect x="150" y="704" width="144" height="100" class="glass"/>
+<rect x="766" y="704" width="144" height="100" class="glass"/>
+<rect x="150" y="804" width="144" height="172" class="body"/>
+<rect x="766" y="804" width="144" height="172" class="body"/>
+<path d="M150 890H294M766 890H910" stroke="#92989c" stroke-width="2"/>
+<rect x="160" y="976" width="124" height="24" class="body"/><rect x="776" y="976" width="124" height="24" class="body"/>
+<rect x="294" y="704" width="472" height="22" fill="#b8b1a6" stroke="#39474e" stroke-width="1"/>
+<rect x="294" y="726" width="472" height="8" class="body"/>
+<text x="222" y="747" text-anchor="middle">內淨高 25</text><text x="222" y="778" text-anchor="middle" class="small">示意瓶高 20</text>
+<text x="838" y="747" text-anchor="middle">內淨高 25</text><text x="838" y="778" text-anchor="middle" class="small">示意瓶高 20</text>
+<text x="222" y="855" text-anchor="middle" class="light">封閉抽屜</text><text x="838" y="855" text-anchor="middle" class="light">封閉抽屜</text>
+<text x="530" y="810" text-anchor="middle">中央留腿淨高 66.5</text>
+<text x="530" y="840" text-anchor="middle" class="small">地面 → 最低抽盤底面</text>
+<text x="530" y="915" text-anchor="middle" class="small proposal">比原模型減少 5.5，需實際坐姿核對</text>
+<path d="M110 700V1000M100 700H130M100 1000H130M130 1000H930" class="dim"/>
+<text x="88" y="850" text-anchor="middle" transform="rotate(-90 88 850)">桌高 75（完成地面至桌面上緣）</text>
+<text x="55" y="1040" class="small">190 × 75：既有圖面／模型基準。其餘均為本次試配；玻璃與框材厚度、五金、載重尚未核定。</text>
+<text x="55" y="1069" class="small">25：托盤內襯上表面 → 玻璃下緣；前框較低，需拉出托盤再向上取瓶。5.5：中央飾品區內淨高。</text>
+<text x="55" y="1098" class="small">鏡子先翻起 90°，再前拉 35。香水盤抽出時床邊剩約 36 cm，屬取物站位，不作通行通過判定。</text>
+</svg>

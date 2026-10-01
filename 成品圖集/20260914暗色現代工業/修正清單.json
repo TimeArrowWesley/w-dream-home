@@ -139,10 +139,6 @@
     "nativeAttempts": 2,
     "finalPngSha256": "666371e8634666d643011b853f4c95e3b453bb15d843a7c039b5ff87641dfa9f"
   },
-  "v1-bed-E-ir01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "1763c634f13b3b0ece14a7a950809cf9d7f3ff96eff49fe14db0870d9dd0da6d"
-  },
   "v1-storage-E-ir01": {
     "nativeAttempts": 2,
     "finalPngSha256": "7e82dbb8e85f98d695f644f87fd894303c7f887aca0364e8775788059f9af709"
@@ -154,10 +150,6 @@
   "v2-storage-E-ir01": {
     "nativeAttempts": 2,
     "finalPngSha256": "ad22f2a51387d17e90acff639b4d587aa6de94d81e3f70da4949431a53b32588"
-  },
-  "v3-bed-E-ir01": {
-    "nativeAttempts": 2,
-    "finalPngSha256": "9d09288953f135ca025551ab9b2f8915d02f52ec12a0f891c8e5a81518a657ef"
   },
   "v3-storage-C-ir01": {
     "nativeAttempts": 2,
@@ -207,5 +199,17 @@
   "study-E-cp02": {
     "nativeAttempts": 2,
     "finalPngSha256": "18015511acf4e21404e65f5b6e02598428129ff99ad67b566212940a42c96722"
+  },
+  "v0-bed-A-vt02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "d5c6ea6f098ac49d2276271cfc8965a47fe6cf391e71745651cfdee0046eae41"
+  },
+  "v0-bed-C-vt02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "9b323719e2ab3f16a626e8b8624a87abd46c79c009869b25f353f767fd073957"
+  },
+  "v1-bed-C-vt02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "43f52b1405f55f133afb694c5a464d149aa1821c7b1c692e7a916abeabdb5f14"
   }
 }
