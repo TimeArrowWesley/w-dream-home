@@ -3,7 +3,7 @@
 const T=THREE,V=HOME_VIEWER,C=V.finishContext,group=new T.Group();group.name='可互動落地窗簾';V.scene.add(group);
 const fabric=C.materials.linen.clone();fabric.name='石墨灰織紋窗簾';fabric.color.set('#727780').convertSRGBToLinear();fabric.side=T.DoubleSide;fabric.roughness=1;if(fabric.map){fabric.map=fabric.map.clone();fabric.map.repeat.set(14,24);fabric.map.needsUpdate=true;}if(fabric.bumpMap){fabric.bumpMap=fabric.bumpMap.clone();fabric.bumpMap.repeat.set(14,24);fabric.bumpMap.needsUpdate=true;}
 const railMat=new T.MeshStandardMaterial({color:0x353633,roughness:.6});
-const definitions=[['living1','客廳左窗',1081,375,205,'V',240],['living2','客廳右窗',1081,650,230,'V',240],['studyN','電腦房北窗',775,3,310,'H',240],['studyE','電腦房東窗',1081,88,224,'V',240],['bed','主臥窗簾',-72,85,197,'V',240],['kitchen','廚房落地窗',3,733,164,'V',215]];
+const definitions=[['living1','客廳左窗',1081,375,205,'V',240],['living2','客廳右窗',1081,650,230,'V',240],['studyN','電腦房北窗',775,3,310,'H',240],['studyE','電腦房東窗',1081,88,224,'V',240],['bed','主臥窗簾',-72,85,197,'V',240]];
 const entries=definitions.map(([id,name,x,y,width,axis,height])=>{const g=new T.Group();g.position.copy(V.pos(x,y,0));if(axis==='V')g.rotation.y=-Math.PI/2;group.add(g);const rail=new T.Mesh(new T.BoxGeometry(width+12,3,5),railMat);rail.position.set(width/2,height+3,0);g.add(rail);
 rail.name=name+'・窗簾軌道';rail.userData.curtainRail=true;
 const panels=[0,1].map(side=>{const geo=new T.PlaneGeometry(1,height-3,80,8);const mesh=new T.Mesh(geo,fabric);mesh.position.y=(height-3)/2+1;mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);const hooks=Array.from({length:7},()=>{const h=new T.Mesh(new T.CylinderGeometry(.3,.3,3.5,8),railMat);h.position.y=height-.25;g.add(h);return h;});return {mesh,side,hooks};});

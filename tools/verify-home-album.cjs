@@ -29,7 +29,10 @@ for(const v of data.versions)for(const r of data.rooms){
   // The 170 cm translation plus a different lens creates distinct framing,
   // although both look toward the same desk wall within four degrees.
   const studyCloseup=r.id==='study'&&e[a].sourceKey.endsWith('-cp02')&&e[b].sourceKey.endsWith('-cp02')&&shift>160&&Math.abs(e[a].camera.fov-e[b].camera.fov)>=15;
-  assert.ok((turn>5&&(turn>25||shift>100))||acrossCollectionPartition||studyCloseup,'Views insufficiently distinct: '+e[a].key+'/'+e[b].key);}
+  // KP02 A looks along the full two-sided galley, E focuses on the appliance
+  // bank from 200 cm closer. The matching heading does not duplicate framing.
+  const kitchenBankCloseup=r.id==='kitchen'&&e[a].sourceKey.endsWith('-kp02')&&e[b].sourceKey.endsWith('-kp02')&&new Set([e[a].angle,e[b].angle]).has('A')&&new Set([e[a].angle,e[b].angle]).has('E')&&shift>=195&&Math.abs(e[a].camera.fov-e[b].camera.fov)>=6;
+  assert.ok((turn>5&&(turn>25||shift>100))||acrossCollectionPartition||studyCloseup||kitchenBankCloseup,'Views insufficiently distinct: '+e[a].key+'/'+e[b].key);}
 }
 const hashes=new Map();for(const e of data.entries){if(hashes.has(e.sourceKey))assert.equal(hashes.get(e.sourceKey),e.sourceHash);hashes.set(e.sourceKey,e.sourceHash);for(const t of ['ai','model','thumb'])assert.ok(fs.statSync(path.join(root,e[t])).size>1000,e.key+'/'+t);}
 class E{

@@ -211,5 +211,9 @@
   "v1-bed-C-vt02": {
     "nativeAttempts": 2,
     "finalPngSha256": "43f52b1405f55f133afb694c5a464d149aa1821c7b1c692e7a916abeabdb5f14"
+  },
+  "kitchen-A-kp02": {
+    "nativeAttempts": 2,
+    "finalPngSha256": "00687825fd9a4643e6d8d2eb8290b318f6d989f63403ae80636ee0abdfea58e5"
   }
 }

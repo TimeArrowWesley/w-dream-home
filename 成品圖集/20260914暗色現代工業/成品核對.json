@@ -1,7 +1,7 @@
 {
   "complete": true,
   "viewSlots": 360,
-  "uniqueImages": 217,
+  "uniqueImages": 213,
   "remaining": [],
   "versions": {
     "v0": 60,
@@ -11,21 +11,22 @@
     "v4": 60,
     "v5": 60
   },
-  "displayBytes": 66545062,
+  "displayBytes": 64387968,
   "allImagesDecoded": true,
   "allSourceHashesMatched": true,
-  "correctionViews": 52,
+  "correctionViews": 53,
   "visualReview": "Each unique AI image reviewed; original model is authoritative for dimensions",
   "browserVisualQA": true,
   "browserScope": [
-    "IAB 1280x720: V1 main bedroom close-up, hidden mirror open/close, makeup light state, left/right perfume trays and central jewelry tray actions. Seated-view left/right corrected and visually rechecked.",
-    "IAB 1280x720: V0 and disabled V5 bedroom close-ups, mirror and perfume tray operations. Fixed bed, window, adjacent storage retained in sampled views.",
-    "IAB 1280x720: V1 AI C and V5 AI E with all five thumbnail buttons visible and new asset URLs.",
-    "Detail page: closed/open AI toggle and V0 direct bedroom link."
+    "IAB 1280x720: V1/V5 實際 WebGL 廚房、半嵌面板、櫃門分格與黑／銀灰材質",
+    "V1 AI A/E、V5 AI A/C、五張照片列與新版下載路徑",
+    "V0 五張圖集及專用 A 圖與模型並排對照",
+    "黑色櫃面環境反光過強已校正；同五個來源像素不變"
   ],
   "browserLimitations": [
-    "Three browser-sampled versions and specific actions; six versions covered by model/DOM checks, not six full browser inspections.",
-    "No mobile, all-continuous-view, physical fit, window-swing, hardware load or construction certification.",
-    "Existing model exterior is a placeholder; new AI window backgrounds are neutral and not real site views."
+    "桌機指定視角抽查；未宣稱手機、所有連續視角或施工驗收",
+    "互動門片啟閉為離線抽樣，不宣稱所有設備與人體同時使用無干涉",
+    "窗洞為未标尺寸廚具圖輪廓試配；玻璃霧化只用於AI比較來源",
+    "其他330圖位未重製，跨房背景可能仍為前版"
   ]
 }

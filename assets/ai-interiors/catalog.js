@@ -1,4 +1,4 @@
-/* 20261001-vt02: five directions per room. Shared images require identical source pixels. */
+/* 20261002-kp02: five directions per room. Shared images require identical source pixels. */
 window.HOME_AI_PHOTOS={
   "v0": [
     {
@@ -125,41 +125,41 @@ window.HOME_AI_PHOTOS={
       "id": "v0-kitchen-A",
       "room": "kitchen",
       "label": "廚房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-A-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-A-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-A-kp02.webp"
     },
     {
       "id": "v0-kitchen-B",
       "room": "kitchen",
       "label": "廚房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-B-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-B-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-B-kp02.webp"
     },
     {
       "id": "v0-kitchen-C",
       "room": "kitchen",
       "label": "廚房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-C-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-C-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-C-kp02.webp"
     },
     {
       "id": "v0-kitchen-D",
       "room": "kitchen",
       "label": "廚房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-D-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-D-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-D-kp02.webp"
     },
     {
       "id": "v0-kitchen-E",
       "room": "kitchen",
       "label": "廚房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-E-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-E-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-E-kp02.webp"
     },
     {
       "id": "v0-bed-A",
@@ -607,41 +607,41 @@ window.HOME_AI_PHOTOS={
       "id": "v1-kitchen-A",
       "room": "kitchen",
       "label": "廚房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-A-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-A-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-A-kp02.webp"
     },
     {
       "id": "v1-kitchen-B",
       "room": "kitchen",
       "label": "廚房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-B-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-B-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-B-kp02.webp"
     },
     {
       "id": "v1-kitchen-C",
       "room": "kitchen",
       "label": "廚房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-C-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-C-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-C-kp02.webp"
     },
     {
       "id": "v1-kitchen-D",
       "room": "kitchen",
       "label": "廚房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-D-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-D-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-D-kp02.webp"
     },
     {
       "id": "v1-kitchen-E",
       "room": "kitchen",
       "label": "廚房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-E-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-E-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-E-kp02.webp"
     },
     {
       "id": "v1-bed-A",
@@ -1089,41 +1089,41 @@ window.HOME_AI_PHOTOS={
       "id": "v2-kitchen-A",
       "room": "kitchen",
       "label": "廚房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-kitchen-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-kitchen-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-kitchen-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-A-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-A-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-A-kp02.webp"
     },
     {
       "id": "v2-kitchen-B",
       "room": "kitchen",
       "label": "廚房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v3-kitchen-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-kitchen-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-kitchen-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-B-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-B-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-B-kp02.webp"
     },
     {
       "id": "v2-kitchen-C",
       "room": "kitchen",
       "label": "廚房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-C-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-C-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-C-kp02.webp"
     },
     {
       "id": "v2-kitchen-D",
       "room": "kitchen",
       "label": "廚房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-D-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-D-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-D-kp02.webp"
     },
     {
       "id": "v2-kitchen-E",
       "room": "kitchen",
       "label": "廚房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-E-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-E-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-E-kp02.webp"
     },
     {
       "id": "v2-bed-A",
@@ -1571,41 +1571,41 @@ window.HOME_AI_PHOTOS={
       "id": "v3-kitchen-A",
       "room": "kitchen",
       "label": "廚房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-kitchen-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-kitchen-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-kitchen-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-A-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-A-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-A-kp02.webp"
     },
     {
       "id": "v3-kitchen-B",
       "room": "kitchen",
       "label": "廚房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v3-kitchen-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-kitchen-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-kitchen-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-B-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-B-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-B-kp02.webp"
     },
     {
       "id": "v3-kitchen-C",
       "room": "kitchen",
       "label": "廚房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-C-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-C-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-C-kp02.webp"
     },
     {
       "id": "v3-kitchen-D",
       "room": "kitchen",
       "label": "廚房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-D-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-D-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-D-kp02.webp"
     },
     {
       "id": "v3-kitchen-E",
       "room": "kitchen",
       "label": "廚房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-E-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-E-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-E-kp02.webp"
     },
     {
       "id": "v3-bed-A",
@@ -2053,41 +2053,41 @@ window.HOME_AI_PHOTOS={
       "id": "v4-kitchen-A",
       "room": "kitchen",
       "label": "廚房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-kitchen-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-kitchen-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-kitchen-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-A-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-A-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-A-kp02.webp"
     },
     {
       "id": "v4-kitchen-B",
       "room": "kitchen",
       "label": "廚房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-kitchen-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-kitchen-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-kitchen-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-B-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-B-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-B-kp02.webp"
     },
     {
       "id": "v4-kitchen-C",
       "room": "kitchen",
       "label": "廚房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-C-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-C-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-C-kp02.webp"
     },
     {
       "id": "v4-kitchen-D",
       "room": "kitchen",
       "label": "廚房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-D-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-D-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-D-kp02.webp"
     },
     {
       "id": "v4-kitchen-E",
       "room": "kitchen",
       "label": "廚房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-E-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-E-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-E-kp02.webp"
     },
     {
       "id": "v4-bed-A",
@@ -2535,41 +2535,41 @@ window.HOME_AI_PHOTOS={
       "id": "v5-kitchen-A",
       "room": "kitchen",
       "label": "廚房・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v2-kitchen-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v2-kitchen-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v2-kitchen-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-A-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-A-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-A-kp02.webp"
     },
     {
       "id": "v5-kitchen-B",
       "room": "kitchen",
       "label": "廚房・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v3-kitchen-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v3-kitchen-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v3-kitchen-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-B-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-B-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-B-kp02.webp"
     },
     {
       "id": "v5-kitchen-C",
       "room": "kitchen",
       "label": "廚房・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-C-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-C-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-C-kp02.webp"
     },
     {
       "id": "v5-kitchen-D",
       "room": "kitchen",
       "label": "廚房・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-kitchen-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-kitchen-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-kitchen-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-D-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-D-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-D-kp02.webp"
     },
     {
       "id": "v5-kitchen-E",
       "room": "kitchen",
       "label": "廚房・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-kitchen-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-kitchen-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-kitchen-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/kitchen-E-kp02.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/kitchen-E-kp02.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/kitchen-E-kp02.webp"
     },
     {
       "id": "v5-bed-A",

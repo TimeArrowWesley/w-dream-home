@@ -29,7 +29,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     nx:{name:'TOTO NX2 CES903KVG',w:46.8,d:80,h:56.5},
     ls:{name:'TOTO LS CES87120GTW',w:41.1,d:72.5,h:49.7},
     projector:{name:'JMGO N1S Infinity 4K',w:24.3,d:21,h:23.8},
-    dishwasher:{name:'Bosch SMV8ZCX00X · 全嵌式',w:59.8,d:55,h:81.5},
+    dishwasher:{name:'Bosch SMI8ZCS00X · 半嵌式',w:59.8,d:55,h:81.5},
     oven:{name:'Bosch HSG7361B1 蒸烤箱',w:59.4,d:54.8,h:59.5},
     dishdryer:{name:'Rinnai RKD-186S(B) 懸掛烘碗機',w:79.8,d:32,h:40},
     pc:{name:'ASUS ROG Helios · 清單機殼外徑',w:25,d:59.1,h:56.5}
@@ -155,7 +155,7 @@ window.HOME_EQUIPMENT_BUILD = function (ctx) {
     }else if(key==='dishdryer'){
       part(g,-w/2,front+.5,w,d-.5,0,h,graphite);part(g,-w/2,front,w,.5,0,h,M.blackglass);part(g,-w/2+5,front+.02,w-10,.1,5,1.5,silver);
     }else if(key==='dishwasher'){
-      part(g,-w/2,front+1.8,w,d-1.8,0,h,silver);part(g,-w/2,front,w,1.8,0,h,graphite);part(g,-w/2+2,front+2,w-4,2,h-1,1,M.screen);
+      part(g,-w/2,front+1.8,w,d-1.8,0,h,silver);part(g,-w/2,front,w,1.8,0,h-10.5,graphite);const fascia=part(g,-w/2,front,w,1.8,h-10.5,10.5,silver);fascia.name='KP02 半嵌洗碗機外露面板';part(g,-w/2+8,front-.05,w-16,.1,h-7,3.5,M.screen);
     }else if(key==='pc'){
       part(g,-w/2,front,w,d,0,h,graphite);part(g,-w/2+.1,front+2,.2,d-4,4,h-8,M.glass);for(const yy of [14,29,44])round(g,0,yy,front+.1,6,.2,M.rubber);
     }else{part(g,-w/2,front,w,d,0,h,graphite);part(g,-w/2+.5,front,w-1,.1,h-8,5,M.screen);}
