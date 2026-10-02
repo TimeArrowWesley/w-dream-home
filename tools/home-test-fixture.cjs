@@ -37,6 +37,6 @@ if(n===5)run('v4-industrial-refinement.js');
 run('black-industrial-design.js');
 if([2,5].includes(n))run('living-audio-finalize.js');
 if(n!==0)run('study-cyberpunk-finalize.js');
-run('vanity-display-finalize.js');run('kitchen-plan-finalize.js');
+run('vanity-display-finalize.js');run('kitchen-plan-finalize.js');run('closet-view-refinement.js');
 return {T,c,V,E,events,raf,get,run,bounds,overlap,near,tick(count=1,step=16){for(let i=0;i<count;i++){time+=step;for(const fn of [...raf])fn(time);}V.scene.updateMatrixWorld(true);},setTime(t){time=t;}};
 };

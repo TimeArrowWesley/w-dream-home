@@ -1,4 +1,4 @@
-/* 20261002-kp02: five directions per room. Shared images require identical source pixels. */
+/* 20261002-cl01: five directions per room. Shared images require identical source pixels. */
 window.HOME_AI_PHOTOS={
   "v0": [
     {
@@ -205,41 +205,41 @@ window.HOME_AI_PHOTOS={
       "id": "v0-closet-A",
       "room": "closet",
       "label": "更衣室・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-A-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-A-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-A-cl01.webp"
     },
     {
       "id": "v0-closet-B",
       "room": "closet",
       "label": "更衣室・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-B-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-B-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-B-cl01.webp"
     },
     {
       "id": "v0-closet-C",
       "room": "closet",
       "label": "更衣室・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-C-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-C-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-C-cl01.webp"
     },
     {
       "id": "v0-closet-D",
       "room": "closet",
       "label": "更衣室・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-D-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-D-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-D-cl01.webp"
     },
     {
       "id": "v0-closet-E",
       "room": "closet",
       "label": "更衣室・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-E-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-E-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-E-cl01.webp"
     },
     {
       "id": "v0-study-A",
@@ -687,41 +687,41 @@ window.HOME_AI_PHOTOS={
       "id": "v1-closet-A",
       "room": "closet",
       "label": "更衣室・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-A-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-A-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-A-cl01.webp"
     },
     {
       "id": "v1-closet-B",
       "room": "closet",
       "label": "更衣室・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-B-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-B-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-B-cl01.webp"
     },
     {
       "id": "v1-closet-C",
       "room": "closet",
       "label": "更衣室・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-C-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-C-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-C-cl01.webp"
     },
     {
       "id": "v1-closet-D",
       "room": "closet",
       "label": "更衣室・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-D-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-D-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-D-cl01.webp"
     },
     {
       "id": "v1-closet-E",
       "room": "closet",
       "label": "更衣室・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-E-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-E-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-E-cl01.webp"
     },
     {
       "id": "v1-study-A",
@@ -1169,41 +1169,41 @@ window.HOME_AI_PHOTOS={
       "id": "v2-closet-A",
       "room": "closet",
       "label": "更衣室・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-A-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-A-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-A-cl01.webp"
     },
     {
       "id": "v2-closet-B",
       "room": "closet",
       "label": "更衣室・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-B-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-B-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-B-cl01.webp"
     },
     {
       "id": "v2-closet-C",
       "room": "closet",
       "label": "更衣室・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-C-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-C-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-C-cl01.webp"
     },
     {
       "id": "v2-closet-D",
       "room": "closet",
       "label": "更衣室・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-D-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-D-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-D-cl01.webp"
     },
     {
       "id": "v2-closet-E",
       "room": "closet",
       "label": "更衣室・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-E-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-E-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-E-cl01.webp"
     },
     {
       "id": "v2-study-A",
@@ -1651,41 +1651,41 @@ window.HOME_AI_PHOTOS={
       "id": "v3-closet-A",
       "room": "closet",
       "label": "更衣室・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-A-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-A-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-A-cl01.webp"
     },
     {
       "id": "v3-closet-B",
       "room": "closet",
       "label": "更衣室・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-B-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-B-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-B-cl01.webp"
     },
     {
       "id": "v3-closet-C",
       "room": "closet",
       "label": "更衣室・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-C-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-C-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-C-cl01.webp"
     },
     {
       "id": "v3-closet-D",
       "room": "closet",
       "label": "更衣室・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-D-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-D-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-D-cl01.webp"
     },
     {
       "id": "v3-closet-E",
       "room": "closet",
       "label": "更衣室・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-E-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-E-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-E-cl01.webp"
     },
     {
       "id": "v3-study-A",
@@ -2133,41 +2133,41 @@ window.HOME_AI_PHOTOS={
       "id": "v4-closet-A",
       "room": "closet",
       "label": "更衣室・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-A-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-A-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-A-cl01.webp"
     },
     {
       "id": "v4-closet-B",
       "room": "closet",
       "label": "更衣室・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-B-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-B-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-B-cl01.webp"
     },
     {
       "id": "v4-closet-C",
       "room": "closet",
       "label": "更衣室・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-C-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-C-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-C-cl01.webp"
     },
     {
       "id": "v4-closet-D",
       "room": "closet",
       "label": "更衣室・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-D-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-D-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-D-cl01.webp"
     },
     {
       "id": "v4-closet-E",
       "room": "closet",
       "label": "更衣室・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-E-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-E-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-E-cl01.webp"
     },
     {
       "id": "v4-study-A",
@@ -2615,41 +2615,41 @@ window.HOME_AI_PHOTOS={
       "id": "v5-closet-A",
       "room": "closet",
       "label": "更衣室・方向 A",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-A-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-A-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-A-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-A-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-A-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-A-cl01.webp"
     },
     {
       "id": "v5-closet-B",
       "room": "closet",
       "label": "更衣室・方向 B",
-      "src": "成品圖集/20260914暗色現代工業/images/v1-closet-B-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v1-closet-B-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v1-closet-B-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-B-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-B-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-B-cl01.webp"
     },
     {
       "id": "v5-closet-C",
       "room": "closet",
       "label": "更衣室・方向 C",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-C-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-C-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-C-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-C-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-C-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-C-cl01.webp"
     },
     {
       "id": "v5-closet-D",
       "room": "closet",
       "label": "更衣室・方向 D",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-D-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-D-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-D-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-D-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-D-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-D-cl01.webp"
     },
     {
       "id": "v5-closet-E",
       "room": "closet",
       "label": "更衣室・方向 E",
-      "src": "成品圖集/20260914暗色現代工業/images/v0-closet-E-bi01.webp",
-      "modelSrc": "成品圖集/20260914暗色現代工業/models/v0-closet-E-bi01.webp",
-      "thumb": "成品圖集/20260914暗色現代工業/thumbs/v0-closet-E-bi01.webp"
+      "src": "成品圖集/20260914暗色現代工業/images/closet-E-cl01.webp",
+      "modelSrc": "成品圖集/20260914暗色現代工業/models/closet-E-cl01.webp",
+      "thumb": "成品圖集/20260914暗色現代工業/thumbs/closet-E-cl01.webp"
     },
     {
       "id": "v5-study-A",

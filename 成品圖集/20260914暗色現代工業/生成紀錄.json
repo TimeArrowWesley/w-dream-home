@@ -1,7 +1,7 @@
 {
   "date": "2026-10-02",
-  "sourceRevision": "20261002-kp02",
-  "imageRevision": "20261002-kp02",
+  "sourceRevision": "20261002-cl01-view+kp02",
+  "imageRevision": "20261002-cl01",
   "versionSources": {
     "v0": {
       "capturedAt": "2026-09-15",
@@ -483,13 +483,118 @@
         "interaction.js": "305747554ba6b9102ee66dbebbcc33e8e4ebd3c23e4b56ef20fbe37f144d98ca",
         "curtains.js": "9c40d6a3e289838ca5045eb9ecc55bafb796a425a0c5cfe31d91ae2e946182fa"
       }
+    },
+    "CL01": {
+      "date": "2026-10-02",
+      "scope": "Six versions closet five views. Geometry and furniture master unchanged; closet initial 3D camera improved only. Seven new native AI images replace 30 slots. Other 330 slots retained.",
+      "newNativeAI": 7,
+      "recapturedSlots": 30,
+      "cameraStates": "A/B/C/E mirror left, D mirror shifted right 50cm. Room entrance closed, drawers closed in all five reference captures.",
+      "limits": "Existing model cm are not surveyed dimensions. Duct drawing/furniture-envelope conflict remains; effective capacities, window operation, loads, joinery and lighting remain unapproved. AI reflections and lighting are illustrative.",
+      "sourceFileSha256": {
+        "design.js": "0e54e93e5893e6d00ae8410875338286f2e617837a9954e1f750f97aabf8e6b5",
+        "提案/旋轉電視與直線中島/design.js": "e4701fd8d9822220661b0545fd7866bb049f617730ba74cda05df5412785e069",
+        "equipment-models.js": "9797a243c79fb76184a50882ec57381c5168d7b7d82a63d00634f11c4b59174d",
+        "bedroom-model.js": "790498fe16064b2b182690008aca5123b62e4862e8bec724ec801271d53a5f08",
+        "bedroom-controls.js": "f39e82036b34c36db4acf0a41634ae0d0e0bcf09465ef0a604584b86ce45b8a0",
+        "interaction.js": "305747554ba6b9102ee66dbebbcc33e8e4ebd3c23e4b56ef20fbe37f144d98ca",
+        "closet-view-refinement.js": "d9ceea8c004bd965b48050681dfc8bc796c4c8c28931cfc5aed25f7c992442d2"
+      }
     }
   },
   "sourceMethod": "actual source geometry, perspective-correct textured offline render; no reflections, baked shadows or browser/GPU capture",
   "generationTool": "Built-in image_gen",
   "viewSlots": 360,
-  "uniqueImages": 213,
+  "uniqueImages": 212,
   "records": [
+    {
+      "key": "closet-A-cl01",
+      "usedBy": [
+        "v0-closet-A",
+        "v1-closet-A",
+        "v4-closet-A",
+        "v5-closet-A",
+        "v2-closet-A",
+        "v3-closet-A"
+      ],
+      "sourcePngSha256": "cb50cf34edce5390487af3731e7030b651fe04d4eaf7dc3e5ccb49ee3e305427",
+      "aiOriginalPngSha256": "aaac1a96cfde8c641cc8af99b218960478e04b84d9114ada70352406863b2a99",
+      "aiWebpSha256": "27a0079013a4556a7b60c526cab7f2079e51df70a0961529fe461c6c65f80ba0",
+      "sourceWebpSha256": "467df5985d0e3e0f8aba4cc1812ea4697e2fa4c9a5e547d80111ca8b7c0f444a",
+      "prompt": "Edit the supplied actual room model screenshot into a convincing high-end architectural interior photograph. This is a precise sketch-to-render task, not a new room design. Output one landscape 3:2 image. Preserve the input camera, tight L-shaped room, structural occlusions, wall planes, cabinet outlines, number of drawers, mirror position, openings, rails, shelves and their overlaps exactly. Do not widen the room, remove foreground walls, add an island, bench, furniture, decorative lighting, extra windows or cabinets. Style: the established home has matte charcoal-black ceiling and wardrobe framing, medium grey plaster walls, muted grey-brown wood accents, grey-brown herringbone floor without reddish tones. Photograph-quality fine material texture, soft neutral-white existing cabinet light and natural indirect light, realistic fabric weave and leather grain; balanced exposure, no cinematic blue/pink/RGB lights, no excessive orange warmth. Grey clothes proxies become neatly spaced realistic garments hanging on real hangers at their exact rail positions, keeping below the proper rail, not geometric slabs. No people, text, labels, watermarks. Concept image, not an engineering drawing. View A: looking toward the rear double short-hang wardrobe. Frame left is the perpendicular open short-hang rail above the grey-brown three-drawer chest; keep the drawer count even when a drawer is partly clipped by the image edge. At the back, clothes on two rails are visible on the LEFT of the tall sliding mirror in the IMAGE, and the tall mirror occupies the RIGHT side of that back bay. The light-blue vertical rectangle is a mirror, NOT a frosted door/window or a hallway. Show a subdued physically plausible reflection of the opposing grey wall and a small cropped wardrobe edge; do not reflect a new room or extra furniture. Keep the large foreground grey wall at image right and the same narrow floor footprint. Do not put boxes on the drawer top or add knobs. Light comes only from the existing linear cabinet lighting; no extra glow on every shelf.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "closet-B-cl01",
+      "usedBy": [
+        "v1-closet-B",
+        "v4-closet-B",
+        "v5-closet-B",
+        "v2-closet-B",
+        "v3-closet-B"
+      ],
+      "sourcePngSha256": "3c2ea0b9a24e7f3db11dd8d3ab8e999d110e72b2ecd9b63d0d9eee28db74735b",
+      "aiOriginalPngSha256": "ceb4f718da007462efe23ce159011686acb5b8b725dbef37eb840bf9a958da09",
+      "aiWebpSha256": "333b4040e38c73c196e8a3dc476614a3af0029480978e0dfde828ebbf1a78254",
+      "sourceWebpSha256": "87a1ed881ff6e20ac9e03f7899e580a3ab80fd8bb8a8748bf2c4f0cd8e995e82",
+      "prompt": "Edit the supplied actual room model screenshot into a convincing high-end architectural interior photograph. This is a precise sketch-to-render task, not a new room design. Output one landscape 3:2 image. Preserve the input camera, tight L-shaped room, structural occlusions, wall planes, cabinet outlines, number of drawers, mirror position, openings, rails, shelves and their overlaps exactly. Do not widen the room, remove foreground walls, add an island, bench, furniture, decorative lighting, extra windows or cabinets. Style: the established home has matte charcoal-black ceiling and wardrobe framing, medium grey plaster walls, muted grey-brown wood accents, grey-brown herringbone floor without reddish tones. Photograph-quality fine material texture, soft neutral-white existing cabinet light and natural indirect light, realistic fabric weave and leather grain; balanced exposure, no cinematic blue/pink/RGB lights, no excessive orange warmth. Grey clothes proxies become neatly spaced realistic garments hanging on real hangers at their exact rail positions, keeping below the proper rail, not geometric slabs. No people, text, labels, watermarks. Concept image, not an engineering drawing. View B: close view of the SINGLE tall long-hang bay beyond the fixed grey duct wall foreground at image left. Preserve this obstruction rather than visually enlarging the bay. The three long flat garment proxies are three long coats/dresses, one long rail, no middle rail or shelf cutting through clothes. Above the rail is the existing grey-brown shelf and two upper compartments separated at the center, with TWO modest leather handbags shown within those exact compartments. Bags sit on the shelf with no floating straps. Retain the cropped short garments at far right. Keep the shelf, rear grey panel, black cabinet sides, black plinth and bottom free of extra drawers or shoes. No new doors.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "closet-C-cl01",
+      "usedBy": [
+        "v0-closet-C",
+        "v1-closet-C",
+        "v4-closet-C",
+        "v5-closet-C",
+        "v2-closet-C",
+        "v3-closet-C"
+      ],
+      "sourcePngSha256": "45680de1ac92b505f95a30e2fad8c3cdbf3b604a940e795c722618b2856d42ad",
+      "aiOriginalPngSha256": "42849b589c61186d82d9699212ae12568d1749d5f1141b19fb3676b969dd8675",
+      "aiWebpSha256": "885cc04b3cec48ff24542d233697a92bd5a2ffbd952c9dbd698c2555fa559051",
+      "sourceWebpSha256": "f7155cda35158d485af176d00beda7d3b2bb8b47f5bbeb0849296e2d98456c41",
+      "prompt": "Edit the supplied actual room model screenshot into a convincing high-end architectural interior photograph. This is a precise sketch-to-render task, not a new room design. Output one landscape 3:2 image. Preserve the input camera, tight L-shaped room, structural occlusions, wall planes, cabinet outlines, number of drawers, mirror position, openings, rails, shelves and their overlaps exactly. Do not widen the room, remove foreground walls, add an island, bench, furniture, decorative lighting, extra windows or cabinets. Style: the established home has matte charcoal-black ceiling and wardrobe framing, medium grey plaster walls, muted grey-brown wood accents, grey-brown herringbone floor without reddish tones. Photograph-quality fine material texture, soft neutral-white existing cabinet light and natural indirect light, realistic fabric weave and leather grain; balanced exposure, no cinematic blue/pink/RGB lights, no excessive orange warmth. Grey clothes proxies become neatly spaced realistic garments hanging on real hangers at their exact rail positions, keeping below the proper rail, not geometric slabs. No people, text, labels, watermarks. Concept image, not an engineering drawing. View C: frontal oblique detail of THREE grey-brown wood drawers below ONE short-hang rail; show all THREE drawer fronts and no extra desktop objects. The left tall narrow cabinet is a shallow 15cm storage unit with exactly THREE glass-fronted upper compartments: the rectangular proxies are small flat leather CLUTCH BAGS, one in each compartment, NOT storage boxes, suitcases, full-size bulky handbags or folded towels. Its lower open shelves remain empty and dark. The right edge has a cropped light-blue sliding mirror, replace blue with subdued reflection of the grey structural wall, not a new window or doorway. Keep the perpendicular rear double-hang clothes partly visible through the right gap. The upper part of the top glass compartment and rails are cropped as in the source: do not expand framing. Materials match the established black-frame, grey-brown wood closet, not glossy white cabinets. Maintain the drawer chest width and aisle size. Drawer faces have thin integral horizontal finger channels, not protruding bar handles.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "closet-D-cl01",
+      "usedBy": [
+        "v0-closet-D",
+        "v1-closet-D",
+        "v4-closet-D",
+        "v5-closet-D",
+        "v2-closet-D",
+        "v3-closet-D"
+      ],
+      "sourcePngSha256": "c87ea90139f42b84631b039d574e60ceee051ca87e2ca4a377fe3c10390f69d9",
+      "aiOriginalPngSha256": "d8ed39669c67ebe86f750c007504344dc5ef075c6fc6488f6fa60c2c31a10de2",
+      "aiWebpSha256": "2cfc87640a1e7d54eb371922bf17c946690ebdcfbbe0502a12b35923a4199f79",
+      "sourceWebpSha256": "47c38461a8bc35813d9f7251b18205d74469de9853836ddc7a0a72bf5718aa9c",
+      "prompt": "Edit the supplied actual room model screenshot into a convincing high-end architectural interior photograph. This is a precise sketch-to-render task, not a new room design. Output one landscape 3:2 image. Preserve the input camera, tight L-shaped room, structural occlusions, wall planes, cabinet outlines, number of drawers, mirror position, openings, rails, shelves and their overlaps exactly. Do not widen the room, remove foreground walls, add an island, bench, furniture, decorative lighting, extra windows or cabinets. Style: the established home has matte charcoal-black ceiling and wardrobe framing, medium grey plaster walls, muted grey-brown wood accents, grey-brown herringbone floor without reddish tones. Photograph-quality fine material texture, soft neutral-white existing cabinet light and natural indirect light, realistic fabric weave and leather grain; balanced exposure, no cinematic blue/pink/RGB lights, no excessive orange warmth. Grey clothes proxies become neatly spaced realistic garments hanging on real hangers at their exact rail positions, keeping below the proper rail, not geometric slabs. No people, text, labels, watermarks. Concept image, not an engineering drawing. View D: the sliding full-height mirror has moved RIGHT in floor-plan coordinates by 50cm; seen from this camera, the blue placeholder mirror is now at image LEFT of the back double-hang clothes. Keep this exact mirror panel at the left, two exposed short-hang rows to its right, black tracks, vertical black handle and the large structural grey foreground wall at image right. The leftmost dark wardrobe side partly blocks the drawer unit; preserve that obstruction. Replace the blue panel with a realistic subdued mirror reflection of the opposite grey walls and a cropped edge of the long-hang bay, never a newly invented door, window, corridor or second mirror. No new niche, rail or shelf. One photographer's architectural photograph of the existing compact room; subtle physically believable materials, no drawing labels.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
+    {
+      "key": "closet-E-cl01",
+      "usedBy": [
+        "v1-closet-E",
+        "v4-closet-E",
+        "v5-closet-E",
+        "v2-closet-E",
+        "v3-closet-E"
+      ],
+      "sourcePngSha256": "ee53de04daef526bd3ac17f7969d7c82fba0deaf4844ad9e426904a1fadf141d",
+      "aiOriginalPngSha256": "697b59d2e38a0f39bccb6d904da03895837b6bee794563c318bc809eb7578ab9",
+      "aiWebpSha256": "0357c734e9c13a18b97e220a9244ad5575530ec80559c72dc0588fdf5e8934bd",
+      "sourceWebpSha256": "60fd0126ecfbb77b2700711d0ee20cbd4e4c9319bd8ea99f4dd3e80c5cadb966",
+      "prompt": "Edit the supplied actual room model screenshot into a convincing high-end architectural interior photograph. This is a precise sketch-to-render task, not a new room design. Output one landscape 3:2 image. Preserve the input camera, tight L-shaped room, structural occlusions, wall planes, cabinet outlines, number of drawers, mirror position, openings, rails, shelves and their overlaps exactly. Do not widen the room, remove foreground walls, add an island, bench, furniture, decorative lighting, extra windows or cabinets. Style: the established home has matte charcoal-black ceiling and wardrobe framing, medium grey plaster walls, muted grey-brown wood accents, grey-brown herringbone floor without reddish tones. Photograph-quality fine material texture, soft neutral-white existing cabinet light and natural indirect light, realistic fabric weave and leather grain; balanced exposure, no cinematic blue/pink/RGB lights, no excessive orange warmth. Grey clothes proxies become neatly spaced realistic garments hanging on real hangers at their exact rail positions, keeping below the proper rail, not geometric slabs. No people, text, labels, watermarks. Concept image, not an engineering drawing. View E: the compact existing WINDOW NICHE and window-side storage, a close detail, not a new dressing room. The small narrow black-framed frosted window in the background is the ONLY window, keep its width/height and inset depth exactly. The low closed black cabinet is immediately in front, with only top and upper front visible due to this camera. Large tall matte black cabinet at image RIGHT and the closed dark room entrance door cropped at far LEFT remain. Keep the grey structural niche cheeks and stepped ceiling. The model gives no verified outdoor panorama: use softly luminous obscure glazing without an invented exterior. Cabinet doors are closed, dark subtle seams, no new handles or extra display items. Keep framing and occlusion, do not shrink the right tall cabinet to expose more window.\n",
+      "corrections": [],
+      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
+    },
     {
       "key": "kitchen-A-kp02",
       "usedBy": [
@@ -998,90 +1103,28 @@
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v0-closet-A-bi01",
-      "usedBy": [
-        "v0-closet-A",
-        "v4-closet-A",
-        "v5-closet-A",
-        "v2-closet-A",
-        "v3-closet-A"
-      ],
-      "sourcePngSha256": "8eb242f0f7c2b1f91a428c3ca03c7ca8cb77c80c4506e703600db287e4d527f2",
-      "aiOriginalPngSha256": "8f3b2d59d1314e9af5b936090e32f1906227e0813d57ed7549ea3e885b18db93",
-      "aiWebpSha256": "694fac42965913f8526d22b478318b8a0fe021c4bdbbe4523722ec14e5bc2fa4",
-      "sourceWebpSha256": "f0c8f8ac3544cad886774a5305058107eb9b68203f612bd5933d1a631a62cc58",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v0-closet-B-bi01",
+      "key": "v0-closet-B-cl01",
       "usedBy": [
         "v0-closet-B"
       ],
-      "sourcePngSha256": "d634d3c757568829e840a1c6027c28e9558c626c3ae264a6dfcd648339b24639",
-      "aiOriginalPngSha256": "60ab11d9ea05fc2f84113452271f17d1c60435388a33fb2a8106aef54ba7b78a",
-      "aiWebpSha256": "f9e566458d515838281e8ec8e3de9ee8ba91c948b6d5461f398c2f543d226b0c",
-      "sourceWebpSha256": "f3cec94ee7a37ad9d13b9e7e626675165c78cbb09e90b463ab1f8907aa806a32",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
+      "sourcePngSha256": "2c48f29dd514a5d1a17b90cf09bca778108104a6c591392104fe390cf90b7c81",
+      "aiOriginalPngSha256": "496fa6980a55aee6ad96d248f464035f59ac4288fd1e3c37e5e2f6f99cf7e88c",
+      "aiWebpSha256": "3fae82e4d7ea7f580215fbd79ead007914b6010ba544b3ed949d299a6d7788d6",
+      "sourceWebpSha256": "aaacf343d17cd4076900d1070557d88e41a5bbc2e893089339599f787a544793",
+      "prompt": "Edit the supplied actual room model screenshot into a convincing high-end architectural interior photograph. This is a precise sketch-to-render task, not a new room design. Output one landscape 3:2 image. Preserve the input camera, tight L-shaped room, structural occlusions, wall planes, cabinet outlines, number of drawers, mirror position, openings, rails, shelves and their overlaps exactly. Do not widen the room, remove foreground walls, add an island, bench, furniture, decorative lighting, extra windows or cabinets. Style: the established home has matte charcoal-black ceiling and wardrobe framing, medium grey plaster walls, muted grey-brown wood accents, grey-brown herringbone floor without reddish tones. Photograph-quality fine material texture, soft neutral-white existing cabinet light and natural indirect light, realistic fabric weave and leather grain; balanced exposure, no cinematic blue/pink/RGB lights, no excessive orange warmth. Grey clothes proxies become neatly spaced realistic garments hanging on real hangers at their exact rail positions, keeping below the proper rail, not geometric slabs. No people, text, labels, watermarks. Concept image, not an engineering drawing. View B: close view of the SINGLE tall long-hang bay beyond the fixed grey duct wall foreground at image left. Preserve this obstruction rather than visually enlarging the bay. The three long flat garment proxies are three long coats/dresses, one long rail, no middle rail or shelf cutting through clothes. Above the rail is the existing grey-brown shelf and two upper compartments separated at the center, with TWO modest leather handbags shown within those exact compartments. Bags sit on the shelf with no floating straps. Retain the cropped short garments at far right. Keep the shelf, rear grey panel, black cabinet sides, black plinth and bottom free of extra drawers or shoes. No new doors. This is the V0 original-layout variant; image 1 is the authoritative geometry and cropping, including the small left edge door/cabinet detail. Image 2 supplies only material/photographic continuity. Match its three long garments and two handbags as closely as possible without changing image 1's geometry.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {
-      "key": "v0-closet-C-bi01",
+      "key": "v0-closet-E-cl01",
       "usedBy": [
-        "v0-closet-C",
-        "v1-closet-C",
-        "v4-closet-C",
-        "v5-closet-C",
-        "v2-closet-C",
-        "v3-closet-C"
+        "v0-closet-E"
       ],
-      "sourcePngSha256": "826af41a6114de5e150c0a9088ade35fb3062e8cd13ef6b0b1064493e105893f",
-      "aiOriginalPngSha256": "1c9c110a6b7d8c8ecb6f865f242dbf3ac78513346f2b62e09f23d4f7a2fbc592",
-      "aiWebpSha256": "43bb6958b1e63e902b56f6e8e1132899ca6f3d3b279b13fd780a7ff445c00bd6",
-      "sourceWebpSha256": "8b527b96dd37f3168ae0858524ab45168604a90f05fe2815ba988d599843fa62",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v0-closet-D-bi01",
-      "usedBy": [
-        "v0-closet-D",
-        "v4-closet-D",
-        "v5-closet-D",
-        "v2-closet-D",
-        "v3-closet-D"
-      ],
-      "sourcePngSha256": "842e940eab3b4a210da658b3abb86af79d2f28caff13c2a7e8ecd5d415445091",
-      "aiOriginalPngSha256": "5c0526e778de9dd37ca633955fd32fda6724f5fa560ec4dea8c81ae0c4fe1c34",
-      "aiWebpSha256": "7925cfec636e78602f0ad3ef94d2ed39a297d0e3c3fc8b77f520cdbb90e9c592",
-      "sourceWebpSha256": "3903198b0df5baa7feb4304f4f19d27683a619e8f90faef5dd2dda295dc70c69",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
-      "corrections": [
-        {
-          "instruction": "Correct ONLY the horizontal top of the low drawer cabinet: restore desaturated grey-brown WOOD with subtle straight grain, NOT grey stone. Keep drawer arrangement, clothing, black ceiling, walls, floor and camera exactly unchanged.",
-          "prompt": "Photorealistic architectural photo edit. Correct ONLY the horizontal top of the low drawer cabinet: restore desaturated grey-brown WOOD with subtle straight grain, NOT grey stone. Keep drawer arrangement, clothing, black ceiling, walls, floor and camera exactly unchanged.\n"
-        }
-      ],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v0-closet-E-bi01",
-      "usedBy": [
-        "v0-closet-E",
-        "v1-closet-E",
-        "v4-closet-E",
-        "v5-closet-E",
-        "v2-closet-E",
-        "v3-closet-E"
-      ],
-      "sourcePngSha256": "f963f76ee070e696f2e5bd5803d580de5d0f25be893bec550eec80f0267132fa",
-      "aiOriginalPngSha256": "130774144409a1aa71596176d0c5683d2ab21cdf5766aa32d1e3c7108e20e649",
-      "aiWebpSha256": "d6699da32269fa869387dbb407cf844795d1467569ae73dea4b3ef08d6d008b4",
-      "sourceWebpSha256": "ae2c23517bcd3f135033b799ad869fc7a925f00084f25707c34ce9f02e80c6e5",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them. FINAL CHECK: every visible ceiling surface in EVERY visible room, including the living room viewed through study glazing, must be matte near-black. The entire home has NO skylights or roof openings. Any rectangular ceiling grille is an opaque dark ventilation grille, never blue sky or a glowing skylight. Preserve tiny functional devices and lower shelf finishes as modeled.\n",
+      "sourcePngSha256": "765f0330f82d48bbfb758a16cce55c02ce298ec6b32e0d66aadf6f47c6d27bd0",
+      "aiOriginalPngSha256": "eaafa59467e385e8238ca911a63eca82377118a24c3916c724ab4fcb31d26be7",
+      "aiWebpSha256": "86f0055ffdb0cbfdcb79d85dd453395c6ceca6c4f74cf59e65053780648a7b79",
+      "sourceWebpSha256": "e5b9d749130e0b5d2162f154d079f8f8a8c36174420e75cbcdc224cec75fb6e5",
+      "prompt": "Edit the supplied actual room model screenshot into a convincing high-end architectural interior photograph. This is a precise sketch-to-render task, not a new room design. Output one landscape 3:2 image. Preserve the input camera, tight L-shaped room, structural occlusions, wall planes, cabinet outlines, number of drawers, mirror position, openings, rails, shelves and their overlaps exactly. Do not widen the room, remove foreground walls, add an island, bench, furniture, decorative lighting, extra windows or cabinets. Style: the established home has matte charcoal-black ceiling and wardrobe framing, medium grey plaster walls, muted grey-brown wood accents, grey-brown herringbone floor without reddish tones. Photograph-quality fine material texture, soft neutral-white existing cabinet light and natural indirect light, realistic fabric weave and leather grain; balanced exposure, no cinematic blue/pink/RGB lights, no excessive orange warmth. Grey clothes proxies become neatly spaced realistic garments hanging on real hangers at their exact rail positions, keeping below the proper rail, not geometric slabs. No people, text, labels, watermarks. Concept image, not an engineering drawing. View E: the compact existing WINDOW NICHE and window-side storage, a close detail, not a new dressing room. The small narrow black-framed frosted window in the background is the ONLY window, keep its width/height and inset depth exactly. The low closed black cabinet is immediately in front, with only top and upper front visible due to this camera. Large tall matte black cabinet at image RIGHT and the closed dark room entrance door cropped at far LEFT remain. Keep the grey structural niche cheeks and stepped ceiling. The model gives no verified outdoor panorama: use softly luminous obscure glazing without an invented exterior. Cabinet doors are closed, dark subtle seams, no new handles or extra display items. Keep framing and occlusion, do not shrink the right tall cabinet to expose more window. This is V0: the tall cabinet at image RIGHT retains the narrow vertical pull visible at the far right of the supplied model; keep that original hinged-cabinet detail. Image 1 is authoritative geometry. Image 2 is only a material/photographic reference from another version; do not copy its handle-free tall cabinet. Keep the V0 cabinet outline and original window opening.\n",
       "corrections": [],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
@@ -1813,54 +1856,6 @@
       "sourceWebpSha256": "f53852db171e8960e687c40ecbd9ac8afd29c54111829e4f9f1d13bac93a58c2",
       "prompt": "Use case: precise-object-edit. Produce a photorealistic residential interior photograph for an existing design gallery. Image 1 is the EDIT TARGET: preserve its entire camera, framing, room geometry, furniture, lighting and material quality. Image 2 is the authoritative UPDATED 3D GEOMETRY at the same exact camera. Image 3 is a close-up DESIGN REFERENCE for the new vanity only, not the camera or room composition.\nChange ONLY the existing window-side vanity to the adopted glass-topped dark graphite vanity. Its original footprint stays identical. Transparent glass desktop with thin gunmetal edging; two end pedestals each with an upper transparent perfume compartment and TWO opaque graphite drawers below; shallow compartmented jewelry tray beneath the central front glass; central open knee space and the existing square upholstered stool. Central rear mirror lid is opaque graphite, FLUSH AND CLOSED. No upright mirror, no tabletop monitor, no open drawers. Perfumes stay inside the end compartments beneath the glass, never on top. The reference is a design concept, do not copy its text label. Match Image 2's position, projection and visible portion precisely. Preserve black ceiling and beams, gray walls, gray-brown herringbone floor, bed, wood headboard storage, projector and white projection screen, door opening and background specific to Image 1. No added objects or windows. Window exterior when visible should be a soft neutral out-of-focus bright placeholder, not a fabricated detailed cityscape. High-quality realistic glass edges, refraction, subtle metal, textiles and contact shadows. No text, no watermark. Output single landscape photograph, same 3:2 framing as Image 1.\n\nThis is the bed-eye view toward the white projection screen. ONLY A SMALL END OF THE VANITY is visible at the FAR RIGHT EDGE near the open black door. Replace that small visible wood cabinet sliver with the new graphite drawers and glass perfume compartment, following Image 2 exactly. The vanity is mostly OUTSIDE THE FRAME. Do not invent a vanity under the screen or change framing to reveal more of it. Preserve all of the screen, partition, door opening, black door, the particular hall scene visible through both side openings and the bed foreground.\n",
       "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-closet-A-bi01",
-      "usedBy": [
-        "v1-closet-A"
-      ],
-      "sourcePngSha256": "e6993a44999112cd6021bc541d8bbc83afb161399984503979f143228a9331c3",
-      "aiOriginalPngSha256": "aabb44befdb1fc23a60a362508e1a2fe33904e63376b9fe832344b3c92ddf299",
-      "aiWebpSha256": "44737d226bcd706f89e424be5a471ee8655c6a563cbd97638d2eb017e4fbc197",
-      "sourceWebpSha256": "50c50c80f7848b3284582b832f778341418107765b811a4c9231dde4f0c01e17",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-closet-B-bi01",
-      "usedBy": [
-        "v1-closet-B",
-        "v4-closet-B",
-        "v5-closet-B",
-        "v2-closet-B",
-        "v3-closet-B"
-      ],
-      "sourcePngSha256": "28859edfb6531c1b098777442e06c53e7c557c62a9795fd84020265142d8fa08",
-      "aiOriginalPngSha256": "f2b06ed75ddae426c9bbd2d5e063b4bda6e2c02b10b23d1e8e93724a1812a6ef",
-      "aiWebpSha256": "03aaa058dfbda9aeb37165604575a3d25d30c2f2e9bfe86fe780b5dd89ff850a",
-      "sourceWebpSha256": "dcb86f5119497913c12740af7098c356500e8d662980273bffde934a7ecfa4be",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them.\n",
-      "corrections": [],
-      "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
-    },
-    {
-      "key": "v1-closet-D-bi01",
-      "usedBy": [
-        "v1-closet-D"
-      ],
-      "sourcePngSha256": "33168c5918baf28d7e8d3fc1eac7ef1b773eb736b3788f26d815be56f6e47eec",
-      "aiOriginalPngSha256": "e53c53a1d481c8e05bb5f53f41b43d55248f9c262344be1b77aa19d6c84da3e1",
-      "aiWebpSha256": "f4c59eb08de67cff0388b259a3b71f67956c078efe5cab803c491dd6742bbfbb",
-      "sourceWebpSha256": "6f47668d479f564169c885e089d5b3d64e38d279dcac34ba40f8fb435485a48f",
-      "prompt": "Use case: precise-interior-material-edit. IMAGE 1 is the existing photorealistic photograph to EDIT. IMAGE 2 is the same camera with the NEW approved materials and authoritative geometry. Preserve image 1 camera, architectural proportions, furniture, equipment, all shelves/contents and photographic realism; change material finishes to match image 2. Matte near-black ceiling and beams (#242628), medium neutral gray walls (#858986), deep-gray door bands where shown, graphite opaque joinery where image 2 shows it, brushed gunmetal frames. Keep existing gray stone ONLY on the marked feature panel/counter, and desaturated gray-brown herringbone wood where already present. Keep gray tile in wet/utility rooms. Preserve all real figurines, the single dark ceramic vase in the high island glass cabinet, monitors, factory appliances and all fixed openings as image 1 and model 2 depict. White round speaker grilles are flat opaque NON-LUMINOUS discs. Do not change lighting locations or add decor, seating, lights, windows, equipment or stone. Do not brighten the black ceiling to white. Natural photographic soft shadows and restrained interior exposure; crisp realistic materials, NOT a CAD render. ONE landscape 1536x1024 image, no text. The photo is a previous finish version, so update every visible target surface according to model 2, including adjacent room ceilings seen through doors.\nWalk-in wardrobe. Keep every shelf, drawer, hanging rail, sliding mirror and doorway exactly as shown. Gray simplified hanging shapes become realistic modest neutral hanging garments, and soft storage boxes become fabric organizers of the same footprint. Do not invent extra shelves or clothes racks. The pale full-height framed panel is a MIRROR, not a new window. Mirror reflection must show this same compact wardrobe, without expanding room geometry. Bedroom/wardrobe floor is HERRINGBONE WOOD. Hanging garments stay garments, no partitions between them.\n",
-      "corrections": [
-        {
-          "instruction": "Correct ONLY the horizontal top of the low drawer cabinet: restore desaturated grey-brown WOOD with subtle straight grain, NOT grey stone. Keep drawer arrangement, clothing, black ceiling, walls, floor and camera exactly unchanged.",
-          "prompt": "Photorealistic architectural photo edit. Correct ONLY the horizontal top of the low drawer cabinet: restore desaturated grey-brown WOOD with subtle straight grain, NOT grey stone. Keep drawer arrangement, clothing, black ceiling, walls, floor and camera exactly unchanged.\n"
-        }
-      ],
       "review": "Manually inspected against source view; conceptual materials, not dimensional proof"
     },
     {

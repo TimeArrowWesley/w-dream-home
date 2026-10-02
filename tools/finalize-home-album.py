@@ -42,6 +42,7 @@ browser_reports['20260924-ir01']='調整紀錄/20260924全版本模型修復/瀏
 browser_reports['20261001-cp02']='調整紀錄/20261001電競房CP02/瀏覽器核對.json'
 browser_reports['20261001-vt02']='調整紀錄/20261001全版本化妝桌VT02/瀏覽器核對.json'
 browser_reports['20261002-kp02']='調整紀錄/20261002廚房五視角KP02/瀏覽器核對.json'
+browser_reports['20261002-cl01']='調整紀錄/20261002更衣室CL01/瀏覽器核對.json'
 if manifest.get('imageRevision') in browser_reports:
  browser_report=project/browser_reports[manifest['imageRevision']]
  if browser_report.exists():
