@@ -110,6 +110,7 @@
 !/tools/install-vanity-vt02.py
 !/tools/manage-black-ai.py
 !/tools/package-home-album.py
+!/tools/package-viewpoint-plans.py
 !/tools/prepare-album-jobs.py
 !/tools/prepare-album-publication.py
 !/tools/prepare-black-ai.py
@@ -175,6 +176,7 @@
 !/tools/verify-v4-public.cjs
 !/tools/verify-vanity-vt02.cjs
 !/tools/verify-viewer-ui.cjs
+!/tools/verify-viewpoint-plan.cjs
 !/tour.js
 !/tv-wall-unification.js
 !/v1-controls.js
@@ -682,6 +684,13 @@
 !/成品圖集/20260914暗色現代工業/models/v5-living-D-ir01.webp
 !/成品圖集/20260914暗色現代工業/models/v5-storage-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/models/v5-study-C-ir01.webp
+!/成品圖集/20260914暗色現代工業/plans/
+!/成品圖集/20260914暗色現代工業/plans/v0-vp01.webp
+!/成品圖集/20260914暗色現代工業/plans/v1-vp01.webp
+!/成品圖集/20260914暗色現代工業/plans/v2-vp01.webp
+!/成品圖集/20260914暗色現代工業/plans/v3-vp01.webp
+!/成品圖集/20260914暗色現代工業/plans/v4-vp01.webp
+!/成品圖集/20260914暗色現代工業/plans/v5-vp01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/
 !/成品圖集/20260914暗色現代工業/thumbs/closet-A-cl01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/closet-B-cl01.webp
@@ -922,6 +931,8 @@
 !/成品圖集/20260914暗色現代工業/thumbs/v5-living-D-ir01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v5-storage-C-ir01.webp
 !/成品圖集/20260914暗色現代工業/thumbs/v5-study-C-ir01.webp
+!/成品圖集/20260914暗色現代工業/viewpoint-plan.css
+!/成品圖集/20260914暗色現代工業/viewpoint-plan.js
 !/成品圖集/20260914暗色現代工業/使用說明.md
 !/成品圖集/20260914暗色現代工業/修正清單.json
 !/成品圖集/20260914暗色現代工業/成品核對.json

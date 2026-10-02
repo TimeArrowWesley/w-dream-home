@@ -21,7 +21,8 @@ function draw(){
   section.append(head,grid);$('gallery').append(section);
  }syncURL();
 }
-function detail(){if(!selected)return;$('detailTitle').textContent=roomLabel(selected.room,selected.version)+'・'+viewLabel(selected);$('detailVersion').textContent=selected.version.toUpperCase()+' / '+data.versions.find(v=>v.id===selected.version).name;
+const viewpoint = window.HOME_VIEWPOINT_PLAN?.create($('detailPlan'));
+function detail(){if(!selected)return;viewpoint?.update(selected,selected.version,roomLabel(selected.room,selected.version)+'・'+viewLabel(selected));$('detailTitle').textContent=roomLabel(selected.room,selected.version)+'・'+viewLabel(selected);$('detailVersion').textContent=selected.version.toUpperCase()+' / '+data.versions.find(v=>v.id===selected.version).name;
  const pane=$('detailImages');pane.replaceChildren();pane.classList.toggle('compare',detailMode==='compare');
  for(const type of detailMode==='compare'?['model','ai']:[detailMode]){const f=document.createElement('figure'),cap=document.createElement('figcaption');cap.textContent=type==='ai'?'AI 成品效果':'原始 3D 取景';const im=photo(selected,type,true);im.loading='eager';f.append(im,cap);pane.append(f);}
  document.querySelectorAll('[data-detail-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.detailMode===detailMode)));

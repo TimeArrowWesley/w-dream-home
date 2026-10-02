@@ -63,7 +63,7 @@ function fixture(v,params='') {
   for(const id of ['curtainOpen','curtainClose','rgbShowModel'])$(id).onclick=()=>calls.push([id]);
   el('div','realismControls','<button id="realismQuality">畫質：精細</button><span id="realismStatus">就緒</span>',$('walkHUD'));
   if(cfg.rotation){const html=read(modelPrefix+'rotating-tv.js').match(/panel.innerHTML = `([\s\S]*?)`;/)[1];el('section','rotatingTVPanel',html,$('view').parentElement);document.querySelectorAll('[data-tv-facing]').forEach(b=>b.onclick=()=>calls.push(['tv',b.dataset.tvFacing]));}
-  run('assets/ai-interiors/catalog.js');run('ai-views.js');
+  run('assets/ai-interiors/catalog.js');run('成品圖集/20260914暗色現代工業/viewpoint-plan.js');run('ai-views.js');
   const equipment=geometry.variants[['v3','v4'].includes(legacy)?'v2':legacy==='v0'?'v1':legacy].equipment.map(e=>{const g=new T.Group();g.name=e.name;g.userData.equipment=e.expected;g.userData.desc=e.name;return g;});
   c.HOME_EQUIPMENT={items:equipment,switchStation:equipment.find(g=>g.userData.equipment.key==='switch2'),setInspection:on=>calls.push(['inspection',on])};
   // Door mechanics are already verified with full geometry. Track dispatch here.
@@ -133,16 +133,26 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   d.body.classList.remove('walkImmersive');
   d.querySelector('[data-viewmode="model"]').click();await Promise.resolve();assert(!c.HOME_WALK.getState().active);assert.equal(c.HOME_TOUR.getMode(),'model');
   const photo=d.querySelector('[data-viewmode="photo"]');if(photo&&!photo.hidden){photo.click();await Promise.resolve();assert.equal(c.HOME_TOUR.getMode(),'photo');$('planToggle').click();$('uiExpandPlan').click();const room=d.querySelector('.planroom[data-room="study"]');room.dispatchEvent(new a.dom.Event('click',{bubbles:true}));assert.equal(c.HOME_AI_VIEWS.getState().requestedRoom,'study');assert(!$('uiMapDialog').open,'choosing a map room closes enlargement during AI browsing');$('uiOpenControls').click();assert.equal(c.HOME_TOUR.getMode(),'model');}
+  const planDrawsBeforeAI=calls.filter(x=>x[0]==='capturePlan').length;
   assert.equal(c.HOME_AI_VIEWS.getState().available.length,60,'Every version has 5 directions in every space');
   c.HOME_AI_VIEWS.open();
   for(const id of ['entry','living','island','kitchen','bed','closet','study','collection','bath1','bath2','storage','back']){
     c.HOME_VIEWER.selectRoom(id);assert.equal(c.HOME_AI_VIEWS.getState().imageRoom,id);
     const expected=5,buttons=Array.from($('aiPhotoGallery').querySelectorAll('button')).filter(b=>!b.hidden);assert.equal(buttons.length,expected,v+'/'+id);
-    const seen=new Set();for(const b of buttons){b.click();const state=c.HOME_AI_VIEWS.getState();assert.equal(state.imageRoom,id);seen.add(state.src);assert(b.querySelector('img').src.includes('/thumbs/'),'Gallery uses small thumbnails');assert($('aiPhotoDownload').href.endsWith('.webp'));}
+    const seen=new Set();for(const b of buttons){b.click();const state=c.HOME_AI_VIEWS.getState();assert.equal(state.imageRoom,id);seen.add(state.src);
+      const item=c.HOME_AI_PHOTOS[v].find(e=>e.id===state.selectedId),p=c.HOME_VIEWPOINT_PLAN.pose(item.camera);
+      assert.equal($('aiPhotoPlan').dataset.viewId,item.id);assert(!$('aiPhotoPlan').hidden);
+      assert.equal($('aiViewpointPin').getAttribute('transform'),`translate(${p.x} ${p.y}) rotate(${p.heading*180/Math.PI})`);
+      assert.equal($('aiPhotoPlan').querySelector('image').getAttribute('href'),`file:///project/成品圖集/20260914暗色現代工業/plans/${v}-vp01.webp`.split('/').map((t,i)=>i>2?encodeURIComponent(t):t).join('/'));
+      assert(b.querySelector('img').src.includes('/thumbs/'),'Gallery uses small thumbnails');assert($('aiPhotoDownload').href.endsWith('.webp'));}
     assert.equal(seen.size,expected,'Distinct images for every direction');
     const albumURL=new URL($('aiPhotoAlbum').href);assert.equal(albumURL.searchParams.get('version'),v);assert.equal(albumURL.searchParams.get('room'),id);
   }
-  c.HOME_VIEWER.selectRoom('study');c.HOME_AI_VIEWS.close();
+  assert.equal(calls.filter(x=>x[0]==='capturePlan').length,planDrawsBeforeAI,'Photo changes reuse the baked plan without 3D rendering');
+  c.HOME_TOUR.showSource('walls');assert.equal($('aiViewpointPin').style.display,'none');
+  c.HOME_TOUR.showSource('model');assert.notEqual($('aiViewpointPin').style.display,'none');
+  c.HOME_VIEWER.selectRoom('all');assert($('aiPhotoPlan').hidden);assert.equal($('aiViewpointPin').style.display,'none');
+  c.HOME_VIEWER.selectRoom('study');c.HOME_AI_VIEWS.close();assert($('aiPhotoPlan').hidden);assert.equal($('aiViewpointPin').style.display,'none');
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(['v2','v3'].includes(v)){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}

@@ -99,11 +99,12 @@
         <small>AI 設計效果圖 · 格局以 3D 模型為準</small>
         <select id="aiPhotoRoom" aria-label="選擇 AI 視角區域"></select></div>
         <button id="aiPhotoClose" type="button">返回 3D</button></div>
-      <div id="aiPhotoViewport" tabindex="0" aria-label="設計效果圖；加減鍵縮放，方向鍵移動">
+      <div id="aiPhotoContent"><div id="aiPhotoViewport" tabindex="0" aria-label="設計效果圖；加減鍵縮放，方向鍵移動">
         <img id="aiPhotoImage" draggable="false" alt="">
         <div id="aiPhotoStatus" role="status" aria-live="polite" hidden></div>
         <p id="aiPhotoEmpty" hidden>此版本的 AI 設計效果圖尚未加入。</p>
       </div>
+      <aside id="aiPhotoPlan" hidden></aside></div>
       <div><p id="aiPhotoNotice" hidden></p><div id="aiPhotoTools">
         <button type="button" data-ai-zoom="in" aria-label="放大效果圖">＋</button>
         <output id="aiPhotoZoom">100%</output>
@@ -158,8 +159,28 @@
       $('layoutAIPhotos')?.classList.toggle('active', opened);
     }
 
+    const viewpoint = window.HOME_VIEWPOINT_PLAN?.create($('aiPhotoPlan'));
+    const floorplan = $('floorplan');
+    const liveMarker = floorplan && document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    if (liveMarker) {
+      liveMarker.id = 'aiViewpointPin';
+      liveMarker.setAttribute('pointer-events', 'none');
+      floorplan.appendChild(liveMarker);
+    }
+    function syncViewpoint() {
+      const item = opened ? selected : null;
+      viewpoint?.update(item, proposal, item?.label || '');
+      if (!liveMarker) return;
+      const p = window.HOME_VIEWPOINT_PLAN?.draw(liveMarker, item?.camera);
+      const visible = !!p && tour.getSource() === 'model';
+      liveMarker.style.display = visible ? '' : 'none';
+      floorplan.dataset.aiViewpoint = String(visible);
+    }
+    window.addEventListener('plansourcechange', syncViewpoint);
+
     function render(item) {
       selected = item || null;
+      syncViewpoint();
       reset();
       imageLoaded = false;
       const empty = !selected;
@@ -257,6 +278,7 @@
     function close(nextMode = 'model') {
       opened = false;
       stage.hidden = true;
+      syncViewpoint();
       delete panel.dataset.aiPhoto;
       drag = null;
       originalSetMode(nextMode);
@@ -374,6 +396,7 @@
       if (opened && panel.dataset.mode !== 'photo') {
         opened = false;
         stage.hidden = true;
+        syncViewpoint();
         delete panel.dataset.aiPhoto;
         updateButtons();
       }

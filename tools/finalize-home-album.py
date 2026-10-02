@@ -52,7 +52,8 @@ if manifest.get('imageRevision') in browser_reports:
 if '--no-zip' in sys.argv:
  print(json.dumps({'viewSlots':len(entries),'uniqueImages':len(keys),'imagesDecoded':len(keys)*3,'sourceHashesVerified':len(entries),'zipCreated':False}))
  sys.exit(0)
-files=[root/n for n in ['index.html','album.css','album.js','album-data.js','使用說明.md','生成紀錄.json','成品核對.json']]
+files=[root/n for n in ['index.html','album.css','album.js','album-data.js','viewpoint-plan.css','viewpoint-plan.js','使用說明.md','生成紀錄.json','成品核對.json']]
+files += [root/'plans'/f'v{i}-vp01.webp' for i in range(6)]
 files += [root/folder/f'{key}.webp' for folder in ['images','models','thumbs'] for key in keys]
 out=project/'成品圖集/W夢想之家_六版全屋AI圖集_精簡包.zip'
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
