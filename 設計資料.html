@@ -5,12 +5,13 @@
 <title>設計資料｜W 夢想之家</title>
 <style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#111719;color:#edf0e9;font:15px/1.7 system-ui,-apple-system,'Microsoft JhengHei',sans-serif}main{max-width:1040px;margin:auto;padding:40px 24px 64px}a{color:#c7d9ce}nav{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:44px}nav a{text-decoration:none}.brand{font:22px Georgia,'Microsoft JhengHei',serif;letter-spacing:.08em}.eyebrow{color:#acb8b6;font-size:12px;letter-spacing:.16em}h1{font-size:32px;line-height:1.3;margin:8px 0 12px}.intro{margin:0;color:#acb8b6}.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:30px}.resource{display:flex;flex-direction:column;gap:10px;padding:26px;border:1px solid #394346;border-radius:14px;background:#1b2224;text-decoration:none}.resource:hover{border-color:#9cb9a8;background:#232e2b}.resource strong{font-size:18px;color:#edf0e9}.resource span{color:#acb8b6}.resource small{color:#c7d9ce;margin-top:8px}a:focus-visible{outline:2px solid #d8c6a1;outline-offset:5px}.note{margin-top:30px;color:#acb8b6;font-size:13px}@media(max-width:600px){main{padding:24px 18px 40px}nav{margin-bottom:30px;flex-wrap:wrap}h1{font-size:27px}.resources{grid-template-columns:1fr;gap:12px}.resource{padding:22px}}
-</style>
+.resource[hidden]{display:none}</style>
 </head>
 <body><main>
 <nav aria-label="專案功能"><span class="brand">W 夢想之家</span><a id="returnDesign" href="index.html">← 空間設計</a></nav>
 <div class="eyebrow">住宅規劃資料庫</div><h1>設計資料</h1><p class="intro">比較格局、查看目前設計與待確認事項，集中整理你的住宅規劃資料。</p>
 <section class="resources" aria-label="設計資料入口">
+<a class="resource" id="v1BlenderReview" href="V1全屋擬真.html" hidden><strong>V1 全屋 Blender</strong><span>十二空間的實際模型渲染，可切換 AI 風格參考。</span><small>查看全屋 BW03 →</small></a>
 <a class="resource" href="設計現況.html"><strong>目前設計與待確認事項</strong><span>目前配置、風格、成果及工程待核項目。</span><small>查看目前設計 →</small></a>
 <a class="resource" href="方案比較.html"><strong>六版格局比較</strong><span>V0～V5 的平面、配置及模型入口。</span><small>比較版本 →</small></a>
 <a class="resource" data-version href="AI寫實視角.html"><strong>全屋 AI 圖集</strong><span>六版 360 圖位；每區五角度，可並排核對模型來源。</span><small>瀏覽圖集 →</small></a>
@@ -20,5 +21,5 @@
 </section>
 <p class="note">AI 圖為材質與氛圍示意；精確尺寸、固定條件與施工細節，仍須依現場丈量及核定圖說確認。</p>
 </main><script src="version-registry.js?v=20260924-ui08"></script><script>
-(()=>{const v=window.HOME_VERSION_REGISTRY.versions.find(v=>v.id===new URLSearchParams(location.search).get('version'));if(!v)return;document.getElementById('returnDesign').href=v.path;for(const a of document.querySelectorAll('[data-version]')){const u=new URL(a.href);u.searchParams.set('version',v.id);a.href=u.href;}})();
+(()=>{const v=window.HOME_VERSION_REGISTRY.versions.find(v=>v.id===new URLSearchParams(location.search).get('version'));document.getElementById('v1BlenderReview').hidden=!!v&&v.id!=='v1';if(!v)return;document.getElementById('returnDesign').href=v.path;for(const a of document.querySelectorAll('[data-version]')){const u=new URL(a.href);u.searchParams.set('version',v.id);a.href=u.href;}})();
 </script></body></html>

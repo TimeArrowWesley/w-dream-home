@@ -38,16 +38,16 @@ run('black-industrial-design.js');
 if([2,5].includes(n))run('living-audio-finalize.js');
 if(n!==0)run('study-cyberpunk-finalize.js');
 run('vanity-display-finalize.js');run('kitchen-plan-finalize.js');run('closet-view-refinement.js');
-if(n===2&&process.env.HOME_TEST_BLENDER_V1==='1'){
+if(n===2&&(process.env.HOME_TEST_BLENDER_V1==='1'||process.env.HOME_TEST_BW03==='1')){
  const Loader=T.TextureLoader,CubeLoader=T.CubeTextureLoader;
  T.CubeTextureLoader=class{load(urls,done){queueMicrotask(()=>done(new T.CubeTexture()));}};
  T.TextureLoader=class{load(url,done){queueMicrotask(()=>done(new T.Texture()));}};
  Object.assign(c,{Response,Blob,DecompressionStream,fetch:async url=>{
   const p=new URL(url).pathname.replace(/^\//,'');
-  if(!/^assets\/blender-v1\/bw0[12]\//.test(p)||p.includes('..'))throw Error('Unexpected BW01 fixture URL');
+  if(!/^assets\/blender-v1\/bw0[123]\//.test(p)||p.includes('..'))throw Error('Unexpected BW01 fixture URL');
   return new Response(fs.readFileSync(path.join(root,p)));
  }});
- try{run('v1-blender-upgrade.js');await c.HOME_BLENDER_V1.ready;assert.equal(c.HOME_BLENDER_V1.getState().state,'ready',JSON.stringify(c.HOME_BLENDER_V1.getState()));if(fs.existsSync(path.join(root,'v1-baked-lighting.js'))){run('v1-baked-lighting.js');await c.HOME_BW02.ready;assert.equal(c.HOME_BW02.getState().state,'ready',JSON.stringify(c.HOME_BW02.getState()));}}finally{T.TextureLoader=Loader;T.CubeTextureLoader=CubeLoader;}
+ try{if(process.env.HOME_TEST_BW03==='1'){run('v1-fullhouse-refinement.js');await c.HOME_BLENDER_V1.ready;assert.equal(c.HOME_BLENDER_V1.getState().state,'ready',JSON.stringify(c.HOME_BLENDER_V1.getState()));run('v1-fullhouse-lighting.js');await c.HOME_FULLHOUSE_LIGHT.ready;assert.equal(c.HOME_FULLHOUSE_LIGHT.getState().state,'ready',JSON.stringify(c.HOME_FULLHOUSE_LIGHT.getState()));}else{run('v1-blender-upgrade.js');await c.HOME_BLENDER_V1.ready;assert.equal(c.HOME_BLENDER_V1.getState().state,'ready',JSON.stringify(c.HOME_BLENDER_V1.getState()));if(fs.existsSync(path.join(root,'v1-baked-lighting.js'))){run('v1-baked-lighting.js');await c.HOME_BW02.ready;assert.equal(c.HOME_BW02.getState().state,'ready',JSON.stringify(c.HOME_BW02.getState()));}}}finally{T.TextureLoader=Loader;T.CubeTextureLoader=CubeLoader;}
 }
 return {T,c,V,E,events,raf,get,run,bounds,overlap,near,tick(count=1,step=16){for(let i=0;i<count;i++){time+=step;for(const fn of [...raf])fn(time);}V.scene.updateMatrixWorld(true);},setTime(t){time=t;}};
 };

@@ -62,8 +62,9 @@ let reflectionTicket=0,reflectionPending=false;
 const mirrorMaterials=new Set();S.traverse(o=>{if(o.isMesh&&o.material&&(o.material.metalness>.25||o.material===M.glass))mirrorMaterials.add(o.material);});
 function zone(){const p=V.camera.position,x=p.x+482.5,y=p.z+480;if(y<285&&x<410)return 'bed';if(y<375&&x>745)return 'study';if(y<490&&x<310)return 'bath';if(y<375)return 'private';if(x<215)return 'kitchen';if(y>750&&x<450)return 'collection';return 'living';}
 const probePoints={living:[725,700,145],bed:[300,220,145],study:[920,190,145],bath:[70,350,145],collection:[350,850,145],private:[615,175,145],kitchen:[105,745,145]};
-function applyReflection(tex){mirrorMaterials.forEach(m=>{if(m.envMap!==tex){m.envMap=tex;m.needsUpdate=true;}});invalidate(false);}
+function applyReflection(tex){mirrorMaterials.forEach(m=>{if(m.userData?.bw03RoomProbe)return;if(m.envMap!==tex){m.envMap=tex;m.needsUpdate=true;}});invalidate(false);}
 function updateReflection(force=false){
+ if(window.HOME_FULLHOUSE_LIGHT?.getState().ready)return;
  if(force){reflectionTicket++;reflectionPending=false;for(const env of reflectionCache.values())env.dispose();reflectionCache.clear();applyReflection(originalEnvironment);}
  if(!stats.ready||stats.quality==='eco'||document.hidden||!['model','walk'].includes(window.HOME_TOUR?.getMode())||V.getCurrent()==='all')return;
  const id=zone(),key=id+'-'+($('night').classList.contains('active')?'night':'day');
