@@ -865,7 +865,17 @@
     "成品圖集/20260914暗色現代工業/plans/v2-vp01.webp",
     "成品圖集/20260914暗色現代工業/plans/v3-vp01.webp",
     "成品圖集/20260914暗色現代工業/plans/v4-vp01.webp",
-    "成品圖集/20260914暗色現代工業/plans/v5-vp01.webp"
+    "成品圖集/20260914暗色現代工業/plans/v5-vp01.webp",
+    "v1-blender-upgrade.js",
+    "assets/blender-v1/bw01/ao.webp",
+    "assets/blender-v1/bw01/color.webp",
+    "assets/blender-v1/bw01/floorColor.webp",
+    "assets/blender-v1/bw01/floorNormal.webp",
+    "assets/blender-v1/bw01/geometry.bin.gz",
+    "assets/blender-v1/bw01/manifest.json",
+    "assets/blender-v1/bw01/normal.webp",
+    "assets/blender-v1/bw01/wallColor.webp",
+    "assets/blender-v1/bw01/wallNormal.webp"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -1000,6 +1010,7 @@
     "tools/capture-closet-cl01.cjs",
     "tools/verify-closet-cl01.cjs",
     "tools/package-viewpoint-plans.py",
-    "tools/verify-viewpoint-plan.cjs"
+    "tools/verify-viewpoint-plan.cjs",
+    "tools/verify-blender-v1.cjs"
   ]
 }
