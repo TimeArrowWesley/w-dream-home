@@ -1,0 +1,74 @@
+{
+  "revision": "BW02",
+  "sourceBlendSha256": "d8f10e7654deb4ff9bf70c74460375f480a63b8e1dfb049176e47a69c0a3ce79",
+  "lighting": "Cycles diffuse transport, 256 samples; separate daylight/general/display; no AI",
+  "reflection": "Two static 256px room probes, day/night; RGBM16 RGBA; no dynamic parallax",
+  "geometry": "BW01 original meshes and UV2 remain unchanged",
+  "limits": [
+    "Static baked illumination does not recalculate occlusion for open doors or moved stools",
+    "Dynamic RGB/direct illumination remains approximate",
+    "Same simplified furniture geometry; not equal to AI or Cycles final render"
+  ],
+  "files": {
+    "day-nx.webp": {
+      "bytes": 61548,
+      "sha256": "5d6377c5022cc4642a76c8c110816324735da04017710075638e126226407519"
+    },
+    "day-ny.webp": {
+      "bytes": 74270,
+      "sha256": "b239a643f8393331c19dfc2df2e0c9517443bbf4202cee5cff993d0822a85d10"
+    },
+    "day-nz.webp": {
+      "bytes": 73914,
+      "sha256": "f5fad6e327e29bb15139d5f1b5c446ca826d0fc4a4047f2d4891adc99dace49c"
+    },
+    "day-px.webp": {
+      "bytes": 71770,
+      "sha256": "165c1cbf781e6e031e66e64fcc0772ec6875292db4c0eeb2a1d9aaf626d4ff6f"
+    },
+    "day-py.webp": {
+      "bytes": 23240,
+      "sha256": "ed764d608c61ff13d83a7d3c86333bbe4090819fff35ee4da032f7e09c0505c2"
+    },
+    "day-pz.webp": {
+      "bytes": 56532,
+      "sha256": "b7a2704d0c4de54c02f84f26b8c60fe84777bbf21f7061e0dffe8012f9819207"
+    },
+    "daylight.webp": {
+      "bytes": 1489660,
+      "sha256": "3e97e01fb133f254e16a3e2340826745ed463212a249f198ff3f52d6baf56102"
+    },
+    "display.webp": {
+      "bytes": 322496,
+      "sha256": "c234ebd127b9e950df972e4fca8b624d6f7d9071e2f7a3ca67bba22a734337be"
+    },
+    "general.webp": {
+      "bytes": 1426508,
+      "sha256": "63c29600bd3c544c1ffb0afeb88b7d70a0474264f35a50461d456d426d192411"
+    },
+    "night-nx.webp": {
+      "bytes": 51872,
+      "sha256": "d8f8c385faabcd63710f5e6639f711eb06ea45f7a0ed764588b31e96609bd432"
+    },
+    "night-ny.webp": {
+      "bytes": 66724,
+      "sha256": "4365f93c77e8bf1ebe83b2a38924130e248b3b6677656d0d07aa2336f6f1d1da"
+    },
+    "night-nz.webp": {
+      "bytes": 58610,
+      "sha256": "ff159eb1308d7dde3834e6875a74cca9d37cb66309da59dc5afbc64df1776b09"
+    },
+    "night-px.webp": {
+      "bytes": 50272,
+      "sha256": "c5976f2e8fda52f3a4bb030f060997064016edcb397aa29b597ca0ee3354554f"
+    },
+    "night-py.webp": {
+      "bytes": 9090,
+      "sha256": "a90f1788958f4798d52c4ceb9d1cdc298954cffb3e7a6802785b94fc293d4192"
+    },
+    "night-pz.webp": {
+      "bytes": 40530,
+      "sha256": "39be5216865c7e60d82787d08c5be3efa075e5de43cc20f632d5b3c4bc504914"
+    }
+  }
+}

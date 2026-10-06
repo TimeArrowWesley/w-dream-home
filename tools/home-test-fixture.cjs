@@ -4,7 +4,7 @@ const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('ass
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),noop=()=>{};
 const T={...require(path.join(root,'assets/three.min.js'))};
 T.WebGLRenderer=class{constructor(){this.shadowMap={};this.capabilities={getMaxAnisotropy:()=>1};this.domElement={};}setPixelRatio(n){this.ratio=n;}getPixelRatio(){return this.ratio;}setSize(){}render(){this.draws=(this.draws||0)+1;this.shadowMap.needsUpdate=false;}setRenderTarget(){}getRenderTarget(){return null;}getDrawingBufferSize(v){return v.set(960,720);}};
-T.PMREMGenerator=class{fromScene(){return {texture:new T.Texture()};}};
+T.PMREMGenerator=class{fromScene(){return {texture:new T.Texture()};}fromCubemap(t){assert.equal(t.format,T.RGBAFormat,'HDR probe must retain multiplier alpha');return {texture:new T.Texture(),dispose:noop};}dispose(){}};
 const ctx2d=new Proxy({createImageData:(w,h)=>({data:new Uint8ClampedArray(w*h*4)}),createLinearGradient:()=>({addColorStop:noop}),createRadialGradient:()=>({addColorStop:noop}),measureText:()=>({width:100})},{get:(o,k)=>k in o?o[k]:noop});
 const bounds=o=>{const b=new T.Box3().setFromObject(o);return {x:b.min.x+482.5,y:b.min.z+480,z:b.min.y,w:b.max.x-b.min.x,d:b.max.z-b.min.z,h:b.max.y-b.min.y};};
 const overlap=(a,b,t=.04)=>a.x<b.x+b.w-t&&a.x+a.w>b.x+t&&a.y<b.y+b.d-t&&a.y+a.d>b.y+t&&a.z<b.z+b.h-t&&a.z+a.h>b.z+t;
@@ -39,14 +39,15 @@ if([2,5].includes(n))run('living-audio-finalize.js');
 if(n!==0)run('study-cyberpunk-finalize.js');
 run('vanity-display-finalize.js');run('kitchen-plan-finalize.js');run('closet-view-refinement.js');
 if(n===2&&process.env.HOME_TEST_BLENDER_V1==='1'){
- const Loader=T.TextureLoader;
+ const Loader=T.TextureLoader,CubeLoader=T.CubeTextureLoader;
+ T.CubeTextureLoader=class{load(urls,done){queueMicrotask(()=>done(new T.CubeTexture()));}};
  T.TextureLoader=class{load(url,done){queueMicrotask(()=>done(new T.Texture()));}};
  Object.assign(c,{Response,Blob,DecompressionStream,fetch:async url=>{
   const p=new URL(url).pathname.replace(/^\//,'');
-  if(!p.startsWith('assets/blender-v1/bw01/')||p.includes('..'))throw Error('Unexpected BW01 fixture URL');
+  if(!/^assets\/blender-v1\/bw0[12]\//.test(p)||p.includes('..'))throw Error('Unexpected BW01 fixture URL');
   return new Response(fs.readFileSync(path.join(root,p)));
  }});
- try{run('v1-blender-upgrade.js');await c.HOME_BLENDER_V1.ready;assert.equal(c.HOME_BLENDER_V1.getState().state,'ready',JSON.stringify(c.HOME_BLENDER_V1.getState()));}finally{T.TextureLoader=Loader;}
+ try{run('v1-blender-upgrade.js');await c.HOME_BLENDER_V1.ready;assert.equal(c.HOME_BLENDER_V1.getState().state,'ready',JSON.stringify(c.HOME_BLENDER_V1.getState()));if(fs.existsSync(path.join(root,'v1-baked-lighting.js'))){run('v1-baked-lighting.js');await c.HOME_BW02.ready;assert.equal(c.HOME_BW02.getState().state,'ready',JSON.stringify(c.HOME_BW02.getState()));}}finally{T.TextureLoader=Loader;T.CubeTextureLoader=CubeLoader;}
 }
 return {T,c,V,E,events,raf,get,run,bounds,overlap,near,tick(count=1,step=16){for(let i=0;i<count;i++){time+=step;for(const fn of [...raf])fn(time);}V.scene.updateMatrixWorld(true);},setTime(t){time=t;}};
 };

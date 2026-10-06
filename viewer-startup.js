@@ -17,7 +17,7 @@ window.HOME_BOOT_PENDING = true;
     }
   }, true);
   document.addEventListener('DOMContentLoaded', async () => {
-    await Promise.all([window.HOME_REALISM?.whenReady, window.HOME_EXTERIOR?.ready, window.HOME_FLOORING?.ready, window.HOME_BLENDER_V1?.ready]);
+    await Promise.all([window.HOME_REALISM?.whenReady, window.HOME_EXTERIOR?.ready, window.HOME_FLOORING?.ready, window.HOME_BLENDER_V1?.ready,window.HOME_BW02?.ready]);
     window.HOME_BOOT_PENDING = false;
     if (!failed && window.HOME_VIEWER && window.HOME_REALISM) {
       window.HOME_REALISM.invalidate();

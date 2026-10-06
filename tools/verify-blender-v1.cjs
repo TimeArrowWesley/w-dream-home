@@ -36,10 +36,21 @@ const build=require('./home-test-fixture.cjs'),root=path.resolve(__dirname,'..')
   c.HOME_RGB.setEnabled(false);f.tick(40,30);assert(Object.values(c.HOME_RGB.fixtures).flatMap(x=>x.lights).every(x=>x.light.intensity===0));
   c.HOME_RGB.setEnabled(true);f.tick(40,30);assert(Object.values(c.HOME_RGB.fixtures).flatMap(x=>x.lights).every(x=>x.light.intensity>0));
  });
+ check('BW02 uses actual split lightmaps and dimming changes their shader weights',()=>{
+  const L=c.HOME_BW02;assert.equal(L.getState().state,'ready');
+  const original=c.HOME_COMFORT.getState();get('night').classList.remove('active');L.update();const day=L.getState().power[0];
+  get('night').classList.add('active');c.HOME_COMFORT.update({brightness:0,display:0});L.update();let p=L.getState().power;
+  assert(p[0]<day*.1);assert.equal(p[1],0);assert.equal(p[2],0);
+  c.HOME_COMFORT.update({brightness:85,display:55,kelvin:3000});p=L.getState().power;assert.equal(p[1],1);assert.equal(p[2],1);
+  const wall=A.records.find(r=>r.sourceId==='M0502').material,shader={uniforms:{},vertexShader:T.ShaderLib.standard.vertexShader,fragmentShader:T.ShaderLib.standard.fragmentShader};wall.onBeforeCompile(shader);
+  assert(shader.fragmentShader.includes('bwStoneWorld'));assert(shader.fragmentShader.includes('bwIrradiance'));assert(shader.uniforms.bwDay.value);assert.equal(wall.lightMapIntensity,0);
+  const glass=A.records.flatMap(r=>[].concat(r.material)).find(m=>m.transmission>0),gs={fragmentShader:T.ShaderLib.standard.fragmentShader};glass.onBeforeCompile(gs);assert(gs.fragmentShader.includes('bwGlassAlpha'));
+  get('night').classList.remove('active');c.HOME_COMFORT.update(original);L.update();
+ });
  check('Final V1 still sleeps at rest and keeps the existing moving-frame budget',()=>{
   c.HOME_RGB.setEnabled(false);c.HOME_TOUR.setMode('model');f.tick(90,1000/60);let start=V.renderer.draws;f.tick(180,1000/60);assert.equal(V.renderer.draws,start);
   start=V.renderer.draws;for(let i=0;i<180;i++){V.camera.position.x+=.1;f.tick(1,1000/60);}assert(V.renderer.draws-start>=85&&V.renderer.draws-start<=92);
  });
- const report={passed:true,state:A.getState(),checks,limits:'Offline real geometry and controls; visual WebGL review recorded separately. Model dimensions are not construction approval.'};
+ const report={passed:true,state:A.getState(),lighting:c.HOME_BW02.getState(),checks,limits:'Offline real geometry and controls; visual WebGL review recorded separately. Model dimensions are not construction approval.'};
  const out=path.resolve(process.env.HOME_TEST_REPORT_DIR||path.join(root,'調整紀錄/20261006V1Blender網頁接入BW01'));fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'Blender接入驗證.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 })().catch(e=>{console.error(e);process.exitCode=1;});
