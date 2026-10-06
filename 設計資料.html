@@ -11,7 +11,7 @@
 <nav aria-label="專案功能"><span class="brand">W 夢想之家</span><a id="returnDesign" href="index.html">← 空間設計</a></nav>
 <div class="eyebrow">住宅規劃資料庫</div><h1>設計資料</h1><p class="intro">比較格局、查看目前設計與待確認事項，集中整理你的住宅規劃資料。</p>
 <section class="resources" aria-label="設計資料入口">
-<a class="resource" id="v1BlenderReview" href="V1全屋擬真.html" hidden><strong>V1 全屋 Blender</strong><span>十二空間的實際模型渲染，可切換 AI 風格參考。</span><small>查看全屋 BW03 →</small></a>
+<a class="resource" id="v1BlenderReview" href="全版本Blender.html"><strong>全版本全屋 Blender</strong><span>十二空間的實際模型渲染，可切換 AI 風格參考。</span><small>查看六版逐房對照 →</small></a>
 <a class="resource" href="設計現況.html"><strong>目前設計與待確認事項</strong><span>目前配置、風格、成果及工程待核項目。</span><small>查看目前設計 →</small></a>
 <a class="resource" href="方案比較.html"><strong>六版格局比較</strong><span>V0～V5 的平面、配置及模型入口。</span><small>比較版本 →</small></a>
 <a class="resource" data-version href="AI寫實視角.html"><strong>全屋 AI 圖集</strong><span>六版 360 圖位；每區五角度，可並排核對模型來源。</span><small>瀏覽圖集 →</small></a>
@@ -21,5 +21,5 @@
 </section>
 <p class="note">AI 圖為材質與氛圍示意；精確尺寸、固定條件與施工細節，仍須依現場丈量及核定圖說確認。</p>
 </main><script src="version-registry.js?v=20260924-ui08"></script><script>
-(()=>{const v=window.HOME_VERSION_REGISTRY.versions.find(v=>v.id===new URLSearchParams(location.search).get('version'));document.getElementById('v1BlenderReview').hidden=!!v&&v.id!=='v1';if(!v)return;document.getElementById('returnDesign').href=v.path;for(const a of document.querySelectorAll('[data-version]')){const u=new URL(a.href);u.searchParams.set('version',v.id);a.href=u.href;}})();
+(()=>{const v=window.HOME_VERSION_REGISTRY.versions.find(v=>v.id===new URLSearchParams(location.search).get('version'));document.getElementById('v1BlenderReview').href='全版本Blender.html'+(v?'?version='+v.id:'');if(!v)return;document.getElementById('returnDesign').href=v.path;for(const a of document.querySelectorAll('[data-version]')){const u=new URL(a.href);u.searchParams.set('version',v.id);a.href=u.href;}})();
 </script></body></html>

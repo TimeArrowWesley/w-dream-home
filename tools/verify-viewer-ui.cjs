@@ -197,9 +197,11 @@ const deep=fixture('v2','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.
  checks.push('V1 switches dispatch stool/door state and sync external door changes');
 }
 {
- const {document}=parseHTML(read('設計資料.html'));assert.equal(document.querySelectorAll('.resource').length,6);
+ const {document}=parseHTML(read('設計資料.html'));assert.equal(document.querySelectorAll('.resource').length,7);
+ const blender=document.getElementById('v1BlenderReview');assert.equal(blender.getAttribute('href'),'全版本Blender.html');assert(!blender.hasAttribute('hidden'),'Blender review is available to all versions');
+ for(const href of ['設計現況.html','方案比較.html','AI寫實視角.html','家具清單.html','提案/原始格局/方案說明.html','提案/拆收藏室替代方案/index.html'])assert(document.querySelector('.resource[href="'+href+'"]'),'existing resource remains: '+href);
  for(const a of document.querySelectorAll('.resource'))assert(fs.existsSync(path.join(R,a.getAttribute('href'))),'resource target exists');
- checks.push('Standalone resource page retains all six existing destinations');
+ checks.push('Standalone resource page retains six existing destinations plus the all-version Blender review');
 }
 {
  const {document}=parseHTML(read('設計現況.html'));assert.equal(document.querySelectorAll('tbody tr').length,6);assert(document.body.textContent.includes('已停用'));assert(document.body.textContent.includes('360'));checks.push('Current design summary retains six versions, disabled states and complete gallery scope');
