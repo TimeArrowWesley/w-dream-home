@@ -52,6 +52,8 @@
 !/assets/blender-home/bw04/v0/bed-px.webp
 !/assets/blender-home/bw04/v0/bed-py.webp
 !/assets/blender-home/bw04/v0/bed-pz.webp
+!/assets/blender-home/bw04/v0/closet-A-cw01.webp
+!/assets/blender-home/bw04/v0/closet-E-cw01.webp
 !/assets/blender-home/bw04/v0/closet-cycles.webp
 !/assets/blender-home/bw04/v0/closet-nx.webp
 !/assets/blender-home/bw04/v0/closet-ny.webp
@@ -71,7 +73,7 @@
 !/assets/blender-home/bw04/v0/display.webp
 !/assets/blender-home/bw04/v0/entry-cycles.webp
 !/assets/blender-home/bw04/v0/general.webp
-!/assets/blender-home/bw04/v0/geometry.bin.gz
+!/assets/blender-home/bw04/v0/geometry-cw01.bin.gz
 !/assets/blender-home/bw04/v0/island-cycles.webp
 !/assets/blender-home/bw04/v0/kitchen-cycles.webp
 !/assets/blender-home/bw04/v0/kitchen-nx.webp
@@ -133,6 +135,8 @@
 !/assets/blender-home/bw04/v2/bed-px.webp
 !/assets/blender-home/bw04/v2/bed-py.webp
 !/assets/blender-home/bw04/v2/bed-pz.webp
+!/assets/blender-home/bw04/v2/closet-A-cw01.webp
+!/assets/blender-home/bw04/v2/closet-E-cw01.webp
 !/assets/blender-home/bw04/v2/closet-cycles.webp
 !/assets/blender-home/bw04/v2/closet-nx.webp
 !/assets/blender-home/bw04/v2/closet-ny.webp
@@ -152,7 +156,7 @@
 !/assets/blender-home/bw04/v2/display.webp
 !/assets/blender-home/bw04/v2/entry-cycles.webp
 !/assets/blender-home/bw04/v2/general.webp
-!/assets/blender-home/bw04/v2/geometry.bin.gz
+!/assets/blender-home/bw04/v2/geometry-cw01.bin.gz
 !/assets/blender-home/bw04/v2/island-cycles.webp
 !/assets/blender-home/bw04/v2/kitchen-cycles.webp
 !/assets/blender-home/bw04/v2/kitchen-nx.webp
@@ -214,6 +218,8 @@
 !/assets/blender-home/bw04/v3/bed-px.webp
 !/assets/blender-home/bw04/v3/bed-py.webp
 !/assets/blender-home/bw04/v3/bed-pz.webp
+!/assets/blender-home/bw04/v3/closet-A-cw01.webp
+!/assets/blender-home/bw04/v3/closet-E-cw01.webp
 !/assets/blender-home/bw04/v3/closet-cycles.webp
 !/assets/blender-home/bw04/v3/closet-nx.webp
 !/assets/blender-home/bw04/v3/closet-ny.webp
@@ -233,7 +239,7 @@
 !/assets/blender-home/bw04/v3/display.webp
 !/assets/blender-home/bw04/v3/entry-cycles.webp
 !/assets/blender-home/bw04/v3/general.webp
-!/assets/blender-home/bw04/v3/geometry.bin.gz
+!/assets/blender-home/bw04/v3/geometry-cw01.bin.gz
 !/assets/blender-home/bw04/v3/island-cycles.webp
 !/assets/blender-home/bw04/v3/kitchen-cycles.webp
 !/assets/blender-home/bw04/v3/kitchen-nx.webp
@@ -295,6 +301,8 @@
 !/assets/blender-home/bw04/v4/bed-px.webp
 !/assets/blender-home/bw04/v4/bed-py.webp
 !/assets/blender-home/bw04/v4/bed-pz.webp
+!/assets/blender-home/bw04/v4/closet-A-cw01.webp
+!/assets/blender-home/bw04/v4/closet-E-cw01.webp
 !/assets/blender-home/bw04/v4/closet-cycles.webp
 !/assets/blender-home/bw04/v4/closet-nx.webp
 !/assets/blender-home/bw04/v4/closet-ny.webp
@@ -314,7 +322,7 @@
 !/assets/blender-home/bw04/v4/display.webp
 !/assets/blender-home/bw04/v4/entry-cycles.webp
 !/assets/blender-home/bw04/v4/general.webp
-!/assets/blender-home/bw04/v4/geometry.bin.gz
+!/assets/blender-home/bw04/v4/geometry-cw01.bin.gz
 !/assets/blender-home/bw04/v4/island-cycles.webp
 !/assets/blender-home/bw04/v4/kitchen-cycles.webp
 !/assets/blender-home/bw04/v4/kitchen-nx.webp
@@ -376,6 +384,8 @@
 !/assets/blender-home/bw04/v5/bed-px.webp
 !/assets/blender-home/bw04/v5/bed-py.webp
 !/assets/blender-home/bw04/v5/bed-pz.webp
+!/assets/blender-home/bw04/v5/closet-A-cw01.webp
+!/assets/blender-home/bw04/v5/closet-E-cw01.webp
 !/assets/blender-home/bw04/v5/closet-cycles.webp
 !/assets/blender-home/bw04/v5/closet-nx.webp
 !/assets/blender-home/bw04/v5/closet-ny.webp
@@ -395,7 +405,7 @@
 !/assets/blender-home/bw04/v5/display.webp
 !/assets/blender-home/bw04/v5/entry-cycles.webp
 !/assets/blender-home/bw04/v5/general.webp
-!/assets/blender-home/bw04/v5/geometry.bin.gz
+!/assets/blender-home/bw04/v5/geometry-cw01.bin.gz
 !/assets/blender-home/bw04/v5/island-cycles.webp
 !/assets/blender-home/bw04/v5/kitchen-cycles.webp
 !/assets/blender-home/bw04/v5/kitchen-nx.webp
@@ -485,6 +495,8 @@
 !/assets/blender-v1/bw03/bed-px.webp
 !/assets/blender-v1/bw03/bed-py.webp
 !/assets/blender-v1/bw03/bed-pz.webp
+!/assets/blender-v1/bw03/closet-A-cw01.webp
+!/assets/blender-v1/bw03/closet-E-cw01.webp
 !/assets/blender-v1/bw03/closet-cycles.webp
 !/assets/blender-v1/bw03/closet-nx.webp
 !/assets/blender-v1/bw03/closet-ny.webp
@@ -506,7 +518,7 @@
 !/assets/blender-v1/bw03/floorColor.webp
 !/assets/blender-v1/bw03/floorNormal.webp
 !/assets/blender-v1/bw03/general.webp
-!/assets/blender-v1/bw03/geometry.bin.gz
+!/assets/blender-v1/bw03/geometry-cw01.bin.gz
 !/assets/blender-v1/bw03/island-cycles.webp
 !/assets/blender-v1/bw03/kitchen-cycles.webp
 !/assets/blender-v1/bw03/kitchen-nx.webp
@@ -549,6 +561,13 @@
 !/assets/realism/stone-asset.js
 !/assets/realism/warm-oak.webp
 !/assets/realism/wood-asset.js
+!/assets/review-cw01/
+!/assets/review-cw01/bed.webp
+!/assets/review-cw01/closet-after.webp
+!/assets/review-cw01/closet-before.webp
+!/assets/review-cw01/island.webp
+!/assets/review-cw01/living.webp
+!/assets/review-cw01/study.webp
 !/assets/three.min.js
 !/assets/vanity/
 !/assets/vanity/vt02-closed.webp
@@ -592,6 +611,7 @@
 !/realism.js
 !/rgb-lighting.js
 !/sofa-model.js
+!/source-layout-corrections.js
 !/source-plan.js
 !/study-cyberpunk-finalize.js
 !/study-cyberpunk.js
@@ -702,6 +722,7 @@
 !/tools/verify-private-upgrade.cjs
 !/tools/verify-render-performance.cjs
 !/tools/verify-retained-versions.cjs
+!/tools/verify-source-layout.cjs
 !/tools/verify-startup.cjs
 !/tools/verify-storage-shelves.cjs
 !/tools/verify-study-cp02.cjs
@@ -1554,6 +1575,7 @@
 !/整理紀錄/20260915資料夾瘦身/
 !/整理紀錄/20260915資料夾瘦身/清理摘要.md
 !/方案比較.html
+!/模型複核.html
 !/設計方向.md
 !/設計現況.html
 !/設計資料.html

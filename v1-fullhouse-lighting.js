@@ -6,8 +6,8 @@
  const base=new URL('assets/blender-v1/bw03/',document.currentScript.src);
  const state={revision:'BW03',state:'loading',ready:false},materials=[],probes={},targets=[];
  const U={bwDay:{value:null},bwGeneral:{value:null},bwDisplay:{value:null},bwRGB:{value:null},bwPower:{value:new T.Vector3(1,1,1)},bwTint:{value:new T.Color(1,.91,.76)},bwRGBPower:{value:0}};
- function texture(name){return new Promise((ok,bad)=>new T.TextureLoader().load(new URL(name+'.webp',base).href,t=>{t.encoding=T.LinearEncoding;t.generateMipmaps=false;t.minFilter=t.magFilter=T.LinearFilter;ok(t);},undefined,bad));}
- function cube(room){return new Promise((ok,bad)=>new T.CubeTextureLoader().load(['px','nx','py','ny','pz','nz'].map(f=>new URL(room+'-'+f+'.webp',base).href),t=>{t.encoding=T.RGBM16Encoding;t.format=T.RGBAFormat;t._needsFlipEnvMap=false;t.isRenderTargetTexture=true;const gen=new T.PMREMGenerator(V.renderer),p=gen.fromCubemap(t);gen.dispose();t.dispose();targets.push(p);ok(p.texture);},undefined,bad));}
+ function texture(name){return new Promise((ok,bad)=>new T.TextureLoader().load(new URL(name+'.webp?layout=cw01',base).href,t=>{t.encoding=T.LinearEncoding;t.generateMipmaps=false;t.minFilter=t.magFilter=T.LinearFilter;ok(t);},undefined,bad));}
+ function cube(room){return new Promise((ok,bad)=>new T.CubeTextureLoader().load(['px','nx','py','ny','pz','nz'].map(f=>new URL(room+'-'+f+'.webp'+(room==='closet'?'?layout=cw01':''),base).href),t=>{t.encoding=T.RGBM16Encoding;t.format=T.RGBAFormat;t._needsFlipEnvMap=false;t.isRenderTargetTexture=true;const gen=new T.PMREMGenerator(V.renderer),p=gen.fromCubemap(t);gen.dispose();t.dispose();targets.push(p);ok(p.texture);},undefined,bad));}
  function update(){
   if(!state.ready)return;
   const s=HOME_COMFORT.getState(),night=document.getElementById('night').classList.contains('active'),curtains=HOME_CURTAINS.getState(),rgb=HOME_RGB.getState().study;
@@ -16,7 +16,7 @@
   const warm=(4000-s.kelvin)/1800;U.bwTint.value.setRGB(1,.91-warm*.19,.76-warm*.36);
   U.bwRGBPower.value=rgb.on&&rgb.mode==='cyberpunk'?rgb.brightness/65:0;
   for(const m of materials)m.envMapIntensity=(m.transmission>0?.72:.58)*(night?Math.max(.025,(s.brightness+s.display)/140):1);
-  const foot=document.querySelector('.uiSideFoot');if(foot){foot.textContent='V1 · BW03 全屋細化／光影 · 工程待核';foot.title='全屋 Blender 材質、家具細化與分區光影；烘焙間接光不隨門片完整重算。';}
+  const foot=document.querySelector('.uiSideFoot');if(foot){foot.textContent='V1 · BW03 全屋細化／CW01窗門校正 · 工程待核';foot.title='全屋 Blender 材質、家具細化與分區光影；烘焙間接光不隨門片完整重算。';}
   R.invalidate(false);
  }
  async function start(){

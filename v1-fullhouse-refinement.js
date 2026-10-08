@@ -136,7 +136,7 @@ function install(data,buffer,tex){
 }
 async function load(){
  const dependencies=Promise.all([R?.whenReady,window.HOME_FLOORING?.ready,window.HOME_EXTERIOR?.ready]);
- const start=performance.now();const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('BW03 manifest '+response.status);const data=await response.json();
+ const start=performance.now();const response=await fetch(new URL('manifest.json?layout=cw01',base));if(!response.ok)throw Error('BW03 manifest '+response.status);const data=await response.json();
  const geometry=fetch(new URL(data.geometryFile,base)).then(async r=>{if(!r.ok)throw Error('BW03 geometry '+r.status);const compressed=await r.arrayBuffer();status.bytes+=compressed.byteLength;if(typeof DecompressionStream!=='function')throw Error('此瀏覽器不支援模型解壓縮');return new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();});
  const texturesReady=Promise.all(Object.entries(data.maps).map(([key,url])=>new Promise((resolve,reject)=>{
   new T.TextureLoader().load(new URL(url,base).href,t=>{t.encoding=/color/i.test(key)?T.sRGBEncoding:T.LinearEncoding;t.anisotropy=Math.min(8,V.renderer.capabilities.getMaxAnisotropy());t.wrapS=t.wrapT=key==='stoneColor'?T.RepeatWrapping:T.ClampToEdgeWrapping;t.needsUpdate=true;resolve([key,t]);},undefined,reject);
