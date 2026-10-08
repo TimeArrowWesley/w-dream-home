@@ -11,7 +11,7 @@ const fixtures={v0:0,v2:5,v3:6,v4:3,v5:4};
   check('Correct version and complete all-room replacement',()=>{
    assert.equal(c.HOME_LAYOUT.displayVersion,version);assert.equal(A.getState().state,'ready');assert(A.records.length>1700);
    assert.equal(new Set(A.records.map(r=>r.room)).size,10);
-   for(const r of A.records){assert(r.o.parent);assert.equal(r.o.geometry,r.geometry);for(const face of ['min','max'])for(const axis of ['x','y','z'])assert(Math.abs(r.replacementWorldBounds[face][axis]-r.sourceWorldBounds[face][axis])<.035);}
+   for(const r of A.records){assert(r.o.parent);assert.equal(r.o.geometry,r.geometry);for(const face of ['min','max'])for(const axis of ['x','y','z'])assert(Math.abs(r.replacementWorldBounds[face][axis]-(r.expectedWorldBounds||r.sourceWorldBounds)[face][axis])<.035);}
   });
   check('Glass is transparent; finish reset and privacy are reversible',()=>{
    const glass=A.records.flatMap(r=>[].concat(r.material)).filter(m=>m.transmission>0);assert(glass.length>10);assert(glass.every(m=>m.transparent&&!m.depthWrite&&m.opacity<.3));

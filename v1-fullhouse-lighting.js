@@ -15,8 +15,8 @@
   U.bwPower.value.set((night?.04:1)*(1-.88*closed),s.brightness/85,s.display/55);
   const warm=(4000-s.kelvin)/1800;U.bwTint.value.setRGB(1,.91-warm*.19,.76-warm*.36);
   U.bwRGBPower.value=rgb.on&&rgb.mode==='cyberpunk'?rgb.brightness/65:0;
-  for(const m of materials)m.envMapIntensity=(m.transmission>0?.72:.58)*(night?Math.max(.025,(s.brightness+s.display)/140):1);
-  const foot=document.querySelector('.uiSideFoot');if(foot){foot.textContent='V1 · BW03 全屋細化／CW01窗門校正 · 工程待核';foot.title='全屋 Blender 材質、家具細化與分區光影；烘焙間接光不隨門片完整重算。';}
+  for(const m of materials)m.envMapIntensity=(m.userData.sf01Reflection??(m.transmission>0?.72:.58))*(night?Math.max(.025,(s.brightness+s.display)/140):1);
+  const foot=document.querySelector('.uiSideFoot');if(foot){foot.textContent='V1 · BW03 SF01曲面／織品細化 · CW01窗門 · 工程待核';foot.title='全屋 Blender 材質、家具細化與分區光影；烘焙間接光不隨門片完整重算。';}
   R.invalidate(false);
  }
  async function start(){
@@ -24,6 +24,7 @@
   const rooms=['public','bed','closet','study','kitchen','bath1','bath2','collection','storage','back'];
   const maps=await Promise.all(['daylight','general','display','rgb'].map(texture));[U.bwDay.value,U.bwGeneral.value,U.bwDisplay.value,U.bwRGB.value]=maps;
   await Promise.all(rooms.map(async r=>{probes[r]=await cube(r);}));
+  const detailMaps=B.getState().detailRevision==='SF01'?await Promise.all(['daylight','general','display','rgb'].map(n=>texture('sf01-'+n))):null;
   const cache=new Map();
   function convert(old,room){
    const probeRoom=probes[room]?room:'public',key=old.uuid+'-'+probeRoom;if(cache.has(key))return cache.get(key);
@@ -33,9 +34,11 @@
     m.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;','vec3 outgoingLight = reflectedLight.directSpecular + reflectedLight.indirectSpecular;').replace('gl_FragColor = vec4( outgoingLight, diffuseColor.a );','float bwGlassAlpha=clamp(.035+linearToRelativeLuminance(outgoingLight)*.4,.035,.38);gl_FragColor=vec4(outgoingLight/max(bwGlassAlpha,.035),bwGlassAlpha);');};
     m.customProgramCacheKey=()=> 'bw03-glass';
    }else{
-    m.lightMap=maps[0];m.lightMapIntensity=0;m.aoMap=null;const previous=old.onBeforeCompile;
+    const ownMaps=old.userData.sf01Atlas?detailMaps:maps;if(!ownMaps)throw Error('SF01 light atlas missing');
+    const ownU={...U,bwDay:{value:ownMaps[0]},bwGeneral:{value:ownMaps[1]},bwDisplay:{value:ownMaps[2]},bwRGB:{value:ownMaps[3]}};
+    m.lightMap=ownMaps[0];m.lightMapIntensity=0;m.aoMap=null;const previous=old.onBeforeCompile;
     m.onBeforeCompile=shader=>{
-     previous.call(old,shader);Object.assign(shader.uniforms,U);
+     previous.call(old,shader);Object.assign(shader.uniforms,ownU);
      shader.fragmentShader=shader.fragmentShader.replace('#include <common>',`#include <common>
       uniform sampler2D bwDay,bwGeneral,bwDisplay,bwRGB;uniform vec3 bwPower,bwTint;uniform float bwRGBPower;
       vec3 bwHDR(sampler2D t,vec2 uv){vec4 p=texture2D(t,uv);return p.rgb*p.a*16.;}`);

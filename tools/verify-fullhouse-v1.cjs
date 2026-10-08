@@ -7,9 +7,9 @@ const build=require('./home-test-fixture.cjs'),root=path.resolve(__dirname,'..')
  const f=await build(2),{c,V,T,get}=f,A=c.HOME_BLENDER_V1,checks=[];
  const check=(name,fn)=>{fn();checks.push(name);};
  check('All-room upgrade loaded completely',()=>assert.equal(A.getState().state,'ready'));
- check('All replaced meshes retain their source world envelopes and scene parents',()=>{
+ check('All replaced meshes retain approved detail envelopes and original scene parents',()=>{
   assert(A.records.length>1900);assert(new Set(A.records.map(r=>r.room)).size===10);
-  for(const r of A.records){assert(r.o.parent);assert.equal(r.o.geometry,r.geometry);for(const face of ['min','max'])for(const axis of ['x','y','z'])assert(Math.abs(r.replacementWorldBounds[face][axis]-r.sourceWorldBounds[face][axis])<.035);}
+  for(const r of A.records){assert(r.o.parent);assert.equal(r.o.geometry,r.geometry);for(const face of ['min','max'])for(const axis of ['x','y','z'])assert(Math.abs(r.replacementWorldBounds[face][axis]-(r.expectedWorldBounds||r.sourceWorldBounds)[face][axis])<.035);}
  });
  check('Two stool cushions contain the actual Blender refinement',()=>{
   for(const id of ['M1761','M1765']){const r=A.records.find(r=>r.sourceId===id);assert(r);assert(r.geometry.attributes.position.count>r.oldGeometry.attributes.position.count);}

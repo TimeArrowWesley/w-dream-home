@@ -39,7 +39,7 @@ function material(m,tex){
  }else{
   const floor=m.sourceMaterialId===217,wall=m.sourceMaterialId===85;
   const Surface=m.sourceMaterialId===-3500?T.MeshPhysicalMaterial:T.MeshStandardMaterial;
-  out=new Surface({color:0xffffff,map:floor?tex.floorColor:tex.color,normalMap:floor?tex.floorNormal:tex.normal,aoMap:null,roughness:m.roughness,metalness:m.metalness,envMapIntensity:.3,side:m.side??T.FrontSide});
+  out=new Surface({color:0xffffff,map:m.sf01Atlas?tex.sf01Color:floor?tex.floorColor:tex.color,normalMap:m.sf01Atlas?tex.sf01Normal:floor?tex.floorNormal:tex.normal,aoMap:null,roughness:m.roughness,metalness:m.metalness,envMapIntensity:.3,side:m.side??T.FrontSide});
   if(m.sourceMaterialId===-3500)out.reflectivity=.05;
   if(m.sourceMaterialId===85){
    // Port BW04's 120×60cm offset brick node analytically, so its 1.5mm joints
@@ -66,7 +66,7 @@ function material(m,tex){
    out.userData.bw03FineStone=true;
   }
  }
- out.name='BW04 '+m.name;out.userData={...out.userData,blenderRevision:'BW04',sourceMaterialId:m.sourceMaterialId};createdMaterials.push(out);return out;
+ out.name='BW04 '+m.name;out.userData={...out.userData,blenderRevision:'BW04',sourceMaterialId:m.sourceMaterialId,sf01Atlas:!!m.sf01Atlas,sf01Reflection:m.sf01Reflection};createdMaterials.push(out);return out;
 }
 function applyLighting(){
  const C=V.finishContext,s=window.HOME_COMFORT?.getState();if(!s)return;
@@ -115,16 +115,28 @@ function install(data,buffer,tex){
   const a=b.o.geometry.boundingBox,bb=g.boundingBox;
   // Rounded rotated furniture may shrink local corners. Preserve the actual
   // world envelope used for layout, not an inverse-transformed bounding box.
-  const drift=Math.max(...b.worldBounds.min.toArray().map((v,i)=>Math.abs(v-replacementWorldBounds.min.getComponent(i))),...b.worldBounds.max.toArray().map((v,i)=>Math.abs(v-replacementWorldBounds.max.getComponent(i))));
+  // SF01 refines shape inside the furniture footprint. Validate both the
+  // original binding envelope and the approved per-part interpolation envelope.
+  let expectedWorldBounds=b.worldBounds;
+  if(m.sf01WorldBounds){
+   for(const face of ['min','max'])for(const axis of ['x','y','z']){
+    const i={x:0,y:1,z:2}[axis];
+    if(Math.abs(b.worldBounds[face][axis]-m.sf01SourceBounds[face][i])>.035)throw Error('SF01 source envelope '+m.id);
+    const delta=Math.abs(m.sf01WorldBounds[face][i]-m.sf01SourceBounds[face][i]);
+    if(delta>(axis==='y'?2.5:.12))throw Error('SF01 detail exceeds approved envelope '+m.id);
+   }
+   expectedWorldBounds=new T.Box3(new T.Vector3(...m.sf01WorldBounds.min),new T.Vector3(...m.sf01WorldBounds.max));
+  }
+  const drift=Math.max(...expectedWorldBounds.min.toArray().map((v,i)=>Math.abs(v-replacementWorldBounds.min.getComponent(i))),...expectedWorldBounds.max.toArray().map((v,i)=>Math.abs(v-replacementWorldBounds.max.getComponent(i))));
   if(drift>.035)throw Error('BW04 world envelope changed '+m.id);status.maxEnvelopeDriftCm=Math.max(status.maxEnvelopeDriftCm||0,drift);
   g.userData={...b.o.geometry.userData,blenderRevision:'BW04',sourceId:m.id};
-  pending.push({o:b.o,geometry:g,material:mids.length===1?materials[mids[0]]:mids.map(id=>materials[id]),sourceId:m.id,referenceId:m.referenceId,hidden:!!m.hidden,room:m.room,sourceWorldBounds:b.worldBounds,replacementWorldBounds,oldGeometry:b.o.geometry,oldMaterial:b.o.material});
+  pending.push({o:b.o,geometry:g,material:mids.length===1?materials[mids[0]]:mids.map(id=>materials[id]),sourceId:m.id,referenceId:m.referenceId,hidden:!!m.hidden,room:m.room,sourceWorldBounds:b.worldBounds,expectedWorldBounds,replacementWorldBounds,sf01Detail:!!m.sf01Detail,oldGeometry:b.o.geometry,oldMaterial:b.o.material});
  }
  // Commit only after every mesh has matched and retained its original envelope.
  for(const r of pending){baseline.push({o:r.o,geometry:r.oldGeometry,material:r.oldMaterial});r.o.geometry=r.geometry;r.o.material=r.material;r.o.userData.blenderV1Source=r.sourceId;if(r.hidden)r.o.visible=false;records.push(r);}
  // Dispose only unreferenced old geometry. Some source buffers are shared.
  const live=new Set();V.scene.traverse(o=>{if(o.isMesh)live.add(o.geometry);});for(const g of new Set(baseline.map(r=>r.geometry)))if(!live.has(g))g.dispose();
- status.state='ready';status.meshes=records.length;status.materials=materials.length;
+ status.detailRevision=data.detailRevision||null;status.sf01Meshes=data.meshes.filter(m=>m.sf01Detail).length;status.state='ready';status.meshes=records.length;status.materials=materials.length;
  const glassControl=document.getElementById('glass'),glassChange=glassControl.onchange;
  glassControl.onchange=function(...args){glassChange?.apply(this,args);reapply();};
  for(const [owner,key] of [[window.HOME_BLACK_INDUSTRIAL,'apply'],[window.HOME_GREY_STONE,'apply'],[window.HOME_INDUSTRIAL,'apply'],[window.HOME_R05,'applyFinishes']]){
@@ -141,7 +153,7 @@ function install(data,buffer,tex){
 }
 async function load(){
  const dependencies=Promise.all([R?.whenReady,window.HOME_FLOORING?.ready,window.HOME_EXTERIOR?.ready]);
- const start=performance.now();const response=await fetch(new URL('manifest.json?layout=cw01',base));if(!response.ok)throw Error('BW04 manifest '+response.status);const data=await response.json();
+ const start=performance.now();const response=await fetch(new URL('manifest.json?layout=cw01&detail=sf01',base));if(!response.ok)throw Error('BW04 manifest '+response.status);const data=await response.json();
  const geometry=fetch(new URL(data.geometryFile,base)).then(async r=>{if(!r.ok)throw Error('BW04 geometry '+r.status);const compressed=await r.arrayBuffer();status.bytes+=compressed.byteLength;if(typeof DecompressionStream!=='function')throw Error('此瀏覽器不支援模型解壓縮');return new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();});
  const texturesReady=Promise.all(Object.entries(data.maps).map(([key,url])=>new Promise((resolve,reject)=>{
   new T.TextureLoader().load(new URL(url,base).href,t=>{t.encoding=/color/i.test(key)?T.sRGBEncoding:T.LinearEncoding;t.anisotropy=Math.min(8,V.renderer.capabilities.getMaxAnisotropy());t.wrapS=t.wrapT=key==='stoneColor'?T.RepeatWrapping:T.ClampToEdgeWrapping;t.needsUpdate=true;resolve([key,t]);},undefined,reject);
