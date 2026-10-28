@@ -7,8 +7,18 @@
  const base=new URL('assets/blender-home/bw04/'+version+'/',document.currentScript.src);
  const state={revision:'BW04',state:'loading',ready:false},materials=[],probes={},targets=[];
  const U={bwDay:{value:null},bwGeneral:{value:null},bwDisplay:{value:null},bwRGB:{value:null},bwPower:{value:new T.Vector3(1,1,1)},bwTint:{value:new T.Color(1,.91,.76)},bwRGBPower:{value:0}};
- function texture(name){return new Promise((ok,bad)=>new T.TextureLoader().load(new URL(name+'.webp?layout=cw01',base).href,t=>{t.encoding=T.LinearEncoding;t.generateMipmaps=false;t.minFilter=t.magFilter=T.LinearFilter;ok(t);},undefined,bad));}
- function cube(room){return new Promise((ok,bad)=>new T.CubeTextureLoader().load(['px','nx','py','ny','pz','nz'].map(f=>new URL(room+'-'+f+'.webp'+(room==='closet'?'?layout=cw01':''),base).href),t=>{t.encoding=T.RGBM16Encoding;t.format=T.RGBAFormat;t._needsFlipEnvMap=false;t.isRenderTargetTexture=true;const gen=new T.PMREMGenerator(V.renderer),p=gen.fromCubemap(t);gen.dispose();t.dispose();targets.push(p);ok(p.texture);},undefined,bad));}
+ const profile=window.HOME_ASSETS?.getState().profile||'desktop';state.profile=profile;
+ function texture(name){return new Promise((ok,bad)=>{
+  const url=new URL(window.HOME_ASSETS?.lightPath(name)||'pf04/desktop/'+name+'.webp',base).href;
+  const done=t=>{t.encoding=T.LinearEncoding;t.generateMipmaps=false;t.minFilter=t.magFilter=T.LinearFilter;ok(t);};
+  if(window.HOME_ASSETS)HOME_ASSETS.texture(T,url,done,bad);else new T.TextureLoader().load(url,done,undefined,bad);
+ });}
+ const gen=new T.PMREMGenerator(V.renderer);
+ function cube(room){return new Promise((ok,bad)=>{
+  const urls=['px','nx','py','ny','pz','nz'].map(f=>new URL(room+'-'+f+'.webp'+(room==='closet'?'?layout=cw01':''),base).href);
+  const done=t=>{try{t.encoding=T.RGBM16Encoding;t.format=T.RGBAFormat;t._needsFlipEnvMap=false;t.isRenderTargetTexture=true;const p=gen.fromCubemap(t);targets.push(p);ok(p.texture);}catch(e){bad(e);}finally{t.dispose();}};
+  if(window.HOME_ASSETS)HOME_ASSETS.cube(T,urls,done,bad);else new T.CubeTextureLoader().load(urls,done,undefined,bad);
+ });}
  function update(){
   if(!state.ready)return;
   const s=HOME_COMFORT.getState(),night=document.getElementById('night').classList.contains('active'),curtains=HOME_CURTAINS.getState(),rgb=HOME_RGB.getState().study;
@@ -23,11 +33,15 @@
   R.invalidate(false);
  }
  async function start(){
-  await B.ready;if(B.getState().state!=='ready')throw Error('BW04 geometry not ready');
   const rooms=['public','bed','closet','study','kitchen','bath1','bath2','collection','storage','back'];
-  const maps=await Promise.all(['daylight','general','display','rgb'].map(texture));[U.bwDay.value,U.bwGeneral.value,U.bwDisplay.value,U.bwRGB.value]=maps;
-  await Promise.all(rooms.map(async r=>{probes[r]=await cube(r);}));
-  const detailMaps=B.getState().detailRevision==='SF01'?await Promise.all(['daylight','general','display','rgb'].map(n=>texture('sf01-'+n))):null;
+  const [maps,detailMaps]=await Promise.all([
+   Promise.all(['daylight','general','display','rgb'].map(texture)),
+   Promise.all(['daylight','general','display','rgb'].map(n=>texture('sf01-'+n))),
+   Promise.all(rooms.map(async r=>{probes[r]=await cube(r);})).finally(()=>gen.dispose()),
+   B.ready
+  ]);
+  if(B.getState().state!=='ready')throw Error('Fullhouse geometry not ready');
+  [U.bwDay.value,U.bwGeneral.value,U.bwDisplay.value,U.bwRGB.value]=maps;
   const cache=new Map();
   function convert(old,room){
    const probeRoom=probes[room]?room:'public',key=old.uuid+'-'+probeRoom;if(cache.has(key))return cache.get(key);

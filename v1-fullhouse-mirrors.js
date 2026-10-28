@@ -21,7 +21,7 @@
     if(p.sub(center).dot(normal)<0)normal.negate();
    }else normal.set(0,-1,0); // underside of the existing closed folding lid
    const axes=[0,1,2].filter(i=>i!==axis),width=dims[axes[0]],height=dims[axes[1]];
-   const plane=new T.PlaneGeometry(width,height),m=new T.Reflector(plane,{textureWidth:1024,textureHeight:1024,color:0xe4e8e8,clipBias:.003});
+   const plane=new T.PlaneGeometry(width,height),m=new T.Reflector(plane,{textureWidth:window.HOME_ASSETS?.getState().profile==='mobile'?512:1024,textureHeight:window.HOME_ASSETS?.getState().profile==='mobile'?512:1024,color:0xe4e8e8,clipBias:.003});
    // Build a local orthonormal basis with the plane's +Z facing the room.
    const u=new T.Vector3().setComponent(axes[0],1),v=new T.Vector3().crossVectors(normal,u).normalize();
    m.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(u,v,normal));

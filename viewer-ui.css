@@ -312,3 +312,56 @@ body.uiApp #uiMobileNav, body.uiApp #uiNavScrim { display: none; }
   body.uiApp .viewTabs button,body.uiApp .uiSceneActions button,body.uiApp #cameraControls button,
   body.uiApp #rooms button,body.uiApp #uiMobileNav,body.uiApp #uiInspector button { min-height: 44px; }
 }
+
+/* PF04: portrait navigation stays reachable without consuming the image area. */
+#uiQuickToggle,#uiPhotoPlanToggle { display:none; }
+@media (max-width:760px) {
+  body.uiApp,body.uiApp.uiHasQuickControls { --ui-header:94px; height:100vh; height:100dvh; padding-top:env(safe-area-inset-top); box-sizing:border-box; }
+  body.uiApp > header,body.uiApp.uiHasQuickControls > header,body.uiApp.walkImmersive > header { height:94px; padding:4px 10px 0; grid-template-columns:minmax(0,1fr) auto; grid-template-rows:44px 44px; gap:0 4px; position:relative; z-index:50; }
+  body.uiApp .uiBrand { min-width:0; }
+  body.uiApp .uiBrand h1 { font-size:17px; white-space:nowrap; }
+  body.uiApp .uiPrimary { grid-column:1/-1; grid-row:2; min-width:0; }
+  body.uiApp .uiPrimary :is(button,a) { min-height:44px; font-size:12px; padding:0 12px; }
+  body.uiApp .uiHeaderActions { grid-column:2; grid-row:1; gap:4px; }
+  body.uiApp .uiHeaderActions :is(button,summary) { min-height:38px; padding:6px; }
+  body.uiApp #full { display:none; }
+  body.uiApp #uiQuickToggle { display:block; }
+  body.uiApp .uiQuickControls { display:none; position:absolute; top:94px; right:8px; width:min(350px,calc(100vw - 16px)); box-sizing:border-box; padding:14px; border:1px solid var(--ui-line); border-radius:10px; background:#202e2b; box-shadow:0 12px 28px #0008; z-index:60; }
+  body.uiApp.uiQuickOpen .uiQuickControls { display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
+  body.uiApp #uiSidebar { top:calc(var(--ui-header) + env(safe-area-inset-top)); padding-bottom:env(safe-area-inset-bottom); }
+  body.uiApp .sceneToolbar,body.uiApp.walkImmersive .sceneToolbar { display:grid!important; grid-template-columns:minmax(0,1fr) auto; gap:5px; padding:6px 8px; }
+  body.uiApp .sceneToolbar .uiSceneTitle { width:auto; min-width:0; gap:6px; }
+  body.uiApp #activeRoom { font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  body.uiApp #uiMobileNav { flex-shrink:0; min-height:40px; font-size:12px; }
+  body.uiApp .uiSceneActions { grid-column:2; grid-row:1; margin:0; gap:4px; }
+  body.uiApp .uiSceneActions button { min-height:40px; padding:5px; font-size:11px; }
+  body.uiApp .sceneToolbar .viewTabs { grid-row:2; grid-column:1/-1; display:flex; width:100%; margin:0; }
+  body.uiApp .viewTabs button { flex:1; min-height:40px; font-size:12px; }
+  body.uiApp #scenePanel { min-height:0; grid-template-rows:auto minmax(0,1fr) auto; }
+  body.uiApp .uiSceneFooter { min-height:24px; padding:4px 10px calc(4px + env(safe-area-inset-bottom)); font-size:10px; }
+  body.uiApp #aiPhotoHeading { padding:7px 10px; gap:6px; }
+  body.uiApp #aiPhotoStage { grid-template-columns:minmax(0,1fr); }
+  body.uiApp #aiPhotoStage > * { min-width:0; }
+  body.uiApp #aiPhotoHeading strong { font-size:12px; }
+  body.uiApp #aiPhotoHeading small { font-size:10px; line-height:1.4; margin-top:2px; }
+  body.uiApp #aiPhotoClose { display:none; } /* The persistent 3D tab is directly above. */
+  body.uiApp #aiPhotoContent { grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr) 38px; }
+  body.uiApp #aiPhotoPlan { display:block; border-top:1px solid var(--ui-line); overflow:hidden; }
+  body.uiApp #aiPhotoPlan .vpHead { padding:0 8px; height:38px; display:flex; }
+  body.uiApp #aiPhotoPlan .vpHead strong,body.uiApp #aiPhotoPlan .vpZoom,body.uiApp #aiPhotoPlan .vpMap,body.uiApp #aiPhotoPlan .vpCaption { display:none; }
+  body.uiApp #uiPhotoPlanToggle { display:block; min-height:34px; flex:1; text-align:left; background:transparent; border:0; }
+  body.uiApp #aiPhotoContent.uiPlanOpen { grid-template-rows:minmax(0,1fr) 210px; }
+  body.uiApp #aiPhotoContent.uiPlanOpen #aiPhotoPlan { display:grid; grid-template-columns:minmax(120px,1fr) minmax(130px,1fr); grid-template-rows:38px minmax(0,1fr); }
+  body.uiApp #aiPhotoContent.uiPlanOpen .vpHead { grid-column:1/-1; grid-row:1; }
+  body.uiApp #aiPhotoContent.uiPlanOpen .vpMap { display:block; grid-column:1; grid-row:2; height:100%; min-height:0; }
+  body.uiApp #aiPhotoContent.uiPlanOpen .vpCaption { display:block; grid-column:2; grid-row:2; overflow:auto; }
+  body.uiApp #aiPhotoContent.uiPlanOpen .vpZoom { display:block; }
+  body.uiApp #aiPhotoTools { flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; padding:5px 8px; scrollbar-width:thin; }
+  body.uiApp #aiPhotoTools :is(button,a,output) { flex-shrink:0; white-space:nowrap; min-height:36px; }
+  body.uiApp #aiPhotoGallery { padding:6px 8px; gap:7px; }
+  body.uiApp #aiPhotoStage:not([data-overview=true]) #aiPhotoGallery button { height:62px; flex:1 0 calc((100% - 28px)/5); min-width:44px; }
+  body.uiApp #aiPhotoStage:not([data-overview=true]) #aiPhotoGallery span { font-size:0; padding:3px; }
+  body.uiApp #aiPhotoStage:not([data-overview=true]) #aiPhotoGallery span::after { content:attr(data-angle); font-size:11px; }
+  body.uiApp #aiPhotoStage[data-overview=true] #aiPhotoGallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  body.uiApp #blenderLoadWarning { left:8px!important; right:8px!important; font-size:12px!important; }
+}

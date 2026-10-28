@@ -241,6 +241,7 @@
       const button = document.createElement('button');
       button.type = 'button';
       button.dataset.aiPhoto = item.id;
+      button.setAttribute('aria-label', item.label || roomName(item.room));
       button.setAttribute('aria-pressed', 'false');
       const thumb = document.createElement('img');
       thumb.src = new URL(item.thumb || item.src, assetBase).href;
@@ -248,6 +249,7 @@
       thumb.loading = 'lazy';
       const label = document.createElement('span');
       label.textContent = item.label || roomName(item.room);
+      label.dataset.angle = (item.label || '').match(/方向\s*([A-E])/)?.[1] || item.label || roomName(item.room);
       button.append(thumb, label);
       button.onclick = () => select(item.id);
       gallery.appendChild(button);

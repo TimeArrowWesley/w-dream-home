@@ -32,7 +32,7 @@
     body.classList.add('uiApp');
     sidebar.id = 'uiSidebar'; sidebar.setAttribute('aria-label', '版本與空間');
     // Append after feature styles. All selectors are scoped to this shell.
-    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20260930-ui10', root).href;
+    const theme = make('link'); theme.rel = 'stylesheet'; theme.href = new URL('viewer-ui.css?v=20261028-pf04', root).href;
     document.head.append(theme);
 
     // Primary navigation: one entry per task, with export as a secondary action.
@@ -60,6 +60,9 @@
     exportItems.append($('export'), $('planExport')); exportMenu.append(exportItems);
     $('full').textContent = '全螢幕'; actions.append(exportMenu, $('full'));
     header.replaceChildren(brand, primary, actions);
+    const quickToggle=btn('快捷', 'uiQuickToggle',()=>{
+      const open=body.classList.toggle('uiQuickOpen');quickToggle.setAttribute('aria-expanded',String(open));
+    });quickToggle.setAttribute('aria-expanded','false');quickToggle.setAttribute('aria-label','展開快捷控制');actions.prepend(quickToggle);
 
     // Shared LED master switch; retain each room's colour/effect/brightness.
     if (window.HOME_RGB?.getState) {
@@ -112,6 +115,7 @@
         url.searchParams.set('layout', key);
         url.searchParams.set('uiRoom', V.getCurrent());
         url.searchParams.set('uiMode', tour.getMode());
+        if(new URLSearchParams(location.search).get('lightQuality')==='original')url.searchParams.set('lightQuality','original');
         location.assign(url.href);
       };
       if(registry.find(v=>v.id===key).history)historyVersions.append(b);else bar.append(b);
@@ -225,7 +229,7 @@
     // Room and viewing mode are always visible, including while walking.
     const toolbar = scene.querySelector('.sceneToolbar'), roomHeading = toolbar.firstElementChild;
     roomHeading.className = 'uiSceneTitle';
-    const mobileNav = btn('空間', 'uiMobileNav', () => {
+    const mobileNav = btn(version.toUpperCase()+' · 空間', 'uiMobileNav', () => {
       const open = body.classList.toggle('uiNavOpen'); mobileNav.setAttribute('aria-expanded', String(open));
       navScrim.hidden = !open;
     }); mobileNav.setAttribute('aria-controls','uiSidebar'); mobileNav.setAttribute('aria-expanded','false');
@@ -248,6 +252,18 @@
     scene.querySelector('main').setAttribute('aria-label','設計預覽');
     $('view').tabIndex = 0;
     const aiNote = $('aiPhotoHeading')?.querySelector('small'); if (aiNote) aiNote.textContent = '目前模型生成的材質效果；格局與尺寸以 3D 為準。';
+    const photoPlan=$('aiPhotoPlan');
+    if(photoPlan){
+      const toggle=btn('取景位置', 'uiPhotoPlanToggle',()=>{
+        const open=$('aiPhotoContent').classList.toggle('uiPlanOpen');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'收起取景位置':'取景位置';
+      });toggle.setAttribute('aria-expanded','false');photoPlan.querySelector('.vpHead').prepend(toggle);
+    }
+    const lightQualitySection=make('section','uiControlSection');
+    const lightLabel=make('label','','光照細節 '),lightSelect=make('select');lightSelect.id='uiLightQuality';lightSelect.setAttribute('aria-label','光照細節');
+    for(const [value,label] of [['auto','適合此裝置（較快）'],['original','原始解析度（較慢）']]){const option=make('option','',label);option.value=value;lightSelect.append(option);}
+    lightSelect.value=new URLSearchParams(location.search).get('lightQuality')==='original'?'original':'auto';
+    lightSelect.onchange=()=>{const url=new URL(location.href);if(lightSelect.value==='original')url.searchParams.set('lightQuality','original');else url.searchParams.delete('lightQuality');url.searchParams.set('uiRoom',V.getCurrent());url.searchParams.set('uiMode',tour.getMode());location.assign(url.href);};
+    lightLabel.append(lightSelect);lightQualitySection.append(lightLabel,make('p','','只調整光照貼圖精細度；切換會重新載入。家具形狀與材質紋理相同。'));displayBody.append(lightQualitySection);
     const navScrim = btn('關閉空間導覽', 'uiNavScrim', closeMobileNav); navScrim.hidden = true; navScrim.tabIndex = -1; body.append(navScrim);
 
     function closeMobileNav() { body.classList.remove('uiNavOpen'); mobileNav?.setAttribute('aria-expanded','false'); if (navScrim) navScrim.hidden = true; }

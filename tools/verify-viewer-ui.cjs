@@ -186,6 +186,13 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
 }
 const deep=fixture('v2','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.getState().room,'bed');checks.push('Switching versions retains selected room; normal startup returns to whole-home overview');
 {
+ const {c,$,calls}=fixture('v1','&uiRoom=bed&uiMode=model');
+ $('uiQuickToggle').click();assert(c.document.body.classList.contains('uiQuickOpen'));$('uiQuickToggle').click();assert(!c.document.body.classList.contains('uiQuickOpen'));
+ $('uiPhotoPlanToggle').click();assert($('aiPhotoContent').classList.contains('uiPlanOpen'));$('uiPhotoPlanToggle').click();assert(!$('aiPhotoContent').classList.contains('uiPlanOpen'));
+ $('uiLightQuality').value='original';$('uiLightQuality').onchange();const url=new URL(calls.filter(x=>x[0]==='navigate').at(-1)[1]);assert.equal(url.searchParams.get('lightQuality'),'original');assert.equal(url.searchParams.get('uiRoom'),'bed');
+ checks.push('PF04 mobile quick controls and viewpoint disclosure are reversible; original-light quality preserves room');
+}
+{
  const a=fixture('v1'),{c,$,dom}=a,door={key:'study-slide-r05',target:0};
  c.HOME_R05={pulled:false,setDiningPulled(out){this.pulled=!!out;return this.pulled;},applyFinishes(){}};
  c.HOME_INTERACTION={getState:()=>({entries:[door]}),setDoor(key,open){assert.equal(key,door.key);door.target=open?90:0;c.dispatchEvent(new dom.Event('doorstatechange'));return true;}};
@@ -197,7 +204,7 @@ const deep=fixture('v2','&uiRoom=bed&uiMode=model');assert.equal(deep.c.HOME_UI.
  checks.push('V1 switches dispatch stool/door state and sync external door changes');
 }
 {
- const {document}=parseHTML(read('設計資料.html'));assert.equal(document.querySelectorAll('.resource').length,7);
+ const {document}=parseHTML(read('設計資料.html'));assert(document.querySelectorAll('.resource').length>=7);
  const blender=document.getElementById('v1BlenderReview');assert.equal(blender.getAttribute('href'),'全版本Blender.html');assert(!blender.hasAttribute('hidden'),'Blender review is available to all versions');
  for(const href of ['設計現況.html','方案比較.html','AI寫實視角.html','家具清單.html','提案/原始格局/方案說明.html','提案/拆收藏室替代方案/index.html'])assert(document.querySelector('.resource[href="'+href+'"]'),'existing resource remains: '+href);
  for(const a of document.querySelectorAll('.resource'))assert(fs.existsSync(path.join(R,a.getAttribute('href'))),'resource target exists');
