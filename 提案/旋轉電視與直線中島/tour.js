@@ -58,7 +58,7 @@ let pinAt=-Infinity,pinKey='';const pinDirection=new T.Vector3();function pin(no
  const key=`${x.toFixed(2)},${y.toFixed(2)},${Math.atan2(pinDirection.x,-pinDirection.z).toFixed(5)},${V.getCurrent()}`;
  if(key===pinKey)return;pinKey=key;$('cameraPin').setAttribute('transform',`translate(${x},${y}) rotate(${Math.atan2(pinDirection.x,-pinDirection.z)*180/Math.PI})`);$('cameraPin').style.display=V.getCurrent()==='all'?'none':'';
 }pin();
-roomChanged('all');setMode('model');window.HOME_TOUR={refreshPlan:invalidatePlan,showSource,getSource:()=>planSource,setMode,ensurePlan,planImage:ensurePlan,areas,getMode:()=>mode};
+roomChanged('all');setMode('model');window.HOME_TOUR={invalidatePlan,refreshPlan:invalidatePlan,showSource,getSource:()=>planSource,setMode,ensurePlan,planImage:ensurePlan,areas,getMode:()=>mode};
 window.addEventListener('tvrotationend',invalidatePlan);
 // Refresh after the shared material modules finish; initial plan predates flooring.js.
 window.addEventListener('load',async()=>{await window.HOME_FLOORING?.ready;invalidatePlan();if(!window.HOME_UI)ensurePlan();});
