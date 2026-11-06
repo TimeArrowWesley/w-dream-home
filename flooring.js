@@ -80,6 +80,6 @@ for(const [x,y,w,d,name] of (open?[[714.6,805,.4,150,'客廳交界'],[545.2,805,
 entry.userData.flooring={pattern:'large-format-stone',tileCm,groutCm,finishLevelCm,outline:entryOutline,tileCount:tiles.length,tiles,transitionWidthCm:.4};
 V.scene.getObjectByName('寫實材質與燈光細節')?.traverse(o=>{if(o.isMesh&&o.geometry.type==='PlaneGeometry'&&o.material.transparent&&Math.abs(o.position.y-.15)<.001)o.position.y=.25;});
 function inside(x,y,points){let hit=false;for(let i=0,j=points.length-1;i<points.length;j=i++){const a=points[i],b=points[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])hit=!hit;}return hit;}
-window.HOME_FLOORING={ready:Promise.resolve(),floor,entry,tileMaterial,sampleBoard,getState:()=>({ready:true,pattern:'herringbone',plankWidthCm,plankLengthCm,rotationDeg,jointCm,textureSize:floor.material.map?.image?.width||512,entry:entry.userData.flooring}),finishAt:(x,y)=>inside(x,y,entryOutline)?'large-format-stone':inside(x,y,outline)&&!inside(x,y,guestBath)?'herringbone':'stone'};
+window.HOME_FLOORING={applySurvey(map){for(const poly of [outline,entryOutline,guestBath])for(let i=0;i<poly.length;i++)poly[i]=map(...poly[i]);},ready:Promise.resolve(),floor,entry,tileMaterial,sampleBoard,getState:()=>({ready:true,pattern:'herringbone',plankWidthCm,plankLengthCm,rotationDeg,jointCm,textureSize:floor.material.map?.image?.width||512,entry:entry.userData.flooring}),finishAt:(x,y)=>inside(x,y,entryOutline)?'large-format-stone':inside(x,y,outline)&&!inside(x,y,guestBath)?'herringbone':'stone'};
 window.HOME_REALISM?.invalidate();
 })();

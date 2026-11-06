@@ -794,6 +794,14 @@
 !/assets/review-sf01/v5-island-A-before.webp
 !/assets/review-sf01/v5-living-E-after.webp
 !/assets/review-sf01/v5-living-E-before.webp
+!/assets/review-sv01/
+!/assets/review-sv01/data.js
+!/assets/review-sv01/v0-plan.jpg
+!/assets/review-sv01/v1-plan.jpg
+!/assets/review-sv01/v2-plan.jpg
+!/assets/review-sv01/v3-plan.jpg
+!/assets/review-sv01/v4-plan.jpg
+!/assets/review-sv01/v5-plan.jpg
 !/assets/three.min.js
 !/assets/vanity/
 !/assets/vanity/vt02-closed.webp
@@ -841,6 +849,7 @@
 !/source-plan.js
 !/study-cyberpunk-finalize.js
 !/study-cyberpunk.js
+!/survey-layout.js
 !/tools/
 !/tools/album-contact-sheets.py
 !/tools/build-audit-review.py
@@ -853,6 +862,7 @@
 !/tools/build-site.py
 !/tools/build-speaker-proposal.py
 !/tools/build-speaker-reassessment.py
+!/tools/build-survey-report.py
 !/tools/capture-audit-all-views.cjs
 !/tools/capture-black-home.cjs
 !/tools/capture-closet-cl01.cjs
@@ -955,6 +965,8 @@
 !/tools/verify-startup.cjs
 !/tools/verify-storage-shelves.cjs
 !/tools/verify-study-cp02.cjs
+!/tools/verify-survey-browser.cjs
+!/tools/verify-survey-layout.cjs
 !/tools/verify-tv-wall.cjs
 !/tools/verify-v4-industrial.cjs
 !/tools/verify-v4-public.cjs
@@ -984,6 +996,7 @@
 !/viewer-ui.css
 !/viewer-ui.js
 !/walk.js
+!/全室尺寸變更.html
 !/全版本Blender.html
 !/化妝桌設計.html
 !/家具清單.html

@@ -23,7 +23,7 @@ window.HOME_BOOT_PENDING = true;
   document.addEventListener('DOMContentLoaded', async () => {
     // Leave version/room/AI navigation available while only the 3D canvas waits.
     const host=document.querySelector('#scenePanel main');if(host){host.append(message);message.style.position='absolute';message.style.zIndex='8';}
-    await Promise.all([window.HOME_REALISM?.whenReady, window.HOME_EXTERIOR?.ready, window.HOME_FLOORING?.ready, window.HOME_BLENDER_V1?.ready,window.HOME_BW02?.ready,window.HOME_FULLHOUSE_LIGHT?.ready,window.HOME_FULLHOUSE_MIRRORS?.ready]);
+    await Promise.all([window.HOME_REALISM?.whenReady, window.HOME_EXTERIOR?.ready, window.HOME_FLOORING?.ready, window.HOME_BLENDER_V1?.ready,window.HOME_BW02?.ready,window.HOME_FULLHOUSE_LIGHT?.ready,window.HOME_FULLHOUSE_MIRRORS?.ready,window.HOME_SURVEY?.ready]);
     clearInterval(clock);
     window.HOME_BOOT_PENDING = false;
     if (!failed && window.HOME_VIEWER && window.HOME_REALISM) {

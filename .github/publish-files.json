@@ -1619,7 +1619,16 @@
     "assets/blender-home/bw04/v5/pf04/mobile/sf01-daylight.webp",
     "assets/blender-home/bw04/v5/pf04/mobile/sf01-display.webp",
     "assets/blender-home/bw04/v5/pf04/mobile/sf01-general.webp",
-    "assets/blender-home/bw04/v5/pf04/mobile/sf01-rgb.webp"
+    "assets/blender-home/bw04/v5/pf04/mobile/sf01-rgb.webp",
+    "survey-layout.js",
+    "全室尺寸變更.html",
+    "assets/review-sv01/data.js",
+    "assets/review-sv01/v0-plan.jpg",
+    "assets/review-sv01/v1-plan.jpg",
+    "assets/review-sv01/v2-plan.jpg",
+    "assets/review-sv01/v3-plan.jpg",
+    "assets/review-sv01/v4-plan.jpg",
+    "assets/review-sv01/v5-plan.jpg"
   ],
   "repositoryOnly": [
     ".gitattributes",
@@ -1761,6 +1770,9 @@
     "tools/verify-source-layout.cjs",
     "tools/verify-sf01.cjs",
     "tools/verify-pf04-assets.cjs",
-    "tools/build-pf04-lightmaps.py"
+    "tools/build-pf04-lightmaps.py",
+    "tools/build-survey-report.py",
+    "tools/verify-survey-layout.cjs",
+    "tools/verify-survey-browser.cjs"
   ]
 }
