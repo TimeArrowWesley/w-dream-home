@@ -4,7 +4,7 @@
 (()=>{
  const V=window.HOME_VIEWER,T=window.THREE;if(!V||window.HOME_SURVEY)return;
  const version=window.HOME_LAYOUT?.displayVersion||'v1',records=[],summary=[];
- const state={revision:'20261106-SV01',state:'loading',version,source:'2026-11-03 放樣圖 P-03',unit:'cm',limits:['275cm裝修天花及240cm廚房天花仍為設計值；CH309/310是樓板高度。','無標註的牆厚、洞口寬與梁寬由向量牆線對位，不等同標註尺寸。','南側156與384尺寸端點相差約1cm；保留156門區，右段模型383，待設計師核對。','沿用既有材質與靜態光照，新增梁體採即時受光，未重新烘焙。']};
+ const state={revision:'20261106-SV01',state:'loading',audit:'20261107-SV02',version,source:'2026-11-03 放樣圖 P-03',unit:'cm',limits:['275cm裝修天花及240cm廚房天花仍為設計值；CH309/310是樓板高度。','無標註的牆厚、洞口寬與梁寬由向量牆線對位，不等同標註尺寸。','南側156與384尺寸端點相差約1cm；保留156門區，右段模型383，待設計師核對。','後陽台內寬模型183.4cm、牆線推估177.3cm，無標註，待核。','主浴西側開口沿用窗台90／洞高140cm，1103未標高與型式。','沿用既有材質與靜態光照，新增梁體採即時受光，未重新烘焙。']};
  const round=n=>Math.round(n*100)/100;
  function bounds(o){const b=new T.Box3().setFromObject(o);return {x:b.min.x+482.5,y:b.min.z+480,z:b.min.y,w:b.max.x-b.min.x,d:b.max.z-b.min.z,h:b.max.y-b.min.y};}
  function name(o){const a=[];for(let p=o;p&&p!==V.scene;p=p.parent)a.unshift(p.userData.name||p.name||p.type);return a.join(' / ');}
@@ -133,12 +133,26 @@
   window.HOME_FLOORING?.applySurvey?.(xy);
   const curtainChanges=window.HOME_CURTAINS?.applySurvey?.(windows.map(w=>({...w,railHeight:w.id==='bed'?234:236})))||[];summary.push(...curtainChanges);
   for(const r of V.rooms){if(r.id==='all')continue;for(const k of ['p','t']){const [x,y]=xy(r[k][0],r[k][1]);r[k][0]=x;r[k][1]=y;}}
+  window.HOME_TOUR?.applySurveyAreas?.(xy,{
+   bed:[[-75,2],[405,2],[405,282],[-75,282]],
+   bath1:[[-72,295],[303,295],[303,478],[-72,478]],
+   bath2:[[421,222],[571,222],[571,363],[421,363]],
+   study:[[757,0],[1085,0],[1085,374],[757,374]],
+   kitchen:[[0,493],[212,493],[212,955],[0,955]],
+   storage:[[583,270],[745,270],[745,363],[583,363]]
+  });
   V.scene.updateMatrixWorld(true);window.HOME_WALK?.refreshColliders();window.HOME_TOUR?.invalidatePlan?.();window.HOME_INTERACTION?.refreshPlan?.();
   if(cut){for(const p of V.wallParts){const hh=Math.max(0,Math.min(p.z+p.h,85)-p.z);p.m.visible=hh>.1;p.m.scale.y=hh/p.h;p.m.position.y=p.z+hh/2;}}
   state.state='ready';state.changedComponents=records.length;state.windows=windows.length;state.beams=beamDefs.length;
   const status=document.getElementById('status');if(status)status.textContent='SV01｜已依2026/11/03放樣圖校正。尺寸差異見「全室尺寸變更」；裝修天花及未標尺寸仍為設計值。';
-  const nav=document.querySelector('.uiPrimary');if(nav&&!document.getElementById('surveyReportLink')){const a=document.createElement('a');a.id='surveyReportLink';a.href=new URL('全室尺寸變更.html',document.baseURI).href;a.target='_blank';a.rel='noopener';a.textContent='尺寸變更';nav.appendChild(a);}
+  const nav=document.querySelector('.uiPrimary');if(nav&&!document.getElementById('surveyReportLink')){const a=document.createElement('a');a.id='surveyReportLink';a.href=new URL('全室放樣核對.html?version='+version,document.baseURI).href;a.target='_blank';a.rel='noopener';a.textContent='放樣核對';nav.appendChild(a);}
   const foot=document.querySelector('.uiSideFoot');if(foot)foot.textContent=version.toUpperCase()+' · SV01 1103放樣尺寸';
+  if(foot?.parentElement&&!document.getElementById('surveyRevision')){
+   const badge=document.createElement('a');badge.id='surveyRevision';
+   badge.href=new URL('全室放樣核對.html?version='+version,document.baseURI).href;badge.target='_blank';badge.rel='noopener';
+   badge.textContent='1103 放樣核對 · SV02／11月7日';badge.style.cssText='display:block;padding:8px 14px;color:#bbd5c6;font-size:12px;line-height:1.6;flex-shrink:0';
+   foot.parentElement.insertBefore(badge,foot);
+  }
   V.finishContext.materials.concrete.needsUpdate=true;window.HOME_REALISM?.registerMaterials?.();window.HOME_REALISM?.invalidate?.(true,true);
   window.dispatchEvent(new CustomEvent('survey-ready'));
  }

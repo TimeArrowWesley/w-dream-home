@@ -1629,7 +1629,14 @@
     "assets/review-sv01/v2-plan.jpg",
     "assets/review-sv01/v3-plan.jpg",
     "assets/review-sv01/v4-plan.jpg",
-    "assets/review-sv01/v5-plan.jpg"
+    "assets/review-sv01/v5-plan.jpg",
+    "全室放樣核對.html",
+    "assets/review-sv02/v0-plan.webp",
+    "assets/review-sv02/v1-plan.webp",
+    "assets/review-sv02/v2-plan.webp",
+    "assets/review-sv02/v3-plan.webp",
+    "assets/review-sv02/v4-plan.webp",
+    "assets/review-sv02/v5-plan.webp"
   ],
   "repositoryOnly": [
     ".gitattributes",

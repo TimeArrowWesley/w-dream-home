@@ -14,7 +14,7 @@ svg.innerHTML='<image id="planTexture" x="-250" y="-70" width="1480" height="109
 $('planstage').appendChild(svg);
 const sourceImg=document.createElementNS(ns,'image');sourceImg.id='sourceImage';sourceImg.style.display='none';svg.insertBefore(sourceImg,svg.querySelector('#hotspots'));
 const compare=document.createElement('div');compare.className='sourceCompare';compare.innerHTML='<button data-source="model" class="active">裝潢平面</button><button data-source="walls">客變隔間原圖</button><button data-source="furniture">客變配置原圖</button>';$('planstage').before(compare);
-let planSource='model';function showSource(kind){planSource=kind;if($('hybridPlanOutline'))$('hybridPlanOutline').style.display=kind==='model'?'':'none';if($('planDoors'))$('planDoors').style.display=kind==='model'?'':'none';const original=kind!=='model';$('planTexture').style.display=original?'none':'';sourceImg.style.display=original?'':'none';if(original){const a=window.SOURCE_PLAN[kind];for(const k of ['x','y','width','height'])sourceImg.setAttribute(k,a[{width:'w',height:'h'}[k]||k]);sourceImg.setAttribute('href',a.url);}document.querySelectorAll('[data-source]').forEach(b=>b.classList.toggle('active',b.dataset.source===kind));document.querySelector('.planIntro').textContent=original?'歷史客變原圖；最新尺寸以1103放樣校正3D為準。':'100 cm 水平剖切；原牆、柱與門窗可切換原圖核對。';window.dispatchEvent(new CustomEvent('plansourcechange',{detail:kind}));}compare.querySelectorAll('button').forEach(b=>b.onclick=()=>showSource(b.dataset.source));
+let planSource='model';function showSource(kind){planSource=kind;if($('hybridPlanOutline'))$('hybridPlanOutline').style.display=kind==='model'?'':'none';if($('planDoors'))$('planDoors').style.display=kind==='model'?'':'none';const original=kind!=='model';$('hotspots').style.display=original?'none':'';$('planTexture').style.display=original?'none':'';sourceImg.style.display=original?'':'none';if(original){const a=window.SOURCE_PLAN[kind];for(const k of ['x','y','width','height'])sourceImg.setAttribute(k,a[{width:'w',height:'h'}[k]||k]);sourceImg.setAttribute('href',a.url);}document.querySelectorAll('[data-source]').forEach(b=>b.classList.toggle('active',b.dataset.source===kind));document.querySelector('.planIntro').textContent=original?'歷史客變原圖；最新尺寸以1103放樣校正3D為準。':'1103 放樣校正模型・100 cm 剖切；點選區只供導覽，完整尺寸及待核項目見「放樣核對」。';window.dispatchEvent(new CustomEvent('plansourcechange',{detail:kind}));}compare.querySelectorAll('button').forEach(b=>b.onclick=()=>showSource(b.dataset.source));
 
 function el(tag,attrs){const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e;}
 Object.entries(areas).forEach(([id,pts])=>{const r=rooms.find(r=>r.id===id),g=el('g',{class:'planroom',role:'button',tabindex:'0','aria-label':'進入'+(id==='island'&&window.HOME_LAYOUT?.hybridArc?'圓弧中島':r.n),'data-room':id});g.appendChild(el('polygon',{points:pts.map(p=>p.join(',')).join(' ')}));const [x,y]=centers[id],label=el('g',{class:'planlabel'});label.appendChild(el('rect',{x:x-80,y:y-25,width:160,height:50,rx:10}));const text=el('text',{x,y:y+10,'text-anchor':'middle'});text.textContent=r.id==='island'?(window.HOME_LAYOUT?.hybridArc?'圓弧中島':window.HOME_LAYOUT?.fixedTV?'開放長中島':window.HOME_LAYOUT?.openIsland?'開放大中島':'直線中島'):r.n.replace('・中島','');label.appendChild(text);g.appendChild(label);const choose=()=>{V.selectRoom(id);setMode(mode==='walk'?'walk':'model');if(innerWidth<760)$('scenePanel').scrollIntoView({behavior:'smooth',block:'start'});};g.onclick=choose;g.onkeydown=e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();choose();}};$('hotspots').appendChild(g);});
@@ -31,6 +31,15 @@ function planImage(){const url=V.capturePlan();$('planTexture').setAttribute('hr
 const doorOverlay=document.createElementNS(ns,'g');doorOverlay.id='planDoors';doorOverlay.setAttribute('pointer-events','none');svg.insertBefore(doorOverlay,svg.querySelector('#hotspots'));V.doorPlan().forEach(d=>{const poly=document.createElementNS(ns,'polygon');poly.setAttribute('points',d.points.map(p=>p.join(',')).join(' '));poly.setAttribute('fill','#273239');poly.setAttribute('stroke','#101a20');poly.setAttribute('stroke-width','1.5');doorOverlay.appendChild(poly);});
 let planURL='',planDirty=true,mode='model',photoZoom=1,photoX=0,photoY=0;
 function ensurePlan(){if(planDirty||!planURL){planURL=planImage();planDirty=false;}return planURL;}
+// SV02: navigation polygons follow the corrected model; they are not survey boundaries.
+function applySurveyAreas(map,overrides){
+ for(const [id,pts] of Object.entries(areas)){
+  areas[id]=overrides[id]||pts.map(([x,y])=>map(x,y));
+  const poly=svg.querySelector(`[data-room="${id}"] polygon`);
+  if(poly)poly.setAttribute('points',areas[id].map(p=>p.join(',')).join(' '));
+ }
+ showSource(planSource);
+}
 function invalidatePlan(){planDirty=true;doorOverlay.replaceChildren();V.doorPlan().forEach(d=>{const p=el('polygon',{points:d.points.map(p=>p.join(',')).join(' '),fill:'#273239'});doorOverlay.appendChild(p);});if(window.HOME_UI?.getState().navView==='plan')ensurePlan();}
 const links={all:['living','bed','kitchen','study'],island:['living','kitchen','bed'],living:['island','study','kitchen','entry','bed'],entry:['living','collection'],bed:['bath1','closet','living'],closet:['bed','bath2'],bath1:['bed'],bath2:['living','closet'],study:['living'],kitchen:['living','back'],back:['kitchen'],collection:['entry'],storage:['living']};
 if(window.HOME_LAYOUT?.openIsland){links.entry=['island','collection','living'];links.collection=['island','entry','kitchen'];links.island=['living','kitchen','collection','entry'];}
@@ -58,7 +67,7 @@ let pinAt=-Infinity,pinKey='';const pinDirection=new T.Vector3();function pin(no
  const key=`${x.toFixed(2)},${y.toFixed(2)},${Math.atan2(pinDirection.x,-pinDirection.z).toFixed(5)},${V.getCurrent()}`;
  if(key===pinKey)return;pinKey=key;$('cameraPin').setAttribute('transform',`translate(${x},${y}) rotate(${Math.atan2(pinDirection.x,-pinDirection.z)*180/Math.PI})`);$('cameraPin').style.display=V.getCurrent()==='all'?'none':'';
 }pin();
-roomChanged('all');setMode('model');window.HOME_TOUR={invalidatePlan,refreshPlan:invalidatePlan,showSource,getSource:()=>planSource,setMode,ensurePlan,planImage:ensurePlan,areas,getMode:()=>mode};
+roomChanged('all');setMode('model');window.HOME_TOUR={applySurveyAreas,invalidatePlan,refreshPlan:invalidatePlan,showSource,getSource:()=>planSource,setMode,ensurePlan,planImage:ensurePlan,areas,getMode:()=>mode};
 window.addEventListener('tvrotationend',invalidatePlan);
 // Refresh after the shared material modules finish; initial plan predates flooring.js.
 window.addEventListener('load',async()=>{await window.HOME_FLOORING?.ready;invalidatePlan();if(!window.HOME_UI)ensurePlan();});
