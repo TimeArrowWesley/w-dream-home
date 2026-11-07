@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>衛浴資料｜W 夢想之家</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: a contractor's spec sheet. Plan first, numbers beside it, blanks to fill on site. */
+:root{--bg:#f6f7f6;--paper:#fff;--fg:#1d2726;--muted:#5c6a68;--line:#ccd4d2;--accent:#17606a;--accent-soft:#e2eeee;--warn:#8a5a00;--warn-soft:#fbf1dc;--wall:#37423f;--fixture:#dfe5e3;
+--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;--mono:"IBM Plex Mono",Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a19;--paper:#1c2423;--fg:#e6ecea;--muted:#9fadaa;--line:#36423f;--accent:#6cc1c9;--accent-soft:#1f3436;--warn:#e9bb62;--warn-soft:#382d15;--wall:#c5d0cd;--fixture:#2c3735;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141a19;--paper:#1c2423;--fg:#e6ecea;--muted:#9fadaa;--line:#36423f;--accent:#6cc1c9;--accent-soft:#1f3436;--warn:#e9bb62;--warn-soft:#382d15;--wall:#c5d0cd;--fixture:#2c3735;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--sans)}
+.sheet{max-width:980px;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:34px}
+.sheet>*{min-width:0}
+header{display:grid;gap:8px;border-bottom:2px solid var(--fg);padding-bottom:16px}
+.eyebrow{font:500 12px var(--sans);letter-spacing:.06em;color:var(--muted)}
+h1{font-size:30px;line-height:1.25;margin:0;text-wrap:balance}
+h2{font-size:21px;line-height:1.35;margin:0;text-wrap:balance}
+p{margin:0;max-width:68ch}
+section{display:grid;gap:14px;min-width:0}
+.note{background:var(--warn-soft);color:var(--fg);padding:12px 14px;border-left:3px solid var(--warn)}
+.note b{color:var(--warn)}
+.scroll{overflow-x:auto;min-width:0}
+table{border-collapse:collapse;width:100%;background:var(--paper);font-size:14px}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:500;white-space:nowrap}
+td.n,.mono{font-family:var(--mono),var(--sans);font-variant-numeric:tabular-nums}
+td.n{white-space:nowrap}
+td.blank{min-width:110px;height:34px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.two>*{min-width:0}
+.stack{display:grid;gap:12px}
+.plan{background:var(--paper);border:1px solid var(--line);padding:8px}
+svg{display:block;width:100%;height:auto;font-family:var(--sans)}
+.plan-small{max-width:560px}
+.w{fill:none;stroke:var(--wall);stroke-width:4}
+.fx{fill:var(--fixture);stroke:var(--wall);stroke-width:1}
+.dim{fill:var(--muted);font-size:13px}
+.lab{fill:var(--fg);font-size:14px}
+.pt{fill:var(--accent)}
+.pt-t{fill:var(--paper);font:500 12px var(--mono);text-anchor:middle}
+.door{stroke:var(--paper);stroke-width:7}
+.sl{fill:none;stroke:var(--wall);stroke-width:1;stroke-dasharray:4 3}
+figure{margin:0;display:grid;gap:6px;min-width:0}
+figure img{width:100%;height:420px;object-fit:contain;background:var(--paper);border:1px solid var(--line);display:block}
+figcaption{font-size:13px;color:var(--muted)}
+ul,ol{margin:0;padding-left:1.3em;display:grid;gap:6px}
+.tag{display:inline-block;font-size:12px;padding:0 6px;border:1px solid var(--line);border-radius:3px;white-space:nowrap}
+.ok{color:var(--accent);border-color:var(--accent)}
+.todo{color:var(--warn);border-color:var(--warn)}
+footer{font-size:13px;color:var(--muted);display:grid;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+a{color:var(--accent)}
+@media (max-width:720px){.two{grid-template-columns:minmax(0,1fr)}h1{font-size:25px}}
+@media print{:root{--bg:#fff;--paper:#fff;--fg:#000;--muted:#333;--line:#888;--accent:#0b4a52;--accent-soft:#eee;--warn:#6b4500;--warn-soft:#f6f0e2;--wall:#000;--fixture:#e8e8e8}.sheet{max-width:none;padding:0;gap:18px}body{font-size:12px}table{font-size:11.5px}figure img{height:260px}.pagebreak{break-before:page}tr{break-inside:avoid}}
+*{box-sizing:border-box}body{margin:0}
+.siteNav{max-width:980px;margin:0 auto;padding:18px max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}.siteNav .brand{font:20px Georgia,"Microsoft JhengHei",serif;letter-spacing:.08em}.siteNav .links{display:flex;gap:16px;flex-wrap:wrap}.siteNav a{text-decoration:none}@media print{.siteNav{display:none}}
+</style>
+</head>
+<body>
+<nav class="siteNav" aria-label="專案功能"><span class="brand">W 夢想之家</span><span class="links"><a id="returnDesign" href="index.html">← 空間設計</a><a id="resourcesLink" href="設計資料.html">設計資料</a></span></nav>
+<main class="sheet">
+<header>
+  <div class="eyebrow">新北泰山・勝輝凰邸・A1 戶 14 樓・衛浴現場資料</div>
+  <h1>勝輝凰邸 衛浴資料</h1>
+  <p>主要先確認馬桶與面盆能不能裝、怎麼換。型號都還沒定，請依這份條件建議。入住目標 2027 年 4 到 5 月，使用者 2 人，色系目前傾向霧黑。</p>
+</header>
+
+<section>
+  <div class="note"><b>看圖先注意房間名稱。</b>建商圖上的「主浴」是我們現在的客浴。我們的主浴是建商的「臥室 1 浴室」和「客浴室」打通而成。下文一律用我們的叫法。</div>
+  <div class="scroll"><table>
+    <tr><th>我們的叫法</th><th>建商圖上的名稱</th><th>客變圖項次</th><th>內淨尺寸</th><th>建商原配，客變都退掉</th></tr>
+    <tr><td><b>主浴</b>，大間</td><td>臥室 1 浴室＋客浴室</td><td class="n">10、12、13、14</td><td class="n">183 × 375 cm</td><td>壁掛半腳面盆、單槍龍頭、單體馬桶加免治、一字型淋浴門、定溫淋浴龍頭、明鏡</td></tr>
+    <tr><td><b>客浴</b>，小間</td><td>主浴</td><td class="n">9、11、15</td><td class="n">141 × 150 cm</td><td>下嵌面盆、人造石檯面、單槍龍頭、全自動馬桶、L 型淋浴門、定溫淋浴龍頭、明鏡</td></tr>
+  </table></div>
+  <p>內淨尺寸是設計師 2026-11-03 現況平面圖的實測值，以現有磁磚面計。下方點位距離取自 1140109 水電圖的向量量測，那是結構尺寸，註明配置誤差約 4 cm。設計師轉述：除了位置移動，管徑和出水口間距都沒改，所以可用下方原配型號反推。</p>
+</section>
+
+<section>
+  <h2>主浴，大間 淨 183 × 375 cm</h2>
+  <div class="plan plan-small"><svg viewBox="0 0 460 590" role="img" aria-label="主浴平面與管位示意，與建商水電圖同方向">
+    <line class="sl" x1="168" y1="30" x2="168" y2="465"/><line class="sl" x1="220" y1="30" x2="220" y2="465"/>
+    <rect class="fx" x="138" y="33" width="195" height="91" rx="45"/>
+    <text class="dim" x="190" y="72" text-anchor="middle">浴缸 150×70</text>
+    <rect class="w" x="90" y="30" width="247" height="494"/>
+    <line class="door" x1="90" y1="323" x2="90" y2="427"/>
+    <text class="dim" x="70" y="375" text-anchor="middle" transform="rotate(-90 70 375)">門洞 80，平開</text>
+    <rect class="sl" x="330" y="100" width="14" height="16"/>
+    <text class="dim" x="194" y="490" text-anchor="middle">天花內有樑，寬 40</text>
+    <text class="dim" x="213" y="18" text-anchor="middle">浴缸端牆</text>
+    <text class="dim" x="213" y="545" text-anchor="middle">門端牆</text>
+    <text class="lab" x="366" y="300" text-anchor="middle" transform="rotate(90 366 300)">馬桶那面長牆，給水都在這面</text>
+    <text class="dim" x="350" y="96" text-anchor="start">5 吋排風套管</text>
+    <circle class="pt" cx="236" cy="78" r="10"/><text class="pt-t" x="236" y="82">1</text>
+    <circle class="pt" cx="337" cy="76" r="9"/><text class="pt-t" x="337" y="80">2</text>
+    <circle class="pt" cx="324" cy="134" r="10"/><text class="pt-t" x="324" y="138">3</text>
+    <circle class="pt" cx="337" cy="174" r="9"/><text class="pt-t" x="337" y="178">4</text>
+    <circle class="pt" cx="337" cy="193" r="9"/><text class="pt-t" x="337" y="197">4</text>
+    <circle class="pt" cx="316" cy="264" r="10"/><text class="pt-t" x="316" y="268">5</text>
+    <circle class="pt" cx="337" cy="271" r="9"/><text class="pt-t" x="337" y="275">6</text>
+    <circle class="pt" cx="294" cy="303" r="10"/><text class="pt-t" x="294" y="307">7</text>
+    <circle class="pt" cx="324" cy="355" r="10"/><text class="pt-t" x="324" y="359">8</text>
+    <circle class="pt" cx="337" cy="430" r="9"/><text class="pt-t" x="337" y="434">9</text>
+    <circle class="pt" cx="337" cy="450" r="9"/><text class="pt-t" x="337" y="454">9</text>
+    <circle class="pt" cx="285" cy="524" r="11"/><text class="pt-t" x="285" y="528">10</text>
+    <text class="dim" x="213" y="575" text-anchor="middle">與建商水電圖同方向，按比例繪製，單位 cm</text>
+  </svg></div>
+  <div class="scroll"><table>
+    <tr><th>#</th><th>點位</th><th>距浴缸端牆</th><th>距長牆</th><th>說明</th></tr>
+    <tr><td class="n">1</td><td>浴缸排水</td><td class="n">37</td><td class="n">78</td><td>建商獨立缸 1067CA，W150 × D70 × H57，誤差 ±2。圖上離長牆約 3、離端牆約 2。現場尚未進場，等建商點交。</td></tr>
+    <tr><td class="n">2</td><td>鍍鉻龍頭與花灑</td><td class="n">約 35</td><td class="n">牆上</td><td>位置由照片估算。圖面符號畫在距端牆 7、距長牆 16，以現場為準。建商清單的浴缸龍頭是 INAX BFV-8000S-1C，是否就是這支待確認。</td></tr>
+    <tr><td class="n">3</td><td>地排</td><td class="n">80</td><td class="n">10</td><td></td></tr>
+    <tr><td class="n">4</td><td>淋浴冷熱水</td><td class="n">111、125</td><td class="n">牆上</td><td>離地估約 85，孔距估約 15。</td></tr>
+    <tr><td class="n">5</td><td>免治插座</td><td class="n">180</td><td class="n">15</td><td>圖例 H=30。</td></tr>
+    <tr><td class="n">6</td><td>馬桶給水</td><td class="n">185</td><td class="n">牆上</td><td></td></tr>
+    <tr><td class="n">7</td><td>馬桶排水中心</td><td class="n">210</td><td class="n">33</td><td>地排。33 是到結構面。原配單體馬桶的排距是 305 mm。</td></tr>
+    <tr><td class="n">8</td><td>地排</td><td class="n">250</td><td class="n">10</td><td></td></tr>
+    <tr><td class="n">9</td><td>面盆冷熱水</td><td class="n">308、323</td><td class="n">牆上</td><td>排水在中間，距端牆 315。高度比照客浴估算，冷熱左右待確認。</td></tr>
+    <tr><td class="n">10</td><td>浴室插座</td><td class="n">門端牆</td><td class="n">40</td><td>圖例 H=120。</td></tr>
+  </table></div>
+  <p><b>現場對照：</b>由門口看向浴缸端，右牆由遠到近是鍍鉻龍頭、封口的淋浴冷熱水、插座與馬桶給水，地面是馬桶排水。現場照片另外提供。</p>
+  <p><b>這間要選：</b>馬桶、面盆與面盆龍頭、檯面或浴櫃、鏡子、淋浴龍頭或淋浴柱、淋浴玻璃、毛巾架與置物架。浴缸龍頭是否更換待定。</p>
+</section>
+
+<section class="pagebreak">
+  <h2>客浴，小間 淨 141 × 150 cm</h2>
+  <div class="plan plan-small"><svg viewBox="0 0 430 410" role="img" aria-label="客浴平面與管位示意，與建商水電圖同方向">
+    <rect class="w" x="70" y="30" width="290" height="310"/>
+    <line class="door" x1="360" y1="32" x2="360" y2="180"/>
+    <text class="dim" x="382" y="106" text-anchor="middle" transform="rotate(90 382 106)">門洞 75，內開</text>
+    <text class="lab" x="46" y="185" text-anchor="middle" transform="rotate(-90 46 185)">面盆和馬桶那面牆，長 155</text>
+    <text class="dim" x="215" y="18" text-anchor="middle">面盆側端牆</text>
+    <text class="dim" x="215" y="362" text-anchor="middle">馬桶側端牆</text>
+    <circle class="pt" cx="100" cy="320" r="10"/><text class="pt-t" x="100" y="324">1</text>
+    <circle class="pt" cx="70" cy="310" r="10"/><text class="pt-t" x="70" y="314">2</text>
+    <circle class="pt" cx="136" cy="260" r="10"/><text class="pt-t" x="136" y="264">3</text>
+    <circle class="pt" cx="70" cy="120" r="10"/><text class="pt-t" x="70" y="124">4</text>
+    <circle class="pt" cx="70" cy="90" r="10"/><text class="pt-t" x="70" y="94">4</text>
+    <circle class="pt" cx="180" cy="50" r="10"/><text class="pt-t" x="180" y="54">5</text>
+    <circle class="pt" cx="130" cy="30" r="10"/><text class="pt-t" x="130" y="34">6</text>
+    <text class="dim" x="215" y="395" text-anchor="middle">與建商水電圖同方向，按比例繪製，單位 cm</text>
+  </svg></div>
+  <div class="scroll"><table>
+    <tr><th>#</th><th>點位</th><th>距馬桶側端牆</th><th>距該面牆</th><th>說明</th></tr>
+    <tr><td class="n">1</td><td>免治插座</td><td class="n">10</td><td class="n">15</td><td>圖例 H=30。</td></tr>
+    <tr><td class="n">2</td><td>馬桶給水</td><td class="n">15</td><td class="n">牆上</td><td>照片在插座正下方，離地估約 18–20。</td></tr>
+    <tr><td class="n">3</td><td>馬桶排水中心</td><td class="n">40</td><td class="n">33</td><td>地排。33 是到結構面。</td></tr>
+    <tr><td class="n">4</td><td>面盆冷熱水</td><td class="n">110、125</td><td class="n">牆上</td><td>排水在中間，距端牆 118。照片是橘色管從牆面出水。</td></tr>
+    <tr><td class="n">5</td><td>地排</td><td class="n">145</td><td class="n">55</td><td>靠門那側牆邊，驗屋照片與水電圖相符。</td></tr>
+    <tr><td class="n">6</td><td>浴室插座</td><td class="n">面盆側端牆</td><td class="n">30</td><td>圖例 H=120。</td></tr>
+  </table></div>
+  <p><b>現場對照：</b>由門口看入，右牆是面盆冷熱水和橘色排水，轉角附近是插座、馬桶給水與馬桶排水。現場照片另外提供，取自驗屋報告第 29 頁。</p>
+  <p><b>這間要選：</b>馬桶、面盆與面盆龍頭、檯面或浴櫃、鏡子、毛巾架與置物架，以及一支清潔沖頭。</p>
+  <p><b>清潔沖頭：</b>客浴不裝淋浴，圖上也沒有淋浴出水口。沖頭用來沖地板和洗馬桶，擬從馬桶給水分接，只有冷水，待水電確認。</p>
+  <p><b>空間提醒：</b>房間小，馬桶本體深度和門的開啟要一起看。原配 S160 的本體深度約 700 mm。</p>
+</section>
+
+<section class="pagebreak">
+  <h2>建商原配型號，供反查</h2>
+  <p>出自建商全案材料清單照片，清單涵蓋整棟，適用樓層和戶別請以建商確認為準。下嵌面盆和 LFV-1402S 的備註沒有寫到 14 樓，但這戶的追減單確實退了下嵌面盆。</p>
+  <div class="scroll"><table>
+    <tr><th>品項</th><th>型號</th><th>尺寸與可推得的條件</th><th>推定原裝位置</th><th>查證</th></tr>
+    <tr><td>全自動馬桶</td><td class="mono">Panasonic ALAUNO S160 Type 1<br>CH1601STW</td><td>地排。可用固定管 120/200 mm，或調整管 305–510 mm，所以無法單獨反推排距。本體約 383 × 700 × 539 mm，這是經銷商標示的同系列壁排款，地排款待確認。</td><td>客浴</td><td><span class="tag ok">經銷商規格</span></td></tr>
+    <tr><td>單體馬桶</td><td class="mono">Panasonic CHZLGN30WF2T<br>＋便座 DL-F509BTWS</td><td>W385 × D710 × H670 mm。下排水，排距 305 mm，是排水距離最直接的線索。</td><td>主浴</td><td><span class="tag ok">代理商與經銷商</span></td></tr>
+    <tr><td>下嵌面盆</td><td class="mono">INAX AL-2298V-TW/BW1</td><td>W561 × D411 × H190 mm。</td><td>客浴</td><td><span class="tag ok">清單＋經銷商</span></td></tr>
+    <tr><td>半腳面盆</td><td class="mono">INAX AL-312VFC-TW/BW1<br>＋L-298VC-TW/BW1</td><td>W530 × D435 × H508 mm。由 AL-298VFC 變更而來。</td><td>主浴</td><td><span class="tag ok">清單＋經銷商</span></td></tr>
+    <tr><td>面盆單槍龍頭</td><td class="mono">INAX LFV-1402S、LFV-2012S</td><td>出水高度待原廠圖。</td><td>依樓層備註</td><td><span class="tag todo">尺寸待查</span></td></tr>
+    <tr><td>龍頭配件</td><td class="mono">三角凡而 G007-TRS-S607<br>P 彎管 G007-W-423-1</td><td>面盆用 P 彎，和現場牆面排水一致。</td><td>面盆</td><td><span class="tag ok">清單＋照片</span></td></tr>
+    <tr><td>浴缸</td><td class="mono">1067CA 獨立型</td><td>W150 × D70 × H57 cm，誤差 ±2，和水電圖相符。</td><td>主浴</td><td><span class="tag ok">清單＋圖面</span></td></tr>
+    <tr><td>浴缸龍頭</td><td class="mono">INAX BFV-8000S-1C</td><td>經銷商列為淋浴龍頭。孔距待原廠圖。</td><td>主浴</td><td><span class="tag todo">孔距待查</span></td></tr>
+    <tr><td>平台淋浴花灑</td><td class="mono">INAX FB5781＋滑桿 FH6115</td><td>客變已退。原孔距可作淋浴出水參考。</td><td>原淋浴區</td><td><span class="tag todo">孔距待查</span></td></tr>
+    <tr><td>鏡與平台</td><td class="mono">化妝鏡 55 × 70 cm<br>INAX KF-542V</td><td>平台 500 × 125 × 22 mm。明鏡客變已退，平台是否退待確認。</td><td>依樓層備註</td><td><span class="tag ok">清單＋INAX 頁面摘要</span></td></tr>
+    <tr><td>暖風機、換氣扇</td><td class="mono">Panasonic FV-30BU3R/W<br>FV-21CV2R/W</td><td>客變把暖風機移到主浴，抽風機移到客浴，供確認電源與天花配置。</td><td>天花</td><td><span class="tag ok">清單＋客變圖</span></td></tr>
+  </table></div>
+  <p>INAX 台灣官網在查證當時暫停服務，所以孔距和出水高度沒有查到原廠圖。麗舍或建商如有這些型號的安裝資料，就能補齊。</p>
+</section>
+
+<section>
+  <h2>水與熱水條件</h2>
+  <div class="scroll"><table>
+    <tr><th>項目</th><th>數值</th><th>來源與限制</th></tr>
+    <tr><td>水壓</td><td class="n">0.180 MPa</td><td>2026-10-30 驗屋。量測點和是否為出水狀態未註明，報告參考範圍 0.05–0.35 MPa。</td></tr>
+    <tr><td>水質</td><td class="n">54 ppm</td><td>2026-10-30 驗屋。</td></tr>
+    <tr><td>熱水器</td><td>機型未定</td><td>圖例熱水器出口 H=120 cm。若選恆溫淋浴，請提供水壓與熱水能力需求。</td></tr>
+    <tr><td>樓板與梁</td><td class="n">樓板 CH309–310 cm</td><td>設計師 2026-11-03 現況圖實測。主浴上方有梁底 258 的橫梁，沿長向通過，約在距門側牆 55–97 cm；面盆端另有梁底 236 的梁，伸入約 42 cm。客浴上方有梁底 238 的縱梁，約在距馬桶側牆 62–125 cm。梁的位置和寬度是依圖面比例量的，圖上沒有標註。暖風機、抽風機要避開梁下。</td></tr>
+  </table></div>
+</section>
+
+<section class="pagebreak">
+  <h2>現場尺寸：實測與估算</h2>
+  <p>設計師 2026-11-03 現況圖已有兩間的內淨尺寸、樓板和梁底高度，下表標「實測」的就是這些值。管線高度和馬桶排距圖上沒有，仍由驗屋照片、圖面和原配型號推估。比例尺：地磚 30 × 30 cm，牆磚每排約 30 cm，地面到天花約 8 排。用這個比例算出的插座高度約 30 cm，和圖例 H=30 相符。下單或改管前，仍要由水電或設計師實測。</p>
+  <div class="scroll"><table>
+    <tr><th>主浴</th><th>估算 cm</th><th>依據</th><th>可信度</th></tr>
+    <tr><td>馬桶排水中心到完成牆面</td><td class="n">約 30，範圍 28–33</td><td>照片用地磚換算約 29.6；原配排距 305 mm；圖面到結構面 33，扣掉由實測推得的磁磚厚約 3.5，約 29.5。</td><td><span class="tag ok">較高</span></td></tr>
+    <tr><td>馬桶給水離地</td><td class="n">約 18–20</td><td>比照客浴照片，主浴照片也在插座正下方。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>馬桶給水距排水中心，沿牆</td><td class="n">約 25</td><td>圖面 185 與 210 的差。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>淋浴冷熱水離地</td><td class="n">約 85，範圍 80–90</td><td>照片算牆磚排數，兩孔分別約 86 和 82。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>淋浴冷熱水孔距</td><td class="n">約 15</td><td>圖面符號間距，照片約 15–18。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>鍍鉻龍頭離地</td><td class="n">約 75，範圍 70–80</td><td>照片算牆磚排數。高於浴缸 H57。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>鍍鉻龍頭距浴缸端牆</td><td class="n">約 35</td><td>照片算牆磚欄數，約在浴缸寬度中央。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>面盆冷熱水離地、孔距</td><td class="n">約 46，孔距約 15</td><td>主浴照片角度過斜，比照客浴。</td><td><span class="tag todo">低</span></td></tr>
+    <tr><td>面盆排水離地</td><td class="n">約 40</td><td>比照客浴。</td><td><span class="tag todo">低</span></td></tr>
+    <tr><td>內淨尺寸，以現有磁磚面計</td><td class="n">183 × 375</td><td>設計師現況圖標註。</td><td><span class="tag ok">實測</span></td></tr>
+    <tr><td>現有天花高度</td><td class="n">低於 236，約 230–235</td><td>面盆端梁底實測 236。若是整片平頂，天花不會高於梁底。原本由牆磚排數估 240，可能偏高幾公分。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>磁磚加底層厚度</td><td class="n">每側約 2.5–3.5</td><td>水電圖結構 190 × 380 與實測 183 × 375 的差，假設兩側平均。</td><td><span class="tag todo">中</span></td></tr>
+  </table></div>
+  <div class="scroll"><table>
+    <tr><th>客浴</th><th>估算 cm</th><th>依據</th><th>可信度</th></tr>
+    <tr><td>馬桶排水中心到完成牆面</td><td class="n">約 31，範圍 30–34</td><td>圖面到結構面 33，扣掉由實測推得的磁磚厚約 2，約 31；照片換算約 34。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>馬桶排水中心到側邊端牆</td><td class="n">約 38</td><td>照片用地磚換算約 38.7；圖面 40。</td><td><span class="tag ok">較高</span></td></tr>
+    <tr><td>馬桶給水離地</td><td class="n">約 18–20</td><td>照片算牆磚比例，在 H=30 插座正下方。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>馬桶給水距排水中心，沿牆</td><td class="n">約 25</td><td>圖面 15 與 40 的差。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>面盆冷熱水離地</td><td class="n">約 46，範圍 42–50</td><td>照片用視線水平和牆磚比例換算。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>面盆冷熱水孔距</td><td class="n">約 15</td><td>圖面符號間距，照片相近。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>面盆排水離地</td><td class="n">約 40，範圍 36–45</td><td>照片換算，比給水低約 5–6。一般常見 45–55，這裡偏低。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>馬桶排水到面盆排水，沿牆</td><td class="n">約 78</td><td>圖面 118 與 40 的差。</td><td><span class="tag ok">較高</span></td></tr>
+    <tr><td>地排位置</td><td class="n">距面盆側端牆約 10，距設備牆約 55</td><td>圖面和照片相符。</td><td><span class="tag ok">較高</span></td></tr>
+    <tr><td>內淨尺寸，以現有磁磚面計</td><td class="n">141 × 150</td><td>設計師現況圖標註。和水電圖結構 145 × 155 比，每側磁磚約 2–2.5。</td><td><span class="tag ok">實測</span></td></tr>
+    <tr><td>門</td><td class="n">門洞寬 75、高 220，淨寬約 70</td><td>門高是現況圖實測 DH220。門洞寬兩張圖都約 75，但沒有標註，淨寬扣門框估算。照片為內開，門片收向面盆側端牆。</td><td><span class="tag todo">中</span></td></tr>
+    <tr><td>現有天花高度</td><td class="n">低於 238，約 230–235</td><td>上方縱梁底實測 238。若是整片平頂，天花不會高於梁底。原本由牆磚排數估 240，可能偏高幾公分。</td><td><span class="tag todo">中</span></td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>想請麗舍確認</h2>
+  <ol>
+    <li><b>馬桶：</b>排水中心估約主浴 30、客浴 31 cm，地排。依現有給水和 H=30 插座，建議哪些機型？客浴要注意本體深度。</li>
+    <li><b>面盆：</b>現場是牆面排水，估約離地 40，給水約 46。改成檯面或浴櫃時，哪些盆型和龍頭高度可以不改管？</li>
+    <li><b>淋浴：</b>主浴出水口估約只有離地 85、孔距約 15。淋浴柱或定溫龍頭可以直接接嗎？還是要改管？0.18 MPa 夠不夠？熱水器需要什麼條件？</li>
+    <li><b>浴缸龍頭：</b>現有牆面出水要配 150 × 70 獨立缸，換霧黑款是否構得到缸內？</li>
+    <li><b>客浴沖頭：</b>有哪些霧黑款可關水，可否從馬桶給水分接？</li>
+    <li><b>淋浴玻璃與配件：</b>這兩項麗舍是否提供？配件鎖固要避開什麼？</li>
+    <li><b>文件：</b>請提供所選品項的報價、交期和安裝圖，方便交給設計師與水電。</li>
+  </ol>
+  <p>目前候選僅供參考，都可以換：hansgrohe Raindance Select S 27633-67、AddStoris 41751 和 41741、KOHLER Aleo K-98868T。麗舍官網把 Aleo K-98868T 列在適用半嵌盆和碗公盆的高腳龍頭。</p>
+</section>
+
+<footer>
+  <div>資料來源：設計師 2026-11-03 現況平面圖 P-03，1140109-14F-A1 合併檔的建築圖、水電圖與追加減單，2026-10-30 驗屋報告，建商材料清單照片，設計師對話。</div>
+  <div>規格查證：<a href="https://www.tsannbo.com">璨柏國際，Panasonic 台灣代理</a>、<a href="https://www.chang-suo.com.tw/product-detail-3323365">長梭企業 S160</a>、<a href="https://www.chang-suo.com.tw/product-detail-3323298">長梭企業 CHZLGN30WF2T</a>、<a href="https://hongtoilet.tw">鴻暻衛浴 INAX</a>、<a href="https://www.home-boutique.com/pages/brand">麗舍官網</a>。</div>
+  <div>圖面數字和估算值都不能直接當下單尺寸，要以現場實測和建商給排水圖為準。</div>
+</footer>
+</main>
+<script src="version-registry.js?v=20260924-ui08"></script><script>
+(()=>{const id=new URLSearchParams(location.search).get("version");const v=window.HOME_VERSION_REGISTRY?.versions.find(v=>v.id===id);if(!v)return;document.getElementById("returnDesign").href=v.path;document.getElementById("resourcesLink").href="設計資料.html?version="+encodeURIComponent(v.id);})();
+</script>
+</body>
+</html>

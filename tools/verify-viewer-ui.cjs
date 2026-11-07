@@ -92,7 +92,7 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   c.HOME_PLAN_MEASURE.setOn(true);assert(c.HOME_PLAN_MEASURE.on());
   c.HOME_TOUR.showSource('walls');assert(!c.HOME_PLAN_MEASURE.on());assert($('pmToggle').disabled);
   c.HOME_TOUR.showSource('model');assert(!$('pmToggle').disabled);
-  assert.equal(d.querySelectorAll('.uiPrimary > button, .uiPrimary > a').length,3);
+  assert.equal(d.querySelectorAll('.uiPrimary > button, .uiPrimary > a').length,4);
   assert.equal($('layoutSwitch').children.length,5);assert.deepEqual(Array.from(d.querySelectorAll('.uiVersionHistory [data-proposal]'),b=>b.dataset.proposal),['v4','v5']);assert(!/原V[234]|新增/.test($('layoutSwitch').textContent));assert.equal(d.querySelectorAll('#uiRoomList [data-id]').length,13);
   assert.equal(cssValue(d,d.querySelector('body > header'),'display'),'flex');assert.equal(cssValue(d,$('uiSidebar'),'display'),'flex');assert.equal(cssValue(d,$('planPanel'),'display'),'none');
   assert.equal(cssValue(d,d.querySelector('.shell'),'height'),'auto');assert.equal(cssValue(d,$('scenePanel'),'grid-template-rows'),'auto minmax(0,1fr) auto');
@@ -156,7 +156,7 @@ for(const v of ['v0','v1','v2','v3','v4','v5']){
   $('uiRoomFurniture').click();assert(d.querySelector('.fcDialog').open);assert(d.querySelector('.fcMain h3').textContent.includes('書房'));
   const back=Array.from(d.querySelectorAll('.fcTitleRow button')).find(b=>b.textContent.includes('空間設計'));back.click();assert(!d.querySelector('.fcDialog').open);
   if(['v2','v3'].includes(v)){assert(!$('rotatingTVPanel'));assert($('aStoolToggle'));}
-  for(const [id,file] of [['homeFurnitureCatalog','家具清單.html'],['uiResourcesButton','設計資料.html']]){
+  for(const [id,file] of [['homeFurnitureCatalog','家具清單.html'],['uiResourcesButton','設計資料.html'],['uiBathButton','衛浴資料.html']]){
     const a=$(id),url=new URL(a.href);assert.equal(a.tagName,'A');assert.equal(a.target,'_blank');assert.equal(a.rel,'noopener');
     assert.equal(decodeURI(url.pathname),'/project/'+file,'nested versions link to shared root');assert.equal(url.searchParams.get('version'),v);
     assert(!a.onclick,'navigation does not trigger old dialog handler');

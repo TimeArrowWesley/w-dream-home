@@ -51,7 +51,8 @@
     const furniture = pageLink('家具設備', 'homeFurnitureCatalog', '家具清單.html');
     oldFurniture?.replaceWith(furniture);
     const resourcesButton = pageLink('設計資料', 'uiResourcesButton', '設計資料.html');
-    primary.append(designTab); if (furniture) primary.append(furniture); primary.append(resourcesButton);
+    const bathButton = pageLink('衛浴資料', 'uiBathButton', '衛浴資料.html');
+    primary.append(designTab); if (furniture) primary.append(furniture); primary.append(resourcesButton, bathButton);
     const actions = make('div', 'uiHeaderActions');
     const exportMenu = make('details', 'uiMenu uiExportMenu');
     exportMenu.append(make('summary', '', '匯出圖面'));
