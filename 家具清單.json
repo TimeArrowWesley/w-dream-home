@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20261109-bath-picks-r1",
-  "updatedAt": "2026-11-09",
+  "revision": "20261110-bath-ab-group-r1",
+  "updatedAt": "2026-11-10",
   "source": {
     "title": "W夢想之家家具設備規格表",
     "url": "https://claude.ai/code/artifact/8efebff0-f6bf-4b4d-8099-99282e849203",
@@ -1392,9 +1392,31 @@
       "sourceAxId": 3619
     },
     {
+      "id": "gb06-basin",
+      "room": "gbath",
+      "name": "方案 A・面盆",
+      "brand": "TOTO 檯面上臉盆\nL1705TW#MBL 霧黑",
+      "specs": "W550 × D380 × H125 mm，4.5 L；建議盆緣離地 82 cm；檯面厚 10–30 mm。\n配檯面龍頭時盆後緣到牆 115 mm、盆前緣離牆 495 mm，檯面要約 50 cm 深。",
+      "priceText": "27,200",
+      "notes": "金額為 TOTO 官網價，期貨品。與方案 B（Spacity 浴櫃組）二選一。",
+      "status": "待確認",
+      "includeInBudget": true,
+      "modelKeys": [],
+      "modelSearch": [],
+      "currentNote": "2026-11-09 依衛浴現場確認單（衛浴資料.html）更新；設計師 11/12 現場丈量。",
+      "modelDirty": false,
+      "archived": false,
+      "original": {
+        "name": "面盆",
+        "brand": "型號待選",
+        "specs": "2026-11-03 依客變圖退項補列",
+        "priceText": "待報價"
+      }
+    },
+    {
       "id": "claude-3649",
       "room": "gbath",
-      "name": "面盆龍頭（方案 A）",
+      "name": "方案 A・面盆龍頭",
       "brand": "TOTO GF 系列 臉盆用單槍龍頭\nTLG11302P 短／TLG11304P 中／TLG11306P 長",
       "specs": "單孔 Ø35、檯面厚 30 mm 以內、附按壓式排水。\n出水口高：短 81、中 146、長 196 mm。L1705TW 盆高 125 mm，短款比盆緣低不能用；建議長款。\n官網三款都沒有列顏色選項，霧黑要向店家確認。",
       "priceText": "10,500–12,700",
@@ -1415,31 +1437,9 @@
       "sourceAxId": 3649
     },
     {
-      "id": "gb06-basin",
-      "room": "gbath",
-      "name": "面盆（方案 A）",
-      "brand": "TOTO 檯面上臉盆\nL1705TW#MBL 霧黑",
-      "specs": "W550 × D380 × H125 mm，4.5 L；建議盆緣離地 82 cm；檯面厚 10–30 mm。\n配檯面龍頭時盆後緣到牆 115 mm、盆前緣離牆 495 mm，檯面要約 50 cm 深。",
-      "priceText": "27,200",
-      "notes": "金額為 TOTO 官網價，期貨品。與方案 B（Spacity 浴櫃組）二選一。",
-      "status": "待確認",
-      "includeInBudget": true,
-      "modelKeys": [],
-      "modelSearch": [],
-      "currentNote": "2026-11-09 依衛浴現場確認單（衛浴資料.html）更新；設計師 11/12 現場丈量。",
-      "modelDirty": false,
-      "archived": false,
-      "original": {
-        "name": "面盆",
-        "brand": "型號待選",
-        "specs": "2026-11-03 依客變圖退項補列",
-        "priceText": "待報價"
-      }
-    },
-    {
       "id": "gb07-vanity",
       "room": "gbath",
-      "name": "檯面・浴櫃（方案 A）",
+      "name": "方案 A・檯面浴櫃（訂製）",
       "brand": "裝潢訂製",
       "specs": "模型值 66 × 45 × 50 cm，櫃底離地 25 cm（比例估算）。\n配 L1705TW 加後方龍頭，深度要約 50 cm 以上；檯面約 69.5 cm（盆緣 82 cm）。",
       "priceText": "待報價",
@@ -1461,7 +1461,7 @@
     {
       "id": "gb10-spacity",
       "room": "gbath",
-      "name": "浴櫃＋面盆（方案 B）",
+      "name": "方案 B・浴櫃＋面盆",
       "brand": "KOHLER Spacity 60 cm 浴櫃組\n檯面盆 31554T-0＋浴櫃 32161T-PPW/PPG＋浴櫃腳 32251T-MRL 或 28812T-APB",
       "specs": "面盆 61 × 45.8 cm，總高 18.2 cm（櫃頂以上 10 cm）；龍頭孔距右緣、後緣各 7 cm；排水孔 Ø3.5 cm，距左緣約 23.5、距後緣 11.5 cm。\n浴櫃外寬 57.9（正面門板 54.3）× 深 44.1 × 高 62.5 cm；上層開放格，下層大抽屜。\n壁掛安裝，牆要能吃重；櫃腳 16 cm 是選配。裝櫃腳時盆緣約 88.5 cm，比方案 A 高約 6.5 cm；想要約 83 cm 就不裝櫃腳，櫃底離地約 10.5 cm。\n牆排要避開下層抽屜；手機平台要改成牆面另做或用面盆左側台面。",
       "priceText": "22,800",
@@ -1478,7 +1478,7 @@
     {
       "id": "gb11-parallel",
       "room": "gbath",
-      "name": "面盆龍頭（方案 B）",
+      "name": "方案 B・面盆龍頭",
       "brand": "KOHLER Parallel 檯面單槍龍頭\n23472T-4 BL 原色黑",
       "specs": "出水口高 105 mm、伸出 116 mm，總高 189 mm；單孔，檯面厚最多 46 mm；附金屬彈跳下水器；8.3 lpm。\n裝在 Spacity 31554 面盆右後角的龍頭台；彈跳下水器是否和 31554 相容要向店家確認。\n只配方案 B：L1705TW 盆高 125 mm，這支出水口比盆緣低，不能用。",
       "priceText": "11,100",
