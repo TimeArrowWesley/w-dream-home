@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20261115-appliance-r5",
+  "revision": "20261115-av02-r6",
   "updatedAt": "2026-11-15",
   "source": {
     "title": "W夢想之家家具設備規格表",
@@ -362,8 +362,8 @@
         "tv"
       ],
       "modelSearch": [],
-      "currentNote": "現行 3D 模型仍為 83 吋 G6 外形 184.7×2.8×105.7cm，待改為 189.2×4.6×107.7cm。V1/V2 固定電視；V3/V4 旋轉電視中心高 135cm，旋轉機構承重需按 48.2kg 重核。",
-      "modelDirty": true,
+      "currentNote": "2026-11-15 AV02：六版 3D 已改為 Sony 189.2×107.7×4.6cm，背面貼齊原壁掛面、中心高不變（固定電視中心 h100，底邊 h46／頂邊 h154）。V4／V5 旋轉電視機構承重需按 48.2kg 重核。AI 成品圖仍為舊電視外形。",
+      "modelDirty": false,
       "archived": false,
       "original": {
         "name": "電視（83 吋 OLED）",
@@ -388,8 +388,8 @@
         "q6"
       ],
       "modelSearch": [],
-      "currentNote": "現行 3D 模型仍為 KEF Q7 ×2、Q6 中置、Ci160QR 天空 4 支與後環繞示意，待改為 Trio 三件與 Rear 9 一對；天花嵌入喇叭與喇叭線模型待移除。",
-      "modelDirty": true,
+      "currentNote": "2026-11-15 AV02：六版 3D 已改為 Trio 中置（58.9×6.4×16.5cm，前緣對齊原中置艙）、左右前置（16×33.7×16.5cm，落地腳架為示意）與 Rear 9 一對（放在原環繞承台上）；天花 Ci160QR 四支已移除。AI 成品圖仍為舊配置。",
+      "modelDirty": false,
       "archived": false,
       "original": {
         "name": "喇叭 ×9（5.1.4）",
@@ -413,8 +413,8 @@
         "avr"
       ],
       "modelSearch": [],
-      "currentNote": "現行 3D 模型仍有 Denon 外徑 43.4×38.9×16.7cm 於影音櫃，待移除。",
-      "modelDirty": true,
+      "currentNote": "2026-11-15 AV02：六版 3D 已移除 Denon，影音櫃原擴大機艙留空。",
+      "modelDirty": false,
       "archived": false,
       "original": {
         "name": "擴大機",
@@ -438,8 +438,8 @@
         "sub"
       ],
       "modelSearch": [],
-      "currentNote": "現行 3D 模型為 SVS 外徑 36×39.5×37.2cm，Sub 9 為 39×40×35cm，外徑相近，位置沿用，待改名與尺寸。",
-      "modelDirty": true,
+      "currentNote": "2026-11-15 AV02：六版 3D 已改為 Sub 9 39×40×35cm，中心位置沿用原 SVS。",
+      "modelDirty": false,
       "archived": false,
       "original": {
         "name": "重低音 ×2",
@@ -1702,8 +1702,8 @@
         "washer"
       ],
       "modelSearch": [],
-      "currentNote": "現行 3D 模型為 WD-S1916B 外徑 70×77×189cm，待改為 70×83×189cm。",
-      "modelDirty": true,
+      "currentNote": "2026-11-15 AV02：六版 3D 已改為 WD-S2220B 70×83×189cm，背面貼齊原位置、往前多 6cm；門前開門預留改為 63cm（門開 90° 總深 146cm）。",
+      "modelDirty": false,
       "archived": false,
       "original": {
         "name": "洗乾衣機",
