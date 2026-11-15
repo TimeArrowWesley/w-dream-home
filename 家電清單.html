@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>家電清單｜W 夢想之家</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+
+:root{
+  --bg:#f2f4f4; --panel:#ffffff; --ink:#1a2226; --muted:#5b676d; --line:#d5dcdf; --rule:#1a2226;
+  --accent:#1f5961; --accent-soft:#e0edee; --flag:#9a3d12; --flag-soft:#fbe9df;
+  --ok:#2d6a3e; --ok-soft:#e2f0e5; --maybe:#8a5a00; --maybe-soft:#fbefd6; --no:#a12f2f; --no-soft:#f8e2e2; --custom:#2f4f86; --custom-soft:#e3e9f5;
+  --dwg-bg:#ffffff;
+  --display:"Noto Serif TC","Songti TC",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111517; --panel:#1a2023; --ink:#e3e8ea; --muted:#99a5ab; --line:#2c3539; --rule:#c9d2d6;
+  --accent:#7cc0c8; --accent-soft:#1d3336; --flag:#f2a07a; --flag-soft:#3a2219;
+  --ok:#8fd09f; --ok-soft:#1c3323; --maybe:#f0c46a; --maybe-soft:#3a2f17; --no:#f09a9a; --no-soft:#3a1e1e; --custom:#9db6e8; --custom-soft:#1e2738;
+  --dwg-bg:#f4f4f2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111517; --panel:#1a2023; --ink:#e3e8ea; --muted:#99a5ab; --line:#2c3539; --rule:#c9d2d6;
+  --accent:#7cc0c8; --accent-soft:#1d3336; --flag:#f2a07a; --flag-soft:#3a2219;
+  --ok:#8fd09f; --ok-soft:#1c3323; --maybe:#f0c46a; --maybe-soft:#3a2f17; --no:#f09a9a; --no-soft:#3a1e1e; --custom:#9db6e8; --custom-soft:#1e2738;
+  --dwg-bg:#f4f4f2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 72px}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:32px}
+h1,h2{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance}
+h1{font-size:clamp(26px,4.5vw,34px)}
+h2{font-size:24px}
+.titleblock{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;border-bottom:2px solid var(--rule);padding-bottom:14px}
+.titleblock p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.tb{display:grid;grid-template-columns:auto auto;border:1px solid var(--rule);font-size:13px;background:var(--panel)}
+.tb dt,.tb dd{margin:0;padding:4px 10px;border-bottom:1px solid var(--line)}
+.tb dt{color:var(--muted);border-right:1px solid var(--line)}
+.tb dd{font-family:var(--mono);font-size:12.5px}
+.tb :nth-last-child(-n+2){border-bottom:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted)}
+.legend b{color:var(--ink);font-weight:500}
+.first{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:10px}
+.first h2{font-size:20px}
+.first ol{margin:0;padding-left:1.4em;display:grid;gap:6px}
+.first li span{color:var(--muted);margin-left:.6em}
+.first a{color:var(--flag);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
+section{display:grid;gap:14px}
+.roomHead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--rule);padding-bottom:6px}
+.roomHead span{color:var(--muted);font-size:13px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:8px;scroll-margin-top:16px}
+.ch{display:flex;align-items:center;gap:10px}
+.ch h3{margin:0;font-size:18px}
+.state{font-size:12px;padding:2px 9px;border-radius:999px}
+.s-ok{background:var(--ok-soft);color:var(--ok)}.s-maybe{background:var(--maybe-soft);color:var(--maybe)}.s-custom{background:var(--custom-soft);color:var(--custom)}
+.pick{margin:0;font-family:var(--mono);font-size:14.5px;font-weight:500;overflow-wrap:anywhere}
+.price{margin:0;font-size:13px;color:var(--muted)}
+.src{color:var(--accent);margin-left:6px}
+.flag{margin:0;font-size:13.5px;color:var(--flag);background:var(--flag-soft);border-radius:6px;padding:6px 10px}
+.body{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;margin-top:4px}
+.media{display:grid;gap:10px;align-content:start;min-width:0}
+figure{margin:0;display:grid;gap:4px}
+figure img{width:100%;height:auto;border-radius:6px;border:1px solid var(--line);background:var(--dwg-bg);cursor:zoom-in}
+figcaption{font-size:12px;color:var(--muted)}
+.elev{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.elev text{fill:var(--ink);font-family:var(--body)}
+.elev .s{font-size:12px}.elev .b{font-size:14px;font-weight:700}
+.elev .ac{fill:var(--accent)}
+.plan{max-width:760px}.elev .fl{fill:var(--flag)}.elev .cu{fill:var(--custom)}
+.text{min-width:0;display:grid;gap:10px;align-content:start}
+.specs{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 16px}
+.specs div{display:grid;gap:1px;border-top:1px solid var(--line);padding-top:4px;min-width:0}
+.specs dt{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.specs dd{margin:0;font-size:14px;overflow-wrap:anywhere}
+h4{margin:4px 0 0;font-size:13px;letter-spacing:.06em;color:var(--accent)}
+.checks{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:14px}
+.reply{display:grid;gap:6px;border-top:1px dashed var(--line);padding-top:10px}
+.rl{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opts button{font:inherit;font-size:13.5px;padding:5px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.opts button[aria-pressed="true"][data-v="可用"]{background:var(--ok-soft);color:var(--ok);border-color:var(--ok)}
+.opts button[aria-pressed="true"][data-v="需調整"]{background:var(--maybe-soft);color:var(--maybe);border-color:var(--maybe)}
+.opts button[aria-pressed="true"][data-v="不可用"]{background:var(--no-soft);color:var(--no);border-color:var(--no)}
+.reply textarea{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 9px;width:100%;resize:vertical}
+.rs{font-size:12px;color:var(--muted);min-height:1em}
+button:focus-visible,textarea:focus-visible,a:focus-visible,img:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opens{display:grid;gap:12px}
+.open{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:grid;gap:8px}
+.open h3{margin:0;font-size:16px}.open p{margin:0;font-size:14px;max-width:70ch}
+.open .media{grid-template-columns:repeat(auto-fill,minmax(200px,260px))}
+footer{font-size:13px;color:var(--muted);display:grid;gap:6px;max-width:70ch}
+#notice{font-size:13.5px;padding:8px 12px;border-radius:8px;background:var(--maybe-soft);color:var(--maybe)}
+#zoom{position:fixed;inset:0;background:rgba(10,14,16,.86);display:flex;align-items:center;justify-content:center;z-index:20;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+#zoom img{max-width:100%;max-height:100%;background:#fff;border-radius:6px}
+@media (max-width:760px){
+  .titleblock{grid-template-columns:minmax(0,1fr)}
+  .body{grid-template-columns:minmax(0,1fr)}
+  .specs{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+[hidden]{display:none!important}img{max-width:100%}
+.siteNav{max-width:1040px;margin:0 auto 20px;padding:0;display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}.siteNav .brand{font:20px Georgia,"Microsoft JhengHei",serif;letter-spacing:.08em}.siteNav .links{display:flex;gap:16px;flex-wrap:wrap}.siteNav a{text-decoration:none;color:var(--accent)}
+body{margin:0}
+
+.card .body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.wd{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:14px}
+.wd li::marker{color:var(--accent)}
+.todo{margin:0;padding-left:1.2em;display:grid;gap:3px;font-size:13.5px;color:var(--muted)}
+.sum{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--panel);border:1px solid var(--line)}
+.sum th,.sum td{border-bottom:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+.sum th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.04em;background:var(--bg)}
+.sum td:first-child{white-space:nowrap;font-weight:500}
+.sumWrap{overflow-x:auto;border-radius:10px}
+.s-no{background:var(--no-soft);color:var(--no)}
+.toc{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.toc a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor}
+@media (max-width:760px){.card .body{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<nav class="siteNav" aria-label="專案功能"><span class="brand">W 夢想之家</span><span class="links"><a id="returnDesign" href="index.html">← 空間設計</a><a id="resourcesLink" href="設計資料.html">設計資料</a><a id="bathLink" href="衛浴資料.html">衛浴資料</a></span></nav>
+
+<div class="wrap">
+  <div class="titleblock">
+    <div>
+      <h1>家電與設備清單</h1>
+      <p>設計師要的智能系統、電器設備、音響設備型號，加上每項能查到的水電規格。尺寸與價格以家具設備清單 2026-11-15 版為準。</p>
+    </div>
+    <dl class="tb">
+      <dt>案名</dt><dd>勝輝凰邸 A1-14F</dd>
+      <dt>製表日</dt><dd>2026-11-15</dd>
+      <dt>品項</dt><dd>35 項</dd>
+      <dt>水壓實測</dt><dd>0.18 MPa</dd>
+    </dl>
+  </div>
+  <div class="legend"><span><b>已選</b>＝業主已定型號</span><span><b>待確認</b>＝候選型號，可能再換</span><span><b>待報價</b>＝品牌或型號待廠商提案</span><span><b>含廚具工程</b>＝BELEGA 報價內</span></div>
+  <nav class="toc" aria-label="分區"><a href="#sec-hvac">空調與空氣</a><a href="#sec-smart">智能與網路</a><a href="#sec-living">客廳影音</a><a href="#sec-kitchen">廚房</a><a href="#sec-island">中島</a><a href="#sec-balcony">後陽台</a><a href="#sec-bath">衛浴電器</a><a href="#sec-rooms">臥室與書房</a><a href="#sec-other">其他</a><a href="#sum">水電總表</a></nav>
+  <div class="first"><h2>水電進場前要先定的 8 件事</h2><ol><li><a href="#clar">中島要第三條 220V 專迴</a><span>淨水器 15A 加上 IH 約 34A，地面出線目前只寫酒櫃與 IH。</span></li><li><a href="#washer">洗衣塔深度 83 cm</a><span>開門 90° 時深 146 cm，陽台前方淨空要重核。</span></li><li><a href="#tv">電視牆補強</a><span>Sony 85 型 48.2 kg，比原案重 11 kg。</span></li><li><a href="#ac">空調統包出天花整合圖</a><span>冷氣、全熱、除濕風管與照明降板同一層。</span></li><li><a href="#aqara">開關盒預拉中性線</a><span>Aqara 開關與模組需要，水電進場前定。</span></li><li><a href="#trio">喇叭位置改留插座</a><span>取消天花喇叭與喇叭線，改為 5 個喇叭插座。</span></li><li><a href="#sink">廚房原瞬熱器水電</a><span>淨水器移到中島後，A 面的 220V 專迴與 ½&quot; 冷熱水要決定保留或取消。</span></li><li><a href="#bathdryer">客浴暖風機電壓</a><span>110V 或 220V 兩款同價，要先選。</span></li></ol></div>
+<section id="sec-hvac">
+<div class="roomHead"><h2>空調與空氣</h2><span>全室・三項由同一家空調廠商統包</span></div>
+<article class="card" id="ac">
+<header class="ch"><h3>冷氣（多聯式）</h3><span class="state s-ok">已選</span></header>
+<p class="pick">三菱重工 多聯式・型號待經銷商提案</p><p class="price">整案估約 30–50 萬（估計，非報價）</p>
+<p class="flag">吊隱機與全熱、除濕風管同在一層天花，必須出天花整合圖。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>室內機</dt><dd>4 台：客餐廳吊隱、書房吊隱、主臥壁掛、收藏室壁掛</dd></div><div><dt>室外機</dt><dd>2 台，位置已定</dd></div><div><dt>分組</dt><dd>室外機 1 帶客餐廳＋書房；室外機 2 帶主臥＋收藏室</dd></div><div><dt>天花夾層</dt><dd>需 35–45 cm（機體＋風管＋洩水坡度）</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>每台室外機一條 220V 專用迴路，安培數依經銷商機型。</li><li>室內機電源由室外機或各自供電，依廠商配線圖。</li><li>吊隱機冷凝水要有洩水坡度與排水點，寫進合約。</li><li>吊隱機維修孔約 45×45～60×60 cm，開在儲藏室或走道，不開在客廳。</li><li>控制器要有乾接點或 Wi-Fi，才能併入 Aqara 情境。</li></ul><h4>待查</h4><ul class="todo"><li>吊隱機型號與機體高度</li><li>室外機尺寸與重量</li><li>各機電源規格</li></ul></div></div>
+</article>
+<article class="card" id="erv">
+<header class="ch"><h3>全熱交換</h3><span class="state s-maybe">待報價</span></header>
+<p class="pick">品牌開放・候選台達 VEB 系列吊隱式</p><p class="price">待報價</p>
+<p class="flag">三菱重工台灣公開資料未見全熱交換，請經銷商確認或改用他牌。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>形式</dt><dd>吊隱式，風管與冷氣、除濕同層天花</dd></div><div><dt>用法</dt><dd>回家前半小時到一小時先換氣</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>110V 或 220V 依機型，留專用或獨立迴路。</li><li>外牆需新鮮空氣進氣與排氣兩個開口，位置與套管尺寸由廠商定。</li><li>主機需維修孔。</li><li>控制器要乾接點或 Wi-Fi，供 Aqara「回家前先換氣」情境。</li></ul><h4>待查</h4><ul class="todo"><li>有無「全熱＋除濕」一體機</li><li>主機尺寸與風管徑</li><li>外牆開孔位置</li></ul></div></div>
+</article>
+<article class="card" id="dehu">
+<header class="ch"><h3>全屋除濕（管道式）</h3><span class="state s-maybe">待報價</span></header>
+<p class="pick">品牌開放・由統包空調廠商提案</p><p class="price">待報價</p>
+<p class="flag">收藏室與更衣室各留獨立出風口，收藏室要能單獨設定得更乾。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>服務範圍</dt><dd>全室，含不裝冷氣的儲藏室、更衣室</dd></div><div><dt>目的</dt><dd>濕度壓低後冷氣可調高 1–2 度</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>主機電源依機型，留獨立迴路。</li><li>除濕排水要接排水管並有坡度，不可靠水箱。</li><li>主機需維修孔。</li><li>控制器要乾接點。</li></ul><h4>待查</h4><ul class="todo"><li>主機尺寸與排水管徑</li><li>可否與全熱交換整合</li></ul></div></div>
+</article>
+</section>
+<section id="sec-smart">
+<div class="roomHead"><h2>智能與網路</h2><span>11/28 克里森新莊店規劃後填入正式型號</span></div>
+<article class="card" id="aqara">
+<header class="ch"><h3>智能系統（Aqara）</h3><span class="state s-maybe">待報價</span></header>
+<p class="pick">Aqara 台灣公司貨・平台 Aqara Home＋Apple 家庭或 Google Home</p><p class="price">器材約 80,000–120,000（不含軌道、安裝、網路）</p>
+<p class="flag">每個開關盒要預拉中性線，水電進場前就要定。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>中樞</dt><dd>M3 ×1　6,500</dd></div><div><dt>牆壁開關</dt><dd>H2 約 12 位　2,200／2,400</dd></div><div><dt>窗簾電機</dt><dd>C3 ×2　4,800／組</dd></div><div><dt>調光模組</dt><dd>T1　2,500／迴路</dd></div><div><dt>雙路模組</dt><dd>T2 零火版 ×3　2,400／組</dd></div><div><dt>情境面板</dt><dd>S100 ×1　4,290</dd></div><div><dt>人體存在</dt><dd>FP300　1,990（選配）</dd></div><div><dt>門鎖</dt><dd>U300　9,500＋安裝 2,500（選配）</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>每個開關盒預拉中性線（零線）；建商 118 型底盒可直接用台版。</li><li>中樞 M3 需有線網路與插座，放資訊箱或電視櫃。</li><li>T2 模組控制書房調光玻璃、廚房電動玻璃門、陽台曬衣架，藏天花要留維修孔。</li><li>冷氣、全熱、除濕控制器要有乾接點才能併入情境。</li></ul><h4>待查</h4><ul class="todo"><li>11/28 正式器材清單與報價</li><li>中樞擺放位置</li></ul></div></div>
+</article>
+<article class="card" id="leak">
+<header class="ch"><h3>漏水斷路器</h3><span class="state s-maybe">待報價</span></header>
+<p class="pick">建議 Aqara 水閥控制器 T1＋水浸感測器 ×5</p><p class="price">待定</p>
+<p class="flag">T1 台灣供貨待確認；若改獨立式斷路器，要有乾接點輸入。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>保護點</dt><dd>洗碗機、淨水器、掃地機基站、陽台洗手台、全戶前置過濾器</dd></div><div><dt>水閥</dt><dd>夾總水閥手柄，DN15–25，4 顆 AA 約兩年</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>總水閥位置與管徑（DN15–25、球閥或蝶閥）驗屋時量。</li><li>獨立式斷路器裝在前置過濾器之前，需 110V 插座。</li></ul><h4>待查</h4><ul class="todo"><li>台灣供貨</li><li>總水閥形式與管徑</li></ul></div></div>
+</article>
+<article class="card" id="net">
+<header class="ch"><h3>網路・Mesh AP</h3><span class="state s-maybe">待報價</span></header>
+<p class="pick">型號待選</p><p class="price">待報價</p>
+<p class="flag">資訊箱交換器與 PoE 容量要一起算進 AP 與 Aqara 中樞。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>加點</dt><dd>廚房、書房、玄關、陽台</dd></div><div><dt>形式</dt><dd>吸頂 PoE 或桌上型</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>每個吸頂 AP 一條網路線（PoE 供電）。</li><li>資訊箱留插座與散熱空間。</li><li>主臥投影層板、電視櫃、書房桌各留網路孔。</li></ul><h4>待查</h4><ul class="todo"><li>AP 形式與數量</li></ul></div></div>
+</article>
+<article class="card" id="curtain">
+<header class="ch"><h3>智慧窗簾 ×2（客廳、主臥）</h3><span class="state s-maybe">待報價</span></header>
+<p class="pick">候選 Aqara C3 或 Zigbee 有線窗簾電機，加訂製軌道</p><p class="price">約 4,800／組（C3）或 3,600／組，另加軌道</p>
+<p class="flag">軌道端點的 110V 要在天花圖與水電圖同時標。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>客廳</dt><dd>厚織隔熱款，褶皺 2–2.5 倍，離玻璃 8–10 cm</dd></div><div><dt>主臥</dt><dd>遮光款，投影情境自動關簾</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>每組軌道端點一個 110V 插座（天花內）。</li><li>客廳天花電源已預留，主臥位置待標。</li></ul><h4>待查</h4><ul class="todo"><li>軌道長度</li><li>電機型號</li></ul></div></div>
+</article>
+</section>
+<section id="sec-living">
+<div class="roomHead"><h2>客廳影音</h2><span>電視牆木作要同步改</span></div>
+<article class="card" id="tv">
+<header class="ch"><h3>電視 85 型</h3><span class="state s-ok">已選</span></header>
+<p class="pick">Sony BRAVIA 9 II 85 型　Y-85XR90M2</p><p class="price">265,900（Sony 台灣官網定價）</p>
+<p class="flag">比原案 LG 重 11 kg、厚 1.8 cm；電視牆要補強，Sony 官網目前缺貨。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>尺寸</dt><dd>不含腳座 189.2 × 107.7 × 4.6 cm</dd></div><div><dt>重量</dt><dd>48.2 kg</dd></div><div><dt>耗電</dt><dd>400 W，年 212 度</dd></div><div><dt>壁掛高度</dt><dd>中心 h100、底邊 h46、頂邊 h154</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>電視背後留 110V 插座 ×2（電視＋周邊）。</li><li>HDMI 線從電視到矮櫃中置與遊戲主機，預埋管路。</li><li>網路孔 ×1。</li><li>壁掛處木作補強，承重至少 50 kg 以上。</li></ul><h4>待查</h4><ul class="todo"><li>VESA 孔距與原廠壁掛架型號</li><li>支援 4K120 的 HDMI 孔數</li></ul></div></div>
+</article>
+<article class="card" id="trio">
+<header class="ch"><h3>前置與後環繞</h3><span class="state s-ok">已選</span></header>
+<p class="pick">Sony BRAVIA Theatre Trio HT-A8＋Rear 9 SA-RS9</p><p class="price">85,890（Trio 66,400＋Rear 9 19,490）</p>
+<p class="flag">每顆喇叭都要插座；原案 6 支天花喇叭與全部喇叭線取消。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>Trio</dt><dd>中置＋左右前置，9 聲道共 405 W</dd></div><div><dt>Rear 9</dt><dd>15.4W × 28.6H × 15.4D cm，2.7 kg，每顆 90 W</dd></div><div><dt>配置</dt><dd>中置在矮櫃中央；左右在電視兩側；後環繞在沙發後方</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>中置：110V 插座 ×1，HDMI eARC 一條到電視。</li><li>左右前置：各 110V 插座 ×1。</li><li>後環繞 ×2：沙發後方各 110V 插座 ×1。</li><li>天花不再預留喇叭線。</li></ul><h4>待查</h4><ul class="todo"><li>Trio 三件外形尺寸</li><li>HDMI IN 數量</li></ul></div></div>
+</article>
+<article class="card" id="sub">
+<header class="ch"><h3>重低音 ×2</h3><span class="state s-ok">已選</span></header>
+<p class="pick">Sony BRAVIA Theatre Sub 9 SA-SW9 ×2</p><p class="price">42,980（21,490 × 2）</p>
+<p class="flag">雙重低音需確認台灣韌體已開放。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>尺寸</dt><dd>39.0W × 40.0H × 35.0D cm</dd></div><div><dt>重量</dt><dd>23.3 kg</dd></div><div><dt>功率</dt><dd>每顆 600 W</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>前牆、後牆對角位置各 110V 插座 ×1。</li><li>加隔振腳墊，14 樓磁磚樓板。</li></ul><h4>待查</h4><ul class="todo"><li>台灣韌體雙重低音支援</li></ul></div></div>
+</article>
+</section>
+<section id="sec-kitchen">
+<div class="roomHead"><h2>廚房</h2><span>多數已含在 BELEGA 廚具工程；水電高度取自 2024-10-22 廚具水電圖</span></div>
+<article class="card" id="hood">
+<header class="ch"><h3>水幕式除油煙機</h3><span class="state s-custom">含廚具工程</span></header>
+<p class="pick">BELEGA 水幕式除油煙機 時尚款　BWH9042FD4</p><p class="price">已含廚具工程</p>
+<p class="flag">雙馬達要兩支 6&quot; 排煙管，建商只給一洞，第二洞走法待設計師解。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>尺寸</dt><dd>W90 × D42 cm</dd></div><div><dt>吊掛高</dt><dd>1620 mm</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>110V-7A 插座 H=2000 mm。</li><li>冷水 ½&quot; H=1105 mm 壁出（水幕清洗）。</li><li>排水 1½&quot; H=1105 mm 壁出。</li><li>風管 6&quot; ×2，配合外牆出口。</li></ul></div></div>
+</article>
+<article class="card" id="gas">
+<header class="ch"><h3>三口瓦斯爐</h3><span class="state s-custom">含廚具工程</span></header>
+<p class="pick">Bosch PPW9A6B20T</p><p class="price">已含廚具工程</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>寬度</dt><dd>90 cm</dd></div><div><dt>氣源</dt><dd>天然氣／桶裝</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>瓦斯 ½&quot; H=600 mm。</li><li>220V-1A 出線 H=400 mm（廚具水電圖標示）。</li></ul></div></div>
+</article>
+<article class="card" id="oven">
+<header class="ch"><h3>嵌入式蒸烤爐</h3><span class="state s-custom">含廚具工程</span></header>
+<p class="pick">Bosch HSG7361B1</p><p class="price">已含廚具工程</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>位置</dt><dd>C 面電器高櫃 60×60×214 cm</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>220V-16A 專用迴路，出線＋插座 H=1300 mm。</li><li>建商客變已增設廚房 220V 專迴，蒸烤爐用掉其中一組。</li></ul></div></div>
+</article>
+<article class="card" id="dw">
+<header class="ch"><h3>洗碗機（半嵌式）</h3><span class="state s-custom">含廚具工程</span></header>
+<p class="pick">Bosch SMI8ZCS00X</p><p class="price">已含廚具工程</p>
+<p class="flag">頂部操作面板外露；門板與開門淨空依生產圖核定。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>位置</dt><dd>A 面水槽左側 60 cm 櫃位</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>110V-15A 插座 H=400 mm。</li><li>給水、排水由水槽下分接。</li><li>水浸感測器放這裡。</li></ul></div></div>
+</article>
+<article class="card" id="dryer">
+<header class="ch"><h3>懸掛式烘碗機</h3><span class="state s-custom">含廚具工程</span></header>
+<p class="pick">林內 Rinnai RKD-186S(B)</p><p class="price">已含廚具工程</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>110V-4A 插座 H=1700 mm。</li></ul></div>
+</article>
+<article class="card" id="kfridge">
+<header class="ch"><h3>廚房冰箱（全嵌）</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">Liebherr ICNh5123</p><p class="price">83,850</p>
+<p class="flag">嵌入淨高要 1772–1788 mm；背後 40–50 mm 風道要寫進生產圖。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>機體</dt><dd>55.9W × 54.6D × 177H cm</dd></div><div><dt>電源</dt><dd>110V／60Hz，0.6A</dd></div><div><dt>耗電</dt><dd>年 192 度</dd></div><div><dt>容量</dt><dd>251 L</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>110V 冰箱插座 H=400 mm。</li><li>踢腳進氣格柵、背後風道、櫃頂排氣格柵三件都要。</li><li>不需給水。</li></ul></div></div>
+</article>
+<article class="card" id="sink">
+<header class="ch"><h3>廚房水槽區（原淨水位置）</h3><span class="state s-custom">含廚具工程</span></header>
+<p class="pick">BELEGA BESK-R15 水槽＋Franke PT193G 龍頭</p><p class="price">已含廚具工程</p>
+<p class="flag">廚具圖原本在這裡留了瞬熱器水電；淨水器改到中島後要決定保留或取消。</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>給冷熱水 ½&quot; H=400 mm。</li><li>排水 2&quot; H=80 mm。</li><li>220V-15A 瞬熱器專迴 H=400 mm（可改給前置過濾或取消）。</li><li>110V 壁出插座 H=1050 mm。</li></ul></div>
+</article>
+</section>
+<section id="sec-island">
+<div class="roomHead"><h2>中島</h2><span>中島已預留「新增給排水，冷熱用」與「地面出線，供酒櫃、IH 爐用」</span></div>
+<article class="card" id="fridge">
+<header class="ch"><h3>主冰箱</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">LG GR-QPLC82SS（敲敲看門中門冰球）</p><p class="price">81,618</p>
+<p class="flag">實機深 913 mm，往廚房側突出約 3–6 cm，側面要收邊。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>尺寸</dt><dd>約 913W × 913D × 1790H mm</dd></div><div><dt>容量</dt><dd>734 L</dd></div><div><dt>位置</dt><dd>頂天包冰箱櫃內，開口朝廚房</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>110V 一般插座。</li><li>外接給水：從旁邊浴室拉，加濾心與檢修閥（或從中島淨水分接）。</li></ul><h4>待查</h4><ul class="todo"><li>最終顏色與供貨料號</li></ul></div></div>
+</article>
+<article class="card" id="clar">
+<header class="ch"><h3>淨水器（瞬冰瞬熱）</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">CLAR EVO＋Smart 曜石黑龍頭</p><p class="price">約 42,500</p>
+<p class="flag">中島要第三條 220V 專迴；地面出線目前只寫酒櫃、IH。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>主機</dt><dd>模型約 11.5W × 38D × 32.5H cm（待原廠確認）</dd></div><div><dt>電源</dt><dd>支援 110V／220V</dd></div><div><dt>儲水</dt><dd>無儲水缸體</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>220V-15A 專用迴路，在中島櫃內。</li><li>給水由中島「新增給排水」接，加止水閥。</li><li>龍頭下方要有小水槽或排水點承接。</li><li>水浸感測器放主機下方。</li></ul><h4>待查</h4><ul class="todo"><li>冰水壓縮機散熱需留空間</li><li>最低進水壓力（驗屋實測 0.18 MPa）</li><li>RO 或非 RO、有無廢水</li></ul></div></div>
+</article>
+<article class="card" id="ih">
+<header class="ch"><h3>IH 感應爐</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">Bosch PIB375FB1E（Domino 30 cm 雙口）</p><p class="price">約 30,000</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>火力</dt><dd>前 2.2→3.7 kW；後 1.4→2.2 kW</dd></div><div><dt>鍋具</dt><dd>限鐵磁性</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>220V，雙區最大約 34A，專用迴路。</li><li>地面出線線徑與無熔絲開關依此電流指定。</li></ul></div></div>
+</article>
+<article class="card" id="wine">
+<header class="ch"><h3>酒櫃</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">Liebherr WKb1712（舊料號，獨立式單溫 60 瓶）</p><p class="price">32,400</p>
+<p class="flag">櫃洞 67 深只剩 7 mm 餘裕，散熱靠前方進排氣與踢腳留縫。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>尺寸</dt><dd>66W × 85H × 66.3D cm</dd></div><div><dt>櫃洞</dt><dd>66W × 85H × 67D cm</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>110V 插座，接中島地面出線。</li></ul><h4>待查</h4><ul class="todo"><li>2027 現行型號</li></ul></div></div>
+</article>
+<article class="card" id="robot">
+<header class="ch"><h3>掃地機器人（自動上下水）</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">Roborock Saros 20 水立方</p><p class="price">34,980–36,980</p>
+<p class="flag">官方說明要自行找水電安裝，位置要在水電進場前定。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>基座</dt><dd>381 × 475 × 300 mm</dd></div><div><dt>位置</dt><dd>中島非對大門那一側</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>進水：從中島給水分接，加止水閥。</li><li>排水：接中島排水，要存水彎防臭。</li><li>110V 插座（是否專迴待查）。</li><li>水浸感測器放基座旁。</li></ul><h4>待查</h4><ul class="todo"><li>進水接頭規格與排水管徑</li><li>是否需要專用迴路</li></ul></div></div>
+</article>
+</section>
+<section id="sec-balcony">
+<div class="roomHead"><h2>後陽台</h2><span>建商水電圖註記：陽台插座、給水、地排、洗排</span></div>
+<article class="card" id="prefilter">
+<header class="ch"><h3>全戶前置過濾器</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">反洗式 40 微米 304 不鏽鋼網・候選賀眾 UP-8101W／3M／艾克米 GT-04</p><p class="price">5,500–9,900</p>
+<p class="flag">一定要旁通管與前後截止閥，發包時寫進去。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>位置</dt><dd>總進水管，最可能在後陽台</dd></div><div><dt>安裝高度</dt><dd>離地 80–120 cm，方便看錶</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>裝在總進水管上，加旁通與前後截止閥、壓力錶。</li><li>反洗排水接陽台地排。</li><li>一般不需電；自動反洗機種要 110V 插座。</li><li>驗屋實測水壓 0.18 MPa，選低壓損機種。</li></ul><h4>待查</h4><ul class="todo"><li>總進水管位置與口徑</li><li>周邊可用空間</li></ul></div></div>
+</article>
+<article class="card" id="washer">
+<header class="ch"><h3>洗乾衣機</h3><span class="state s-ok">已選</span></header>
+<p class="pick">LG WashTower 第二代　WD-S2220B 尊爵黑</p><p class="price">94,900（LG 官網，2026-11-15，預購）</p>
+<p class="flag">深度由 77 增為 83 cm，開門 90° 時深 146 cm，前方淨空要重核。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>尺寸</dt><dd>W700 × H1890 × D830 mm</dd></div><div><dt>重量</dt><dd>160 kg</dd></div><div><dt>開門深度</dt><dd>1460 mm（門開 90°）</dd></div><div><dt>乾衣</dt><dd>熱泵除濕，不需排風</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>單一插頭；建議專用迴路（電壓與電流官網未列，待 LG 確認）。</li><li>只接冷水。</li><li>排水接陽台地排，做存水彎防臭。</li><li>客變已標「新增插座，供 LG 洗衣塔用」。</li></ul><h4>待查</h4><ul class="todo"><li>電壓與額定電流</li></ul></div></div>
+</article>
+<article class="card" id="heater">
+<header class="ch"><h3>熱水器</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">林內／櫻花 數位恆溫強制排氣</p><p class="price">20,000–40,000</p>
+<p class="flag">必須數位恆溫，否則 hansgrohe 恆溫龍頭會忽冷忽熱。</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>熱水器出口 H=120 cm 已預留。</li><li>110V 插座（強排機種需電）。</li><li>瓦斯管與排氣管依機型。</li></ul><h4>待查</h4><ul class="todo"><li>機型與能力（號數）</li></ul></div>
+</article>
+<article class="card" id="rack">
+<header class="ch"><h3>電動升降曬衣架</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">型號待選</p><p class="price">8,000–20,000</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>天花結構補強。</li><li>110V 電源與開關；若接 Aqara T2 模組，模組藏天花留維修孔。</li></ul></div>
+</article>
+</section>
+<section id="sec-bath">
+<div class="roomHead"><h2>衛浴電器</h2><span>詳細尺寸見衛浴資料頁</span></div>
+<article class="card" id="nx1">
+<header class="ch"><h3>主浴馬桶</h3><span class="state s-ok">已選</span></header>
+<p class="pick">TOTO NEOREST NX1　CES902VG</p><p class="price">302,500（型錄定價）</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>110V 插座 H=30 cm，建議專用迴路。</li><li>排水距離型錄只標 305 mm，現場要量。</li></ul></div>
+</article>
+<article class="card" id="ls">
+<header class="ch"><h3>客浴馬桶</h3><span class="state s-ok">已選</span></header>
+<p class="pick">TOTO NEOREST LS　CES87220GTW</p><p class="price">231,000（型錄定價）</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>110V 插座。</li><li>排水距離 305–435 mm。</li></ul></div>
+</article>
+<article class="card" id="heatrail">
+<header class="ch"><h3>電熱毛巾架（主浴）</h3><span class="state s-ok">已選</span></header>
+<p class="pick">KOHLER Underscore 小　29355TW-7</p><p class="price">15,280</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>110V，底部出線。</li><li>正下方新增防潑水插座約 H60 cm，要有漏電保護。</li></ul></div>
+</article>
+<article class="card" id="bathdryer">
+<header class="ch"><h3>暖風乾燥機（客浴）</h3><span class="state s-ok">已選</span></header>
+<p class="pick">TOTO 換氣暖房乾燥機　TYB3131ADR（110V）或 TYB3151ADR（220V）</p><p class="price">22,100</p>
+<p class="flag">電壓還沒決定，水電進場前要定。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>尺寸</dt><dd>W490 × D380 mm</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>專用迴路，110V 或 220V 擇一。</li><li>天花開口 490 × 380 mm，排風管路徑要通到外面。</li></ul></div></div>
+</article>
+</section>
+<section id="sec-rooms">
+<div class="roomHead"><h2>臥室與書房</h2></div>
+<article class="card" id="projector">
+<header class="ch"><h3>投影機（主臥）</h3><span class="state s-ok">已有</span></header>
+<p class="pick">JMGO 堅果 N1S Infinity</p><p class="price">已有</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>外形</dt><dd>24.3W × 21D × 23.8H cm，約 4.5 kg</dd></div><div><dt>位置</dt><dd>右床頭外側上櫃設備格 H150</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>設備格背側留 110V 插座與網路孔。</li><li>影音線由背側走，不跨床頭檯面。</li></ul></div></div>
+</article>
+<article class="card" id="screen">
+<header class="ch"><h3>電動投影幕（主臥）</h3><span class="state s-maybe">待報價</span></header>
+<p class="pick">捲簾式電動幕・尺寸待試投</p><p class="price">待報價</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>幕盒端 110V 電源。</li><li>可併入 Aqara 投影情境。</li></ul></div>
+</article>
+<article class="card" id="pdlc">
+<header class="ch"><h3>書房調光玻璃</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">PDLC 膠合式調光玻璃</p><p class="price">約 100,000（估）</p>
+<p class="flag">專用迴路與洗孔走線必須木作前預埋。</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>耗電</dt><dd>每平方公尺約 5W，整面約 43W</dd></div><div><dt>斷電</dt><dd>霧面；通電透明</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>專用迴路。</li><li>變壓器／控制器藏天花，留維修孔。</li><li>每片各自供電，線數依分片數。</li></ul></div></div>
+</article>
+<article class="card" id="monitor">
+<header class="ch"><h3>書房螢幕 ×2</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">Samsung Odyssey Neo G9 57 吋</p><p class="price">約 149,800</p>
+<div class="body"><div class="text"><dl class="specs"><div><dt>不含腳座</dt><dd>132.8 × 43.0 × 33.8 cm，15.4 kg</dd></div><div><dt>VESA</dt><dd>100 × 100</dd></div></dl></div><div class="text"><h4>水電規格</h4><ul class="wd"><li>每張桌下 110V 插座，兩台螢幕＋主機建議分迴路。</li><li>桌下留網路孔。</li></ul></div></div>
+</article>
+</section>
+<section id="sec-other">
+<div class="roomHead"><h2>其他</h2></div>
+<article class="card" id="vac">
+<header class="ch"><h3>無線手持吸塵器</h3><span class="state s-maybe">待確認</span></header>
+<p class="pick">Dyson／LG</p><p class="price">15,000–30,000</p>
+<div class="text"><h4>水電規格</h4><ul class="wd"><li>收納位置留 110V 插座充電。</li></ul></div>
+</article>
+</section>
+<section id="sum"><div class="roomHead"><h2>水電總表</h2><span>給設計師與水電師傅對圖用</span></div><div class="sumWrap"><table class="sum"><thead><tr><th>設備</th><th>位置</th><th>電</th><th>水／氣／排</th></tr></thead><tbody><tr><td>冷氣室外機 ×2</td><td>室外機位置</td><td>各 220V 專迴</td><td>—</td></tr><tr><td>全熱交換</td><td>天花</td><td>依機型，獨立迴路</td><td>外牆進排氣開口</td></tr><tr><td>全屋除濕</td><td>天花</td><td>依機型，獨立迴路</td><td>冷凝排水</td></tr><tr><td>Aqara 開關</td><td>各開關盒</td><td>預拉中性線</td><td>—</td></tr><tr><td>窗簾 ×2</td><td>軌道端點</td><td>110V</td><td>—</td></tr><tr><td>電視</td><td>電視牆</td><td>110V ×2＋網路</td><td>—</td></tr><tr><td>Trio 中置</td><td>矮櫃</td><td>110V＋HDMI</td><td>—</td></tr><tr><td>Trio 左右、Rear 9 ×2</td><td>電視兩側、沙發後</td><td>各 110V</td><td>—</td></tr><tr><td>Sub 9 ×2</td><td>前後牆對角</td><td>各 110V</td><td>—</td></tr><tr><td>除油煙機</td><td>廚房 A 面</td><td>110V-7A H=2000</td><td>冷水 ½&quot; 與排水 1½&quot; H=1105</td></tr><tr><td>瓦斯爐</td><td>廚房 A 面</td><td>220V-1A H=400</td><td>瓦斯 ½&quot; H=600</td></tr><tr><td>蒸烤爐</td><td>廚房 C 面</td><td>220V-16A 專迴 H=1300</td><td>—</td></tr><tr><td>洗碗機</td><td>廚房 A 面</td><td>110V-15A H=400</td><td>水槽下分接</td></tr><tr><td>烘碗機</td><td>廚房 A 面</td><td>110V-4A H=1700</td><td>—</td></tr><tr><td>廚房冰箱</td><td>廚房 B 面</td><td>110V H=400</td><td>—</td></tr><tr><td>水槽區</td><td>廚房 A 面</td><td>220V-15A H=400（原瞬熱器）</td><td>冷熱 ½&quot; H=400、排水 2&quot; H=80</td></tr><tr><td>主冰箱</td><td>中島旁</td><td>110V</td><td>外接給水＋濾心＋檢修閥</td></tr><tr><td>淨水器</td><td>中島</td><td>220V-15A 專迴（需新增）</td><td>中島給水＋排水承接</td></tr><tr><td>IH</td><td>中島</td><td>220V 約 34A 專迴</td><td>—</td></tr><tr><td>酒櫃</td><td>中島</td><td>110V（地面出線）</td><td>—</td></tr><tr><td>掃地機基座</td><td>中島</td><td>110V</td><td>進水＋排水（存水彎）</td></tr><tr><td>前置過濾器</td><td>後陽台</td><td>一般免電</td><td>總進水管、反洗排地排</td></tr><tr><td>洗衣塔</td><td>後陽台</td><td>單一插頭，建議專迴</td><td>冷水、排水接地排</td></tr><tr><td>熱水器</td><td>後陽台</td><td>110V</td><td>出口 H=120、瓦斯、排氣</td></tr><tr><td>曬衣架</td><td>後陽台天花</td><td>110V＋開關</td><td>—</td></tr><tr><td>馬桶 ×2</td><td>兩間浴室</td><td>110V，主浴 H=30</td><td>—</td></tr><tr><td>電熱毛巾架</td><td>主浴</td><td>110V 防潑水 H≈60</td><td>—</td></tr><tr><td>暖風乾燥機</td><td>客浴天花</td><td>110V 或 220V 專迴</td><td>排風管</td></tr><tr><td>調光玻璃</td><td>書房</td><td>專迴＋控制器</td><td>—</td></tr></tbody></table></div></section>
+  <footer>
+    <span>廚房高度取自 BELEGA 2024-10-22 廚具水電圖，標示高度以地板完成面為 0，電源出線預留 100 cm。</span>
+    <span>價格為官網定價、型錄定價或店家報價，查詢日見各項；「估」為粗估，不是報價。未查到的電源規格列在「待查」，以原廠安裝說明書為準。</span>
+  </footer>
+</div>
+<script src="version-registry.js?v=20260924-ui08"></script><script>
+(()=>{const id=new URLSearchParams(location.search).get("version");const v=window.HOME_VERSION_REGISTRY?.versions.find(v=>v.id===id);if(!v)return;const q="?version="+encodeURIComponent(v.id);document.getElementById("returnDesign").href=v.path;document.getElementById("resourcesLink").href="設計資料.html"+q;document.getElementById("bathLink").href="衛浴資料.html"+q;})();
+</script>
+</body>
+</html>

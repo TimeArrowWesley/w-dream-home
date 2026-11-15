@@ -107,7 +107,7 @@ body{margin:0}
 </style>
 </head>
 <body>
-<nav class="siteNav" aria-label="專案功能"><span class="brand">W 夢想之家</span><span class="links"><a id="returnDesign" href="index.html">← 空間設計</a><a id="resourcesLink" href="設計資料.html">設計資料</a></span></nav>
+<nav class="siteNav" aria-label="專案功能"><span class="brand">W 夢想之家</span><span class="links"><a id="returnDesign" href="index.html">← 空間設計</a><a id="resourcesLink" href="設計資料.html">設計資料</a><a id="applianceLink" href="家電清單.html">家電清單</a></span></nav>
 
 <div class="wrap">
   <div class="titleblock">
@@ -451,7 +451,7 @@ document.addEventListener('click',e=>{const im=e.target.closest('figure img');if
 document.addEventListener('keydown',e=>{if(e.key==='Escape')zoom.hidden=true});
 </script>
 <script src="version-registry.js?v=20260924-ui08"></script><script>
-(()=>{const id=new URLSearchParams(location.search).get("version");const v=window.HOME_VERSION_REGISTRY?.versions.find(v=>v.id===id);if(!v)return;document.getElementById("returnDesign").href=v.path;document.getElementById("resourcesLink").href="設計資料.html?version="+encodeURIComponent(v.id);})();
+(()=>{const id=new URLSearchParams(location.search).get("version");const v=window.HOME_VERSION_REGISTRY?.versions.find(v=>v.id===id);if(!v)return;document.getElementById("returnDesign").href=v.path;document.getElementById("resourcesLink").href="設計資料.html?version="+encodeURIComponent(v.id);document.getElementById("applianceLink").href="家電清單.html?version="+encodeURIComponent(v.id);})();
 </script>
 </body>
 </html>
