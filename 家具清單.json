@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20261115-av02-r6",
+  "revision": "20261117-trio-fix-r7",
   "updatedAt": "2026-11-15",
   "source": {
     "title": "W夢想之家家具設備規格表",
@@ -378,7 +378,7 @@
       "room": "living",
       "name": "前置與後環繞（Sony Trio＋Rear 9）",
       "brand": "Sony BRAVIA Theatre Trio HT-A8（獨立中置＋無線左右前置）\nSony BRAVIA Theatre Rear 9 SA-RS9（無線後環繞一對）",
-      "specs": "Trio HT-A8　三件式；中置二音路（2 低音＋1 高音），左右各二音路含大口徑向上發聲單體；9 聲道 S-Master 數位擴大共 405 W；Dolby Atmos、DTS:X、IMAX Enhanced；360 空間音場最多 24 個幻影喇叭；HDMI 2.1 eARC 接電視、另有 HDMI IN（數量待查）、8K HDR 直通、VRR／ALLM；AirPlay、Spotify Connect、藍牙。隨附壁掛支架、校正麥克風（USB-C 接手機）。NCC CCAO26Y20010T5。保固 12 個月\nRear 9 SA-RS9　每顆高音＋低音＋向上單體，90 W，15.4W × 28.6H × 15.4D cm、2.7 kg，無線但各需插座\n搭配 BRAVIA 9 II：Acoustic Center Sync 把電視喇叭併入中置、Voice Zoom 3、電視遙控器直接調音場、快速設定選單\n配置　中置放矮櫃中央開放艙（原 KEF Q6 艙，高度綽綽有餘）；左右前置放電視兩側原 Q7 位置（各 60 寬）；後環繞放沙發後方；實體 5.2.4 加幻影聲道\n水電　中置 1 條 HDMI 到電視＋插座；左右前置、後環繞各 1 個插座（無線訊號、有線電源）；取消原案 6 支天花嵌入喇叭與全部喇叭線\n校正　用手機 USB-C 麥克風做音場最佳化；沒有 Dirac Live，低頻駐波修正能力弱於原案\n價格　Trio 限時 66,400（原價 68,900）＋ Rear 9 19,490 ＝ 85,890；Trio 限 Sony 專屬展售店購買\n待查　Trio 中置與左右喇叭外形尺寸、HDMI IN 數量\n\n原案備查　KEF Q7 Meta ×2、Q6 Meta 中置、Ci160QR ×4 天空、後環繞小型音箱候選；舊組合歷史報價 195,760",
+      "specs": "Trio HT-A8　三件式；中置二音路（2 低音＋1 高音），左右各二音路含大口徑向上發聲單體；9 聲道 S-Master 數位擴大共 405 W；Dolby Atmos、DTS:X、IMAX Enhanced；360 空間音場最多 24 個幻影喇叭；HDMI 2.1 eARC 接電視、另有 HDMI IN（數量待查）、8K HDR 直通、VRR／ALLM；AirPlay、Spotify Connect、藍牙。隨附壁掛支架、校正麥克風（USB-C 接手機）。NCC CCAO26Y20010T5。保固 12 個月\nRear 9 SA-RS9　每顆高音＋低音＋向上單體，90 W，15.4W × 28.6H × 15.4D cm、2.7 kg，無線但各需插座\n搭配 BRAVIA 9 II：Voice Zoom 3、My Cinema、電視遙控器直接調音場、快速設定選單。Trio 不在 Sony 官方 Acoustic Center Sync 支援名單（只有 Theatre Quad、Bar 9、Bar 8 與 Sony 擴大機），電視喇叭不會併入中置\n配置　中置放矮櫃中央開放艙（原 KEF Q6 艙，高度綽綽有餘）；左右前置放電視兩側原 Q7 位置（各 60 寬）；後環繞放沙發後方；實體 5.2.4 加幻影聲道\n水電　中置 1 條 HDMI 到電視＋插座；左右前置、後環繞各 1 個插座（無線訊號、有線電源）；取消原案 6 支天花嵌入喇叭與全部喇叭線\n校正　用手機 USB-C 麥克風做音場最佳化；沒有 Dirac Live，低頻駐波修正能力弱於原案\n價格　Trio 限時 66,400（原價 68,900）＋ Rear 9 19,490 ＝ 85,890；Trio 限 Sony 專屬展售店購買\n待查　Trio 中置與左右喇叭外形尺寸、HDMI IN 數量\n\n原案備查　KEF Q7 Meta ×2、Q6 Meta 中置、Ci160QR ×4 天空、後環繞小型音箱候選；舊組合歷史報價 195,760",
       "priceText": "85,890（Sony 台灣官網定價）",
       "notes": "2026-11-15 業主決定音響改 Sony BRAVIA Theatre 組合（Trio＋Rear 9＋Sub 9 ×2），取代 KEF 9 支＋Denon。電視牆木作：擴大機艙不再需要、6 支天花喇叭開孔與喇叭線取消、各喇叭位置改留插座。",
       "status": "已選型",
