@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectId": "w-dream-home-local",
-  "revision": "20261123-bath-quote-r1",
+  "revision": "20261123-bath-quote-r2",
   "updatedAt": "2026-11-23",
   "source": {
     "title": "W夢想之家家具設備規格表",
@@ -1402,23 +1402,6 @@
       "original": null
     },
     {
-      "id": "mb12-dryer",
-      "room": "mbath",
-      "name": "暖風乾燥機",
-      "brand": "TOTO 浴室暖燥機 遙控型\nTYB3131ADR（110V）或 TYB3151ADR（220V）",
-      "specs": "110V 或 220V，需專用迴路；本體 W490 × D380 mm（型錄）。\n客變圖寫主浴建商有附一台暖風乾燥機；改裝 TOTO 的話，建商那台怎麼處理請問設計師。",
-      "priceText": "15,900",
-      "notes": "欣加 11/23 報價（未稅）。主浴、客浴各一。",
-      "status": "已選型",
-      "includeInBudget": true,
-      "modelKeys": [],
-      "modelSearch": [],
-      "currentNote": "2026-11-23 依欣加實業報價單（C1151123）更新；價格為未稅單價，報價另加 5% 稅。",
-      "modelDirty": false,
-      "archived": false,
-      "original": null
-    },
-    {
       "id": "claude-3619",
       "room": "gbath",
       "name": "馬桶",
@@ -1675,7 +1658,7 @@
       "brand": "TOTO 浴室暖燥機 遙控型\nTYB3131ADR（110V）或 TYB3151ADR（220V）",
       "specs": "110V 或 220V，需專用迴路；本體 W490 × D380 mm（型錄）。\n客浴目前只有抽風機，天花板內要有開口與排風管路徑。",
       "priceText": "15,900",
-      "notes": "欣加 11/23 報價（未稅）。主浴、客浴各一。",
+      "notes": "欣加 11/23 報價（未稅）。只買一台，裝客浴；主浴沿用建商附的暖風乾燥機。",
       "status": "已選型",
       "includeInBudget": true,
       "modelKeys": [],
