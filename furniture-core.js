@@ -9,6 +9,10 @@ const isSettled=i=>settledStatuses.includes(i.status);
 // 區域定案進度：只算要採購的品項（不採用、資料參考、已含工程與封存不算）。全部定案才算整區已定案。
 const roomSettlement=items=>{const buy=items.filter(i=>!i.archived&&!['不採用','資料參考','已含工程'].includes(i.status));return {done:buy.filter(isSettled).length,total:buy.length};};
 const isRoomSettled=items=>{const s=roomSettlement(items);return s.total>0&&s.done===s.total;};
+// 帳本：家具與設備（預設，欄位可省略）或裝潢（由裝潢施作，列在「裝潢報價」頁）。兩頁共用同一份資料檔，各自只算自己的品項。
+const ledgers={furniture:'家具與設備',renovation:'裝潢'};
+const ledgerOf=i=>i.ledger||'furniture';
+const inLedger=(i,ledger)=>ledgerOf(i)===(ledger||'furniture');
 const clone=o=>JSON.parse(JSON.stringify(o));
 function text(v,label,max=50000){if(typeof v!=='string'||v.length>max)throw Error(label+'格式不正確');return v;}
 function validate(d){
@@ -16,7 +20,7 @@ function validate(d){
  if(!Array.isArray(d.rooms)||!d.rooms.length||d.rooms.length>50||!Array.isArray(d.items)||d.items.length>2000||!Array.isArray(d.pending)||d.pending.length>200)throw Error('清單結構不正確。');
  const ids=new Set(),rooms=new Set();
  for(const r of d.rooms){text(r.id,'區域',80);if(!/^[a-z0-9-]+$/.test(r.id)||rooms.has(r.id))throw Error('區域代號重複或不正確');rooms.add(r.id);text(r.name,'區域名稱',100);text(r.notes,'區域備註');text(r.sourceOverview,'匯入區域說明');text(r.modelRoom,'模型區域',80);}
- for(const i of d.items){text(i.id,'品項代號',100);if(ids.has(i.id)||!rooms.has(i.room))throw Error('品項代號重複或區域不存在');ids.add(i.id);for(const k of ['name','brand','specs','priceText','notes','currentNote'])text(i[k],k,k==='priceText'?200:50000);if(!i.name.trim()||!statuses.includes(i.status))throw Error('品項名稱或狀態不正確');for(const k of ['includeInBudget','archived','modelDirty'])if(typeof i[k]!=='boolean')throw Error('品項狀態格式不正確');for(const k of ['modelKeys','modelSearch'])if(!Array.isArray(i[k])||i[k].length>50||i[k].some(v=>typeof v!=='string'||v.length>150))throw Error('模型連結格式不正確');if(i.original!==null&&i.original!==undefined)for(const k of ['name','brand','specs','priceText'])text(i.original[k],'匯入原文');}
+ for(const i of d.items){text(i.id,'品項代號',100);if(ids.has(i.id)||!rooms.has(i.room))throw Error('品項代號重複或區域不存在');ids.add(i.id);for(const k of ['name','brand','specs','priceText','notes','currentNote'])text(i[k],k,k==='priceText'?200:50000);if(!i.name.trim()||!statuses.includes(i.status))throw Error('品項名稱或狀態不正確');if(i.ledger!==undefined&&!Object.hasOwn(ledgers,i.ledger))throw Error('品項帳本不正確');for(const k of ['includeInBudget','archived','modelDirty'])if(typeof i[k]!=='boolean')throw Error('品項狀態格式不正確');for(const k of ['modelKeys','modelSearch'])if(!Array.isArray(i[k])||i[k].length>50||i[k].some(v=>typeof v!=='string'||v.length>150))throw Error('模型連結格式不正確');if(i.original!==null&&i.original!==undefined)for(const k of ['name','brand','specs','priceText'])text(i.original[k],'匯入原文');}
  for(const p of d.pending){text(p.id,'選購條件代號',100);if(ids.has(p.id))throw Error('選購條件代號重複');ids.add(p.id);text(p.name,'選購條件名稱',200);text(p.text,'選購條件');}
  text(d.revision,'版本',120);text(d.updatedAt,'更新時間',80);if(!Number.isFinite(Date.parse(d.updatedAt)))throw Error('更新時間不正確');
  if(!d.source||typeof d.source!=='object')throw Error('缺少來源紀錄');
@@ -40,12 +44,12 @@ function parsePrice(raw){
 }
 function budget(items,opts={}){const b={min:0,max:0,pending:0,included:0,invalid:0,count:0};for(const i of items){if(i.archived||!i.includeInBudget||['不採用','資料參考'].includes(i.status)||(opts.settled&&!isSettled(i)))continue;const p=parsePrice(i.priceText);b.count++;if(p.kind==='pending')b.pending++;else if(p.kind==='included')b.included++;else if(p.kind==='invalid')b.invalid++;else{b.min+=p.min;b.max+=p.max;}}return b;}
 function budgetByRoom(data,opts={}){return data.rooms.map(room=>({room,...budget(data.items.filter(item=>item.room===room.id),opts)}));}
-function updateItem(data,id,changes){const d=clone(data),i=d.items.find(i=>i.id===id);if(!i)throw Error('找不到品項');const editable=['name','brand','specs','priceText','notes','status','room','includeInBudget','archived'];
+function updateItem(data,id,changes){const d=clone(data),i=d.items.find(i=>i.id===id);if(!i)throw Error('找不到品項');const editable=['name','brand','specs','priceText','notes','status','room','includeInBudget','archived','ledger'];
  for(const k of editable)if(Object.prototype.hasOwnProperty.call(changes,k)){if(['name','brand','specs','room'].includes(k)&&changes[k]!==i[k]&&(i.modelKeys.length||i.modelSearch.length))i.modelDirty=true;i[k]=changes[k];}
  d.updatedAt=new Date().toISOString();return validate(d);
 }
 function script(data){return "'use strict';\nwindow.HOME_FURNITURE_DATA="+JSON.stringify(validate(data)).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029')+';\n';}
-function markdown(data){const d=validate(data),lines=['# W夢想之家家具與設備清單','',`更新：${d.updatedAt}`,'','金額為整列金額；原始報價與估價並存，未填項目不當成零元。'];for(const r of d.rooms){lines.push('',`## ${r.name}`,'',r.notes);for(const i of d.items.filter(i=>i.room===r.id&&!i.archived))lines.push('',`### ${i.name}`,`狀態：${i.status}｜金額：${i.priceText||'待填'}｜納入預算：${i.includeInBudget?'是':'否'}`,'',i.brand,'',i.specs,'',i.currentNote,'',i.notes,i.modelDirty?'模型同步：待核對':'');}lines.push('','## 選購條件');for(const p of d.pending)lines.push('',`### ${p.name}`,'',p.text);return lines.join('\n');}
+function markdown(data){const d=validate(data),lines=['# W夢想之家家具與設備清單','',`更新：${d.updatedAt}`,'','金額為整列金額；原始報價與估價並存，未填項目不當成零元。'];for(const r of d.rooms){lines.push('',`## ${r.name}`,'',r.notes);for(const i of d.items.filter(i=>i.room===r.id&&!i.archived))lines.push('',`### ${i.name}`,`狀態：${i.status}｜金額：${i.priceText||'待填'}｜納入預算：${i.includeInBudget?'是':'否'}｜帳本：${ledgers[ledgerOf(i)]}`,'',i.brand,'',i.specs,'',i.currentNote,'',i.notes,i.modelDirty?'模型同步：待核對':'');}lines.push('','## 選購條件');for(const p of d.pending)lines.push('',`### ${p.name}`,'',p.text);return lines.join('\n');}
 async function readFile(dir,name){try{return await (await dir.getFileHandle(name)).getFile().then(f=>f.text());}catch(e){if(e.name==='NotFoundError')return null;throw e;}}
 async function writeFile(dir,name,body){const h=await dir.getFileHandle(name,{create:true}),w=await h.createWritable();try{await w.write(body);await w.close();}catch(e){try{await w.abort();}catch(_){}throw e;}}
 async function saveDirectory(dir,data,expectedRevision){
@@ -57,5 +61,5 @@ async function saveDirectory(dir,data,expectedRevision){
  const check=await readFile(dir,'家具清單.json');if(check!==old)throw Error('寫入期間專案清單有新變更，未覆蓋 JSON。草稿與上次儲存檔可用來核對。');
  await writeFile(dir,'家具清單.json',JSON.stringify(d,null,2));return d;
 }
-const api={PROJECT,statuses,settledStatuses,isSettled,roomSettlement,isRoomSettled,clone,validate,parsePrice,budget,budgetByRoom,updateItem,script,markdown,readFile,saveDirectory};scope.HOME_FURNITURE_CORE=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
+const api={PROJECT,statuses,settledStatuses,isSettled,roomSettlement,isRoomSettled,ledgers,ledgerOf,inLedger,clone,validate,parsePrice,budget,budgetByRoom,updateItem,script,markdown,readFile,saveDirectory};scope.HOME_FURNITURE_CORE=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
