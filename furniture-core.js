@@ -2,7 +2,13 @@
 // Shared data, budget and file-writing logic. No browser or network is required.
 ((scope)=>{
 const PROJECT='w-dream-home-local';
-const statuses=['待確認','待報價','已選型','已購買','已含工程','不採用','資料參考'];
+const statuses=['待確認','待報價','已選型','已定案','已購買','已含工程','不採用','資料參考'];
+// 已定案＝型號與成交價已與廠商談定（簽約或定案報價），已購買＝已付款或到貨。兩者合稱「定案」，其餘採購狀態都還會變動。
+const settledStatuses=['已定案','已購買'];
+const isSettled=i=>settledStatuses.includes(i.status);
+// 區域定案進度：只算要採購的品項（不採用、資料參考、已含工程與封存不算）。全部定案才算整區已定案。
+const roomSettlement=items=>{const buy=items.filter(i=>!i.archived&&!['不採用','資料參考','已含工程'].includes(i.status));return {done:buy.filter(isSettled).length,total:buy.length};};
+const isRoomSettled=items=>{const s=roomSettlement(items);return s.total>0&&s.done===s.total;};
 const clone=o=>JSON.parse(JSON.stringify(o));
 function text(v,label,max=50000){if(typeof v!=='string'||v.length>max)throw Error(label+'格式不正確');return v;}
 function validate(d){
@@ -32,8 +38,8 @@ function parsePrice(raw){
  if(match[2]&&'/＋+'.includes(match[2]))return {kind:estimated?'estimate':'recorded',min:a+b,max:a+b};
  return {kind:match[2]?'range':estimated?'estimate':'recorded',min:Math.min(a,b),max:Math.max(a,b)};
 }
-function budget(items){const b={min:0,max:0,pending:0,included:0,invalid:0,count:0};for(const i of items){if(i.archived||!i.includeInBudget||['不採用','資料參考'].includes(i.status))continue;const p=parsePrice(i.priceText);b.count++;if(p.kind==='pending')b.pending++;else if(p.kind==='included')b.included++;else if(p.kind==='invalid')b.invalid++;else{b.min+=p.min;b.max+=p.max;}}return b;}
-function budgetByRoom(data){return data.rooms.map(room=>({room,...budget(data.items.filter(item=>item.room===room.id))}));}
+function budget(items,opts={}){const b={min:0,max:0,pending:0,included:0,invalid:0,count:0};for(const i of items){if(i.archived||!i.includeInBudget||['不採用','資料參考'].includes(i.status)||(opts.settled&&!isSettled(i)))continue;const p=parsePrice(i.priceText);b.count++;if(p.kind==='pending')b.pending++;else if(p.kind==='included')b.included++;else if(p.kind==='invalid')b.invalid++;else{b.min+=p.min;b.max+=p.max;}}return b;}
+function budgetByRoom(data,opts={}){return data.rooms.map(room=>({room,...budget(data.items.filter(item=>item.room===room.id),opts)}));}
 function updateItem(data,id,changes){const d=clone(data),i=d.items.find(i=>i.id===id);if(!i)throw Error('找不到品項');const editable=['name','brand','specs','priceText','notes','status','room','includeInBudget','archived'];
  for(const k of editable)if(Object.prototype.hasOwnProperty.call(changes,k)){if(['name','brand','specs','room'].includes(k)&&changes[k]!==i[k]&&(i.modelKeys.length||i.modelSearch.length))i.modelDirty=true;i[k]=changes[k];}
  d.updatedAt=new Date().toISOString();return validate(d);
@@ -51,5 +57,5 @@ async function saveDirectory(dir,data,expectedRevision){
  const check=await readFile(dir,'家具清單.json');if(check!==old)throw Error('寫入期間專案清單有新變更，未覆蓋 JSON。草稿與上次儲存檔可用來核對。');
  await writeFile(dir,'家具清單.json',JSON.stringify(d,null,2));return d;
 }
-const api={PROJECT,statuses,clone,validate,parsePrice,budget,budgetByRoom,updateItem,script,markdown,readFile,saveDirectory};scope.HOME_FURNITURE_CORE=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
+const api={PROJECT,statuses,settledStatuses,isSettled,roomSettlement,isRoomSettled,clone,validate,parsePrice,budget,budgetByRoom,updateItem,script,markdown,readFile,saveDirectory};scope.HOME_FURNITURE_CORE=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
